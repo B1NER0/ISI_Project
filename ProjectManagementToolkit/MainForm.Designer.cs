@@ -105,6 +105,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,28 +145,28 @@
             this.projectSelectionToolStripMenuItem.BackColor = System.Drawing.Color.Gainsboro;
             this.projectSelectionToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.projectSelectionToolStripMenuItem.Name = "projectSelectionToolStripMenuItem";
-            this.projectSelectionToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.projectSelectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.projectSelectionToolStripMenuItem.Text = "Project Selection";
             this.projectSelectionToolStripMenuItem.Click += new System.EventHandler(this.projectSelectionToolStripMenuItem_Click);
             // 
             // projectDashboardToolStripMenuItem
             // 
             this.projectDashboardToolStripMenuItem.Name = "projectDashboardToolStripMenuItem";
-            this.projectDashboardToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.projectDashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.projectDashboardToolStripMenuItem.Text = "Project Dashboard";
             this.projectDashboardToolStripMenuItem.Click += new System.EventHandler(this.projectDashboardToolStripMenuItem_Click);
             // 
             // printFilesToolStripMenuItem
             // 
             this.printFilesToolStripMenuItem.Name = "printFilesToolStripMenuItem";
-            this.printFilesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.printFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printFilesToolStripMenuItem.Text = "Print files";
             this.printFilesToolStripMenuItem.Click += new System.EventHandler(this.printFilesToolStripMenuItem_Click);
             // 
             // syncToolStripMenuItem
             // 
             this.syncToolStripMenuItem.Name = "syncToolStripMenuItem";
-            this.syncToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.syncToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.syncToolStripMenuItem.Text = "Sync";
             this.syncToolStripMenuItem.Click += new System.EventHandler(this.syncToolStripMenuItem_Click);
             // 
@@ -174,7 +175,7 @@
             this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Gainsboro;
             this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -788,16 +789,25 @@
             // pDFToolStripMenuItem
             // 
             this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.pDFToolStripMenuItem.Text = "PDF";
             this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click);
             // 
             // wordToolStripMenuItem
             // 
             this.wordToolStripMenuItem.Name = "wordToolStripMenuItem";
-            this.wordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wordToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.wordToolStripMenuItem.Text = "Word";
             this.wordToolStripMenuItem.Click += new System.EventHandler(this.wordToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(305, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -805,6 +815,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(636, 397);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IsMdiContainer = true;
@@ -899,5 +910,6 @@
         private System.Windows.Forms.ToolStripMenuItem projectDashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wordToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
