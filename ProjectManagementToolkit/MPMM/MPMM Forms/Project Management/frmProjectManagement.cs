@@ -230,5 +230,29 @@ namespace ProjectManagementToolkit
             RiskRegisterForm RiskRegister = new RiskRegisterForm();
             RiskRegister.Show();
         }
+
+        private void btnProcurementManagementTemplate_Click(object sender, EventArgs e)
+        {
+            ProcurementPlanDocumentForm ProcurementForm = new ProcurementPlanDocumentForm();
+            ProcurementForm.Show();
+        }
+
+        private void btnProcurementManagementRegister_Click(object sender, EventArgs e)
+        {
+            ProcurementRegister ProcurementRegister = new ProcurementRegister();
+            ProcurementRegister.Show();
+        }
+
+        private void btnTimeManagementTemplate_Click(object sender, EventArgs e)
+        {
+            TimeMangementProcessDocumentForm TimeMangementForm = new TimeMangementProcessDocumentForm();
+            TimeMangementForm.Show();
+        }
+
+        private void btnTimeManagementRegister_Click(object sender, EventArgs e)
+        {
+            TimesheetRegister TimeRegister = new TimesheetRegister();
+            TimeRegister.Show();
+        }
     }
 }
