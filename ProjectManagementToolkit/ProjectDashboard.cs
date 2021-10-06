@@ -214,5 +214,45 @@ namespace ProjectManagementToolkit
 
             return localDocuments;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < pbarInitiation.Maximum; i++)
+            {
+                dgvInitiation.Rows[i].Cells[1].Value = true;
+            }
+            pbarInitiation.Value = pbarInitiation.Maximum;
+            lblInitiationProgress.Text = "Progress: 100%";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < pbarPlanning.Maximum; i++)
+            {
+                dgvPlanning.Rows[i].Cells[1].Value = true;
+            }
+            pbarPlanning.Value = pbarPlanning.Maximum;
+            lblPlanningProgress.Text = "Progress: 100%";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < pbarExecution.Maximum; i++)
+            {
+                dgvExecution.Rows[i].Cells[1].Value = true;
+            }
+            pbarExecution.Value = pbarExecution.Maximum;
+            lblExecutionProgress.Text = "Progress: 100%";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < pbarClosing.Maximum; i++)
+            {
+                dgvClosing.Rows[i].Cells[1].Value = true;
+            }
+            pbarClosing.Value = pbarClosing.Maximum;
+            lblClosingProgress.Text = "Progress: 100%";
+        }
     }
 }
