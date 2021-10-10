@@ -22,6 +22,16 @@ namespace ProjectManagementToolkit
             InitializeComponent();
         }
 
+        double initationProgressVal = 0;
+        double planningProgressVal = 0;
+        double executionProgressVal = 0;
+        double closingProgressVal = 0;
+
+        List<string> closingDocuments = new List<string>();
+        List<string> initiationDocuments = new List<string>();
+        List<string> planningDocuments = new List<string>();
+        List<string> executionDocuments = new List<string>();
+
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
@@ -38,7 +48,7 @@ namespace ProjectManagementToolkit
             }
             else
             {
-                List<string> initiationDocuments = new List<string>();
+                
                 initiationDocuments.Add("BusinessCase");
                 initiationDocuments.Add("FeasibilityStudy");
                 initiationDocuments.Add("ProjectCharter");
@@ -50,7 +60,6 @@ namespace ProjectManagementToolkit
                 lblInitiationProgress.Text = "Progress: 0%";
                 pbarInitiation.Value = 0;
                 pbarInitiation.Maximum = initiationDocuments.Count;
-                double initationProgressVal = 0;
                 for (int i = 0; i < initiationDocuments.Count; i++)
                 {
                     dgvInitiation.Rows.Add();
@@ -69,7 +78,7 @@ namespace ProjectManagementToolkit
                     }
                 }
 
-                List<string> planningDocuments = new List<string>();
+                
                 planningDocuments.Add("ProjectPlan");
                 planningDocuments.Add("ResourcePlan");
                 planningDocuments.Add("FinancialPlan");
@@ -87,7 +96,6 @@ namespace ProjectManagementToolkit
                 lblPlanningProgress.Text = "Progress: 0%";
                 pbarPlanning.Value = 0;
                 pbarPlanning.Maximum = planningDocuments.Count;
-                double planningProgressVal = 0;
                 for (int i = 0; i < planningDocuments.Count; i++)
                 {
                     dgvPlanning.Rows.Add();
@@ -106,7 +114,7 @@ namespace ProjectManagementToolkit
                     }
                 }
 
-                List<string> executionDocuments = new List<string>();
+                
                 executionDocuments.Add("BuildDeliverables");
                 executionDocuments.Add("MonitorAndControl");
                 executionDocuments.Add("TimeMangement");
@@ -141,7 +149,6 @@ namespace ProjectManagementToolkit
                 lblExecutionProgress.Text = "Progress: 0%";
                 pbarExecution.Value = 0;
                 pbarExecution.Maximum = executionDocuments.Count;
-                double executionProgressVal = 0;
                 for (int i = 0; i < executionDocuments.Count; i++)
                 {
                     dgvExecution.Rows.Add();
@@ -160,14 +167,13 @@ namespace ProjectManagementToolkit
                     }
                 }
 
-                List<string> closingDocuments = new List<string>();
+                
                 closingDocuments.Add("ProjectClosureReport");
                 closingDocuments.Add("PostImplementationReview");
 
                 lblClosingProgress.Text = "Progress: 0%";
                 pbarClosing.Value = 0;
                 pbarClosing.Maximum = closingDocuments.Count;
-                double closingProgressVal = 0;
                 for (int i = 0; i < closingDocuments.Count; i++)
                 {
                     dgvClosing.Rows.Add();
@@ -217,42 +223,75 @@ namespace ProjectManagementToolkit
 
         private void button1_Click(object sender, EventArgs e)
         {
+            initationProgressVal = 0;
             for (int i = 0; i < pbarInitiation.Maximum; i++)
             {
+                initationProgressVal++;
                 dgvInitiation.Rows[i].Cells[1].Value = true;
             }
             pbarInitiation.Value = pbarInitiation.Maximum;
             lblInitiationProgress.Text = "Progress: 100%";
+
+            double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
+            pbarOverall.Value = (int)overallProgressVal;
+            pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
+            double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
+            lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            planningProgressVal = 0;
             for (int i = 0; i < pbarPlanning.Maximum; i++)
             {
+                planningProgressVal++;
                 dgvPlanning.Rows[i].Cells[1].Value = true;
             }
+
             pbarPlanning.Value = pbarPlanning.Maximum;
             lblPlanningProgress.Text = "Progress: 100%";
+
+            double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
+            pbarOverall.Value = (int)overallProgressVal;
+            pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
+            double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
+            lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            executionProgressVal = 0;
             for (int i = 0; i < pbarExecution.Maximum; i++)
             {
+                executionProgressVal++;
                 dgvExecution.Rows[i].Cells[1].Value = true;
             }
             pbarExecution.Value = pbarExecution.Maximum;
             lblExecutionProgress.Text = "Progress: 100%";
+
+            double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
+            pbarOverall.Value = (int)overallProgressVal;
+            pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
+            double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
+            lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            closingProgressVal = 0;
             for (int i = 0; i < pbarClosing.Maximum; i++)
             {
+                closingProgressVal++;
                 dgvClosing.Rows[i].Cells[1].Value = true;
             }
             pbarClosing.Value = pbarClosing.Maximum;
             lblClosingProgress.Text = "Progress: 100%";
+
+            double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
+            pbarOverall.Value = (int)overallProgressVal;
+            pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
+            double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
+            lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
         }
     }
 }
