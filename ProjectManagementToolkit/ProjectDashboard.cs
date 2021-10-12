@@ -22,11 +22,13 @@ namespace ProjectManagementToolkit
             InitializeComponent();
         }
 
+        // Made variables public for 'Complete' buttons to work
         double initationProgressVal = 0;
         double planningProgressVal = 0;
         double executionProgressVal = 0;
         double closingProgressVal = 0;
 
+        // Made lists public for 'Complete' buttons to work
         List<string> closingDocuments = new List<string>();
         List<string> initiationDocuments = new List<string>();
         List<string> planningDocuments = new List<string>();
@@ -224,74 +226,82 @@ namespace ProjectManagementToolkit
         private void button1_Click(object sender, EventArgs e)
         {
             initationProgressVal = 0;
-            for (int i = 0; i < pbarInitiation.Maximum; i++)
+            for (int i = 0; i < pbarInitiation.Maximum; i++) // Go through documents
             {
-                initationProgressVal++;
-                dgvInitiation.Rows[i].Cells[1].Value = true;
+                initationProgressVal++; //Increase progress
+                dgvInitiation.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
             }
             pbarInitiation.Value = pbarInitiation.Maximum;
             lblInitiationProgress.Text = "Progress: 100%";
 
+            //////////////////// Calculate overall progressbar percentage //////////////
             double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
             pbarOverall.Value = (int)overallProgressVal;
             pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
+            ////////////////////////////////////////////////////////////////////////////
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             planningProgressVal = 0;
-            for (int i = 0; i < pbarPlanning.Maximum; i++)
+            for (int i = 0; i < pbarPlanning.Maximum; i++) // Go through documents
             {
-                planningProgressVal++;
-                dgvPlanning.Rows[i].Cells[1].Value = true;
+                planningProgressVal++; //Increase progress
+                dgvPlanning.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
             }
 
             pbarPlanning.Value = pbarPlanning.Maximum;
             lblPlanningProgress.Text = "Progress: 100%";
 
+            //////////////////// Calculate overall progressbar percentage //////////////
             double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
             pbarOverall.Value = (int)overallProgressVal;
             pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
+            ////////////////////////////////////////////////////////////////////////////
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             executionProgressVal = 0;
-            for (int i = 0; i < pbarExecution.Maximum; i++)
+            for (int i = 0; i < pbarExecution.Maximum; i++) // Go through documents
             {
-                executionProgressVal++;
-                dgvExecution.Rows[i].Cells[1].Value = true;
+                executionProgressVal++; //Increase progress
+                dgvExecution.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
             }
             pbarExecution.Value = pbarExecution.Maximum;
             lblExecutionProgress.Text = "Progress: 100%";
 
+            //////////////////// Calculate overall progressbar percentage //////////////
             double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
             pbarOverall.Value = (int)overallProgressVal;
             pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
+            ////////////////////////////////////////////////////////////////////////////
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             closingProgressVal = 0;
-            for (int i = 0; i < pbarClosing.Maximum; i++)
+            for (int i = 0; i < pbarClosing.Maximum; i++) // Go through documents
             {
-                closingProgressVal++;
-                dgvClosing.Rows[i].Cells[1].Value = true;
+                closingProgressVal++; //Increase progress
+                dgvClosing.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
             }
             pbarClosing.Value = pbarClosing.Maximum;
             lblClosingProgress.Text = "Progress: 100%";
 
+            //////////////////// Calculate overall progressbar percentage //////////////
             double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
             pbarOverall.Value = (int)overallProgressVal;
             pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
+            ////////////////////////////////////////////////////////////////////////////
         }
     }
 }
