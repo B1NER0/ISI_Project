@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ProjectManagementToolkit
 {
@@ -27,12 +28,21 @@ namespace ProjectManagementToolkit
         double planningProgressVal = 0;
         double executionProgressVal = 0;
         double closingProgressVal = 0;
+        double initationPercentage = 0;
+        double planningPercentage = 0;
+        double executionPercentage = 0;
+        double closingPercentage = 0;
+
 
         // Made lists public for 'Complete' buttons to work
         List<string> closingDocuments = new List<string>();
         List<string> initiationDocuments = new List<string>();
         List<string> planningDocuments = new List<string>();
         List<string> executionDocuments = new List<string>();
+
+        string[] xValues1 = new string[4];
+        double[] yValues1 = new double[4];
+        double[] yValues2 = new double[4];
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
@@ -43,6 +53,10 @@ namespace ProjectManagementToolkit
             List<string> localDocuments = getLocalDocuments();
 
             lblProjectName.Text = projectModel.ProjectName;
+
+            chart1.ChartAreas[0].BackColor = Color.Transparent;
+            chart1.Legends[0].BackColor = Color.Transparent;
+            chart2.Legends[0].BackColor = Color.Transparent;
 
             if (localDocuments == null)
             {
@@ -71,12 +85,28 @@ namespace ProjectManagementToolkit
                         initationProgressVal++;
                         dgvInitiation.Rows[i].Cells[1].Value = true;
                         pbarInitiation.Value = (int)initationProgressVal;
-                        double initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                        initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
                         lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                        xValues1[0] = "Initiation";
+                        yValues1[0] = initationPercentage;
+
+                        yValues2[0] = 100 - initationPercentage;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
                         dgvInitiation.Rows[i].Cells[1].Value = false;
+
+                        xValues1[0] = "Initiation";
+                        yValues1[0] = 0;
+
+                        yValues2[0] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                 }
 
@@ -107,12 +137,28 @@ namespace ProjectManagementToolkit
                         planningProgressVal++;
                         dgvPlanning.Rows[i].Cells[1].Value = true;
                         pbarPlanning.Value = (int)planningProgressVal;
-                        double planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
+                        planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
                         lblPlanningProgress.Text = "Progress: " + Math.Round(planningPercentage, 2) + "%";
+
+                        xValues1[1] = "Planning";
+                        yValues1[1] = planningPercentage;
+
+                        yValues2[1] = 100 - planningPercentage;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
                         dgvPlanning.Rows[i].Cells[1].Value = false;
+
+                        xValues1[1] = "Planning";
+                        yValues1[1] = 0;
+
+                        yValues2[1] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                 }
 
@@ -160,12 +206,28 @@ namespace ProjectManagementToolkit
                         executionProgressVal++;
                         dgvExecution.Rows[i].Cells[1].Value = true;
                         pbarExecution.Value = (int)executionProgressVal;
-                        double executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
+                        executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
                         lblExecutionProgress.Text = "Progress: " + Math.Round(executionPercentage, 2) + "%";
+
+                        xValues1[2] = "Execution";
+                        yValues1[2] = executionPercentage;
+
+                        yValues2[2] = 100 - executionPercentage;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
                         dgvExecution.Rows[i].Cells[1].Value = false;
+
+                        xValues1[2] = "Execution";
+                        yValues1[2] = 0;
+
+                        yValues2[2] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                 }
 
@@ -185,12 +247,29 @@ namespace ProjectManagementToolkit
                         closingProgressVal++;
                         dgvClosing.Rows[i].Cells[1].Value = true;
                         pbarClosing.Value = (int)closingProgressVal;
-                        double closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
+                        closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
                         lblClosingProgress.Text = "Progress: " + Math.Round(closingPercentage, 2) + "%";
+
+                        xValues1[3] = "Closing";
+                        yValues1[3] = closingPercentage;
+
+                        yValues2[3] = 100 - closingPercentage;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
                         dgvClosing.Rows[i].Cells[1].Value = false;
+                        
+                        xValues1[3] = "Closing";
+                        yValues1[3] = 0;
+
+                        yValues2[3] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        
                     }
                 }
 
@@ -199,6 +278,24 @@ namespace ProjectManagementToolkit
                 pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
                 double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
                 lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
+
+                string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+                double[] yValues = { overallPercentage, 100 - overallPercentage };
+
+                chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
+                chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+                chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                chart1.Legends[0].Enabled = true;
+
+                chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
+                chart1.Series["Series1"].Points[1].Color = Color.Gray;
+
+
+                foreach (DataPoint p in chart1.Series["Series1"].Points)
+                {
+                    p.Label = "#PERCENT\n#VALX";
+                }
             }
         }
 
@@ -230,6 +327,7 @@ namespace ProjectManagementToolkit
             {
                 initationProgressVal++; //Increase progress
                 dgvInitiation.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
+                
             }
             pbarInitiation.Value = pbarInitiation.Maximum;
             lblInitiationProgress.Text = "Progress: 100%";
@@ -241,6 +339,32 @@ namespace ProjectManagementToolkit
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
+            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            double[] yValues = { overallPercentage, 100 - overallPercentage };
+
+            chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
+            chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
+            chart1.Legends[0].Enabled = true;
+
+            chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
+            chart1.Series["Series1"].Points[1].Color = Color.Gray;
+
+            foreach (DataPoint p in chart1.Series["Series1"].Points)
+            {
+                p.Label = "#PERCENT\n#VALX";
+            }
+
+            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+
+            xValues1[0] = "Initiation";
+            yValues1[0] = 100;
+
+            yValues2[0] = 100 - initationPercentage;
+
+            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -262,6 +386,31 @@ namespace ProjectManagementToolkit
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
+            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            double[] yValues = { overallPercentage, 100 - overallPercentage };
+
+            chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
+            chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
+            chart1.Legends[0].Enabled = true;
+
+            chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
+            chart1.Series["Series1"].Points[1].Color = Color.Gray;
+
+
+            foreach (DataPoint p in chart1.Series["Series1"].Points)
+            {
+                p.Label = "#PERCENT\n#VALX";
+            }
+
+            planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
+
+            yValues1[1] = 100;
+            yValues2[1] = 100 - planningPercentage;
+
+            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -282,6 +431,32 @@ namespace ProjectManagementToolkit
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
+            ///
+            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            double[] yValues = { overallPercentage, 100 - overallPercentage };
+
+            chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
+            chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
+            chart1.Legends[0].Enabled = true;
+
+            chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
+            chart1.Series["Series1"].Points[1].Color = Color.Gray;
+
+
+            foreach (DataPoint p in chart1.Series["Series1"].Points)
+            {
+                p.Label = "#PERCENT\n#VALX";
+            }
+
+            executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
+
+            yValues1[2] = 100;
+            yValues2[2] = 100 - executionPercentage;
+
+            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -302,6 +477,32 @@ namespace ProjectManagementToolkit
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
+            ///
+            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            double[] yValues = { overallPercentage, 100 - overallPercentage };
+
+            chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
+            chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
+            chart1.Legends[0].Enabled = true;
+
+            chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
+            chart1.Series["Series1"].Points[1].Color = Color.Gray;
+
+
+            foreach (DataPoint p in chart1.Series["Series1"].Points)
+            {
+                p.Label = "#PERCENT\n#VALX";
+            }
+
+            closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
+
+            yValues1[3] = 100;
+            yValues2[3] = 100 - closingPercentage;
+
+            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
         }
     }
 }
