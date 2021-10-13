@@ -99,14 +99,6 @@ namespace ProjectManagementToolkit
                     else
                     {
                         dgvInitiation.Rows[i].Cells[1].Value = false;
-
-                        xValues1[0] = "Initiation";
-                        yValues1[0] = 0;
-
-                        yValues2[0] = 100;
-
-                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                 }
 
@@ -151,14 +143,6 @@ namespace ProjectManagementToolkit
                     else
                     {
                         dgvPlanning.Rows[i].Cells[1].Value = false;
-
-                        xValues1[1] = "Planning";
-                        yValues1[1] = 0;
-
-                        yValues2[1] = 100;
-
-                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                 }
 
@@ -220,14 +204,6 @@ namespace ProjectManagementToolkit
                     else
                     {
                         dgvExecution.Rows[i].Cells[1].Value = false;
-
-                        xValues1[2] = "Execution";
-                        yValues1[2] = 0;
-
-                        yValues2[2] = 100;
-
-                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
                     }
                 }
 
@@ -359,7 +335,7 @@ namespace ProjectManagementToolkit
             initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
 
             xValues1[0] = "Initiation";
-            yValues1[0] = 100;
+            //yValues1[0] = 0;
 
             yValues2[0] = 100 - initationPercentage;
 
