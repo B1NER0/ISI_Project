@@ -326,5 +326,23 @@ namespace ProjectManagementToolkit
             QualityRegister QualRegister = new QualityRegister();
             QualRegister.Show();
         }
+
+        private void btnTemplates_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmTemplate Template = new MPMM.MPMM_Forms.Project_Management.frmTemplate();
+            Template.Show();
+        }
+
+        private void btnProcessFlowOverview_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview ProcessFlowOverview = new MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview();
+            ProcessFlowOverview.Show();
+        }
+
+        private void btnStageGateRequirements_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements StageGateRequirements = new MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements();
+            StageGateRequirements.Show();
+        }
     }
 }
