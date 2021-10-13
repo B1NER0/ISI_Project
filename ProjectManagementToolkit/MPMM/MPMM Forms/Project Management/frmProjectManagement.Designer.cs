@@ -3772,6 +3772,7 @@
             this.btnKnowledgeAndResources.TabIndex = 8;
             this.btnKnowledgeAndResources.Text = "Knowledge and Resources";
             this.btnKnowledgeAndResources.UseVisualStyleBackColor = true;
+            this.btnKnowledgeAndResources.Click += new System.EventHandler(this.btnKnowledgeAndResources_Click);
             // 
             // btnToolsAndTechniques
             // 
@@ -3781,6 +3782,7 @@
             this.btnToolsAndTechniques.TabIndex = 7;
             this.btnToolsAndTechniques.Text = "Tools and Techniques";
             this.btnToolsAndTechniques.UseVisualStyleBackColor = true;
+            this.btnToolsAndTechniques.Click += new System.EventHandler(this.btnToolsAndTechniques_Click);
             // 
             // btnRoleDescription
             // 
@@ -3790,6 +3792,7 @@
             this.btnRoleDescription.TabIndex = 6;
             this.btnRoleDescription.Text = "Role Description";
             this.btnRoleDescription.UseVisualStyleBackColor = true;
+            this.btnRoleDescription.Click += new System.EventHandler(this.btnRoleDescription_Click);
             // 
             // btnProcessFlowOverview
             // 

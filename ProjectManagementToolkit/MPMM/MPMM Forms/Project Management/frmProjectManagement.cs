@@ -329,20 +329,31 @@ namespace ProjectManagementToolkit
 
         private void btnTemplates_Click(object sender, EventArgs e)
         {
-            MPMM.MPMM_Forms.Project_Management.frmTemplate Template = new MPMM.MPMM_Forms.Project_Management.frmTemplate();
-            Template.Show();
+
         }
 
         private void btnProcessFlowOverview_Click(object sender, EventArgs e)
         {
-            MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview ProcessFlowOverview = new MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview();
-            ProcessFlowOverview.Show();
+            //PLSM_ProcessGroupingGovernance_Interfaces PGG = new PLSM_ProcessGroupingGovernance_Interfaces();
+            //PGG.Show();
         }
 
-        private void btnStageGateRequirements_Click(object sender, EventArgs e)
+        private void btnRoleDescription_Click(object sender, EventArgs e)
         {
-            MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements StageGateRequirements = new MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements();
-            StageGateRequirements.Show();
+            MPMM.MPMM_Forms.Project_Management.frmRoleDescription RoleDesc = new MPMM.MPMM_Forms.Project_Management.frmRoleDescription();
+            RoleDesc.Show();
+        }
+
+        private void btnToolsAndTechniques_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmToolsAndTechniques ToolsResource = new MPMM.MPMM_Forms.Project_Management.frmToolsAndTechniques();
+            ToolsResource.Show();
+        }
+
+        private void btnKnowledgeAndResources_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources KnowResource = new MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources();
+            KnowResource.Show();
         }
     }
 }

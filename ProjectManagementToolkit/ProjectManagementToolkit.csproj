@@ -1159,11 +1159,11 @@
     <Compile Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.Designer.cs">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </Compile>
-    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.cs">
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.Designer.cs">
-      <DependentUpon>frmProcessFlowOverview.cs</DependentUpon>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.Designer.cs">
+      <DependentUpon>frmKnowledgeAndResources.cs</DependentUpon>
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectManagement.cs">
       <SubType>Form</SubType>
@@ -1183,17 +1183,17 @@
     <Compile Include="MPMM\MPMM Forms\Governance\Governance.Designer.cs">
       <DependentUpon>Governance.cs</DependentUpon>
     </Compile>
-    <Compile Include="MPMM\MPMM Forms\Project Management\frmStageGateRequirements.cs">
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmRoleDescription.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MPMM\MPMM Forms\Project Management\frmStageGateRequirements.Designer.cs">
-      <DependentUpon>frmStageGateRequirements.cs</DependentUpon>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmRoleDescription.Designer.cs">
+      <DependentUpon>frmRoleDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplate.cs">
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmToolsAndTechniques.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplate.Designer.cs">
-      <DependentUpon>frmTemplate.cs</DependentUpon>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmToolsAndTechniques.Designer.cs">
+      <DependentUpon>frmToolsAndTechniques.cs</DependentUpon>
     </Compile>
     <Compile Include="ProjectDashboard.cs">
       <SubType>Form</SubType>
