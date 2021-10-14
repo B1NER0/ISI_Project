@@ -366,9 +366,9 @@
             this.btnDirectingAProject = new System.Windows.Forms.Button();
             this.pictureBox66 = new System.Windows.Forms.PictureBox();
             this.tbpOwnerPLSM = new System.Windows.Forms.TabPage();
+            this.pictureBox69 = new System.Windows.Forms.PictureBox();
             this.tbpConstructorPLSM = new System.Windows.Forms.TabPage();
-            this.tbpCommunityProject = new System.Windows.Forms.TabPage();
-            this.tbpProcessGroupingGovernance = new System.Windows.Forms.TabPage();
+            this.pictureBox70 = new System.Windows.Forms.PictureBox();
             this.tbp_Documentation = new System.Windows.Forms.TabPage();
             this.btnDocumentBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -498,8 +498,6 @@
             this.timerReportCenter = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.lblType = new System.Windows.Forms.Label();
-            this.pictureBox69 = new System.Windows.Forms.PictureBox();
-            this.pictureBox70 = new System.Windows.Forms.PictureBox();
             this.tbp_Project_Management.SuspendLayout();
             this.tbp_Report_Center.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -644,7 +642,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox66)).BeginInit();
             this.tbpOwnerPLSM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).BeginInit();
             this.tbpConstructorPLSM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).BeginInit();
             this.tbp_Documentation.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -678,8 +678,6 @@
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).BeginInit();
             this.SuspendLayout();
             // 
             // tbp_Project_Management
@@ -2350,12 +2348,10 @@
             this.tbcPLSMsSubProcesses.Controls.Add(this.tbpReferencePLSM);
             this.tbcPLSMsSubProcesses.Controls.Add(this.tbpOwnerPLSM);
             this.tbcPLSMsSubProcesses.Controls.Add(this.tbpConstructorPLSM);
-            this.tbcPLSMsSubProcesses.Controls.Add(this.tbpCommunityProject);
-            this.tbcPLSMsSubProcesses.Controls.Add(this.tbpProcessGroupingGovernance);
             this.tbcPLSMsSubProcesses.Location = new System.Drawing.Point(3, 3);
             this.tbcPLSMsSubProcesses.Name = "tbcPLSMsSubProcesses";
             this.tbcPLSMsSubProcesses.SelectedIndex = 0;
-            this.tbcPLSMsSubProcesses.Size = new System.Drawing.Size(1058, 590);
+            this.tbcPLSMsSubProcesses.Size = new System.Drawing.Size(1058, 565);
             this.tbcPLSMsSubProcesses.TabIndex = 2;
             // 
             // tbpReferencePLSM
@@ -2389,7 +2385,7 @@
             this.tbpReferencePLSM.Location = new System.Drawing.Point(4, 21);
             this.tbpReferencePLSM.Name = "tbpReferencePLSM";
             this.tbpReferencePLSM.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpReferencePLSM.Size = new System.Drawing.Size(1050, 565);
+            this.tbpReferencePLSM.Size = new System.Drawing.Size(1050, 540);
             this.tbpReferencePLSM.TabIndex = 0;
             this.tbpReferencePLSM.Text = "Reference PLSM";
             // 
@@ -4320,43 +4316,46 @@
             // 
             // tbpOwnerPLSM
             // 
+            this.tbpOwnerPLSM.AutoScroll = true;
             this.tbpOwnerPLSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.tbpOwnerPLSM.Controls.Add(this.pictureBox69);
             this.tbpOwnerPLSM.Location = new System.Drawing.Point(4, 21);
             this.tbpOwnerPLSM.Name = "tbpOwnerPLSM";
             this.tbpOwnerPLSM.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOwnerPLSM.Size = new System.Drawing.Size(1050, 565);
+            this.tbpOwnerPLSM.Size = new System.Drawing.Size(1050, 540);
             this.tbpOwnerPLSM.TabIndex = 1;
             this.tbpOwnerPLSM.Text = "Owner PLSM";
             // 
+            // pictureBox69
+            // 
+            this.pictureBox69.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox69.Image")));
+            this.pictureBox69.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox69.Name = "pictureBox69";
+            this.pictureBox69.Size = new System.Drawing.Size(1029, 940);
+            this.pictureBox69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox69.TabIndex = 0;
+            this.pictureBox69.TabStop = false;
+            // 
             // tbpConstructorPLSM
             // 
+            this.tbpConstructorPLSM.AutoScroll = true;
             this.tbpConstructorPLSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.tbpConstructorPLSM.Controls.Add(this.pictureBox70);
             this.tbpConstructorPLSM.Location = new System.Drawing.Point(4, 21);
             this.tbpConstructorPLSM.Name = "tbpConstructorPLSM";
-            this.tbpConstructorPLSM.Size = new System.Drawing.Size(1050, 565);
+            this.tbpConstructorPLSM.Size = new System.Drawing.Size(1050, 540);
             this.tbpConstructorPLSM.TabIndex = 2;
             this.tbpConstructorPLSM.Text = "Constructor PLSM";
             // 
-            // tbpCommunityProject
+            // pictureBox70
             // 
-            this.tbpCommunityProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tbpCommunityProject.Location = new System.Drawing.Point(4, 21);
-            this.tbpCommunityProject.Name = "tbpCommunityProject";
-            this.tbpCommunityProject.Size = new System.Drawing.Size(1050, 565);
-            this.tbpCommunityProject.TabIndex = 3;
-            this.tbpCommunityProject.Text = "Community Project";
-            // 
-            // tbpProcessGroupingGovernance
-            // 
-            this.tbpProcessGroupingGovernance.Location = new System.Drawing.Point(4, 21);
-            this.tbpProcessGroupingGovernance.Name = "tbpProcessGroupingGovernance";
-            this.tbpProcessGroupingGovernance.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpProcessGroupingGovernance.Size = new System.Drawing.Size(1050, 565);
-            this.tbpProcessGroupingGovernance.TabIndex = 4;
-            this.tbpProcessGroupingGovernance.Text = "(ReferencePLSM-Interfaces)";
-            this.tbpProcessGroupingGovernance.UseVisualStyleBackColor = true;
+            this.pictureBox70.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox70.Image")));
+            this.pictureBox70.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox70.Name = "pictureBox70";
+            this.pictureBox70.Size = new System.Drawing.Size(1027, 1493);
+            this.pictureBox70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox70.TabIndex = 0;
+            this.pictureBox70.TabStop = false;
             // 
             // tbp_Documentation
             // 
@@ -6201,28 +6200,6 @@
             this.lblType.Text = ".";
             this.lblType.Visible = false;
             // 
-            // pictureBox69
-            // 
-            this.pictureBox69.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox69.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox69.Image")));
-            this.pictureBox69.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox69.Name = "pictureBox69";
-            this.pictureBox69.Size = new System.Drawing.Size(1044, 559);
-            this.pictureBox69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox69.TabIndex = 0;
-            this.pictureBox69.TabStop = false;
-            // 
-            // pictureBox70
-            // 
-            this.pictureBox70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox70.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox70.Image")));
-            this.pictureBox70.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox70.Name = "pictureBox70";
-            this.pictureBox70.Size = new System.Drawing.Size(1050, 565);
-            this.pictureBox70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox70.TabIndex = 0;
-            this.pictureBox70.TabStop = false;
-            // 
             // frmProjectManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -6231,7 +6208,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(2, 2);
             this.AutoScrollMinSize = new System.Drawing.Size(2, 2);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1124, 606);
+            this.ClientSize = new System.Drawing.Size(1141, 606);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.tbp_Project_Management);
             this.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6407,9 +6384,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox66)).EndInit();
             this.tbpOwnerPLSM.ResumeLayout(false);
-            this.tbpOwnerPLSM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).EndInit();
             this.tbpConstructorPLSM.ResumeLayout(false);
-            this.tbpConstructorPLSM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).EndInit();
             this.tbp_Documentation.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -6464,8 +6441,6 @@
             this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6933,12 +6908,10 @@
         private System.Windows.Forms.PictureBox pictureBox66;
         private System.Windows.Forms.TabPage tbpOwnerPLSM;
         private System.Windows.Forms.TabPage tbpConstructorPLSM;
-        private System.Windows.Forms.TabPage tbpCommunityProject;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox67;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureBox68;
-        private System.Windows.Forms.TabPage tbpProcessGroupingGovernance;
         private System.Windows.Forms.Panel pnlHideTabControl;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.PictureBox pictureBox69;
