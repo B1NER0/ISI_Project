@@ -10,6 +10,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class JobDescriptionModel
     {
         public string ProjectName { get; set; }
+        public string JobDescriptionProgress { get; set; }
 
         public string ProjectNaOverviewDescriptionme { get; set; }
 

@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class TermsOfReferenceModel
     {
         public string ProjectName { get; set; }
+        public string TermOfReferenceProgress { get; set; }
         public string DocumentID { get; set; }
         public string DocumentOwner { get; set; }
         public string IssueDate { get; set; }

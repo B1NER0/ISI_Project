@@ -103,6 +103,7 @@
             this.richTextBoxServices = new System.Windows.Forms.RichTextBox();
             this.btnExportWord = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -132,7 +133,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label1.Location = new System.Drawing.Point(37, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 14);
+            this.label1.Size = new System.Drawing.Size(192, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Prject Office Checklist For";
             // 
@@ -141,7 +142,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(238, 24);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 13);
+            this.textBox1.Size = new System.Drawing.Size(117, 16);
             this.textBox1.TabIndex = 1;
             // 
             // label2
@@ -153,7 +154,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label2.Location = new System.Drawing.Point(42, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 14);
+            this.label2.Size = new System.Drawing.Size(173, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Project Office Checklist";
             // 
@@ -184,10 +185,10 @@
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage1.Size = new System.Drawing.Size(1212, 578);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project Details";
             // 
@@ -198,7 +199,7 @@
             this.txtProjectManager.Location = new System.Drawing.Point(197, 47);
             this.txtProjectManager.Name = "txtProjectManager";
             this.txtProjectManager.ReadOnly = true;
-            this.txtProjectManager.Size = new System.Drawing.Size(455, 13);
+            this.txtProjectManager.Size = new System.Drawing.Size(455, 16);
             this.txtProjectManager.TabIndex = 5;
             this.txtProjectManager.Text = "Name of the Project Manager responsible for the project";
             // 
@@ -209,7 +210,7 @@
             this.txtProjectOfficeManager.Location = new System.Drawing.Point(197, 73);
             this.txtProjectOfficeManager.Name = "txtProjectOfficeManager";
             this.txtProjectOfficeManager.ReadOnly = true;
-            this.txtProjectOfficeManager.Size = new System.Drawing.Size(455, 13);
+            this.txtProjectOfficeManager.Size = new System.Drawing.Size(455, 16);
             this.txtProjectOfficeManager.TabIndex = 4;
             this.txtProjectOfficeManager.Text = "Name of the Project Office Manager responsible for the Project Office";
             // 
@@ -220,7 +221,7 @@
             this.txtProjectName.Location = new System.Drawing.Point(197, 22);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.ReadOnly = true;
-            this.txtProjectName.Size = new System.Drawing.Size(455, 13);
+            this.txtProjectName.Size = new System.Drawing.Size(455, 16);
             this.txtProjectName.TabIndex = 3;
             this.txtProjectName.Text = "Name of the project establishing the Project Office";
             // 
@@ -229,7 +230,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(7, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 14);
+            this.label5.Size = new System.Drawing.Size(170, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Project Office Manager";
             // 
@@ -238,7 +239,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 14);
+            this.label4.Size = new System.Drawing.Size(124, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Project Manager";
             // 
@@ -247,7 +248,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 14);
+            this.label3.Size = new System.Drawing.Size(105, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Project Name:";
             // 
@@ -255,10 +256,10 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage2.Controls.Add(this.dataGridViewPremises);
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage2.Size = new System.Drawing.Size(1212, 578);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Premises";
             // 
@@ -302,7 +303,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewPremises.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPremises.RowTemplate.Height = 24;
-            this.dataGridViewPremises.Size = new System.Drawing.Size(1206, 574);
+            this.dataGridViewPremises.Size = new System.Drawing.Size(1206, 572);
             this.dataGridViewPremises.TabIndex = 0;
             // 
             // Questions1
@@ -320,16 +321,16 @@
             this.Answers1.Name = "Answers1";
             this.Answers1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Answers1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Answers1.Width = 83;
+            this.Answers1.Width = 97;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage3.Controls.Add(this.dataGridViewEquipment);
-            this.tabPage3.Location = new System.Drawing.Point(4, 23);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage3.Size = new System.Drawing.Size(1212, 578);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Equipment";
             // 
@@ -364,7 +365,7 @@
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewEquipment.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewEquipment.RowTemplate.Height = 24;
-            this.dataGridViewEquipment.Size = new System.Drawing.Size(1206, 574);
+            this.dataGridViewEquipment.Size = new System.Drawing.Size(1206, 572);
             this.dataGridViewEquipment.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -382,16 +383,16 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn1.Width = 83;
+            this.dataGridViewCheckBoxColumn1.Width = 97;
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage4.Controls.Add(this.dataGridViewRoles);
-            this.tabPage4.Location = new System.Drawing.Point(4, 23);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage4.Size = new System.Drawing.Size(1212, 578);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Roles";
             // 
@@ -426,7 +427,7 @@
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewRoles.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewRoles.RowTemplate.Height = 24;
-            this.dataGridViewRoles.Size = new System.Drawing.Size(1206, 574);
+            this.dataGridViewRoles.Size = new System.Drawing.Size(1206, 572);
             this.dataGridViewRoles.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn2
@@ -444,17 +445,17 @@
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn2.Width = 83;
+            this.dataGridViewCheckBoxColumn2.Width = 97;
             // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage5.Controls.Add(this.dataGridViewStandardsProcesses);
             this.tabPage5.Controls.Add(this.textBox8);
-            this.tabPage5.Location = new System.Drawing.Point(4, 23);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage5.Size = new System.Drawing.Size(1212, 578);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Standards & Processes";
             // 
@@ -489,7 +490,7 @@
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewStandardsProcesses.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewStandardsProcesses.RowTemplate.Height = 24;
-            this.dataGridViewStandardsProcesses.Size = new System.Drawing.Size(1206, 574);
+            this.dataGridViewStandardsProcesses.Size = new System.Drawing.Size(1206, 572);
             this.dataGridViewStandardsProcesses.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn3
@@ -507,7 +508,7 @@
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn3.Width = 83;
+            this.dataGridViewCheckBoxColumn3.Width = 97;
             // 
             // textBox8
             // 
@@ -526,10 +527,10 @@
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage6.Controls.Add(this.tabControl3);
             this.tabPage6.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tabPage6.Location = new System.Drawing.Point(4, 23);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage6.Size = new System.Drawing.Size(1212, 578);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Templates";
             // 
@@ -543,17 +544,17 @@
             this.tabControl3.Location = new System.Drawing.Point(3, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1206, 574);
+            this.tabControl3.Size = new System.Drawing.Size(1206, 572);
             this.tabControl3.TabIndex = 2;
             // 
             // initiationTab
             // 
             this.initiationTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.initiationTab.Controls.Add(this.dataGridViewInit);
-            this.initiationTab.Location = new System.Drawing.Point(4, 23);
+            this.initiationTab.Location = new System.Drawing.Point(4, 25);
             this.initiationTab.Name = "initiationTab";
             this.initiationTab.Padding = new System.Windows.Forms.Padding(3);
-            this.initiationTab.Size = new System.Drawing.Size(1198, 547);
+            this.initiationTab.Size = new System.Drawing.Size(1198, 543);
             this.initiationTab.TabIndex = 0;
             this.initiationTab.Text = "Initiation";
             // 
@@ -588,7 +589,7 @@
             dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewInit.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewInit.RowTemplate.Height = 24;
-            this.dataGridViewInit.Size = new System.Drawing.Size(1192, 541);
+            this.dataGridViewInit.Size = new System.Drawing.Size(1192, 537);
             this.dataGridViewInit.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn5
@@ -606,13 +607,13 @@
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn5.Width = 78;
+            this.dataGridViewCheckBoxColumn5.Width = 90;
             // 
             // planningTab
             // 
             this.planningTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.planningTab.Controls.Add(this.dataGridViewPlanning);
-            this.planningTab.Location = new System.Drawing.Point(4, 23);
+            this.planningTab.Location = new System.Drawing.Point(4, 25);
             this.planningTab.Name = "planningTab";
             this.planningTab.Padding = new System.Windows.Forms.Padding(3);
             this.planningTab.Size = new System.Drawing.Size(1198, 545);
@@ -668,13 +669,13 @@
             this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
             this.dataGridViewCheckBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn6.Width = 78;
+            this.dataGridViewCheckBoxColumn6.Width = 90;
             // 
             // executionTab
             // 
             this.executionTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.executionTab.Controls.Add(this.dataGridViewExecution);
-            this.executionTab.Location = new System.Drawing.Point(4, 23);
+            this.executionTab.Location = new System.Drawing.Point(4, 25);
             this.executionTab.Name = "executionTab";
             this.executionTab.Padding = new System.Windows.Forms.Padding(3);
             this.executionTab.Size = new System.Drawing.Size(1198, 545);
@@ -730,13 +731,13 @@
             this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
             this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn7.Width = 78;
+            this.dataGridViewCheckBoxColumn7.Width = 90;
             // 
             // closureTab
             // 
             this.closureTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.closureTab.Controls.Add(this.dataGridViewClosure);
-            this.closureTab.Location = new System.Drawing.Point(4, 23);
+            this.closureTab.Location = new System.Drawing.Point(4, 25);
             this.closureTab.Name = "closureTab";
             this.closureTab.Padding = new System.Windows.Forms.Padding(3);
             this.closureTab.Size = new System.Drawing.Size(1198, 545);
@@ -792,16 +793,16 @@
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn4.Width = 78;
+            this.dataGridViewCheckBoxColumn4.Width = 90;
             // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage7.Controls.Add(this.richTextBoxServices);
-            this.tabPage7.Location = new System.Drawing.Point(4, 23);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1212, 580);
+            this.tabPage7.Size = new System.Drawing.Size(1212, 578);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Services";
             // 
@@ -812,7 +813,7 @@
             this.richTextBoxServices.Location = new System.Drawing.Point(3, 3);
             this.richTextBoxServices.Name = "richTextBoxServices";
             this.richTextBoxServices.ReadOnly = true;
-            this.richTextBoxServices.Size = new System.Drawing.Size(1206, 574);
+            this.richTextBoxServices.Size = new System.Drawing.Size(1206, 572);
             this.richTextBoxServices.TabIndex = 0;
             this.richTextBoxServices.Text = "";
             // 
@@ -821,7 +822,7 @@
             this.btnExportWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExportWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportWord.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportWord.Location = new System.Drawing.Point(695, 15);
+            this.btnExportWord.Location = new System.Drawing.Point(1091, 15);
             this.btnExportWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportWord.Name = "btnExportWord";
             this.btnExportWord.Size = new System.Drawing.Size(147, 34);
@@ -835,7 +836,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(485, 14);
+            this.btnSave.Location = new System.Drawing.Point(926, 15);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(147, 34);
@@ -844,12 +845,27 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProgress.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProgress.Location = new System.Drawing.Point(709, 15);
+            this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(197, 34);
+            this.btnSaveProgress.TabIndex = 16;
+            this.btnSaveProgress.Text = "Save Progress";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
+            // 
             // ProjectOfficeChecklistDocumentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1273, 706);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.btnExportWord);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
@@ -940,5 +956,6 @@
         private System.Windows.Forms.RichTextBox richTextBoxServices;
         private System.Windows.Forms.Button btnExportWord;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSaveProgress;
     }
 }

@@ -81,6 +81,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 documentApprovalsModel.Add(documentApproval);
             }
             newTermsOfReferenceModel.DocumentApprovals = documentApprovalsModel;
+            newTermsOfReferenceModel.TermOfReferenceProgress = "DONE";
 
             List<TermsOfReferenceModel.DocumentHistory> documentHistories = new List<TermsOfReferenceModel.DocumentHistory>();
 
@@ -1405,6 +1406,334 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExportWord_Click(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            List<TermsOfReferenceModel.DocumentApproval> documentApprovalsModel = new List<TermsOfReferenceModel.DocumentApproval>();
+
+            int approvalRowsCount = dgvDocumentApprovals.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.DocumentApproval documentApproval = new TermsOfReferenceModel.DocumentApproval();
+                var role = dgvDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dgvDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dgvDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dgvDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newTermsOfReferenceModel.DocumentApprovals = documentApprovalsModel;
+            newTermsOfReferenceModel.TermOfReferenceProgress = "UNDONE";
+
+            List<TermsOfReferenceModel.DocumentHistory> documentHistories = new List<TermsOfReferenceModel.DocumentHistory>();
+
+            int versionRowsCount = dgvDocumentHistory.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.DocumentHistory documentHistoryModel = new TermsOfReferenceModel.DocumentHistory();
+                var version = dgvDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dgvDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dgvDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newTermsOfReferenceModel.DocumentHistories = documentHistories;
+
+            List<TermsOfReferenceModel.Deliverables> Deliv = new List<TermsOfReferenceModel.Deliverables>();
+
+            int delivRowsCount = dgvDeliverables.Rows.Count;
+
+            for (int i = 0; i < delivRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Deliverables deliv = new TermsOfReferenceModel.Deliverables();
+                var Deliverable = dgvDeliverables.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Components = dgvDeliverables.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Description = dgvDeliverables.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                deliv.Deliverable = Deliverable;
+                deliv.Components = Components;
+                deliv.Description = Description;
+
+                Deliv.Add(deliv);
+            }
+            newTermsOfReferenceModel.Deliv = Deliv;
+
+            List<TermsOfReferenceModel.Customers> Cust = new List<TermsOfReferenceModel.Customers>();
+
+            int cusRowsCount = dgvDeliverables.Rows.Count;
+
+            for (int i = 0; i < cusRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Customers custo = new TermsOfReferenceModel.Customers();
+                var CustomerGroup = dgvCustomers.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var CustomerRepresentative = dgvCustomers.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                custo.CustomerGroup = CustomerGroup;
+                custo.CustomerRepresentative = CustomerRepresentative;
+
+
+                Cust.Add(custo);
+            }
+            newTermsOfReferenceModel.Cust = Cust;
+
+            List<TermsOfReferenceModel.Stakeholders> Stake = new List<TermsOfReferenceModel.Stakeholders>();
+
+            int stakeRowsCount = dgvStakeholders.Rows.Count;
+
+            for (int i = 0; i < stakeRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Stakeholders stak = new TermsOfReferenceModel.Stakeholders();
+                var StakeholdersGroup = dgvStakeholders.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var StakeholderInterest = dgvStakeholders.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                stak.StakeholdersGroup = StakeholdersGroup;
+                stak.StakeholderInterest = StakeholderInterest;
+
+
+                Stake.Add(stak);
+            }
+            newTermsOfReferenceModel.Stake = Stake;
+
+            List<TermsOfReferenceModel.Roles> Rol = new List<TermsOfReferenceModel.Roles>();
+
+            int roleRowsCount = dgvRoles.Rows.Count;
+
+            for (int i = 0; i < roleRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Roles rolls = new TermsOfReferenceModel.Roles();
+                var Role = dgvRoles.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ResourceName = dgvRoles.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Organization = dgvRoles.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var AssignmentStatus = dgvRoles.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var AssignmentDate = dgvRoles.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+                rolls.Role = Role;
+                rolls.ResourceName = ResourceName;
+                rolls.Organization = Organization;
+                rolls.AssignmentStatus = AssignmentStatus;
+                rolls.AssignmentDate = AssignmentDate;
+
+
+                Rol.Add(rolls);
+            }
+            newTermsOfReferenceModel.Rol = Rol;
+
+            List<TermsOfReferenceModel.Approach> Appr = new List<TermsOfReferenceModel.Approach>();
+
+            int apprRowsCount = dgvApproach.Rows.Count;
+
+            for (int i = 0; i < apprRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Approach app = new TermsOfReferenceModel.Approach();
+                var Phase = dgvApproach.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var OverallApproach = dgvApproach.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                app.Phase = Phase;
+                app.OverallApproach = OverallApproach;
+
+                Appr.Add(app);
+            }
+            newTermsOfReferenceModel.Appr = Appr;
+
+            List<TermsOfReferenceModel.Milestones> Mile = new List<TermsOfReferenceModel.Milestones>();
+
+            int milRowsCount = dgvMilestones.Rows.Count;
+
+            for (int i = 0; i < milRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Milestones mil = new TermsOfReferenceModel.Milestones();
+                var Milestone = dgvMilestones.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Date = dgvMilestones.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Description = dgvMilestones.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                mil.Milestone = Milestone;
+                mil.Date = Date;
+                mil.Description = Description;
+
+                Mile.Add(mil);
+            }
+            newTermsOfReferenceModel.Mile = Mile;
+
+            List<TermsOfReferenceModel.Dependencies> Dep = new List<TermsOfReferenceModel.Dependencies>();
+
+            int depRowsCount = dgvDependencies.Rows.Count;
+
+            for (int i = 0; i < depRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Dependencies depe = new TermsOfReferenceModel.Dependencies();
+                var ProjectActivity = dgvDependencies.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Impacts = dgvDependencies.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ImpactedBy = dgvDependencies.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Critically = dgvDependencies.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var Date = dgvDependencies.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+                depe.ProjectActivity = ProjectActivity;
+                depe.Impacts = Impacts;
+                depe.ImpactedBy = ImpactedBy;
+                depe.Critically = Critically;
+                depe.Date = Date;
+
+                Dep.Add(depe);
+            }
+            newTermsOfReferenceModel.Dep = Dep;
+
+            List<TermsOfReferenceModel.ResourcePlan> ResP = new List<TermsOfReferenceModel.ResourcePlan>();
+
+            int resRowsCount = dgvResourcePlan.Rows.Count;
+
+            for (int i = 0; i < resRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.ResourcePlan resou = new TermsOfReferenceModel.ResourcePlan();
+                var Role = dgvResourcePlan.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var StartDate = dgvResourcePlan.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var EndDate = dgvResourcePlan.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Effort = dgvResourcePlan.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                resou.Role = Role;
+                resou.StartDate = StartDate;
+                resou.EndDate = EndDate;
+                resou.Effort = Effort;
+
+                ResP.Add(resou);
+            }
+            newTermsOfReferenceModel.ResP = ResP;
+
+            List<TermsOfReferenceModel.FinancialPlan> FinP = new List<TermsOfReferenceModel.FinancialPlan>();
+
+            int finRowsCount = dgvFinancialPlan.Rows.Count;
+
+            for (int i = 0; i < finRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.FinancialPlan fin = new TermsOfReferenceModel.FinancialPlan();
+                var ExpenditureCategory = dgvFinancialPlan.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ExpenditureItem = dgvFinancialPlan.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ExpenditureValue = dgvFinancialPlan.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                fin.ExpenditureCategory = ExpenditureCategory;
+                fin.ExpenditureItem = ExpenditureItem;
+                fin.ExpenditureValue = ExpenditureValue;
+
+                FinP.Add(fin);
+            }
+            newTermsOfReferenceModel.FinP = FinP;
+
+            List<TermsOfReferenceModel.QualityPlan> QuaP = new List<TermsOfReferenceModel.QualityPlan>();
+
+            int quaRowsCount = dgvQualityPlan.Rows.Count;
+
+            for (int i = 0; i < quaRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.QualityPlan qua = new TermsOfReferenceModel.QualityPlan();
+                var ExpenditureCategory = dgvQualityPlan.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ExpenditureItem = dgvQualityPlan.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                qua.Process = ExpenditureCategory;
+                qua.Description = ExpenditureItem;
+
+                QuaP.Add(qua);
+            }
+            newTermsOfReferenceModel.QuaP = QuaP;
+
+            List<TermsOfReferenceModel.CompletionCriteria> CompC = new List<TermsOfReferenceModel.CompletionCriteria>();
+
+            int comRowsCount = dgvCompletionCriteria.Rows.Count;
+
+            for (int i = 0; i < comRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.CompletionCriteria com = new TermsOfReferenceModel.CompletionCriteria();
+                var Process = dgvCompletionCriteria.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Description = dgvCompletionCriteria.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                com.Process = Process;
+                com.Description = Description;
+
+                CompC.Add(com);
+            }
+            newTermsOfReferenceModel.CompC = CompC;
+
+            List<TermsOfReferenceModel.Risks> Risk = new List<TermsOfReferenceModel.Risks>();
+
+            int risRowsCount = dgvRisks.Rows.Count;
+
+            for (int i = 0; i < risRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Risks ris = new TermsOfReferenceModel.Risks();
+                var Role = dgvRisks.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var StartDate = dgvRisks.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var EndDate = dgvRisks.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Effort = dgvRisks.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                ris.RiskDesc = Role;
+                ris.RiskLikelihood = StartDate;
+                ris.RiskImpact = EndDate;
+                ris.Action = Effort;
+
+                Risk.Add(ris);
+            }
+            newTermsOfReferenceModel.Risk = Risk;
+
+            List<TermsOfReferenceModel.Issues> theIssuess = new List<TermsOfReferenceModel.Issues>();
+
+            int issRowsCount = dgvIssues.Rows.Count;
+
+            for (int i = 0; i < issRowsCount - 1; i++)
+            {
+                TermsOfReferenceModel.Issues iss = new TermsOfReferenceModel.Issues();
+                var IssueDescription = dgvIssues.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var IssuePriority = dgvIssues.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Action = dgvIssues.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                iss.IssueDescription = IssueDescription;
+                iss.IssuePriority = IssuePriority;
+                iss.Action = Action;
+
+                theIssuess.Add(iss);
+            }
+            newTermsOfReferenceModel.theIssuess = theIssuess;
+
+            newTermsOfReferenceModel.ExecutiveSummary = txtExecutiveSummary.Text;
+
+            newTermsOfReferenceModel.ProjDefinition = txtProjectDefinition.Text;
+            newTermsOfReferenceModel.Vision = txtVision.Text;
+            newTermsOfReferenceModel.Objectives = txtObjectives.Text;
+            newTermsOfReferenceModel.Scope = txtScope.Text;
+            newTermsOfReferenceModel.Schedule = txtSchedule.Text;
+
+            newTermsOfReferenceModel.Responsibilities = txtResponsibilities.Text;
+            newTermsOfReferenceModel.Structure = txtStructure.Text;
+
+            newTermsOfReferenceModel.Assumptions = txtAssumptions.Text;
+            newTermsOfReferenceModel.Constraints = txtConstraints.Text;
+
+            newTermsOfReferenceModel.DocumentID = dgvDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newTermsOfReferenceModel.DocumentOwner = dgvDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newTermsOfReferenceModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newTermsOfReferenceModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newTermsOfReferenceModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+
+            List<VersionControl<TermsOfReferenceModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+            if (!versionControl.isEqual(currentTermsOfReferenceModel, newTermsOfReferenceModel))
+            {
+                VersionControl<TermsOfReferenceModel>.DocumentModel documentModel = new VersionControl<TermsOfReferenceModel>.DocumentModel(newTermsOfReferenceModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentTermsOfReferenceModel = JsonConvert.DeserializeObject<TermsOfReferenceModel>(JsonConvert.SerializeObject(newTermsOfReferenceModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "TermOfReferenceDocument");
+                MessageBox.Show("Terms of reference saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }   
 }

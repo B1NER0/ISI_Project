@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.Classes
     class FeasibilityStudyModel
     {
         public string ProjectName { get; set; }
+        public string FeasibilityStudyProgress { get; set; }
         public string ExecutiveSummary { get; set; }
         public string BusinessEnvironment { get; set; }
         public string BusinessProblem { get; set; }

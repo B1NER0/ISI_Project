@@ -37,6 +37,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectOfficeChecklistModel.ProjectName = txtProjectName.Text;
             newProjectOfficeChecklistModel.ProjectManager = txtProjectManager.Text;
             newProjectOfficeChecklistModel.ProjectOfficeManager = txtProjectOfficeManager.Text;
+            newProjectOfficeChecklistModel.ProjectOfficeCheckListProgress = "DONE";
 
             newProjectOfficeChecklistModel.Premises = new List<ProjectOfficeChecklistModel.Questionare>();
             int premisesCount = dataGridViewPremises.Rows.Count-1;
@@ -744,6 +745,116 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                         }
                     }
                 }
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newProjectOfficeChecklistModel.ProjectName = txtProjectName.Text;
+            newProjectOfficeChecklistModel.ProjectManager = txtProjectManager.Text;
+            newProjectOfficeChecklistModel.ProjectOfficeManager = txtProjectOfficeManager.Text;
+            newProjectOfficeChecklistModel.ProjectOfficeCheckListProgress = "UNDONE";
+
+            newProjectOfficeChecklistModel.Premises = new List<ProjectOfficeChecklistModel.Questionare>();
+            int premisesCount = dataGridViewPremises.Rows.Count - 1;
+
+            for (int i = 0; i < premisesCount; i++)
+            {
+                var question = dataGridViewPremises.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewPremises.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.Premises.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            newProjectOfficeChecklistModel.Equipment = new List<ProjectOfficeChecklistModel.Questionare>();
+            int equipmentCount = dataGridViewEquipment.Rows.Count - 1;
+
+            for (int i = 0; i < equipmentCount; i++)
+            {
+                var question = dataGridViewEquipment.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewEquipment.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.Equipment.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            newProjectOfficeChecklistModel.Roles = new List<ProjectOfficeChecklistModel.Questionare>();
+
+            int rolesCount = dataGridViewRoles.Rows.Count - 1;
+
+            for (int i = 0; i < rolesCount; i++)
+            {
+                var question = dataGridViewRoles.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewRoles.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.Roles.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+
+            newProjectOfficeChecklistModel.StandardsProcesses = new List<ProjectOfficeChecklistModel.Questionare>();
+
+            int standardsProcessesCount = dataGridViewStandardsProcesses.Rows.Count - 1;
+
+            for (int i = 0; i < standardsProcessesCount; i++)
+            {
+                var question = dataGridViewStandardsProcesses.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewStandardsProcesses.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.StandardsProcesses.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            newProjectOfficeChecklistModel.TemplatesInitiation = new List<ProjectOfficeChecklistModel.Questionare>();
+            int initiationProcessesCount = dataGridViewInit.Rows.Count - 1;
+
+            for (int i = 0; i < initiationProcessesCount; i++)
+            {
+                var question = dataGridViewInit.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewInit.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.TemplatesInitiation.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            newProjectOfficeChecklistModel.TemplatesPlanning = new List<ProjectOfficeChecklistModel.Questionare>();
+            int planningRowCount = dataGridViewPlanning.Rows.Count - 1;
+
+            for (int i = 0; i < planningRowCount; i++)
+            {
+                var question = dataGridViewPlanning.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewPlanning.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.TemplatesPlanning.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            newProjectOfficeChecklistModel.TemplatesExecution = new List<ProjectOfficeChecklistModel.Questionare>();
+            int executionRowCount = dataGridViewExecution.Rows.Count - 1;
+
+            for (int i = 0; i < executionRowCount; i++)
+            {
+                var question = dataGridViewExecution.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewExecution.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.TemplatesExecution.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            newProjectOfficeChecklistModel.TemplatesClosure = new List<ProjectOfficeChecklistModel.Questionare>();
+            int closureRowCount = dataGridViewClosure.Rows.Count - 1;
+
+            for (int i = 0; i < closureRowCount; i++)
+            {
+                var question = dataGridViewClosure.Rows[i].Cells[0].Value?.ToString() ?? "";
+                bool answer = Convert.ToBoolean(dataGridViewClosure.Rows[i].Cells[1].Value);
+                newProjectOfficeChecklistModel.TemplatesClosure.Add(new ProjectOfficeChecklistModel.Questionare(question, answer));
+            }
+
+            List<VersionControl<ProjectOfficeChecklistModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentProjectOfficeChecklistModel, newProjectOfficeChecklistModel))
+            {
+                VersionControl<ProjectOfficeChecklistModel>.DocumentModel documentModel = new VersionControl<ProjectOfficeChecklistModel>.DocumentModel(newProjectOfficeChecklistModel, DateTime.Now, VersionControl<ProjectOfficeChecklistModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentProjectOfficeChecklistModel = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(JsonConvert.SerializeObject(newProjectOfficeChecklistModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ProjectOfficeCheckList");
+                MessageBox.Show("Project Office Checklist saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
             }
         }
     }

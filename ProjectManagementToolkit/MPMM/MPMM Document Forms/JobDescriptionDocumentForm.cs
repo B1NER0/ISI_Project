@@ -60,6 +60,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newJobDescriptionDocumentModel.SpecialconditionsDescription = txtspecialconditionsDescriptions.Text;
 
+            newJobDescriptionDocumentModel.JobDescriptionProgress = "DONE";
+
 
 
             List<VersionControl<JobDescriptionModel>.DocumentModel> documentModels = versionControl.DocumentModels;
@@ -479,6 +481,57 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void button2_Click(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newJobDescriptionDocumentModel.ProjectName = txtProjectNames.Text;
+
+            newJobDescriptionDocumentModel.ProjectNaOverviewDescriptionme = txtOverviewDescriptions.Text;
+
+            newJobDescriptionDocumentModel.PurposeDescription = txtpurposeDescriptions.Text;
+
+            newJobDescriptionDocumentModel.ResponsibilitiesDescription = txtresponsibilitiesDescriptions.Text;
+
+            newJobDescriptionDocumentModel.OrganizationDescription = txtorganizationDescriptions.Text;
+
+            newJobDescriptionDocumentModel.RelationshipsDescription = txtrelationshipsDescriptions.Text;
+
+            newJobDescriptionDocumentModel.SkillsDescription = txtskillsDescriptions.Text;
+
+            newJobDescriptionDocumentModel.ExperienceDescription = txtexperienceDescriptions.Text;
+
+            newJobDescriptionDocumentModel.QualificationsDescription = txtqualificationsDescriptions.Text;
+
+            newJobDescriptionDocumentModel.PersonalityDescription = txtpersonalityDescriptions.Text;
+
+            newJobDescriptionDocumentModel.PerformancecriteriaDescription = txtperformancecriteriaDescriptions.Text;
+
+            newJobDescriptionDocumentModel.WorkenvironmentDescription = txtworkenvironmentDescriptions.Text;
+
+            newJobDescriptionDocumentModel.SalaryDescription = txtsalaryDescriptions.Text;
+
+            newJobDescriptionDocumentModel.SpecialconditionsDescription = txtspecialconditionsDescriptions.Text;
+
+            newJobDescriptionDocumentModel.JobDescriptionProgress = "UNDONE";
+
+
+
+            List<VersionControl<JobDescriptionModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentJobDescriptionDocumentModel, newJobDescriptionDocumentModel))
+            {
+                VersionControl<JobDescriptionModel>.DocumentModel documentModel = new VersionControl<JobDescriptionModel>.DocumentModel(newJobDescriptionDocumentModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "JobDescription");
+                MessageBox.Show("Job Decryption saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Models;
+using ProjectManagementToolkit.Classes;
 
 namespace ProjectManagementToolkit
 {
@@ -52,24 +53,72 @@ namespace ProjectManagementToolkit
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
 
+
+            ////////BUSINESSCASE////////
             //Verander Json
             string json1 = JsonHelper.loadDocument(Settings.Default.ProjectID, "BusinessCase");
-
             //Generate new form
             BusinessCaseDocumentForm bussinessCase = new BusinessCaseDocumentForm();
-            //Get localdocs
-            List<string> localDocuments = getLocalDocuments();
-
+           
             //Check versions
             VersionControl<BusinessCaseModel> versionControl = JsonConvert.DeserializeObject<VersionControl<BusinessCaseModel>>(json1);
-
             //Get current businesscaseModel
             BusinessCaseModel currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
-
             //Extract Progress
-            string tester = currentBusinessCaseModel.Progress;
+            string IsBusinessCaseModelDone = currentBusinessCaseModel.Progress;
 
-            MessageBox.Show(tester);
+
+
+
+            //////FEASIBILITY STUDY/////////
+            string json2 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FeasibilityStudy");
+            FeasibiltyStudyDocumentForm feasibilityStudy = new FeasibiltyStudyDocumentForm();
+            VersionControl<FeasibilityStudyModel> versionControl1 = JsonConvert.DeserializeObject<VersionControl<FeasibilityStudyModel>>(json2);
+            FeasibilityStudyModel currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
+            string IsFeasibilityStudyDone = currentFeasibilityStudyModel.FeasibilityStudyProgress;
+
+
+            //////PROJECT CHARTER/////////
+            string json3 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectCharter");
+            ProjectCharterForm projectCharter = new ProjectCharterForm();
+            VersionControl<ProjectCharterModel> versionControl2 = JsonConvert.DeserializeObject<VersionControl<ProjectCharterModel>>(json3);
+            ProjectCharterModel currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
+            string IsProjectCharterDone = currentProjectCharter.ProjectCharterProgress;
+
+
+            //////JOB DESCRIPTION/////////
+            string json4 = JsonHelper.loadDocument(Settings.Default.ProjectID, "JobDescription");
+            JobDescriptionDocumentForm jobDescription = new JobDescriptionDocumentForm();
+            VersionControl<JobDescriptionModel> versionControl3 = JsonConvert.DeserializeObject<VersionControl<JobDescriptionModel>>(json4);
+            JobDescriptionModel currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
+            string IsJobDescriptionDone = currentJobDescription.JobDescriptionProgress;
+
+
+            //////PROJECT OFFICE CHECKLIST/////////
+            string json5 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectOfficeCheckList");
+            ProjectOfficeChecklistDocumentForm projectOfficeChecklist = new ProjectOfficeChecklistDocumentForm();
+            VersionControl<ProjectOfficeChecklistModel> versionControl4 = JsonConvert.DeserializeObject<VersionControl<ProjectOfficeChecklistModel>>(json5);
+            ProjectOfficeChecklistModel currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
+            string IsProjectOfficeChecklistDone = currentProjectOfficeChecklist.ProjectOfficeCheckListProgress;
+
+
+            //////PHASE REVIEW FORM INITIATION/////////
+            string json6 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewFormInitiation");
+            PhaseReviewFormInitiationDocumentForm phaseReviewFormInitiation = new PhaseReviewFormInitiationDocumentForm();
+            VersionControl<PhaseReviewFormInitiationModel> versionControl5 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewFormInitiationModel>>(json6);
+            PhaseReviewFormInitiationModel currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
+            string IsPhaseReviewInitiationDone = currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress;
+
+
+            //////TERMS OF REFERENCE/////////
+            string json7 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TermOfReferenceDocument");
+            TermOfReferenceDocumentForm termOfReference = new TermOfReferenceDocumentForm();
+            VersionControl<TermsOfReferenceModel> versionControl6 = JsonConvert.DeserializeObject<VersionControl<TermsOfReferenceModel>>(json7);
+            TermsOfReferenceModel currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
+            string IsTermOfReferenceDone = currentTermOfReference.TermOfReferenceProgress;
+
+            //Get localdocs
+            List<string> localDocuments = getLocalDocuments();
 
             lblProjectName.Text = projectModel.ProjectName;
 
@@ -103,18 +152,112 @@ namespace ProjectManagementToolkit
                     if (localDocuments.Contains(initiationDocuments[i]))
                     {
                         initationProgressVal++;
-                        dgvInitiation.Rows[i].Cells[1].Value = true;
-                        pbarInitiation.Value = (int)initationProgressVal;
-                        initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                        lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+                        if(initiationDocuments[i] == "BusinessCase" && IsBusinessCaseModelDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                        xValues1[0] = "Initiation";
-                        yValues1[0] = initationPercentage;
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
 
-                        yValues2[0] = 100 - initationPercentage;
+                            yValues2[0] = 100 - initationPercentage;
 
-                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        else if(initiationDocuments[i] == "FeasibilityStudy" && IsFeasibilityStudyDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
+
+                            yValues2[0] = 100 - initationPercentage;
+
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        else if(initiationDocuments[i] == "ProjectCharter" && IsProjectCharterDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
+
+                            yValues2[0] = 100 - initationPercentage;
+
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        else if (initiationDocuments[i] == "JobDescription" && IsJobDescriptionDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
+
+                            yValues2[0] = 100 - initationPercentage;
+
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        else if (initiationDocuments[i] == "ProjectOfficeCheckList" && IsProjectOfficeChecklistDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
+
+                            yValues2[0] = 100 - initationPercentage;
+
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        else if (initiationDocuments[i] == "PhaseReviewFormInitiation" && IsPhaseReviewInitiationDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
+
+                            yValues2[0] = 100 - initationPercentage;
+
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        else if (initiationDocuments[i] == "TermOfReferenceDocument" && IsTermOfReferenceDone == "DONE")
+                        {
+                            dgvInitiation.Rows[i].Cells[1].Value = true;
+                            pbarInitiation.Value = (int)initationProgressVal;
+                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+                            xValues1[0] = "Initiation";
+                            yValues1[0] = initationPercentage;
+
+                            yValues2[0] = 100 - initationPercentage;
+
+                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        }
+                        //dgvInitiation.Rows[i].Cells[1].Value = true;
                     }
                     else
                     {
