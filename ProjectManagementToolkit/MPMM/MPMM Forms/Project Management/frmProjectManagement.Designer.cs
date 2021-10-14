@@ -2351,7 +2351,7 @@
             this.tbcPLSMsSubProcesses.Location = new System.Drawing.Point(3, 3);
             this.tbcPLSMsSubProcesses.Name = "tbcPLSMsSubProcesses";
             this.tbcPLSMsSubProcesses.SelectedIndex = 0;
-            this.tbcPLSMsSubProcesses.Size = new System.Drawing.Size(1058, 565);
+            this.tbcPLSMsSubProcesses.Size = new System.Drawing.Size(1058, 600);
             this.tbcPLSMsSubProcesses.TabIndex = 2;
             // 
             // tbpReferencePLSM
@@ -2385,7 +2385,7 @@
             this.tbpReferencePLSM.Location = new System.Drawing.Point(4, 21);
             this.tbpReferencePLSM.Name = "tbpReferencePLSM";
             this.tbpReferencePLSM.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpReferencePLSM.Size = new System.Drawing.Size(1050, 540);
+            this.tbpReferencePLSM.Size = new System.Drawing.Size(1050, 575);
             this.tbpReferencePLSM.TabIndex = 0;
             this.tbpReferencePLSM.Text = "Reference PLSM";
             // 
@@ -6208,7 +6208,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(2, 2);
             this.AutoScrollMinSize = new System.Drawing.Size(2, 2);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1141, 606);
+            this.ClientSize = new System.Drawing.Size(1124, 671);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.tbp_Project_Management);
             this.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
