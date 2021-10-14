@@ -553,5 +553,10 @@ namespace ProjectManagementToolkit
             tempString = tempString.Remove(tempString.LastIndexOf('\\'));
             System.Diagnostics.Process.Start($@"{tempString}\MPMM\Template Excel Sheets\User_Manual Project Management Toolkit.pdf");
         }
+
+        private void mPMMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

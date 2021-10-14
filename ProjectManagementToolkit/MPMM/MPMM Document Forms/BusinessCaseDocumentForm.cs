@@ -26,10 +26,13 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         Color TABLE_HEADER_COLOR = Color.FromArgb(73, 173, 252);
         Color TABLE_SUBHEADER_COLOR = Color.FromArgb(255, 255, 0);
 
+        public int progress;
+
         public BusinessCaseDocumentForm()
         {
             InitializeComponent();
         }
+
 
         public void Save()
         {
@@ -42,6 +45,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newBusinessCaseModel.IssueDate = dgvDocInfo.Rows[2].Cells[1].Value.ToString();
             newBusinessCaseModel.LastSavedDate = dgvDocInfo.Rows[3].Cells[1].Value.ToString();
             newBusinessCaseModel.FileName = dgvDocInfo.Rows[4].Cells[1].Value.ToString();
+
 
             //Document History
             var documentHistories = new List<BusinessCaseModel.DocumentHistory>();
@@ -515,6 +519,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 JsonHelper.saveDocument(json, Settings.Default.ProjectID, "BusinessCase");
                 MessageBox.Show("Business case document saved successfully", "save", MessageBoxButtons.OK);
             }
+
+            progress = 0;
+            MessageBox.Show(progress.ToString());
         }
 
         public void LoadDoc()
@@ -1939,6 +1946,497 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             ExportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            //Project Name
+            newBusinessCaseModel.ProjectName = txtProjName.Text;
+
+            //Document Info
+            newBusinessCaseModel.DocumentID = dgvDocInfo.Rows[0].Cells[1].Value.ToString();
+            newBusinessCaseModel.DocumentOwner = dgvDocInfo.Rows[1].Cells[1].Value.ToString();
+            newBusinessCaseModel.IssueDate = dgvDocInfo.Rows[2].Cells[1].Value.ToString();
+            newBusinessCaseModel.LastSavedDate = dgvDocInfo.Rows[3].Cells[1].Value.ToString();
+            newBusinessCaseModel.FileName = dgvDocInfo.Rows[4].Cells[1].Value.ToString();
+
+
+            //Document History
+            var documentHistories = new List<BusinessCaseModel.DocumentHistory>();
+
+            int versionRowCount = dgvDocHistory.Rows.Count - 1;
+
+            for (int i = 0; i < versionRowCount; i++)
+            {
+                BusinessCaseModel.DocumentHistory documentHistory = new BusinessCaseModel.DocumentHistory();
+                var tempVersion = dgvDocHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempIssueDate = dgvDocHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dgvDocHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistory.Version = tempVersion;
+                documentHistory.IssueDate = tempIssueDate;
+                documentHistory.Changes = tempChanges;
+                documentHistories.Add(documentHistory);
+            }
+
+            newBusinessCaseModel.DocumentHistories = documentHistories;
+
+            //Document Approvals
+            List<BusinessCaseModel.DocumentApproval> documentApprovals = new List<BusinessCaseModel.DocumentApproval>();
+
+            int approvalRowsCount = dgvDocApprovals.Rows.Count - 1;
+
+            for (int i = 0; i < approvalRowsCount; i++)
+            {
+                BusinessCaseModel.DocumentApproval documentApproval = new BusinessCaseModel.DocumentApproval();
+                var tempRole = dgvDocApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempName = dgvDocApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dgvDocApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempDate = dgvDocApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = tempRole;
+                documentApproval.Name = tempName;
+                documentApproval.Signature = tempChanges;
+                documentApproval.DateApproved = tempDate;
+
+                documentApprovals.Add(documentApproval);
+            }
+
+            newBusinessCaseModel.DocumentApprovals = documentApprovals;
+
+            ///Executive Summary and Business Problem Tab
+            newBusinessCaseModel.ExecutiveSummary = txtExecutiveSummary.Text;
+            newBusinessCaseModel.BusinessProblemDescription = txtBusinessProblemDescription.Text;
+            newBusinessCaseModel.EnvironmentalAnalysis = txtEnvirAnalysis.Text;
+            newBusinessCaseModel.ProblemAnalysis = txtProblemAnalysis.Text;
+            newBusinessCaseModel.BusinessProblem = txtBusinessProblem.Text;
+            newBusinessCaseModel.BusinessOpportunity = txtBusinessOppurtunity.Text;
+
+            ///Alternative Solutions
+            //Option 1
+            #region Option 1
+            var option1 = new BusinessCaseModel.AlternativeSolution();
+
+            //Description
+            option1.AlternativeSolutionDescription = txtOp1_Desc.Text;
+
+            //Benefits
+            List<BusinessCaseModel.Benefit> option1Benefits = new List<BusinessCaseModel.Benefit>();
+
+            int rowsCount = dgvOp1_Benefits.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Benefit option1Benefit = new BusinessCaseModel.Benefit();
+                var tempCategory = dgvOp1_Benefits.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dgvOp1_Benefits.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempValue = dgvOp1_Benefits.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option1Benefit.BenefitCategory = tempCategory;
+                option1Benefit.BenefitDescription = tempDescription;
+                option1Benefit.BenefitValue = tempValue;
+
+                option1Benefits.Add(option1Benefit);
+            }
+
+            option1.Benefits = option1Benefits;
+
+            //Costs
+            List<BusinessCaseModel.Cost> option1Costs = new List<BusinessCaseModel.Cost>();
+
+            rowsCount = dgvOp1_Costs.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Cost option1Cost = new BusinessCaseModel.Cost();
+                var tempCategory = dgvOp1_Costs.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dgvOp1_Costs.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempValue = dgvOp1_Costs.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempType = dgvOp1_Costs.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                option1Cost.ExpenseCategory = tempCategory;
+                option1Cost.CostDescription = tempDescription;
+                option1Cost.ExpenseValue = tempValue;
+                option1Cost.ExpenseType = tempType;
+
+                option1Costs.Add(option1Cost);
+            }
+
+            option1.Costs = option1Costs;
+
+            //Feasibility
+            List<BusinessCaseModel.Feasibility> option1Feasibilities = new List<BusinessCaseModel.Feasibility>();
+
+            rowsCount = dgvOp1_Feas.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Feasibility option1Feasibility = new BusinessCaseModel.Feasibility();
+                var tempSolution = dgvOp1_Feas.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempRating = dgvOp1_Feas.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempMethod = dgvOp1_Feas.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option1Feasibility.Solution = tempSolution;
+                option1Feasibility.FeasibilityRating = tempRating;
+                option1Feasibility.AssementMethod = tempMethod;
+
+                option1Feasibilities.Add(option1Feasibility);
+            }
+
+            option1.Feasibilities = option1Feasibilities;
+
+            //Risks
+            List<BusinessCaseModel.Risk> option1Risks = new List<BusinessCaseModel.Risk>();
+
+            rowsCount = dgvOp1_Risks.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Risk option1Risk = new BusinessCaseModel.Risk();
+                var tempDescr = dgvOp1_Risks.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempLikelihood = dgvOp1_Risks.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempImpact = dgvOp1_Risks.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempMitigation = dgvOp1_Risks.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                option1Risk.RiskDescription = tempDescr;
+                option1Risk.RiskLikelihood = tempLikelihood;
+                option1Risk.RiskImpact = tempImpact;
+                option1Risk.RiskMitgation = tempMitigation;
+
+                option1Risks.Add(option1Risk);
+            }
+
+            option1.Risks = option1Risks;
+
+            //Issues
+            List<BusinessCaseModel.Issue> option1Issues = new List<BusinessCaseModel.Issue>();
+
+            rowsCount = dgvOp1_Issues.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Issue option1Issue = new BusinessCaseModel.Issue();
+                var tempDescr = dgvOp1_Issues.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempPriority = dgvOp1_Issues.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempAction = dgvOp1_Issues.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option1Issue.IssueDescription = tempDescr;
+                option1Issue.IssuePriority = tempPriority;
+                option1Issue.ResolveAction = tempAction;
+
+                option1Issues.Add(option1Issue);
+            }
+
+            option1.Issues = option1Issues;
+
+            option1.Assumptions = txtOp1_Assumptions.Text;
+            #endregion
+
+            //Option 2
+            #region Option 2
+            var option2 = new BusinessCaseModel.AlternativeSolution();
+
+            //Description
+            option2.AlternativeSolutionDescription = txtOp2_Desc.Text;
+
+            //Benefits
+            List<BusinessCaseModel.Benefit> option2Benefits = new List<BusinessCaseModel.Benefit>();
+
+            rowsCount = dgvOp2_Benefits.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Benefit option2Benefit = new BusinessCaseModel.Benefit();
+                var tempCategory = dgvOp2_Benefits.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dgvOp2_Benefits.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempValue = dgvOp2_Benefits.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option2Benefit.BenefitCategory = tempCategory;
+                option2Benefit.BenefitDescription = tempDescription;
+                option2Benefit.BenefitValue = tempValue;
+
+                option2Benefits.Add(option2Benefit);
+            }
+
+            option2.Benefits = option2Benefits;
+
+            //Costs
+            List<BusinessCaseModel.Cost> option2Costs = new List<BusinessCaseModel.Cost>();
+
+            rowsCount = dgvOp2_Costs.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Cost option2Cost = new BusinessCaseModel.Cost();
+                var tempCategory = dgvOp2_Costs.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dgvOp2_Costs.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempValue = dgvOp2_Costs.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempType = dgvOp2_Costs.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                option2Cost.ExpenseCategory = tempCategory;
+                option2Cost.CostDescription = tempDescription;
+                option2Cost.ExpenseValue = tempValue;
+                option2Cost.ExpenseType = tempType;
+
+                option2Costs.Add(option2Cost);
+            }
+
+            option2.Costs = option2Costs;
+
+            //Feasibility
+            List<BusinessCaseModel.Feasibility> option2Feasibilities = new List<BusinessCaseModel.Feasibility>();
+
+            rowsCount = dgvOp2_Feas.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Feasibility option2Feasibility = new BusinessCaseModel.Feasibility();
+                var tempSolution = dgvOp2_Feas.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempRating = dgvOp2_Feas.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempMethod = dgvOp2_Feas.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option2Feasibility.Solution = tempSolution;
+                option2Feasibility.FeasibilityRating = tempRating;
+                option2Feasibility.AssementMethod = tempMethod;
+
+                option2Feasibilities.Add(option2Feasibility);
+            }
+
+            option2.Feasibilities = option2Feasibilities;
+
+            //Risks
+            List<BusinessCaseModel.Risk> option2Risks = new List<BusinessCaseModel.Risk>();
+
+            rowsCount = dgvOp2_Risks.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Risk option2Risk = new BusinessCaseModel.Risk();
+                var tempDescr = dgvOp2_Risks.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempLikelihood = dgvOp2_Risks.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempImpact = dgvOp2_Risks.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempMitigation = dgvOp2_Risks.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                option2Risk.RiskDescription = tempDescr;
+                option2Risk.RiskLikelihood = tempLikelihood;
+                option2Risk.RiskImpact = tempImpact;
+                option2Risk.RiskMitgation = tempMitigation;
+
+                option2Risks.Add(option2Risk);
+            }
+
+            option2.Risks = option2Risks;
+
+            //Issues
+            List<BusinessCaseModel.Issue> option2Issues = new List<BusinessCaseModel.Issue>();
+
+            rowsCount = dgvOp2_Issues.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Issue option2Issue = new BusinessCaseModel.Issue();
+                var tempDescr = dgvOp2_Issues.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempPriority = dgvOp2_Issues.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempAction = dgvOp2_Issues.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option2Issue.IssueDescription = tempDescr;
+                option2Issue.IssuePriority = tempPriority;
+                option2Issue.ResolveAction = tempAction;
+
+                option2Issues.Add(option2Issue);
+            }
+
+            option2.Issues = option2Issues;
+
+            option2.Assumptions = txtOp2_Assumptions.Text;
+            #endregion
+
+            //Option 3
+            #region Option 3
+            var option3 = new BusinessCaseModel.AlternativeSolution();
+
+            //Description
+            option3.AlternativeSolutionDescription = txtOp3_Desc.Text;
+
+            //Benefits
+            List<BusinessCaseModel.Benefit> option3Benefits = new List<BusinessCaseModel.Benefit>();
+
+            rowsCount = dgvOp3_Benefits.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Benefit option3Benefit = new BusinessCaseModel.Benefit();
+                var tempCategory = dgvOp3_Benefits.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dgvOp3_Benefits.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempValue = dgvOp3_Benefits.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option3Benefit.BenefitCategory = tempCategory;
+                option3Benefit.BenefitDescription = tempDescription;
+                option3Benefit.BenefitValue = tempValue;
+
+                option3Benefits.Add(option3Benefit);
+            }
+
+            option3.Benefits = option3Benefits;
+
+            //Costs
+            List<BusinessCaseModel.Cost> option3Costs = new List<BusinessCaseModel.Cost>();
+
+            rowsCount = dgvOp3_Costs.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Cost option3Cost = new BusinessCaseModel.Cost();
+                var tempCategory = dgvOp3_Costs.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dgvOp3_Costs.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempValue = dgvOp3_Costs.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempType = dgvOp3_Costs.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                option3Cost.ExpenseCategory = tempCategory;
+                option3Cost.CostDescription = tempDescription;
+                option3Cost.ExpenseValue = tempValue;
+                option3Cost.ExpenseType = tempType;
+
+                option3Costs.Add(option3Cost);
+            }
+
+            option3.Costs = option3Costs;
+
+            //Feasibility
+            List<BusinessCaseModel.Feasibility> option3Feasibilities = new List<BusinessCaseModel.Feasibility>();
+
+            rowsCount = dgvOp3_Feasibility.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Feasibility option3Feasibility = new BusinessCaseModel.Feasibility();
+                var tempSolution = dgvOp3_Feasibility.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempRating = dgvOp3_Feasibility.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempMethod = dgvOp3_Feasibility.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option3Feasibility.Solution = tempSolution;
+                option3Feasibility.FeasibilityRating = tempRating;
+                option3Feasibility.AssementMethod = tempMethod;
+
+                option3Feasibilities.Add(option3Feasibility);
+            }
+
+            option3.Feasibilities = option3Feasibilities;
+
+            //Risks
+            List<BusinessCaseModel.Risk> option3Risks = new List<BusinessCaseModel.Risk>();
+
+            rowsCount = dgvOp3_Risks.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Risk option3Risk = new BusinessCaseModel.Risk();
+                var tempDescr = dgvOp3_Risks.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempLikelihood = dgvOp3_Risks.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempImpact = dgvOp3_Risks.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempMitigation = dgvOp3_Risks.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                option3Risk.RiskDescription = tempDescr;
+                option3Risk.RiskLikelihood = tempLikelihood;
+                option3Risk.RiskImpact = tempImpact;
+                option3Risk.RiskMitgation = tempMitigation;
+
+                option3Risks.Add(option3Risk);
+            }
+
+            option3.Risks = option3Risks;
+
+            //Issues
+            List<BusinessCaseModel.Issue> option3Issues = new List<BusinessCaseModel.Issue>();
+
+            rowsCount = dgvOp3_Issues.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.Issue option3Issue = new BusinessCaseModel.Issue();
+                var tempDescr = dgvOp3_Issues.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempPriority = dgvOp3_Issues.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempAction = dgvOp3_Issues.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                option3Issue.IssueDescription = tempDescr;
+                option3Issue.IssuePriority = tempPriority;
+                option3Issue.ResolveAction = tempAction;
+
+                option3Issues.Add(option3Issue);
+            }
+
+            option3.Issues = option3Issues;
+
+            option3.Assumptions = txtOp3_Assumptions.Text;
+            #endregion
+
+            newBusinessCaseModel.AlternativeSolutions = new List<BusinessCaseModel.AlternativeSolution>() { option1, option2, option3 };
+
+            ///Recommended Solution
+            //Description
+            newBusinessCaseModel.RecommendedSolutionDescription = txtRecommendedSolutionDescription.Text;
+
+            //Solution Ratings
+            List<BusinessCaseModel.SolutionRating> solutionRatings = new List<BusinessCaseModel.SolutionRating>();
+
+            rowsCount = dgvSolutionRating.Rows.Count - 1;
+
+            for (int i = 0; i < rowsCount; i++)
+            {
+                BusinessCaseModel.SolutionRating solutionRating = new BusinessCaseModel.SolutionRating();
+                var tempCriteria = dgvSolutionRating.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempSolution1 = dgvSolutionRating.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempSolution2 = dgvSolutionRating.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempSolution3 = dgvSolutionRating.Rows[i].Cells[3].Value?.ToString() ?? "";
+                solutionRating.AssementCriteria = tempCriteria;
+                solutionRating.Solution1_Score = tempSolution1;
+                solutionRating.Solution2_Score = tempSolution2;
+                solutionRating.Solution3_Score = tempSolution3;
+
+                solutionRatings.Add(solutionRating);
+            }
+
+            newBusinessCaseModel.SolutionRatings = solutionRatings;
+
+            string recommendedSolutionChosen = "";
+
+            if (radSolution1.Checked)
+                recommendedSolutionChosen = "1";
+            else if (radSolution2.Checked)
+                recommendedSolutionChosen = "2";
+            else
+                recommendedSolutionChosen = "3";
+
+            newBusinessCaseModel.RecommendedSolutionChosen = recommendedSolutionChosen;
+
+            ///Implementation Approach
+            newBusinessCaseModel.ProjectDescription = txtIprojDescription.Text;
+            newBusinessCaseModel.ProjectInitiation = txtIAProjectInitiation.Text;
+            newBusinessCaseModel.ProjectPlanning = txtIAProjectPlanning.Text;
+            newBusinessCaseModel.ProjectExecution = txtIAProjectExecution.Text;
+            newBusinessCaseModel.ProjectClosure = txtIAProjectClosure.Text;
+            newBusinessCaseModel.ProjectManagement = txtIAProjectManagement.Text;
+
+            ///Appendix
+            newBusinessCaseModel.Appendix = txtAppendix.Text;
+
+            //Convert to JSON
+            List<VersionControl<BusinessCaseModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentBusinessCaseModel, newBusinessCaseModel))
+            {
+                VersionControl<BusinessCaseModel>.DocumentModel documentModel = new VersionControl<BusinessCaseModel>.DocumentModel(newBusinessCaseModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+                currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(JsonConvert.SerializeObject(newBusinessCaseModel));
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "BusinessCase");
+                MessageBox.Show("Business case document saved successfully", "save", MessageBoxButtons.OK);
+            }
+
+            progress = 1;
+
+            MessageBox.Show(progress.ToString());
         }
     }
 }

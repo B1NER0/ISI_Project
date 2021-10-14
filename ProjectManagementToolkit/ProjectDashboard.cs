@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
 
 namespace ProjectManagementToolkit
 {
@@ -33,7 +34,6 @@ namespace ProjectManagementToolkit
         double executionPercentage = 0;
         double closingPercentage = 0;
 
-
         // Made lists public for 'Complete' buttons to work
         List<string> closingDocuments = new List<string>();
         List<string> initiationDocuments = new List<string>();
@@ -44,12 +44,13 @@ namespace ProjectManagementToolkit
         double[] yValues1 = new double[4];
         double[] yValues2 = new double[4];
 
+
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
-
+            BusinessCaseDocumentForm bussinessCase = new BusinessCaseDocumentForm();
             List<string> localDocuments = getLocalDocuments();
 
             lblProjectName.Text = projectModel.ProjectName;
@@ -72,7 +73,7 @@ namespace ProjectManagementToolkit
                 initiationDocuments.Add("ProjectOfficeCheckList");
                 initiationDocuments.Add("PhaseReviewFormInitiation");
                 initiationDocuments.Add("TermOfReferenceDocument");
-
+                
                 lblInitiationProgress.Text = "Progress: 0%";
                 pbarInitiation.Value = 0;
                 pbarInitiation.Maximum = initiationDocuments.Count;
@@ -80,6 +81,7 @@ namespace ProjectManagementToolkit
                 {
                     dgvInitiation.Rows.Add();
                     dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
+
                     if (localDocuments.Contains(initiationDocuments[i]))
                     {
                         initationProgressVal++;

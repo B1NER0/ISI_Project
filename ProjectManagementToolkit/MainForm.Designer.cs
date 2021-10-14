@@ -193,6 +193,7 @@
             this.mPMMToolStripMenuItem.Name = "mPMMToolStripMenuItem";
             this.mPMMToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.mPMMToolStripMenuItem.Text = "Project Initiation";
+            this.mPMMToolStripMenuItem.Click += new System.EventHandler(this.mPMMToolStripMenuItem_Click);
             // 
             // developABusinessCaseToolStripMenuItem
             // 
