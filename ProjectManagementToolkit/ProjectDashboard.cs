@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
+using ProjectManagementToolkit.MPMM.MPMM_Document_Models;
 
 namespace ProjectManagementToolkit
 {
@@ -50,8 +51,25 @@ namespace ProjectManagementToolkit
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
+
+            //Verander Json
+            string json1 = JsonHelper.loadDocument(Settings.Default.ProjectID, "BusinessCase");
+
+            //Generate new form
             BusinessCaseDocumentForm bussinessCase = new BusinessCaseDocumentForm();
+            //Get localdocs
             List<string> localDocuments = getLocalDocuments();
+
+            //Check versions
+            VersionControl<BusinessCaseModel> versionControl = JsonConvert.DeserializeObject<VersionControl<BusinessCaseModel>>(json1);
+
+            //Get current businesscaseModel
+            BusinessCaseModel currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
+
+            //Extract Progress
+            string tester = currentBusinessCaseModel.Progress;
+
+            MessageBox.Show(tester);
 
             lblProjectName.Text = projectModel.ProjectName;
 

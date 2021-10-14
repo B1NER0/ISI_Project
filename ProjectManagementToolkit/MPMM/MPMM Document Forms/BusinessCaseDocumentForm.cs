@@ -26,7 +26,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         Color TABLE_HEADER_COLOR = Color.FromArgb(73, 173, 252);
         Color TABLE_SUBHEADER_COLOR = Color.FromArgb(255, 255, 0);
 
-        public int progress;
+       // public int progress;
 
         public BusinessCaseDocumentForm()
         {
@@ -45,7 +45,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newBusinessCaseModel.IssueDate = dgvDocInfo.Rows[2].Cells[1].Value.ToString();
             newBusinessCaseModel.LastSavedDate = dgvDocInfo.Rows[3].Cells[1].Value.ToString();
             newBusinessCaseModel.FileName = dgvDocInfo.Rows[4].Cells[1].Value.ToString();
-
+            newBusinessCaseModel.Progress = "DONE";
 
             //Document History
             var documentHistories = new List<BusinessCaseModel.DocumentHistory>();
@@ -520,8 +520,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 MessageBox.Show("Business case document saved successfully", "save", MessageBoxButtons.OK);
             }
 
-            progress = 0;
-            MessageBox.Show(progress.ToString());
+
         }
 
         public void LoadDoc()
@@ -530,6 +529,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             List<string[]> documentInfo = new List<string[]>();
             newBusinessCaseModel = new BusinessCaseModel();
             currentBusinessCaseModel = new BusinessCaseModel();
+
+           
 
             if (json != "")
             {
@@ -547,6 +548,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 documentInfo.Add(new string[] { "Issue Date", currentBusinessCaseModel.IssueDate });
                 documentInfo.Add(new string[] { "Last Save Date", currentBusinessCaseModel.LastSavedDate });
                 documentInfo.Add(new string[] { "File Name", currentBusinessCaseModel.FileName });
+
+               
+
+              
 
                 foreach (var row in documentInfo)
                 {
@@ -573,6 +578,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 txtProblemAnalysis.Text = currentBusinessCaseModel.ProblemAnalysis;
                 txtBusinessProblem.Text = currentBusinessCaseModel.BusinessProblem;
                 txtBusinessOppurtunity.Text = currentBusinessCaseModel.BusinessOpportunity;
+
+                string tester = currentBusinessCaseModel.Progress;
+
+                MessageBox.Show(tester);
 
                 ///Alternative Solution
                 ///Solution 1
@@ -1959,6 +1968,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newBusinessCaseModel.IssueDate = dgvDocInfo.Rows[2].Cells[1].Value.ToString();
             newBusinessCaseModel.LastSavedDate = dgvDocInfo.Rows[3].Cells[1].Value.ToString();
             newBusinessCaseModel.FileName = dgvDocInfo.Rows[4].Cells[1].Value.ToString();
+            newBusinessCaseModel.Progress = "UNDONE";
 
 
             //Document History
@@ -2434,9 +2444,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 MessageBox.Show("Business case document saved successfully", "save", MessageBoxButtons.OK);
             }
 
-            progress = 1;
-
-            MessageBox.Show(progress.ToString());
         }
     }
 }
