@@ -549,10 +549,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 documentInfo.Add(new string[] { "Last Save Date", currentBusinessCaseModel.LastSavedDate });
                 documentInfo.Add(new string[] { "File Name", currentBusinessCaseModel.FileName });
 
-               
-
-              
-
                 foreach (var row in documentInfo)
                 {
                     dgvDocInfo.Rows.Add(row);
@@ -581,7 +577,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
                 string tester = currentBusinessCaseModel.Progress;
 
-                MessageBox.Show(tester);
+                //MessageBox.Show(tester);
 
                 ///Alternative Solution
                 ///Solution 1
