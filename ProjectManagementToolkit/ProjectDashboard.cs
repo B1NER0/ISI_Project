@@ -47,6 +47,7 @@ namespace ProjectManagementToolkit
         double[] yValues2 = new double[4];
 
 
+      
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
@@ -63,10 +64,17 @@ namespace ProjectManagementToolkit
             //Check versions
             VersionControl<BusinessCaseModel> versionControl = JsonConvert.DeserializeObject<VersionControl<BusinessCaseModel>>(json1);
             //Get current businesscaseModel
-            BusinessCaseModel currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
-            //Extract Progress
-            string IsBusinessCaseModelDone = currentBusinessCaseModel.Progress;
+            BusinessCaseModel currentBusinessCaseModel;
+            string IsBusinessCaseModelDone;
 
+            if (versionControl != null)
+            {
+                currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
+                IsBusinessCaseModelDone = currentBusinessCaseModel.Progress;
+
+            }
+            else
+                IsBusinessCaseModelDone = "";
 
 
 
@@ -74,48 +82,111 @@ namespace ProjectManagementToolkit
             string json2 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FeasibilityStudy");
             FeasibiltyStudyDocumentForm feasibilityStudy = new FeasibiltyStudyDocumentForm();
             VersionControl<FeasibilityStudyModel> versionControl1 = JsonConvert.DeserializeObject<VersionControl<FeasibilityStudyModel>>(json2);
-            FeasibilityStudyModel currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
-            string IsFeasibilityStudyDone = currentFeasibilityStudyModel.FeasibilityStudyProgress;
+            FeasibilityStudyModel currentFeasibilityStudyModel; //= JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
+            string IsFeasibilityStudyDone;
+
+
+            if (versionControl1 != null)
+            {
+                currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
+                IsFeasibilityStudyDone = currentFeasibilityStudyModel.FeasibilityStudyProgress;
+
+            }
+            else
+                IsFeasibilityStudyDone = "";
+
+
 
 
             //////PROJECT CHARTER/////////
             string json3 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectCharter");
             ProjectCharterForm projectCharter = new ProjectCharterForm();
             VersionControl<ProjectCharterModel> versionControl2 = JsonConvert.DeserializeObject<VersionControl<ProjectCharterModel>>(json3);
-            ProjectCharterModel currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
-            string IsProjectCharterDone = currentProjectCharter.ProjectCharterProgress;
+
+            ProjectCharterModel currentProjectCharter;
+            string IsProjectCharterDone;
+
+            if(versionControl2 != null)
+            {
+                currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
+                IsProjectCharterDone = currentProjectCharter.ProjectCharterProgress;
+
+            }
+            else
+                IsProjectCharterDone = "";
+
+
 
 
             //////JOB DESCRIPTION/////////
             string json4 = JsonHelper.loadDocument(Settings.Default.ProjectID, "JobDescription");
             JobDescriptionDocumentForm jobDescription = new JobDescriptionDocumentForm();
             VersionControl<JobDescriptionModel> versionControl3 = JsonConvert.DeserializeObject<VersionControl<JobDescriptionModel>>(json4);
-            JobDescriptionModel currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
-            string IsJobDescriptionDone = currentJobDescription.JobDescriptionProgress;
+            JobDescriptionModel currentJobDescription;
+            string IsJobDescriptionDone;
+
+            if (versionControl3 != null)
+            {
+                currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
+                IsJobDescriptionDone = currentJobDescription.JobDescriptionProgress;
+
+            }
+            else
+                IsJobDescriptionDone = "";
 
 
             //////PROJECT OFFICE CHECKLIST/////////
             string json5 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectOfficeCheckList");
             ProjectOfficeChecklistDocumentForm projectOfficeChecklist = new ProjectOfficeChecklistDocumentForm();
             VersionControl<ProjectOfficeChecklistModel> versionControl4 = JsonConvert.DeserializeObject<VersionControl<ProjectOfficeChecklistModel>>(json5);
-            ProjectOfficeChecklistModel currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
-            string IsProjectOfficeChecklistDone = currentProjectOfficeChecklist.ProjectOfficeCheckListProgress;
+            ProjectOfficeChecklistModel currentProjectOfficeChecklist;
+            string IsProjectOfficeChecklistDone;
+
+            if (versionControl4 != null)
+            {
+                currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
+                IsProjectOfficeChecklistDone = currentProjectOfficeChecklist.ProjectOfficeCheckListProgress;
+
+            }
+            else
+                IsProjectOfficeChecklistDone = "";
 
 
             //////PHASE REVIEW FORM INITIATION/////////
             string json6 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewFormInitiation");
             PhaseReviewFormInitiationDocumentForm phaseReviewFormInitiation = new PhaseReviewFormInitiationDocumentForm();
             VersionControl<PhaseReviewFormInitiationModel> versionControl5 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewFormInitiationModel>>(json6);
-            PhaseReviewFormInitiationModel currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
-            string IsPhaseReviewInitiationDone = currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress;
+            PhaseReviewFormInitiationModel currentPhaseReviewFormInitiation;
+            string IsPhaseReviewInitiationDone;
+
+            if (versionControl5 != null)
+            {
+                currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
+                IsPhaseReviewInitiationDone = currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress; 
+
+            }
+            else
+                IsPhaseReviewInitiationDone = "";
 
 
             //////TERMS OF REFERENCE/////////
             string json7 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TermOfReferenceDocument");
             TermOfReferenceDocumentForm termOfReference = new TermOfReferenceDocumentForm();
             VersionControl<TermsOfReferenceModel> versionControl6 = JsonConvert.DeserializeObject<VersionControl<TermsOfReferenceModel>>(json7);
-            TermsOfReferenceModel currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
-            string IsTermOfReferenceDone = currentTermOfReference.TermOfReferenceProgress;
+            TermsOfReferenceModel currentTermOfReference;
+            string IsTermOfReferenceDone;
+
+            if (versionControl6 != null)
+            {
+                currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
+                IsTermOfReferenceDone = currentTermOfReference.TermOfReferenceProgress;
+
+            }
+            else
+                IsTermOfReferenceDone = "";
+
+
+
 
             //Get localdocs
             List<string> localDocuments = getLocalDocuments();
