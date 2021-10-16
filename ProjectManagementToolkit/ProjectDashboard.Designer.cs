@@ -56,10 +56,7 @@
             this.pbarInitiation = new System.Windows.Forms.ProgressBar();
             this.tabInitiation = new System.Windows.Forms.TabControl();
             this.tbpInitiation = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvInitiation = new System.Windows.Forms.DataGridView();
-            this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoneInitation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblInitiationProgress = new System.Windows.Forms.Label();
             this.tbpPlanning = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -85,13 +82,15 @@
             this.lblClosingProgress = new System.Windows.Forms.Label();
             this.pbarClosing = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabTest = new System.Windows.Forms.TabPage();
             this.pbarOverall = new System.Windows.Forms.ProgressBar();
             this.lblOverallProgress = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabTest = new System.Windows.Forms.TabPage();
-            this.circleInit = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartInit = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInitiation.SuspendLayout();
             this.tbpInitiation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInitiation)).BeginInit();
@@ -103,8 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClosing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            this.tabTest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circleInit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartInit)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -134,7 +132,7 @@
             this.lblInitiation.AutoSize = true;
             this.lblInitiation.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInitiation.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblInitiation.Location = new System.Drawing.Point(8, 13);
+            this.lblInitiation.Location = new System.Drawing.Point(527, 27);
             this.lblInitiation.Name = "lblInitiation";
             this.lblInitiation.Size = new System.Drawing.Size(103, 22);
             this.lblInitiation.TabIndex = 7;
@@ -142,10 +140,10 @@
             // 
             // pbarInitiation
             // 
-            this.pbarInitiation.Location = new System.Drawing.Point(116, 4);
-            this.pbarInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarInitiation.Location = new System.Drawing.Point(635, 18);
+            this.pbarInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.pbarInitiation.Name = "pbarInitiation";
-            this.pbarInitiation.Size = new System.Drawing.Size(583, 40);
+            this.pbarInitiation.Size = new System.Drawing.Size(82, 40);
             this.pbarInitiation.TabIndex = 11;
             // 
             // tabInitiation
@@ -157,7 +155,7 @@
             this.tabInitiation.Controls.Add(this.tabTest);
             this.tabInitiation.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabInitiation.Location = new System.Drawing.Point(15, 297);
-            this.tabInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tabInitiation.Name = "tabInitiation";
             this.tabInitiation.SelectedIndex = 0;
             this.tabInitiation.Size = new System.Drawing.Size(727, 559);
@@ -166,29 +164,18 @@
             // tbpInitiation
             // 
             this.tbpInitiation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.tbpInitiation.Controls.Add(this.button1);
+            this.tbpInitiation.Controls.Add(this.chartInit);
             this.tbpInitiation.Controls.Add(this.dgvInitiation);
             this.tbpInitiation.Controls.Add(this.lblInitiationProgress);
             this.tbpInitiation.Controls.Add(this.pbarInitiation);
             this.tbpInitiation.Controls.Add(this.lblInitiation);
             this.tbpInitiation.Location = new System.Drawing.Point(4, 21);
-            this.tbpInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInitiation.Name = "tbpInitiation";
-            this.tbpInitiation.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInitiation.Padding = new System.Windows.Forms.Padding(2);
             this.tbpInitiation.Size = new System.Drawing.Size(719, 534);
             this.tbpInitiation.TabIndex = 0;
             this.tbpInitiation.Text = "Initation Phase";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(609, 52);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 34);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Complete";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvInitiation
             // 
@@ -209,8 +196,8 @@
             this.InitiationDocument,
             this.DoneInitation});
             this.dgvInitiation.EnableHeadersVisualStyles = false;
-            this.dgvInitiation.Location = new System.Drawing.Point(12, 90);
-            this.dgvInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInitiation.Location = new System.Drawing.Point(25, 187);
+            this.dgvInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInitiation.Name = "dgvInitiation";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -223,29 +210,13 @@
             this.dgvInitiation.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvInitiation.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvInitiation.Size = new System.Drawing.Size(687, 376);
+            this.dgvInitiation.Size = new System.Drawing.Size(687, 220);
             this.dgvInitiation.TabIndex = 17;
-            // 
-            // InitiationDocument
-            // 
-            this.InitiationDocument.HeaderText = "Initation Document";
-            this.InitiationDocument.MinimumWidth = 6;
-            this.InitiationDocument.Name = "InitiationDocument";
-            this.InitiationDocument.ReadOnly = true;
-            // 
-            // DoneInitation
-            // 
-            this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DoneInitation.HeaderText = "Done?";
-            this.DoneInitation.MinimumWidth = 6;
-            this.DoneInitation.Name = "DoneInitation";
-            this.DoneInitation.ReadOnly = true;
-            this.DoneInitation.Width = 48;
             // 
             // lblInitiationProgress
             // 
             this.lblInitiationProgress.AutoSize = true;
-            this.lblInitiationProgress.Location = new System.Drawing.Point(113, 56);
+            this.lblInitiationProgress.Location = new System.Drawing.Point(632, 70);
             this.lblInitiationProgress.Name = "lblInitiationProgress";
             this.lblInitiationProgress.Size = new System.Drawing.Size(65, 14);
             this.lblInitiationProgress.TabIndex = 12;
@@ -260,9 +231,9 @@
             this.tbpPlanning.Controls.Add(this.pbarPlanning);
             this.tbpPlanning.Controls.Add(this.label2);
             this.tbpPlanning.Location = new System.Drawing.Point(4, 21);
-            this.tbpPlanning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.tbpPlanning.Name = "tbpPlanning";
-            this.tbpPlanning.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpPlanning.Padding = new System.Windows.Forms.Padding(2);
             this.tbpPlanning.Size = new System.Drawing.Size(719, 534);
             this.tbpPlanning.TabIndex = 1;
             this.tbpPlanning.Text = "Planning Phase";
@@ -270,7 +241,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(614, 48);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 37);
             this.button2.TabIndex = 22;
@@ -298,7 +269,7 @@
             this.DonePlanning});
             this.dgvPlanning.EnableHeadersVisualStyles = false;
             this.dgvPlanning.Location = new System.Drawing.Point(12, 90);
-            this.dgvPlanning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlanning.Name = "dgvPlanning";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -342,7 +313,7 @@
             // pbarPlanning
             // 
             this.pbarPlanning.Location = new System.Drawing.Point(116, 4);
-            this.pbarPlanning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.pbarPlanning.Name = "pbarPlanning";
             this.pbarPlanning.Size = new System.Drawing.Size(583, 40);
             this.pbarPlanning.TabIndex = 19;
@@ -367,7 +338,7 @@
             this.tbpExecution.Controls.Add(this.pbarExecution);
             this.tbpExecution.Controls.Add(this.label5);
             this.tbpExecution.Location = new System.Drawing.Point(4, 21);
-            this.tbpExecution.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpExecution.Margin = new System.Windows.Forms.Padding(2);
             this.tbpExecution.Name = "tbpExecution";
             this.tbpExecution.Size = new System.Drawing.Size(719, 534);
             this.tbpExecution.TabIndex = 2;
@@ -376,7 +347,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(598, 48);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 39);
             this.button3.TabIndex = 22;
@@ -404,7 +375,7 @@
             this.dataGridViewCheckBoxColumn2});
             this.dgvExecution.EnableHeadersVisualStyles = false;
             this.dgvExecution.Location = new System.Drawing.Point(12, 90);
-            this.dgvExecution.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvExecution.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExecution.Name = "dgvExecution";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -448,7 +419,7 @@
             // pbarExecution
             // 
             this.pbarExecution.Location = new System.Drawing.Point(116, 4);
-            this.pbarExecution.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarExecution.Margin = new System.Windows.Forms.Padding(2);
             this.pbarExecution.Name = "pbarExecution";
             this.pbarExecution.Size = new System.Drawing.Size(583, 40);
             this.pbarExecution.TabIndex = 19;
@@ -481,7 +452,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(607, 48);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(92, 42);
             this.button4.TabIndex = 26;
@@ -509,7 +480,7 @@
             this.dataGridViewCheckBoxColumn3});
             this.dgvClosing.EnableHeadersVisualStyles = false;
             this.dgvClosing.Location = new System.Drawing.Point(12, 90);
-            this.dgvClosing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvClosing.Margin = new System.Windows.Forms.Padding(2);
             this.dgvClosing.Name = "dgvClosing";
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -553,7 +524,7 @@
             // pbarClosing
             // 
             this.pbarClosing.Location = new System.Drawing.Point(116, 4);
-            this.pbarClosing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarClosing.Margin = new System.Windows.Forms.Padding(2);
             this.pbarClosing.Name = "pbarClosing";
             this.pbarClosing.Size = new System.Drawing.Size(583, 40);
             this.pbarClosing.TabIndex = 23;
@@ -569,10 +540,20 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "Progress:";
             // 
+            // tabTest
+            // 
+            this.tabTest.Location = new System.Drawing.Point(4, 21);
+            this.tabTest.Name = "tabTest";
+            this.tabTest.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTest.Size = new System.Drawing.Size(719, 534);
+            this.tabTest.TabIndex = 4;
+            this.tabTest.Text = "tabPage1";
+            this.tabTest.UseVisualStyleBackColor = true;
+            // 
             // pbarOverall
             // 
             this.pbarOverall.Location = new System.Drawing.Point(15, 40);
-            this.pbarOverall.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarOverall.Margin = new System.Windows.Forms.Padding(2);
             this.pbarOverall.Name = "pbarOverall";
             this.pbarOverall.Size = new System.Drawing.Size(699, 40);
             this.pbarOverall.TabIndex = 18;
@@ -634,7 +615,7 @@
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar100;
             series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             series4.Legend = "Legend1";
-            series4.Name = "Uncompleted";
+            series4.Name = "Not Started";
             this.chart2.Series.Add(series3);
             this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(356, 186);
@@ -651,29 +632,18 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "label1";
             // 
-            // tabTest
+            // chartInit
             // 
-            this.tabTest.Controls.Add(this.circleInit);
-            this.tabTest.Location = new System.Drawing.Point(4, 21);
-            this.tabTest.Name = "tabTest";
-            this.tabTest.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTest.Size = new System.Drawing.Size(719, 534);
-            this.tabTest.TabIndex = 4;
-            this.tabTest.Text = "tabPage1";
-            this.tabTest.UseVisualStyleBackColor = true;
-            // 
-            // circleInit
-            // 
-            this.circleInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.circleInit.BorderlineColor = System.Drawing.Color.Black;
-            this.circleInit.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.chartInit.BorderlineColor = System.Drawing.Color.Black;
+            this.chartInit.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             chartArea1.Name = "ChartArea1";
-            this.circleInit.ChartAreas.Add(chartArea1);
+            this.chartInit.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.circleInit.Legends.Add(legend1);
-            this.circleInit.Location = new System.Drawing.Point(17, 17);
-            this.circleInit.Name = "circleInit";
-            this.circleInit.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            this.chartInit.Legends.Add(legend1);
+            this.chartInit.Location = new System.Drawing.Point(25, 18);
+            this.chartInit.Name = "chartInit";
+            this.chartInit.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -681,10 +651,28 @@
             series1.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.circleInit.Series.Add(series1);
-            this.circleInit.Size = new System.Drawing.Size(254, 186);
-            this.circleInit.TabIndex = 22;
-            this.circleInit.Text = "Overall Progress";
+            this.chartInit.Series.Add(series1);
+            this.chartInit.Size = new System.Drawing.Size(340, 153);
+            this.chartInit.TabIndex = 23;
+            this.chartInit.Text = "Overall Progress";
+            // 
+            // InitiationDocument
+            // 
+            this.InitiationDocument.HeaderText = "Initation Document";
+            this.InitiationDocument.MinimumWidth = 6;
+            this.InitiationDocument.Name = "InitiationDocument";
+            this.InitiationDocument.ReadOnly = true;
+            // 
+            // DoneInitation
+            // 
+            this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DoneInitation.HeaderText = "Done?";
+            this.DoneInitation.MinimumWidth = 6;
+            this.DoneInitation.Name = "DoneInitation";
+            this.DoneInitation.ReadOnly = true;
+            this.DoneInitation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoneInitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DoneInitation.Width = 48;
             // 
             // ProjectDashboard
             // 
@@ -718,8 +706,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClosing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            this.tabTest.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circleInit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartInit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -738,8 +725,6 @@
         private System.Windows.Forms.Label lblInitiationProgress;
         private System.Windows.Forms.TabPage tbpClosure;
         private System.Windows.Forms.DataGridView dgvInitiation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InitiationDocument;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn DoneInitation;
         private System.Windows.Forms.DataGridView dgvPlanning;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanningDocument;
         private System.Windows.Forms.DataGridViewCheckBoxColumn DonePlanning;
@@ -760,7 +745,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.ProgressBar pbarOverall;
         private System.Windows.Forms.Label lblOverallProgress;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -768,6 +752,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabTest;
-        private System.Windows.Forms.DataVisualization.Charting.Chart circleInit;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartInit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InitiationDocument;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DoneInitation;
     }
 }

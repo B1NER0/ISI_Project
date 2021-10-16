@@ -15,6 +15,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Models;
 using ProjectManagementToolkit.Classes;
+using System.Drawing.Drawing2D;
 
 namespace ProjectManagementToolkit
 {
@@ -187,6 +188,175 @@ namespace ProjectManagementToolkit
 
 
 
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /////NEW
+            /////
+
+
+
+            //List<string> localDocuments = getLocalDocuments();
+
+            //lblProjectName.Text = projectModel.ProjectName;
+
+            //chart1.ChartAreas[0].BackColor = Color.Transparent;
+            //chart1.Legends[0].BackColor = Color.Transparent;
+            //chart2.Legends[0].BackColor = Color.Transparent;
+
+            //if (localDocuments == null)
+            //{
+            //    MessageBox.Show("No documents have been added yet.", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else
+            //{
+
+            //    initiationDocuments.Add("BusinessCase");
+            //    initiationDocuments.Add("FeasibilityStudy");
+            //    initiationDocuments.Add("ProjectCharter");
+            //    initiationDocuments.Add("JobDescription");
+            //    initiationDocuments.Add("ProjectOfficeCheckList");
+            //    initiationDocuments.Add("PhaseReviewFormInitiation");
+            //    initiationDocuments.Add("TermOfReferenceDocument");
+
+            //    lblInitiationProgress.Text = "Progress: 0%";
+            //    pbarInitiation.Value = 0;
+            //    pbarInitiation.Maximum = initiationDocuments.Count;
+            //    for (int i = 0; i < initiationDocuments.Count; i++)
+            //    {
+            //        dgvInitiation.Rows.Add();
+            //        dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
+
+            //        if (localDocuments.Contains(initiationDocuments[i]))
+            //        {
+            //            initationProgressVal++;
+            //            if (initiationDocuments[i] == "BusinessCase" && IsBusinessCaseModelDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            else if (initiationDocuments[i] == "FeasibilityStudy" && IsFeasibilityStudyDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            else if (initiationDocuments[i] == "ProjectCharter" && IsProjectCharterDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            else if (initiationDocuments[i] == "JobDescription" && IsJobDescriptionDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            else if (initiationDocuments[i] == "ProjectOfficeCheckList" && IsProjectOfficeChecklistDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            else if (initiationDocuments[i] == "PhaseReviewFormInitiation" && IsPhaseReviewInitiationDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            else if (initiationDocuments[i] == "TermOfReferenceDocument" && IsTermOfReferenceDone == "DONE")
+            //            {
+            //                dgvInitiation.Rows[i].Cells[1].Value = true;
+            //                pbarInitiation.Value = (int)initationProgressVal;
+            //                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+            //                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+
+            //                xValues1[0] = "Initiation";
+            //                yValues1[0] = initationPercentage;
+
+            //                yValues2[0] = 100 - initationPercentage;
+
+            //                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+            //                chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            //            }
+            //            //dgvInitiation.Rows[i].Cells[1].Value = true;
+            //        }
+            //        else
+            //        {
+            //            dgvInitiation.Rows[i].Cells[1].Value = false;
+            //        }
+            //    }
+            //}
+
+
+            ///////////
 
             //Get localdocs
             List<string> localDocuments = getLocalDocuments();
@@ -196,6 +366,11 @@ namespace ProjectManagementToolkit
             chart1.ChartAreas[0].BackColor = Color.Transparent;
             chart1.Legends[0].BackColor = Color.Transparent;
             chart2.Legends[0].BackColor = Color.Transparent;
+
+
+          
+
+            int comp = 0, uncomp = 0, inprog = 0;
 
             if (localDocuments == null)
             {
@@ -223,120 +398,226 @@ namespace ProjectManagementToolkit
                     if (localDocuments.Contains(initiationDocuments[i]))
                     {
                         initationProgressVal++;
-                        if(initiationDocuments[i] == "BusinessCase" && IsBusinessCaseModelDone == "DONE")
+                        if(initiationDocuments[i] == "BusinessCase")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+                            if(IsBusinessCaseModelDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                                inprog++;
+                            }
+                            else
+                            {
+                                comp++;
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            yValues2[0] = 100 - initationPercentage;
+                                yValues2[0] = 100 - initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
+                            //dgvInitiation.Rows[i].Cells[1].Value = true;
+                            
                         }
-                        else if(initiationDocuments[i] == "FeasibilityStudy" && IsFeasibilityStudyDone == "DONE")
+                        else if(initiationDocuments[i] == "FeasibilityStudy")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                            if (IsFeasibilityStudyDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                                inprog++;
+                            }
+                            else
+                            {
+                                comp++;
+                            //    ((DataGridViewImageCell)dgvInitiation.Rows[i].Cells[1]).Value = ImagesData.greenCircle;
+                                // dgvInitiation.Rows[i].Cells[1].Value = true;
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            yValues2[0] = 100 - initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                yValues2[0] = 100 - initationPercentage;
+
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
                         }
-                        else if(initiationDocuments[i] == "ProjectCharter" && IsProjectCharterDone == "DONE")
+                        else if(initiationDocuments[i] == "ProjectCharter")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+                            if (IsProjectCharterDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192); ;
+                                inprog++;
+                            }
+                            else
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                comp++;
+                                //dgvInitiation.Rows[i].Cells[1].Value = true;
+                              //  ((DataGridViewImageCell)dgvInitiation.Rows[i].Cells[1]).Value = ImagesData.greenCircle;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            yValues2[0] = 100 - initationPercentage;
+                                yValues2[0] = 100 - initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
+                            
                         }
-                        else if (initiationDocuments[i] == "JobDescription" && IsJobDescriptionDone == "DONE")
+                        else if (initiationDocuments[i] == "JobDescription")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
+                            if(IsJobDescriptionDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                                inprog++;
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                            }
+                            else
+                            {
+                                comp++;
+                                //dgvInitiation.Rows[i].Cells[1].Value = true;
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            yValues2[0] = 100 - initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                yValues2[0] = 100 - initationPercentage;
+
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
+                            
                         }
-                        else if (initiationDocuments[i] == "ProjectOfficeCheckList" && IsProjectOfficeChecklistDone == "DONE")
+                        else if (initiationDocuments[i] == "ProjectOfficeCheckList")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                            if(IsProjectOfficeChecklistDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                                inprog++;
+                            }
+                            else
+                            {
+                                comp++;
+                                //dgvInitiation.Rows[i].Cells[1].Value = true;
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            yValues2[0] = 100 - initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                yValues2[0] = 100 - initationPercentage;
+
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
+                            
                         }
-                        else if (initiationDocuments[i] == "PhaseReviewFormInitiation" && IsPhaseReviewInitiationDone == "DONE")
+                        else if (initiationDocuments[i] == "PhaseReviewFormInitiation")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                            if(IsPhaseReviewInitiationDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                                inprog++;
+                            }
+                            else
+                            {
+                                // dgvInitiation.Rows[i].Cells[1].Value = true;
+                                comp++;
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            yValues2[0] = 100 - initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                yValues2[0] = 100 - initationPercentage;
+
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
+                            
                         }
-                        else if (initiationDocuments[i] == "TermOfReferenceDocument" && IsTermOfReferenceDone == "DONE")
+                        else if (initiationDocuments[i] == "TermOfReferenceDocument")
                         {
-                            dgvInitiation.Rows[i].Cells[1].Value = true;
-                            pbarInitiation.Value = (int)initationProgressVal;
-                            initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-                            lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            xValues1[0] = "Initiation";
-                            yValues1[0] = initationPercentage;
+                            if (IsTermOfReferenceDone == "UNDONE")
+                            {
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                                inprog++;
+                            }
+                            else
+                            {
+                                //  dgvInitiation.Rows[i].Cells[1].Value = true;  0, 192, 192
+                                comp++;
+                                dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                                pbarInitiation.Value = (int)initationProgressVal;
+                                initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
+                                lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
-                            yValues2[0] = 100 - initationPercentage;
+                                xValues1[0] = "Initiation";
+                                yValues1[0] = initationPercentage;
 
-                            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                                yValues2[0] = 100 - initationPercentage;
+
+                                chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                                chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                            }
+                           
                         }
                         //dgvInitiation.Rows[i].Cells[1].Value = true;
                     }
                     else
                     {
-                        dgvInitiation.Rows[i].Cells[1].Value = false;
+                        uncomp++;
+                        //dgvInitiation.Rows[i].Cells[1].Value = false; 0, 192, 192
+                        //((DataGridViewImageCell)dgvInitiation.Rows[i].Cells[1]).Value = ImagesData.redCircle;
+                        dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.Gray;
                     }
+
                 }
 
-                
+                chartInit.ChartAreas[0].BackColor = Color.Transparent;
+                chartInit.Legends[0].BackColor = Color.Transparent;
+                chartInit.Legends[0].BackColor = Color.Transparent;
+                string[] xInit = { "Completed Tasks " + comp, "Not started Tasks " + uncomp, "In Progress Tasks " + inprog };
+                               
+                double[] yInit = {comp, uncomp, inprog };
+
+                 chartInit.Series["Series1"].Points.DataBindXY(xInit, yInit);
+                chartInit.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+                chartInit.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                chartInit.Legends[0].Enabled = true;
+
+                chartInit.Series["Series1"].Points[0].Color = Color.LimeGreen;
+                chartInit.Series["Series1"].Points[1].Color = Color.Gray;
+                chartInit.Series["Series1"].Points[2].Color = Color.FromArgb(0, 192, 192);
+
+                // dgvInitiation.Columns[3].Name = "TEST";
+
+
                 planningDocuments.Add("ProjectPlan");
                 planningDocuments.Add("ResourcePlan");
                 planningDocuments.Add("FinancialPlan");
@@ -372,7 +653,7 @@ namespace ProjectManagementToolkit
                         yValues2[1] = 100 - planningPercentage;
 
                         chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
@@ -433,7 +714,7 @@ namespace ProjectManagementToolkit
                         yValues2[2] = 100 - executionPercentage;
 
                         chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
@@ -466,7 +747,7 @@ namespace ProjectManagementToolkit
                         yValues2[3] = 100 - closingPercentage;
 
                         chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
@@ -478,7 +759,7 @@ namespace ProjectManagementToolkit
                         yValues2[3] = 100;
 
                         chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                        chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                         
                     }
                 }
@@ -489,7 +770,7 @@ namespace ProjectManagementToolkit
                 double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
                 lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
 
-                string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+                string[] xValues = { "Completed Tasks", "Not Started Tasks" };
                 double[] yValues = { overallPercentage, 100 - overallPercentage };
 
                 chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
@@ -549,7 +830,7 @@ namespace ProjectManagementToolkit
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
-            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            string[] xValues = { "Completed Tasks", "Not Started Tasks" };
             double[] yValues = { overallPercentage, 100 - overallPercentage };
 
             chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
@@ -574,7 +855,7 @@ namespace ProjectManagementToolkit
             yValues2[0] = 100 - initationPercentage;
 
             chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -596,7 +877,7 @@ namespace ProjectManagementToolkit
             double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
-            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            string[] xValues = { "Completed Tasks", "Not Started Tasks" };
             double[] yValues = { overallPercentage, 100 - overallPercentage };
 
             chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
@@ -620,7 +901,7 @@ namespace ProjectManagementToolkit
             yValues2[1] = 100 - planningPercentage;
 
             chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -642,7 +923,7 @@ namespace ProjectManagementToolkit
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
             ///
-            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            string[] xValues = { "Completed Tasks", "Not Started Tasks" };
             double[] yValues = { overallPercentage, 100 - overallPercentage };
 
             chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
@@ -666,7 +947,7 @@ namespace ProjectManagementToolkit
             yValues2[2] = 100 - executionPercentage;
 
             chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -688,7 +969,7 @@ namespace ProjectManagementToolkit
             lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
             ////////////////////////////////////////////////////////////////////////////
             ///
-            string[] xValues = { "Completed Tasks", "Uncompleted Tasks" };
+            string[] xValues = { "Completed Tasks", "Not Started Tasks" };
             double[] yValues = { overallPercentage, 100 - overallPercentage };
 
             chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
@@ -712,7 +993,11 @@ namespace ProjectManagementToolkit
             yValues2[3] = 100 - closingPercentage;
 
             chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-            chart2.Series["Uncompleted"].Points.DataBindXY(xValues1, yValues2);
+            chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
         }
+
+             
     }
 }
+
+
