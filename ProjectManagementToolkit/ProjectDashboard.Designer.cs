@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,17 +50,13 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label3 = new System.Windows.Forms.Label();
             this.lblProjectName = new System.Windows.Forms.Label();
-            this.lblInitiation = new System.Windows.Forms.Label();
-            this.pbarInitiation = new System.Windows.Forms.ProgressBar();
             this.tabInitiation = new System.Windows.Forms.TabControl();
             this.tbpInitiation = new System.Windows.Forms.TabPage();
+            this.lblInitNumTasks = new System.Windows.Forms.Label();
+            this.chartInit = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvInitiation = new System.Windows.Forms.DataGridView();
-            this.lblInitiationProgress = new System.Windows.Forms.Label();
             this.tbpPlanning = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvPlanning = new System.Windows.Forms.DataGridView();
@@ -87,12 +86,11 @@
             this.lblOverallProgress = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chartInit = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInitiation.SuspendLayout();
             this.tbpInitiation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartInit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInitiation)).BeginInit();
             this.tbpPlanning.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanning)).BeginInit();
@@ -102,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClosing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartInit)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -127,25 +124,6 @@
             this.lblProjectName.TabIndex = 6;
             this.lblProjectName.Text = "...";
             // 
-            // lblInitiation
-            // 
-            this.lblInitiation.AutoSize = true;
-            this.lblInitiation.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInitiation.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblInitiation.Location = new System.Drawing.Point(527, 27);
-            this.lblInitiation.Name = "lblInitiation";
-            this.lblInitiation.Size = new System.Drawing.Size(103, 22);
-            this.lblInitiation.TabIndex = 7;
-            this.lblInitiation.Text = "Progress:";
-            // 
-            // pbarInitiation
-            // 
-            this.pbarInitiation.Location = new System.Drawing.Point(635, 18);
-            this.pbarInitiation.Margin = new System.Windows.Forms.Padding(2);
-            this.pbarInitiation.Name = "pbarInitiation";
-            this.pbarInitiation.Size = new System.Drawing.Size(82, 40);
-            this.pbarInitiation.TabIndex = 11;
-            // 
             // tabInitiation
             // 
             this.tabInitiation.Controls.Add(this.tbpInitiation);
@@ -164,11 +142,9 @@
             // tbpInitiation
             // 
             this.tbpInitiation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.tbpInitiation.Controls.Add(this.lblInitNumTasks);
             this.tbpInitiation.Controls.Add(this.chartInit);
             this.tbpInitiation.Controls.Add(this.dgvInitiation);
-            this.tbpInitiation.Controls.Add(this.lblInitiationProgress);
-            this.tbpInitiation.Controls.Add(this.pbarInitiation);
-            this.tbpInitiation.Controls.Add(this.lblInitiation);
             this.tbpInitiation.Location = new System.Drawing.Point(4, 21);
             this.tbpInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInitiation.Name = "tbpInitiation";
@@ -176,6 +152,39 @@
             this.tbpInitiation.Size = new System.Drawing.Size(719, 534);
             this.tbpInitiation.TabIndex = 0;
             this.tbpInitiation.Text = "Initation Phase";
+            // 
+            // lblInitNumTasks
+            // 
+            this.lblInitNumTasks.AutoSize = true;
+            this.lblInitNumTasks.Location = new System.Drawing.Point(95, 88);
+            this.lblInitNumTasks.Name = "lblInitNumTasks";
+            this.lblInitNumTasks.Size = new System.Drawing.Size(39, 14);
+            this.lblInitNumTasks.TabIndex = 24;
+            this.lblInitNumTasks.Text = "label4";
+            // 
+            // chartInit
+            // 
+            this.chartInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.chartInit.BorderlineColor = System.Drawing.Color.Black;
+            this.chartInit.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            this.chartInit.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartInit.Legends.Add(legend1);
+            this.chartInit.Location = new System.Drawing.Point(25, 18);
+            this.chartInit.Name = "chartInit";
+            this.chartInit.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series1.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartInit.Series.Add(series1);
+            this.chartInit.Size = new System.Drawing.Size(340, 153);
+            this.chartInit.TabIndex = 23;
+            this.chartInit.Text = "Overall Progress";
             // 
             // dgvInitiation
             // 
@@ -212,15 +221,6 @@
             this.dgvInitiation.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInitiation.Size = new System.Drawing.Size(687, 220);
             this.dgvInitiation.TabIndex = 17;
-            // 
-            // lblInitiationProgress
-            // 
-            this.lblInitiationProgress.AutoSize = true;
-            this.lblInitiationProgress.Location = new System.Drawing.Point(632, 70);
-            this.lblInitiationProgress.Name = "lblInitiationProgress";
-            this.lblInitiationProgress.Size = new System.Drawing.Size(65, 14);
-            this.lblInitiationProgress.TabIndex = 12;
-            this.lblInitiationProgress.Text = "Progress: ";
             // 
             // tbpPlanning
             // 
@@ -622,40 +622,6 @@
             this.chart2.TabIndex = 23;
             this.chart2.Text = "Phases Progress";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(215, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "label1";
-            // 
-            // chartInit
-            // 
-            this.chartInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.chartInit.BorderlineColor = System.Drawing.Color.Black;
-            this.chartInit.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartArea1";
-            this.chartInit.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartInit.Legends.Add(legend1);
-            this.chartInit.Location = new System.Drawing.Point(25, 18);
-            this.chartInit.Name = "chartInit";
-            this.chartInit.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series1.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartInit.Series.Add(series1);
-            this.chartInit.Size = new System.Drawing.Size(340, 153);
-            this.chartInit.TabIndex = 23;
-            this.chartInit.Text = "Overall Progress";
-            // 
             // InitiationDocument
             // 
             this.InitiationDocument.HeaderText = "Initation Document";
@@ -666,7 +632,7 @@
             // DoneInitation
             // 
             this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DoneInitation.HeaderText = "Done?";
+            this.DoneInitation.HeaderText = "Status";
             this.DoneInitation.MinimumWidth = 6;
             this.DoneInitation.Name = "DoneInitation";
             this.DoneInitation.ReadOnly = true;
@@ -679,8 +645,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(759, 838);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(749, 923);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.lblOverallProgress);
@@ -694,6 +659,7 @@
             this.tabInitiation.ResumeLayout(false);
             this.tbpInitiation.ResumeLayout(false);
             this.tbpInitiation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartInit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInitiation)).EndInit();
             this.tbpPlanning.ResumeLayout(false);
             this.tbpPlanning.PerformLayout();
@@ -706,7 +672,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClosing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartInit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -716,13 +681,10 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblProjectName;
-        private System.Windows.Forms.Label lblInitiation;
-        private System.Windows.Forms.ProgressBar pbarInitiation;
         private System.Windows.Forms.TabControl tabInitiation;
         private System.Windows.Forms.TabPage tbpInitiation;
         private System.Windows.Forms.TabPage tbpPlanning;
         private System.Windows.Forms.TabPage tbpExecution;
-        private System.Windows.Forms.Label lblInitiationProgress;
         private System.Windows.Forms.TabPage tbpClosure;
         private System.Windows.Forms.DataGridView dgvInitiation;
         private System.Windows.Forms.DataGridView dgvPlanning;
@@ -750,9 +712,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabTest;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartInit;
+        private System.Windows.Forms.Label lblInitNumTasks;
         private System.Windows.Forms.DataGridViewTextBoxColumn InitiationDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoneInitation;
     }
