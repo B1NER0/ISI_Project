@@ -428,7 +428,7 @@
             this.dcmntChngsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.dcmntChngsTabPage.Name = "dcmntChngsTabPage";
             this.dcmntChngsTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.dcmntChngsTabPage.Size = new System.Drawing.Size(858, 303);
+            this.dcmntChngsTabPage.Size = new System.Drawing.Size(858, 298);
             this.dcmntChngsTabPage.TabIndex = 1;
             this.dcmntChngsTabPage.Text = "Document Changes";
             // 
@@ -467,7 +467,7 @@
             this.dgvDocumentHistories.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentHistories.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDocumentHistories.Size = new System.Drawing.Size(848, 293);
+            this.dgvDocumentHistories.Size = new System.Drawing.Size(848, 288);
             this.dgvDocumentHistories.TabIndex = 2;
             // 
             // versionColumn
@@ -497,7 +497,7 @@
             this.docApprovaltabPage.Location = new System.Drawing.Point(4, 33);
             this.docApprovaltabPage.Name = "docApprovaltabPage";
             this.docApprovaltabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.docApprovaltabPage.Size = new System.Drawing.Size(858, 303);
+            this.docApprovaltabPage.Size = new System.Drawing.Size(858, 298);
             this.docApprovaltabPage.TabIndex = 2;
             this.docApprovaltabPage.Text = "Document Approvals";
             // 
@@ -537,7 +537,7 @@
             this.dgvDocumentApprovals.RowHeadersWidth = 51;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentApprovals.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDocumentApprovals.Size = new System.Drawing.Size(850, 295);
+            this.dgvDocumentApprovals.Size = new System.Drawing.Size(850, 290);
             this.dgvDocumentApprovals.TabIndex = 3;
             // 
             // roleColumn
@@ -671,7 +671,7 @@
             this.visionTabPage.Location = new System.Drawing.Point(4, 33);
             this.visionTabPage.Name = "visionTabPage";
             this.visionTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.visionTabPage.Size = new System.Drawing.Size(858, 303);
+            this.visionTabPage.Size = new System.Drawing.Size(858, 298);
             this.visionTabPage.TabIndex = 1;
             this.visionTabPage.Text = "Vision";
             // 
@@ -684,7 +684,7 @@
             this.txtVision.Margin = new System.Windows.Forms.Padding(4);
             this.txtVision.Multiline = true;
             this.txtVision.Name = "txtVision";
-            this.txtVision.Size = new System.Drawing.Size(850, 295);
+            this.txtVision.Size = new System.Drawing.Size(850, 290);
             this.txtVision.TabIndex = 2;
             this.txtVision.Text = resources.GetString("txtVision.Text");
             // 
@@ -697,7 +697,7 @@
             this.objectivesTabPage.Location = new System.Drawing.Point(4, 33);
             this.objectivesTabPage.Name = "objectivesTabPage";
             this.objectivesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.objectivesTabPage.Size = new System.Drawing.Size(858, 303);
+            this.objectivesTabPage.Size = new System.Drawing.Size(858, 298);
             this.objectivesTabPage.TabIndex = 2;
             this.objectivesTabPage.Text = "Objectives";
             // 
@@ -710,7 +710,7 @@
             this.txtObjectives.Margin = new System.Windows.Forms.Padding(4);
             this.txtObjectives.Multiline = true;
             this.txtObjectives.Name = "txtObjectives";
-            this.txtObjectives.Size = new System.Drawing.Size(850, 295);
+            this.txtObjectives.Size = new System.Drawing.Size(850, 290);
             this.txtObjectives.TabIndex = 5;
             this.txtObjectives.Text = resources.GetString("txtObjectives.Text");
             // 
@@ -722,7 +722,7 @@
             this.scopeTabPage.Location = new System.Drawing.Point(4, 33);
             this.scopeTabPage.Name = "scopeTabPage";
             this.scopeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.scopeTabPage.Size = new System.Drawing.Size(858, 303);
+            this.scopeTabPage.Size = new System.Drawing.Size(858, 298);
             this.scopeTabPage.TabIndex = 3;
             this.scopeTabPage.Text = "Scope";
             // 
@@ -735,7 +735,7 @@
             this.txtScope.Margin = new System.Windows.Forms.Padding(4);
             this.txtScope.Multiline = true;
             this.txtScope.Name = "txtScope";
-            this.txtScope.Size = new System.Drawing.Size(850, 295);
+            this.txtScope.Size = new System.Drawing.Size(850, 290);
             this.txtScope.TabIndex = 7;
             this.txtScope.Text = "Provide a comprehensive description of the scope of the project outcome. To creat" +
     "e the scope statement, consider the areas within the business that will be affec" +
@@ -2283,11 +2283,11 @@
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Font = new System.Drawing.Font("Arial", 12F);
             this.saveButton.ForeColor = System.Drawing.Color.Black;
-            this.saveButton.Location = new System.Drawing.Point(612, 3);
+            this.saveButton.Location = new System.Drawing.Point(620, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(74, 39);
+            this.saveButton.Size = new System.Drawing.Size(175, 39);
             this.saveButton.TabIndex = 3;
-            this.saveButton.Text = "Save";
+            this.saveButton.Text = "Complete";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -2296,7 +2296,7 @@
             this.exportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportButton.ForeColor = System.Drawing.Color.Black;
-            this.exportButton.Location = new System.Drawing.Point(702, 3);
+            this.exportButton.Location = new System.Drawing.Point(816, 3);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(166, 38);
             this.exportButton.TabIndex = 4;
@@ -2323,7 +2323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(882, 472);
+            this.ClientSize = new System.Drawing.Size(996, 481);
             this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.saveButton);
