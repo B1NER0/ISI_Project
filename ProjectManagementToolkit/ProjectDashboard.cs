@@ -65,21 +65,16 @@ namespace ProjectManagementToolkit
             ////////BUSINESSCASE////////
             //Verander Json
             string json1 = JsonHelper.loadDocument(Settings.Default.ProjectID, "BusinessCase");
-            //Generate new form
-            BusinessCaseDocumentForm bussinessCase = new BusinessCaseDocumentForm();
 
             //Check versions
             VersionControl<BusinessCaseModel> versionControl = JsonConvert.DeserializeObject<VersionControl<BusinessCaseModel>>(json1);
             //Get current businesscaseModel
             BusinessCaseModel currentBusinessCaseModel;
-            string IsBusinessCaseModelDone;
 
             if (versionControl != null)
             {
                 currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
-                IsBusinessCaseModelDone = currentBusinessCaseModel.Progress;
                 initDocsListStatus.Add(currentBusinessCaseModel.Progress);
-
             }
             else
                 //IsBusinessCaseModelDone = "";
@@ -89,18 +84,14 @@ namespace ProjectManagementToolkit
 
             //////FEASIBILITY STUDY/////////
             string json2 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FeasibilityStudy");
-            FeasibiltyStudyDocumentForm feasibilityStudy = new FeasibiltyStudyDocumentForm();
             VersionControl<FeasibilityStudyModel> versionControl1 = JsonConvert.DeserializeObject<VersionControl<FeasibilityStudyModel>>(json2);
             FeasibilityStudyModel currentFeasibilityStudyModel; //= JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
-            string IsFeasibilityStudyDone;
 
 
             if (versionControl1 != null)
             {
                 currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
-                IsFeasibilityStudyDone = currentFeasibilityStudyModel.FeasibilityStudyProgress;
                 initDocsListStatus.Add(currentFeasibilityStudyModel.FeasibilityStudyProgress);
-
             }
             else
                 // IsFeasibilityStudyDone = "";
@@ -111,18 +102,13 @@ namespace ProjectManagementToolkit
 
             //////PROJECT CHARTER/////////
             string json3 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectCharter");
-            ProjectCharterForm projectCharter = new ProjectCharterForm();
             VersionControl<ProjectCharterModel> versionControl2 = JsonConvert.DeserializeObject<VersionControl<ProjectCharterModel>>(json3);
-
             ProjectCharterModel currentProjectCharter;
-            string IsProjectCharterDone;
 
             if (versionControl2 != null)
             {
                 currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
-                IsProjectCharterDone = currentProjectCharter.ProjectCharterProgress;
                 initDocsListStatus.Add(currentProjectCharter.ProjectCharterProgress);
-
             }
             else
                 // IsProjectCharterDone = "";
@@ -133,15 +119,12 @@ namespace ProjectManagementToolkit
 
             //////JOB DESCRIPTION/////////
             string json4 = JsonHelper.loadDocument(Settings.Default.ProjectID, "JobDescription");
-            JobDescriptionDocumentForm jobDescription = new JobDescriptionDocumentForm();
             VersionControl<JobDescriptionModel> versionControl3 = JsonConvert.DeserializeObject<VersionControl<JobDescriptionModel>>(json4);
             JobDescriptionModel currentJobDescription;
-            string IsJobDescriptionDone;
 
             if (versionControl3 != null)
             {
                 currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
-                IsJobDescriptionDone = currentJobDescription.JobDescriptionProgress;
                 initDocsListStatus.Add(currentJobDescription.JobDescriptionProgress);
 
             }
@@ -152,15 +135,12 @@ namespace ProjectManagementToolkit
 
             //////PROJECT OFFICE CHECKLIST/////////
             string json5 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectOfficeCheckList");
-            ProjectOfficeChecklistDocumentForm projectOfficeChecklist = new ProjectOfficeChecklistDocumentForm();
             VersionControl<ProjectOfficeChecklistModel> versionControl4 = JsonConvert.DeserializeObject<VersionControl<ProjectOfficeChecklistModel>>(json5);
             ProjectOfficeChecklistModel currentProjectOfficeChecklist;
-            string IsProjectOfficeChecklistDone;
 
             if (versionControl4 != null)
             {
                 currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
-                IsProjectOfficeChecklistDone = currentProjectOfficeChecklist.ProjectOfficeCheckListProgress;
                 initDocsListStatus.Add(currentProjectOfficeChecklist.ProjectOfficeCheckListProgress);
 
             }
@@ -171,15 +151,12 @@ namespace ProjectManagementToolkit
 
             //////PHASE REVIEW FORM INITIATION/////////
             string json6 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewFormInitiation");
-            PhaseReviewFormInitiationDocumentForm phaseReviewFormInitiation = new PhaseReviewFormInitiationDocumentForm();
             VersionControl<PhaseReviewFormInitiationModel> versionControl5 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewFormInitiationModel>>(json6);
             PhaseReviewFormInitiationModel currentPhaseReviewFormInitiation;
-            string IsPhaseReviewInitiationDone;
 
             if (versionControl5 != null)
             {
                 currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
-                IsPhaseReviewInitiationDone = currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress;
                 initDocsListStatus.Add(currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress);
 
             }
@@ -190,21 +167,210 @@ namespace ProjectManagementToolkit
 
             //////TERMS OF REFERENCE/////////
             string json7 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TermOfReferenceDocument");
-            TermOfReferenceDocumentForm termOfReference = new TermOfReferenceDocumentForm();
             VersionControl<TermsOfReferenceModel> versionControl6 = JsonConvert.DeserializeObject<VersionControl<TermsOfReferenceModel>>(json7);
             TermsOfReferenceModel currentTermOfReference;
-            string IsTermOfReferenceDone;
 
             if (versionControl6 != null)
             {
                 currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
-                IsTermOfReferenceDone = currentTermOfReference.TermOfReferenceProgress;
                 initDocsListStatus.Add(currentTermOfReference.TermOfReferenceProgress);
 
             }
             else
                 //  IsTermOfReferenceDone = "";
                 initDocsListStatus.Add("");
+
+            //////ProjectPlan/////////
+            string json8 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectPlan");
+            VersionControl<ProjectPlanModel> versionControl7 = JsonConvert.DeserializeObject<VersionControl<ProjectPlanModel>>(json8);
+            ProjectPlanModel currentProjectPlan;
+
+            if (versionControl7 != null)
+            {
+                currentProjectPlan = JsonConvert.DeserializeObject<ProjectPlanModel>(versionControl7.getLatest(versionControl7.DocumentModels));
+                planningDocsListStatus.Add(currentProjectPlan.projectPlanProgress);
+
+            }
+            else
+                //  IsProjectPlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////ResourcePlan/////////
+            string json9 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ResourcePlan");
+            VersionControl<ResourcePlanModel> versionControl8 = JsonConvert.DeserializeObject<VersionControl<ResourcePlanModel>>(json9);
+            ResourcePlanModel currentResourcePlan;
+
+            if (versionControl8 != null)
+            {
+                currentResourcePlan = JsonConvert.DeserializeObject<ResourcePlanModel>(versionControl8.getLatest(versionControl8.DocumentModels));
+                planningDocsListStatus.Add(currentResourcePlan.ResourcePlanProgress);
+
+            }
+            else
+                //  IsResourcePlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////FinancialPlan/////////
+            string json10 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FinancialPlan");
+            VersionControl<FinancialPlanModel> versionControl9 = JsonConvert.DeserializeObject<VersionControl<FinancialPlanModel>>(json10);
+            FinancialPlanModel currentFinancialPlan;
+
+            if (versionControl9 != null)
+            {
+                currentFinancialPlan = JsonConvert.DeserializeObject<FinancialPlanModel>(versionControl9.getLatest(versionControl9.DocumentModels));
+                planningDocsListStatus.Add(currentFinancialPlan.FinancialPlanProgress);
+
+            }
+            else
+                //  IsFinancialPlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////QualityPlan/////////
+            string json11 = JsonHelper.loadDocument(Settings.Default.ProjectID, "QualityPlan");
+            VersionControl<QualityPlanModel> versionControl10 = JsonConvert.DeserializeObject<VersionControl<QualityPlanModel>>(json11);
+            QualityPlanModel currentQualityPlan;
+
+            if (versionControl10 != null)
+            {
+                currentQualityPlan = JsonConvert.DeserializeObject<QualityPlanModel>(versionControl10.getLatest(versionControl10.DocumentModels));
+                planningDocsListStatus.Add(currentQualityPlan.QualityPlanProgress);
+
+            }
+            else
+                //  IsQualityPlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////RiskPlan/////////
+            string json12 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RiskPlan");
+            VersionControl<RiskPlanModel> versionControl11 = JsonConvert.DeserializeObject<VersionControl<RiskPlanModel>>(json12);
+            RiskPlanModel currentRiskPlan;
+
+            if (versionControl11 != null)
+            {
+                currentRiskPlan = JsonConvert.DeserializeObject<RiskPlanModel>(versionControl11.getLatest(versionControl11.DocumentModels));
+                planningDocsListStatus.Add(currentRiskPlan.RiskPlanProgress);
+            }
+            else
+                //  IsRiskPlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////AcceptancePlan/////////
+            string json13 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptancePlan");
+            VersionControl<AcceptancePlanModel> versionControl12 = JsonConvert.DeserializeObject<VersionControl<AcceptancePlanModel>>(json13);
+            AcceptancePlanModel currentAcceptancePlan;
+
+            if (versionControl12 != null)
+            {
+                currentAcceptancePlan = JsonConvert.DeserializeObject<AcceptancePlanModel>(versionControl12.getLatest(versionControl12.DocumentModels));
+                planningDocsListStatus.Add(currentAcceptancePlan.AcceptancePlanProgress);
+
+            }
+            else
+                //  IsAcceptancePlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////CommunicationPlan/////////
+            string json14 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationPlan");
+            VersionControl<CommunicationsPlanModel> versionControl13 = JsonConvert.DeserializeObject<VersionControl<CommunicationsPlanModel>>(json14);
+            CommunicationsPlanModel currentCommunicationPlan;
+
+            if (versionControl13 != null)
+            {
+                currentCommunicationPlan = JsonConvert.DeserializeObject<CommunicationsPlanModel>(versionControl13.getLatest(versionControl13.DocumentModels));
+                planningDocsListStatus.Add(currentCommunicationPlan.CommunicationPlanProgress);
+            }
+            else
+                //  IsCommunicationPlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////ProcurementPlan/////////
+            string json15 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementPlan");
+            VersionControl<ProcurementPlanModel> versionControl14 = JsonConvert.DeserializeObject<VersionControl<ProcurementPlanModel>>(json15);
+            ProcurementPlanModel currentProcurementPlan;
+
+            if (versionControl14 != null)
+            {
+                currentProcurementPlan = JsonConvert.DeserializeObject<ProcurementPlanModel>(versionControl14.getLatest(versionControl14.DocumentModels));
+                planningDocsListStatus.Add(currentProcurementPlan.ProcurementPlanProgress);
+
+            }
+            else
+                //  IsProcurementPlanDone = "";
+                planningDocsListStatus.Add("");
+
+            //////StatementOfWork/////////
+            string json16 = JsonHelper.loadDocument(Settings.Default.ProjectID, "StatementOfWork");
+            VersionControl<StatementOfWorkModel> versionControl15 = JsonConvert.DeserializeObject<VersionControl<StatementOfWorkModel>>(json16);
+            StatementOfWorkModel currentStatementOfWork;
+
+            if (versionControl15 != null)
+            {
+                currentStatementOfWork = JsonConvert.DeserializeObject<StatementOfWorkModel>(versionControl15.getLatest(versionControl15.DocumentModels));
+                planningDocsListStatus.Add(currentStatementOfWork.StatementOfWorkProgress);
+
+            }
+            else
+                //  IsStatementOfWorkDone = "";
+                planningDocsListStatus.Add("");
+
+            //////RequestForInformation/////////
+            string json17 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForInformation");
+            VersionControl<RequestForInformationModel> versionControl16 = JsonConvert.DeserializeObject<VersionControl<RequestForInformationModel>>(json17);
+            RequestForInformationModel currentRequestForInformation;
+
+            if (versionControl16 != null)
+            {
+                currentRequestForInformation = JsonConvert.DeserializeObject<RequestForInformationModel>(versionControl16.getLatest(versionControl16.DocumentModels));
+                planningDocsListStatus.Add(currentRequestForInformation.RequestForInformationProgress);
+
+            }
+            else
+                //  IsRequestForInformationDone = "";
+                planningDocsListStatus.Add("");
+
+            //////SupplierContract/////////
+            string json18 = JsonHelper.loadDocument(Settings.Default.ProjectID, "SupplierContract");
+            VersionControl<SupplierContractModel> versionControl17 = JsonConvert.DeserializeObject<VersionControl<SupplierContractModel>>(json18);
+            SupplierContractModel currentSupplierContract;
+
+            if (versionControl17 != null)
+            {
+                currentSupplierContract = JsonConvert.DeserializeObject<SupplierContractModel>(versionControl17.getLatest(versionControl17.DocumentModels));
+                planningDocsListStatus.Add(currentSupplierContract.SupplierContractProgress);
+            }
+            else
+                //  IsSupplierContractDone = "";
+                planningDocsListStatus.Add("");
+
+            //////RequestForProposal/////////
+            string json19 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForProposal");
+            VersionControl<RequestForProposalModel> versionControl18 = JsonConvert.DeserializeObject<VersionControl<RequestForProposalModel>>(json19);
+            RequestForProposalModel currentRequestForProposal;
+
+            if (versionControl18 != null)
+            {
+                currentRequestForProposal = JsonConvert.DeserializeObject<RequestForProposalModel>(versionControl18.getLatest(versionControl18.DocumentModels));
+                planningDocsListStatus.Add(currentRequestForProposal.RequestForProposalProgress);
+
+            }
+            else
+                //  IsRequestForProposalDone = "";
+                planningDocsListStatus.Add("");
+
+            //////PhaseReviewPlanning/////////
+            string json20 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewPlanning");
+            VersionControl<PhaseReviewPlanningModel> versionControl19 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewPlanningModel>>(json20);
+            PhaseReviewPlanningModel currentPhaseReviewPlanning;
+
+            if (versionControl19 != null)
+            {
+                currentPhaseReviewPlanning = JsonConvert.DeserializeObject<PhaseReviewPlanningModel>(versionControl19.getLatest(versionControl19.DocumentModels));
+                planningDocsListStatus.Add(currentPhaseReviewPlanning.PhaseReviewPlanningProgress);
+
+            }
+            else
+                //  IsPhaseReviewPlanningDone = "";
+                planningDocsListStatus.Add("");
 
 
             //Get localdocs
@@ -220,6 +386,9 @@ namespace ProjectManagementToolkit
 
 
             int comp = 0, uncomp = 0, inprog = 0;
+            int compPlanning = 0, uncompPlanning = 0, inprogPlanning = 0;
+            int compExecution = 0, uncompExecution = 0, inprogExecution = 0;
+            int compClosing = 0, uncompClosing = 0, inprogClosing = 0;
 
             if (localDocuments == null)
             {
@@ -227,7 +396,7 @@ namespace ProjectManagementToolkit
             }
             else
             {
-
+                ///////////////INITIATION PHASE/////////////////
                 initiationDocuments.Add("BusinessCase");
                 initiationDocuments.Add("FeasibilityStudy");
                 initiationDocuments.Add("ProjectCharter");
@@ -253,7 +422,7 @@ namespace ProjectManagementToolkit
 
                     if (initDocsListStatus[i] == "UNDONE")
                     {
-                        dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.FromArgb(0, 192, 192);
+                        dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.Orange;
                         inprog++;
                     }
                     else if (initDocsListStatus[i] == "DONE")
@@ -301,10 +470,10 @@ namespace ProjectManagementToolkit
 
                 chartInit.Series["Series1"].Points[0].Color = Color.LimeGreen;
                 chartInit.Series["Series1"].Points[1].Color = Color.Gray;
-                chartInit.Series["Series1"].Points[2].Color = Color.FromArgb(0, 192, 192);
+                chartInit.Series["Series1"].Points[2].Color = Color.Orange;
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
+                ///////////////PLANNING PHASE/////////////////
                 planningDocuments.Add("ProjectPlan");
                 planningDocuments.Add("ResourcePlan");
                 planningDocuments.Add("FinancialPlan");
@@ -319,20 +488,24 @@ namespace ProjectManagementToolkit
                 planningDocuments.Add("RequestForProposal");
                 planningDocuments.Add("PhaseReviewPlanning");
 
-                lblPlanningProgress.Text = "Progress: 0%";
-                pbarPlanning.Value = 0;
-                pbarPlanning.Maximum = planningDocuments.Count;
+                planningDocsListStatus.Add("ProjectPlan");
+
                 for (int i = 0; i < planningDocuments.Count; i++)
                 {
+                    planningProgressVal++;
                     dgvPlanning.Rows.Add();
                     dgvPlanning.Rows[i].Cells[0].Value = planningDocuments[i];
-                    if (localDocuments.Contains(planningDocuments[i]))
+
+                    if (planningDocsListStatus[i] == "UNDONE")
                     {
-                        planningProgressVal++;
-                        dgvPlanning.Rows[i].Cells[1].Value = true;
-                        pbarPlanning.Value = (int)planningProgressVal;
+                        dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.Orange;
+                        inprogPlanning++;
+                    }
+                    else if (planningDocsListStatus[i] == "DONE")
+                    {
+                        compPlanning++;
+                        dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
-                        lblPlanningProgress.Text = "Progress: " + Math.Round(planningPercentage, 2) + "%";
 
                         xValues1[1] = "Planning";
                         yValues1[1] = planningPercentage;
@@ -344,10 +517,33 @@ namespace ProjectManagementToolkit
                     }
                     else
                     {
-                        dgvPlanning.Rows[i].Cells[1].Value = false;
+                        uncompPlanning++;
+                        dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.Gray;
                     }
                 }
 
+                lblPlanNumTasks.Text = (planningPercentage / 100).ToString("p");
+
+
+                chartPlanning.ChartAreas[0].BackColor = Color.Transparent;
+                chartPlanning.Legends[0].BackColor = Color.Transparent;
+                chartPlanning.Legends[0].BackColor = Color.Transparent;
+                string[] xPlan = { "Completed Tasks  " + compPlanning, "Not started Tasks  " + uncompPlanning, "In Progress Tasks " + inprogPlanning };
+
+                double[] yPlan = { compPlanning, uncompPlanning, inprogPlanning };
+
+                chartPlanning.Series["Series1"].Points.DataBindXY(xPlan, yPlan);
+                chartPlanning.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+                chartPlanning.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                chartPlanning.Legends[0].Enabled = true;
+
+                chartPlanning.Text = "Test";
+
+                chartPlanning.Series["Series1"].Points[0].Color = Color.LimeGreen;
+                chartPlanning.Series["Series1"].Points[1].Color = Color.Gray;
+                chartPlanning.Series["Series1"].Points[2].Color = Color.Orange;
+                ///////////////////////////////////////////////////////////////////////////////////////////////////
 
                 executionDocuments.Add("BuildDeliverables");
                 executionDocuments.Add("MonitorAndControl");
@@ -554,51 +750,51 @@ namespace ProjectManagementToolkit
         //    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
         //}
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            planningProgressVal = 0;
-            for (int i = 0; i < pbarPlanning.Maximum; i++) // Go through documents
-            {
-                planningProgressVal++; //Increase progress
-                dgvPlanning.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
-            }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    planningProgressVal = 0;
+        //    for (int i = 0; i < pbarPlanning.Maximum; i++) // Go through documents
+        //    {
+        //        planningProgressVal++; //Increase progress
+        //        dgvPlanning.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
+        //    }
 
-            pbarPlanning.Value = pbarPlanning.Maximum;
-            lblPlanningProgress.Text = "Progress: 100%";
+        //    pbarPlanning.Value = pbarPlanning.Maximum;
+        //    lblPlanningProgress.Text = "Progress: 100%";
 
-            //////////////////// Calculate overall progressbar percentage //////////////
-            double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
-            pbarOverall.Value = (int)overallProgressVal;
-            pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
-            double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
-            lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
-            ////////////////////////////////////////////////////////////////////////////
-            string[] xValues = { "Completed Tasks", "Not Started Tasks" };
-            double[] yValues = { overallPercentage, 100 - overallPercentage };
+        //    //////////////////// Calculate overall progressbar percentage //////////////
+        //    double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
+        //    pbarOverall.Value = (int)overallProgressVal;
+        //    pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
+        //    double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
+        //    lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
+        //    ////////////////////////////////////////////////////////////////////////////
+        //    string[] xValues = { "Completed Tasks", "Not Started Tasks" };
+        //    double[] yValues = { overallPercentage, 100 - overallPercentage };
 
-            chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
-            chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+        //    chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
+        //    chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
 
-            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
-            chart1.Legends[0].Enabled = true;
+        //    chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
+        //    chart1.Legends[0].Enabled = true;
 
-            chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
-            chart1.Series["Series1"].Points[1].Color = Color.Gray;
+        //    chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
+        //    chart1.Series["Series1"].Points[1].Color = Color.Gray;
 
 
-            foreach (DataPoint p in chart1.Series["Series1"].Points)
-            {
-                p.Label = "#PERCENT\n#VALX";
-            }
+        //    foreach (DataPoint p in chart1.Series["Series1"].Points)
+        //    {
+        //        p.Label = "#PERCENT\n#VALX";
+        //    }
 
-            planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
+        //    planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
 
-            yValues1[1] = 100;
-            yValues2[1] = 100 - planningPercentage;
+        //    yValues1[1] = 100;
+        //    yValues2[1] = 100 - planningPercentage;
 
-            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-            chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-        }
+        //    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+        //    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+        //}
 
         private void button3_Click(object sender, EventArgs e)
         {

@@ -38,6 +38,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newStatementOfWorkModel.IssueDate = dgvInfo.Rows[2].Cells[1].Value.ToString();
             newStatementOfWorkModel.LastSavedDate = dgvInfo.Rows[3].Cells[1].Value.ToString();
             newStatementOfWorkModel.FileName = dgvInfo.Rows[4].Cells[1].Value.ToString();
+            newStatementOfWorkModel.StatementOfWorkProgress = "DONE";
 
             List<StatementOfWorkModel.DocumentHistory> documentHistories = new List<StatementOfWorkModel.DocumentHistory>();
 
@@ -556,6 +557,105 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newStatementOfWorkModel.DocumentID = dgvInfo.Rows[0].Cells[1].Value.ToString();
+            newStatementOfWorkModel.DocumentOwner = dgvInfo.Rows[1].Cells[1].Value.ToString();
+            newStatementOfWorkModel.IssueDate = dgvInfo.Rows[2].Cells[1].Value.ToString();
+            newStatementOfWorkModel.LastSavedDate = dgvInfo.Rows[3].Cells[1].Value.ToString();
+            newStatementOfWorkModel.FileName = dgvInfo.Rows[4].Cells[1].Value.ToString();
+            newStatementOfWorkModel.StatementOfWorkProgress = "UNDONE";
+
+            List<StatementOfWorkModel.DocumentHistory> documentHistories = new List<StatementOfWorkModel.DocumentHistory>();
+
+            int versionRowsCount = dataGridViewDocHistory.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                StatementOfWorkModel.DocumentHistory documentHistoryModel = new StatementOfWorkModel.DocumentHistory();
+                var version = dataGridViewDocHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dataGridViewDocHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dataGridViewDocHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newStatementOfWorkModel.DocumentHistories = documentHistories;
+
+            List<StatementOfWorkModel.DocumentApproval> documentApprovalsModel = new List<StatementOfWorkModel.DocumentApproval>();
+
+            int approvalRowsCount = dataGridViewDocApprovals.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                StatementOfWorkModel.DocumentApproval documentApproval = new StatementOfWorkModel.DocumentApproval();
+                var role = dataGridViewDocApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dataGridViewDocApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dataGridViewDocApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dataGridViewDocApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newStatementOfWorkModel.DocumentApprovals = documentApprovalsModel;
+
+            List<StatementOfWorkModel.ScopeOfWork> scopeOfWorkModel = new List<StatementOfWorkModel.ScopeOfWork>();
+
+            int scopeRowsCount = dataGridView4.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                StatementOfWorkModel.ScopeOfWork scopeOfWork = new StatementOfWorkModel.ScopeOfWork();
+                var itemTitle = dataGridView4.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var itemDescription = dataGridView4.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var itemQuantity = dataGridView4.Rows[i].Cells[2].Value?.ToString() ?? "";
+                scopeOfWork.ItemTitle = itemTitle;
+                scopeOfWork.ItemDescription = itemDescription;
+                scopeOfWork.ItemQuantity = itemQuantity;
+
+                scopeOfWorkModel.Add(scopeOfWork);
+            }
+            newStatementOfWorkModel.ScopeOfWorks = scopeOfWorkModel;
+
+            newStatementOfWorkModel.Introduction = txtIntroduction.Text;
+
+
+            newStatementOfWorkModel.Objectives = txtObjectives.Text;
+
+            newStatementOfWorkModel.SupplierResponsibilities = txtSupplierResponsibilities.Text;
+
+            newStatementOfWorkModel.ProjectResponsibilities = txtProjectResponsibilities.Text;
+
+            newStatementOfWorkModel.AcceptanceTerms = txtAcceptanceTerms.Text;
+
+            newStatementOfWorkModel.PaymentTerms = txtPaymentTerms.Text;
+
+            newStatementOfWorkModel.Confidentiality = txtConfidentiality.Text;
+
+            newStatementOfWorkModel.OtherTerms = txtOtherTerms.Text;
+
+
+            List<VersionControl<StatementOfWorkModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentStatementOfWorkModel, newStatementOfWorkModel))
+            {
+                VersionControl<StatementOfWorkModel>.DocumentModel documentModel = new VersionControl<StatementOfWorkModel>.DocumentModel(newStatementOfWorkModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                currentStatementOfWorkModel = JsonConvert.DeserializeObject<StatementOfWorkModel>(JsonConvert.SerializeObject(newStatementOfWorkModel));
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "StatementOfWork");
+                MessageBox.Show("Statement of Work saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

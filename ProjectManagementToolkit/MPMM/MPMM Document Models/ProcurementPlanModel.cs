@@ -14,6 +14,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
 
         #region Document information
         public string documentID { get; set; }
+        public string ProcurementPlanProgress { get; set; }
         public string documentOwner { get; set; }
         public string issueDate { get; set; }
         public string lastSavedDate { get; set; }

@@ -53,6 +53,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newSupplierContractModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newSupplierContractModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newSupplierContractModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newSupplierContractModel.SupplierContractProgress = "DONE";
 
             List<SupplierContractModel.DocumentHistory> documentHistories = new List<SupplierContractModel.DocumentHistory>();
 
@@ -717,6 +718,112 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                         }
                     }
                 }
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newSupplierContractModel.DocumentID = dgvDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newSupplierContractModel.DocumentOwner = dgvDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newSupplierContractModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newSupplierContractModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newSupplierContractModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newSupplierContractModel.SupplierContractProgress = "UNDONE";
+
+            List<SupplierContractModel.DocumentHistory> documentHistories = new List<SupplierContractModel.DocumentHistory>();
+
+            int versionRowsCount = dgvDocumentHistory.Rows.Count;
+            newSupplierContractModel.DocumentHistories = new List<SupplierContractModel.DocumentHistory>();
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                var version = dgvDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dgvDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dgvDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newSupplierContractModel.DocumentHistories
+                    .Add(new SupplierContractModel.DocumentHistory(version, issueDate, changes));
+            }
+
+            int approvalRowsCount = dgvDocumentApprovals.Rows.Count;
+            newSupplierContractModel.DocumentApprovals = new List<SupplierContractModel.DocumentApproval>();
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                var role = dgvDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dgvDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dgvDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dgvDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                newSupplierContractModel.DocumentApprovals
+                    .Add(new SupplierContractModel.DocumentApproval(role, name, signature, date));
+            }
+
+            newSupplierContractModel.Purpose = purpose.Text;
+            newSupplierContractModel.Recipients = recipients.Text;
+
+            int definitionsRowsCount = dgvDefinitions.Rows.Count;
+            newSupplierContractModel.Definitions = new List<SupplierContractModel.Definition>();
+            for (int i = 0; i < definitionsRowsCount - 1; i++)
+            {
+                var term = dgvDefinitions.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var definition = dgvDefinitions.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                newSupplierContractModel.Definitions
+                    .Add(new SupplierContractModel.Definition(term, definition));
+            }
+
+            int procurementItemsCount = dgvProcurementItems.Rows.Count;
+            newSupplierContractModel.ProcurementItems = new List<SupplierContractModel.ProcurementItem>();
+            for (int i = 0; i < procurementItemsCount - 1; i++)
+            {
+                var itemName = dgvProcurementItems.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var itemDescription = dgvProcurementItems.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var itemQuantity = dgvProcurementItems.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var itemPrice = dgvProcurementItems.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                newSupplierContractModel.ProcurementItems
+                    .Add(new SupplierContractModel.ProcurementItem(itemName, itemDescription, itemQuantity, itemPrice));
+            }
+
+            newSupplierContractModel.Project = project.Text;
+            newSupplierContractModel.Supplier = supplier.Text;
+
+            int reviewCriteriaCount = dgvReviewCriteriaIntro.Rows.Count;
+            newSupplierContractModel.ReviewCriterion = new List<SupplierContractModel.ReviewCriteria>();
+            for (int i = 0; i < reviewCriteriaCount - 1; i++)
+            {
+                var criteria = dgvReviewCriteriaIntro.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var description = dgvReviewCriteriaIntro.Rows[i].Cells[1].Value?.ToString() ?? "";
+
+                newSupplierContractModel.ReviewCriterion
+                    .Add(new SupplierContractModel.ReviewCriteria(criteria, description));
+            }
+
+            newSupplierContractModel.ReviewProcess = reviewProcess.Text;
+            newSupplierContractModel.Payment = payment.Text;
+            newSupplierContractModel.Invoicing = invoicing.Text;
+            newSupplierContractModel.Confidentiality = confidentiality.Text;
+            newSupplierContractModel.Termination = termination.Text;
+            newSupplierContractModel.Disputes = disputes.Text;
+            newSupplierContractModel.Indemnity = indemnity.Text;
+            newSupplierContractModel.Law = law.Text;
+            newSupplierContractModel.Agreement = agreement.Text;
+
+            List<VersionControl<SupplierContractModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+            if (!versionControl.isEqual(currentSupplierContractModel, newSupplierContractModel))
+            {
+                VersionControl<SupplierContractModel>.DocumentModel documentModel = new VersionControl<SupplierContractModel>
+                    .DocumentModel(newSupplierContractModel, DateTime.Now, VersionControl<SupplierContractModel>.generateID());
+                documentModels.Add(documentModel);
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentSupplierContractModel = JsonConvert.DeserializeObject<SupplierContractModel>(JsonConvert.SerializeObject(newSupplierContractModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "SupplierContract");
+                MessageBox.Show("Suplier Contract saved successfully", "save", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
             }
         }
     }

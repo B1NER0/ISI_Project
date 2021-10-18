@@ -12,6 +12,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public string ProjectName { get; set; }
 
         public string DocumentID { get; set; }
+        public string ResourcePlanProgress { get; set; }
 
         public string DocumentOwner { get; set; }
 

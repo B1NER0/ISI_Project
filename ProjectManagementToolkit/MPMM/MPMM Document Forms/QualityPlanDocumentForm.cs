@@ -105,6 +105,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newQualityPlanModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newQualityPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newQualityPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newQualityPlanModel.QualityPlanProgress = "DONE";
 
             List<QualityPlanModel.DocumentHistory> documentHistories = new List<QualityPlanModel.DocumentHistory>();
 
@@ -719,6 +720,130 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                         }
                     }
                 }
+            }
+        }
+
+        private void btnSvaeProgress_Click(object sender, EventArgs e)
+        {
+            newQualityPlanModel.documentID = dataGridViewDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newQualityPlanModel.documentOwner = dataGridViewDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newQualityPlanModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newQualityPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newQualityPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newQualityPlanModel.QualityPlanProgress = "UNDONE";
+
+            List<QualityPlanModel.DocumentHistory> documentHistories = new List<QualityPlanModel.DocumentHistory>();
+
+            int versionRowCount = dataGridViewDocumentHistory.Rows.Count - 1;
+
+            for (int i = 0; i < versionRowCount; i++)
+            {
+                QualityPlanModel.DocumentHistory documentHistory = new QualityPlanModel.DocumentHistory();
+                var tempVersion = dataGridViewDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempIssueDate = dataGridViewDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistory.version = tempVersion;
+                documentHistory.issueDate = tempIssueDate;
+                documentHistory.changes = tempChanges;
+                documentHistories.Add(documentHistory);
+            }
+            newQualityPlanModel.documentHistories = documentHistories;
+
+            List<QualityPlanModel.DocumentApprovals> documentApprovals = new List<QualityPlanModel.DocumentApprovals>();
+
+            int approvalRowsCount = dataGridViewDocumentApprovals.Rows.Count - 1;
+
+            for (int i = 0; i < approvalRowsCount; i++)
+            {
+                QualityPlanModel.DocumentApprovals documentApproval = new QualityPlanModel.DocumentApprovals();
+                var tempRole = dataGridViewDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempName = dataGridViewDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempDate = dataGridViewDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.role = tempRole;
+                documentApproval.name = tempName;
+                documentApproval.changes = tempChanges;
+                documentApproval.date = tempDate;
+
+                documentApprovals.Add(documentApproval);
+            }
+            newQualityPlanModel.documentApprovals = documentApprovals;
+
+            List<QualityPlanModel.DocumentQualityTargets> documentQualityTargets = new List<QualityPlanModel.DocumentQualityTargets>();
+
+            int qualTargetCount = dataGridViewQualityTargets.Rows.Count - 1;
+
+            for (int i = 0; i < qualTargetCount; i++)
+            {
+                QualityPlanModel.DocumentQualityTargets documentQualityTarget = new QualityPlanModel.DocumentQualityTargets();
+                var tempRequirements = dataGridViewQualityTargets.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDeliverable = dataGridViewQualityTargets.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempCriteria = dataGridViewQualityTargets.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempStandards = dataGridViewQualityTargets.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentQualityTarget.requirement = tempRequirements;
+                documentQualityTarget.deliverable = tempDeliverable;
+                documentQualityTarget.criteria = tempCriteria;
+                documentQualityTarget.standards = tempStandards;
+
+                documentQualityTargets.Add(documentQualityTarget);
+            }
+            newQualityPlanModel.documentQualityTargets = documentQualityTargets;
+
+            List<QualityPlanModel.DocumentQualityAssurance> documentQualityAssurances = new List<QualityPlanModel.DocumentQualityAssurance>();
+
+            int qualAssuranceCount = dataGridViewQAP.Rows.Count - 1;
+
+            for (int i = 0; i < qualAssuranceCount; i++)
+            {
+                QualityPlanModel.DocumentQualityAssurance documentQualityAssurance = new QualityPlanModel.DocumentQualityAssurance();
+                var tempTechnique = dataGridViewQAP.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dataGridViewQAP.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempFrequency = dataGridViewQAP.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentQualityAssurance.technique = tempTechnique;
+                documentQualityAssurance.description = tempDescription;
+                documentQualityAssurance.frequency = tempFrequency;
+
+                documentQualityAssurances.Add(documentQualityAssurance);
+            }
+            newQualityPlanModel.documentQualityAssurances = documentQualityAssurances;
+
+            List<QualityPlanModel.DocumentQualityControl> documentQualityControls = new List<QualityPlanModel.DocumentQualityControl>();
+
+            int qualControlCount = dataGridViewQCP.Rows.Count;
+
+            for (int i = 0; i < qualControlCount; i++)
+            {
+                QualityPlanModel.DocumentQualityControl documentQualityControl = new QualityPlanModel.DocumentQualityControl();
+                var tempTechnique = dataGridViewQCP.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dataGridViewQCP.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempFrequency = dataGridViewQCP.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentQualityControl.technique = tempTechnique;
+                documentQualityControl.description = tempDescription;
+                documentQualityControl.frequency = tempFrequency;
+
+                documentQualityControls.Add(documentQualityControl);
+            }
+            newQualityPlanModel.documentQualityControls = documentQualityControls;
+
+            newQualityPlanModel.assumptions = ReadAllFromList(listBoxAssumptions);
+            newQualityPlanModel.constraints = ReadAllFromList(listBoxConstraints);
+
+            newQualityPlanModel.activites = ReadAllFromList(listBoxQualityActivities);
+            newQualityPlanModel.roles = ReadAllFromList(listBoxQualityRoles);
+            newQualityPlanModel.documents = ReadAllFromList(listBoxQualityDocuments);
+
+            List<VersionControl<QualityPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentQualityPlanModel, newQualityPlanModel))
+            {
+                VersionControl<QualityPlanModel>.DocumentModel documentModel = new VersionControl<QualityPlanModel>.DocumentModel(newQualityPlanModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+                currentQualityPlanModel = JsonConvert.DeserializeObject<QualityPlanModel>(JsonConvert.SerializeObject(newQualityPlanModel));
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "QualityPlan");
+                MessageBox.Show("Quality plan saved successfully", "save", MessageBoxButtons.OK);
             }
         }
     }

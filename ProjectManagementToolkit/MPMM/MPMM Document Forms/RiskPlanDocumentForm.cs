@@ -68,6 +68,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             information.LastSavedDate = LastSavedDate;
             information.FileName = FileName;
             newRiskPlanModel.Information = information;
+            newRiskPlanModel.RiskPlanProgress = "DONE";
 
             List<History> histories = new List<History>();
             int Document_HistoryRowCount = Document_History_dgv.RowCount;
@@ -821,6 +822,187 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             Project_Name_tbx.Text = projectModel.ProjectName;
 
             loadDocument();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newRiskPlanModel.ProjectName = Project_Name_tbx.Text;
+
+            List<Information> informations = new List<Information>();
+            Information information = new Information();
+            var DocumentID = Document_Information_dgv.Rows[0].Cells[1].Value.ToString();
+            var DocumentOwner = Document_Information_dgv.Rows[1].Cells[1].Value.ToString();
+            var IssueDate = Document_Information_dgv.Rows[2].Cells[1].Value.ToString();
+            var LastSavedDate = Document_Information_dgv.Rows[3].Cells[1].Value.ToString();
+            var FileName = Document_Information_dgv.Rows[4].Cells[1].Value.ToString();
+
+            information.DocumentID = DocumentID;
+            information.DocumentOwner = DocumentOwner;
+            information.IssueDate = IssueDate;
+            information.LastSavedDate = LastSavedDate;
+            information.FileName = FileName;
+            newRiskPlanModel.Information = information;
+            newRiskPlanModel.RiskPlanProgress = "UNDONE";
+
+            List<History> histories = new List<History>();
+            int Document_HistoryRowCount = Document_History_dgv.RowCount;
+            for (int i = 0; i < Document_HistoryRowCount - 1; i++)
+            {
+                History history = new History();
+                var Version = Document_History_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var IsDate = Document_History_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Changes = Document_History_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                history.Version = Version;
+                history.IssueDate = IsDate;
+                history.Changes = Changes;
+                histories.Add(history);
+            }
+            newRiskPlanModel.Histories = histories;
+
+            List<Approval> approvals = new List<Approval>();
+            int approvalCount = Document_Approvals_dgv.RowCount;
+            for (int i = 0; i < Document_HistoryRowCount - 1; i++)
+            {
+                Approval approval = new Approval();
+                var Role = Document_Approvals_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Name = Document_Approvals_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Signature = Document_Approvals_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Date = Document_Approvals_dgv.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                approval.Name = Name;
+                approval.Role = Role;
+                approval.Signature = Signature;
+                approval.Date = Date;
+
+                approvals.Add(approval);
+            }
+            newRiskPlanModel.Approvals = approvals;
+
+            newRiskPlanModel.Categories = Categories_tbx.Text;
+
+            List<Risk> risks = new List<Risk>();
+            int riskCount = Risks_dgv.RowCount;
+            for (int i = 0; i < riskCount - 1; i++)
+            {
+                Risk risk = new Risk();
+                var RiskCategory = Risks_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var RiskDescription = Risks_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ID = Risks_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                risk.RiskCategory = RiskCategory;
+                risk.RiskDescription = RiskDescription;
+                risk.ID = ID;
+
+                risks.Add(risk);
+            }
+            newRiskPlanModel.Risks = risks;
+
+            List<Likelihood> likelihoods = new List<Likelihood>();
+            int LikelihoodrowCount = Likelihood_dgv.RowCount;
+            for (int i = 0; i < LikelihoodrowCount - 1; i++)
+            {
+                Likelihood likelihood = new Likelihood();
+                var Title = Likelihood_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Score = Likelihood_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Description = Likelihood_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                likelihood.Title = Title;
+                likelihood.Score = Score;
+                likelihood.Description = Description;
+
+                likelihoods.Add(likelihood);
+            }
+            newRiskPlanModel.Likelihoods = likelihoods;
+
+            List<Impact> impacts = new List<Impact>();
+            int impactrowCount = Impact_dgv.RowCount;
+            for (int i = 0; i < impactrowCount - 1; i++)
+            {
+                Impact impact = new Impact();
+                var Title = Impact_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Score = Impact_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Description = Impact_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                impact.Title = Title;
+                impact.Score = Score;
+                impact.Description = Description;
+
+                impacts.Add(impact);
+            }
+            newRiskPlanModel.Impacts = impacts;
+
+            List<Priority> priorities = new List<Priority>();
+            int PriorityrowCount = Priority_dgv.RowCount;
+            for (int i = 0; i < PriorityrowCount - 1; i++)
+            {
+                Priority priority = new Priority();
+                var ID = Priority_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var LikelihoodScore = Priority_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ImpactScore = Priority_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var PriorityScore = Priority_dgv.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var PriorityRating = Priority_dgv.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+
+                priority.ID = ID;
+                priority.LikelihoodScore = LikelihoodScore;
+                priority.ImpactScore = ImpactScore;
+                priority.PriorityScore = PriorityScore;
+                priority.PriorityRating = PriorityRating;
+
+                priorities.Add(priority);
+            }
+            newRiskPlanModel.Priorities = priorities;
+
+            List<Schedule> schedules = new List<Schedule>();
+            int SchedulerowCount = Schedule_dgv.RowCount;
+            for (int i = 0; i < SchedulerowCount - 1; i++)
+            {
+                Schedule schedule = new Schedule();
+                var Rating = Schedule_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ID = Schedule_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var PrevalantiveActions = Schedule_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var ActionResource1 = Schedule_dgv.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var ActionDate1 = Schedule_dgv.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var ContingentActions = Schedule_dgv.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var ActionResource2 = Schedule_dgv.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var ActionDate2 = Schedule_dgv.Rows[i].Cells[7].Value?.ToString() ?? "";
+
+                schedule.Rating = Rating;
+                schedule.ID = ID;
+                schedule.PrevalantiveActions = PrevalantiveActions;
+                schedule.ActionResource1 = ActionResource1;
+                schedule.ActionDate1 = ActionDate1;
+                schedule.ContingentActions = ContingentActions;
+                schedule.ActionResource2 = ActionResource2;
+                schedule.ActionDate2 = ActionDate2;
+
+                schedules.Add(schedule);
+            }
+            newRiskPlanModel.Schedules = schedules;
+
+            newRiskPlanModel.Assumptions = Assumptions_tbx.Text;
+            newRiskPlanModel.Constraints = Constraints_tbx.Text;
+            newRiskPlanModel.Activities = Activities_tbx.Text;
+            newRiskPlanModel.Roles = Roles_tbx.Text;
+            newRiskPlanModel.Documents = Documents_tbx.Text;
+            newRiskPlanModel.Appendix = Appendix_tbx.Text;
+
+            List<VersionControl<RiskPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            //MessageBox.Show(JsonConvert.SerializeObject(newRiskPlanModel), "save", MessageBoxButtons.OK);
+
+            if (!versionControl.isEqual(currentRiskPlanModel, newRiskPlanModel))
+            {
+                VersionControl<RiskPlanModel>.DocumentModel documentModel = new VersionControl<RiskPlanModel>.DocumentModel(newRiskPlanModel, DateTime.Now, VersionControl<RiskPlanModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentRiskPlanModel = JsonConvert.DeserializeObject<RiskPlanModel>(JsonConvert.SerializeObject(newRiskPlanModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "RiskPlan");
+                MessageBox.Show("Risk plan saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

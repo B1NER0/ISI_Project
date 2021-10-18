@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.Classes
     class RiskPlanModel
     {
         public string ProjectName { get; set; }
+        public string RiskPlanProgress { get; set; }
         public string Categories { get; set; }
         public string Assumptions { get; set; }
         public string Constraints { get; set; }

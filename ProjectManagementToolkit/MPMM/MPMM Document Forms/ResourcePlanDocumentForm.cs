@@ -38,6 +38,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newResourcePlanModel.IssueDate = docInfodataGridView.Rows[2].Cells[1].Value.ToString();
             newResourcePlanModel.LastSavedDate = docInfodataGridView.Rows[3].Cells[1].Value.ToString();
             newResourcePlanModel.FileName = docInfodataGridView.Rows[4].Cells[1].Value.ToString();
+            newResourcePlanModel.ResourcePlanProgress = "DONE";
 
             List<ResourcePlanModel.DocumentHistory> documentHistories = new List<ResourcePlanModel.DocumentHistory>();
 
@@ -775,6 +776,187 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             loadDocument();
             
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newResourcePlanModel.ProjectName = textBoxProjectName.Text;
+            newResourcePlanModel.DocumentID = docInfodataGridView.Rows[0].Cells[1].Value.ToString();
+            newResourcePlanModel.DocumentOwner = docInfodataGridView.Rows[1].Cells[1].Value.ToString();
+            newResourcePlanModel.IssueDate = docInfodataGridView.Rows[2].Cells[1].Value.ToString();
+            newResourcePlanModel.LastSavedDate = docInfodataGridView.Rows[3].Cells[1].Value.ToString();
+            newResourcePlanModel.FileName = docInfodataGridView.Rows[4].Cells[1].Value.ToString();
+            newResourcePlanModel.ResourcePlanProgress = "UNDONE";
+
+            List<ResourcePlanModel.DocumentHistory> documentHistories = new List<ResourcePlanModel.DocumentHistory>();
+
+            int versionRowsCount = docHistdataGridView.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                ResourcePlanModel.DocumentHistory documentHistoryModel = new ResourcePlanModel.DocumentHistory();
+                var version = docHistdataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = docHistdataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = docHistdataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newResourcePlanModel.DocumentHistories = documentHistories;
+
+            List<ResourcePlanModel.DocumentApproval> documentApprovalsModel = new List<ResourcePlanModel.DocumentApproval>();
+
+            int approvalRowsCount = docApprovalsdataGridView.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                ResourcePlanModel.DocumentApproval documentApproval = new ResourcePlanModel.DocumentApproval();
+                var role = docApprovalsdataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = docApprovalsdataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = docApprovalsdataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = docApprovalsdataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newResourcePlanModel.DocumentApprovals = documentApprovalsModel;
+
+
+            List<ResourcePlanModel.Labor> documentLaborModel = new List<ResourcePlanModel.Labor>();
+
+            int laborRowsCount = laborDataGridView.Rows.Count;
+
+            for (int i = 0; i < laborRowsCount - 1; i++)
+            {
+                ResourcePlanModel.Labor documentLabor = new ResourcePlanModel.Labor();
+                var role = laborDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var number = laborDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var responsibility = laborDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var skill = laborDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var startDate = laborDataGridView.Rows[i].Cells[4].Value?.ToString() ?? "";      //HIERSO
+                var endDate = laborDataGridView.Rows[i].Cells[5].Value?.ToString() ?? "";
+                documentLabor.Role = role;
+                documentLabor.Number = number;
+                documentLabor.Responsibility = responsibility;
+                documentLabor.Skill = skill;
+                documentLabor.StartDate = startDate;
+                documentLabor.EndDate = endDate;
+
+                documentLaborModel.Add(documentLabor);
+            }
+            newResourcePlanModel.Labors = documentLaborModel;
+
+
+            List<ResourcePlanModel.Equipment> documentEquipmentModel = new List<ResourcePlanModel.Equipment>();
+
+            int equipmentRowsCount = EquipmentDataGridView.Rows.Count;
+
+            for (int i = 0; i < equipmentRowsCount - 1; i++)
+            {
+                ResourcePlanModel.Equipment documentEquipment = new ResourcePlanModel.Equipment();
+                var item = EquipmentDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var amount = EquipmentDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var purpose = EquipmentDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var specification = EquipmentDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var startDate = EquipmentDataGridView.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var endDate = EquipmentDataGridView.Rows[i].Cells[5].Value?.ToString() ?? "";
+                documentEquipment.Item = item;
+                documentEquipment.Amount = amount;
+                documentEquipment.Purpose = purpose;
+                documentEquipment.Specification = specification;
+                documentEquipment.StartDate = startDate;
+                documentEquipment.EndDate = endDate;
+
+                documentEquipmentModel.Add(documentEquipment);
+            }
+            newResourcePlanModel.Equipments = documentEquipmentModel;
+
+            List<ResourcePlanModel.Materials> documentMaterialModel = new List<ResourcePlanModel.Materials>();
+
+            int materialRowsCount = materialdDataGridView.Rows.Count;
+
+            for (int i = 0; i < materialRowsCount - 1; i++)
+            {
+                ResourcePlanModel.Materials documentMaterial = new ResourcePlanModel.Materials();
+                var item = materialdDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var amount = materialdDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var startDate = materialdDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var endDate = materialdDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentMaterial.Iitem = item;
+                documentMaterial.Amount = amount;
+                documentMaterial.StartDate = startDate;
+                documentMaterial.EndDate = endDate;
+
+                documentMaterialModel.Add(documentMaterial);
+            }
+            newResourcePlanModel.Material = documentMaterialModel;
+
+
+
+            List<ResourcePlanModel.Schedule> documentSchedulelModel = new List<ResourcePlanModel.Schedule>();
+
+            int sheduleRowsCount = scheduleDataGridView.Rows.Count;
+
+            for (int i = 0; i < sheduleRowsCount - 1; i++)
+            {
+                ResourcePlanModel.Schedule documentSchedule = new ResourcePlanModel.Schedule();
+                var resource = scheduleDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var jan = scheduleDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var feb = scheduleDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var mar = scheduleDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var apr = scheduleDataGridView.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var may = scheduleDataGridView.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var jun = scheduleDataGridView.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var jul = scheduleDataGridView.Rows[i].Cells[7].Value?.ToString() ?? "";
+                var aug = scheduleDataGridView.Rows[i].Cells[8].Value?.ToString() ?? "";
+                var sept = scheduleDataGridView.Rows[i].Cells[9].Value?.ToString() ?? "";
+                var oct = scheduleDataGridView.Rows[i].Cells[10].Value?.ToString() ?? "";
+                var nov = scheduleDataGridView.Rows[i].Cells[11].Value?.ToString() ?? "";
+                var dec = scheduleDataGridView.Rows[i].Cells[12].Value?.ToString() ?? "";
+                var total = scheduleDataGridView.Rows[i].Cells[13].Value?.ToString() ?? "";
+                documentSchedule.Resource = resource;
+                documentSchedule.Jan = jan;
+                documentSchedule.Feb = feb;
+                documentSchedule.Mar = mar;
+                documentSchedule.Apr = apr;
+                documentSchedule.May = may;
+                documentSchedule.Jun = jun;
+                documentSchedule.Jul = jul;
+                documentSchedule.Aug = aug;
+                documentSchedule.Sept = sept;
+                documentSchedule.Oct = oct;
+                documentSchedule.Nov = nov;
+                documentSchedule.Dec = dec;
+                documentSchedule.Total = total;
+
+
+                documentSchedulelModel.Add(documentSchedule);
+            }
+            newResourcePlanModel.Schedules = documentSchedulelModel;
+
+            newResourcePlanModel.Assumptions = txtRPAssumptions.Text;
+
+            newResourcePlanModel.Constraints = txtRPConstraints.Text;
+
+            List<VersionControl<ResourcePlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentResourcePlanModel, newResourcePlanModel))
+            {
+                VersionControl<ResourcePlanModel>.DocumentModel documentModel = new VersionControl<ResourcePlanModel>.DocumentModel(newResourcePlanModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                currentResourcePlanModel = JsonConvert.DeserializeObject<ResourcePlanModel>(JsonConvert.SerializeObject(newResourcePlanModel));
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ResourcePlan");
+                MessageBox.Show("Resource Plan saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

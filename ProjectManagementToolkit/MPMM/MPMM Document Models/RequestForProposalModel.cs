@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class RequestForProposalModel
     {
         public string projectName { get; set; }
+        public string RequestForProposalProgress { get; set; }
         public List<DocumentInformation> documentInformations { get; set; }
         public List<DocumentHistory> documentHistories { get; set; }
         public List<DocumentApproval> documentApprovals { get; set; }

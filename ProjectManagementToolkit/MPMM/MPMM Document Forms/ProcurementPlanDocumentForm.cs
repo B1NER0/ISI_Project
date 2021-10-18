@@ -157,6 +157,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProcurementPlanModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newProcurementPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newProcurementPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newProcurementPlanModel.ProcurementPlanProgress = "DONE";
 
             List<ProcurementPlanModel.DocumentHistory> documentHistories = new List<ProcurementPlanModel.DocumentHistory>();
 
@@ -796,6 +797,123 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                         }
                     }
                 }
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newProcurementPlanModel.documentID = dataGridViewDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newProcurementPlanModel.documentOwner = dataGridViewDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newProcurementPlanModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newProcurementPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newProcurementPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newProcurementPlanModel.ProcurementPlanProgress = "DONE";
+
+            List<ProcurementPlanModel.DocumentHistory> documentHistories = new List<ProcurementPlanModel.DocumentHistory>();
+
+            int versionRowCount = dataGridViewDocumentHistory.Rows.Count - 1;
+
+            for (int i = 0; i < versionRowCount; i++)
+            {
+                ProcurementPlanModel.DocumentHistory documentHistory = new ProcurementPlanModel.DocumentHistory();
+                var tempVersion = dataGridViewDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempIssueDate = dataGridViewDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistory.version = tempVersion;
+                documentHistory.issueDate = tempIssueDate;
+                documentHistory.changes = tempChanges;
+                documentHistories.Add(documentHistory);
+            }
+            newProcurementPlanModel.documentHistories = documentHistories;
+
+            List<ProcurementPlanModel.DocumentApprovals> documentApprovals = new List<ProcurementPlanModel.DocumentApprovals>();
+
+            int approvalRowsCount = dataGridViewDocumentApprovals.Rows.Count - 1;
+
+            for (int i = 0; i < approvalRowsCount; i++)
+            {
+                ProcurementPlanModel.DocumentApprovals documentApproval = new ProcurementPlanModel.DocumentApprovals();
+                var tempRole = dataGridViewDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempName = dataGridViewDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempDate = dataGridViewDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.role = tempRole;
+                documentApproval.name = tempName;
+                documentApproval.changes = tempChanges;
+                documentApproval.date = tempDate;
+
+                documentApprovals.Add(documentApproval);
+            }
+            newProcurementPlanModel.documentApprovals = documentApprovals;
+
+            List<ProcurementPlanModel.DocumentRequirements> documentRequirements = new List<ProcurementPlanModel.DocumentRequirements>();
+
+            int requirementsCount = dataGridViewRequirements.Rows.Count - 1;
+
+            for (int i = 0; i < requirementsCount; i++)
+            {
+                ProcurementPlanModel.DocumentRequirements documentRequirement = new ProcurementPlanModel.DocumentRequirements();
+                var tempItem = dataGridViewRequirements.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempDescription = dataGridViewRequirements.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempJustification = dataGridViewRequirements.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempQuantity = dataGridViewRequirements.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var tempBudget = dataGridViewRequirements.Rows[i].Cells[4].Value?.ToString() ?? "";
+                documentRequirement.item = tempItem;
+                documentRequirement.description = tempDescription;
+                documentRequirement.justification = tempJustification;
+                documentRequirement.quantity = tempQuantity;
+                documentRequirement.budget = tempBudget;
+
+                documentRequirements.Add(documentRequirement);
+            }
+            newProcurementPlanModel.documentRequirements = documentRequirements;
+
+            List<ProcurementPlanModel.DocumentMarketResearch> documentMarketResearches = new List<ProcurementPlanModel.DocumentMarketResearch>();
+
+            int researchCount = dataGridViewMarketResearch.Rows.Count - 1;
+
+            for (int i = 0; i < researchCount; i++)
+            {
+                ProcurementPlanModel.DocumentMarketResearch documentMarketResearch = new ProcurementPlanModel.DocumentMarketResearch();
+                var tempItem = dataGridViewMarketResearch.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempSupplier = dataGridViewMarketResearch.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempOffering = dataGridViewMarketResearch.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempPrice = dataGridViewMarketResearch.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var tempAvailability = dataGridViewMarketResearch.Rows[i].Cells[4].Value?.ToString() ?? "";
+                documentMarketResearch.item = tempItem;
+                documentMarketResearch.supplier = tempSupplier;
+                documentMarketResearch.offering = tempOffering;
+                documentMarketResearch.price = tempPrice;
+                documentMarketResearch.availability = tempAvailability;
+
+                documentMarketResearches.Add(documentMarketResearch);
+            }
+            newProcurementPlanModel.documentMarketResearch = documentMarketResearches;
+
+            newProcurementPlanModel.assumptions = ReadAllFromList(listBoxAssumptions);
+            newProcurementPlanModel.constraints = ReadAllFromList(listBoxConstraints);
+
+            newProcurementPlanModel.tenderActivities = ReadAllFromList(listBoxTenderActivities);
+            newProcurementPlanModel.tenderRoles = ReadAllFromList(listBoxTenderRoles);
+            newProcurementPlanModel.tenderDocuments = ReadAllFromList(listBoxTenderDocuments);
+
+            newProcurementPlanModel.procurementActivities = ReadAllFromList(listBoxProcessActivities);
+            newProcurementPlanModel.procurementRoles = ReadAllFromList(listBoxProcessRoles);
+            newProcurementPlanModel.procurementDocuments = ReadAllFromList(listBoxProcessDocuments);
+
+            List<VersionControl<ProcurementPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentProcurementPlanModel, newProcurementPlanModel))
+            {
+                VersionControl<ProcurementPlanModel>.DocumentModel documentModel = new VersionControl<ProcurementPlanModel>.DocumentModel(newProcurementPlanModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentProcurementPlanModel = JsonConvert.DeserializeObject<ProcurementPlanModel>(JsonConvert.SerializeObject(newProcurementPlanModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ProcurementPlan");
+                MessageBox.Show("Procurement Plan saved successfully", "save", MessageBoxButtons.OK);
             }
         }
     }

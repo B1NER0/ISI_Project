@@ -42,6 +42,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         public void saveDocument()
         {
             newRequestForProposalModel.projectName = projectModel.ProjectName;
+            newRequestForProposalModel.RequestForProposalProgress = "DONE";
             
             newRequestForProposalModel.documentInformations = new List<RequestForProposalModel.DocumentInformation>();
             foreach (DataGridViewRow row in dataGridViewDocumentInformation.Rows)
@@ -672,6 +673,100 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             txtRequestForProposalProcessProject.Text = projectModel.ProjectName;
             loadDocument();
             
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newRequestForProposalModel.projectName = projectModel.ProjectName;
+            newRequestForProposalModel.RequestForProposalProgress = "UNDONE";
+
+            newRequestForProposalModel.documentInformations = new List<RequestForProposalModel.DocumentInformation>();
+            foreach (DataGridViewRow row in dataGridViewDocumentInformation.Rows)
+            {
+                RequestForProposalModel.DocumentInformation newInfo = new RequestForProposalModel.DocumentInformation();
+                newInfo.type = row.Cells[0].Value?.ToString() ?? "";
+                newInfo.information = row.Cells[1].Value?.ToString() ?? "";
+                newRequestForProposalModel.documentInformations.Add(newInfo);
+            }
+
+            newRequestForProposalModel.documentHistories = new List<RequestForProposalModel.DocumentHistory>();
+            foreach (DataGridViewRow row in dataGridViewDocumentHistory.Rows)
+            {
+                RequestForProposalModel.DocumentHistory newHistory = new RequestForProposalModel.DocumentHistory();
+                newHistory.version = row.Cells[0].Value?.ToString() ?? "";
+                newHistory.issueDate = row.Cells[1].Value?.ToString() ?? "";
+                newHistory.changes = row.Cells[2].Value?.ToString() ?? "";
+                newRequestForProposalModel.documentHistories.Add(newHistory);
+            }
+
+            newRequestForProposalModel.documentApprovals = new List<RequestForProposalModel.DocumentApproval>();
+            foreach (DataGridViewRow row in dataGridViewDocumentApprovals.Rows)
+            {
+                RequestForProposalModel.DocumentApproval newApproval = new RequestForProposalModel.DocumentApproval();
+                newApproval.role = row.Cells[0].Value?.ToString() ?? "";
+                newApproval.name = row.Cells[1].Value?.ToString() ?? "";
+                newApproval.signature = row.Cells[2].Value?.ToString() ?? "";
+                newApproval.approvalDate = row.Cells[3].Value?.ToString() ?? "";
+                newRequestForProposalModel.documentApprovals.Add(newApproval);
+
+            }
+
+            newRequestForProposalModel.introductionDescription = txtChangeProcess.Text;
+            newRequestForProposalModel.introductionOverview = txtOverview.Text;
+            newRequestForProposalModel.introductionPurpose = txtPurpose.Text;
+            newRequestForProposalModel.introductionAcknowledgement = txtAcknowledgement.Text;
+            newRequestForProposalModel.introductionRecipients = txtRecipients.Text;
+            newRequestForProposalModel.introductionProcess = txtProcess.Text;
+            newRequestForProposalModel.introductionRules = txtRules.Text;
+            newRequestForProposalModel.introductionQuestions = txtQuestions.Text;
+
+            newRequestForProposalModel.companyDescription = txtCompany.Text;
+            newRequestForProposalModel.companyVision = txtVision.Text;
+            newRequestForProposalModel.companyObjectives = txtObjectives.Text;
+            newRequestForProposalModel.companySize = txtSize.Text;
+            newRequestForProposalModel.companyLocation = txtLocation.Text;
+
+            newRequestForProposalModel.companyTypeAndNumberOfCustomers = txtTypeAndNumberOfCustomers.Text;
+            newRequestForProposalModel.companyMarketSegment = txtMarketSegment.Text;
+            newRequestForProposalModel.companyKnowledgeOfIndustryAndExpertise = txtKnowledgeOfIndustryAndExpertise.Text;
+
+            newRequestForProposalModel.solutionDescription = txtSolution.Text;
+
+            newRequestForProposalModel.solutions = new List<RequestForProposalModel.Solution>();
+            foreach (DataGridViewRow row in dataGridViewSolution.Rows)
+            {
+                RequestForProposalModel.Solution newSolution = new RequestForProposalModel.Solution();
+                newSolution.solutionAndComponents = row.Cells[0].Value?.ToString() ?? "";
+                newSolution.quantity = row.Cells[1].Value?.ToString() ?? "";
+                newSolution.price = row.Cells[2].Value?.ToString() ?? "";
+                newRequestForProposalModel.solutions.Add(newSolution);
+            }
+
+            newRequestForProposalModel.implementationDescription = txtImplementation.Text;
+
+            newRequestForProposalModel.otherInformationDescription = txtOtherInformation.Text;
+            newRequestForProposalModel.otherInformationConfidentiality = txtConfidentiality.Text;
+            newRequestForProposalModel.otherInformationDocumentation = txtDocumentation.Text;
+
+            List<VersionControl<RequestForProposalModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentRequestForProposalModel, newRequestForProposalModel))
+            {
+                VersionControl<RequestForProposalModel>.DocumentModel documentModel = new VersionControl<RequestForProposalModel>
+                    .DocumentModel(newRequestForProposalModel, DateTime.Now, VersionControl<RequestForProposalModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentRequestForProposalModel = JsonConvert.DeserializeObject<RequestForProposalModel>(JsonConvert.SerializeObject(newRequestForProposalModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "RequestForProposal");
+                MessageBox.Show("Request for Proposal saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made!", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }
