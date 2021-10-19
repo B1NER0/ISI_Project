@@ -329,13 +329,14 @@ namespace ProjectManagementToolkit
 
         private void btnTemplates_Click(object sender, EventArgs e)
         {
-
+            MPMM.MPMM_Forms.Project_Management.frmTemplates Templates = new MPMM.MPMM_Forms.Project_Management.frmTemplates();
+            Templates.Show();
         }
 
         private void btnProcessFlowOverview_Click(object sender, EventArgs e)
         {
-            //PLSM_ProcessGroupingGovernance_Interfaces PGG = new PLSM_ProcessGroupingGovernance_Interfaces();
-            //PGG.Show();
+            MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview ProcessFlowOverview = new MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview();
+            ProcessFlowOverview.Show();
         }
 
         private void btnRoleDescription_Click(object sender, EventArgs e)
@@ -354,6 +355,12 @@ namespace ProjectManagementToolkit
         {
             MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources KnowResource = new MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources();
             KnowResource.Show();
+        }
+
+        private void btnStageGateRequirements_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements StageGateRequirements  = new MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements();
+            StageGateRequirements.Show();
         }
     }
 }

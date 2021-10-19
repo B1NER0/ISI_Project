@@ -1165,6 +1165,12 @@
     <Compile Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.Designer.cs">
       <DependentUpon>frmKnowledgeAndResources.cs</DependentUpon>
     </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.Designer.cs">
+      <DependentUpon>frmProcessFlowOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1188,6 +1194,18 @@
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmRoleDescription.Designer.cs">
       <DependentUpon>frmRoleDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmStageGateRequirements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmStageGateRequirements.Designer.cs">
+      <DependentUpon>frmStageGateRequirements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplates.Designer.cs">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmToolsAndTechniques.cs">
       <SubType>Form</SubType>
@@ -1820,6 +1838,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Processes\Processes.resx">
       <DependentUpon>Processes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmTemplates.resx">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProjectDashboard.resx">
       <DependentUpon>ProjectDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -1850,6 +1871,7 @@
     <None Include="ISI_DB.xss">
       <DependentUpon>ISI_DB.xsd</DependentUpon>
     </None>
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Business Case.doc" />
     <None Include="MPMM\Template Excel Sheets\Acceptance Register.xls" />
     <None Include="MPMM\Template Excel Sheets\Change Register.xls" />
     <None Include="MPMM\Template Excel Sheets\Communications Register.xls" />
