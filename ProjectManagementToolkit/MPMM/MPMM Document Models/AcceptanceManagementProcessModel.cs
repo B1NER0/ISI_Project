@@ -10,6 +10,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class AcceptanceManagementProcessModel
     {
         public string ProjectName { get; set; }
+        public string AcceptanceManagementProcessProgress { get; set; }
 
         public string DocumentID { get; set; }
 

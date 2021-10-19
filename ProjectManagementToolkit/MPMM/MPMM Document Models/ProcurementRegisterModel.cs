@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public List<ProcurementEntry> procurementEntries { get; set; }
 
         public string ProjectName { get; set; }
+        public string ProcurementRegisterProgress { get; set; }
         public string ProjectManagerName { get; set; }
 
         public string ProcurementManagerName { get; set; }

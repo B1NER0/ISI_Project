@@ -93,6 +93,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             tempIssueFormModel.IssueImpact = txtIssueImpact.Text;
             tempIssueFormModel.IssueResolution = txtIssueResolution.Text;
             tempIssueFormModel.SupportingDocumentation = txtSupportingDocumentation.Text;
+            tempIssueFormModel.IssueFormProgress = "DONE";
 
             IssueRegisterModel.IssueEntry issueEntry = new IssueRegisterModel.IssueEntry();
             issueEntry.ID = (cmbIssueForms.SelectedIndex+1).ToString();
@@ -375,6 +376,67 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
                     JsonHelper.saveDocument(jsonIssueRegister, Settings.Default.ProjectID, "IssueRegister");
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IssueFormModel tempIssueFormModel = new IssueFormModel();
+            tempIssueFormModel.ProjectName = projectModel.ProjectName;
+            tempIssueFormModel.ProjectManagerName = txtProjectManagerName.Text;
+            tempIssueFormModel.IssueID = txtIssueID.Text;
+            tempIssueFormModel.RaisedBy = txtRaisedBy.Text;
+            tempIssueFormModel.DateRaised = dateTimePicker1.Value.ToString();
+            tempIssueFormModel.IssueDescription = txtIssueDescription.Text;
+            tempIssueFormModel.IssueImpact = txtIssueImpact.Text;
+            tempIssueFormModel.IssueResolution = txtIssueResolution.Text;
+            tempIssueFormModel.SupportingDocumentation = txtSupportingDocumentation.Text;
+            tempIssueFormModel.IssueFormProgress = "UNDONE";
+
+            IssueRegisterModel.IssueEntry issueEntry = new IssueRegisterModel.IssueEntry();
+            issueEntry.ID = (cmbIssueForms.SelectedIndex + 1).ToString();
+            issueEntry.DateRaised = dateTimePicker1.Value.ToString();
+            issueEntry.RaisedBy = txtRaisedBy.Text;
+            issueEntry.ReceivedBy = txtProjectManagerName.Text;
+            issueEntry.Description = txtIssueDescription.Text;
+            issueEntry.Impact = txtIssueImpact.Text;
+            issueEntry.Action = txtIssueResolution.Text;
+
+
+            newIssueFormModel[cmbIssueForms.SelectedIndex] = tempIssueFormModel;
+            newRegisterModel.IssueEntries[cmbIssueForms.SelectedIndex] = issueEntry;
+
+            List<VersionControl<List<IssueFormModel>>.DocumentModel> documentModels = versionControl.DocumentModels;
+            List<VersionControl<IssueRegisterModel>.DocumentModel> documentModelsReg = versionControlRegister.DocumentModels;
+            if (!versionControl.isEqual(currentIssueFormModel, newIssueFormModel))
+            {
+                VersionControl<List<IssueFormModel>>.DocumentModel documentModel = new VersionControl<List<IssueFormModel>>
+                    .DocumentModel(newIssueFormModel, DateTime.Now, VersionControl<List<IssueFormModel>>
+                    .generateID());
+
+                VersionControl<IssueRegisterModel>.DocumentModel documentModelReg = new VersionControl<IssueRegisterModel>
+                    .DocumentModel(newRegisterModel, DateTime.Now, VersionControl<IssueRegisterModel>
+                    .generateID());
+
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+                string jsonIssueForm = JsonConvert.SerializeObject(versionControl);
+                currentIssueFormModel = JsonConvert
+                    .DeserializeObject<List<IssueFormModel>>(JsonConvert.SerializeObject(newIssueFormModel));
+                JsonHelper.saveDocument(jsonIssueForm, Settings.Default.ProjectID, "IssueForm");
+
+                documentModelsReg.Add(documentModelReg);
+                versionControlRegister.DocumentModels = documentModelsReg;
+                string jsonIssueRegister = JsonConvert.SerializeObject(versionControlRegister);
+                JsonHelper.saveDocument(jsonIssueRegister, Settings.Default.ProjectID, "IssueRegister");
+                currentIssueFormModel = JsonConvert
+                    .DeserializeObject<List<IssueFormModel>>(JsonConvert.SerializeObject(newIssueFormModel));
+                MessageBox.Show("Issue Form saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
             }
         }
     }

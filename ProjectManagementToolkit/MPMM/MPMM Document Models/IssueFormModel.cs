@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     {
         public string ProjectName { get; set; } = "";
         public string ProjectManagerName { get; set; } = "";
+        public string IssueFormProgress { get; set; } = "";
         public string IssueID { get; set; } = "";
         public string RaisedBy { get; set; } = "";
         public string DateRaised { get; set; } = DateTime.Now.ToString();

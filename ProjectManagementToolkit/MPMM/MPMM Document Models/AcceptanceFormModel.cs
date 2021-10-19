@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.Classes
     {
         //Project details
         public string AcceptanceFormFor { get; set; }
+        public string AcceptanceFormProgress { get; set; }
         public string ProjectName { get; set; }
         public string ProjectManager { get; set; }
         //Acceptance details

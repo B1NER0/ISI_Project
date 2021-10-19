@@ -51,6 +51,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newCommunicationsManagementProcessModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
             newCommunicationsManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newCommunicationsManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newCommunicationsManagementProcessModel.CommunicationsManagementProcessProgress = "DONE";
 
             newCommunicationsManagementProcessModel.DocumentHistories = new List<CommunicationsManagementProcessModel.DocumentHistory>();
             int historyCount = documentHistory.Rows.Count;
@@ -455,6 +456,70 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void documentInformation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newCommunicationsManagementProcessModel.DocumentID = documentInformation.Rows[0].Cells[1].Value.ToString();
+            newCommunicationsManagementProcessModel.DocumentOwner = documentInformation.Rows[1].Cells[1].Value.ToString();
+            newCommunicationsManagementProcessModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
+            newCommunicationsManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
+            newCommunicationsManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newCommunicationsManagementProcessModel.CommunicationsManagementProcessProgress = "UNDONE";
+
+            newCommunicationsManagementProcessModel.DocumentHistories = new List<CommunicationsManagementProcessModel.DocumentHistory>();
+            int historyCount = documentHistory.Rows.Count;
+            for (int i = 0; i < historyCount - 1; i++)
+            {
+                var version = documentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = documentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = documentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newCommunicationsManagementProcessModel.DocumentHistories
+                    .Add(new CommunicationsManagementProcessModel.DocumentHistory(version, issueDate, changes));
+            }
+
+            newCommunicationsManagementProcessModel.DocumentApprovals = new List<CommunicationsManagementProcessModel.DocumentApproval>();
+            int approvalRowsCount = documentApprovals.Rows.Count;
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                var role = documentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = documentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = documentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = documentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                newCommunicationsManagementProcessModel.DocumentApprovals
+                    .Add(new CommunicationsManagementProcessModel.DocumentApproval(role, name, signature, date));
+            }
+
+            //newCommunicationsManagementProcessModel.CommunicationsDocumentsIntro = .Text;
+            //newCommunicationsManagementProcessModel.Overview = txtOverview.Text;
+            newCommunicationsManagementProcessModel.CreateMessage = createMessage.Text;
+            newCommunicationsManagementProcessModel.CommunicateMessage = communicateMessage.Text;
+            newCommunicationsManagementProcessModel.CommunicationsTeam = communicationsTeam.Text;
+            newCommunicationsManagementProcessModel.ProjectManagerResponsibilities = projectManager.Text;
+            newCommunicationsManagementProcessModel.ProjectStatusReport = projectStatusReport.Text;
+            newCommunicationsManagementProcessModel.CommunicationsRegister = communicationsRegister.Text;
+
+            List<VersionControl<CommunicationsManagementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentCommunicationsManagementProcessModel, newCommunicationsManagementProcessModel))
+            {
+                VersionControl<CommunicationsManagementProcessModel>.DocumentModel documentModel = new VersionControl<CommunicationsManagementProcessModel>
+                    .DocumentModel(newCommunicationsManagementProcessModel, DateTime.Now, VersionControl<CommunicationsManagementProcessModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentCommunicationsManagementProcessModel = JsonConvert.DeserializeObject<CommunicationsManagementProcessModel>(JsonConvert.SerializeObject(newCommunicationsManagementProcessModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "CommunicationsManagementProcess");
+                MessageBox.Show("Communications Management Process saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made!", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

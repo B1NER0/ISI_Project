@@ -171,7 +171,7 @@
             // 
             this.txtProjectName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.txtProjectName.ForeColor = System.Drawing.Color.Black;
-            this.txtProjectName.Location = new System.Drawing.Point(215, 8);
+            this.txtProjectName.Location = new System.Drawing.Point(259, 7);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.Size = new System.Drawing.Size(116, 23);
             this.txtProjectName.TabIndex = 1;

@@ -19,10 +19,10 @@ using System.Drawing.Drawing2D;
 
 namespace ProjectManagementToolkit
 {
-    public partial class ProjectDashboard : Form
+    public partial class lblClosingTaskNum : Form
     {
         ProjectModel projectModel = new ProjectModel();
-        public ProjectDashboard()
+        public lblClosingTaskNum()
         {
             InitializeComponent();
         }
@@ -50,13 +50,13 @@ namespace ProjectManagementToolkit
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
-
             pbarOverall.Hide();
             lblOverallProgress.Hide();
 
             List<string> initDocsListStatus = new List<string>();
             List<string> planningDocsListStatus = new List<string>();
             List<string> executionDocsListStatus = new List<string>();
+            List<string> closingDocsListStatus = new List<string>();
 
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
@@ -389,7 +389,6 @@ namespace ProjectManagementToolkit
             {
                 currentTimeManagementProcess = JsonConvert.DeserializeObject<TimeMangementProcessModel>(versionControl20.getLatest(versionControl20.DocumentModels));
                 executionDocsListStatus.Add(currentTimeManagementProcess.TimeManagementProcessProgress);
-
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
@@ -405,7 +404,6 @@ namespace ProjectManagementToolkit
             {
                 currentTimeSheet = JsonConvert.DeserializeObject<TimeSheetModel>(versionControl21.getLatest(versionControl21.DocumentModels));
                 executionDocsListStatus.Add(currentTimeSheet.TimeSheetProgress);
-
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
@@ -421,7 +419,6 @@ namespace ProjectManagementToolkit
             {
                 currentTimeSheetRegister = JsonConvert.DeserializeObject<TimesheetRegisterModel.TimesheetEntry>(versionControl22.getLatest(versionControl22.DocumentModels));
                 executionDocsListStatus.Add(currentTimeSheetRegister.TimeSheetRegisterProgress);
-
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
@@ -437,7 +434,6 @@ namespace ProjectManagementToolkit
             {
                 currentCostManagementProcess = JsonConvert.DeserializeObject<CostManagementProcessModel>(versionControl23.getLatest(versionControl23.DocumentModels));
                 executionDocsListStatus.Add(currentCostManagementProcess.CostManagementProcessProgress);
-
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
@@ -604,6 +600,217 @@ namespace ProjectManagementToolkit
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
 
+            //////RiskRegister/////////
+            string json35 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RiskRegister");
+            VersionControl<RiskRegisterModel> versionControl34 = JsonConvert.DeserializeObject<VersionControl<RiskRegisterModel>>(json35);
+            RiskRegisterModel currentRiskRegister;
+
+            if (versionControl34 != null)
+            {
+                currentRiskRegister = JsonConvert.DeserializeObject<RiskRegisterModel>(versionControl34.getLatest(versionControl34.DocumentModels));
+                executionDocsListStatus.Add(currentRiskRegister.RiskRegisterProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////IssueManagementProcess/////////
+            string json36 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueManagementProcess");
+            VersionControl<IssueManagementProcessModel> versionControl35 = JsonConvert.DeserializeObject<VersionControl<IssueManagementProcessModel>>(json36);
+            IssueManagementProcessModel currentIssueManagementProcess;
+
+            if (versionControl35 != null)
+            {
+                currentIssueManagementProcess = JsonConvert.DeserializeObject<IssueManagementProcessModel>(versionControl35.getLatest(versionControl35.DocumentModels));
+                executionDocsListStatus.Add(currentIssueManagementProcess.IssueManagementProcessProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////IssueForm/////////
+            string json37 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueForm");
+            VersionControl<IssueFormModel> versionControl36 = JsonConvert.DeserializeObject<VersionControl<IssueFormModel>>(json37);
+            IssueFormModel currentIssueForm;
+
+            if (versionControl36 != null)
+            {
+                currentIssueForm = JsonConvert.DeserializeObject<IssueFormModel>(versionControl36.getLatest(versionControl36.DocumentModels));
+                executionDocsListStatus.Add(currentIssueForm.IssueFormProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////IssueRegister/////////
+            string json38 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueRegister");
+            VersionControl<IssueRegisterModel> versionControl37 = JsonConvert.DeserializeObject<VersionControl<IssueRegisterModel>>(json38);
+            IssueRegisterModel currentIssueRegister;
+
+            if (versionControl37 != null)
+            {
+                currentIssueRegister = JsonConvert.DeserializeObject<IssueRegisterModel>(versionControl37.getLatest(versionControl37.DocumentModels));
+                executionDocsListStatus.Add(currentIssueRegister.IssueRegisterProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////PurchaseOrder/////////
+            string json39 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PurchaseOrder");
+            VersionControl<PurchaseOrderModel> versionControl38 = JsonConvert.DeserializeObject<VersionControl<PurchaseOrderModel>>(json39);
+            PurchaseOrderModel currentPurchaseOrder;
+
+            if (versionControl38 != null)
+            {
+                currentPurchaseOrder = JsonConvert.DeserializeObject<PurchaseOrderModel>(versionControl38.getLatest(versionControl38.DocumentModels));
+                executionDocsListStatus.Add(currentPurchaseOrder.PurchaseOrderProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////ProcurementRegister/////////
+            string json40 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementRegister");
+            VersionControl<ProcurementRegisterModel> versionControl39 = JsonConvert.DeserializeObject<VersionControl<ProcurementRegisterModel>>(json40);
+            ProcurementRegisterModel currentProcurementRegister;
+
+            if (versionControl39 != null)
+            {
+                currentProcurementRegister = JsonConvert.DeserializeObject<ProcurementRegisterModel>(versionControl39.getLatest(versionControl39.DocumentModels));
+                executionDocsListStatus.Add(currentProcurementRegister.ProcurementRegisterProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////AcceptanceManagementProcess/////////
+            string json41 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceManagementProcess");
+            VersionControl<AcceptanceManagementProcessModel> versionControl40 = JsonConvert.DeserializeObject<VersionControl<AcceptanceManagementProcessModel>>(json41);
+            AcceptanceManagementProcessModel currentAcceptanceManagementProcess;
+
+            if (versionControl40 != null)
+            {
+                currentAcceptanceManagementProcess = JsonConvert.DeserializeObject<AcceptanceManagementProcessModel>(versionControl40.getLatest(versionControl40.DocumentModels));
+                executionDocsListStatus.Add(currentAcceptanceManagementProcess.AcceptanceManagementProcessProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////AcceptanceForm/////////
+            string json42 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceForm");
+            VersionControl<AcceptanceFormModel> versionControl41 = JsonConvert.DeserializeObject<VersionControl<AcceptanceFormModel>>(json42);
+            AcceptanceFormModel currentAcceptanceForm;
+
+            if (versionControl41 != null)
+            {
+                currentAcceptanceForm = JsonConvert.DeserializeObject<AcceptanceFormModel>(versionControl41.getLatest(versionControl41.DocumentModels));
+                executionDocsListStatus.Add(currentAcceptanceForm.AcceptanceFormProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////AcceptanceRegister/////////
+            string json43 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceRegister");
+            VersionControl<AcceptanceRegisterModel> versionControl42 = JsonConvert.DeserializeObject<VersionControl<AcceptanceRegisterModel>>(json43);
+            AcceptanceRegisterModel currentAcceptanceRegister;
+
+            if (versionControl42 != null)
+            {
+                currentAcceptanceRegister = JsonConvert.DeserializeObject<AcceptanceRegisterModel>(versionControl42.getLatest(versionControl42.DocumentModels));
+                executionDocsListStatus.Add(currentAcceptanceRegister.AcceptanceRegisterProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////CommunicationsManagementProcess/////////
+            string json44 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationsManagementProcess");
+            VersionControl<CommunicationsManagementProcessModel> versionControl43 = JsonConvert.DeserializeObject<VersionControl<CommunicationsManagementProcessModel>>(json44);
+            CommunicationsManagementProcessModel currentCommunicationsManagementProcess;
+
+            if (versionControl43 != null)
+            {
+                currentCommunicationsManagementProcess = JsonConvert.DeserializeObject<CommunicationsManagementProcessModel>(versionControl43.getLatest(versionControl43.DocumentModels));
+                executionDocsListStatus.Add(currentCommunicationsManagementProcess.CommunicationsManagementProcessProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////ProjectStatusReport/////////
+            string json45 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectStatusReport");
+            VersionControl<ProjectStatusReportModel> versionControl44 = JsonConvert.DeserializeObject<VersionControl<ProjectStatusReportModel>>(json45);
+            ProjectStatusReportModel currentProjectStatusReport;
+
+            if (versionControl44 != null)
+            {
+                currentProjectStatusReport = JsonConvert.DeserializeObject<ProjectStatusReportModel>(versionControl44.getLatest(versionControl44.DocumentModels));
+                executionDocsListStatus.Add(currentProjectStatusReport.ProjectStatusReportProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////CommunicationsRegister/////////
+            string json46 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationsRegister");
+            VersionControl<CommunicationRegisterModel> versionControl45 = JsonConvert.DeserializeObject<VersionControl<CommunicationRegisterModel>>(json46);
+            CommunicationRegisterModel currentCommunicationsRegister;
+
+            if (versionControl45 != null)
+            {
+                currentCommunicationsRegister = JsonConvert.DeserializeObject<CommunicationRegisterModel>(versionControl45.getLatest(versionControl45.DocumentModels));
+                executionDocsListStatus.Add(currentCommunicationsRegister.CommunicationsRegisterProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////PhaseReviewExe/////////
+            string json47 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewExe");
+            VersionControl<PhaseReviewFormExecutionModel> versionControl46 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewFormExecutionModel>>(json47);
+            PhaseReviewFormExecutionModel currentPhaseReviewExe;
+
+            if (versionControl46 != null)
+            {
+                currentPhaseReviewExe = JsonConvert.DeserializeObject<PhaseReviewFormExecutionModel>(versionControl46.getLatest(versionControl46.DocumentModels));
+                executionDocsListStatus.Add(currentPhaseReviewExe.PhaseReviewExeProgress);
+
+            }
+            else
+                executionDocsListStatus.Add("");
+
+            //////////////////////////////////////////////////////CLOSING PHASE///////////////////////////////////////////////////////////////////////////////////
+            //////ProjectClosureReport/////////
+            string json48 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectClosureReport");
+            VersionControl<ProjectClosureReportModel> versionControl47 = JsonConvert.DeserializeObject<VersionControl<ProjectClosureReportModel>>(json48);
+            ProjectClosureReportModel currentProjectClosureReport;
+
+            if (versionControl47 != null)
+            {
+                currentProjectClosureReport = JsonConvert.DeserializeObject<ProjectClosureReportModel>(versionControl47.getLatest(versionControl47.DocumentModels));
+                closingDocsListStatus.Add(currentProjectClosureReport.ProjectClosureReportProgress);
+
+            }
+            else
+                closingDocsListStatus.Add("");
+
+            //////PostImplementationReview/////////
+            string json49 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PostImplementationReview");
+            VersionControl<PostImplementationReviewModel> versionControl48 = JsonConvert.DeserializeObject<VersionControl<PostImplementationReviewModel>>(json49);
+            PostImplementationReviewModel currentPostImplementationReview;
+
+            if (versionControl48 != null)
+            {
+                currentPostImplementationReview = JsonConvert.DeserializeObject<PostImplementationReviewModel>(versionControl48.getLatest(versionControl48.DocumentModels));
+                closingDocsListStatus.Add(currentPostImplementationReview.PostImplementationReviewProgress);
+
+            }
+            else
+                closingDocsListStatus.Add("");
+
             //Get localdocs
             List<string> localDocuments = getLocalDocuments();
 
@@ -624,9 +831,16 @@ namespace ProjectManagementToolkit
             if (localDocuments == null)
             {
                 MessageBox.Show("No documents have been added yet.", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tabInitiation.Visible = false;
+                chart1.Visible = false;
+                chart2.Visible = false;
             }
             else
             {
+                tabInitiation.Visible = true;
+                chart1.Visible = true;
+                chart2.Visible = true;
+
                 ///////////////INITIATION PHASE/////////////////
                 initiationDocuments.Add("BusinessCase");
                 initiationDocuments.Add("FeasibilityStudy");
@@ -637,12 +851,6 @@ namespace ProjectManagementToolkit
                 initiationDocuments.Add("TermOfReferenceDocument");
 
                 initDocsListStatus.Add("BusinessCase");
-
-
-                //lblInitiationProgress.Text = "Progress: 0%";
-                //pbarInitiation.Value = 0;
-                //pbarInitiation.Maximum = initiationDocuments.Count;
-
 
                 for (int i = 0; i < initiationDocuments.Count; i++)
                 {
@@ -674,6 +882,14 @@ namespace ProjectManagementToolkit
                     }
                     else
                     {
+                        xValues1[0] = "Initiation";
+                        yValues1[0] = initationPercentage;
+
+                        yValues2[0] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+
                         uncomp++;
                         dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.Gray;
                     }
@@ -681,8 +897,18 @@ namespace ProjectManagementToolkit
 
                 }
 
-                lblInitNumTasks.Text = (initationPercentage /100).ToString("p");
+                if(inprog==initiationDocuments.Count)
+                {
+                    xValues1[0] = "Initiation";
+                    yValues1[0] = initationPercentage;
 
+                    yValues2[0] = 100;
+
+                    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                }
+
+                lblInitNumTasks.Text = (initationPercentage /100).ToString("p");
 
                 chartInit.ChartAreas[0].BackColor = Color.Transparent;
                 chartInit.Legends[0].BackColor = Color.Transparent;
@@ -748,9 +974,28 @@ namespace ProjectManagementToolkit
                     }
                     else
                     {
+                        xValues1[1] = "Planning";
+                        yValues1[1] = planningPercentage;
+
+                        yValues2[1] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+
                         uncompPlanning++;
                         dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.Gray;
                     }
+                }
+
+                if (inprogPlanning == planningDocuments.Count)
+                {
+                    xValues1[1] = "Planning";
+                    yValues1[1] = planningPercentage;
+
+                    yValues2[1] = 100;
+
+                    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                 }
 
                 lblPlanNumTasks.Text = (planningPercentage / 100).ToString("p");
@@ -777,8 +1022,8 @@ namespace ProjectManagementToolkit
                 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
                 ///////////////EXECUTION PHASE/////////////////
-                //executionDocuments.Add("BuildDeliverables");
-                //executionDocuments.Add("MonitorAndControl");
+                //executionDocuments.Add("BuildDeliverables"); Guides
+                //executionDocuments.Add("MonitorAndControl"); Guides
                 executionDocuments.Add("TimeMangement");
                 executionDocuments.Add("TimeSheet");
                 executionDocuments.Add("TimeSheetRegister");
@@ -786,15 +1031,13 @@ namespace ProjectManagementToolkit
                 executionDocuments.Add("ExpenseForm");
                 executionDocuments.Add("ExpenseRegister");
 
-
-                ///////////////////////////////////////////////////////////////////////
-                ///Sal jy dalk net ook kyk na die Quality goed, daar is 4 goed hier maar net 3 goed in die mainform onder quality
-
+                ////////////////////
+                ///Sal jy dalk net ook kyk na die Quality goed, daar is 4 goed hier maar net 3 goed in die mainform onder quality (Nico)
                 executionDocuments.Add("QualityManagement"); 
                 executionDocuments.Add("QualityReviewPlan"); 
                 executionDocuments.Add("QualityReviewForm"); 
-                //executionDocuments.Add("QualityReviewRegister"); 
-                ////////////////////////////////////////////////////////////////////////
+                //executionDocuments.Add("QualityReviewRegister"); Die kan ons eers los dink ek, ek sien dit ook nie in die main nie (Rickus)
+                ///////////////////
 
 
                 executionDocuments.Add("ChangeManagementProcess");
@@ -802,60 +1045,21 @@ namespace ProjectManagementToolkit
                 executionDocuments.Add("ChangeRequestRegister");
                 executionDocuments.Add("RiskManagamentProcess");
                 executionDocuments.Add("RiskForm");
-                //executionDocuments.Add("RiskRegister"); Al die moet nog in kom Rickus :)
-                //executionDocuments.Add("IssueManagementProcess");
-                //executionDocuments.Add("IssueForm");
-                //executionDocuments.Add("IssueRegister");
-                //executionDocuments.Add("PurchaseOrder");
-                //executionDocuments.Add("ProcurementRegister");
-                //executionDocuments.Add("AcceptanceManagementProcess");
-                //executionDocuments.Add("AcceptanceForm");
-                //executionDocuments.Add("AcceptanceRegister");
-                //executionDocuments.Add("CommunicationsManagementProcess");
-                //executionDocuments.Add("ProjectStatusReport");
-                //executionDocuments.Add("CommunicationsRegister");
-                //executionDocuments.Add("PhaseReviewExe");
+                executionDocuments.Add("RiskRegister");
+                executionDocuments.Add("IssueManagementProcess");
+                executionDocuments.Add("IssueForm");
+                executionDocuments.Add("IssueRegister");
+                executionDocuments.Add("PurchaseOrder");
+                executionDocuments.Add("ProcurementRegister");
+                executionDocuments.Add("AcceptanceManagementProcess");
+                executionDocuments.Add("AcceptanceForm");
+                executionDocuments.Add("AcceptanceRegister");
+                executionDocuments.Add("CommunicationsManagementProcess");
+                executionDocuments.Add("ProjectStatusReport");
+                executionDocuments.Add("CommunicationsRegister");
+                executionDocuments.Add("PhaseReviewExe");
 
-                // executionDocsListStatus.Add("TimeMangement");
-
-                //lblExecutionProgress.Text = "Progress: 0%";
-                //pbarExecution.Value = 0;
-                //pbarExecution.Maximum = executionDocuments.Count;
-
-                //for (int i = 0; i < executionDocuments.Count; i++)
-                //{
-                //    dgvExecution.Rows.Add();
-                //    dgvExecution.Rows[i].Cells[0].Value = executionDocuments[i];
-                //    if (localDocuments.Contains(executionDocuments[i]))
-                //    {
-                //        executionProgressVal++;
-                //        dgvExecution.Rows[i].Cells[1].Value = true;
-                //        //pbarExecution.Value = (int)executionProgressVal;
-                //        executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
-                //        //lblExecutionProgress.Text = "Progress: " + Math.Round(executionPercentage, 2) + "%";
-
-                //        xValues1[2] = "Execution";
-                //        yValues1[2] = executionPercentage;
-
-                //        yValues2[2] = 100 - executionPercentage;
-
-                //        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                //        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-                //    }
-                //    else
-                //    {
-                //        dgvExecution.Rows[i].Cells[1].Value = false;
-
-
-                //        xValues1[3] = "Execution";
-                //        yValues1[3] = 0;
-
-                //        yValues2[3] = 100;
-
-                //        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-                //        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-                //    }
-                //}
+                executionDocsListStatus.Add("TimeMangement");
 
                 for (int i = 0; i < executionDocuments.Count; i++)
                 {
@@ -875,23 +1079,42 @@ namespace ProjectManagementToolkit
                         dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
 
-                        xValues1[1] = "Execution";
-                        yValues1[1] = executionPercentage;
+                        xValues1[2] = "Execution";
+                        yValues1[2] = executionPercentage;
 
-                        yValues2[1] = 100 - executionPercentage;
+                        yValues1[2] = 100;
+                        yValues2[2] = 100 - executionPercentage;
 
                         chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                     }
                     else
                     {
+                        xValues1[2] = "Execution";
+                        yValues1[2] = executionPercentage;
+
+                        yValues2[2] = 100;
+
+                        chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                        chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+
                         uncompExecution++;
                         dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.Gray;
                     }
                 }
 
-                lblExecNumTasks.Text = (executionPercentage / 100).ToString("p");
+                if (inprogExecution == executionDocuments.Count)
+                {
+                    xValues1[2] = "Execution";
+                    yValues1[2] = executionPercentage;
 
+                    yValues2[2] = 100;
+
+                    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                }
+
+                lblExecNumTasks.Text = (executionPercentage / 100).ToString("p");
 
                 chartExecution.ChartAreas[0].BackColor = Color.Transparent;
                 chartExecution.Legends[0].BackColor = Color.Transparent;
@@ -911,25 +1134,30 @@ namespace ProjectManagementToolkit
                 chartExecution.Series["Series1"].Points[0].Color = Color.LimeGreen;
                 chartExecution.Series["Series1"].Points[1].Color = Color.Gray;
                 chartExecution.Series["Series1"].Points[2].Color = Color.Orange;
+                ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+                ////////////////////////////////////////CLOSING PHASE/////////////////////////////////////////////
                 closingDocuments.Add("ProjectClosureReport");
                 closingDocuments.Add("PostImplementationReview");
 
-                lblClosingProgress.Text = "Progress: 0%";
-                pbarClosing.Value = 0;
-                pbarClosing.Maximum = closingDocuments.Count;
+                closingDocsListStatus.Add("ProjectClosureReport");
+
                 for (int i = 0; i < closingDocuments.Count; i++)
                 {
+                    closingProgressVal++;
                     dgvClosing.Rows.Add();
                     dgvClosing.Rows[i].Cells[0].Value = closingDocuments[i];
-                    if (localDocuments.Contains(closingDocuments[i]))
+
+                    if (closingDocsListStatus[i] == "UNDONE")
                     {
-                        closingProgressVal++;
-                        dgvClosing.Rows[i].Cells[1].Value = true;
-                        pbarClosing.Value = (int)closingProgressVal;
+                        dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.Orange;
+                        inprogClosing++;
+                    }
+                    else if (closingDocsListStatus[i] == "DONE")
+                    {
+                        compClosing++;
+                        dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
-                        lblClosingProgress.Text = "Progress: " + Math.Round(closingPercentage, 2) + "%";
 
                         xValues1[3] = "Closing";
                         yValues1[3] = closingPercentage;
@@ -941,18 +1169,52 @@ namespace ProjectManagementToolkit
                     }
                     else
                     {
-                        dgvClosing.Rows[i].Cells[1].Value = false;
-
                         xValues1[3] = "Closing";
-                        yValues1[3] = 0;
+                        yValues1[3] = closingPercentage;
 
                         yValues2[3] = 100;
 
                         chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
+                        uncompClosing++;
+                        dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.Gray;
                     }
                 }
+
+                if (inprogClosing == closingDocuments.Count)
+                {
+                    xValues1[3] = "Closing";
+                    yValues1[3] = closingPercentage;
+
+                    yValues2[3] = 100;
+
+                    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
+                    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
+                }
+
+                lblClosingNumTasks.Text = (closingPercentage / 100).ToString("p");
+
+
+                chartClosing.ChartAreas[0].BackColor = Color.Transparent;
+                chartClosing.Legends[0].BackColor = Color.Transparent;
+                chartClosing.Legends[0].BackColor = Color.Transparent;
+                string[] xClose = { "Completed Tasks  " + compClosing, "Not started Tasks  " + uncompClosing, "In Progress Tasks " + inprogClosing };
+
+                double[] yClose = { compClosing, uncompClosing, inprogClosing };
+
+                chartClosing.Series["Series1"].Points.DataBindXY(xClose, yClose);
+                chartClosing.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+                chartClosing.Series["Series1"]["PieLabelStyle"] = "Disabled";
+                chartClosing.Legends[0].Enabled = true;
+
+                chartClosing.Text = "Test";
+
+                chartClosing.Series["Series1"].Points[0].Color = Color.LimeGreen;
+                chartClosing.Series["Series1"].Points[1].Color = Color.Gray;
+                chartClosing.Series["Series1"].Points[2].Color = Color.Orange;
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
                 pbarOverall.Value = (int)overallProgressVal;
@@ -1001,191 +1263,7 @@ namespace ProjectManagementToolkit
             return localDocuments;
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    initationProgressVal = 0;
-        //    for (int i = 0; i < pbarInitiation.Maximum; i++) // Go through documents
-        //    {
-        //        initationProgressVal++; //Increase progress
-        //        dgvInitiation.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
-
-        //    }
-        //    pbarInitiation.Value = pbarInitiation.Maximum;
-        //    lblInitiationProgress.Text = "Progress: 100%";
-
-        //    //////////////////// Calculate overall progressbar percentage //////////////
-        //    double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
-        //    pbarOverall.Value = (int)overallProgressVal;
-        //    pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
-        //    double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
-        //    lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
-        //    ////////////////////////////////////////////////////////////////////////////
-        //    string[] xValues = { "Completed Tasks", "Not Started Tasks" };
-        //    double[] yValues = { overallPercentage, 100 - overallPercentage };
-
-        //    chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
-        //    chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
-
-        //    chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
-        //    chart1.Legends[0].Enabled = true;
-
-        //    chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
-        //    chart1.Series["Series1"].Points[1].Color = Color.Gray;
-
-        //    foreach (DataPoint p in chart1.Series["Series1"].Points)
-        //    {
-        //        p.Label = "#PERCENT\n#VALX";
-        //    }
-
-        //    initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
-
-        //    xValues1[0] = "Initiation";
-        //    //yValues1[0] = 0;
-
-        //    yValues2[0] = 100 - initationPercentage;
-
-        //    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-        //    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-        //}
-
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    planningProgressVal = 0;
-        //    for (int i = 0; i < pbarPlanning.Maximum; i++) // Go through documents
-        //    {
-        //        planningProgressVal++; //Increase progress
-        //        dgvPlanning.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
-        //    }
-
-        //    pbarPlanning.Value = pbarPlanning.Maximum;
-        //    lblPlanningProgress.Text = "Progress: 100%";
-
-        //    //////////////////// Calculate overall progressbar percentage //////////////
-        //    double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
-        //    pbarOverall.Value = (int)overallProgressVal;
-        //    pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
-        //    double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
-        //    lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
-        //    ////////////////////////////////////////////////////////////////////////////
-        //    string[] xValues = { "Completed Tasks", "Not Started Tasks" };
-        //    double[] yValues = { overallPercentage, 100 - overallPercentage };
-
-        //    chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
-        //    chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
-
-        //    chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
-        //    chart1.Legends[0].Enabled = true;
-
-        //    chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
-        //    chart1.Series["Series1"].Points[1].Color = Color.Gray;
-
-
-        //    foreach (DataPoint p in chart1.Series["Series1"].Points)
-        //    {
-        //        p.Label = "#PERCENT\n#VALX";
-        //    }
-
-        //    planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
-
-        //    yValues1[1] = 100;
-        //    yValues2[1] = 100 - planningPercentage;
-
-        //    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-        //    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-        //}
-
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    executionProgressVal = 0;
-        //    for (int i = 0; i < pbarExecution.Maximum; i++) // Go through documents
-        //    {
-        //        executionProgressVal++; //Increase progress
-        //        dgvExecution.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
-        //    }
-        //    pbarExecution.Value = pbarExecution.Maximum;
-        //    lblExecutionProgress.Text = "Progress: 100%";
-
-        //    //////////////////// Calculate overall progressbar percentage //////////////
-        //    double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
-        //    pbarOverall.Value = (int)overallProgressVal;
-        //    pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
-        //    double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
-        //    lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
-        //    ////////////////////////////////////////////////////////////////////////////
-        //    ///
-        //    string[] xValues = { "Completed Tasks", "Not Started Tasks" };
-        //    double[] yValues = { overallPercentage, 100 - overallPercentage };
-
-        //    chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
-        //    chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
-
-        //    chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
-        //    chart1.Legends[0].Enabled = true;
-
-        //    chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
-        //    chart1.Series["Series1"].Points[1].Color = Color.Gray;
-
-
-        //    foreach (DataPoint p in chart1.Series["Series1"].Points)
-        //    {
-        //        p.Label = "#PERCENT\n#VALX";
-        //    }
-
-        //    executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
-
-        //    yValues1[2] = 100;
-        //    yValues2[2] = 100 - executionPercentage;
-
-        //    chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-        //    chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-        //}
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            closingProgressVal = 0;
-            for (int i = 0; i < pbarClosing.Maximum; i++) // Go through documents
-            {
-                closingProgressVal++; //Increase progress
-                dgvClosing.Rows[i].Cells[1].Value = true; // check each unchecked checkbox
-            }
-            pbarClosing.Value = pbarClosing.Maximum;
-            lblClosingProgress.Text = "Progress: 100%";
-
-            //////////////////// Calculate overall progressbar percentage //////////////
-            double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
-            pbarOverall.Value = (int)overallProgressVal;
-            pbarOverall.Maximum = initiationDocuments.Count + planningDocuments.Count + executionDocuments.Count + closingDocuments.Count;
-            double overallPercentage = ((overallProgressVal) / pbarOverall.Maximum) * 100;
-            lblOverallProgress.Text = "Overall Progress: " + Math.Round(overallPercentage, 2) + "%";
-            ////////////////////////////////////////////////////////////////////////////
-            ///
-            string[] xValues = { "Completed Tasks", "Not Started Tasks" };
-            double[] yValues = { overallPercentage, 100 - overallPercentage };
-
-            chart1.Series["Series1"].Points.DataBindXY(xValues, yValues);
-            chart1.Series["Series1"].ChartType = SeriesChartType.Doughnut;
-
-            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
-            chart1.Legends[0].Enabled = true;
-
-            chart1.Series["Series1"].Points[0].Color = Color.LimeGreen;
-            chart1.Series["Series1"].Points[1].Color = Color.Gray;
-
-
-            foreach (DataPoint p in chart1.Series["Series1"].Points)
-            {
-                p.Label = "#PERCENT\n#VALX";
-            }
-
-            closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
-
-            yValues1[3] = 100;
-            yValues2[3] = 100 - closingPercentage;
-
-            chart2.Series["Completed"].Points.DataBindXY(xValues1, yValues1);
-            chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
-        }
-
+        
         private void chart3_Click(object sender, EventArgs e)
         {
 

@@ -9,6 +9,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class IssueRegisterModel
     {
         public List<IssueEntry> IssueEntries { get; set; }
+        public string IssueRegisterProgress { get; set; }
+
         public class IssueEntry
         {
             public string ID { get; set; }

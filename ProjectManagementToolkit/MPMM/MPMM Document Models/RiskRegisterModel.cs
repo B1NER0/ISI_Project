@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class RiskRegisterModel
     {
         public List<RiskEntry> RiskEntries { get; set; }
+        public string RiskRegisterProgress { get; set; }
         public class RiskEntry
         {
             public int ID { get; set; }

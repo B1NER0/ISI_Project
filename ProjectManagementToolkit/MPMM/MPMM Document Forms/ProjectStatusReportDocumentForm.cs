@@ -183,6 +183,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 ProjSchedules.Add(ProjectScheduleMod);
             }
             newProjectStatusReportModel.ProSchedule = ProjSchedules;
+            newProjectStatusReportModel.ProjectStatusReportProgress = "DONE";
 
 
             List<ProjectStatusReportModel.ProjectExpenses> ProjExp = new List<ProjectStatusReportModel.ProjectExpenses>();
@@ -979,6 +980,192 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExportWord_Click(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            List<ProjectStatusReportModel.ProjectSchedule> ProjSchedules = new List<ProjectStatusReportModel.ProjectSchedule>();
+
+            int versionRowsCount = dgvProjectSchedule.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                ProjectStatusReportModel.ProjectSchedule ProjectScheduleMod = new ProjectStatusReportModel.ProjectSchedule();
+                var Deliverable = dgvProjectSchedule.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ScheduledCompletionDate = dgvProjectSchedule.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ActualCompletionDate = dgvProjectSchedule.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var ActualVariance = dgvProjectSchedule.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var ForecastCompletionDate = dgvProjectSchedule.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var ForecastVariance = dgvProjectSchedule.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var Summary = dgvProjectSchedule.Rows[i].Cells[6].Value?.ToString() ?? "";
+
+                ProjectScheduleMod.Deliverable = Deliverable;
+                ProjectScheduleMod.ScheduledCompletionDate = ScheduledCompletionDate;
+                ProjectScheduleMod.ActualCompletionDate = ActualCompletionDate;
+                ProjectScheduleMod.ActualVariance = ActualVariance;
+                ProjectScheduleMod.ForecastCompletionDate = ForecastCompletionDate;
+                ProjectScheduleMod.ForecastVariance = ForecastVariance;
+                ProjectScheduleMod.Summary = Summary;
+
+                ProjSchedules.Add(ProjectScheduleMod);
+            }
+            newProjectStatusReportModel.ProSchedule = ProjSchedules;
+            newProjectStatusReportModel.ProjectStatusReportProgress = "UNDONE";
+
+
+            List<ProjectStatusReportModel.ProjectExpenses> ProjExp = new List<ProjectStatusReportModel.ProjectExpenses>();
+
+            int expensesRowsCount = dgvProjectExpense.Rows.Count;
+
+            for (int i = 0; i < expensesRowsCount - 1; i++)
+            {
+                ProjectStatusReportModel.ProjectExpenses ProjectExps = new ProjectStatusReportModel.ProjectExpenses();
+                var ExpenseType = dgvProjectExpense.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var BudgetedExpenditure = dgvProjectExpense.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ActualExpenditure = dgvProjectExpense.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var ActualVariance = dgvProjectExpense.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var ForecastExpenditure = dgvProjectExpense.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var ForecastVariance = dgvProjectExpense.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var Summary = dgvProjectExpense.Rows[i].Cells[6].Value?.ToString() ?? "";
+
+                ProjectExps.ExpenseType = ExpenseType;
+                ProjectExps.BudgetedExpenditure = BudgetedExpenditure;
+                ProjectExps.ActualExpenditure = ActualExpenditure;
+                ProjectExps.ActualVariance = ActualVariance;
+                ProjectExps.ForecastExpenditure = ForecastExpenditure;
+                ProjectExps.ForecastVariance = ForecastVariance;
+                ProjectExps.Summary = Summary;
+
+                ProjExp.Add(ProjectExps);
+            }
+            newProjectStatusReportModel.ProjExpenses = ProjExp;
+
+            List<ProjectStatusReportModel.ProjectEffort> ProjEffort = new List<ProjectStatusReportModel.ProjectEffort>();
+
+            int effortRowsCount = dgvProjectEffort.Rows.Count;
+
+            for (int i = 0; i < effortRowsCount - 1; i++)
+            {
+                ProjectStatusReportModel.ProjectEffort ProjectEff = new ProjectStatusReportModel.ProjectEffort();
+                var Activities = dgvProjectEffort.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var BudgetedEffort = dgvProjectEffort.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ActualEffort = dgvProjectEffort.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var ActualVariance = dgvProjectEffort.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var ForecastEffort = dgvProjectEffort.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var ForecastVariance = dgvProjectEffort.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var Summary = dgvProjectEffort.Rows[i].Cells[6].Value?.ToString() ?? "";
+
+                ProjectEff.Activities = Activities;
+                ProjectEff.BudgetedEffort = BudgetedEffort;
+                ProjectEff.ActualEffort = ActualEffort;
+                ProjectEff.ActualVariance = ActualVariance;
+                ProjectEff.ForecastEffort = ForecastEffort;
+                ProjectEff.ForecastVariance = ForecastVariance;
+                ProjectEff.Summary = Summary;
+
+                ProjEffort.Add(ProjectEff);
+            }
+            newProjectStatusReportModel.ProjEffort = ProjEffort;
+
+            List<ProjectStatusReportModel.ProjectQuality> ProjQuality = new List<ProjectStatusReportModel.ProjectQuality>();
+
+            int quaRowsCount = dgvProjectQuality.Rows.Count;
+
+            for (int i = 0; i < quaRowsCount - 1; i++)
+            {
+                ProjectStatusReportModel.ProjectQuality ProjectQua = new ProjectStatusReportModel.ProjectQuality();
+                var Deliverables = dgvProjectQuality.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var QualityTarget = dgvProjectQuality.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var QualityAchieved = dgvProjectQuality.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var QualityVariance = dgvProjectQuality.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var Summary = dgvProjectQuality.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+                ProjectQua.Deliverables = Deliverables;
+                ProjectQua.QualityTarget = QualityTarget;
+                ProjectQua.QualityAchieved = QualityAchieved;
+                ProjectQua.QualityVariance = QualityVariance;
+                ProjectQua.Summary = Summary;
+
+                ProjQuality.Add(ProjectQua);
+            }
+            newProjectStatusReportModel.ProjQuality = ProjQuality;
+
+            List<ProjectStatusReportModel.ProjectRisk> ProjRisk = new List<ProjectStatusReportModel.ProjectRisk>();
+
+            int risRowsCount = dgvProjectRisk.Rows.Count;
+
+            for (int i = 0; i < risRowsCount - 1; i++)
+            {
+                ProjectStatusReportModel.ProjectRisk ProjectRis = new ProjectStatusReportModel.ProjectRisk();
+                var Risks = dgvProjectRisk.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Likelihood = dgvProjectRisk.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Impact = dgvProjectRisk.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Summary = dgvProjectRisk.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                ProjectRis.Risks = Risks;
+                ProjectRis.Likelihood = Likelihood;
+                ProjectRis.Impact = Impact;
+                ProjectRis.Summary = Summary;
+
+                ProjRisk.Add(ProjectRis);
+            }
+            newProjectStatusReportModel.ProjRisk = ProjRisk;
+
+            List<ProjectStatusReportModel.ProjectIssues> ProjIss = new List<ProjectStatusReportModel.ProjectIssues>();
+
+            int issRowsCount = dgvProjectIssues.Rows.Count;
+
+            for (int i = 0; i < issRowsCount - 1; i++)
+            {
+                ProjectStatusReportModel.ProjectIssues ProjectISS = new ProjectStatusReportModel.ProjectIssues();
+                var Iss = dgvProjectIssues.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Imp = dgvProjectIssues.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Sum = dgvProjectIssues.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                ProjectISS.Issues = Iss;
+                ProjectISS.Impact = Imp;
+                ProjectISS.Summary = Sum;
+
+                ProjIss.Add(ProjectISS);
+            }
+            newProjectStatusReportModel.NProjIssues = ProjIss;
+
+            newProjectStatusReportModel.ProjectName = txtProjectName2.Text;
+            newProjectStatusReportModel.ProjectID = txtProjectID.Text;
+            newProjectStatusReportModel.ProjectManager = txtProjectManager.Text;
+            newProjectStatusReportModel.ProjectSponsor = txtProjectSponsor.Text;
+            newProjectStatusReportModel.ReportPreparedBy = txtReportPreparedBy.Text;
+            newProjectStatusReportModel.PrepDate = txtReportPreperationDate.Text;
+            newProjectStatusReportModel.PreperationPeriod = txtReportingPeriod.Text;
+            newProjectStatusReportModel.ESProjectSchedule = txtProjectSchedule.Text;
+            newProjectStatusReportModel.Recipients = txtProjectRecipients.Text;
+            newProjectStatusReportModel.RepPeriod = txtReportingPeriod.Text;
+            newProjectStatusReportModel.proSchedule = txtProjectSchedule.Text;
+            newProjectStatusReportModel.ProjectDeliverables = txtProjectDeliverables.Text;
+            newProjectStatusReportModel.textProjectIssues = txtProjectIssues.Text;
+            newProjectStatusReportModel.ProEx = txtProjectExpenses.Text;
+
+            newProjectStatusReportModel.ProjectDescription = txtProjectDescription.Text;
+            newProjectStatusReportModel.OverallStatus = txtOverallStatus.Text;
+            newProjectStatusReportModel.ProjectRisks = txtProjectRisks.Text;
+            newProjectStatusReportModel.ProjectChanges = txtProjectChanges.Text;
+
+            List<VersionControl<ProjectStatusReportModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentProjectStatusReportModel, newProjectStatusReportModel))
+            {
+                VersionControl<ProjectStatusReportModel>.DocumentModel documentModel = new VersionControl<ProjectStatusReportModel>.DocumentModel(newProjectStatusReportModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentProjectStatusReportModel = JsonConvert.DeserializeObject<ProjectStatusReportModel>(JsonConvert.SerializeObject(newProjectStatusReportModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ProjectStatusReport");
+                MessageBox.Show("Project status report saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

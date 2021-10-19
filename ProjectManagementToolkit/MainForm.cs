@@ -523,7 +523,7 @@ namespace ProjectManagementToolkit
 
         private void projectDashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProjectDashboard form = new ProjectDashboard();
+            lblClosingTaskNum form = new lblClosingTaskNum();
             form.Show();
             form.MdiParent = this;
         }

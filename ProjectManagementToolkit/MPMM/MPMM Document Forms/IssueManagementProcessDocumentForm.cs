@@ -46,6 +46,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newIssueManagementProcessModel.IssueDate = DocumentInfoGrid.Rows[2].Cells[1].Value.ToString();
             newIssueManagementProcessModel.LastSavedDate = DocumentInfoGrid.Rows[3].Cells[1].Value.ToString();
             newIssueManagementProcessModel.FileName = DocumentInfoGrid.Rows[4].Cells[1].Value.ToString();
+            newIssueManagementProcessModel.IssueManagementProcessProgress = "DONE";
 
             List<IssueManagementProcessModel.DocumentHistory> documentHistories = new List<IssueManagementProcessModel.DocumentHistory>();
 
@@ -511,6 +512,79 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void overviewTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            newIssueManagementProcessModel.DocumentID = DocumentInfoGrid.Rows[0].Cells[1].Value.ToString();
+            newIssueManagementProcessModel.DocumentOwner = DocumentInfoGrid.Rows[1].Cells[1].Value.ToString();
+            newIssueManagementProcessModel.IssueDate = DocumentInfoGrid.Rows[2].Cells[1].Value.ToString();
+            newIssueManagementProcessModel.LastSavedDate = DocumentInfoGrid.Rows[3].Cells[1].Value.ToString();
+            newIssueManagementProcessModel.FileName = DocumentInfoGrid.Rows[4].Cells[1].Value.ToString();
+            newIssueManagementProcessModel.IssueManagementProcessProgress = "UNDONE";
+
+            List<IssueManagementProcessModel.DocumentHistory> documentHistories = new List<IssueManagementProcessModel.DocumentHistory>();
+
+            int versionRowsCount = docHistDataGrid.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                IssueManagementProcessModel.DocumentHistory documentHistoryModel = new IssueManagementProcessModel.DocumentHistory();
+                var version = docHistDataGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = docHistDataGrid.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = docHistDataGrid.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newIssueManagementProcessModel.DocumentHistories = documentHistories;
+
+            List<IssueManagementProcessModel.DocumentApproval> documentApprovalsModel = new List<IssueManagementProcessModel.DocumentApproval>();
+
+            int approvalRowsCount = docApprovalsDataGrid.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                IssueManagementProcessModel.DocumentApproval documentApproval = new IssueManagementProcessModel.DocumentApproval();
+                var role = docApprovalsDataGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = docApprovalsDataGrid.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = docApprovalsDataGrid.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = docApprovalsDataGrid.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newIssueManagementProcessModel.DocumentApprovals = documentApprovalsModel;
+
+            newIssueManagementProcessModel.Overview = overviewTextBox.Text;
+            newIssueManagementProcessModel.RaiseIssue = raiseTextBox.Text;
+            newIssueManagementProcessModel.ReviewIssue = reviewTextBox.Text;
+            newIssueManagementProcessModel.IssueAction = assgnActTextBox.Text;
+            newIssueManagementProcessModel.TeamMember = textBox1.Text;
+            newIssueManagementProcessModel.ProjectManager = textBox2.Text;
+            newIssueManagementProcessModel.ProjectBoard = textBox3.Text;
+            newIssueManagementProcessModel.IssueForm = issueFormTextBox.Text;
+            newIssueManagementProcessModel.IssueRegister = issueRegisterTextBox.Text;
+
+            List<VersionControl<IssueManagementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentIssueManagementProcessModel, newIssueManagementProcessModel))
+            {
+                VersionControl<IssueManagementProcessModel>.DocumentModel documentModel = new VersionControl<IssueManagementProcessModel>.DocumentModel(newIssueManagementProcessModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "IssueManagementProcess");
+                MessageBox.Show("Issue Management Process Document saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }
