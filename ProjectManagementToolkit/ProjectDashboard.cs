@@ -19,10 +19,10 @@ using System.Drawing.Drawing2D;
 
 namespace ProjectManagementToolkit
 {
-    public partial class lblClosingTaskNum : Form
+    public partial class ProjectDashboard : Form
     {
         ProjectModel projectModel = new ProjectModel();
-        public lblClosingTaskNum()
+        public ProjectDashboard()
         {
             InitializeComponent();
         }

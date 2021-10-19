@@ -95,11 +95,11 @@
             this.tabControl1.Controls.Add(this.projectDeatailsAndRiskDetails);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(4, 9);
+            this.tabControl1.Location = new System.Drawing.Point(11, 36);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(738, 502);
+            this.tabControl1.Size = new System.Drawing.Size(875, 588);
             this.tabControl1.TabIndex = 0;
             // 
             // projectDeatailsAndRiskDetails
@@ -111,7 +111,7 @@
             this.projectDeatailsAndRiskDetails.Margin = new System.Windows.Forms.Padding(2);
             this.projectDeatailsAndRiskDetails.Name = "projectDeatailsAndRiskDetails";
             this.projectDeatailsAndRiskDetails.Padding = new System.Windows.Forms.Padding(2);
-            this.projectDeatailsAndRiskDetails.Size = new System.Drawing.Size(730, 473);
+            this.projectDeatailsAndRiskDetails.Size = new System.Drawing.Size(867, 559);
             this.projectDeatailsAndRiskDetails.TabIndex = 0;
             this.projectDeatailsAndRiskDetails.Text = "Project Deatails & Risk Details";
             // 
@@ -127,7 +127,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(726, 469);
+            this.tabControl2.Size = new System.Drawing.Size(863, 555);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage1
@@ -141,7 +141,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(718, 438);
+            this.tabPage1.Size = new System.Drawing.Size(855, 524);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project Details & Risk Detail ";
             // 
@@ -160,7 +160,7 @@
             this.panel2.Location = new System.Drawing.Point(22, 162);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 139);
+            this.panel2.Size = new System.Drawing.Size(492, 225);
             this.panel2.TabIndex = 23;
             // 
             // dateRaised
@@ -238,7 +238,7 @@
             this.panel1.Location = new System.Drawing.Point(22, 38);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 248);
+            this.panel1.Size = new System.Drawing.Size(451, 334);
             this.panel1.TabIndex = 22;
             // 
             // projectManager
@@ -321,7 +321,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(682, 295);
+            this.tabPage3.Size = new System.Drawing.Size(718, 438);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Risk Description";
             // 
@@ -335,7 +335,7 @@
             this.riskDescription.Margin = new System.Windows.Forms.Padding(2);
             this.riskDescription.Multiline = true;
             this.riskDescription.Name = "riskDescription";
-            this.riskDescription.Size = new System.Drawing.Size(678, 291);
+            this.riskDescription.Size = new System.Drawing.Size(714, 434);
             this.riskDescription.TabIndex = 27;
             this.riskDescription.Text = "Risk Description";
             // 
@@ -347,7 +347,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(682, 295);
+            this.tabPage4.Size = new System.Drawing.Size(718, 438);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Risk Likelihood";
             // 
@@ -361,7 +361,7 @@
             this.riskLikelihood.Margin = new System.Windows.Forms.Padding(2);
             this.riskLikelihood.Multiline = true;
             this.riskLikelihood.Name = "riskLikelihood";
-            this.riskLikelihood.Size = new System.Drawing.Size(678, 291);
+            this.riskLikelihood.Size = new System.Drawing.Size(714, 434);
             this.riskLikelihood.TabIndex = 29;
             this.riskLikelihood.Text = "Risk Likelihood";
             // 
@@ -373,7 +373,7 @@
             this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage5.Size = new System.Drawing.Size(682, 295);
+            this.tabPage5.Size = new System.Drawing.Size(718, 438);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = "Risk Impact";
             // 
@@ -387,7 +387,7 @@
             this.riskImpact.Margin = new System.Windows.Forms.Padding(2);
             this.riskImpact.Multiline = true;
             this.riskImpact.Name = "riskImpact";
-            this.riskImpact.Size = new System.Drawing.Size(678, 291);
+            this.riskImpact.Size = new System.Drawing.Size(714, 434);
             this.riskImpact.TabIndex = 30;
             this.riskImpact.Text = "Risk Impact";
             // 
@@ -399,7 +399,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(694, 328);
+            this.tabPage2.Size = new System.Drawing.Size(730, 473);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Risk Mitigation & Approval Details";
             // 
@@ -584,10 +584,10 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(454, 2);
+            this.btnSave.Location = new System.Drawing.Point(491, 11);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(74, 23);
+            this.btnSave.Size = new System.Drawing.Size(97, 30);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -597,10 +597,10 @@
             // 
             this.btnExportWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExportWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportWord.Location = new System.Drawing.Point(658, 2);
+            this.btnExportWord.Location = new System.Drawing.Point(743, 11);
             this.btnExportWord.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportWord.Name = "btnExportWord";
-            this.btnExportWord.Size = new System.Drawing.Size(74, 23);
+            this.btnExportWord.Size = new System.Drawing.Size(118, 30);
             this.btnExportWord.TabIndex = 2;
             this.btnExportWord.Text = "Export to Word";
             this.btnExportWord.UseVisualStyleBackColor = false;
@@ -610,10 +610,10 @@
             // 
             this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveProgress.Location = new System.Drawing.Point(532, 2);
+            this.btnSaveProgress.Location = new System.Drawing.Point(608, 11);
             this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveProgress.Name = "btnSaveProgress";
-            this.btnSaveProgress.Size = new System.Drawing.Size(111, 23);
+            this.btnSaveProgress.Size = new System.Drawing.Size(117, 30);
             this.btnSaveProgress.TabIndex = 3;
             this.btnSaveProgress.Text = "Save Progress";
             this.btnSaveProgress.UseVisualStyleBackColor = false;
@@ -624,7 +624,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(746, 521);
+            this.ClientSize = new System.Drawing.Size(883, 607);
             this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.btnExportWord);
             this.Controls.Add(this.btnSave);
