@@ -10,6 +10,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class QualityManagementProcessModel
     {
         public string ProjectName { get; set; }
+        public string QualityManagementProcessProgress { get; set; }
 
         public string DocumentID { get; set; }
 

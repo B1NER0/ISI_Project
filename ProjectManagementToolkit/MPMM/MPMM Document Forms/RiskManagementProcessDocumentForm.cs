@@ -135,6 +135,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newRiskManagmentProcessModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newRiskManagmentProcessModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
 
+            newRiskManagmentProcessModel.RiskManagementProcessProgress = "DONE";
 
 
             List<RiskManagmentProcessModel.DocumentHistory> documentHistories = new List<RiskManagmentProcessModel.DocumentHistory>();
@@ -522,6 +523,83 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExportWord_Click(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newRiskManagmentProcessModel.IdentifyRisk = txtIdentifyRisk.Text;
+            newRiskManagmentProcessModel.ReviewRisk = txtReviewRisk.Text;
+            newRiskManagmentProcessModel.AssignRisk = txtAssignRiskActions.Text;
+
+            newRiskManagmentProcessModel.TeamMember = txtTeamMember.Text;
+            newRiskManagmentProcessModel.ProjectManager = txtProjectManager.Text;
+            newRiskManagmentProcessModel.ProjectBoard = txtProjectBoard.Text;
+
+            newRiskManagmentProcessModel.RiskForm = txtRiskForm.Text;
+            newRiskManagmentProcessModel.RiskRegister = txtRiskManager.Text;
+
+            newRiskManagmentProcessModel.DocumentID = dgvDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newRiskManagmentProcessModel.DocumentOwner = dgvDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newRiskManagmentProcessModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newRiskManagmentProcessModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newRiskManagmentProcessModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+
+            newRiskManagmentProcessModel.RiskManagementProcessProgress = "UNDONE";
+
+
+            List<RiskManagmentProcessModel.DocumentHistory> documentHistories = new List<RiskManagmentProcessModel.DocumentHistory>();
+
+            int versionRowsCount = dgvDocumentHistory.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                RiskManagmentProcessModel.DocumentHistory documentHistoryModel = new RiskManagmentProcessModel.DocumentHistory();
+                var version = dgvDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dgvDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dgvDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newRiskManagmentProcessModel.DocumentHistories = documentHistories;
+
+            List<RiskManagmentProcessModel.DocumentApproval> documentApprovalsModel = new List<RiskManagmentProcessModel.DocumentApproval>();
+
+            int approvalRowsCount = dgvDocumentApprovals.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                RiskManagmentProcessModel.DocumentApproval documentApproval = new RiskManagmentProcessModel.DocumentApproval();
+                var role = dgvDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dgvDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dgvDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dgvDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+
+            newRiskManagmentProcessModel.DocumentApprovals = documentApprovalsModel;
+
+            List<VersionControl<RiskManagmentProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+            if (!versionControl.isEqual(currentRiskManagmentProcessModel, newRiskManagmentProcessModel))
+            {
+                VersionControl<RiskManagmentProcessModel>.DocumentModel documentModel = new VersionControl<RiskManagmentProcessModel>.DocumentModel(newRiskManagmentProcessModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentRiskManagmentProcessModel = JsonConvert.DeserializeObject<RiskManagmentProcessModel>(JsonConvert.SerializeObject(newRiskManagmentProcessModel));
+
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "RiskManagamentProcess");
+                MessageBox.Show("Risk management saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

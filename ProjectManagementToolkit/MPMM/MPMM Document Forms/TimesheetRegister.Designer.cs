@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewTimesheetRegister = new System.Windows.Forms.DataGridView();
             this.ActivityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivityDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,7 @@
             this.txtIssueRegisterProjectManager = new System.Windows.Forms.TextBox();
             this.txtIssueRegisterProjectName = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimesheetRegister)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,14 +59,14 @@
             this.dataGridViewTimesheetRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTimesheetRegister.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTimesheetRegister.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTimesheetRegister.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTimesheetRegister.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ActivityID,
@@ -83,89 +84,114 @@
             this.dataGridViewTimesheetRegister.EnableHeadersVisualStyles = false;
             this.dataGridViewTimesheetRegister.Location = new System.Drawing.Point(12, 77);
             this.dataGridViewTimesheetRegister.Name = "dataGridViewTimesheetRegister";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTimesheetRegister.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dataGridViewTimesheetRegister.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTimesheetRegister.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTimesheetRegister.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dataGridViewTimesheetRegister.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTimesheetRegister.Size = new System.Drawing.Size(904, 370);
             this.dataGridViewTimesheetRegister.TabIndex = 10;
             // 
             // ActivityID
             // 
             this.ActivityID.HeaderText = "Activity ID ";
+            this.ActivityID.MinimumWidth = 6;
             this.ActivityID.Name = "ActivityID";
+            this.ActivityID.Width = 125;
             // 
             // ActivityDescription
             // 
             this.ActivityDescription.HeaderText = "Activity Description";
+            this.ActivityDescription.MinimumWidth = 6;
             this.ActivityDescription.Name = "ActivityDescription";
+            this.ActivityDescription.Width = 125;
             // 
             // TaskID
             // 
             this.TaskID.HeaderText = "Task ID";
+            this.TaskID.MinimumWidth = 6;
             this.TaskID.Name = "TaskID";
+            this.TaskID.Width = 125;
             // 
             // TaskDescription
             // 
             this.TaskDescription.HeaderText = "Task Description";
+            this.TaskDescription.MinimumWidth = 6;
             this.TaskDescription.Name = "TaskDescription";
+            this.TaskDescription.Width = 125;
             // 
             // TeamMember
             // 
             this.TeamMember.HeaderText = "Team Member";
+            this.TeamMember.MinimumWidth = 6;
             this.TeamMember.Name = "TeamMember";
+            this.TeamMember.Width = 125;
             // 
             // Time
             // 
             this.Time.HeaderText = "OverTime";
+            this.Time.MinimumWidth = 6;
             this.Time.Name = "Time";
+            this.Time.Width = 125;
             // 
             // StartPercentageComplete
             // 
             this.StartPercentageComplete.HeaderText = "Start % Complete";
+            this.StartPercentageComplete.MinimumWidth = 6;
             this.StartPercentageComplete.Name = "StartPercentageComplete";
+            this.StartPercentageComplete.Width = 125;
             // 
             // EndPercentageComplete
             // 
             this.EndPercentageComplete.HeaderText = "End % Complete";
+            this.EndPercentageComplete.MinimumWidth = 6;
             this.EndPercentageComplete.Name = "EndPercentageComplete";
+            this.EndPercentageComplete.Width = 125;
             // 
             // Result
             // 
             this.Result.HeaderText = "Result";
+            this.Result.MinimumWidth = 6;
             this.Result.Name = "Result";
+            this.Result.Width = 125;
             // 
             // ApprovalStatus
             // 
             this.ApprovalStatus.HeaderText = "Approval Status";
+            this.ApprovalStatus.MinimumWidth = 6;
             this.ApprovalStatus.Name = "ApprovalStatus";
+            this.ApprovalStatus.Width = 125;
             // 
             // ApprovalDate
             // 
             this.ApprovalDate.HeaderText = "Approval Date";
+            this.ApprovalDate.MinimumWidth = 6;
             this.ApprovalDate.Name = "ApprovalDate";
+            this.ApprovalDate.Width = 125;
             // 
             // Approver
             // 
             this.Approver.HeaderText = "Approver";
+            this.Approver.MinimumWidth = 6;
             this.Approver.Name = "Approver";
+            this.Approver.Width = 125;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Location = new System.Drawing.Point(422, 34);
+            this.btnSave.Location = new System.Drawing.Point(498, 32);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 37);
             this.btnSave.TabIndex = 37;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -173,7 +199,7 @@
             // 
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExport.Location = new System.Drawing.Point(581, 34);
+            this.btnExport.Location = new System.Drawing.Point(796, 32);
             this.btnExport.Margin = new System.Windows.Forms.Padding(2);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(120, 37);
@@ -190,7 +216,7 @@
             this.label1.Location = new System.Drawing.Point(19, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 14);
+            this.label1.Size = new System.Drawing.Size(128, 16);
             this.label1.TabIndex = 42;
             this.label1.Text = "Project Manager:";
             // 
@@ -202,7 +228,7 @@
             this.txtIssueRegisterProjectManager.Location = new System.Drawing.Point(124, 51);
             this.txtIssueRegisterProjectManager.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtIssueRegisterProjectManager.Name = "txtIssueRegisterProjectManager";
-            this.txtIssueRegisterProjectManager.Size = new System.Drawing.Size(274, 20);
+            this.txtIssueRegisterProjectManager.Size = new System.Drawing.Size(274, 23);
             this.txtIssueRegisterProjectManager.TabIndex = 41;
             this.txtIssueRegisterProjectManager.Text = "Project Manager";
             // 
@@ -214,7 +240,7 @@
             this.txtIssueRegisterProjectName.Location = new System.Drawing.Point(124, 27);
             this.txtIssueRegisterProjectName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtIssueRegisterProjectName.Name = "txtIssueRegisterProjectName";
-            this.txtIssueRegisterProjectName.Size = new System.Drawing.Size(274, 20);
+            this.txtIssueRegisterProjectName.Size = new System.Drawing.Size(274, 23);
             this.txtIssueRegisterProjectName.TabIndex = 39;
             this.txtIssueRegisterProjectName.Text = "Project Name";
             // 
@@ -226,16 +252,30 @@
             this.label27.Location = new System.Drawing.Point(19, 32);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(83, 14);
+            this.label27.Size = new System.Drawing.Size(105, 16);
             this.label27.TabIndex = 40;
             this.label27.Text = "Project Name:";
             // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSaveProgress.Location = new System.Drawing.Point(648, 32);
+            this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(120, 37);
+            this.btnSaveProgress.TabIndex = 43;
+            this.btnSaveProgress.Text = "Save Progress";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
+            // 
             // TimesheetRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(933, 484);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIssueRegisterProjectManager);
             this.Controls.Add(this.txtIssueRegisterProjectName);
@@ -274,5 +314,6 @@
         private System.Windows.Forms.TextBox txtIssueRegisterProjectManager;
         private System.Windows.Forms.TextBox txtIssueRegisterProjectName;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button btnSaveProgress;
     }
 }

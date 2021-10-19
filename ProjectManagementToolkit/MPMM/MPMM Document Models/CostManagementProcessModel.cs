@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.Classes
     class CostManagementProcessModel
     {
         public string CostManagementProcess { get; set; }
+        public string CostManagementProcessProgress { get; set; }
         public string Overview { get; set; }
         public string DocumentExpense { get; set; }
         public string ApproveExpense { get; set; }

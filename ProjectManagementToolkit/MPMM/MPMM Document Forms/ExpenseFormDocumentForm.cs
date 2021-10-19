@@ -84,6 +84,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 expenseDetail.Add(expenseDetailModel);
             }
             newExpenseFormModel.ExpenseDetails = expenseDetail;
+            newExpenseFormModel.ExpenseFormProgress = "DONE";
 
 
 
@@ -526,6 +527,133 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            List<ExpenseFormModel.ProjectDetail> projectDetail = new List<ExpenseFormModel.ProjectDetail>();
+
+            int projectInformationRowsCount = projectInformation.Rows.Count;
+
+            for (int i = 0; i < projectInformationRowsCount - 1; i++)
+            {
+                ExpenseFormModel.ProjectDetail projectDetailModel = new ExpenseFormModel.ProjectDetail();
+                var projectName = documentInformation.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var projectManager = documentInformation.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var teamMember = documentInformation.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                projectDetailModel.ProjectName = projectName;
+                projectDetailModel.ProjectManager = projectManager;
+                projectDetailModel.TeamMember = teamMember;
+
+                projectDetail.Add(projectDetailModel);
+            }
+            newExpenseFormModel.ProjectDetails = projectDetail;
+
+
+
+
+
+            List<ExpenseFormModel.ExpenseDetail> expenseDetail = new List<ExpenseFormModel.ExpenseDetail>();
+
+            int documentInformationRowsCount = documentInformation.Rows.Count;
+
+            for (int i = 0; i < documentInformationRowsCount - 1; i++)
+            {
+                ExpenseFormModel.ExpenseDetail expenseDetailModel = new ExpenseFormModel.ExpenseDetail();
+                var activityID = documentInformation.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var taskID = documentInformation.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var expenseDate = documentInformation.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var expenseType = documentInformation.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var expenseDescription = documentInformation.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var expenseAmount = documentInformation.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var payeeName = documentInformation.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var invoiceNumber = documentInformation.Rows[i].Cells[7].Value?.ToString() ?? "";
+
+                expenseDetailModel.ActivityID = activityID;
+                expenseDetailModel.TaskID = taskID;
+                expenseDetailModel.ExpenseDate = expenseDate;
+                expenseDetailModel.ExpenseType = expenseType;
+                expenseDetailModel.ExpenseDescription = expenseDescription;
+                expenseDetailModel.ExpenseAmount = expenseAmount;
+                expenseDetailModel.PayeeName = payeeName;
+                expenseDetailModel.InvoiceNumber = invoiceNumber;
+
+                expenseDetail.Add(expenseDetailModel);
+            }
+            newExpenseFormModel.ExpenseDetails = expenseDetail;
+            newExpenseFormModel.ExpenseFormProgress = "UNDONE";
+
+
+
+
+
+
+
+            List<ExpenseFormModel.SubmittedBy> submittedBy = new List<ExpenseFormModel.SubmittedBy>();
+
+            int submittedByRowsCount = submitedBy.Rows.Count;
+
+            for (int i = 0; i < submittedByRowsCount - 1; i++)
+            {
+                ExpenseFormModel.SubmittedBy submittedByModel = new ExpenseFormModel.SubmittedBy();
+                var name = submitedBy.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Signature = submitedBy.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = submitedBy.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                submittedByModel.Name = name;
+                submittedByModel.Signature = Signature;
+                submittedByModel.Date = date;
+
+                submittedBy.Add(submittedByModel);
+            }
+            newExpenseFormModel.SubmittedByDetails = submittedBy;
+
+
+
+
+            List<ExpenseFormModel.ApprovedBy> approvedBy = new List<ExpenseFormModel.ApprovedBy>();
+
+            int approvedByRowsCount = approvedByGV.Rows.Count;
+
+            for (int i = 0; i < approvedByRowsCount - 1; i++)
+            {
+                ExpenseFormModel.ApprovedBy approvedByModel = new ExpenseFormModel.ApprovedBy();
+                var name = approvedByGV.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Signature = approvedByGV.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = approvedByGV.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                approvedByModel.Name = name;
+                approvedByModel.Signature = Signature;
+                approvedByModel.Date = date;
+
+                approvedBy.Add(approvedByModel);
+            }
+            newExpenseFormModel.ApprovedByDetails = approvedBy;
+
+
+
+
+
+            newExpenseFormModel.ApprovalDetails = txtexecutivesummaryDescription.Text;
+
+
+            List<VersionControl<ExpenseFormModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentExpenseFormModel, newExpenseFormModel))
+            {
+                VersionControl<ExpenseFormModel>.DocumentModel documentModel = new VersionControl<ExpenseFormModel>.DocumentModel(newExpenseFormModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentExpenseFormModel = JsonConvert.DeserializeObject<ExpenseFormModel>(JsonConvert.SerializeObject(newExpenseFormModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ExpenseForm");
+                MessageBox.Show("Expense form saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

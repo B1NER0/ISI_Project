@@ -72,6 +72,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 processes.Add(processMod);
             }
             newQualityReviewPlanModel.QualityOfProcesses = processes;
+            newQualityReviewPlanModel.QualityReviewPlanProgress = "DONE";
 
             newQualityReviewPlanModel.QualityOfDeliverablesDescription = txtQualityOfDeliverables.Text;
 
@@ -409,6 +410,80 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
         }
 
-       
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newQualityReviewPlanModel.ProjectName = projectModel.ProjectName;
+
+            newQualityReviewPlanModel.QualityOfProcessDescription = txtQualityOfProcess.Text;
+
+            List<QualityReviewPlanModel.QualityOfProcess> processes = new List<QualityReviewPlanModel.QualityOfProcess>();
+            int processesRowsCount = dataGridViewQualityOfProcess.Rows.Count;
+
+            for (int i = 0; i < processesRowsCount - 1; i++)
+            {
+                QualityReviewPlanModel.QualityOfProcess processMod = new QualityReviewPlanModel.QualityOfProcess();
+                var process = dataGridViewQualityOfProcess.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var procedure = dataGridViewQualityOfProcess.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var standardMet = dataGridViewQualityOfProcess.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var deviation = dataGridViewQualityOfProcess.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var corrective = dataGridViewQualityOfProcess.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+                processMod.Process = process;
+                processMod.Procedure = procedure;
+                processMod.StandardMet = standardMet;
+                processMod.Deviation = deviation;
+                processMod.CorrectiveAction = corrective;
+                processes.Add(processMod);
+            }
+            newQualityReviewPlanModel.QualityOfProcesses = processes;
+            newQualityReviewPlanModel.QualityReviewPlanProgress = "UNDONE";
+
+            newQualityReviewPlanModel.QualityOfDeliverablesDescription = txtQualityOfDeliverables.Text;
+
+            List<QualityReviewPlanModel.QualityOfDeliverable> deliverables = new List<QualityReviewPlanModel.QualityOfDeliverable>();
+            int deliverablesRowsCount = dataGridViewQualityOfDeliverables.Rows.Count;
+
+            for (int i = 0; i < deliverablesRowsCount - 1; i++)
+            {
+                QualityReviewPlanModel.QualityOfDeliverable deliverableMod = new QualityReviewPlanModel.QualityOfDeliverable();
+                var requirement = dataGridViewQualityOfDeliverables.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var deliverable = dataGridViewQualityOfDeliverables.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var qualityCrit = dataGridViewQualityOfDeliverables.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var qualityStd = dataGridViewQualityOfDeliverables.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var stdMet = dataGridViewQualityOfDeliverables.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var qualDev = dataGridViewQualityOfDeliverables.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var action = dataGridViewQualityOfDeliverables.Rows[i].Cells[6].Value?.ToString() ?? "";
+
+                deliverableMod.Requirement = requirement;
+                deliverableMod.Deliverable = deliverable;
+                deliverableMod.QualityCriteria = qualityCrit;
+                deliverableMod.QualityStandard = qualityStd;
+                deliverableMod.StandardMet = stdMet;
+                deliverableMod.QualityDeviation = qualDev;
+                deliverableMod.CorrectiveActionsRequired = action;
+                deliverables.Add(deliverableMod);
+            }
+            newQualityReviewPlanModel.QualityOfDeliverables = deliverables;
+
+            List<VersionControl<QualityReviewPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentQualityReviewPlanModel, newQualityReviewPlanModel))
+            {
+                VersionControl<QualityReviewPlanModel>.DocumentModel documentModel = new VersionControl<QualityReviewPlanModel>.DocumentModel(newQualityReviewPlanModel, DateTime.Now, VersionControl<QualityReviewPlanModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentQualityReviewPlanModel = JsonConvert.DeserializeObject<QualityReviewPlanModel>(JsonConvert.SerializeObject(newQualityReviewPlanModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "QualityReviewPlan");
+                MessageBox.Show("Project plan saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
+            }
+        }
     }
 }

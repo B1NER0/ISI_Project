@@ -9,6 +9,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class QualityReviewPlanModel
     {
         public string ProjectName { get; set; }
+        public string QualityReviewPlanProgress { get; set; }
         public string QualityOfProcessDescription { get; set; }
 
         public List<QualityOfProcess> QualityOfProcesses { get; set; }

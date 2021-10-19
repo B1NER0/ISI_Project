@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProjectManager = new System.Windows.Forms.TextBox();
@@ -68,6 +68,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConformanceOfProcesses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQualityOfDeliverables)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             this.txtProjectName.Location = new System.Drawing.Point(151, 71);
             this.txtProjectName.Name = "txtProjectName";
-            this.txtProjectName.Size = new System.Drawing.Size(237, 20);
+            this.txtProjectName.Size = new System.Drawing.Size(237, 24);
             this.txtProjectName.TabIndex = 8;
             this.txtProjectName.TextChanged += new System.EventHandler(this.txtProjectName_TextChanged);
             // 
@@ -89,7 +90,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Project Name:";
             // 
@@ -97,7 +98,7 @@
             // 
             this.txtProjectManager.Location = new System.Drawing.Point(151, 109);
             this.txtProjectManager.Name = "txtProjectManager";
-            this.txtProjectManager.Size = new System.Drawing.Size(237, 20);
+            this.txtProjectManager.Size = new System.Drawing.Size(237, 24);
             this.txtProjectManager.TabIndex = 11;
             // 
             // label2
@@ -106,7 +107,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.Size = new System.Drawing.Size(161, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Project Manager:";
             // 
@@ -114,7 +115,7 @@
             // 
             this.txtQualityManager.Location = new System.Drawing.Point(151, 150);
             this.txtQualityManager.Name = "txtQualityManager";
-            this.txtQualityManager.Size = new System.Drawing.Size(237, 20);
+            this.txtQualityManager.Size = new System.Drawing.Size(237, 24);
             this.txtQualityManager.TabIndex = 13;
             // 
             // label3
@@ -123,7 +124,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(15, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(162, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Quality Manager:";
             // 
@@ -133,7 +134,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(33, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(282, 41);
+            this.label4.Size = new System.Drawing.Size(357, 51);
             this.label4.TabIndex = 14;
             this.label4.Text = "Quality Register";
             // 
@@ -144,14 +145,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvConformanceOfProcesses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConformanceOfProcesses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConformanceOfProcesses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConformanceOfProcesses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvConformanceOfProcesses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConformanceOfProcesses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -166,62 +167,72 @@
             this.dgvConformanceOfProcesses.EnableHeadersVisualStyles = false;
             this.dgvConformanceOfProcesses.Location = new System.Drawing.Point(0, 0);
             this.dgvConformanceOfProcesses.Name = "dgvConformanceOfProcesses";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConformanceOfProcesses.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvConformanceOfProcesses.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConformanceOfProcesses.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvConformanceOfProcesses.RowHeadersWidth = 51;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvConformanceOfProcesses.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvConformanceOfProcesses.Size = new System.Drawing.Size(1143, 426);
             this.dgvConformanceOfProcesses.TabIndex = 17;
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             // 
             // Process
             // 
             this.Process.HeaderText = "Process";
+            this.Process.MinimumWidth = 6;
             this.Process.Name = "Process";
             // 
             // Procedure
             // 
             this.Procedure.HeaderText = "Procedure";
+            this.Procedure.MinimumWidth = 6;
             this.Procedure.Name = "Procedure";
             // 
             // Standard
             // 
             this.Standard.HeaderText = "Standard met?";
+            this.Standard.MinimumWidth = 6;
             this.Standard.Name = "Standard";
             // 
             // Deviation
             // 
             this.Deviation.HeaderText = "Deviation";
+            this.Deviation.MinimumWidth = 6;
             this.Deviation.Name = "Deviation";
             // 
             // Corrective_Actions
             // 
             this.Corrective_Actions.HeaderText = "Corrective Actions";
+            this.Corrective_Actions.MinimumWidth = 6;
             this.Corrective_Actions.Name = "Corrective_Actions";
             // 
             // Methods
             // 
             this.Methods.HeaderText = "Methods";
+            this.Methods.MinimumWidth = 6;
             this.Methods.Name = "Methods";
             // 
             // Date
             // 
             this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             // 
             // Outcome
             // 
             this.Outcome.HeaderText = "Outcome";
+            this.Outcome.MinimumWidth = 6;
             this.Outcome.Name = "Outcome";
             // 
             // dgvQualityOfDeliverables
@@ -231,14 +242,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQualityOfDeliverables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQualityOfDeliverables.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQualityOfDeliverables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQualityOfDeliverables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvQualityOfDeliverables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQualityOfDeliverables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID2,
@@ -255,72 +266,84 @@
             this.dgvQualityOfDeliverables.EnableHeadersVisualStyles = false;
             this.dgvQualityOfDeliverables.Location = new System.Drawing.Point(-4, 0);
             this.dgvQualityOfDeliverables.Name = "dgvQualityOfDeliverables";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQualityOfDeliverables.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvQualityOfDeliverables.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQualityOfDeliverables.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvQualityOfDeliverables.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvQualityOfDeliverables.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvQualityOfDeliverables.Size = new System.Drawing.Size(1147, 423);
             this.dgvQualityOfDeliverables.TabIndex = 18;
             // 
             // ID2
             // 
             this.ID2.HeaderText = "ID";
+            this.ID2.MinimumWidth = 6;
             this.ID2.Name = "ID2";
             // 
             // Requirement
             // 
             this.Requirement.HeaderText = "Requirement";
+            this.Requirement.MinimumWidth = 6;
             this.Requirement.Name = "Requirement";
             // 
             // Deliverable
             // 
             this.Deliverable.HeaderText = "Deliverable";
+            this.Deliverable.MinimumWidth = 6;
             this.Deliverable.Name = "Deliverable";
             // 
             // Criteria
             // 
             this.Criteria.HeaderText = "Criteria";
+            this.Criteria.MinimumWidth = 6;
             this.Criteria.Name = "Criteria";
             // 
             // Standards
             // 
             this.Standards.HeaderText = "Standards";
+            this.Standards.MinimumWidth = 6;
             this.Standards.Name = "Standards";
             // 
             // Standard2
             // 
             this.Standard2.HeaderText = "Meet Standards?";
+            this.Standard2.MinimumWidth = 6;
             this.Standard2.Name = "Standard2";
             // 
             // Deviation2
             // 
             this.Deviation2.HeaderText = "Deviation";
+            this.Deviation2.MinimumWidth = 6;
             this.Deviation2.Name = "Deviation2";
             // 
             // Corrective_Actions2
             // 
             this.Corrective_Actions2.HeaderText = "Corrective Actions";
+            this.Corrective_Actions2.MinimumWidth = 6;
             this.Corrective_Actions2.Name = "Corrective_Actions2";
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Methods";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // Date2
             // 
             this.Date2.HeaderText = "Date";
+            this.Date2.MinimumWidth = 6;
             this.Date2.Name = "Date2";
             // 
             // Outcome2
             // 
             this.Outcome2.HeaderText = "Outcome";
+            this.Outcome2.MinimumWidth = 6;
             this.Outcome2.Name = "Outcome2";
             // 
             // tabControl1
@@ -337,10 +360,10 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvConformanceOfProcesses);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1143, 426);
+            this.tabPage1.Size = new System.Drawing.Size(1143, 424);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Conformance of Processes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -348,10 +371,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvQualityOfDeliverables);
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1143, 426);
+            this.tabPage2.Size = new System.Drawing.Size(1143, 424);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quality of Deliverables";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -362,11 +385,11 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnSave.Location = new System.Drawing.Point(859, 27);
+            this.btnSave.Location = new System.Drawing.Point(605, 27);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 41);
             this.btnSave.TabIndex = 20;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -384,12 +407,27 @@
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnSaveProgress.Location = new System.Drawing.Point(786, 27);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(202, 41);
+            this.btnSaveProgress.TabIndex = 22;
+            this.btnSaveProgress.Text = "Save Progress";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
+            // 
             // QualityRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1181, 674);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
@@ -450,5 +488,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnSaveProgress;
     }
 }

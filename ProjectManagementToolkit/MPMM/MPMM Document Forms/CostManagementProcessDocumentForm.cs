@@ -62,6 +62,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             information.LastSavedDate = LastSavedDate;
             information.FileName = FileName;
             newCostManagementProcessModel.Information = information;
+            newCostManagementProcessModel.CostManagementProcessProgress = "DONE";
 
             List<History> histories = new List<History>();
             int Document_HistoryRowCount = Document_History_dgv.RowCount;
@@ -511,6 +512,91 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void CostManagementProcessDocumentForm_Load(object sender, EventArgs e)
         {
             LoadDocument();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newCostManagementProcessModel.CostManagementProcess = Cost_Management_Process_tbx.Text;
+
+            List<Information> informations = new List<Information>();
+            Information information = new Information();
+            var DocumentID = Document_Information_dgv.Rows[0].Cells[1].Value.ToString();
+            var DocumentOwner = Document_Information_dgv.Rows[1].Cells[1].Value.ToString();
+            var IssueDate = Document_Information_dgv.Rows[2].Cells[1].Value.ToString();
+            var LastSavedDate = Document_Information_dgv.Rows[3].Cells[1].Value.ToString();
+            var FileName = Document_Information_dgv.Rows[4].Cells[1].Value.ToString();
+
+            information.DocumentID = DocumentID;
+            information.DocumentOwner = DocumentOwner;
+            information.IssueDate = IssueDate;
+            information.LastSavedDate = LastSavedDate;
+            information.FileName = FileName;
+            newCostManagementProcessModel.Information = information;
+            newCostManagementProcessModel.CostManagementProcessProgress = "UNDONE";
+
+            List<History> histories = new List<History>();
+            int Document_HistoryRowCount = Document_History_dgv.RowCount;
+            for (int i = 0; i < Document_HistoryRowCount - 1; i++)
+            {
+                History history = new History();
+                var Version = Document_History_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var IsDate = Document_History_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Changes = Document_History_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                history.Version = Version;
+                history.IssueDate = IsDate;
+                history.Changes = Changes;
+                histories.Add(history);
+            }
+            newCostManagementProcessModel.Histories = histories;
+
+            List<Approval> approvals = new List<Approval>();
+            int approvalCount = Document_Approvals_dgv.RowCount;
+            for (int i = 0; i < approvalCount - 1; i++)
+            {
+                Approval approval = new Approval();
+                var Role = Document_Approvals_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Name = Document_Approvals_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Signature = Document_Approvals_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Date = Document_Approvals_dgv.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                approval.Name = Name;
+                approval.Role = Role;
+                approval.Signature = Signature;
+                approval.Date = Date;
+
+                approvals.Add(approval);
+            }
+            newCostManagementProcessModel.Approvals = approvals;
+
+            newCostManagementProcessModel.Overview = Overview_tbx.Text;
+            newCostManagementProcessModel.DocumentExpense = Document_Expense_tbx.Text;
+            newCostManagementProcessModel.ApproveExpense = Approve_Expense_tbx.Text;
+            newCostManagementProcessModel.UpdateProjectPlan = Update_Project_Plan_tbx.Text;
+            newCostManagementProcessModel.TeamMembers = Team_Member_tbx.Text;
+            newCostManagementProcessModel.ProjectAdmin = Project_Administrator_tbx.Text;
+            newCostManagementProcessModel.ProjectManager = Project_Manager_tbx.Text;
+
+            newCostManagementProcessModel.ExpenseForm = Expense_Form_tbx.Text;
+            newCostManagementProcessModel.ExpenseRegister = Expense_Register_tbx.Text;
+
+            List<VersionControl<CostManagementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            //MessageBox.Show(JsonConvert.SerializeObject(newCostManagementProcessModel), "save", MessageBoxButtons.OK);
+
+
+            if (!versionControl.isEqual(currentCostManagementProcessModel, newCostManagementProcessModel))
+            {
+                VersionControl<CostManagementProcessModel>.DocumentModel documentModel = new VersionControl<CostManagementProcessModel>.DocumentModel(newCostManagementProcessModel, DateTime.Now, VersionControl<CostManagementProcessModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentCostManagementProcessModel = JsonConvert.DeserializeObject<CostManagementProcessModel>(JsonConvert.SerializeObject(newCostManagementProcessModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "CostManagementProcess");
+                MessageBox.Show("Risk plan saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

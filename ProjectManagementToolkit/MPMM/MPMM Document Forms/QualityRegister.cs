@@ -63,6 +63,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 conformanceOfProcess.Methods = dgvConformanceOfProcesses.Rows[i].Cells[6].Value?.ToString() ?? "";
                 conformanceOfProcess.Date = dgvConformanceOfProcesses.Rows[i].Cells[7].Value?.ToString() ?? "";
                 conformanceOfProcess.Outcome = dgvConformanceOfProcesses.Rows[i].Cells[8].Value?.ToString() ?? "";
+                conformanceOfProcess.QualityRegisterProgress = "DONE";
 
                 conformanceOfProcesses.Add(conformanceOfProcess);
             }
@@ -353,6 +354,66 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void txtProjectName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            List<QualityRegisterModel.ConformanceOfProcess> conformanceOfProcesses = new List<QualityRegisterModel.ConformanceOfProcess>();
+            List<QualityRegisterModel.QualityOfDeliverable> qualityOfDeliverables = new List<QualityRegisterModel.QualityOfDeliverable>();
+
+
+
+            for (int i = 0; i < dgvConformanceOfProcesses.Rows.Count - 1; i++)
+            {
+                QualityRegisterModel.ConformanceOfProcess conformanceOfProcess = new QualityRegisterModel.ConformanceOfProcess();
+                conformanceOfProcess.ID = dgvConformanceOfProcesses.Rows[i].Cells[0].Value?.ToString() ?? "";
+                conformanceOfProcess.Process = dgvConformanceOfProcesses.Rows[i].Cells[1].Value?.ToString() ?? "";
+                conformanceOfProcess.Procedure = dgvConformanceOfProcesses.Rows[i].Cells[2].Value?.ToString() ?? "";
+                conformanceOfProcess.StandardMet = dgvConformanceOfProcesses.Rows[i].Cells[3].Value?.ToString() ?? "";
+                conformanceOfProcess.Deviation = dgvConformanceOfProcesses.Rows[i].Cells[4].Value?.ToString() ?? "";
+                conformanceOfProcess.CorrectiveAction = dgvConformanceOfProcesses.Rows[i].Cells[5].Value?.ToString() ?? "";
+                conformanceOfProcess.Methods = dgvConformanceOfProcesses.Rows[i].Cells[6].Value?.ToString() ?? "";
+                conformanceOfProcess.Date = dgvConformanceOfProcesses.Rows[i].Cells[7].Value?.ToString() ?? "";
+                conformanceOfProcess.Outcome = dgvConformanceOfProcesses.Rows[i].Cells[8].Value?.ToString() ?? "";
+                conformanceOfProcess.QualityRegisterProgress = "UNDONE";
+
+                conformanceOfProcesses.Add(conformanceOfProcess);
+            }
+            for (int i = 0; i < dgvQualityOfDeliverables.Rows.Count - 1; i++)
+            {
+                QualityRegisterModel.QualityOfDeliverable qualityOfDeliverable = new QualityRegisterModel.QualityOfDeliverable();
+                qualityOfDeliverable.ID = dgvQualityOfDeliverables.Rows[i].Cells[0].Value?.ToString() ?? "";
+                qualityOfDeliverable.Requirement = dgvQualityOfDeliverables.Rows[i].Cells[1].Value?.ToString() ?? "";
+                qualityOfDeliverable.Deliverable = dgvQualityOfDeliverables.Rows[i].Cells[2].Value?.ToString() ?? "";
+                qualityOfDeliverable.Criteria = dgvQualityOfDeliverables.Rows[i].Cells[3].Value?.ToString() ?? "";
+                qualityOfDeliverable.Standards = dgvQualityOfDeliverables.Rows[i].Cells[4].Value?.ToString() ?? "";
+                qualityOfDeliverable.MeetStandards = dgvQualityOfDeliverables.Rows[i].Cells[5].Value?.ToString() ?? "";
+                qualityOfDeliverable.Deviation = dgvQualityOfDeliverables.Rows[i].Cells[6].Value?.ToString() ?? "";
+                qualityOfDeliverable.CorrectiveAction = dgvQualityOfDeliverables.Rows[i].Cells[7].Value?.ToString() ?? "";
+                qualityOfDeliverable.Methods = dgvQualityOfDeliverables.Rows[i].Cells[8].Value?.ToString() ?? "";
+                qualityOfDeliverable.Date = dgvQualityOfDeliverables.Rows[i].Cells[9].Value?.ToString() ?? "";
+                qualityOfDeliverable.Outcome = dgvQualityOfDeliverables.Rows[i].Cells[10].Value?.ToString() ?? "";
+
+                qualityOfDeliverables.Add(qualityOfDeliverable);
+            }
+
+            newQualityRegisterModel.ConformanceOfProcesses = conformanceOfProcesses;
+            newQualityRegisterModel.QualityOfDeliverables = qualityOfDeliverables;
+            List<VersionControl<QualityRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentQualityRegisterModel, newQualityRegisterModel))
+            {
+                VersionControl<QualityRegisterModel>.DocumentModel documentModel = new VersionControl<QualityRegisterModel>.DocumentModel(newQualityRegisterModel, DateTime.Now, VersionControl<QualityRegisterModel>.generateID());
+                documentModels.Add(documentModel);
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentQualityRegisterModel = JsonConvert.DeserializeObject<QualityRegisterModel>(JsonConvert.SerializeObject(newQualityRegisterModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "QualityRegister");
+                MessageBox.Show("Quality Register saved successfully.", "Save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made.", "Save", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -55,6 +55,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newChangeManagementProcessModel.IssueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newChangeManagementProcessModel.LastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newChangeManagementProcessModel.FileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newChangeManagementProcessModel.ChangeManagementProcessProgress = "DONE";
 
             newChangeManagementProcessModel.DocumentHistories = new List<ChangeManagementProcessModel.DocumentHistory>();
             int historyCount = dataGridViewDocumentHistory.Rows.Count;
@@ -530,6 +531,74 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
         }
 
-    
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newChangeManagementProcessModel.DocumentID = dataGridViewDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newChangeManagementProcessModel.DocumentOwner = dataGridViewDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newChangeManagementProcessModel.IssueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newChangeManagementProcessModel.LastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newChangeManagementProcessModel.FileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newChangeManagementProcessModel.ChangeManagementProcessProgress = "UNDONE";
+
+            newChangeManagementProcessModel.DocumentHistories = new List<ChangeManagementProcessModel.DocumentHistory>();
+            int historyCount = dataGridViewDocumentHistory.Rows.Count;
+            for (int i = 0; i < historyCount - 1; i++)
+            {
+                var version = dataGridViewDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dataGridViewDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dataGridViewDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newChangeManagementProcessModel.DocumentHistories
+                    .Add(new ChangeManagementProcessModel.DocumentHistory(version, issueDate, changes));
+            }
+
+            newChangeManagementProcessModel.DocumentApprovals = new List<ChangeManagementProcessModel.DocumentApproval>();
+            int approvalRowsCount = dataGridViewDocumentApprovals.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                var role = dataGridViewDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dataGridViewDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dataGridViewDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dataGridViewDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                newChangeManagementProcessModel.DocumentApprovals
+                    .Add(new ChangeManagementProcessModel.DocumentApproval(role, name, signature, date));
+            }
+
+            newChangeManagementProcessModel.ChangeProcessDescription = txtChangeProcess.Text;
+            newChangeManagementProcessModel.ChangeProcessOverview = txtOverview.Text;
+            newChangeManagementProcessModel.ChangeProcessIdentifyChange = txtIdentifyChange.Text;
+            newChangeManagementProcessModel.ChangeProcessReviewChange = txtReviewChange.Text;
+            newChangeManagementProcessModel.ChangeProcessApproveChange = txtApproveChange.Text;
+            newChangeManagementProcessModel.ChangeProcessImplementChange = txtImplementChange.Text;
+
+            newChangeManagementProcessModel.ChangeRolesDescription = txtChangeRoles.Text;
+            newChangeManagementProcessModel.ChangeRolesTeamMember = txtTeamMember.Text;
+            newChangeManagementProcessModel.ChangeRolesProjectManager = txtProjectManager.Text;
+            newChangeManagementProcessModel.ChangeRolesProjectBoard = txtProjectBoard.Text;
+
+            newChangeManagementProcessModel.ChangeDocumentDescription = txtChangeDocuments.Text;
+            newChangeManagementProcessModel.ChangeDocumentChangeRequestForm = txtChangeRequestForm.Text;
+            newChangeManagementProcessModel.ChangeDocumentChangeRegister = txtChangeRegister.Text;
+
+
+            List<VersionControl<ChangeManagementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentChangeManagementProcessModel, newChangeManagementProcessModel))
+            {
+                versionControl.DocumentModels.Add(new VersionControl<ChangeManagementProcessModel>
+                    .DocumentModel(newChangeManagementProcessModel, DateTime.Now, VersionControl<ChangeManagementProcessModel>.generateID()));
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentChangeManagementProcessModel = JsonConvert.DeserializeObject<ChangeManagementProcessModel>(JsonConvert.SerializeObject(newChangeManagementProcessModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ChangeManagementProcess");
+                MessageBox.Show("Change Management Process saved successfully", "save", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
+            }
+        }
     }
 }
