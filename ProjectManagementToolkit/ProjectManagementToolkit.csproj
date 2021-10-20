@@ -1159,6 +1159,18 @@
     <Compile Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.Designer.cs">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmArchitectureStream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmArchitectureStream.Designer.cs">
+      <DependentUpon>frmArchitectureStream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmBenefitsRealisationStream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmBenefitsRealisationStream.Designer.cs">
+      <DependentUpon>frmBenefitsRealisationStream.cs</DependentUpon>
+    </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmBuildAndTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1182,6 +1194,12 @@
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmDetailedDesign.Designer.cs">
       <DependentUpon>frmDetailedDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmEngineeringStream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmEngineeringStream.Designer.cs">
+      <DependentUpon>frmEngineeringStream.cs</DependentUpon>
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmFeasabilityWorkpackages.cs">
       <SubType>Form</SubType>
@@ -1224,6 +1242,12 @@
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmPreFeasabilityWorkpackages.Designer.cs">
       <DependentUpon>frmPreFeasabilityWorkpackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcurementStream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcurementStream.Designer.cs">
+      <DependentUpon>frmProcurementStream.cs</DependentUpon>
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectExecutionPlanning.cs">
       <SubType>Form</SubType>
@@ -1838,6 +1862,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.resx">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmArchitectureStream.resx">
+      <DependentUpon>frmArchitectureStream.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmBuildAndTest.resx">
       <DependentUpon>frmBuildAndTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -1849,6 +1876,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmDetailedDesign.resx">
       <DependentUpon>frmDetailedDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmEngineeringStream.resx">
+      <DependentUpon>frmEngineeringStream.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmFeasabilityWorkpackages.resx">
       <DependentUpon>frmFeasabilityWorkpackages.cs</DependentUpon>
@@ -1870,6 +1900,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmPreFeasabilityWorkpackages.resx">
       <DependentUpon>frmPreFeasabilityWorkpackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProcurementStream.resx">
+      <DependentUpon>frmProcurementStream.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProjectExecutionPlanning.resx">
       <DependentUpon>frmProjectExecutionPlanning.cs</DependentUpon>

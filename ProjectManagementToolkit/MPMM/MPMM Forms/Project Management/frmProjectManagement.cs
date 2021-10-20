@@ -414,5 +414,15 @@ namespace ProjectManagementToolkit
             frmWorkStreams.Show();
             frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
         }
+
+        private void btnWorkStreamsPrefeasibility_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWorkStreamsImplementation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
