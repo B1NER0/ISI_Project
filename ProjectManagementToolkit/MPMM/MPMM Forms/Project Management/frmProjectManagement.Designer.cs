@@ -2566,6 +2566,7 @@
             this.btnWorkStreamsEvaluate.TabIndex = 4;
             this.btnWorkStreamsEvaluate.Text = "Work Streams";
             this.btnWorkStreamsEvaluate.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsEvaluate.Click += new System.EventHandler(this.btnWorkStreamsEvaluate_Click);
             // 
             // btnWorkPakagesEvaluate
             // 
@@ -2596,6 +2597,7 @@
             this.btnWorkStreamsCloseOut.TabIndex = 2;
             this.btnWorkStreamsCloseOut.Text = "Work Streams";
             this.btnWorkStreamsCloseOut.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsCloseOut.Click += new System.EventHandler(this.btnWorkStreamsCloseOut_Click);
             // 
             // pnlCloseOut
             // 
@@ -2642,6 +2644,7 @@
             this.btnWorkStreamsTransfer.TabIndex = 4;
             this.btnWorkStreamsTransfer.Text = "Work Streams";
             this.btnWorkStreamsTransfer.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsTransfer.Click += new System.EventHandler(this.btnWorkStreamsTransfer_Click);
             // 
             // btnWorkPakagesTransfer
             // 
@@ -2719,6 +2722,7 @@
             this.btnWorkStreamsBusinessPlan.TabIndex = 4;
             this.btnWorkStreamsBusinessPlan.Text = "Work Streams";
             this.btnWorkStreamsBusinessPlan.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsBusinessPlan.Click += new System.EventHandler(this.btnWorkStreamsBusinessPlan_Click);
             // 
             // btnWorkPakagesBusinessPlan
             // 
@@ -2749,6 +2753,7 @@
             this.btnWorkStreamsFeasibility.TabIndex = 2;
             this.btnWorkStreamsFeasibility.Text = "Work Streams";
             this.btnWorkStreamsFeasibility.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsFeasibility.Click += new System.EventHandler(this.btnWorkStreamsFeasibility_Click);
             // 
             // pnlFeasibility
             // 
@@ -3605,6 +3610,7 @@
             this.panel41.Name = "panel41";
             this.panel41.Size = new System.Drawing.Size(324, 135);
             this.panel41.TabIndex = 8;
+            this.panel41.Paint += new System.Windows.Forms.PaintEventHandler(this.panel41_Paint);
             // 
             // btnWorkStreamsContractConcluding
             // 
@@ -3615,6 +3621,7 @@
             this.btnWorkStreamsContractConcluding.TabIndex = 10;
             this.btnWorkStreamsContractConcluding.Text = "Work Streams";
             this.btnWorkStreamsContractConcluding.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsContractConcluding.Click += new System.EventHandler(this.btnWorkStreamsContractConcluding_Click);
             // 
             // btnWorkPakagesContractConcluding
             // 
@@ -3636,6 +3643,7 @@
             this.btnWorkStreamsProjectExecutionPlanning.TabIndex = 8;
             this.btnWorkStreamsProjectExecutionPlanning.Text = "Work Streams";
             this.btnWorkStreamsProjectExecutionPlanning.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsProjectExecutionPlanning.Click += new System.EventHandler(this.btnWorkStreamsProjectExecutionPlanning_Click);
             // 
             // btnWorkPakagesProjectExecutionPlanning
             // 
@@ -3657,6 +3665,7 @@
             this.btnWorkStreamsDetailedDesign.TabIndex = 6;
             this.btnWorkStreamsDetailedDesign.Text = "Work Streams";
             this.btnWorkStreamsDetailedDesign.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsDetailedDesign.Click += new System.EventHandler(this.btnWorkStreamsDetailedDesign_Click);
             // 
             // btnWorkPakagesDetailedDesign
             // 
