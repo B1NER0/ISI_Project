@@ -315,7 +315,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             frmEngineeringStream.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTechinicalRecom_Click(object sender, EventArgs e)
         {
             frmEngineeringStream frmEngineeringStream = new frmEngineeringStream();
             string fileName = "PLMSWorkPackages.xlsx";
@@ -544,6 +544,76 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             frmEngineeringStream frmEngineeringStream = new frmEngineeringStream();
 
             frmEngineeringStream.Show();
+        }
+
+        private void btnPreparePrefeasiblity_Click(object sender, EventArgs e)
+        {
+            frmArchitectureStream frmArchitectureStream = new frmArchitectureStream();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Perform base infrastructure assessment'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmArchitectureStream.ArchitectureStreamDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmArchitectureStream.Show();
+        }
+
+        private void btnPrepareConceptual_Click(object sender, EventArgs e)
+        {
+            frmArchitectureStream frmArchitectureStream = new frmArchitectureStream();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Perform base infrastructure assessment'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmArchitectureStream.ArchitectureStreamDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmArchitectureStream.Show();
+        }
+
+        private void btnPrepareDesign_Click(object sender, EventArgs e)
+        {
+            frmArchitectureStream frmArchitectureStream = new frmArchitectureStream();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Perform base infrastructure assessment'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmArchitectureStream.ArchitectureStreamDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmArchitectureStream.Show();
+        }
+
+        private void btnPreparePreContract_Click(object sender, EventArgs e)
+        {
+            frmArchitectureStream frmArchitectureStream = new frmArchitectureStream();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Compile Business Case'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmArchitectureStream.ArchitectureStreamDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmArchitectureStream.Show();
+        }
+
+        private void btnPrepareDetailedDesign_Click(object sender, EventArgs e)
+        {
+            frmArchitectureStream frmArchitectureStream = new frmArchitectureStream();
+
+            frmArchitectureStream.Show();
+        }
+
+        private void btnPrepareTranferImplementation_Click(object sender, EventArgs e)
+        {
+            frmArchitectureStream frmArchitectureStream = new frmArchitectureStream();
+
+            frmArchitectureStream.Show();
         }
     }
 }

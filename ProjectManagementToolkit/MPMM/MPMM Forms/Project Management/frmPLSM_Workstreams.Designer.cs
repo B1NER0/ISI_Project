@@ -679,6 +679,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPrepareTranferImplementation.TabIndex = 5;
             this.btnPrepareTranferImplementation.Text = "Prepare submit pre-transfer implementation architecture submission";
             this.btnPrepareTranferImplementation.UseVisualStyleBackColor = true;
+            this.btnPrepareTranferImplementation.Click += new System.EventHandler(this.btnPrepareTranferImplementation_Click);
             // 
             // btnPrepareDetailedDesign
             // 
@@ -688,6 +689,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPrepareDetailedDesign.TabIndex = 4;
             this.btnPrepareDetailedDesign.Text = "Prepare submit detailed design architecture submission";
             this.btnPrepareDetailedDesign.UseVisualStyleBackColor = true;
+            this.btnPrepareDetailedDesign.Click += new System.EventHandler(this.btnPrepareDetailedDesign_Click);
             // 
             // btnPreparePreContract
             // 
@@ -697,6 +699,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPreparePreContract.TabIndex = 3;
             this.btnPreparePreContract.Text = "Prepare submit pre-contract architecture submission";
             this.btnPreparePreContract.UseVisualStyleBackColor = true;
+            this.btnPreparePreContract.Click += new System.EventHandler(this.btnPreparePreContract_Click);
             // 
             // btnPrepareDesign
             // 
@@ -706,6 +709,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPrepareDesign.TabIndex = 2;
             this.btnPrepareDesign.Text = "Prepare system design architecture submission";
             this.btnPrepareDesign.UseVisualStyleBackColor = true;
+            this.btnPrepareDesign.Click += new System.EventHandler(this.btnPrepareDesign_Click);
             // 
             // btnPrepareConceptual
             // 
@@ -715,6 +719,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPrepareConceptual.TabIndex = 1;
             this.btnPrepareConceptual.Text = "Prepare submit conceptual architecture submission";
             this.btnPrepareConceptual.UseVisualStyleBackColor = true;
+            this.btnPrepareConceptual.Click += new System.EventHandler(this.btnPrepareConceptual_Click);
             // 
             // btnPreparePrefeasiblity
             // 
@@ -724,6 +729,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPreparePrefeasiblity.TabIndex = 0;
             this.btnPreparePrefeasiblity.Text = "Prepare submit pre-feasibility architecture submission";
             this.btnPreparePrefeasiblity.UseVisualStyleBackColor = true;
+            this.btnPreparePrefeasiblity.Click += new System.EventHandler(this.btnPreparePrefeasiblity_Click);
             // 
             // ProcurementStreamTabPage
             // 
