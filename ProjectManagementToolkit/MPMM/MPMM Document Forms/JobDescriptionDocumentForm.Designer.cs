@@ -58,7 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnExportWord = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.txtOverviewDescriptions = new System.Windows.Forms.TextBox();
@@ -86,11 +85,11 @@
             this.txtsalaryDescriptions = new System.Windows.Forms.TextBox();
             this.tabPage26 = new System.Windows.Forms.TabPage();
             this.txtspecialconditionsDescriptions = new System.Windows.Forms.TextBox();
-            this.txtProjectNames = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnSaveProgress = new System.Windows.Forms.Button();
+            this.txtProjectNames = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabPage6.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -478,19 +477,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // btnExportWord
-            // 
-            this.btnExportWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.btnExportWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportWord.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportWord.Location = new System.Drawing.Point(975, 5);
-            this.btnExportWord.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExportWord.Name = "btnExportWord";
-            this.btnExportWord.Size = new System.Drawing.Size(125, 40);
-            this.btnExportWord.TabIndex = 15;
-            this.btnExportWord.Text = "Export to Word";
-            this.btnExportWord.UseVisualStyleBackColor = false;
-            // 
             // tabControl2
             // 
             this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -821,17 +807,6 @@
             this.txtspecialconditionsDescriptions.TabIndex = 4;
             this.txtspecialconditionsDescriptions.Text = "Description";
             // 
-            // txtProjectNames
-            // 
-            this.txtProjectNames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.txtProjectNames.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProjectNames.ForeColor = System.Drawing.Color.Black;
-            this.txtProjectNames.Location = new System.Drawing.Point(194, 2);
-            this.txtProjectNames.Name = "txtProjectNames";
-            this.txtProjectNames.Size = new System.Drawing.Size(116, 23);
-            this.txtProjectNames.TabIndex = 4;
-            this.txtProjectNames.Text = "Project Name";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -849,28 +824,14 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(871, 5);
+            this.button1.Location = new System.Drawing.Point(851, 5);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 40);
+            this.button1.Size = new System.Drawing.Size(103, 40);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
+            this.button1.Text = "Complete";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(975, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 40);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Export to Word";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnSaveProgress
             // 
@@ -886,6 +847,31 @@
             this.btnSaveProgress.UseVisualStyleBackColor = false;
             this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
             // 
+            // txtProjectNames
+            // 
+            this.txtProjectNames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.txtProjectNames.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProjectNames.ForeColor = System.Drawing.Color.Black;
+            this.txtProjectNames.Location = new System.Drawing.Point(194, 2);
+            this.txtProjectNames.Name = "txtProjectNames";
+            this.txtProjectNames.Size = new System.Drawing.Size(116, 23);
+            this.txtProjectNames.TabIndex = 4;
+            this.txtProjectNames.Text = "Project Name";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(958, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 40);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Export to Word";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // JobDescriptionDocumentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -894,7 +880,6 @@
             this.ClientSize = new System.Drawing.Size(1132, 365);
             this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnExportWord);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label2);
@@ -999,7 +984,6 @@
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.TextBox txtspecialconditionsDescription;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnExportWord;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.TextBox txtOverviewDescriptions;
@@ -1027,10 +1011,10 @@
         private System.Windows.Forms.TextBox txtsalaryDescriptions;
         private System.Windows.Forms.TabPage tabPage26;
         private System.Windows.Forms.TextBox txtspecialconditionsDescriptions;
-        private System.Windows.Forms.TextBox txtProjectNames;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSaveProgress;
+        private System.Windows.Forms.TextBox txtProjectNames;
+        private System.Windows.Forms.Button button2;
     }
 }

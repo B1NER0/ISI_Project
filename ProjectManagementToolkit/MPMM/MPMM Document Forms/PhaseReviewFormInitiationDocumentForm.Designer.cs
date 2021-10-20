@@ -110,7 +110,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 25);
             this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -232,7 +232,7 @@
             this.tabPage15.Location = new System.Drawing.Point(4, 25);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage15.Size = new System.Drawing.Size(1022, 430);
             this.tabPage15.TabIndex = 1;
             this.tabPage15.Text = "Supporting Documentation";
             // 
@@ -245,7 +245,7 @@
             this.supportingDetails.Location = new System.Drawing.Point(3, 3);
             this.supportingDetails.Multiline = true;
             this.supportingDetails.Name = "supportingDetails";
-            this.supportingDetails.Size = new System.Drawing.Size(1016, 426);
+            this.supportingDetails.Size = new System.Drawing.Size(1016, 424);
             this.supportingDetails.TabIndex = 26;
             this.supportingDetails.Text = "Supporting Documentation";
             // 
@@ -260,7 +260,7 @@
             this.tabPage16.Location = new System.Drawing.Point(4, 25);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage16.Size = new System.Drawing.Size(1022, 430);
             this.tabPage16.TabIndex = 2;
             this.tabPage16.Text = "Signature & Date";
             // 
@@ -510,7 +510,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage7.Size = new System.Drawing.Size(1022, 430);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Summary";
             // 
@@ -523,7 +523,7 @@
             this.summary.Location = new System.Drawing.Point(3, 3);
             this.summary.Multiline = true;
             this.summary.Name = "summary";
-            this.summary.Size = new System.Drawing.Size(1016, 426);
+            this.summary.Size = new System.Drawing.Size(1016, 424);
             this.summary.TabIndex = 16;
             this.summary.Text = "Summary";
             // 
@@ -534,7 +534,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage8.Size = new System.Drawing.Size(1022, 430);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Project Expenses";
             // 
@@ -547,7 +547,7 @@
             this.projectExpenses.Location = new System.Drawing.Point(3, 3);
             this.projectExpenses.Multiline = true;
             this.projectExpenses.Name = "projectExpenses";
-            this.projectExpenses.Size = new System.Drawing.Size(1016, 426);
+            this.projectExpenses.Size = new System.Drawing.Size(1016, 424);
             this.projectExpenses.TabIndex = 18;
             this.projectExpenses.Text = "Project Expenses";
             // 
@@ -558,7 +558,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage9.Size = new System.Drawing.Size(1022, 430);
             this.tabPage9.TabIndex = 3;
             this.tabPage9.Text = "Project Risks";
             // 
@@ -571,7 +571,7 @@
             this.projectRisks.Location = new System.Drawing.Point(3, 3);
             this.projectRisks.Multiline = true;
             this.projectRisks.Name = "projectRisks";
-            this.projectRisks.Size = new System.Drawing.Size(1016, 426);
+            this.projectRisks.Size = new System.Drawing.Size(1016, 424);
             this.projectRisks.TabIndex = 19;
             this.projectRisks.Text = "Project Risks";
             // 
@@ -582,7 +582,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage10.Size = new System.Drawing.Size(1022, 430);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "Project Changes";
             // 
@@ -595,7 +595,7 @@
             this.projectChanges.Location = new System.Drawing.Point(3, 3);
             this.projectChanges.Multiline = true;
             this.projectChanges.Name = "projectChanges";
-            this.projectChanges.Size = new System.Drawing.Size(1016, 426);
+            this.projectChanges.Size = new System.Drawing.Size(1016, 424);
             this.projectChanges.TabIndex = 23;
             this.projectChanges.Text = "Project Changes";
             // 
@@ -606,7 +606,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage11.Size = new System.Drawing.Size(1022, 430);
             this.tabPage11.TabIndex = 5;
             this.tabPage11.Text = "Project Schedule";
             // 
@@ -619,7 +619,7 @@
             this.projectSchedule.Location = new System.Drawing.Point(3, 3);
             this.projectSchedule.Multiline = true;
             this.projectSchedule.Name = "projectSchedule";
-            this.projectSchedule.Size = new System.Drawing.Size(1016, 426);
+            this.projectSchedule.Size = new System.Drawing.Size(1016, 424);
             this.projectSchedule.TabIndex = 21;
             this.projectSchedule.Text = "Project Schedule";
             // 
@@ -630,7 +630,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 25);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage12.Size = new System.Drawing.Size(1022, 430);
             this.tabPage12.TabIndex = 6;
             this.tabPage12.Text = "Project Deliverables";
             // 
@@ -643,7 +643,7 @@
             this.projectDeliverables.Location = new System.Drawing.Point(3, 3);
             this.projectDeliverables.Multiline = true;
             this.projectDeliverables.Name = "projectDeliverables";
-            this.projectDeliverables.Size = new System.Drawing.Size(1016, 426);
+            this.projectDeliverables.Size = new System.Drawing.Size(1016, 424);
             this.projectDeliverables.TabIndex = 20;
             this.projectDeliverables.Text = "Project Deliverables";
             // 
@@ -654,7 +654,7 @@
             this.tabPage13.Location = new System.Drawing.Point(4, 25);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1022, 432);
+            this.tabPage13.Size = new System.Drawing.Size(1022, 430);
             this.tabPage13.TabIndex = 7;
             this.tabPage13.Text = "Project Issues ";
             // 

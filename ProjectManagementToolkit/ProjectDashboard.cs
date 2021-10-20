@@ -851,12 +851,12 @@ namespace ProjectManagementToolkit
                 initiationDocuments.Add("TermOfReferenceDocument");
 
                 initDocsListStatus.Add("BusinessCase");
+                int k=0;
 
                 for (int i = 0; i < initiationDocuments.Count; i++)
                 {
                     dgvInitiation.Rows.Add();
                     dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
-
 
                     if (initDocsListStatus[i] == "UNDONE")
                     {
@@ -867,17 +867,7 @@ namespace ProjectManagementToolkit
                     {
                         initationProgressVal++;
                         ///////////////////////////AL DIE CODE OM TE CHECK OF IETS VOOR IETS ANDERS GEDOEN IS/////////////////////
-
-                        for (int j = 0; j < i; j++)
-                        {
-                            if(initDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
-                            {
-                                //Increment the behind schedule tasks
-                                behind++;
-                                //Set all the tasks that are behind schedule to display red
-                                dgvInitiation.Rows[j].Cells[1].Style.BackColor = Color.Red;
-                            }
-                        }
+                        k = i;
 
                         comp++;
                         dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
@@ -910,7 +900,18 @@ namespace ProjectManagementToolkit
 
                 }
 
-                if(inprog==initiationDocuments.Count)
+                for (int j = 0; j < k; j++)
+                {
+                    if (initDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                    {
+                        //Increment the behind schedule tasks
+                        behind++;
+                        //Set all the tasks that are behind schedule to display red
+                        dgvInitiation.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                    }
+                }
+
+                if (inprog==initiationDocuments.Count)
                 {
                     xValues1[0] = "Initiation";
                     yValues1[0] = initationPercentage;
@@ -975,17 +976,7 @@ namespace ProjectManagementToolkit
                     {
                         planningProgressVal++;
 
-                        for (int j = 0; j < i; j++)
-                        {
-                            if (planningDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
-                            {
-                                //Increment the behind schedule tasks
-                                behindPlanning++;
-                                //Set all the tasks that are behind schedule to display red
-                                dgvPlanning.Rows[j].Cells[1].Style.BackColor = Color.Red;
-                            }
-                        }
-
+                        k = i;
 
                         compPlanning++;
                         dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
@@ -1011,6 +1002,17 @@ namespace ProjectManagementToolkit
 
                         uncompPlanning++;
                         dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                    }
+                }
+
+                for (int j = 0; j < k; j++)
+                {
+                    if (planningDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                    {
+                        //Increment the behind schedule tasks
+                        behindPlanning++;
+                        //Set all the tasks that are behind schedule to display red
+                        dgvPlanning.Rows[j].Cells[1].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1104,17 +1106,7 @@ namespace ProjectManagementToolkit
                     {
                         executionProgressVal++;
 
-
-                        for (int j = 0; j < i; j++)
-                        {
-                            if (executionDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
-                            {
-                                //Increment the behind schedule tasks
-                                behindExecution++;
-                                //Set all the tasks that are behind schedule to display red
-                                dgvExecution.Rows[j].Cells[1].Style.BackColor = Color.Red;
-                            }
-                        }
+                        k = i;
 
                         compExecution++;
                         dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
@@ -1141,6 +1133,17 @@ namespace ProjectManagementToolkit
 
                         uncompExecution++;
                         dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                    }
+                }
+
+                for (int j = 0; j < k; j++)
+                {
+                    if (executionDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                    {
+                        //Increment the behind schedule tasks
+                        behindExecution++;
+                        //Set all the tasks that are behind schedule to display red
+                        dgvExecution.Rows[j].Cells[1].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1198,17 +1201,7 @@ namespace ProjectManagementToolkit
                     {
                         closingProgressVal++;
 
-
-                        for (int j = 0; j < i; j++)
-                        {
-                            if (closingDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
-                            {
-                                //Increment the behind schedule tasks
-                                behindClosing++;
-                                //Set all the tasks that are behind schedule to display red
-                                dgvClosing.Rows[j].Cells[1].Style.BackColor = Color.Red;
-                            }
-                        }
+                        k = i;
 
                         compClosing++;
                         dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
@@ -1234,6 +1227,17 @@ namespace ProjectManagementToolkit
 
                         uncompClosing++;
                         dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                    }
+                }
+
+                for (int j = 0; j < k; j++)
+                {
+                    if (closingDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                    {
+                        //Increment the behind schedule tasks
+                        behindClosing++;
+                        //Set all the tasks that are behind schedule to display red
+                        dgvClosing.Rows[j].Cells[1].Style.BackColor = Color.Red;
                     }
                 }
 
