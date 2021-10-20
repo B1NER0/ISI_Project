@@ -823,10 +823,10 @@ namespace ProjectManagementToolkit
 
 
             //Counters for completed, uncompleted, and in progress tasks
-            int comp = 0, uncomp = 0, inprog = 0;
-            int compPlanning = 0, uncompPlanning = 0, inprogPlanning = 0;
-            int compExecution = 0, uncompExecution = 0, inprogExecution = 0;
-            int compClosing = 0, uncompClosing = 0, inprogClosing = 0;
+            int comp = 0, uncomp = 0, inprog = 0, behind = 0;
+            int compPlanning = 0, uncompPlanning = 0, inprogPlanning = 0, behindPlanning = 0;
+            int compExecution = 0, uncompExecution = 0, inprogExecution = 0, behindExecution = 0;
+            int compClosing = 0, uncompClosing = 0, inprogClosing = 0, behindClosing = 0;
 
             if (localDocuments == null)
             {
@@ -854,7 +854,6 @@ namespace ProjectManagementToolkit
 
                 for (int i = 0; i < initiationDocuments.Count; i++)
                 {
-                    initationProgressVal++;
                     dgvInitiation.Rows.Add();
                     dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
 
@@ -866,6 +865,20 @@ namespace ProjectManagementToolkit
                     }
                     else if (initDocsListStatus[i] == "DONE")
                     {
+                        initationProgressVal++;
+                        ///////////////////////////AL DIE CODE OM TE CHECK OF IETS VOOR IETS ANDERS GEDOEN IS/////////////////////
+
+                        for (int j = 0; j < i; j++)
+                        {
+                            if(initDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                            {
+                                //Increment the behind schedule tasks
+                                behind++;
+                                //Set all the tasks that are behind schedule to display red
+                                dgvInitiation.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                            }
+                        }
+
                         comp++;
                         dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         // pbarInitiation.Value = (int)initationProgressVal;
@@ -913,9 +926,9 @@ namespace ProjectManagementToolkit
                 chartInit.ChartAreas[0].BackColor = Color.Transparent;
                 chartInit.Legends[0].BackColor = Color.Transparent;
                 chartInit.Legends[0].BackColor = Color.Transparent;
-                string[] xInit = { "Completed Tasks  " + comp, "Not started Tasks  " + uncomp, "In Progress Tasks " + inprog };
+                string[] xInit = { "Completed Tasks  " + comp, "Not started Tasks  " + uncomp, "In Progress Tasks " + inprog , "Behind Schedule Tasks " + behind};
 
-                double[] yInit = { comp, uncomp, inprog };
+                double[] yInit = { comp, uncomp, inprog, behind };
 
                 chartInit.Series["Series1"].Points.DataBindXY(xInit, yInit);
                 chartInit.Series["Series1"].ChartType = SeriesChartType.Doughnut;
@@ -928,6 +941,7 @@ namespace ProjectManagementToolkit
                 chartInit.Series["Series1"].Points[0].Color = Color.LimeGreen;
                 chartInit.Series["Series1"].Points[1].Color = Color.Gray;
                 chartInit.Series["Series1"].Points[2].Color = Color.Orange;
+                chartInit.Series["Series1"].Points[3].Color = Color.Red;
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 ///////////////PLANNING PHASE/////////////////
@@ -949,7 +963,6 @@ namespace ProjectManagementToolkit
 
                 for (int i = 0; i < planningDocuments.Count; i++)
                 {
-                    planningProgressVal++;
                     dgvPlanning.Rows.Add();
                     dgvPlanning.Rows[i].Cells[0].Value = planningDocuments[i];
 
@@ -960,6 +973,20 @@ namespace ProjectManagementToolkit
                     }
                     else if (planningDocsListStatus[i] == "DONE")
                     {
+                        planningProgressVal++;
+
+                        for (int j = 0; j < i; j++)
+                        {
+                            if (planningDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                            {
+                                //Increment the behind schedule tasks
+                                behindPlanning++;
+                                //Set all the tasks that are behind schedule to display red
+                                dgvPlanning.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                            }
+                        }
+
+
                         compPlanning++;
                         dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
@@ -1004,9 +1031,9 @@ namespace ProjectManagementToolkit
                 chartPlanning.ChartAreas[0].BackColor = Color.Transparent;
                 chartPlanning.Legends[0].BackColor = Color.Transparent;
                 chartPlanning.Legends[0].BackColor = Color.Transparent;
-                string[] xPlan = { "Completed Tasks  " + compPlanning, "Not started Tasks  " + uncompPlanning, "In Progress Tasks " + inprogPlanning };
+                string[] xPlan = { "Completed Tasks  " + compPlanning, "Not started Tasks  " + uncompPlanning, "In Progress Tasks " + inprogPlanning, "Behind Schedule Tasks " + behindPlanning };
 
-                double[] yPlan = { compPlanning, uncompPlanning, inprogPlanning };
+                double[] yPlan = { compPlanning, uncompPlanning, inprogPlanning, behindPlanning };
 
                 chartPlanning.Series["Series1"].Points.DataBindXY(xPlan, yPlan);
                 chartPlanning.Series["Series1"].ChartType = SeriesChartType.Doughnut;
@@ -1019,6 +1046,7 @@ namespace ProjectManagementToolkit
                 chartPlanning.Series["Series1"].Points[0].Color = Color.LimeGreen;
                 chartPlanning.Series["Series1"].Points[1].Color = Color.Gray;
                 chartPlanning.Series["Series1"].Points[2].Color = Color.Orange;
+                chartPlanning.Series["Series1"].Points[3].Color = Color.Red;
                 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
                 ///////////////EXECUTION PHASE/////////////////
@@ -1075,6 +1103,19 @@ namespace ProjectManagementToolkit
                     else if (executionDocsListStatus[i] == "DONE")
                     {
                         executionProgressVal++;
+
+
+                        for (int j = 0; j < i; j++)
+                        {
+                            if (executionDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                            {
+                                //Increment the behind schedule tasks
+                                behindExecution++;
+                                //Set all the tasks that are behind schedule to display red
+                                dgvExecution.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                            }
+                        }
+
                         compExecution++;
                         dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
@@ -1119,9 +1160,9 @@ namespace ProjectManagementToolkit
                 chartExecution.ChartAreas[0].BackColor = Color.Transparent;
                 chartExecution.Legends[0].BackColor = Color.Transparent;
                 chartExecution.Legends[0].BackColor = Color.Transparent;
-                string[] xExec = { "Completed Tasks  " + compExecution, "Not started Tasks  " + uncompExecution, "In Progress Tasks " + inprogExecution };
+                string[] xExec = { "Completed Tasks  " + compExecution, "Not started Tasks  " + uncompExecution, "In Progress Tasks " + inprogExecution, "Behind Schedule Tasks " + behindExecution };
 
-                double[] yExec = { compExecution, uncompExecution, inprogExecution };
+                double[] yExec = { compExecution, uncompExecution, inprogExecution, behindExecution };
 
                 chartExecution.Series["Series1"].Points.DataBindXY(xExec, yExec);
                 chartExecution.Series["Series1"].ChartType = SeriesChartType.Doughnut;
@@ -1134,6 +1175,7 @@ namespace ProjectManagementToolkit
                 chartExecution.Series["Series1"].Points[0].Color = Color.LimeGreen;
                 chartExecution.Series["Series1"].Points[1].Color = Color.Gray;
                 chartExecution.Series["Series1"].Points[2].Color = Color.Orange;
+                chartExecution.Series["Series1"].Points[3].Color = Color.Red;
                 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
                 ////////////////////////////////////////CLOSING PHASE/////////////////////////////////////////////
@@ -1144,7 +1186,6 @@ namespace ProjectManagementToolkit
 
                 for (int i = 0; i < closingDocuments.Count; i++)
                 {
-                    closingProgressVal++;
                     dgvClosing.Rows.Add();
                     dgvClosing.Rows[i].Cells[0].Value = closingDocuments[i];
 
@@ -1155,6 +1196,20 @@ namespace ProjectManagementToolkit
                     }
                     else if (closingDocsListStatus[i] == "DONE")
                     {
+                        closingProgressVal++;
+
+
+                        for (int j = 0; j < i; j++)
+                        {
+                            if (closingDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                            {
+                                //Increment the behind schedule tasks
+                                behindClosing++;
+                                //Set all the tasks that are behind schedule to display red
+                                dgvClosing.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                            }
+                        }
+
                         compClosing++;
                         dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
                         closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
@@ -1199,9 +1254,9 @@ namespace ProjectManagementToolkit
                 chartClosing.ChartAreas[0].BackColor = Color.Transparent;
                 chartClosing.Legends[0].BackColor = Color.Transparent;
                 chartClosing.Legends[0].BackColor = Color.Transparent;
-                string[] xClose = { "Completed Tasks  " + compClosing, "Not started Tasks  " + uncompClosing, "In Progress Tasks " + inprogClosing };
+                string[] xClose = { "Completed Tasks  " + compClosing, "Not started Tasks  " + uncompClosing, "In Progress Tasks " + inprogClosing, "Behind Schedule Tasks " + behindClosing };
 
-                double[] yClose = { compClosing, uncompClosing, inprogClosing };
+                double[] yClose = { compClosing, uncompClosing, inprogClosing, behindClosing };
 
                 chartClosing.Series["Series1"].Points.DataBindXY(xClose, yClose);
                 chartClosing.Series["Series1"].ChartType = SeriesChartType.Doughnut;
@@ -1214,6 +1269,7 @@ namespace ProjectManagementToolkit
                 chartClosing.Series["Series1"].Points[0].Color = Color.LimeGreen;
                 chartClosing.Series["Series1"].Points[1].Color = Color.Gray;
                 chartClosing.Series["Series1"].Points[2].Color = Color.Orange;
+                chartClosing.Series["Series1"].Points[3].Color = Color.Red;
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 double overallProgressVal = (initationProgressVal + planningProgressVal + executionProgressVal + closingProgressVal);
