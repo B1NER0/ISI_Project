@@ -765,6 +765,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseContracts.TabIndex = 14;
             this.btnCloseContracts.Text = "Close project contracts";
             this.btnCloseContracts.UseVisualStyleBackColor = true;
+            this.btnCloseContracts.Click += new System.EventHandler(this.btnCloseContracts_Click);
             // 
             // btnProcessStage
             // 
@@ -774,6 +775,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnProcessStage.TabIndex = 13;
             this.btnProcessStage.Text = "Process stage end report";
             this.btnProcessStage.UseVisualStyleBackColor = true;
+            this.btnProcessStage.Click += new System.EventHandler(this.btnProcessStage_Click);
             // 
             // btnMonitorCompliance
             // 
@@ -783,6 +785,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnMonitorCompliance.TabIndex = 12;
             this.btnMonitorCompliance.Text = "Monitor Contractual Compliance";
             this.btnMonitorCompliance.UseVisualStyleBackColor = true;
+            this.btnMonitorCompliance.Click += new System.EventHandler(this.btnMonitorCompliance_Click);
             // 
             // btnEvaluatePerformance
             // 
@@ -792,6 +795,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvaluatePerformance.TabIndex = 11;
             this.btnEvaluatePerformance.Text = "Evaluate contractor performance";
             this.btnEvaluatePerformance.UseVisualStyleBackColor = true;
+            this.btnEvaluatePerformance.Click += new System.EventHandler(this.btnEvaluatePerformance_Click);
             // 
             // btnIdentifyContracts
             // 
@@ -801,6 +805,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnIdentifyContracts.TabIndex = 10;
             this.btnIdentifyContracts.Text = "Identify needs for ongoing contracts";
             this.btnIdentifyContracts.UseVisualStyleBackColor = true;
+            this.btnIdentifyContracts.Click += new System.EventHandler(this.btnIdentifyContracts_Click);
             // 
             // btnFeedbackTender
             // 
@@ -810,6 +815,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnFeedbackTender.TabIndex = 9;
             this.btnFeedbackTender.Text = "Feedback to Tender Committee";
             this.btnFeedbackTender.UseVisualStyleBackColor = true;
+            this.btnFeedbackTender.Click += new System.EventHandler(this.btnFeedbackTender_Click);
             // 
             // btnAwardContracts
             // 
@@ -819,6 +825,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnAwardContracts.TabIndex = 8;
             this.btnAwardContracts.Text = "Award Contracts";
             this.btnAwardContracts.UseVisualStyleBackColor = true;
+            this.btnAwardContracts.Click += new System.EventHandler(this.btnAwardContracts_Click);
             // 
             // btnEvaluate
             // 
@@ -828,6 +835,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvaluate.TabIndex = 7;
             this.btnEvaluate.Text = "Evaluate RFPs";
             this.btnEvaluate.UseVisualStyleBackColor = true;
+            this.btnEvaluate.Click += new System.EventHandler(this.btnEvaluate_Click);
             // 
             // btnConclude
             // 
@@ -837,6 +845,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnConclude.TabIndex = 6;
             this.btnConclude.Text = "Conclude contracts for resources";
             this.btnConclude.UseVisualStyleBackColor = true;
+            this.btnConclude.Click += new System.EventHandler(this.btnConclude_Click);
             // 
             // btnIssueRFPs
             // 
@@ -846,6 +855,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnIssueRFPs.TabIndex = 5;
             this.btnIssueRFPs.Text = "Issue RFPs";
             this.btnIssueRFPs.UseVisualStyleBackColor = true;
+            this.btnIssueRFPs.Click += new System.EventHandler(this.btnIssueRFPs_Click);
             // 
             // btnGetTender
             // 
@@ -855,6 +865,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnGetTender.TabIndex = 4;
             this.btnGetTender.Text = "Get Tender Committee approval mandate";
             this.btnGetTender.UseVisualStyleBackColor = true;
+            this.btnGetTender.Click += new System.EventHandler(this.btnGetTender_Click);
             // 
             // btnPrepareRFP
             // 
@@ -864,6 +875,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPrepareRFP.TabIndex = 3;
             this.btnPrepareRFP.Text = "Prepare RFP (include System Design Specifications)";
             this.btnPrepareRFP.UseVisualStyleBackColor = true;
+            this.btnPrepareRFP.Click += new System.EventHandler(this.btnPrepareRFP_Click);
             // 
             // btnEvaluateRFP
             // 
@@ -873,6 +885,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvaluateRFP.TabIndex = 2;
             this.btnEvaluateRFP.Text = "Evaluate RFPs for resources";
             this.btnEvaluateRFP.UseVisualStyleBackColor = true;
+            this.btnEvaluateRFP.Click += new System.EventHandler(this.btnEvaluateRFP_Click);
             // 
             // btnRFPPrototypes
             // 
@@ -882,6 +895,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnRFPPrototypes.TabIndex = 1;
             this.btnRFPPrototypes.Text = "Prepare publish RFP for prototypes";
             this.btnRFPPrototypes.UseVisualStyleBackColor = true;
+            this.btnRFPPrototypes.Click += new System.EventHandler(this.btnRFPPrototypes_Click);
             // 
             // btnRFPResources
             // 
@@ -891,6 +905,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnRFPResources.TabIndex = 0;
             this.btnRFPResources.Text = "Prepare publish RFP for resources for Definition phase";
             this.btnRFPResources.UseVisualStyleBackColor = true;
+            this.btnRFPResources.Click += new System.EventHandler(this.btnRFPResources_Click);
             // 
             // BenefitsRealisationStreamTabPage
             // 
@@ -921,6 +936,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnProcessStageReport.TabIndex = 9;
             this.btnProcessStageReport.Text = "Process stage end report";
             this.btnProcessStageReport.UseVisualStyleBackColor = true;
+            this.btnProcessStageReport.Click += new System.EventHandler(this.btnProcessStageReport_Click);
             // 
             // btnConductPlan
             // 
@@ -930,6 +946,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnConductPlan.TabIndex = 8;
             this.btnConductPlan.Text = "Conduct benefit realisation reviews according to plan";
             this.btnConductPlan.UseVisualStyleBackColor = true;
+            this.btnConductPlan.Click += new System.EventHandler(this.btnConductPlan_Click);
             // 
             // btnMonitorBenefit
             // 
@@ -939,6 +956,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnMonitorBenefit.TabIndex = 7;
             this.btnMonitorBenefit.Text = "Monitor benefit realisation";
             this.btnMonitorBenefit.UseVisualStyleBackColor = true;
+            this.btnMonitorBenefit.Click += new System.EventHandler(this.btnMonitorBenefit_Click);
             // 
             // btnUpdatePlan
             // 
@@ -948,6 +966,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnUpdatePlan.TabIndex = 6;
             this.btnUpdatePlan.Text = "Update Benefit Realisation Plan";
             this.btnUpdatePlan.UseVisualStyleBackColor = true;
+            this.btnUpdatePlan.Click += new System.EventHandler(this.btnUpdatePlan_Click);
             // 
             // btnReviewPlan
             // 
@@ -957,6 +976,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnReviewPlan.TabIndex = 5;
             this.btnReviewPlan.Text = "Review benefit realisation plan";
             this.btnReviewPlan.UseVisualStyleBackColor = true;
+            this.btnReviewPlan.Click += new System.EventHandler(this.btnReviewPlan_Click);
             // 
             // btnConfirmBenefits
             // 
@@ -966,6 +986,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnConfirmBenefits.TabIndex = 4;
             this.btnConfirmBenefits.Text = "Confirm realisation of early benefits";
             this.btnConfirmBenefits.UseVisualStyleBackColor = true;
+            this.btnConfirmBenefits.Click += new System.EventHandler(this.btnConfirmBenefits_Click);
             // 
             // btnIdentifyBenefits
             // 
@@ -975,6 +996,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnIdentifyBenefits.TabIndex = 3;
             this.btnIdentifyBenefits.Text = "Identify additional benefits";
             this.btnIdentifyBenefits.UseVisualStyleBackColor = true;
+            this.btnIdentifyBenefits.Click += new System.EventHandler(this.btnIdentifyBenefits_Click);
             // 
             // btnIdentifyEarlyBenefits
             // 
@@ -984,6 +1006,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnIdentifyEarlyBenefits.TabIndex = 2;
             this.btnIdentifyEarlyBenefits.Text = "Identify potential early benefits";
             this.btnIdentifyEarlyBenefits.UseVisualStyleBackColor = true;
+            this.btnIdentifyEarlyBenefits.Click += new System.EventHandler(this.btnIdentifyEarlyBenefits_Click);
             // 
             // btnPrepareBenefits
             // 
@@ -993,6 +1016,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPrepareBenefits.TabIndex = 1;
             this.btnPrepareBenefits.Text = "Prepare benefits realisation plan";
             this.btnPrepareBenefits.UseVisualStyleBackColor = true;
+            this.btnPrepareBenefits.Click += new System.EventHandler(this.btnPrepareBenefits_Click);
             // 
             // btnDefineBenfits
             // 
@@ -1002,6 +1026,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnDefineBenfits.TabIndex = 0;
             this.btnDefineBenfits.Text = "Define business benefits";
             this.btnDefineBenfits.UseVisualStyleBackColor = true;
+            this.btnDefineBenfits.Click += new System.EventHandler(this.btnDefineBenfits_Click);
             // 
             // frmPLSM_Workstreams
             // 
