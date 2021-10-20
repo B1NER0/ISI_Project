@@ -63,7 +63,7 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -1159,6 +1159,78 @@
     <Compile Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.Designer.cs">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmBuildAndTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmBuildAndTest.Designer.cs">
+      <DependentUpon>frmBuildAndTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmBusinessPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmBusinessPlan.Designer.cs">
+      <DependentUpon>frmBusinessPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmContractConclusion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmContractConclusion.Designer.cs">
+      <DependentUpon>frmContractConclusion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmDetailedDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmDetailedDesign.Designer.cs">
+      <DependentUpon>frmDetailedDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmFeasabilityWorkpackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmFeasabilityWorkpackages.Designer.cs">
+      <DependentUpon>frmFeasabilityWorkpackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmImplementation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmImplementation.Designer.cs">
+      <DependentUpon>frmImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmOpportunityScreeningWorkpackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmOpportunityScreeningWorkpackages.Designer.cs">
+      <DependentUpon>frmOpportunityScreeningWorkpackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPLSM_Workpackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPLSM_Workpackages.Designer.cs">
+      <DependentUpon>frmPLSM_Workpackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPLSM_Workstreams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPLSM_Workstreams.Designer.cs">
+      <DependentUpon>frmPLSM_Workstreams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPortfolioManagementStream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPortfolioManagementStream.Designer.cs">
+      <DependentUpon>frmPortfolioManagementStream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPreFeasabilityWorkpackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmPreFeasabilityWorkpackages.Designer.cs">
+      <DependentUpon>frmPreFeasabilityWorkpackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectExecutionPlanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectExecutionPlanning.Designer.cs">
+      <DependentUpon>frmProjectExecutionPlanning.cs</DependentUpon>
+    </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1765,6 +1837,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.resx">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmBuildAndTest.resx">
+      <DependentUpon>frmBuildAndTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmBusinessPlan.resx">
+      <DependentUpon>frmBusinessPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmContractConclusion.resx">
+      <DependentUpon>frmContractConclusion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmDetailedDesign.resx">
+      <DependentUpon>frmDetailedDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmFeasabilityWorkpackages.resx">
+      <DependentUpon>frmFeasabilityWorkpackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmImplementation.resx">
+      <DependentUpon>frmImplementation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmOpportunityScreeningWorkpackages.resx">
+      <DependentUpon>frmOpportunityScreeningWorkpackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmPLSM_Workpackages.resx">
+      <DependentUpon>frmPLSM_Workpackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmPLSM_Workstreams.resx">
+      <DependentUpon>frmPLSM_Workstreams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmPortfolioManagementStream.resx">
+      <DependentUpon>frmPortfolioManagementStream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmPreFeasabilityWorkpackages.resx">
+      <DependentUpon>frmPreFeasabilityWorkpackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProjectExecutionPlanning.resx">
+      <DependentUpon>frmProjectExecutionPlanning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProjectManagement.resx">
       <DependentUpon>frmProjectManagement.cs</DependentUpon>
