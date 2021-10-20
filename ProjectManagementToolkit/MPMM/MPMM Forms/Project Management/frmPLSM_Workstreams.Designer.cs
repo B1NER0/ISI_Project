@@ -79,9 +79,43 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCheckGuarantee = new System.Windows.Forms.Button();
             this.btnArchiveOutputs = new System.Windows.Forms.Button();
             this.btnBestPractices = new System.Windows.Forms.Button();
+            this.btnPreparePrefeasiblity = new System.Windows.Forms.Button();
+            this.btnPrepareConceptual = new System.Windows.Forms.Button();
+            this.btnPrepareDesign = new System.Windows.Forms.Button();
+            this.btnPreparePreContract = new System.Windows.Forms.Button();
+            this.btnPrepareDetailedDesign = new System.Windows.Forms.Button();
+            this.btnPrepareTranferImplementation = new System.Windows.Forms.Button();
+            this.btnRFPResources = new System.Windows.Forms.Button();
+            this.btnRFPPrototypes = new System.Windows.Forms.Button();
+            this.btnEvaluateRFP = new System.Windows.Forms.Button();
+            this.btnPrepareRFP = new System.Windows.Forms.Button();
+            this.btnGetTender = new System.Windows.Forms.Button();
+            this.btnIssueRFPs = new System.Windows.Forms.Button();
+            this.btnConclude = new System.Windows.Forms.Button();
+            this.btnEvaluate = new System.Windows.Forms.Button();
+            this.btnAwardContracts = new System.Windows.Forms.Button();
+            this.btnFeedbackTender = new System.Windows.Forms.Button();
+            this.btnIdentifyContracts = new System.Windows.Forms.Button();
+            this.btnEvaluatePerformance = new System.Windows.Forms.Button();
+            this.btnMonitorCompliance = new System.Windows.Forms.Button();
+            this.btnProcessStage = new System.Windows.Forms.Button();
+            this.btnCloseContracts = new System.Windows.Forms.Button();
+            this.btnDefineBenfits = new System.Windows.Forms.Button();
+            this.btnPrepareBenefits = new System.Windows.Forms.Button();
+            this.btnIdentifyEarlyBenefits = new System.Windows.Forms.Button();
+            this.btnIdentifyBenefits = new System.Windows.Forms.Button();
+            this.btnConfirmBenefits = new System.Windows.Forms.Button();
+            this.btnReviewPlan = new System.Windows.Forms.Button();
+            this.btnUpdatePlan = new System.Windows.Forms.Button();
+            this.btnMonitorBenefit = new System.Windows.Forms.Button();
+            this.btnConductPlan = new System.Windows.Forms.Button();
+            this.btnProcessStageReport = new System.Windows.Forms.Button();
             this.PLSMWorkstreamsTabControl.SuspendLayout();
             this.PortfolioManagementStreamTabPage.SuspendLayout();
             this.EngineeringStreamTabPage.SuspendLayout();
+            this.ArchitectureStreamTabPage.SuspendLayout();
+            this.ProcurementStreamTabPage.SuspendLayout();
+            this.BenefitsRealisationStreamTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // PLSMWorkstreamsTabControl
@@ -342,6 +376,12 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // ArchitectureStreamTabPage
             // 
+            this.ArchitectureStreamTabPage.Controls.Add(this.btnPrepareTranferImplementation);
+            this.ArchitectureStreamTabPage.Controls.Add(this.btnPrepareDetailedDesign);
+            this.ArchitectureStreamTabPage.Controls.Add(this.btnPreparePreContract);
+            this.ArchitectureStreamTabPage.Controls.Add(this.btnPrepareDesign);
+            this.ArchitectureStreamTabPage.Controls.Add(this.btnPrepareConceptual);
+            this.ArchitectureStreamTabPage.Controls.Add(this.btnPreparePrefeasiblity);
             this.ArchitectureStreamTabPage.Location = new System.Drawing.Point(4, 25);
             this.ArchitectureStreamTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ArchitectureStreamTabPage.Name = "ArchitectureStreamTabPage";
@@ -353,6 +393,21 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // ProcurementStreamTabPage
             // 
+            this.ProcurementStreamTabPage.Controls.Add(this.btnCloseContracts);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnProcessStage);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnMonitorCompliance);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnEvaluatePerformance);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnIdentifyContracts);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnFeedbackTender);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnAwardContracts);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnEvaluate);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnConclude);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnIssueRFPs);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnGetTender);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnPrepareRFP);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnEvaluateRFP);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnRFPPrototypes);
+            this.ProcurementStreamTabPage.Controls.Add(this.btnRFPResources);
             this.ProcurementStreamTabPage.Location = new System.Drawing.Point(4, 25);
             this.ProcurementStreamTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProcurementStreamTabPage.Name = "ProcurementStreamTabPage";
@@ -364,6 +419,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // BenefitsRealisationStreamTabPage
             // 
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnProcessStageReport);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnConductPlan);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnMonitorBenefit);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnUpdatePlan);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnReviewPlan);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnConfirmBenefits);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnIdentifyBenefits);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnIdentifyEarlyBenefits);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnPrepareBenefits);
+            this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnDefineBenfits);
             this.BenefitsRealisationStreamTabPage.Location = new System.Drawing.Point(4, 25);
             this.BenefitsRealisationStreamTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BenefitsRealisationStreamTabPage.Name = "BenefitsRealisationStreamTabPage";
@@ -625,6 +690,285 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnBestPractices.Text = "Best practices lessons learnt";
             this.btnBestPractices.UseVisualStyleBackColor = true;
             // 
+            // btnPreparePrefeasiblity
+            // 
+            this.btnPreparePrefeasiblity.Location = new System.Drawing.Point(141, 101);
+            this.btnPreparePrefeasiblity.Name = "btnPreparePrefeasiblity";
+            this.btnPreparePrefeasiblity.Size = new System.Drawing.Size(145, 183);
+            this.btnPreparePrefeasiblity.TabIndex = 0;
+            this.btnPreparePrefeasiblity.Text = "Prepare submit pre-feasibility architecture submission";
+            this.btnPreparePrefeasiblity.UseVisualStyleBackColor = true;
+            // 
+            // btnPrepareConceptual
+            // 
+            this.btnPrepareConceptual.Location = new System.Drawing.Point(304, 101);
+            this.btnPrepareConceptual.Name = "btnPrepareConceptual";
+            this.btnPrepareConceptual.Size = new System.Drawing.Size(145, 183);
+            this.btnPrepareConceptual.TabIndex = 1;
+            this.btnPrepareConceptual.Text = "Prepare submit conceptual architecture submission";
+            this.btnPrepareConceptual.UseVisualStyleBackColor = true;
+            // 
+            // btnPrepareDesign
+            // 
+            this.btnPrepareDesign.Location = new System.Drawing.Point(467, 101);
+            this.btnPrepareDesign.Name = "btnPrepareDesign";
+            this.btnPrepareDesign.Size = new System.Drawing.Size(145, 183);
+            this.btnPrepareDesign.TabIndex = 2;
+            this.btnPrepareDesign.Text = "Prepare system design architecture submission";
+            this.btnPrepareDesign.UseVisualStyleBackColor = true;
+            // 
+            // btnPreparePreContract
+            // 
+            this.btnPreparePreContract.Location = new System.Drawing.Point(780, 101);
+            this.btnPreparePreContract.Name = "btnPreparePreContract";
+            this.btnPreparePreContract.Size = new System.Drawing.Size(320, 72);
+            this.btnPreparePreContract.TabIndex = 3;
+            this.btnPreparePreContract.Text = "Prepare submit pre-contract architecture submission";
+            this.btnPreparePreContract.UseVisualStyleBackColor = true;
+            // 
+            // btnPrepareDetailedDesign
+            // 
+            this.btnPrepareDetailedDesign.Location = new System.Drawing.Point(984, 179);
+            this.btnPrepareDetailedDesign.Name = "btnPrepareDetailedDesign";
+            this.btnPrepareDetailedDesign.Size = new System.Drawing.Size(320, 72);
+            this.btnPrepareDetailedDesign.TabIndex = 4;
+            this.btnPrepareDetailedDesign.Text = "Prepare submit detailed design architecture submission";
+            this.btnPrepareDetailedDesign.UseVisualStyleBackColor = true;
+            // 
+            // btnPrepareTranferImplementation
+            // 
+            this.btnPrepareTranferImplementation.Location = new System.Drawing.Point(1190, 257);
+            this.btnPrepareTranferImplementation.Name = "btnPrepareTranferImplementation";
+            this.btnPrepareTranferImplementation.Size = new System.Drawing.Size(320, 72);
+            this.btnPrepareTranferImplementation.TabIndex = 5;
+            this.btnPrepareTranferImplementation.Text = "Prepare submit pre-transfer implementation architecture submission";
+            this.btnPrepareTranferImplementation.UseVisualStyleBackColor = true;
+            // 
+            // btnRFPResources
+            // 
+            this.btnRFPResources.Location = new System.Drawing.Point(102, 58);
+            this.btnRFPResources.Name = "btnRFPResources";
+            this.btnRFPResources.Size = new System.Drawing.Size(125, 117);
+            this.btnRFPResources.TabIndex = 0;
+            this.btnRFPResources.Text = "Prepare publish RFP for resources for Definition phase";
+            this.btnRFPResources.UseVisualStyleBackColor = true;
+            // 
+            // btnRFPPrototypes
+            // 
+            this.btnRFPPrototypes.Location = new System.Drawing.Point(233, 58);
+            this.btnRFPPrototypes.Name = "btnRFPPrototypes";
+            this.btnRFPPrototypes.Size = new System.Drawing.Size(125, 117);
+            this.btnRFPPrototypes.TabIndex = 1;
+            this.btnRFPPrototypes.Text = "Prepare publish RFP for prototypes";
+            this.btnRFPPrototypes.UseVisualStyleBackColor = true;
+            // 
+            // btnEvaluateRFP
+            // 
+            this.btnEvaluateRFP.Location = new System.Drawing.Point(102, 181);
+            this.btnEvaluateRFP.Name = "btnEvaluateRFP";
+            this.btnEvaluateRFP.Size = new System.Drawing.Size(125, 117);
+            this.btnEvaluateRFP.TabIndex = 2;
+            this.btnEvaluateRFP.Text = "Evaluate RFPs for resources";
+            this.btnEvaluateRFP.UseVisualStyleBackColor = true;
+            // 
+            // btnPrepareRFP
+            // 
+            this.btnPrepareRFP.Location = new System.Drawing.Point(449, 58);
+            this.btnPrepareRFP.Name = "btnPrepareRFP";
+            this.btnPrepareRFP.Size = new System.Drawing.Size(125, 117);
+            this.btnPrepareRFP.TabIndex = 3;
+            this.btnPrepareRFP.Text = "Prepare RFP (include System Design Specifications)";
+            this.btnPrepareRFP.UseVisualStyleBackColor = true;
+            // 
+            // btnGetTender
+            // 
+            this.btnGetTender.Location = new System.Drawing.Point(449, 181);
+            this.btnGetTender.Name = "btnGetTender";
+            this.btnGetTender.Size = new System.Drawing.Size(125, 117);
+            this.btnGetTender.TabIndex = 4;
+            this.btnGetTender.Text = "Get Tender Committee approval mandate";
+            this.btnGetTender.UseVisualStyleBackColor = true;
+            // 
+            // btnIssueRFPs
+            // 
+            this.btnIssueRFPs.Location = new System.Drawing.Point(597, 58);
+            this.btnIssueRFPs.Name = "btnIssueRFPs";
+            this.btnIssueRFPs.Size = new System.Drawing.Size(158, 62);
+            this.btnIssueRFPs.TabIndex = 5;
+            this.btnIssueRFPs.Text = "Issue RFPs";
+            this.btnIssueRFPs.UseVisualStyleBackColor = true;
+            // 
+            // btnConclude
+            // 
+            this.btnConclude.Location = new System.Drawing.Point(177, 328);
+            this.btnConclude.Name = "btnConclude";
+            this.btnConclude.Size = new System.Drawing.Size(449, 64);
+            this.btnConclude.TabIndex = 6;
+            this.btnConclude.Text = "Conclude contracts for resources";
+            this.btnConclude.UseVisualStyleBackColor = true;
+            // 
+            // btnEvaluate
+            // 
+            this.btnEvaluate.Location = new System.Drawing.Point(798, 58);
+            this.btnEvaluate.Name = "btnEvaluate";
+            this.btnEvaluate.Size = new System.Drawing.Size(158, 62);
+            this.btnEvaluate.TabIndex = 7;
+            this.btnEvaluate.Text = "Evaluate RFPs";
+            this.btnEvaluate.UseVisualStyleBackColor = true;
+            // 
+            // btnAwardContracts
+            // 
+            this.btnAwardContracts.Location = new System.Drawing.Point(996, 58);
+            this.btnAwardContracts.Name = "btnAwardContracts";
+            this.btnAwardContracts.Size = new System.Drawing.Size(158, 62);
+            this.btnAwardContracts.TabIndex = 8;
+            this.btnAwardContracts.Text = "Award Contracts";
+            this.btnAwardContracts.UseVisualStyleBackColor = true;
+            // 
+            // btnFeedbackTender
+            // 
+            this.btnFeedbackTender.Location = new System.Drawing.Point(677, 268);
+            this.btnFeedbackTender.Name = "btnFeedbackTender";
+            this.btnFeedbackTender.Size = new System.Drawing.Size(870, 59);
+            this.btnFeedbackTender.TabIndex = 9;
+            this.btnFeedbackTender.Text = "Feedback to Tender Committee";
+            this.btnFeedbackTender.UseVisualStyleBackColor = true;
+            // 
+            // btnIdentifyContracts
+            // 
+            this.btnIdentifyContracts.Location = new System.Drawing.Point(677, 333);
+            this.btnIdentifyContracts.Name = "btnIdentifyContracts";
+            this.btnIdentifyContracts.Size = new System.Drawing.Size(870, 42);
+            this.btnIdentifyContracts.TabIndex = 10;
+            this.btnIdentifyContracts.Text = "Identify needs for ongoing contracts";
+            this.btnIdentifyContracts.UseVisualStyleBackColor = true;
+            // 
+            // btnEvaluatePerformance
+            // 
+            this.btnEvaluatePerformance.Location = new System.Drawing.Point(677, 381);
+            this.btnEvaluatePerformance.Name = "btnEvaluatePerformance";
+            this.btnEvaluatePerformance.Size = new System.Drawing.Size(617, 42);
+            this.btnEvaluatePerformance.TabIndex = 11;
+            this.btnEvaluatePerformance.Text = "Evaluate contractor performance";
+            this.btnEvaluatePerformance.UseVisualStyleBackColor = true;
+            // 
+            // btnMonitorCompliance
+            // 
+            this.btnMonitorCompliance.Location = new System.Drawing.Point(368, 429);
+            this.btnMonitorCompliance.Name = "btnMonitorCompliance";
+            this.btnMonitorCompliance.Size = new System.Drawing.Size(926, 42);
+            this.btnMonitorCompliance.TabIndex = 12;
+            this.btnMonitorCompliance.Text = "Monitor Contractual Compliance";
+            this.btnMonitorCompliance.UseVisualStyleBackColor = true;
+            // 
+            // btnProcessStage
+            // 
+            this.btnProcessStage.Location = new System.Drawing.Point(171, 477);
+            this.btnProcessStage.Name = "btnProcessStage";
+            this.btnProcessStage.Size = new System.Drawing.Size(1376, 42);
+            this.btnProcessStage.TabIndex = 13;
+            this.btnProcessStage.Text = "Process stage end report";
+            this.btnProcessStage.UseVisualStyleBackColor = true;
+            // 
+            // btnCloseContracts
+            // 
+            this.btnCloseContracts.Location = new System.Drawing.Point(1300, 381);
+            this.btnCloseContracts.Name = "btnCloseContracts";
+            this.btnCloseContracts.Size = new System.Drawing.Size(247, 90);
+            this.btnCloseContracts.TabIndex = 14;
+            this.btnCloseContracts.Text = "Close project contracts";
+            this.btnCloseContracts.UseVisualStyleBackColor = true;
+            // 
+            // btnDefineBenfits
+            // 
+            this.btnDefineBenfits.Location = new System.Drawing.Point(150, 85);
+            this.btnDefineBenfits.Name = "btnDefineBenfits";
+            this.btnDefineBenfits.Size = new System.Drawing.Size(140, 96);
+            this.btnDefineBenfits.TabIndex = 0;
+            this.btnDefineBenfits.Text = "Define business benefits";
+            this.btnDefineBenfits.UseVisualStyleBackColor = true;
+            // 
+            // btnPrepareBenefits
+            // 
+            this.btnPrepareBenefits.Location = new System.Drawing.Point(329, 85);
+            this.btnPrepareBenefits.Name = "btnPrepareBenefits";
+            this.btnPrepareBenefits.Size = new System.Drawing.Size(140, 96);
+            this.btnPrepareBenefits.TabIndex = 1;
+            this.btnPrepareBenefits.Text = "Prepare benefits realisation plan";
+            this.btnPrepareBenefits.UseVisualStyleBackColor = true;
+            // 
+            // btnIdentifyEarlyBenefits
+            // 
+            this.btnIdentifyEarlyBenefits.Location = new System.Drawing.Point(150, 213);
+            this.btnIdentifyEarlyBenefits.Name = "btnIdentifyEarlyBenefits";
+            this.btnIdentifyEarlyBenefits.Size = new System.Drawing.Size(140, 96);
+            this.btnIdentifyEarlyBenefits.TabIndex = 2;
+            this.btnIdentifyEarlyBenefits.Text = "Identify potential early benefits";
+            this.btnIdentifyEarlyBenefits.UseVisualStyleBackColor = true;
+            // 
+            // btnIdentifyBenefits
+            // 
+            this.btnIdentifyBenefits.Location = new System.Drawing.Point(329, 213);
+            this.btnIdentifyBenefits.Name = "btnIdentifyBenefits";
+            this.btnIdentifyBenefits.Size = new System.Drawing.Size(140, 96);
+            this.btnIdentifyBenefits.TabIndex = 3;
+            this.btnIdentifyBenefits.Text = "Identify additional benefits";
+            this.btnIdentifyBenefits.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmBenefits
+            // 
+            this.btnConfirmBenefits.Location = new System.Drawing.Point(1156, 85);
+            this.btnConfirmBenefits.Name = "btnConfirmBenefits";
+            this.btnConfirmBenefits.Size = new System.Drawing.Size(281, 96);
+            this.btnConfirmBenefits.TabIndex = 4;
+            this.btnConfirmBenefits.Text = "Confirm realisation of early benefits";
+            this.btnConfirmBenefits.UseVisualStyleBackColor = true;
+            // 
+            // btnReviewPlan
+            // 
+            this.btnReviewPlan.Location = new System.Drawing.Point(1156, 213);
+            this.btnReviewPlan.Name = "btnReviewPlan";
+            this.btnReviewPlan.Size = new System.Drawing.Size(281, 96);
+            this.btnReviewPlan.TabIndex = 5;
+            this.btnReviewPlan.Text = "Review benefit realisation plan";
+            this.btnReviewPlan.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdatePlan
+            // 
+            this.btnUpdatePlan.Location = new System.Drawing.Point(368, 371);
+            this.btnUpdatePlan.Name = "btnUpdatePlan";
+            this.btnUpdatePlan.Size = new System.Drawing.Size(1029, 39);
+            this.btnUpdatePlan.TabIndex = 6;
+            this.btnUpdatePlan.Text = "Update Benefit Realisation Plan";
+            this.btnUpdatePlan.UseVisualStyleBackColor = true;
+            // 
+            // btnMonitorBenefit
+            // 
+            this.btnMonitorBenefit.Location = new System.Drawing.Point(368, 416);
+            this.btnMonitorBenefit.Name = "btnMonitorBenefit";
+            this.btnMonitorBenefit.Size = new System.Drawing.Size(1029, 39);
+            this.btnMonitorBenefit.TabIndex = 7;
+            this.btnMonitorBenefit.Text = "Monitor benefit realisation";
+            this.btnMonitorBenefit.UseVisualStyleBackColor = true;
+            // 
+            // btnConductPlan
+            // 
+            this.btnConductPlan.Location = new System.Drawing.Point(368, 461);
+            this.btnConductPlan.Name = "btnConductPlan";
+            this.btnConductPlan.Size = new System.Drawing.Size(1069, 39);
+            this.btnConductPlan.TabIndex = 8;
+            this.btnConductPlan.Text = "Conduct benefit realisation reviews according to plan";
+            this.btnConductPlan.UseVisualStyleBackColor = true;
+            // 
+            // btnProcessStageReport
+            // 
+            this.btnProcessStageReport.Location = new System.Drawing.Point(368, 506);
+            this.btnProcessStageReport.Name = "btnProcessStageReport";
+            this.btnProcessStageReport.Size = new System.Drawing.Size(1069, 39);
+            this.btnProcessStageReport.TabIndex = 9;
+            this.btnProcessStageReport.Text = "Process stage end report";
+            this.btnProcessStageReport.UseVisualStyleBackColor = true;
+            // 
             // frmPLSM_Workstreams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -637,6 +981,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.PLSMWorkstreamsTabControl.ResumeLayout(false);
             this.PortfolioManagementStreamTabPage.ResumeLayout(false);
             this.EngineeringStreamTabPage.ResumeLayout(false);
+            this.ArchitectureStreamTabPage.ResumeLayout(false);
+            this.ProcurementStreamTabPage.ResumeLayout(false);
+            this.BenefitsRealisationStreamTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -692,5 +1039,36 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private System.Windows.Forms.Button btnCheckGuarantee;
         private System.Windows.Forms.Button btnBestPractices;
         private System.Windows.Forms.Button btnArchiveOutputs;
+        private System.Windows.Forms.Button btnPrepareConceptual;
+        private System.Windows.Forms.Button btnPreparePrefeasiblity;
+        private System.Windows.Forms.Button btnPrepareDesign;
+        private System.Windows.Forms.Button btnPrepareTranferImplementation;
+        private System.Windows.Forms.Button btnPrepareDetailedDesign;
+        private System.Windows.Forms.Button btnPreparePreContract;
+        private System.Windows.Forms.Button btnEvaluateRFP;
+        private System.Windows.Forms.Button btnRFPPrototypes;
+        private System.Windows.Forms.Button btnRFPResources;
+        private System.Windows.Forms.Button btnIssueRFPs;
+        private System.Windows.Forms.Button btnGetTender;
+        private System.Windows.Forms.Button btnPrepareRFP;
+        private System.Windows.Forms.Button btnConclude;
+        private System.Windows.Forms.Button btnAwardContracts;
+        private System.Windows.Forms.Button btnEvaluate;
+        private System.Windows.Forms.Button btnFeedbackTender;
+        private System.Windows.Forms.Button btnIdentifyContracts;
+        private System.Windows.Forms.Button btnEvaluatePerformance;
+        private System.Windows.Forms.Button btnProcessStage;
+        private System.Windows.Forms.Button btnMonitorCompliance;
+        private System.Windows.Forms.Button btnCloseContracts;
+        private System.Windows.Forms.Button btnIdentifyBenefits;
+        private System.Windows.Forms.Button btnIdentifyEarlyBenefits;
+        private System.Windows.Forms.Button btnPrepareBenefits;
+        private System.Windows.Forms.Button btnDefineBenfits;
+        private System.Windows.Forms.Button btnReviewPlan;
+        private System.Windows.Forms.Button btnConfirmBenefits;
+        private System.Windows.Forms.Button btnMonitorBenefit;
+        private System.Windows.Forms.Button btnUpdatePlan;
+        private System.Windows.Forms.Button btnConductPlan;
+        private System.Windows.Forms.Button btnProcessStageReport;
     }
 }
