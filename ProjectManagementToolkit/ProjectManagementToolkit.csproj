@@ -1865,6 +1865,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmArchitectureStream.resx">
       <DependentUpon>frmArchitectureStream.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmBenefitsRealisationStream.resx">
+      <DependentUpon>frmBenefitsRealisationStream.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmBuildAndTest.resx">
       <DependentUpon>frmBuildAndTest.cs</DependentUpon>
     </EmbeddedResource>
