@@ -911,6 +911,8 @@ namespace ProjectManagementToolkit
                     }
                 }
 
+                k = 0;
+
                 if (inprog==initiationDocuments.Count)
                 {
                     xValues1[0] = "Initiation";
@@ -1015,6 +1017,8 @@ namespace ProjectManagementToolkit
                         dgvPlanning.Rows[j].Cells[1].Style.BackColor = Color.Red;
                     }
                 }
+
+                k = 0;
 
                 if (inprogPlanning == planningDocuments.Count)
                 {
@@ -1147,6 +1151,8 @@ namespace ProjectManagementToolkit
                     }
                 }
 
+                k = 0;
+
                 if (inprogExecution == executionDocuments.Count)
                 {
                     xValues1[2] = "Execution";
@@ -1240,6 +1246,8 @@ namespace ProjectManagementToolkit
                         dgvClosing.Rows[j].Cells[1].Style.BackColor = Color.Red;
                     }
                 }
+
+                k = 0;
 
                 if (inprogClosing == closingDocuments.Count)
                 {
