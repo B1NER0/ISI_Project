@@ -431,6 +431,7 @@
     <Compile Include="MPMM\MPMM Document Models\ExpenseRegister.cs" />
     <Compile Include="MPMM\MPMM Document Models\FeasibilityStudyModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\FinancialPlanModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\InitDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\IssueFormModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\IssueManagementProcessModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\IssueRegisterModel.cs" />

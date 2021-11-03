@@ -42,18 +42,41 @@ namespace ProjectManagementToolkit
         List<string> initiationDocuments = new List<string>();
         List<string> planningDocuments = new List<string>();
         List<string> executionDocuments = new List<string>();
-        
+
 
         string[] xValues1 = new string[4];
         double[] yValues1 = new double[4];
         double[] yValues2 = new double[4];
+
+        BusinessCaseModel currentBusinessCaseModel;
+        VersionControl<BusinessCaseModel> versionControl;
+
+        FeasibilityStudyModel currentFeasibilityStudyModel;
+        VersionControl<FeasibilityStudyModel> versionControl1;
+
+        ProjectCharterModel currentProjectCharter;
+        VersionControl<ProjectCharterModel> versionControl2;
+
+        JobDescriptionModel currentJobDescription;
+        VersionControl<JobDescriptionModel> versionControl3;
+
+        ProjectOfficeChecklistModel currentProjectOfficeChecklist;
+        VersionControl<ProjectOfficeChecklistModel> versionControl4;
+
+        PhaseReviewFormInitiationModel currentPhaseReviewFormInitiation;
+        VersionControl<PhaseReviewFormInitiationModel> versionControl5;
+
+        TermsOfReferenceModel currentTermOfReference;
+        VersionControl<TermsOfReferenceModel> versionControl6;
+
+        List<(string status, string dueDate)> initDocsListStatus = new List<(string status, string dueDate)>();
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
             pbarOverall.Hide();
             lblOverallProgress.Hide();
 
-            List<string> initDocsListStatus = new List<string>();
+
             List<string> planningDocsListStatus = new List<string>();
             List<string> executionDocsListStatus = new List<string>();
             List<string> closingDocsListStatus = new List<string>();
@@ -65,123 +88,144 @@ namespace ProjectManagementToolkit
 
             /////////////////////////////////////////////////////////////////INITIATION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+            string jsonp = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
+
+
+            //Check versions
+            // VersionControl<InitDueDateModel> versionControlm = JsonConvert.DeserializeObject<VersionControl<InitDueDateModel>>(jsonp);
+            //Get current businesscaseModel
+            // BusinessCaseModel currentBusinessCaseModel;
+
+
+
+            //if (versionControlm != null)
+            //{
+            //    currentInit = JsonConvert.DeserializeObject<InitDueDateModel>(versionControlm.getLatest(versionControlm.DocumentModels));
+            //    MessageBox.Show(currentInit.BusinessCaseDD.ToString());
+            //}
+            //else
+            //    //IsBusinessCaseModelDone = "";
+            //    MessageBox.Show("Nothing");
+
+
+
+            InitDueDateModel tInit = JsonConvert.DeserializeObject<InitDueDateModel>(jsonp);
+
             ////////BUSINESSCASE////////
             //Verander Json
             string json1 = JsonHelper.loadDocument(Settings.Default.ProjectID, "BusinessCase");
 
             //Check versions
-            VersionControl<BusinessCaseModel> versionControl = JsonConvert.DeserializeObject<VersionControl<BusinessCaseModel>>(json1);
+            versionControl = JsonConvert.DeserializeObject<VersionControl<BusinessCaseModel>>(json1);
             //Get current businesscaseModel
-            BusinessCaseModel currentBusinessCaseModel;
+            // BusinessCaseModel currentBusinessCaseModel;
 
             if (versionControl != null)
             {
                 currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
-                initDocsListStatus.Add(currentBusinessCaseModel.Progress);
+                initDocsListStatus.Add((currentBusinessCaseModel.Progress, tInit.BusinessCaseDD));
             }
             else
                 //IsBusinessCaseModelDone = "";
-                initDocsListStatus.Add("");
+                initDocsListStatus.Add(("", ""));
 
 
 
             //////FEASIBILITY STUDY/////////
             string json2 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FeasibilityStudy");
-            VersionControl<FeasibilityStudyModel> versionControl1 = JsonConvert.DeserializeObject<VersionControl<FeasibilityStudyModel>>(json2);
-            FeasibilityStudyModel currentFeasibilityStudyModel; //= JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
+            versionControl1 = JsonConvert.DeserializeObject<VersionControl<FeasibilityStudyModel>>(json2);
+            //= JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
+            MessageBox.Show(tInit.FeasibilityStudyDD);
+
 
 
             if (versionControl1 != null)
             {
                 currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
-                initDocsListStatus.Add(currentFeasibilityStudyModel.FeasibilityStudyProgress);
+                initDocsListStatus.Add((currentFeasibilityStudyModel.FeasibilityStudyProgress, tInit.FeasibilityStudyDD));
             }
             else
-                // IsFeasibilityStudyDone = "";
-                initDocsListStatus.Add("");
+                initDocsListStatus.Add(("", ""));
 
 
 
 
             //////PROJECT CHARTER/////////
             string json3 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectCharter");
-            VersionControl<ProjectCharterModel> versionControl2 = JsonConvert.DeserializeObject<VersionControl<ProjectCharterModel>>(json3);
-            ProjectCharterModel currentProjectCharter;
+            versionControl2 = JsonConvert.DeserializeObject<VersionControl<ProjectCharterModel>>(json3);
+
 
             if (versionControl2 != null)
             {
                 currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
-                initDocsListStatus.Add(currentProjectCharter.ProjectCharterProgress);
+                initDocsListStatus.Add((currentProjectCharter.ProjectCharterProgress, tInit.ProjectCharterDD));
             }
             else
-                // IsProjectCharterDone = "";
-                initDocsListStatus.Add("");
+
+                initDocsListStatus.Add(("", ""));
 
 
 
 
             //////JOB DESCRIPTION/////////
             string json4 = JsonHelper.loadDocument(Settings.Default.ProjectID, "JobDescription");
-            VersionControl<JobDescriptionModel> versionControl3 = JsonConvert.DeserializeObject<VersionControl<JobDescriptionModel>>(json4);
-            JobDescriptionModel currentJobDescription;
+            versionControl3 = JsonConvert.DeserializeObject<VersionControl<JobDescriptionModel>>(json4);
 
             if (versionControl3 != null)
             {
                 currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
-                initDocsListStatus.Add(currentJobDescription.JobDescriptionProgress);
+                initDocsListStatus.Add((currentJobDescription.JobDescriptionProgress, tInit.JobDescriptionDD));
 
             }
             else
-                //  IsJobDescriptionDone = "";
-                initDocsListStatus.Add("");
+
+                initDocsListStatus.Add(("", ""));
 
 
             //////PROJECT OFFICE CHECKLIST/////////
             string json5 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectOfficeCheckList");
-            VersionControl<ProjectOfficeChecklistModel> versionControl4 = JsonConvert.DeserializeObject<VersionControl<ProjectOfficeChecklistModel>>(json5);
-            ProjectOfficeChecklistModel currentProjectOfficeChecklist;
+            versionControl4 = JsonConvert.DeserializeObject<VersionControl<ProjectOfficeChecklistModel>>(json5);
+
 
             if (versionControl4 != null)
             {
                 currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
-                initDocsListStatus.Add(currentProjectOfficeChecklist.ProjectOfficeCheckListProgress);
+                initDocsListStatus.Add((currentProjectOfficeChecklist.ProjectOfficeCheckListProgress, tInit.ProjectOfficeCheckListDD));
 
             }
             else
-                //    IsProjectOfficeChecklistDone = "";
-                initDocsListStatus.Add("");
+                initDocsListStatus.Add(("", ""));
 
 
             //////PHASE REVIEW FORM INITIATION/////////
             string json6 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewFormInitiation");
-            VersionControl<PhaseReviewFormInitiationModel> versionControl5 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewFormInitiationModel>>(json6);
-            PhaseReviewFormInitiationModel currentPhaseReviewFormInitiation;
+            versionControl5 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewFormInitiationModel>>(json6);
+
 
             if (versionControl5 != null)
             {
                 currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
-                initDocsListStatus.Add(currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress);
+                initDocsListStatus.Add((currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress, tInit.PhaseRevieFormInitiationDD));
 
             }
             else
-                // IsPhaseReviewInitiationDone = "";
-                initDocsListStatus.Add("");
+                initDocsListStatus.Add(("", ""));
 
 
             //////TERMS OF REFERENCE/////////
             string json7 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TermOfReferenceDocument");
-            VersionControl<TermsOfReferenceModel> versionControl6 = JsonConvert.DeserializeObject<VersionControl<TermsOfReferenceModel>>(json7);
-            TermsOfReferenceModel currentTermOfReference;
+            versionControl6 = JsonConvert.DeserializeObject<VersionControl<TermsOfReferenceModel>>(json7);
+
 
             if (versionControl6 != null)
             {
                 currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
-                initDocsListStatus.Add(currentTermOfReference.TermOfReferenceProgress);
+                initDocsListStatus.Add((currentTermOfReference.TermOfReferenceProgress, tInit.TermOfReferenceDocument));
 
             }
             else
-                //  IsTermOfReferenceDone = "";
-                initDocsListStatus.Add("");
+                initDocsListStatus.Add(("", ""));
 
             /////////////////////////////////////////////////////////////////PLANNING PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -841,6 +885,8 @@ namespace ProjectManagementToolkit
                 chart1.Visible = true;
                 chart2.Visible = true;
 
+                         
+
                 ///////////////INITIATION PHASE/////////////////
                 initiationDocuments.Add("BusinessCase");
                 initiationDocuments.Add("FeasibilityStudy");
@@ -850,29 +896,35 @@ namespace ProjectManagementToolkit
                 initiationDocuments.Add("PhaseReviewFormInitiation");
                 initiationDocuments.Add("TermOfReferenceDocument");
 
-                initDocsListStatus.Add("BusinessCase");
-                int k=0;
+                // executionDocsListStatus.Add("TimeMangement");
+                initDocsListStatus.Add(("BusinessCase", ""));
+
+
+
+                int k = 0;
 
                 for (int i = 0; i < initiationDocuments.Count; i++)
                 {
                     dgvInitiation.Rows.Add();
                     dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
 
-                    if (initDocsListStatus[i] == "UNDONE")
+                    dgvInitiation.Rows[i].Cells[1].Value = initDocsListStatus[i].dueDate;//initDocsListStatus[i].dueDate.ToString();
+
+                    if (initDocsListStatus[i].status == "UNDONE")
                     {
-                        dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.Orange;
+                        dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.Orange;
                         inprog++;
                     }
-                    else if (initDocsListStatus[i] == "DONE")
+                    else if (initDocsListStatus[i].status == "DONE")
                     {
                         initationProgressVal++;
                         ///////////////////////////AL DIE CODE OM TE CHECK OF IETS VOOR IETS ANDERS GEDOEN IS/////////////////////
                         k = i;
 
                         comp++;
-                        dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                        dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
                         // pbarInitiation.Value = (int)initationProgressVal;
-                        initationPercentage = ((initationProgressVal) / initiationDocuments.Count)*100;
+                        initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
                         //lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
 
                         xValues1[0] = "Initiation";
@@ -894,7 +946,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncomp++;
-                        dgvInitiation.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                        dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.Gray;
                     }
 
 
@@ -902,18 +954,18 @@ namespace ProjectManagementToolkit
 
                 for (int j = 0; j < k; j++)
                 {
-                    if (initDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                    if (initDocsListStatus[j].status == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
                     {
                         //Increment the behind schedule tasks
                         behind++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvInitiation.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                        dgvInitiation.Rows[j].Cells[2].Style.BackColor = Color.Red;
                     }
                 }
 
                 k = 0;
 
-                if (inprog==initiationDocuments.Count)
+                if (inprog == initiationDocuments.Count)
                 {
                     xValues1[0] = "Initiation";
                     yValues1[0] = initationPercentage;
@@ -924,12 +976,12 @@ namespace ProjectManagementToolkit
                     chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
                 }
 
-                lblInitNumTasks.Text = (initationPercentage /100).ToString("p");
+                lblInitNumTasks.Text = (initationPercentage / 100).ToString("p");
 
                 chartInit.ChartAreas[0].BackColor = Color.Transparent;
                 chartInit.Legends[0].BackColor = Color.Transparent;
                 chartInit.Legends[0].BackColor = Color.Transparent;
-                string[] xInit = { "Completed Tasks  " + comp, "Not started Tasks  " + uncomp, "In Progress Tasks " + inprog , "Behind Schedule Tasks " + behind};
+                string[] xInit = { "Completed Tasks  " + comp, "Not started Tasks  " + uncomp, "In Progress Tasks " + inprog, "Behind Schedule Tasks " + behind };
 
                 double[] yInit = { comp, uncomp, inprog, behind };
 
@@ -1067,9 +1119,9 @@ namespace ProjectManagementToolkit
 
                 ////////////////////
                 ///Sal jy dalk net ook kyk na die Quality goed, daar is 4 goed hier maar net 3 goed in die mainform onder quality (Nico)
-                executionDocuments.Add("QualityManagement"); 
-                executionDocuments.Add("QualityReviewPlan"); 
-                executionDocuments.Add("QualityReviewForm"); 
+                executionDocuments.Add("QualityManagement");
+                executionDocuments.Add("QualityReviewPlan");
+                executionDocuments.Add("QualityReviewForm");
                 //executionDocuments.Add("QualityReviewRegister"); Die kan ons eers los dink ek, ek sien dit ook nie in die main nie (Rickus)
                 ///////////////////
 
@@ -1097,7 +1149,7 @@ namespace ProjectManagementToolkit
 
                 for (int i = 0; i < executionDocuments.Count; i++)
                 {
-                    
+
                     dgvExecution.Rows.Add();
                     dgvExecution.Rows[i].Cells[0].Value = executionDocuments[i];
 
@@ -1331,10 +1383,74 @@ namespace ProjectManagementToolkit
             return localDocuments;
         }
 
-        
+
         private void chart3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        DateTimePicker oDateTimePicker;
+
+        private void dgvInitiation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // If any cell is clicked on the Second column which is our date Column  
+            if (e.ColumnIndex == 1)
+            {
+                //Initialized a new DateTimePicker Control  
+                oDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvInitiation.Controls.Add(oDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                oDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                oDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                oDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                oDateTimePicker.CloseUp += new EventHandler(oDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                oDateTimePicker.TextChanged += new EventHandler(dateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                oDateTimePicker.Visible = true;
+            }
+        }
+        InitDueDateModel currentInit = new InitDueDateModel();
+
+        private void dateTimePicker_OnTextChange(object sender, EventArgs e)
+        {
+            // Saving the 'Selected Date on Calendar' into DataGridView current cell  
+            dgvInitiation.CurrentCell.Value = oDateTimePicker.Text.ToString();
+
+            // currentInit.BusinessCaseDD = oDateTimePicker.Text.ToString();
+
+            currentInit.BusinessCaseDD = dgvInitiation.Rows[0].Cells[1].Value.ToString();
+            currentInit.FeasibilityStudyDD = dgvInitiation.Rows[1].Cells[1].Value.ToString();
+            currentInit.ProjectCharterDD = dgvInitiation.Rows[2].Cells[1].Value.ToString();
+            currentInit.JobDescriptionDD = dgvInitiation.Rows[3].Cells[1].Value.ToString();
+            currentInit.ProjectOfficeCheckListDD = dgvInitiation.Rows[4].Cells[1].Value.ToString();
+            currentInit.PhaseRevieFormInitiationDD = dgvInitiation.Rows[5].Cells[1].Value.ToString();
+            currentInit.TermOfReferenceDocument = dgvInitiation.Rows[6].Cells[1].Value.ToString();
+
+            string jsong = JsonConvert.SerializeObject(currentInit);
+            JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
+            MessageBox.Show("s");
+        }
+
+
+        void oDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            // Hiding the control after use   
+            oDateTimePicker.Visible = false;
         }
     }
 }
