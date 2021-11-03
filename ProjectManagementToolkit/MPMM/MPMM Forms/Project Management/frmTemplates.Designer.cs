@@ -43,6 +43,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnPostImplementationReview = new System.Windows.Forms.Button();
             this.btnClosureReport = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCommunicationsRegister = new System.Windows.Forms.Button();
+            this.btnAcceptanceRegister = new System.Windows.Forms.Button();
+            this.btnProcurementRegister = new System.Windows.Forms.Button();
+            this.btnIssueRegisterPE = new System.Windows.Forms.Button();
+            this.btnRiskRegisterPE = new System.Windows.Forms.Button();
+            this.btnChangeRegister = new System.Windows.Forms.Button();
+            this.btnQualityRegister2 = new System.Windows.Forms.Button();
+            this.btnQualityRegister1 = new System.Windows.Forms.Button();
+            this.btnExpenseRegister = new System.Windows.Forms.Button();
+            this.btnTimesheetRegister = new System.Windows.Forms.Button();
             this.btnPhaseReviewFormPE = new System.Windows.Forms.Button();
             this.btnProjectStatusReport = new System.Windows.Forms.Button();
             this.btnAcceptanceForm = new System.Windows.Forms.Button();
@@ -228,16 +238,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnProjectFinancesxlsEIAR = new System.Windows.Forms.Button();
             this.btnPlandocEIAR = new System.Windows.Forms.Button();
             this.btnBusinessCasedocEIAR = new System.Windows.Forms.Button();
-            this.btnTimesheetRegister = new System.Windows.Forms.Button();
-            this.btnExpenseRegister = new System.Windows.Forms.Button();
-            this.btnQualityRegister1 = new System.Windows.Forms.Button();
-            this.btnQualityRegister2 = new System.Windows.Forms.Button();
-            this.btnChangeRegister = new System.Windows.Forms.Button();
-            this.btnRiskRegisterPE = new System.Windows.Forms.Button();
-            this.btnIssueRegisterPE = new System.Windows.Forms.Button();
-            this.btnProcurementRegister = new System.Windows.Forms.Button();
-            this.btnAcceptanceRegister = new System.Windows.Forms.Button();
-            this.btnCommunicationsRegister = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -455,6 +455,106 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Project Execution";
+            // 
+            // btnCommunicationsRegister
+            // 
+            this.btnCommunicationsRegister.Location = new System.Drawing.Point(334, 280);
+            this.btnCommunicationsRegister.Name = "btnCommunicationsRegister";
+            this.btnCommunicationsRegister.Size = new System.Drawing.Size(149, 23);
+            this.btnCommunicationsRegister.TabIndex = 20;
+            this.btnCommunicationsRegister.Text = "Communications Register";
+            this.btnCommunicationsRegister.UseVisualStyleBackColor = true;
+            this.btnCommunicationsRegister.Click += new System.EventHandler(this.btnCommunicationsRegister_Click);
+            // 
+            // btnAcceptanceRegister
+            // 
+            this.btnAcceptanceRegister.Location = new System.Drawing.Point(334, 251);
+            this.btnAcceptanceRegister.Name = "btnAcceptanceRegister";
+            this.btnAcceptanceRegister.Size = new System.Drawing.Size(149, 23);
+            this.btnAcceptanceRegister.TabIndex = 20;
+            this.btnAcceptanceRegister.Text = "Acceptance Register";
+            this.btnAcceptanceRegister.UseVisualStyleBackColor = true;
+            this.btnAcceptanceRegister.Click += new System.EventHandler(this.btnAcceptanceRegister_Click);
+            // 
+            // btnProcurementRegister
+            // 
+            this.btnProcurementRegister.Location = new System.Drawing.Point(334, 222);
+            this.btnProcurementRegister.Name = "btnProcurementRegister";
+            this.btnProcurementRegister.Size = new System.Drawing.Size(149, 23);
+            this.btnProcurementRegister.TabIndex = 20;
+            this.btnProcurementRegister.Text = "Procurement Register";
+            this.btnProcurementRegister.UseVisualStyleBackColor = true;
+            this.btnProcurementRegister.Click += new System.EventHandler(this.btnProcurementRegister_Click);
+            // 
+            // btnIssueRegisterPE
+            // 
+            this.btnIssueRegisterPE.Location = new System.Drawing.Point(334, 193);
+            this.btnIssueRegisterPE.Name = "btnIssueRegisterPE";
+            this.btnIssueRegisterPE.Size = new System.Drawing.Size(149, 23);
+            this.btnIssueRegisterPE.TabIndex = 20;
+            this.btnIssueRegisterPE.Text = "Issue Register";
+            this.btnIssueRegisterPE.UseVisualStyleBackColor = true;
+            this.btnIssueRegisterPE.Click += new System.EventHandler(this.btnIssueRegisterPE_Click);
+            // 
+            // btnRiskRegisterPE
+            // 
+            this.btnRiskRegisterPE.Location = new System.Drawing.Point(334, 164);
+            this.btnRiskRegisterPE.Name = "btnRiskRegisterPE";
+            this.btnRiskRegisterPE.Size = new System.Drawing.Size(149, 23);
+            this.btnRiskRegisterPE.TabIndex = 20;
+            this.btnRiskRegisterPE.Text = "Risk Register";
+            this.btnRiskRegisterPE.UseVisualStyleBackColor = true;
+            this.btnRiskRegisterPE.Click += new System.EventHandler(this.btnRiskRegisterPE_Click);
+            // 
+            // btnChangeRegister
+            // 
+            this.btnChangeRegister.Location = new System.Drawing.Point(334, 135);
+            this.btnChangeRegister.Name = "btnChangeRegister";
+            this.btnChangeRegister.Size = new System.Drawing.Size(149, 23);
+            this.btnChangeRegister.TabIndex = 20;
+            this.btnChangeRegister.Text = "Change Register";
+            this.btnChangeRegister.UseVisualStyleBackColor = true;
+            this.btnChangeRegister.Click += new System.EventHandler(this.btnChangeRegister_Click);
+            // 
+            // btnQualityRegister2
+            // 
+            this.btnQualityRegister2.Location = new System.Drawing.Point(334, 106);
+            this.btnQualityRegister2.Name = "btnQualityRegister2";
+            this.btnQualityRegister2.Size = new System.Drawing.Size(149, 23);
+            this.btnQualityRegister2.TabIndex = 20;
+            this.btnQualityRegister2.Text = "Quality Register";
+            this.btnQualityRegister2.UseVisualStyleBackColor = true;
+            this.btnQualityRegister2.Click += new System.EventHandler(this.btnQualityRegister2_Click);
+            // 
+            // btnQualityRegister1
+            // 
+            this.btnQualityRegister1.Location = new System.Drawing.Point(335, 78);
+            this.btnQualityRegister1.Name = "btnQualityRegister1";
+            this.btnQualityRegister1.Size = new System.Drawing.Size(148, 23);
+            this.btnQualityRegister1.TabIndex = 20;
+            this.btnQualityRegister1.Text = "Quality Register";
+            this.btnQualityRegister1.UseVisualStyleBackColor = true;
+            this.btnQualityRegister1.Click += new System.EventHandler(this.btnQualityRegister1_Click);
+            // 
+            // btnExpenseRegister
+            // 
+            this.btnExpenseRegister.Location = new System.Drawing.Point(335, 49);
+            this.btnExpenseRegister.Name = "btnExpenseRegister";
+            this.btnExpenseRegister.Size = new System.Drawing.Size(148, 23);
+            this.btnExpenseRegister.TabIndex = 20;
+            this.btnExpenseRegister.Text = "Expense Register";
+            this.btnExpenseRegister.UseVisualStyleBackColor = true;
+            this.btnExpenseRegister.Click += new System.EventHandler(this.btnExpenseRegister_Click);
+            // 
+            // btnTimesheetRegister
+            // 
+            this.btnTimesheetRegister.Location = new System.Drawing.Point(335, 20);
+            this.btnTimesheetRegister.Name = "btnTimesheetRegister";
+            this.btnTimesheetRegister.Size = new System.Drawing.Size(148, 23);
+            this.btnTimesheetRegister.TabIndex = 20;
+            this.btnTimesheetRegister.Text = "Timesheet Register";
+            this.btnTimesheetRegister.UseVisualStyleBackColor = true;
+            this.btnTimesheetRegister.Click += new System.EventHandler(this.btnTimesheetRegister_Click);
             // 
             // btnPhaseReviewFormPE
             // 
@@ -2324,106 +2424,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnBusinessCasedocEIAR.TabIndex = 0;
             this.btnBusinessCasedocEIAR.Text = "Business Case.doc";
             this.btnBusinessCasedocEIAR.UseVisualStyleBackColor = true;
-            // 
-            // btnTimesheetRegister
-            // 
-            this.btnTimesheetRegister.Location = new System.Drawing.Point(335, 20);
-            this.btnTimesheetRegister.Name = "btnTimesheetRegister";
-            this.btnTimesheetRegister.Size = new System.Drawing.Size(148, 23);
-            this.btnTimesheetRegister.TabIndex = 20;
-            this.btnTimesheetRegister.Text = "Timesheet Register";
-            this.btnTimesheetRegister.UseVisualStyleBackColor = true;
-            this.btnTimesheetRegister.Click += new System.EventHandler(this.btnTimesheetRegister_Click);
-            // 
-            // btnExpenseRegister
-            // 
-            this.btnExpenseRegister.Location = new System.Drawing.Point(335, 49);
-            this.btnExpenseRegister.Name = "btnExpenseRegister";
-            this.btnExpenseRegister.Size = new System.Drawing.Size(148, 23);
-            this.btnExpenseRegister.TabIndex = 20;
-            this.btnExpenseRegister.Text = "Expense Register";
-            this.btnExpenseRegister.UseVisualStyleBackColor = true;
-            this.btnExpenseRegister.Click += new System.EventHandler(this.btnExpenseRegister_Click);
-            // 
-            // btnQualityRegister1
-            // 
-            this.btnQualityRegister1.Location = new System.Drawing.Point(335, 78);
-            this.btnQualityRegister1.Name = "btnQualityRegister1";
-            this.btnQualityRegister1.Size = new System.Drawing.Size(148, 23);
-            this.btnQualityRegister1.TabIndex = 20;
-            this.btnQualityRegister1.Text = "Quality Register";
-            this.btnQualityRegister1.UseVisualStyleBackColor = true;
-            this.btnQualityRegister1.Click += new System.EventHandler(this.btnQualityRegister1_Click);
-            // 
-            // btnQualityRegister2
-            // 
-            this.btnQualityRegister2.Location = new System.Drawing.Point(334, 106);
-            this.btnQualityRegister2.Name = "btnQualityRegister2";
-            this.btnQualityRegister2.Size = new System.Drawing.Size(149, 23);
-            this.btnQualityRegister2.TabIndex = 20;
-            this.btnQualityRegister2.Text = "Quality Register";
-            this.btnQualityRegister2.UseVisualStyleBackColor = true;
-            this.btnQualityRegister2.Click += new System.EventHandler(this.btnQualityRegister2_Click);
-            // 
-            // btnChangeRegister
-            // 
-            this.btnChangeRegister.Location = new System.Drawing.Point(334, 135);
-            this.btnChangeRegister.Name = "btnChangeRegister";
-            this.btnChangeRegister.Size = new System.Drawing.Size(149, 23);
-            this.btnChangeRegister.TabIndex = 20;
-            this.btnChangeRegister.Text = "Change Register";
-            this.btnChangeRegister.UseVisualStyleBackColor = true;
-            this.btnChangeRegister.Click += new System.EventHandler(this.btnChangeRegister_Click);
-            // 
-            // btnRiskRegisterPE
-            // 
-            this.btnRiskRegisterPE.Location = new System.Drawing.Point(334, 164);
-            this.btnRiskRegisterPE.Name = "btnRiskRegisterPE";
-            this.btnRiskRegisterPE.Size = new System.Drawing.Size(149, 23);
-            this.btnRiskRegisterPE.TabIndex = 20;
-            this.btnRiskRegisterPE.Text = "Risk Register";
-            this.btnRiskRegisterPE.UseVisualStyleBackColor = true;
-            this.btnRiskRegisterPE.Click += new System.EventHandler(this.btnRiskRegisterPE_Click);
-            // 
-            // btnIssueRegisterPE
-            // 
-            this.btnIssueRegisterPE.Location = new System.Drawing.Point(334, 193);
-            this.btnIssueRegisterPE.Name = "btnIssueRegisterPE";
-            this.btnIssueRegisterPE.Size = new System.Drawing.Size(149, 23);
-            this.btnIssueRegisterPE.TabIndex = 20;
-            this.btnIssueRegisterPE.Text = "Issue Register";
-            this.btnIssueRegisterPE.UseVisualStyleBackColor = true;
-            this.btnIssueRegisterPE.Click += new System.EventHandler(this.btnIssueRegisterPE_Click);
-            // 
-            // btnProcurementRegister
-            // 
-            this.btnProcurementRegister.Location = new System.Drawing.Point(334, 222);
-            this.btnProcurementRegister.Name = "btnProcurementRegister";
-            this.btnProcurementRegister.Size = new System.Drawing.Size(149, 23);
-            this.btnProcurementRegister.TabIndex = 20;
-            this.btnProcurementRegister.Text = "Procurement Register";
-            this.btnProcurementRegister.UseVisualStyleBackColor = true;
-            this.btnProcurementRegister.Click += new System.EventHandler(this.btnProcurementRegister_Click);
-            // 
-            // btnAcceptanceRegister
-            // 
-            this.btnAcceptanceRegister.Location = new System.Drawing.Point(334, 251);
-            this.btnAcceptanceRegister.Name = "btnAcceptanceRegister";
-            this.btnAcceptanceRegister.Size = new System.Drawing.Size(149, 23);
-            this.btnAcceptanceRegister.TabIndex = 20;
-            this.btnAcceptanceRegister.Text = "Acceptance Register";
-            this.btnAcceptanceRegister.UseVisualStyleBackColor = true;
-            this.btnAcceptanceRegister.Click += new System.EventHandler(this.btnAcceptanceRegister_Click);
-            // 
-            // btnCommunicationsRegister
-            // 
-            this.btnCommunicationsRegister.Location = new System.Drawing.Point(334, 280);
-            this.btnCommunicationsRegister.Name = "btnCommunicationsRegister";
-            this.btnCommunicationsRegister.Size = new System.Drawing.Size(149, 23);
-            this.btnCommunicationsRegister.TabIndex = 20;
-            this.btnCommunicationsRegister.Text = "Communications Register";
-            this.btnCommunicationsRegister.UseVisualStyleBackColor = true;
-            this.btnCommunicationsRegister.Click += new System.EventHandler(this.btnCommunicationsRegister_Click);
             // 
             // frmTemplates
             // 

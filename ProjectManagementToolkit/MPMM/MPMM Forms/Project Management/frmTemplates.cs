@@ -22,139 +22,177 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             InitializeComponent();
         }
 
+        string tempString = System.Windows.Forms.Application.StartupPath;
+        string templateFileName = "";
         private void btnProjectInitianBusinessCase_Click(object sender, EventArgs e)
         {
-            //string path = Directory.GetCurrentDirectory().ToString();
-            //MessageBox.Show(path);
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Business Case.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Business Case.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
-
+        
         private void btnFeasibilityStudy_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Feasibility Study.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Feasibility Study.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnTermsOfReference_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Terms of Reference.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Terms of Reference.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnJobDescriptions_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Job Description.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Job Description.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnProjectOfficeChecklist_Click(object sender, EventArgs e)
         {
-           var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Project Office Checklist.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Project Office Checklist.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnPhaseReviewForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Phase Review Form - Planning");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Phase Review Form - Planning";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnProjectPlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Project Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Project Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnResourcePlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Resource Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Resource Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnFinancialPlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Financial Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Financial Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnQualityPlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Quality Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Quality Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnRiskPlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Risk Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Risk Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnAcceptancePlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Acceptance Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Acceptance Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnCommunicationsPlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Communications Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Communications Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnProcurementPlan_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Procurement Plan.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Procurement Plan.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnTenderProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Procurement Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Procurement Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnStatementOfWork_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Statement of Work.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Statement of Work.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnRequestForInformation_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Request for Information.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Request for Information.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnRequestForProposal_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Request for Proposal.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Request for Proposal.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnSupplierContract_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Supplier Contract.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Supplier Contract.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnTenderRegister_Click(object sender, EventArgs e)
@@ -166,149 +204,191 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
 
         private void btnPhaseReview_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Phase Review Form - Planning");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Phase Review Form - Planning.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnTimeManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Time Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Time Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnCostManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Cost Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Cost Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnQualityManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Quality Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Quality Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnChangeManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Change Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Change Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnRiskManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Risk Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Risk Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnIssueManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Issue Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Issue Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnProcurementManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Procurement Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Procurement Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnAcceptanceManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Acceptance Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Acceptance Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnCommsManagementProcess_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Communications Management Process.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Communications Management Process.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnTimesheetForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Timesheet Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Timesheet Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnExpenseForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Expense Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Expense Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnQualityReviewForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Quality Review Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Quality Review Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnQuailtyReviewForm2_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Quality Review Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Quality Review Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnChangeRequestForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Change Request Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Change Request Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnRiskForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Risk Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Risk Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnIssueForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Issue Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Issue Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnPurchaseOrderForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Purchase Order Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Purchase Order Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnAcceptanceForm_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Acceptance Form.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Acceptance Form.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnProjectStatusReport_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Project Status Report.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Project Status Report.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnPhaseReviewFormPE_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Phase Review Form - Execution.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Phase Review Form - Execution.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnTimesheetRegister_Click(object sender, EventArgs e)
@@ -373,16 +453,20 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
 
         private void btnClosureReport_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Project Closure Report.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Project Closure Report.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
 
         private void btnPostImplementationReview_Click(object sender, EventArgs e)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), @"Documents/Post Implementation Review.doc");
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            tempString = tempString.Remove(tempString.LastIndexOf('\\'));
+            templateFileName = $@"{tempString}\MPMM\MPMM Forms\Project Management\Documents\Post Implementation Review.doc";
             Microsoft.Office.Interop.Word.Application ap = new Microsoft.Office.Interop.Word.Application();
-            Document document = ap.Documents.Open(path);
+            Document document = ap.Documents.Open(templateFileName);
         }
     }
 }
