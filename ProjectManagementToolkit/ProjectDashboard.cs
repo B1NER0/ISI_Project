@@ -69,7 +69,11 @@ namespace ProjectManagementToolkit
         TermsOfReferenceModel currentTermOfReference;
         VersionControl<TermsOfReferenceModel> versionControl6;
 
-        List<(string status, string dueDate)> initDocsListStatus = new List<(string status, string dueDate)>();
+        List<string> initDocsListStatus = new List<string>();
+        List<string> initDocsListDueDate = new List<string>();
+        List<string> planningDocsListDueDate = new List<string>();
+        List<string> executeDocsListDueDate = new List<string>();
+        List<string> closingListDueDate = new List<string>();
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
@@ -89,28 +93,90 @@ namespace ProjectManagementToolkit
             /////////////////////////////////////////////////////////////////INITIATION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-            string jsonp = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
+            string jsonInitDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
+            InitDueDateModel tInit = JsonConvert.DeserializeObject<InitDueDateModel>(jsonInitDue);
+            
+            if(tInit != null)
+            {
+                initDocsListDueDate.Add(tInit.BusinessCaseDD);
+                initDocsListDueDate.Add(tInit.FeasibilityStudyDD);
+                initDocsListDueDate.Add(tInit.ProjectCharterDD);
+                initDocsListDueDate.Add(tInit.JobDescriptionDD);
+                initDocsListDueDate.Add(tInit.ProjectOfficeCheckListDD);
+                initDocsListDueDate.Add(tInit.PhaseRevieFormInitiationDD);
+                initDocsListDueDate.Add(tInit.TermOfReferenceDocument);
+            }
 
+            
 
-            //Check versions
-            // VersionControl<InitDueDateModel> versionControlm = JsonConvert.DeserializeObject<VersionControl<InitDueDateModel>>(jsonp);
-            //Get current businesscaseModel
-            // BusinessCaseModel currentBusinessCaseModel;
+            string jsonPlanningDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "PlanningDueDateModel");
+            PlanningDueDateModel tPlanning = JsonConvert.DeserializeObject<PlanningDueDateModel>(jsonPlanningDue);
 
+            if(tPlanning != null)
+            {
+                planningDocsListDueDate.Add(tPlanning.ProjectPlan);
+                planningDocsListDueDate.Add(tPlanning.ResourcePlan);
+                planningDocsListDueDate.Add(tPlanning.FinancialPlan);
+                planningDocsListDueDate.Add(tPlanning.QualityPlan);
+                planningDocsListDueDate.Add(tPlanning.RiskPlan);
+                planningDocsListDueDate.Add(tPlanning.AcceptancePlan);
+                planningDocsListDueDate.Add(tPlanning.CommunicationPlan);
+                planningDocsListDueDate.Add(tPlanning.ProcurementPlan);
+                planningDocsListDueDate.Add(tPlanning.StatementOfWork);
+                planningDocsListDueDate.Add(tPlanning.RequestForInformation);
+                planningDocsListDueDate.Add(tPlanning.SupplierContract);
+                planningDocsListDueDate.Add(tPlanning.RequestForProposal);
+                planningDocsListDueDate.Add(tPlanning.PhaseReviewPlanning);
+            }
+            
 
+            string jsonExecuteDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "ExecutionDueDateModel");
+            ExecutionDueDateModel tExecute = JsonConvert.DeserializeObject<ExecutionDueDateModel>(jsonExecuteDue);
 
-            //if (versionControlm != null)
-            //{
-            //    currentInit = JsonConvert.DeserializeObject<InitDueDateModel>(versionControlm.getLatest(versionControlm.DocumentModels));
-            //    MessageBox.Show(currentInit.BusinessCaseDD.ToString());
-            //}
-            //else
-            //    //IsBusinessCaseModelDone = "";
-            //    MessageBox.Show("Nothing");
+            if(tExecute != null)
+            {
+                executeDocsListDueDate.Add(tExecute.TimeMangement);
+                executeDocsListDueDate.Add(tExecute.TimeSheet);
+                executeDocsListDueDate.Add(tExecute.TimeSheetRegister);
+                executeDocsListDueDate.Add(tExecute.CostManagementProcess);
+                executeDocsListDueDate.Add(tExecute.ExpenseForm);
+                executeDocsListDueDate.Add(tExecute.ExpenseRegister);
+                executeDocsListDueDate.Add(tExecute.QualityManagement);
+                executeDocsListDueDate.Add(tExecute.QualityReviewPlan);
+                executeDocsListDueDate.Add(tExecute.QualityReviewForm);
+                executeDocsListDueDate.Add(tExecute.ChangeManagementProcess);
+                executeDocsListDueDate.Add(tExecute.ChangeRequestForm);
+                executeDocsListDueDate.Add(tExecute.ChangeRequestRegister);
+                executeDocsListDueDate.Add(tExecute.RiskManagamentProcess);
+                executeDocsListDueDate.Add(tExecute.RiskForm);
+                executeDocsListDueDate.Add(tExecute.RiskRegister);
+                executeDocsListDueDate.Add(tExecute.IssueManagementProcess);
+                executeDocsListDueDate.Add(tExecute.IssueForm);
+                executeDocsListDueDate.Add(tExecute.IssueRegister);
+                executeDocsListDueDate.Add(tExecute.PurchaseOrder);
+                executeDocsListDueDate.Add(tExecute.ProcurementRegister);
+                executeDocsListDueDate.Add(tExecute.AcceptanceManagementProcess);
+                executeDocsListDueDate.Add(tExecute.AcceptanceForm);
+                executeDocsListDueDate.Add(tExecute.AcceptanceRegister);
+                executeDocsListDueDate.Add(tExecute.CommunicationsManagementProcess);
+                executeDocsListDueDate.Add(tExecute.ProjectStatusReport);
+                executeDocsListDueDate.Add(tExecute.CommunicationsRegister);
+                executeDocsListDueDate.Add(tExecute.PhaseReviewExe);
+            }
 
+           
 
+            string jsonClosingDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "ClosingDueDateModel");
+            ClosingDueDateModel tClosing = JsonConvert.DeserializeObject<ClosingDueDateModel>(jsonClosingDue);
 
-            InitDueDateModel tInit = JsonConvert.DeserializeObject<InitDueDateModel>(jsonp);
+            if(tClosing != null)
+            {
+                closingListDueDate.Add(tClosing.ProjectClosureReport);
+                closingListDueDate.Add(tClosing.PostImplementationReview);
+            }
+
+            
+
 
             ////////BUSINESSCASE////////
             //Verander Json
@@ -124,29 +190,25 @@ namespace ProjectManagementToolkit
             if (versionControl != null)
             {
                 currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
-                initDocsListStatus.Add((currentBusinessCaseModel.Progress, tInit.BusinessCaseDD));
+                initDocsListStatus.Add(currentBusinessCaseModel.Progress);
             }
             else
                 //IsBusinessCaseModelDone = "";
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
 
 
             //////FEASIBILITY STUDY/////////
             string json2 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FeasibilityStudy");
             versionControl1 = JsonConvert.DeserializeObject<VersionControl<FeasibilityStudyModel>>(json2);
-            //= JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
-            MessageBox.Show(tInit.FeasibilityStudyDD);
-
-
 
             if (versionControl1 != null)
             {
                 currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
-                initDocsListStatus.Add((currentFeasibilityStudyModel.FeasibilityStudyProgress, tInit.FeasibilityStudyDD));
+                initDocsListStatus.Add(currentFeasibilityStudyModel.FeasibilityStudyProgress);
             }
             else
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
 
 
@@ -159,11 +221,11 @@ namespace ProjectManagementToolkit
             if (versionControl2 != null)
             {
                 currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
-                initDocsListStatus.Add((currentProjectCharter.ProjectCharterProgress, tInit.ProjectCharterDD));
+                initDocsListStatus.Add(currentProjectCharter.ProjectCharterProgress);
             }
             else
 
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
 
 
@@ -175,12 +237,12 @@ namespace ProjectManagementToolkit
             if (versionControl3 != null)
             {
                 currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
-                initDocsListStatus.Add((currentJobDescription.JobDescriptionProgress, tInit.JobDescriptionDD));
+                initDocsListStatus.Add(currentJobDescription.JobDescriptionProgress);
 
             }
             else
 
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
 
             //////PROJECT OFFICE CHECKLIST/////////
@@ -191,11 +253,11 @@ namespace ProjectManagementToolkit
             if (versionControl4 != null)
             {
                 currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
-                initDocsListStatus.Add((currentProjectOfficeChecklist.ProjectOfficeCheckListProgress, tInit.ProjectOfficeCheckListDD));
+                initDocsListStatus.Add(currentProjectOfficeChecklist.ProjectOfficeCheckListProgress);
 
             }
             else
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
 
             //////PHASE REVIEW FORM INITIATION/////////
@@ -206,11 +268,11 @@ namespace ProjectManagementToolkit
             if (versionControl5 != null)
             {
                 currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
-                initDocsListStatus.Add((currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress, tInit.PhaseRevieFormInitiationDD));
+                initDocsListStatus.Add(currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress);
 
             }
             else
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
 
             //////TERMS OF REFERENCE/////////
@@ -221,11 +283,11 @@ namespace ProjectManagementToolkit
             if (versionControl6 != null)
             {
                 currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
-                initDocsListStatus.Add((currentTermOfReference.TermOfReferenceProgress, tInit.TermOfReferenceDocument));
+                initDocsListStatus.Add(currentTermOfReference.TermOfReferenceProgress);
 
             }
             else
-                initDocsListStatus.Add(("", ""));
+                initDocsListStatus.Add("");
 
             /////////////////////////////////////////////////////////////////PLANNING PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -885,7 +947,7 @@ namespace ProjectManagementToolkit
                 chart1.Visible = true;
                 chart2.Visible = true;
 
-                         
+
 
                 ///////////////INITIATION PHASE/////////////////
                 initiationDocuments.Add("BusinessCase");
@@ -897,7 +959,7 @@ namespace ProjectManagementToolkit
                 initiationDocuments.Add("TermOfReferenceDocument");
 
                 // executionDocsListStatus.Add("TimeMangement");
-                initDocsListStatus.Add(("BusinessCase", ""));
+                initDocsListStatus.Add("BusinessCase");
 
 
 
@@ -907,15 +969,17 @@ namespace ProjectManagementToolkit
                 {
                     dgvInitiation.Rows.Add();
                     dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
+                    dgvInitiation.Rows[i].Cells[1].Value = "";
 
-                    dgvInitiation.Rows[i].Cells[1].Value = initDocsListStatus[i].dueDate;//initDocsListStatus[i].dueDate.ToString();
+                    if (initDocsListDueDate.Count > 0)
+                        dgvInitiation.Rows[i].Cells[1].Value = initDocsListDueDate[i];//initDocsListStatus[i].dueDate.ToString();
 
-                    if (initDocsListStatus[i].status == "UNDONE")
+                    if (initDocsListStatus[i] == "UNDONE")
                     {
                         dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.Orange;
                         inprog++;
                     }
-                    else if (initDocsListStatus[i].status == "DONE")
+                    else if (initDocsListStatus[i] == "DONE")
                     {
                         initationProgressVal++;
                         ///////////////////////////AL DIE CODE OM TE CHECK OF IETS VOOR IETS ANDERS GEDOEN IS/////////////////////
@@ -954,7 +1018,7 @@ namespace ProjectManagementToolkit
 
                 for (int j = 0; j < k; j++)
                 {
-                    if (initDocsListStatus[j].status == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
+                    if (initDocsListStatus[j] == "") //Check if the previous tasks are not done or in progress, because then they are behind schedule
                     {
                         //Increment the behind schedule tasks
                         behind++;
@@ -1020,10 +1084,14 @@ namespace ProjectManagementToolkit
                 {
                     dgvPlanning.Rows.Add();
                     dgvPlanning.Rows[i].Cells[0].Value = planningDocuments[i];
+                    dgvPlanning.Rows[i].Cells[1].Value = "";
+
+                    if (planningDocsListDueDate.Count > 0)
+                        dgvPlanning.Rows[i].Cells[1].Value = planningDocsListDueDate[i];
 
                     if (planningDocsListStatus[i] == "UNDONE")
                     {
-                        dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.Orange;
+                        dgvPlanning.Rows[i].Cells[2].Style.BackColor = Color.Orange;
                         inprogPlanning++;
                     }
                     else if (planningDocsListStatus[i] == "DONE")
@@ -1033,7 +1101,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compPlanning++;
-                        dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                        dgvPlanning.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
                         planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
 
                         xValues1[1] = "Planning";
@@ -1055,7 +1123,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompPlanning++;
-                        dgvPlanning.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                        dgvPlanning.Rows[i].Cells[2].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1066,7 +1134,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindPlanning++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvPlanning.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                        dgvPlanning.Rows[j].Cells[2].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1152,10 +1220,15 @@ namespace ProjectManagementToolkit
 
                     dgvExecution.Rows.Add();
                     dgvExecution.Rows[i].Cells[0].Value = executionDocuments[i];
+                    dgvExecution.Rows[i].Cells[1].Value = "";
+
+                    if (executeDocsListDueDate.Count > 0)
+                        dgvExecution.Rows[i].Cells[1].Value = executeDocsListDueDate[i];
+
 
                     if (executionDocsListStatus[i] == "UNDONE")
                     {
-                        dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.Orange;
+                        dgvExecution.Rows[i].Cells[2].Style.BackColor = Color.Orange;
                         inprogExecution++;
                     }
                     else if (executionDocsListStatus[i] == "DONE")
@@ -1165,7 +1238,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compExecution++;
-                        dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                        dgvExecution.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
                         executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
 
                         xValues1[2] = "Execution";
@@ -1188,7 +1261,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompExecution++;
-                        dgvExecution.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                        dgvExecution.Rows[i].Cells[2].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1199,7 +1272,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindExecution++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvExecution.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                        dgvExecution.Rows[j].Cells[2].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1249,10 +1322,14 @@ namespace ProjectManagementToolkit
                 {
                     dgvClosing.Rows.Add();
                     dgvClosing.Rows[i].Cells[0].Value = closingDocuments[i];
+                    dgvClosing.Rows[i].Cells[1].Value = "";
+
+                    if (closingListDueDate.Count > 0)
+                        dgvClosing.Rows[i].Cells[1].Value = closingListDueDate[i];
 
                     if (closingDocsListStatus[i] == "UNDONE")
                     {
-                        dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.Orange;
+                        dgvClosing.Rows[i].Cells[2].Style.BackColor = Color.Orange;
                         inprogClosing++;
                     }
                     else if (closingDocsListStatus[i] == "DONE")
@@ -1262,7 +1339,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compClosing++;
-                        dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.LimeGreen;
+                        dgvClosing.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
                         closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
 
                         xValues1[3] = "Closing";
@@ -1284,7 +1361,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompClosing++;
-                        dgvClosing.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                        dgvClosing.Rows[i].Cells[2].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1295,7 +1372,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindClosing++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvClosing.Rows[j].Cells[1].Style.BackColor = Color.Red;
+                        dgvClosing.Rows[j].Cells[2].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1389,68 +1466,283 @@ namespace ProjectManagementToolkit
 
         }
 
-        DateTimePicker oDateTimePicker;
+        DateTimePicker InitDateTimePicker;
+        DateTimePicker PlanDateTimePicker;
+        DateTimePicker ExecuteDateTimePicker;
+        DateTimePicker CloseDateTimePicker;
+
+        InitDueDateModel currentInit = new InitDueDateModel();
+        PlanningDueDateModel currentPlan = new PlanningDueDateModel();
+        ExecutionDueDateModel currentExecute = new ExecutionDueDateModel();
+        ClosingDueDateModel currentClose = new ClosingDueDateModel();
+
+
+        private void saveAllDueDate(int phase)
+        {
+
+            if (phase == 1)
+            {
+                currentInit.BusinessCaseDD = dgvInitiation.Rows[0].Cells[1].Value.ToString();
+                currentInit.FeasibilityStudyDD = dgvInitiation.Rows[1].Cells[1].Value.ToString();
+                currentInit.ProjectCharterDD = dgvInitiation.Rows[2].Cells[1].Value.ToString();
+                currentInit.JobDescriptionDD = dgvInitiation.Rows[3].Cells[1].Value.ToString();
+                currentInit.ProjectOfficeCheckListDD = dgvInitiation.Rows[4].Cells[1].Value.ToString();
+                currentInit.PhaseRevieFormInitiationDD = dgvInitiation.Rows[5].Cells[1].Value.ToString();
+                currentInit.TermOfReferenceDocument = dgvInitiation.Rows[6].Cells[1].Value.ToString();
+
+                string jsong = JsonConvert.SerializeObject(currentInit);
+                JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
+            }
+            else if (phase == 2)
+            {
+                MessageBox.Show(dgvPlanning.Rows[0].Cells[1].Value.ToString());
+
+
+                currentPlan.ProjectPlan = dgvPlanning.Rows[0].Cells[1].Value.ToString();
+                currentPlan.ResourcePlan = dgvPlanning.Rows[1].Cells[1].Value.ToString();
+                currentPlan.FinancialPlan = dgvPlanning.Rows[2].Cells[1].Value.ToString();
+                currentPlan.QualityPlan = dgvPlanning.Rows[3].Cells[1].Value.ToString();
+                currentPlan.RiskPlan = dgvPlanning.Rows[4].Cells[1].Value.ToString();
+                currentPlan.AcceptancePlan = dgvPlanning.Rows[5].Cells[1].Value.ToString();
+                currentPlan.CommunicationPlan = dgvPlanning.Rows[6].Cells[1].Value.ToString();
+                currentPlan.ProcurementPlan = dgvPlanning.Rows[7].Cells[1].Value.ToString();
+                currentPlan.StatementOfWork = dgvPlanning.Rows[8].Cells[1].Value.ToString();
+                currentPlan.RequestForInformation = dgvPlanning.Rows[9].Cells[1].Value.ToString();
+                currentPlan.SupplierContract = dgvPlanning.Rows[10].Cells[1].Value.ToString();
+                currentPlan.RequestForProposal = dgvPlanning.Rows[11].Cells[1].Value.ToString();
+                currentPlan.PhaseReviewPlanning = dgvPlanning.Rows[12].Cells[1].Value.ToString();
+
+                string jsong = JsonConvert.SerializeObject(currentPlan);
+                JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "PlanningDueDateModel");
+            }
+            else if (phase == 3)
+            {
+                currentExecute.TimeMangement = dgvExecution.Rows[0].Cells[1].Value.ToString();
+                currentExecute.TimeSheet = dgvExecution.Rows[1].Cells[1].Value.ToString();
+                currentExecute.TimeSheetRegister = dgvExecution.Rows[2].Cells[1].Value.ToString();
+                currentExecute.CostManagementProcess = dgvExecution.Rows[3].Cells[1].Value.ToString();
+                currentExecute.ExpenseForm = dgvExecution.Rows[4].Cells[1].Value.ToString();
+                currentExecute.ExpenseRegister = dgvExecution.Rows[5].Cells[1].Value.ToString();
+                currentExecute.QualityManagement = dgvExecution.Rows[6].Cells[1].Value.ToString();
+                currentExecute.QualityReviewPlan = dgvExecution.Rows[7].Cells[1].Value.ToString();
+                currentExecute.QualityReviewForm = dgvExecution.Rows[8].Cells[1].Value.ToString();
+                currentExecute.ChangeManagementProcess = dgvExecution.Rows[9].Cells[1].Value.ToString();
+                currentExecute.ChangeRequestForm = dgvExecution.Rows[10].Cells[1].Value.ToString();
+                currentExecute.ChangeRequestRegister = dgvExecution.Rows[11].Cells[1].Value.ToString();
+                currentExecute.RiskManagamentProcess = dgvExecution.Rows[12].Cells[1].Value.ToString();
+                currentExecute.RiskForm = dgvExecution.Rows[13].Cells[1].Value.ToString();
+                currentExecute.RiskRegister = dgvExecution.Rows[14].Cells[1].Value.ToString();
+                currentExecute.IssueManagementProcess = dgvExecution.Rows[15].Cells[1].Value.ToString();
+                currentExecute.IssueForm = dgvExecution.Rows[16].Cells[1].Value.ToString();
+                currentExecute.IssueRegister = dgvExecution.Rows[17].Cells[1].Value.ToString();
+                currentExecute.PurchaseOrder = dgvExecution.Rows[18].Cells[1].Value.ToString();
+                currentExecute.ProcurementRegister = dgvExecution.Rows[19].Cells[1].Value.ToString();
+                currentExecute.AcceptanceManagementProcess = dgvExecution.Rows[20].Cells[1].Value.ToString();
+                currentExecute.AcceptanceForm = dgvExecution.Rows[21].Cells[1].Value.ToString();
+                currentExecute.AcceptanceRegister = dgvExecution.Rows[22].Cells[1].Value.ToString();
+                currentExecute.CommunicationsManagementProcess = dgvExecution.Rows[23].Cells[1].Value.ToString();
+                currentExecute.ProjectStatusReport = dgvExecution.Rows[24].Cells[1].Value.ToString();
+                currentExecute.CommunicationsRegister = dgvExecution.Rows[25].Cells[1].Value.ToString();
+                currentExecute.PhaseReviewExe = dgvExecution.Rows[26].Cells[1].Value.ToString();
+
+                string jsong = JsonConvert.SerializeObject(currentExecute);
+                JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "ExecutionDueDateModel");
+            }
+            else if (phase == 4)
+            {
+                currentClose.ProjectClosureReport = dgvClosing.Rows[0].Cells[1].Value.ToString();
+                currentClose.PostImplementationReview = dgvClosing.Rows[1].Cells[1].Value.ToString();
+
+                string jsong = JsonConvert.SerializeObject(currentClose);
+                JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "ClosingDueDateModel");
+            }
+
+        }
+
 
         private void dgvInitiation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // If any cell is clicked on the Second column which is our date Column  
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
             {
                 //Initialized a new DateTimePicker Control  
-                oDateTimePicker = new DateTimePicker();
+                InitDateTimePicker = new DateTimePicker();
 
                 //Adding DateTimePicker control into DataGridView   
-                dgvInitiation.Controls.Add(oDateTimePicker);
+                dgvInitiation.Controls.Add(InitDateTimePicker);
 
                 // Setting the format (i.e. 2014-10-10)  
-                oDateTimePicker.Format = DateTimePickerFormat.Short;
+                InitDateTimePicker.Format = DateTimePickerFormat.Short;
 
                 // It returns the retangular area that represents the Display area for a cell  
                 Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
                 //Setting area for DateTimePicker Control  
-                oDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+                InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
 
                 // Setting Location  
-                oDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+                InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
 
                 // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                oDateTimePicker.CloseUp += new EventHandler(oDateTimePicker_CloseUp);
+                InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
 
                 // An event attached to dateTimePicker Control which is fired when any date is selected  
-                oDateTimePicker.TextChanged += new EventHandler(dateTimePicker_OnTextChange);
+                InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
 
                 // Now make it visible  
-                oDateTimePicker.Visible = true;
+                InitDateTimePicker.Visible = true;
             }
         }
-        InitDueDateModel currentInit = new InitDueDateModel();
 
-        private void dateTimePicker_OnTextChange(object sender, EventArgs e)
+        private void InitDateTimePicker_OnTextChange(object sender, EventArgs e)
         {
-            // Saving the 'Selected Date on Calendar' into DataGridView current cell  
-            dgvInitiation.CurrentCell.Value = oDateTimePicker.Text.ToString();
+            dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+            saveAllDueDate(1);
+        }
 
-            // currentInit.BusinessCaseDD = oDateTimePicker.Text.ToString();
+        void InitDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            // Hiding the control after use   
+            InitDateTimePicker.Visible = false;
+        }
 
-            currentInit.BusinessCaseDD = dgvInitiation.Rows[0].Cells[1].Value.ToString();
-            currentInit.FeasibilityStudyDD = dgvInitiation.Rows[1].Cells[1].Value.ToString();
-            currentInit.ProjectCharterDD = dgvInitiation.Rows[2].Cells[1].Value.ToString();
-            currentInit.JobDescriptionDD = dgvInitiation.Rows[3].Cells[1].Value.ToString();
-            currentInit.ProjectOfficeCheckListDD = dgvInitiation.Rows[4].Cells[1].Value.ToString();
-            currentInit.PhaseRevieFormInitiationDD = dgvInitiation.Rows[5].Cells[1].Value.ToString();
-            currentInit.TermOfReferenceDocument = dgvInitiation.Rows[6].Cells[1].Value.ToString();
+        private void dgvPlanning_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                PlanDateTimePicker = new DateTimePicker();
 
-            string jsong = JsonConvert.SerializeObject(currentInit);
-            JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
-            MessageBox.Show("s");
+                //Adding DateTimePicker control into DataGridView   
+                dgvPlanning.Controls.Add(PlanDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                PlanDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvPlanning.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                PlanDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                PlanDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                PlanDateTimePicker.CloseUp += new EventHandler(PlanDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                PlanDateTimePicker.TextChanged += new EventHandler(PlanDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                PlanDateTimePicker.Visible = true;
+            }
+        }
+
+        private void PlanDateTimePicker_OnTextChange(object sender, EventArgs e)
+        {
+            dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+            saveAllDueDate(2);
         }
 
 
-        void oDateTimePicker_CloseUp(object sender, EventArgs e)
+        void PlanDateTimePicker_CloseUp(object sender, EventArgs e)
         {
             // Hiding the control after use   
-            oDateTimePicker.Visible = false;
+            PlanDateTimePicker.Visible = false;
+        }
+
+        private void dgvExecution_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                ExecuteDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvExecution.Controls.Add(ExecuteDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                ExecuteDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvExecution.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                ExecuteDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                ExecuteDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                ExecuteDateTimePicker.CloseUp += new EventHandler(ExecuteDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                ExecuteDateTimePicker.TextChanged += new EventHandler(ExecuteDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                ExecuteDateTimePicker.Visible = true;
+            }
+        }
+
+
+        private void ExecuteDateTimePicker_OnTextChange(object sender, EventArgs e)
+        {
+            dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+            saveAllDueDate(3);
+        }
+
+
+        void ExecuteDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            // Hiding the control after use   
+            ExecuteDateTimePicker.Visible = false;
+        }
+
+        private void CloseDateTimePicker_OnTextChange(object sender, EventArgs e)
+        {
+            dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+            saveAllDueDate(4);
+        }
+
+
+        void CloseDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            // Hiding the control after use   
+            CloseDateTimePicker.Visible = false;
+        }
+
+        private void dgvClosing_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                CloseDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvClosing.Controls.Add(CloseDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                CloseDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                CloseDateTimePicker.Visible = true;
+            }
         }
     }
 }

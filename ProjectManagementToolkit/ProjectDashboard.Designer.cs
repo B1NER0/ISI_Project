@@ -66,31 +66,34 @@
             this.lblInitNumTasks = new System.Windows.Forms.Label();
             this.chartInit = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvInitiation = new System.Windows.Forms.DataGridView();
+            this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpPlanning = new System.Windows.Forms.TabPage();
             this.lblPlanNumTasks = new System.Windows.Forms.Label();
             this.chartPlanning = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvPlanning = new System.Windows.Forms.DataGridView();
             this.PlanningDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonePlanning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpExecution = new System.Windows.Forms.TabPage();
             this.lblExecNumTasks = new System.Windows.Forms.Label();
             this.chartExecution = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvExecution = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateExe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpClosure = new System.Windows.Forms.TabPage();
             this.lblClosingNumTasks = new System.Windows.Forms.Label();
             this.chartClosing = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvClosing = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbarOverall = new System.Windows.Forms.ProgressBar();
             this.lblOverallProgress = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInitiation.SuspendLayout();
             this.tbpInitiation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartInit)).BeginInit();
@@ -138,7 +141,7 @@
             this.tabInitiation.Controls.Add(this.tbpClosure);
             this.tabInitiation.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabInitiation.Location = new System.Drawing.Point(15, 297);
-            this.tabInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tabInitiation.Name = "tabInitiation";
             this.tabInitiation.SelectedIndex = 0;
             this.tabInitiation.Size = new System.Drawing.Size(1094, 418);
@@ -151,9 +154,9 @@
             this.tbpInitiation.Controls.Add(this.chartInit);
             this.tbpInitiation.Controls.Add(this.dgvInitiation);
             this.tbpInitiation.Location = new System.Drawing.Point(4, 21);
-            this.tbpInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInitiation.Name = "tbpInitiation";
-            this.tbpInitiation.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpInitiation.Padding = new System.Windows.Forms.Padding(2);
             this.tbpInitiation.Size = new System.Drawing.Size(1086, 393);
             this.tbpInitiation.TabIndex = 0;
             this.tbpInitiation.Text = "Initation Phase";
@@ -195,6 +198,8 @@
             // 
             this.dgvInitiation.AllowUserToAddRows = false;
             this.dgvInitiation.AllowUserToDeleteRows = false;
+            this.dgvInitiation.AllowUserToResizeColumns = false;
+            this.dgvInitiation.AllowUserToResizeRows = false;
             this.dgvInitiation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInitiation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -212,7 +217,8 @@
             this.DoneInitation});
             this.dgvInitiation.EnableHeadersVisualStyles = false;
             this.dgvInitiation.Location = new System.Drawing.Point(16, 15);
-            this.dgvInitiation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInitiation.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvInitiation.MultiSelect = false;
             this.dgvInitiation.Name = "dgvInitiation";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -229,6 +235,31 @@
             this.dgvInitiation.TabIndex = 17;
             this.dgvInitiation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellClick);
             // 
+            // InitiationDocument
+            // 
+            this.InitiationDocument.HeaderText = "Initation Document";
+            this.InitiationDocument.MinimumWidth = 6;
+            this.InitiationDocument.Name = "InitiationDocument";
+            this.InitiationDocument.ReadOnly = true;
+            this.InitiationDocument.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dueDate
+            // 
+            this.dueDate.HeaderText = "Due Date";
+            this.dueDate.Name = "dueDate";
+            this.dueDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DoneInitation
+            // 
+            this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DoneInitation.HeaderText = "Status";
+            this.DoneInitation.MinimumWidth = 6;
+            this.DoneInitation.Name = "DoneInitation";
+            this.DoneInitation.ReadOnly = true;
+            this.DoneInitation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoneInitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DoneInitation.Width = 48;
+            // 
             // tbpPlanning
             // 
             this.tbpPlanning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
@@ -236,9 +267,9 @@
             this.tbpPlanning.Controls.Add(this.chartPlanning);
             this.tbpPlanning.Controls.Add(this.dgvPlanning);
             this.tbpPlanning.Location = new System.Drawing.Point(4, 21);
-            this.tbpPlanning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.tbpPlanning.Name = "tbpPlanning";
-            this.tbpPlanning.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpPlanning.Padding = new System.Windows.Forms.Padding(2);
             this.tbpPlanning.Size = new System.Drawing.Size(1086, 393);
             this.tbpPlanning.TabIndex = 1;
             this.tbpPlanning.Text = "Planning Phase";
@@ -293,10 +324,11 @@
             this.dgvPlanning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanning.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlanningDocument,
+            this.dueDatePlan,
             this.DonePlanning});
             this.dgvPlanning.EnableHeadersVisualStyles = false;
             this.dgvPlanning.Location = new System.Drawing.Point(16, 15);
-            this.dgvPlanning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlanning.Name = "dgvPlanning";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -311,6 +343,7 @@
             this.dgvPlanning.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPlanning.Size = new System.Drawing.Size(687, 366);
             this.dgvPlanning.TabIndex = 21;
+            this.dgvPlanning.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellClick);
             // 
             // PlanningDocument
             // 
@@ -318,6 +351,13 @@
             this.PlanningDocument.MinimumWidth = 6;
             this.PlanningDocument.Name = "PlanningDocument";
             this.PlanningDocument.ReadOnly = true;
+            this.PlanningDocument.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dueDatePlan
+            // 
+            this.dueDatePlan.HeaderText = "Due Date";
+            this.dueDatePlan.Name = "dueDatePlan";
+            this.dueDatePlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DonePlanning
             // 
@@ -337,7 +377,7 @@
             this.tbpExecution.Controls.Add(this.chartExecution);
             this.tbpExecution.Controls.Add(this.dgvExecution);
             this.tbpExecution.Location = new System.Drawing.Point(4, 21);
-            this.tbpExecution.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpExecution.Margin = new System.Windows.Forms.Padding(2);
             this.tbpExecution.Name = "tbpExecution";
             this.tbpExecution.Size = new System.Drawing.Size(1086, 393);
             this.tbpExecution.TabIndex = 2;
@@ -394,10 +434,11 @@
             this.dgvExecution.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExecution.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
+            this.dueDateExe,
             this.dataGridViewCheckBoxColumn2});
             this.dgvExecution.EnableHeadersVisualStyles = false;
             this.dgvExecution.Location = new System.Drawing.Point(16, 15);
-            this.dgvExecution.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvExecution.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExecution.Name = "dgvExecution";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -412,6 +453,7 @@
             this.dgvExecution.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvExecution.Size = new System.Drawing.Size(687, 376);
             this.dgvExecution.TabIndex = 21;
+            this.dgvExecution.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExecution_CellClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -419,6 +461,13 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dueDateExe
+            // 
+            this.dueDateExe.HeaderText = "Due Date";
+            this.dueDateExe.Name = "dueDateExe";
+            this.dueDateExe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewCheckBoxColumn2
             // 
@@ -493,10 +542,11 @@
             this.dgvClosing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClosing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
+            this.dueDateClose,
             this.dataGridViewCheckBoxColumn3});
             this.dgvClosing.EnableHeadersVisualStyles = false;
             this.dgvClosing.Location = new System.Drawing.Point(16, 15);
-            this.dgvClosing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvClosing.Margin = new System.Windows.Forms.Padding(2);
             this.dgvClosing.Name = "dgvClosing";
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -511,6 +561,7 @@
             this.dgvClosing.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvClosing.Size = new System.Drawing.Size(687, 376);
             this.dgvClosing.TabIndex = 25;
+            this.dgvClosing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellClick);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -518,6 +569,13 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dueDateClose
+            // 
+            this.dueDateClose.HeaderText = "Due Date";
+            this.dueDateClose.Name = "dueDateClose";
+            this.dueDateClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewCheckBoxColumn3
             // 
@@ -533,7 +591,7 @@
             // pbarOverall
             // 
             this.pbarOverall.Location = new System.Drawing.Point(15, 40);
-            this.pbarOverall.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarOverall.Margin = new System.Windows.Forms.Padding(2);
             this.pbarOverall.Name = "pbarOverall";
             this.pbarOverall.Size = new System.Drawing.Size(699, 40);
             this.pbarOverall.TabIndex = 18;
@@ -602,29 +660,6 @@
             this.chart2.TabIndex = 23;
             this.chart2.Text = "Phases Progress";
             // 
-            // InitiationDocument
-            // 
-            this.InitiationDocument.HeaderText = "Initation Document";
-            this.InitiationDocument.MinimumWidth = 6;
-            this.InitiationDocument.Name = "InitiationDocument";
-            this.InitiationDocument.ReadOnly = true;
-            // 
-            // dueDate
-            // 
-            this.dueDate.HeaderText = "Due Date";
-            this.dueDate.Name = "dueDate";
-            // 
-            // DoneInitation
-            // 
-            this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DoneInitation.HeaderText = "Status";
-            this.DoneInitation.MinimumWidth = 6;
-            this.DoneInitation.Name = "DoneInitation";
-            this.DoneInitation.ReadOnly = true;
-            this.DoneInitation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoneInitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DoneInitation.Width = 48;
-            // 
             // ProjectDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,18 +722,21 @@
         private System.Windows.Forms.Label lblInitNumTasks;
         private System.Windows.Forms.Label lblPlanNumTasks;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPlanning;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PlanningDocument;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonePlanning;
         private System.Windows.Forms.Label lblExecNumTasks;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartExecution;
         private System.Windows.Forms.Label lblClosingNumTasks;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartClosing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn InitiationDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoneInitation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PlanningDocument;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDatePlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonePlanning;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateExe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn3;
     }
 }

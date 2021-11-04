@@ -423,10 +423,12 @@
     <Compile Include="MPMM\MPMM Document Models\ChangeManagementProcessModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ChangeRegisterModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ChangeRequestModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\ClosingDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CommunicationRegisterModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CommunicationsManagementProcessModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CommunicationsPlanModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CostManagementProcessModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\ExecutionDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ExpenseFormModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ExpenseRegister.cs" />
     <Compile Include="MPMM\MPMM Document Models\FeasibilityStudyModel.cs" />
@@ -439,6 +441,7 @@
     <Compile Include="MPMM\MPMM Document Models\PhaseReviewFormExecutionModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\PhaseReviewFormInitiationModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\PhaseReviewPlanningModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\PlanningDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\PostImplementationReviewModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ProcurementPlanModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ProcurementRegisterModel.cs" />
