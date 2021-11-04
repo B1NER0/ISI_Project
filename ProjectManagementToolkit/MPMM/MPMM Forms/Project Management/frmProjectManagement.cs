@@ -341,8 +341,7 @@ namespace ProjectManagementToolkit
 
         private void btnRoleDescription_Click(object sender, EventArgs e)
         {
-            MPMM.MPMM_Forms.Project_Management.frmRoleDescription RoleDesc = new MPMM.MPMM_Forms.Project_Management.frmRoleDescription();
-            RoleDesc.Show();
+           
         }
 
         private void btnToolsAndTechniques_Click(object sender, EventArgs e)
@@ -359,8 +358,7 @@ namespace ProjectManagementToolkit
 
         private void btnStageGateRequirements_Click(object sender, EventArgs e)
         {
-            MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements StageGateRequirements  = new MPMM.MPMM_Forms.Project_Management.frmStageGateRequirements();
-            StageGateRequirements.Show();
+            
         }
     }
 }
