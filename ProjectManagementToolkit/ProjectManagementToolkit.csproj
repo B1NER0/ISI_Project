@@ -1802,6 +1802,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.resx">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.resx">
+      <DependentUpon>frmKnowledgeAndResources.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProjectManagement.resx">
       <DependentUpon>frmProjectManagement.cs</DependentUpon>
     </EmbeddedResource>
