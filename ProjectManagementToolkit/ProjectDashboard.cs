@@ -1495,7 +1495,7 @@ namespace ProjectManagementToolkit
             }
             else if (phase == 2)
             {
-                MessageBox.Show(dgvPlanning.Rows[0].Cells[1].Value.ToString());
+                //MessageBox.Show(dgvPlanning.Rows[0].Cells[1].Value.ToString());
 
 
                 currentPlan.ProjectPlan = dgvPlanning.Rows[0].Cells[1].Value.ToString();
