@@ -340,5 +340,12 @@ namespace ProjectManagementToolkit
             PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpControllingAStage");
             plsm.Show();
         }
+
+        private void BtnRoleDescription_Click(object sender, EventArgs e)
+        {
+
+            ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management.PLSM_RoleDescription plsmnew = new ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management.PLSM_RoleDescription();
+            plsmnew.Show();
+        }
     }
 }

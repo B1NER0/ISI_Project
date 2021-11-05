@@ -1177,6 +1177,12 @@
     <Compile Include="MPMM\MPMM Forms\Governance\Governance.Designer.cs">
       <DependentUpon>Governance.cs</DependentUpon>
     </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\PLSM_RoleDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\PLSM_RoleDescription.Designer.cs">
+      <DependentUpon>PLSM_RoleDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1801,6 +1807,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Processes\Processes.resx">
       <DependentUpon>Processes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\PLSM_RoleDescription.resx">
+      <DependentUpon>PLSM_RoleDescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectDashboard.resx">
       <DependentUpon>ProjectDashboard.cs</DependentUpon>
