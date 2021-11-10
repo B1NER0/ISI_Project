@@ -70,10 +70,11 @@ namespace ProjectManagementToolkit
         VersionControl<TermsOfReferenceModel> versionControl6;
 
         List<string> initDocsListStatus = new List<string>();
-        List<string> initDocsListDueDate = new List<string>();
-        List<string> planningDocsListDueDate = new List<string>();
-        List<string> executeDocsListDueDate = new List<string>();
-        List<string> closingListDueDate = new List<string>();
+
+        List<(string dueDate, string budget)> initDocsListDueDate = new List<(string dueDate, string budget)>();
+        List<(string dueDate, string budget)> planningDocsListDueDate = new List<(string dueDate, string budget)>();
+        List<(string dueDate, string budget)> executeDocsListDueDate = new List<(string dueDate, string budget)>();
+        List<(string dueDate, string budget)> closingListDueDate = new List<(string dueDate, string budget)>();
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
@@ -98,13 +99,13 @@ namespace ProjectManagementToolkit
             
             if(tInit != null)
             {
-                initDocsListDueDate.Add(tInit.BusinessCaseDD);
-                initDocsListDueDate.Add(tInit.FeasibilityStudyDD);
-                initDocsListDueDate.Add(tInit.ProjectCharterDD);
-                initDocsListDueDate.Add(tInit.JobDescriptionDD);
-                initDocsListDueDate.Add(tInit.ProjectOfficeCheckListDD);
-                initDocsListDueDate.Add(tInit.PhaseRevieFormInitiationDD);
-                initDocsListDueDate.Add(tInit.TermOfReferenceDocument);
+                initDocsListDueDate.Add((tInit.BusinessCaseDD, tInit.BusinessCaseBudget));
+                initDocsListDueDate.Add((tInit.FeasibilityStudyDD, tInit.FeasibilityStudyBudget));
+                initDocsListDueDate.Add((tInit.ProjectCharterDD, tInit.ProjectCharterBudget));
+                initDocsListDueDate.Add((tInit.JobDescriptionDD, tInit.JobDescriptionBudget));
+                initDocsListDueDate.Add((tInit.ProjectOfficeCheckListDD, tInit.ProjectOfficeCheckListBudget));
+                initDocsListDueDate.Add((tInit.PhaseRevieFormInitiationDD, tInit.PhaseRevieFormInitiationBudget));
+                initDocsListDueDate.Add((tInit.TermOfReferenceDocumentDD, tInit.TermOfReferenceDocumentBudget));
             }
 
             
@@ -114,19 +115,19 @@ namespace ProjectManagementToolkit
 
             if(tPlanning != null)
             {
-                planningDocsListDueDate.Add(tPlanning.ProjectPlan);
-                planningDocsListDueDate.Add(tPlanning.ResourcePlan);
-                planningDocsListDueDate.Add(tPlanning.FinancialPlan);
-                planningDocsListDueDate.Add(tPlanning.QualityPlan);
-                planningDocsListDueDate.Add(tPlanning.RiskPlan);
-                planningDocsListDueDate.Add(tPlanning.AcceptancePlan);
-                planningDocsListDueDate.Add(tPlanning.CommunicationPlan);
-                planningDocsListDueDate.Add(tPlanning.ProcurementPlan);
-                planningDocsListDueDate.Add(tPlanning.StatementOfWork);
-                planningDocsListDueDate.Add(tPlanning.RequestForInformation);
-                planningDocsListDueDate.Add(tPlanning.SupplierContract);
-                planningDocsListDueDate.Add(tPlanning.RequestForProposal);
-                planningDocsListDueDate.Add(tPlanning.PhaseReviewPlanning);
+                planningDocsListDueDate.Add((tPlanning.ProjectPlanDD, tPlanning.ProjectPlanBudget));
+                planningDocsListDueDate.Add((tPlanning.ResourcePlanDD, tPlanning.ResourcePlanBudget));
+                planningDocsListDueDate.Add((tPlanning.FinancialPlanDD, tPlanning.FinancialPlanBudget));
+                planningDocsListDueDate.Add((tPlanning.QualityPlanDD, tPlanning.QualityPlanBudget));
+                planningDocsListDueDate.Add((tPlanning.RiskPlanDD, tPlanning.RiskPlanBudget));
+                planningDocsListDueDate.Add((tPlanning.AcceptancePlanDD, tPlanning.AcceptancePlanBudget));
+                planningDocsListDueDate.Add((tPlanning.CommunicationPlanDD, tPlanning.CommunicationPlanBudget));
+                planningDocsListDueDate.Add((tPlanning.ProcurementPlanDD, tPlanning.ProcurementPlanBudget));
+                planningDocsListDueDate.Add((tPlanning.StatementOfWorkDD, tPlanning.StatementOfWorkBudget));
+                planningDocsListDueDate.Add((tPlanning.RequestForInformationDD, tPlanning.RequestForInformationBudget));
+                planningDocsListDueDate.Add((tPlanning.SupplierContractDD, tPlanning.SupplierContractBudget));
+                planningDocsListDueDate.Add((tPlanning.RequestForProposalDD, tPlanning.RequestForProposalBudget));
+                planningDocsListDueDate.Add((tPlanning.PhaseReviewPlanningDD, tPlanning.PhaseReviewPlanningBudget));
             }
             
 
@@ -135,33 +136,33 @@ namespace ProjectManagementToolkit
 
             if(tExecute != null)
             {
-                executeDocsListDueDate.Add(tExecute.TimeMangement);
-                executeDocsListDueDate.Add(tExecute.TimeSheet);
-                executeDocsListDueDate.Add(tExecute.TimeSheetRegister);
-                executeDocsListDueDate.Add(tExecute.CostManagementProcess);
-                executeDocsListDueDate.Add(tExecute.ExpenseForm);
-                executeDocsListDueDate.Add(tExecute.ExpenseRegister);
-                executeDocsListDueDate.Add(tExecute.QualityManagement);
-                executeDocsListDueDate.Add(tExecute.QualityReviewPlan);
-                executeDocsListDueDate.Add(tExecute.QualityReviewForm);
-                executeDocsListDueDate.Add(tExecute.ChangeManagementProcess);
-                executeDocsListDueDate.Add(tExecute.ChangeRequestForm);
-                executeDocsListDueDate.Add(tExecute.ChangeRequestRegister);
-                executeDocsListDueDate.Add(tExecute.RiskManagamentProcess);
-                executeDocsListDueDate.Add(tExecute.RiskForm);
-                executeDocsListDueDate.Add(tExecute.RiskRegister);
-                executeDocsListDueDate.Add(tExecute.IssueManagementProcess);
-                executeDocsListDueDate.Add(tExecute.IssueForm);
-                executeDocsListDueDate.Add(tExecute.IssueRegister);
-                executeDocsListDueDate.Add(tExecute.PurchaseOrder);
-                executeDocsListDueDate.Add(tExecute.ProcurementRegister);
-                executeDocsListDueDate.Add(tExecute.AcceptanceManagementProcess);
-                executeDocsListDueDate.Add(tExecute.AcceptanceForm);
-                executeDocsListDueDate.Add(tExecute.AcceptanceRegister);
-                executeDocsListDueDate.Add(tExecute.CommunicationsManagementProcess);
-                executeDocsListDueDate.Add(tExecute.ProjectStatusReport);
-                executeDocsListDueDate.Add(tExecute.CommunicationsRegister);
-                executeDocsListDueDate.Add(tExecute.PhaseReviewExe);
+                executeDocsListDueDate.Add((tExecute.TimeMangementDD, tExecute.TimeMangementBudget));
+                executeDocsListDueDate.Add((tExecute.TimeSheetDD, tExecute.TimeSheetBudget));
+                executeDocsListDueDate.Add((tExecute.TimeSheetRegisterDD, tExecute.TimeSheetRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.CostManagementProcessDD, tExecute.CostManagementProcessBudget));
+                executeDocsListDueDate.Add((tExecute.ExpenseFormDD, tExecute.ExpenseFormBudget));
+                executeDocsListDueDate.Add((tExecute.ExpenseRegisterDD, tExecute.ExpenseRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.QualityManagementDD, tExecute.QualityManagementBudget));
+                executeDocsListDueDate.Add((tExecute.QualityReviewPlanDD, tExecute.QualityReviewPlanBudget));
+                executeDocsListDueDate.Add((tExecute.QualityReviewFormDD, tExecute.QualityReviewFormBudget));
+                executeDocsListDueDate.Add((tExecute.ChangeManagementProcessDD, tExecute.ChangeManagementProcessBudget));
+                executeDocsListDueDate.Add((tExecute.ChangeRequestFormDD, tExecute.ChangeRequestFormBudget));
+                executeDocsListDueDate.Add((tExecute.ChangeRequestRegisterDD, tExecute.ChangeRequestRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.RiskManagamentProcessDD, tExecute.RiskManagamentProcessBudget));
+                executeDocsListDueDate.Add((tExecute.RiskFormDD, tExecute.RiskFormBudget));
+                executeDocsListDueDate.Add((tExecute.RiskRegisterDD, tExecute.RiskRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.IssueManagementProcessDD, tExecute.IssueManagementProcessBudget));
+                executeDocsListDueDate.Add((tExecute.IssueFormDD, tExecute.IssueFormBudget));
+                executeDocsListDueDate.Add((tExecute.IssueRegisterDD, tExecute.IssueRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.PurchaseOrderDD, tExecute.PurchaseOrderBudget));
+                executeDocsListDueDate.Add((tExecute.ProcurementRegisterDD, tExecute.ProcurementRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.AcceptanceManagementProcessDD, tExecute.AcceptanceManagementProcessBudget));
+                executeDocsListDueDate.Add((tExecute.AcceptanceFormDD, tExecute.AcceptanceFormBudget));
+                executeDocsListDueDate.Add((tExecute.AcceptanceRegisterDD, tExecute.AcceptanceRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.CommunicationsManagementProcessDD, tExecute.CommunicationsManagementProcessBudget));
+                executeDocsListDueDate.Add((tExecute.ProjectStatusReportDD, tExecute.ProjectStatusReportBudget));
+                executeDocsListDueDate.Add((tExecute.CommunicationsRegisterDD, tExecute.CommunicationsRegisterBudget));
+                executeDocsListDueDate.Add((tExecute.PhaseReviewExeDD, tExecute.PhaseReviewExeBudget));
             }
 
            
@@ -171,8 +172,8 @@ namespace ProjectManagementToolkit
 
             if(tClosing != null)
             {
-                closingListDueDate.Add(tClosing.ProjectClosureReport);
-                closingListDueDate.Add(tClosing.PostImplementationReview);
+                closingListDueDate.Add((tClosing.ProjectClosureReportDD, tClosing.ProjectClosureReportBudget));
+                closingListDueDate.Add((tClosing.PostImplementationReviewDD, tClosing.PostImplementationReviewBudget));
             }
 
             
@@ -968,15 +969,25 @@ namespace ProjectManagementToolkit
                 for (int i = 0; i < initiationDocuments.Count; i++)
                 {
                     dgvInitiation.Rows.Add();
-                    dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];
-                    dgvInitiation.Rows[i].Cells[1].Value = "";
+                    dgvInitiation.Rows[i].Cells[0].Value = initiationDocuments[i];                  
+                    
 
                     if (initDocsListDueDate.Count > 0)
-                        dgvInitiation.Rows[i].Cells[1].Value = initDocsListDueDate[i];//initDocsListStatus[i].dueDate.ToString();
+                    {
+                        if (initDocsListDueDate[i].dueDate != null)
+                            dgvInitiation.Rows[i].Cells[1].Value = initDocsListDueDate[i].dueDate;
+                        else
+                            dgvInitiation.Rows[i].Cells[1].Value = "";
 
+                        if (initDocsListDueDate[i].budget != null)
+                            dgvInitiation.Rows[i].Cells[2].Value = initDocsListDueDate[i].budget;
+                        else
+                            dgvInitiation.Rows[i].Cells[2].Value = "";
+                    }
+                        
                     if (initDocsListStatus[i] == "UNDONE")
                     {
-                        dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.Orange;
+                        dgvInitiation.Rows[i].Cells[3].Style.BackColor = Color.Orange;
                         inprog++;
                     }
                     else if (initDocsListStatus[i] == "DONE")
@@ -986,7 +997,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         comp++;
-                        dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
+                        dgvInitiation.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
                         // pbarInitiation.Value = (int)initationProgressVal;
                         initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
                         //lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
@@ -1010,7 +1021,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncomp++;
-                        dgvInitiation.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+                        dgvInitiation.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                     }
 
 
@@ -1023,7 +1034,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behind++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvInitiation.Rows[j].Cells[2].Style.BackColor = Color.Red;
+                        dgvInitiation.Rows[j].Cells[3].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1084,14 +1095,24 @@ namespace ProjectManagementToolkit
                 {
                     dgvPlanning.Rows.Add();
                     dgvPlanning.Rows[i].Cells[0].Value = planningDocuments[i];
-                    dgvPlanning.Rows[i].Cells[1].Value = "";
 
                     if (planningDocsListDueDate.Count > 0)
-                        dgvPlanning.Rows[i].Cells[1].Value = planningDocsListDueDate[i];
+                    {
+                        if (planningDocsListDueDate[i].dueDate != null)
+                            dgvPlanning.Rows[i].Cells[1].Value = planningDocsListDueDate[i].dueDate;
+                        else
+                            dgvPlanning.Rows[i].Cells[1].Value = "";
+
+                        if (planningDocsListDueDate[i].budget != null)
+                            dgvPlanning.Rows[i].Cells[2].Value = planningDocsListDueDate[i].budget;
+                        else
+                            dgvPlanning.Rows[i].Cells[2].Value = "";
+                    }
+
 
                     if (planningDocsListStatus[i] == "UNDONE")
                     {
-                        dgvPlanning.Rows[i].Cells[2].Style.BackColor = Color.Orange;
+                        dgvPlanning.Rows[i].Cells[3].Style.BackColor = Color.Orange;
                         inprogPlanning++;
                     }
                     else if (planningDocsListStatus[i] == "DONE")
@@ -1101,7 +1122,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compPlanning++;
-                        dgvPlanning.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
+                        dgvPlanning.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
                         planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
 
                         xValues1[1] = "Planning";
@@ -1123,7 +1144,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompPlanning++;
-                        dgvPlanning.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+                        dgvPlanning.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1134,7 +1155,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindPlanning++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvPlanning.Rows[j].Cells[2].Style.BackColor = Color.Red;
+                        dgvPlanning.Rows[j].Cells[3].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1220,15 +1241,24 @@ namespace ProjectManagementToolkit
 
                     dgvExecution.Rows.Add();
                     dgvExecution.Rows[i].Cells[0].Value = executionDocuments[i];
-                    dgvExecution.Rows[i].Cells[1].Value = "";
 
                     if (executeDocsListDueDate.Count > 0)
-                        dgvExecution.Rows[i].Cells[1].Value = executeDocsListDueDate[i];
+                    {
+                        if (executeDocsListDueDate[i].dueDate != null)
+                            dgvExecution.Rows[i].Cells[1].Value = executeDocsListDueDate[i].dueDate;
+                        else
+                            dgvExecution.Rows[i].Cells[1].Value = "";
+
+                        if (executeDocsListDueDate[i].budget != null)
+                            dgvExecution.Rows[i].Cells[2].Value = executeDocsListDueDate[i].budget;
+                        else
+                            dgvExecution.Rows[i].Cells[2].Value = "";
+                    }
 
 
                     if (executionDocsListStatus[i] == "UNDONE")
                     {
-                        dgvExecution.Rows[i].Cells[2].Style.BackColor = Color.Orange;
+                        dgvExecution.Rows[i].Cells[3].Style.BackColor = Color.Orange;
                         inprogExecution++;
                     }
                     else if (executionDocsListStatus[i] == "DONE")
@@ -1238,7 +1268,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compExecution++;
-                        dgvExecution.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
+                        dgvExecution.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
                         executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
 
                         xValues1[2] = "Execution";
@@ -1261,7 +1291,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompExecution++;
-                        dgvExecution.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+                        dgvExecution.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1272,7 +1302,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindExecution++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvExecution.Rows[j].Cells[2].Style.BackColor = Color.Red;
+                        dgvExecution.Rows[j].Cells[3].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1322,14 +1352,23 @@ namespace ProjectManagementToolkit
                 {
                     dgvClosing.Rows.Add();
                     dgvClosing.Rows[i].Cells[0].Value = closingDocuments[i];
-                    dgvClosing.Rows[i].Cells[1].Value = "";
 
                     if (closingListDueDate.Count > 0)
-                        dgvClosing.Rows[i].Cells[1].Value = closingListDueDate[i];
+                    {
+                        if (closingListDueDate[i].dueDate != null)
+                            dgvClosing.Rows[i].Cells[1].Value = closingListDueDate[i].dueDate;
+                        else
+                            dgvClosing.Rows[i].Cells[1].Value = "";
+
+                        if (closingListDueDate[i].budget != null)
+                            dgvClosing.Rows[i].Cells[2].Value = closingListDueDate[i].budget;
+                        else
+                            dgvClosing.Rows[i].Cells[2].Value = "";
+                    }
 
                     if (closingDocsListStatus[i] == "UNDONE")
                     {
-                        dgvClosing.Rows[i].Cells[2].Style.BackColor = Color.Orange;
+                        dgvClosing.Rows[i].Cells[3].Style.BackColor = Color.Orange;
                         inprogClosing++;
                     }
                     else if (closingDocsListStatus[i] == "DONE")
@@ -1339,7 +1378,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compClosing++;
-                        dgvClosing.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
+                        dgvClosing.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
                         closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
 
                         xValues1[3] = "Closing";
@@ -1361,7 +1400,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompClosing++;
-                        dgvClosing.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+                        dgvClosing.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1372,7 +1411,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindClosing++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvClosing.Rows[j].Cells[2].Style.BackColor = Color.Red;
+                        dgvClosing.Rows[j].Cells[3].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1437,6 +1476,8 @@ namespace ProjectManagementToolkit
                     p.Label = "#PERCENT\n#VALX";
                 }
             }
+
+            canChange = true;
         }
 
         private List<string> getLocalDocuments()
@@ -1476,7 +1517,7 @@ namespace ProjectManagementToolkit
         ExecutionDueDateModel currentExecute = new ExecutionDueDateModel();
         ClosingDueDateModel currentClose = new ClosingDueDateModel();
 
-
+       
         private void saveAllDueDate(int phase)
         {
 
@@ -1488,70 +1529,120 @@ namespace ProjectManagementToolkit
                 currentInit.JobDescriptionDD = dgvInitiation.Rows[3].Cells[1].Value.ToString();
                 currentInit.ProjectOfficeCheckListDD = dgvInitiation.Rows[4].Cells[1].Value.ToString();
                 currentInit.PhaseRevieFormInitiationDD = dgvInitiation.Rows[5].Cells[1].Value.ToString();
-                currentInit.TermOfReferenceDocument = dgvInitiation.Rows[6].Cells[1].Value.ToString();
+                currentInit.TermOfReferenceDocumentDD = dgvInitiation.Rows[6].Cells[1].Value.ToString();                              
+
+                currentInit.BusinessCaseBudget = dgvInitiation.Rows[0].Cells[2].Value.ToString();
+                currentInit.FeasibilityStudyBudget = dgvInitiation.Rows[1].Cells[2].Value.ToString();
+                currentInit.ProjectCharterBudget = dgvInitiation.Rows[2].Cells[2].Value.ToString();
+                currentInit.JobDescriptionBudget = dgvInitiation.Rows[3].Cells[2].Value.ToString();
+                currentInit.ProjectOfficeCheckListBudget = dgvInitiation.Rows[4].Cells[2].Value.ToString();
+                currentInit.PhaseRevieFormInitiationBudget = dgvInitiation.Rows[5].Cells[2].Value.ToString();
+                currentInit.TermOfReferenceDocumentBudget = dgvInitiation.Rows[6].Cells[2].Value.ToString();
 
                 string jsong = JsonConvert.SerializeObject(currentInit);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
             }
             else if (phase == 2)
             {
-                MessageBox.Show(dgvPlanning.Rows[0].Cells[1].Value.ToString());
+                currentPlan.ProjectPlanDD = dgvPlanning.Rows[0].Cells[1].Value.ToString();
+                currentPlan.ResourcePlanDD = dgvPlanning.Rows[1].Cells[1].Value.ToString();
+                currentPlan.FinancialPlanDD = dgvPlanning.Rows[2].Cells[1].Value.ToString();
+                currentPlan.QualityPlanDD = dgvPlanning.Rows[3].Cells[1].Value.ToString();
+                currentPlan.RiskPlanDD = dgvPlanning.Rows[4].Cells[1].Value.ToString();
+                currentPlan.AcceptancePlanDD = dgvPlanning.Rows[5].Cells[1].Value.ToString();
+                currentPlan.CommunicationPlanDD = dgvPlanning.Rows[6].Cells[1].Value.ToString();
+                currentPlan.ProcurementPlanDD = dgvPlanning.Rows[7].Cells[1].Value.ToString();
+                currentPlan.StatementOfWorkDD = dgvPlanning.Rows[8].Cells[1].Value.ToString();
+                currentPlan.RequestForInformationDD = dgvPlanning.Rows[9].Cells[1].Value.ToString();
+                currentPlan.SupplierContractDD = dgvPlanning.Rows[10].Cells[1].Value.ToString();
+                currentPlan.RequestForProposalDD = dgvPlanning.Rows[11].Cells[1].Value.ToString();
+                currentPlan.PhaseReviewPlanningDD = dgvPlanning.Rows[12].Cells[1].Value.ToString();
 
-
-                currentPlan.ProjectPlan = dgvPlanning.Rows[0].Cells[1].Value.ToString();
-                currentPlan.ResourcePlan = dgvPlanning.Rows[1].Cells[1].Value.ToString();
-                currentPlan.FinancialPlan = dgvPlanning.Rows[2].Cells[1].Value.ToString();
-                currentPlan.QualityPlan = dgvPlanning.Rows[3].Cells[1].Value.ToString();
-                currentPlan.RiskPlan = dgvPlanning.Rows[4].Cells[1].Value.ToString();
-                currentPlan.AcceptancePlan = dgvPlanning.Rows[5].Cells[1].Value.ToString();
-                currentPlan.CommunicationPlan = dgvPlanning.Rows[6].Cells[1].Value.ToString();
-                currentPlan.ProcurementPlan = dgvPlanning.Rows[7].Cells[1].Value.ToString();
-                currentPlan.StatementOfWork = dgvPlanning.Rows[8].Cells[1].Value.ToString();
-                currentPlan.RequestForInformation = dgvPlanning.Rows[9].Cells[1].Value.ToString();
-                currentPlan.SupplierContract = dgvPlanning.Rows[10].Cells[1].Value.ToString();
-                currentPlan.RequestForProposal = dgvPlanning.Rows[11].Cells[1].Value.ToString();
-                currentPlan.PhaseReviewPlanning = dgvPlanning.Rows[12].Cells[1].Value.ToString();
+                currentPlan.ProjectPlanBudget = dgvPlanning.Rows[0].Cells[2].Value.ToString();
+                currentPlan.ResourcePlanBudget = dgvPlanning.Rows[1].Cells[2].Value.ToString();
+                currentPlan.FinancialPlanBudget = dgvPlanning.Rows[2].Cells[2].Value.ToString();
+                currentPlan.QualityPlanBudget = dgvPlanning.Rows[3].Cells[2].Value.ToString();
+                currentPlan.RiskPlanBudget = dgvPlanning.Rows[4].Cells[2].Value.ToString();
+                currentPlan.AcceptancePlanBudget = dgvPlanning.Rows[5].Cells[2].Value.ToString();
+                currentPlan.CommunicationPlanBudget = dgvPlanning.Rows[6].Cells[2].Value.ToString();
+                currentPlan.ProcurementPlanBudget = dgvPlanning.Rows[7].Cells[2].Value.ToString();
+                currentPlan.StatementOfWorkBudget = dgvPlanning.Rows[8].Cells[2].Value.ToString();
+                currentPlan.RequestForInformationBudget = dgvPlanning.Rows[9].Cells[2].Value.ToString();
+                currentPlan.SupplierContractBudget = dgvPlanning.Rows[10].Cells[2].Value.ToString();
+                currentPlan.RequestForProposalBudget = dgvPlanning.Rows[11].Cells[2].Value.ToString();
+                currentPlan.PhaseReviewPlanningBudget = dgvPlanning.Rows[12].Cells[2].Value.ToString();
 
                 string jsong = JsonConvert.SerializeObject(currentPlan);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "PlanningDueDateModel");
             }
             else if (phase == 3)
             {
-                currentExecute.TimeMangement = dgvExecution.Rows[0].Cells[1].Value.ToString();
-                currentExecute.TimeSheet = dgvExecution.Rows[1].Cells[1].Value.ToString();
-                currentExecute.TimeSheetRegister = dgvExecution.Rows[2].Cells[1].Value.ToString();
-                currentExecute.CostManagementProcess = dgvExecution.Rows[3].Cells[1].Value.ToString();
-                currentExecute.ExpenseForm = dgvExecution.Rows[4].Cells[1].Value.ToString();
-                currentExecute.ExpenseRegister = dgvExecution.Rows[5].Cells[1].Value.ToString();
-                currentExecute.QualityManagement = dgvExecution.Rows[6].Cells[1].Value.ToString();
-                currentExecute.QualityReviewPlan = dgvExecution.Rows[7].Cells[1].Value.ToString();
-                currentExecute.QualityReviewForm = dgvExecution.Rows[8].Cells[1].Value.ToString();
-                currentExecute.ChangeManagementProcess = dgvExecution.Rows[9].Cells[1].Value.ToString();
-                currentExecute.ChangeRequestForm = dgvExecution.Rows[10].Cells[1].Value.ToString();
-                currentExecute.ChangeRequestRegister = dgvExecution.Rows[11].Cells[1].Value.ToString();
-                currentExecute.RiskManagamentProcess = dgvExecution.Rows[12].Cells[1].Value.ToString();
-                currentExecute.RiskForm = dgvExecution.Rows[13].Cells[1].Value.ToString();
-                currentExecute.RiskRegister = dgvExecution.Rows[14].Cells[1].Value.ToString();
-                currentExecute.IssueManagementProcess = dgvExecution.Rows[15].Cells[1].Value.ToString();
-                currentExecute.IssueForm = dgvExecution.Rows[16].Cells[1].Value.ToString();
-                currentExecute.IssueRegister = dgvExecution.Rows[17].Cells[1].Value.ToString();
-                currentExecute.PurchaseOrder = dgvExecution.Rows[18].Cells[1].Value.ToString();
-                currentExecute.ProcurementRegister = dgvExecution.Rows[19].Cells[1].Value.ToString();
-                currentExecute.AcceptanceManagementProcess = dgvExecution.Rows[20].Cells[1].Value.ToString();
-                currentExecute.AcceptanceForm = dgvExecution.Rows[21].Cells[1].Value.ToString();
-                currentExecute.AcceptanceRegister = dgvExecution.Rows[22].Cells[1].Value.ToString();
-                currentExecute.CommunicationsManagementProcess = dgvExecution.Rows[23].Cells[1].Value.ToString();
-                currentExecute.ProjectStatusReport = dgvExecution.Rows[24].Cells[1].Value.ToString();
-                currentExecute.CommunicationsRegister = dgvExecution.Rows[25].Cells[1].Value.ToString();
-                currentExecute.PhaseReviewExe = dgvExecution.Rows[26].Cells[1].Value.ToString();
+                currentExecute.TimeMangementDD = dgvExecution.Rows[0].Cells[1].Value.ToString();
+                currentExecute.TimeSheetDD = dgvExecution.Rows[1].Cells[1].Value.ToString();
+                currentExecute.TimeSheetRegisterDD = dgvExecution.Rows[2].Cells[1].Value.ToString();
+                currentExecute.CostManagementProcessDD = dgvExecution.Rows[3].Cells[1].Value.ToString();
+                currentExecute.ExpenseFormDD = dgvExecution.Rows[4].Cells[1].Value.ToString();
+                currentExecute.ExpenseRegisterDD = dgvExecution.Rows[5].Cells[1].Value.ToString();
+                currentExecute.QualityManagementDD = dgvExecution.Rows[6].Cells[1].Value.ToString();
+                currentExecute.QualityReviewPlanDD = dgvExecution.Rows[7].Cells[1].Value.ToString();
+                currentExecute.QualityReviewFormDD = dgvExecution.Rows[8].Cells[1].Value.ToString();
+                currentExecute.ChangeManagementProcessDD = dgvExecution.Rows[9].Cells[1].Value.ToString();
+                currentExecute.ChangeRequestFormDD = dgvExecution.Rows[10].Cells[1].Value.ToString();
+                currentExecute.ChangeRequestRegisterDD = dgvExecution.Rows[11].Cells[1].Value.ToString();
+                currentExecute.RiskManagamentProcessDD = dgvExecution.Rows[12].Cells[1].Value.ToString();
+                currentExecute.RiskFormDD = dgvExecution.Rows[13].Cells[1].Value.ToString();
+                currentExecute.RiskRegisterDD = dgvExecution.Rows[14].Cells[1].Value.ToString();
+                currentExecute.IssueManagementProcessDD = dgvExecution.Rows[15].Cells[1].Value.ToString();
+                currentExecute.IssueFormDD = dgvExecution.Rows[16].Cells[1].Value.ToString();
+                currentExecute.IssueRegisterDD = dgvExecution.Rows[17].Cells[1].Value.ToString();
+                currentExecute.PurchaseOrderDD = dgvExecution.Rows[18].Cells[1].Value.ToString();
+                currentExecute.ProcurementRegisterDD = dgvExecution.Rows[19].Cells[1].Value.ToString();
+                currentExecute.AcceptanceManagementProcessDD = dgvExecution.Rows[20].Cells[1].Value.ToString();
+                currentExecute.AcceptanceFormDD = dgvExecution.Rows[21].Cells[1].Value.ToString();
+                currentExecute.AcceptanceRegisterDD = dgvExecution.Rows[22].Cells[1].Value.ToString();
+                currentExecute.CommunicationsManagementProcessDD = dgvExecution.Rows[23].Cells[1].Value.ToString();
+                currentExecute.ProjectStatusReportDD = dgvExecution.Rows[24].Cells[1].Value.ToString();
+                currentExecute.CommunicationsRegisterDD = dgvExecution.Rows[25].Cells[1].Value.ToString();
+                currentExecute.PhaseReviewExeDD = dgvExecution.Rows[26].Cells[1].Value.ToString();
+
+                currentExecute.TimeMangementBudget = dgvExecution.Rows[0].Cells[2].Value.ToString();
+                currentExecute.TimeSheetBudget = dgvExecution.Rows[1].Cells[2].Value.ToString();
+                currentExecute.TimeSheetRegisterBudget = dgvExecution.Rows[2].Cells[2].Value.ToString();
+                currentExecute.CostManagementProcessBudget = dgvExecution.Rows[3].Cells[2].Value.ToString();
+                currentExecute.ExpenseFormBudget = dgvExecution.Rows[4].Cells[2].Value.ToString();
+                currentExecute.ExpenseRegisterBudget = dgvExecution.Rows[5].Cells[2].Value.ToString();
+                currentExecute.QualityManagementBudget = dgvExecution.Rows[6].Cells[2].Value.ToString();
+                currentExecute.QualityReviewPlanBudget = dgvExecution.Rows[7].Cells[2].Value.ToString();
+                currentExecute.QualityReviewFormBudget = dgvExecution.Rows[8].Cells[2].Value.ToString();
+                currentExecute.ChangeManagementProcessBudget = dgvExecution.Rows[9].Cells[2].Value.ToString();
+                currentExecute.ChangeRequestFormBudget = dgvExecution.Rows[10].Cells[2].Value.ToString();
+                currentExecute.ChangeRequestRegisterBudget = dgvExecution.Rows[11].Cells[2].Value.ToString();
+                currentExecute.RiskManagamentProcessBudget = dgvExecution.Rows[12].Cells[2].Value.ToString();
+                currentExecute.RiskFormBudget = dgvExecution.Rows[13].Cells[2].Value.ToString();
+                currentExecute.RiskRegisterBudget = dgvExecution.Rows[14].Cells[2].Value.ToString();
+                currentExecute.IssueManagementProcessBudget = dgvExecution.Rows[15].Cells[2].Value.ToString();
+                currentExecute.IssueFormBudget = dgvExecution.Rows[16].Cells[2].Value.ToString();
+                currentExecute.IssueRegisterBudget = dgvExecution.Rows[17].Cells[2].Value.ToString();
+                currentExecute.PurchaseOrderBudget = dgvExecution.Rows[18].Cells[2].Value.ToString();
+                currentExecute.ProcurementRegisterBudget = dgvExecution.Rows[19].Cells[2].Value.ToString();
+                currentExecute.AcceptanceManagementProcessBudget = dgvExecution.Rows[20].Cells[2].Value.ToString();
+                currentExecute.AcceptanceFormBudget = dgvExecution.Rows[21].Cells[2].Value.ToString();
+                currentExecute.AcceptanceRegisterBudget = dgvExecution.Rows[22].Cells[2].Value.ToString();
+                currentExecute.CommunicationsManagementProcessBudget = dgvExecution.Rows[23].Cells[2].Value.ToString();
+                currentExecute.ProjectStatusReportBudget = dgvExecution.Rows[24].Cells[2].Value.ToString();
+                currentExecute.CommunicationsRegisterBudget = dgvExecution.Rows[25].Cells[2].Value.ToString();
+                currentExecute.PhaseReviewExeBudget = dgvExecution.Rows[26].Cells[2].Value.ToString();
 
                 string jsong = JsonConvert.SerializeObject(currentExecute);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "ExecutionDueDateModel");
             }
             else if (phase == 4)
             {
-                currentClose.ProjectClosureReport = dgvClosing.Rows[0].Cells[1].Value.ToString();
-                currentClose.PostImplementationReview = dgvClosing.Rows[1].Cells[1].Value.ToString();
+                currentClose.ProjectClosureReportDD = dgvClosing.Rows[0].Cells[1].Value.ToString();
+                currentClose.PostImplementationReviewDD = dgvClosing.Rows[1].Cells[1].Value.ToString();
+
+                currentClose.ProjectClosureReportBudget = dgvClosing.Rows[0].Cells[2].Value.ToString();
+                currentClose.PostImplementationReviewBudget = dgvClosing.Rows[1].Cells[2].Value.ToString();
 
                 string jsong = JsonConvert.SerializeObject(currentClose);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "ClosingDueDateModel");
@@ -1699,6 +1790,8 @@ namespace ProjectManagementToolkit
             ExecuteDateTimePicker.Visible = false;
         }
 
+        
+
         private void CloseDateTimePicker_OnTextChange(object sender, EventArgs e)
         {
             dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
@@ -1743,6 +1836,31 @@ namespace ProjectManagementToolkit
                 // Now make it visible  
                 CloseDateTimePicker.Visible = true;
             }
+        }
+
+        bool canChange = false;
+        private void dgvInitiation_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(canChange)
+                saveAllDueDate(1);
+        }
+
+        private void dgvPlanning_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (canChange)
+                saveAllDueDate(2);
+        }
+
+        private void dgvExecution_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (canChange)
+                saveAllDueDate(3);
+        }
+
+        private void dgvClosing_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (canChange)
+                saveAllDueDate(4);
         }
     }
 }

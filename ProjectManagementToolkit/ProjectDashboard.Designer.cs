@@ -68,6 +68,7 @@
             this.dgvInitiation = new System.Windows.Forms.DataGridView();
             this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpPlanning = new System.Windows.Forms.TabPage();
             this.lblPlanNumTasks = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@
             this.dgvPlanning = new System.Windows.Forms.DataGridView();
             this.PlanningDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonePlanning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpExecution = new System.Windows.Forms.TabPage();
             this.lblExecNumTasks = new System.Windows.Forms.Label();
@@ -82,6 +84,7 @@
             this.dgvExecution = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDateExe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpClosure = new System.Windows.Forms.TabPage();
             this.lblClosingNumTasks = new System.Windows.Forms.Label();
@@ -89,6 +92,7 @@
             this.dgvClosing = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDateClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbarOverall = new System.Windows.Forms.ProgressBar();
             this.lblOverallProgress = new System.Windows.Forms.Label();
@@ -214,6 +218,7 @@
             this.dgvInitiation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InitiationDocument,
             this.dueDate,
+            this.BudgetInit,
             this.DoneInitation});
             this.dgvInitiation.EnableHeadersVisualStyles = false;
             this.dgvInitiation.Location = new System.Drawing.Point(16, 15);
@@ -234,6 +239,7 @@
             this.dgvInitiation.Size = new System.Drawing.Size(687, 220);
             this.dgvInitiation.TabIndex = 17;
             this.dgvInitiation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellClick);
+            this.dgvInitiation.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellValueChanged);
             // 
             // InitiationDocument
             // 
@@ -248,6 +254,12 @@
             this.dueDate.HeaderText = "Due Date";
             this.dueDate.Name = "dueDate";
             this.dueDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetInit
+            // 
+            this.BudgetInit.HeaderText = "Budget";
+            this.BudgetInit.Name = "BudgetInit";
+            this.BudgetInit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DoneInitation
             // 
@@ -325,6 +337,7 @@
             this.dgvPlanning.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlanningDocument,
             this.dueDatePlan,
+            this.BudgetPlan,
             this.DonePlanning});
             this.dgvPlanning.EnableHeadersVisualStyles = false;
             this.dgvPlanning.Location = new System.Drawing.Point(16, 15);
@@ -344,6 +357,7 @@
             this.dgvPlanning.Size = new System.Drawing.Size(687, 366);
             this.dgvPlanning.TabIndex = 21;
             this.dgvPlanning.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellClick);
+            this.dgvPlanning.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellValueChanged);
             // 
             // PlanningDocument
             // 
@@ -358,6 +372,12 @@
             this.dueDatePlan.HeaderText = "Due Date";
             this.dueDatePlan.Name = "dueDatePlan";
             this.dueDatePlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetPlan
+            // 
+            this.BudgetPlan.HeaderText = "Budget";
+            this.BudgetPlan.Name = "BudgetPlan";
+            this.BudgetPlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DonePlanning
             // 
@@ -435,6 +455,7 @@
             this.dgvExecution.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dueDateExe,
+            this.BudgetEx,
             this.dataGridViewCheckBoxColumn2});
             this.dgvExecution.EnableHeadersVisualStyles = false;
             this.dgvExecution.Location = new System.Drawing.Point(16, 15);
@@ -454,6 +475,7 @@
             this.dgvExecution.Size = new System.Drawing.Size(687, 376);
             this.dgvExecution.TabIndex = 21;
             this.dgvExecution.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExecution_CellClick);
+            this.dgvExecution.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExecution_CellValueChanged);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -468,6 +490,12 @@
             this.dueDateExe.HeaderText = "Due Date";
             this.dueDateExe.Name = "dueDateExe";
             this.dueDateExe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetEx
+            // 
+            this.BudgetEx.HeaderText = "Budget";
+            this.BudgetEx.Name = "BudgetEx";
+            this.BudgetEx.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewCheckBoxColumn2
             // 
@@ -543,6 +571,7 @@
             this.dgvClosing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dueDateClose,
+            this.BudgetClose,
             this.dataGridViewCheckBoxColumn3});
             this.dgvClosing.EnableHeadersVisualStyles = false;
             this.dgvClosing.Location = new System.Drawing.Point(16, 15);
@@ -562,6 +591,7 @@
             this.dgvClosing.Size = new System.Drawing.Size(687, 376);
             this.dgvClosing.TabIndex = 25;
             this.dgvClosing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellClick);
+            this.dgvClosing.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellValueChanged);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -576,6 +606,12 @@
             this.dueDateClose.HeaderText = "Due Date";
             this.dueDateClose.Name = "dueDateClose";
             this.dueDateClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetClose
+            // 
+            this.BudgetClose.HeaderText = "Budget";
+            this.BudgetClose.Name = "BudgetClose";
+            this.BudgetClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewCheckBoxColumn3
             // 
@@ -728,15 +764,19 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartClosing;
         private System.Windows.Forms.DataGridViewTextBoxColumn InitiationDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetInit;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoneInitation;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanningDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDatePlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonePlanning;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateExe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetEx;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn3;
     }
 }
