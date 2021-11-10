@@ -984,6 +984,11 @@ namespace ProjectManagementToolkit
                         else
                             dgvInitiation.Rows[i].Cells[2].Value = "";
                     }
+                    else
+                    {
+                        dgvInitiation.Rows[i].Cells[1].Value = "";
+                        dgvInitiation.Rows[i].Cells[2].Value = "";
+                    }
                         
                     if (initDocsListStatus[i] == "UNDONE")
                     {
@@ -1107,6 +1112,11 @@ namespace ProjectManagementToolkit
                             dgvPlanning.Rows[i].Cells[2].Value = planningDocsListDueDate[i].budget;
                         else
                             dgvPlanning.Rows[i].Cells[2].Value = "";
+                    }
+                    else
+                    {
+                        dgvPlanning.Rows[i].Cells[1].Value = "";
+                        dgvPlanning.Rows[i].Cells[2].Value = "";
                     }
 
 
@@ -1254,6 +1264,11 @@ namespace ProjectManagementToolkit
                         else
                             dgvExecution.Rows[i].Cells[2].Value = "";
                     }
+                    else
+                    {
+                        dgvExecution.Rows[i].Cells[1].Value = "";
+                        dgvExecution.Rows[i].Cells[2].Value = "";
+                    }
 
 
                     if (executionDocsListStatus[i] == "UNDONE")
@@ -1364,6 +1379,11 @@ namespace ProjectManagementToolkit
                             dgvClosing.Rows[i].Cells[2].Value = closingListDueDate[i].budget;
                         else
                             dgvClosing.Rows[i].Cells[2].Value = "";
+                    }
+                    else
+                    {
+                        dgvClosing.Rows[i].Cells[1].Value = "";
+                        dgvClosing.Rows[i].Cells[2].Value = "";
                     }
 
                     if (closingDocsListStatus[i] == "UNDONE")
