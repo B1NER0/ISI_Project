@@ -78,7 +78,7 @@ namespace ProjectManagementToolkit
         List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> initDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
         List<(string dueDate, string budget)> planningDocsListDueDate = new List<(string dueDate, string budget)>();
         List<(string dueDate, string budget)> executeDocsListDueDate = new List<(string dueDate, string budget)>();
-        List<(string dueDate, string budget)> closingListDueDate = new List<(string dueDate, string budget)>();
+        List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> closingListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
@@ -177,13 +177,11 @@ namespace ProjectManagementToolkit
 
             if(tClosing != null)
             {
-                closingListDueDate.Add((tClosing.ProjectClosureReportDD, tClosing.ProjectClosureReportBudget));
-                closingListDueDate.Add((tClosing.PostImplementationReviewDD, tClosing.PostImplementationReviewBudget));
+                closingListDueDate.Add((tClosing.ProjectClosureReportDD, tClosing.ProjectClosureReportBudget, tClosing.ProjectClosureReportSD, tClosing.ProjectClosureReportPlannedBudget, tClosing.ProjectClosureReportCD)); ;
+                closingListDueDate.Add((tClosing.PostImplementationReviewDD, tClosing.PostImplementationReviewBudget, tClosing.PostImplementationReviewSD, tClosing.PostImplementationReviewPlannedBudget, tClosing.PostImplementationReviewCD));
             }
 
-            
-
-
+           
             ////////BUSINESSCASE////////
             //Verander Json
             string json1 = JsonHelper.loadDocument(Settings.Default.ProjectID, "BusinessCase");
@@ -1402,20 +1400,38 @@ namespace ProjectManagementToolkit
                         else
                             dgvClosing.Rows[i].Cells[1].Value = "";
 
-                        if (closingListDueDate[i].budget != null)
-                            dgvClosing.Rows[i].Cells[2].Value = closingListDueDate[i].budget;
+                        if (closingListDueDate[i].completedDate != null)
+                            dgvClosing.Rows[i].Cells[2].Value = closingListDueDate[i].completedDate;
                         else
                             dgvClosing.Rows[i].Cells[2].Value = "";
+
+                        if (closingListDueDate[i].dueDate != null)
+                            dgvClosing.Rows[i].Cells[3].Value = closingListDueDate[i].dueDate;
+                        else
+                            dgvClosing.Rows[i].Cells[3].Value = "";
+
+                        if (closingListDueDate[i].plannedBudget != null)
+                            dgvClosing.Rows[i].Cells[4].Value = closingListDueDate[i].plannedBudget;
+                        else
+                            dgvClosing.Rows[i].Cells[4].Value = "";
+
+                        if (closingListDueDate[i].budget != null)
+                            dgvClosing.Rows[i].Cells[5].Value = closingListDueDate[i].budget;
+                        else
+                            dgvClosing.Rows[i].Cells[5].Value = "";
                     }
                     else
                     {
                         dgvClosing.Rows[i].Cells[1].Value = "";
                         dgvClosing.Rows[i].Cells[2].Value = "";
+                        dgvClosing.Rows[i].Cells[3].Value = "";
+                        dgvClosing.Rows[i].Cells[4].Value = "";
+                        dgvClosing.Rows[i].Cells[5].Value = "";
                     }
 
                     if (closingDocsListStatus[i] == "UNDONE")
                     {
-                        dgvClosing.Rows[i].Cells[3].Style.BackColor = Color.Orange;
+                        dgvClosing.Rows[i].Cells[6].Style.BackColor = Color.Orange;
                         inprogClosing++;
                     }
                     else if (closingDocsListStatus[i] == "DONE")
@@ -1425,7 +1441,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compClosing++;
-                        dgvClosing.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
+                        dgvClosing.Rows[i].Cells[6].Style.BackColor = Color.LimeGreen;
                         closingPercentage = ((closingProgressVal) / closingDocuments.Count) * 100;
 
                         xValues1[3] = "Closing";
@@ -1447,7 +1463,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompClosing++;
-                        dgvClosing.Rows[i].Cells[3].Style.BackColor = Color.Gray;
+                        dgvClosing.Rows[i].Cells[6].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1458,7 +1474,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindClosing++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvClosing.Rows[j].Cells[3].Style.BackColor = Color.Red;
+                        dgvClosing.Rows[j].Cells[6].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1527,6 +1543,7 @@ namespace ProjectManagementToolkit
             canChange = true;
 
             earnedValueAnalysis(dgvInitiation, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, totalDaysInitlbl, lblTotalInitialBudget);
+            earnedValueAnalysis(dgvClosing, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblClosingDays, lblClosingBudget);
 
         }
 
@@ -1730,11 +1747,28 @@ namespace ProjectManagementToolkit
             }
             else if (phase == 4)
             {
-                currentClose.ProjectClosureReportDD = dgvClosing.Rows[0].Cells[1].Value.ToString();
-                currentClose.PostImplementationReviewDD = dgvClosing.Rows[1].Cells[1].Value.ToString();
 
-                currentClose.ProjectClosureReportBudget = dgvClosing.Rows[0].Cells[2].Value.ToString();
-                currentClose.PostImplementationReviewBudget = dgvClosing.Rows[1].Cells[2].Value.ToString();
+                //Start Date
+                currentClose.ProjectClosureReportSD = dgvClosing.Rows[0].Cells[1].Value.ToString();
+                currentClose.PostImplementationReviewSD = dgvClosing.Rows[1].Cells[1].Value.ToString();
+
+                //Completed Date
+                currentClose.ProjectClosureReportCD = dgvClosing.Rows[0].Cells[2].Value.ToString();
+                currentClose.PostImplementationReviewCD = dgvClosing.Rows[1].Cells[2].Value.ToString();
+
+                //Due Date
+                currentClose.ProjectClosureReportDD = dgvClosing.Rows[0].Cells[3].Value.ToString();
+                currentClose.PostImplementationReviewDD = dgvClosing.Rows[1].Cells[3].Value.ToString();
+
+                //Planned Budget
+                currentClose.ProjectClosureReportPlannedBudget = dgvClosing.Rows[0].Cells[4].Value.ToString();
+                currentClose.PostImplementationReviewPlannedBudget = dgvClosing.Rows[1].Cells[4].Value.ToString();
+
+                //Used Budget
+                currentClose.ProjectClosureReportBudget = dgvClosing.Rows[0].Cells[5].Value.ToString();
+                currentClose.PostImplementationReviewBudget = dgvClosing.Rows[1].Cells[5].Value.ToString();
+
+                earnedValueAnalysis(dgvClosing, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblClosingDays, lblClosingBudget);
 
                 string jsong = JsonConvert.SerializeObject(currentClose);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "ClosingDueDateModel");
@@ -1961,6 +1995,66 @@ namespace ProjectManagementToolkit
         private void dgvClosing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                CloseDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvClosing.Controls.Add(CloseDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                CloseDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                CloseDateTimePicker.Visible = true;
+            }
+
+            if (e.ColumnIndex == 2 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                CloseDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvClosing.Controls.Add(CloseDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                CloseDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                CloseDateTimePicker.Visible = true;
+            }
+
+            if (e.ColumnIndex == 3 && e.RowIndex != -1)
             {
                 //Initialized a new DateTimePicker Control  
                 CloseDateTimePicker = new DateTimePicker();
