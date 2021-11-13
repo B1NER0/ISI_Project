@@ -16,6 +16,8 @@ using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Models;
 using ProjectManagementToolkit.Classes;
 using System.Drawing.Drawing2D;
+using System.Globalization;
+
 
 namespace ProjectManagementToolkit
 {
@@ -71,7 +73,9 @@ namespace ProjectManagementToolkit
 
         List<string> initDocsListStatus = new List<string>();
 
-        List<(string dueDate, string budget)> initDocsListDueDate = new List<(string dueDate, string budget)>();
+        // Create Lists for the dates and budgets
+
+        List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> initDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
         List<(string dueDate, string budget)> planningDocsListDueDate = new List<(string dueDate, string budget)>();
         List<(string dueDate, string budget)> executeDocsListDueDate = new List<(string dueDate, string budget)>();
         List<(string dueDate, string budget)> closingListDueDate = new List<(string dueDate, string budget)>();
@@ -93,22 +97,23 @@ namespace ProjectManagementToolkit
 
             /////////////////////////////////////////////////////////////////INITIATION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            // Load the budget/date model
 
             string jsonInitDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
             InitDueDateModel tInit = JsonConvert.DeserializeObject<InitDueDateModel>(jsonInitDue);
             
-            if(tInit != null)
+
+            if (tInit != null)
             {
-                initDocsListDueDate.Add((tInit.BusinessCaseDD, tInit.BusinessCaseBudget));
-                initDocsListDueDate.Add((tInit.FeasibilityStudyDD, tInit.FeasibilityStudyBudget));
-                initDocsListDueDate.Add((tInit.ProjectCharterDD, tInit.ProjectCharterBudget));
-                initDocsListDueDate.Add((tInit.JobDescriptionDD, tInit.JobDescriptionBudget));
-                initDocsListDueDate.Add((tInit.ProjectOfficeCheckListDD, tInit.ProjectOfficeCheckListBudget));
-                initDocsListDueDate.Add((tInit.PhaseRevieFormInitiationDD, tInit.PhaseRevieFormInitiationBudget));
-                initDocsListDueDate.Add((tInit.TermOfReferenceDocumentDD, tInit.TermOfReferenceDocumentBudget));
+                initDocsListDueDate.Add((tInit.BusinessCaseDD, tInit.BusinessCaseBudget, tInit.BusinessCaseSD, tInit.BusinessCasePlannedBudget, tInit.BusinessCaseCD));
+                initDocsListDueDate.Add((tInit.FeasibilityStudyDD, tInit.FeasibilityStudyBudget, tInit.FeasibilityStudySD, tInit.FeasibilityStudyPlannedBudget, tInit.FeasibilityStudyCD));
+                initDocsListDueDate.Add((tInit.ProjectCharterDD, tInit.ProjectCharterBudget, tInit.ProjectCharterSD, tInit.ProjectCharterPlannedBudget, tInit.ProjectCharterCD));
+                initDocsListDueDate.Add((tInit.JobDescriptionDD, tInit.JobDescriptionBudget, tInit.JobDescriptionSD, tInit.JobDescriptionPlannedBudget, tInit.JobDescriptionCD));
+                initDocsListDueDate.Add((tInit.ProjectOfficeCheckListDD, tInit.ProjectOfficeCheckListBudget, tInit.ProjectOfficeCheckListSD, tInit.ProjectOfficeCheckListPlannedBudget, tInit.ProjectOfficeCheckListCD));
+                initDocsListDueDate.Add((tInit.PhaseRevieFormInitiationDD, tInit.PhaseRevieFormInitiationBudget, tInit.PhaseRevieFormInitiationSD, tInit.PhaseRevieFormInitiationPlannedBudget, tInit.PhaseRevieFormInitiationCD));
+                initDocsListDueDate.Add((tInit.TermOfReferenceDocumentDD, tInit.TermOfReferenceDocumentBudget, tInit.TermOfReferenceDocumentSD, tInit.TermOfReferenceDocumentPlannedBudget, tInit.TermOfReferenceDocumentCD));
             }
 
-            
 
             string jsonPlanningDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "PlanningDueDateModel");
             PlanningDueDateModel tPlanning = JsonConvert.DeserializeObject<PlanningDueDateModel>(jsonPlanningDue);
@@ -975,24 +980,46 @@ namespace ProjectManagementToolkit
                     if (initDocsListDueDate.Count > 0)
                     {
                         if (initDocsListDueDate[i].dueDate != null)
-                            dgvInitiation.Rows[i].Cells[1].Value = initDocsListDueDate[i].dueDate;
+                            dgvInitiation.Rows[i].Cells[3].Value = initDocsListDueDate[i].dueDate;
+                        else
+                            dgvInitiation.Rows[i].Cells[3].Value = "";
+
+                        if (initDocsListDueDate[i].budget != null)
+                            dgvInitiation.Rows[i].Cells[5].Value = initDocsListDueDate[i].budget;
+                        else
+                            dgvInitiation.Rows[i].Cells[5].Value = "";
+
+                        if (initDocsListDueDate[i].startDate!= null)
+                            dgvInitiation.Rows[i].Cells[1].Value = initDocsListDueDate[i].startDate;
                         else
                             dgvInitiation.Rows[i].Cells[1].Value = "";
 
-                        if (initDocsListDueDate[i].budget != null)
-                            dgvInitiation.Rows[i].Cells[2].Value = initDocsListDueDate[i].budget;
+                        if (initDocsListDueDate[i].completedDate != null)
+                            dgvInitiation.Rows[i].Cells[2].Value = initDocsListDueDate[i].completedDate;
                         else
                             dgvInitiation.Rows[i].Cells[2].Value = "";
+
+                        if (initDocsListDueDate[i].plannedBudget != null)
+                            dgvInitiation.Rows[i].Cells[4].Value = initDocsListDueDate[i].plannedBudget;
+                        else
+                            dgvInitiation.Rows[i].Cells[4].Value = "";
+
+
                     }
                     else
                     {
                         dgvInitiation.Rows[i].Cells[1].Value = "";
                         dgvInitiation.Rows[i].Cells[2].Value = "";
+                        dgvInitiation.Rows[i].Cells[3].Value = "";
+                        dgvInitiation.Rows[i].Cells[4].Value = "";
+                        dgvInitiation.Rows[i].Cells[5].Value = "";
                     }
-                        
+
+                    
+
                     if (initDocsListStatus[i] == "UNDONE")
                     {
-                        dgvInitiation.Rows[i].Cells[3].Style.BackColor = Color.Orange;
+                        dgvInitiation.Rows[i].Cells[6].Style.BackColor = Color.Orange;
                         inprog++;
                     }
                     else if (initDocsListStatus[i] == "DONE")
@@ -1002,7 +1029,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         comp++;
-                        dgvInitiation.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
+                        dgvInitiation.Rows[i].Cells[6].Style.BackColor = Color.LimeGreen;
                         // pbarInitiation.Value = (int)initationProgressVal;
                         initationPercentage = ((initationProgressVal) / initiationDocuments.Count) * 100;
                         //lblInitiationProgress.Text = "Progress: " + Math.Round(initationPercentage, 2) + "%";
@@ -1026,7 +1053,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncomp++;
-                        dgvInitiation.Rows[i].Cells[3].Style.BackColor = Color.Gray;
+                        dgvInitiation.Rows[i].Cells[6].Style.BackColor = Color.Gray;
                     }
 
 
@@ -1039,7 +1066,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behind++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvInitiation.Rows[j].Cells[3].Style.BackColor = Color.Red;
+                        dgvInitiation.Rows[j].Cells[6].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1498,6 +1525,9 @@ namespace ProjectManagementToolkit
             }
 
             canChange = true;
+
+            earnedValueAnalysis(dgvInitiation, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, totalDaysInitlbl, lblTotalInitialBudget);
+
         }
 
         private List<string> getLocalDocuments()
@@ -1537,27 +1567,69 @@ namespace ProjectManagementToolkit
         ExecutionDueDateModel currentExecute = new ExecutionDueDateModel();
         ClosingDueDateModel currentClose = new ClosingDueDateModel();
 
-       
+        //On Schedule, Behind Schedule, or Ahead of schedule
+        int daysSpent = 0;
+        int daysAhead = 0;
+        int daysBehind = 0;
+
+        //Over Spent, In Budget, On Budget
+        double budgetSpent = 0;
+        double budgetAhead = 0;
+        double budgetBehind = 0;
+
+
+
         private void saveAllDueDate(int phase)
         {
 
             if (phase == 1)
             {
-                currentInit.BusinessCaseDD = dgvInitiation.Rows[0].Cells[1].Value.ToString();
-                currentInit.FeasibilityStudyDD = dgvInitiation.Rows[1].Cells[1].Value.ToString();
-                currentInit.ProjectCharterDD = dgvInitiation.Rows[2].Cells[1].Value.ToString();
-                currentInit.JobDescriptionDD = dgvInitiation.Rows[3].Cells[1].Value.ToString();
-                currentInit.ProjectOfficeCheckListDD = dgvInitiation.Rows[4].Cells[1].Value.ToString();
-                currentInit.PhaseRevieFormInitiationDD = dgvInitiation.Rows[5].Cells[1].Value.ToString();
-                currentInit.TermOfReferenceDocumentDD = dgvInitiation.Rows[6].Cells[1].Value.ToString();                              
+                //Start date
+                currentInit.BusinessCaseSD = dgvInitiation.Rows[0].Cells[1].Value.ToString();
+                currentInit.FeasibilityStudySD = dgvInitiation.Rows[1].Cells[1].Value.ToString();
+                currentInit.ProjectCharterSD = dgvInitiation.Rows[2].Cells[1].Value.ToString();
+                currentInit.JobDescriptionSD = dgvInitiation.Rows[3].Cells[1].Value.ToString();
+                currentInit.ProjectOfficeCheckListSD = dgvInitiation.Rows[4].Cells[1].Value.ToString();
+                currentInit.PhaseRevieFormInitiationSD = dgvInitiation.Rows[5].Cells[1].Value.ToString();
+                currentInit.TermOfReferenceDocumentSD = dgvInitiation.Rows[6].Cells[1].Value.ToString();
 
-                currentInit.BusinessCaseBudget = dgvInitiation.Rows[0].Cells[2].Value.ToString();
-                currentInit.FeasibilityStudyBudget = dgvInitiation.Rows[1].Cells[2].Value.ToString();
-                currentInit.ProjectCharterBudget = dgvInitiation.Rows[2].Cells[2].Value.ToString();
-                currentInit.JobDescriptionBudget = dgvInitiation.Rows[3].Cells[2].Value.ToString();
-                currentInit.ProjectOfficeCheckListBudget = dgvInitiation.Rows[4].Cells[2].Value.ToString();
-                currentInit.PhaseRevieFormInitiationBudget = dgvInitiation.Rows[5].Cells[2].Value.ToString();
-                currentInit.TermOfReferenceDocumentBudget = dgvInitiation.Rows[6].Cells[2].Value.ToString();
+                //Completed date
+                currentInit.BusinessCaseCD = dgvInitiation.Rows[0].Cells[2].Value.ToString();
+                currentInit.FeasibilityStudyCD = dgvInitiation.Rows[1].Cells[2].Value.ToString();
+                currentInit.ProjectCharterCD = dgvInitiation.Rows[2].Cells[2].Value.ToString();
+                currentInit.JobDescriptionCD = dgvInitiation.Rows[3].Cells[2].Value.ToString();
+                currentInit.ProjectOfficeCheckListCD = dgvInitiation.Rows[4].Cells[2].Value.ToString();
+                currentInit.PhaseRevieFormInitiationCD = dgvInitiation.Rows[5].Cells[2].Value.ToString();
+                currentInit.TermOfReferenceDocumentCD = dgvInitiation.Rows[6].Cells[2].Value.ToString();
+
+                //Due date
+                currentInit.BusinessCaseDD = dgvInitiation.Rows[0].Cells[3].Value.ToString();
+                currentInit.FeasibilityStudyDD = dgvInitiation.Rows[1].Cells[3].Value.ToString();
+                currentInit.ProjectCharterDD = dgvInitiation.Rows[2].Cells[3].Value.ToString();
+                currentInit.JobDescriptionDD = dgvInitiation.Rows[3].Cells[3].Value.ToString();
+                currentInit.ProjectOfficeCheckListDD = dgvInitiation.Rows[4].Cells[3].Value.ToString();
+                currentInit.PhaseRevieFormInitiationDD = dgvInitiation.Rows[5].Cells[3].Value.ToString();
+                currentInit.TermOfReferenceDocumentDD = dgvInitiation.Rows[6].Cells[3].Value.ToString();
+
+                //Planned Budget
+                currentInit.BusinessCasePlannedBudget = dgvInitiation.Rows[0].Cells[4].Value.ToString();
+                currentInit.FeasibilityStudyPlannedBudget = dgvInitiation.Rows[1].Cells[4].Value.ToString();
+                currentInit.ProjectCharterPlannedBudget = dgvInitiation.Rows[2].Cells[4].Value.ToString();
+                currentInit.JobDescriptionPlannedBudget = dgvInitiation.Rows[3].Cells[4].Value.ToString();
+                currentInit.ProjectOfficeCheckListPlannedBudget = dgvInitiation.Rows[4].Cells[4].Value.ToString();
+                currentInit.PhaseRevieFormInitiationPlannedBudget = dgvInitiation.Rows[5].Cells[4].Value.ToString();
+                currentInit.TermOfReferenceDocumentPlannedBudget = dgvInitiation.Rows[6].Cells[4].Value.ToString();
+
+                //Actual Budget Used
+                currentInit.BusinessCaseBudget = dgvInitiation.Rows[0].Cells[5].Value.ToString();
+                currentInit.FeasibilityStudyBudget = dgvInitiation.Rows[1].Cells[5].Value.ToString();
+                currentInit.ProjectCharterBudget = dgvInitiation.Rows[2].Cells[5].Value.ToString();
+                currentInit.JobDescriptionBudget = dgvInitiation.Rows[3].Cells[5].Value.ToString();
+                currentInit.ProjectOfficeCheckListBudget = dgvInitiation.Rows[4].Cells[5].Value.ToString();
+                currentInit.PhaseRevieFormInitiationBudget = dgvInitiation.Rows[5].Cells[5].Value.ToString();
+                currentInit.TermOfReferenceDocumentBudget = dgvInitiation.Rows[6].Cells[5].Value.ToString();
+
+                earnedValueAnalysis(dgvInitiation, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, totalDaysInitlbl, lblTotalInitialBudget);
 
                 string jsong = JsonConvert.SerializeObject(currentInit);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
@@ -1675,6 +1747,67 @@ namespace ProjectManagementToolkit
         {
             // If any cell is clicked on the Second column which is our date Column  
             if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                InitDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvInitiation.Controls.Add(InitDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                InitDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                InitDateTimePicker.Visible = true;
+            }
+
+            // If any cell is clicked on the Third column which is our date Column
+            if (e.ColumnIndex == 2 && e.RowIndex != -1)
+            {
+                //Initialized a new DateTimePicker Control  
+                InitDateTimePicker = new DateTimePicker();
+
+                //Adding DateTimePicker control into DataGridView   
+                dgvInitiation.Controls.Add(InitDateTimePicker);
+
+                // Setting the format (i.e. 2014-10-10)  
+                InitDateTimePicker.Format = DateTimePickerFormat.Short;
+
+                // It returns the retangular area that represents the Display area for a cell  
+                Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                //Setting area for DateTimePicker Control  
+                InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+
+                // Setting Location  
+                InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+
+                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
+
+                // An event attached to dateTimePicker Control which is fired when any date is selected  
+                InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
+
+                // Now make it visible  
+                InitDateTimePicker.Visible = true;
+            }
+
+            if (e.ColumnIndex == 3 && e.RowIndex != -1)
             {
                 //Initialized a new DateTimePicker Control  
                 InitDateTimePicker = new DateTimePicker();
@@ -1882,7 +2015,120 @@ namespace ProjectManagementToolkit
             if (canChange)
                 saveAllDueDate(4);
         }
+
+        // METHOD
+
+
+        public void earnedValueAnalysis(DataGridView dgvInitiation, int daysSpent, int daysAhead, int daysBehind, double budgetSpent, double budgetAhead, double budgetBehind, Label totalDaysInitlbl, Label lblTotalInitialBudget)
+        {
+            daysSpent = 0;
+            budgetSpent = 0;
+
+            //Logic for the intitiantion phase
+            for (int i = 0; i < dgvInitiation.RowCount; i++)
+            {
+                daysAhead = 0;
+                daysBehind = 0;
+
+                budgetBehind = 0;
+                budgetAhead = 0;
+
+                if (dgvInitiation.Rows[i].Cells[4].Value.ToString() != "" && dgvInitiation.Rows[i].Cells[5].Value.ToString() != "")
+                {
+                    // Under Budget
+                    if (Convert.ToDouble(dgvInitiation.Rows[i].Cells[4].Value.ToString()) > Convert.ToDouble(dgvInitiation.Rows[i].Cells[5].Value.ToString()))
+                    {
+                        budgetAhead = Convert.ToDouble(dgvInitiation.Rows[i].Cells[4].Value) - Convert.ToDouble(dgvInitiation.Rows[i].Cells[5].Value);
+                        dgvInitiation.Rows[i].Cells[5].Style.ForeColor = Color.LimeGreen;
+                    }
+                    // Over Budget
+                    else if (Convert.ToDouble(dgvInitiation.Rows[i].Cells[4].Value.ToString()) < Convert.ToDouble(dgvInitiation.Rows[i].Cells[5].Value.ToString()))
+                    {
+                        budgetBehind = Convert.ToDouble(dgvInitiation.Rows[i].Cells[4].Value) - Convert.ToDouble(dgvInitiation.Rows[i].Cells[5].Value);
+                        dgvInitiation.Rows[i].Cells[5].Style.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        dgvInitiation.Rows[i].Cells[5].Style.ForeColor = Color.Black;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+                if (dgvInitiation.Rows[i].Cells[2].Value.ToString() != "" && dgvInitiation.Rows[i].Cells[3].Value.ToString() != "")
+                {
+                    // Behind Schedule
+                    if (Convert.ToDateTime(dgvInitiation.Rows[i].Cells[2].Value) > Convert.ToDateTime(dgvInitiation.Rows[i].Cells[3].Value))
+                    {
+                        daysBehind = Convert.ToInt32((Convert.ToDateTime(dgvInitiation.Rows[i].Cells[2].Value) - Convert.ToDateTime(dgvInitiation.Rows[i].Cells[3].Value)).Days);
+                        dgvInitiation.Rows[i].Cells[2].Style.ForeColor = Color.Red;
+                    }
+                    // Completed in time 
+                    else if (Convert.ToDateTime(dgvInitiation.Rows[i].Cells[2].Value) < Convert.ToDateTime(dgvInitiation.Rows[i].Cells[3].Value))
+                    {
+                        daysAhead = Convert.ToInt32((Convert.ToDateTime(dgvInitiation.Rows[i].Cells[2].Value) - Convert.ToDateTime(dgvInitiation.Rows[i].Cells[3].Value)).Days);
+                        dgvInitiation.Rows[i].Cells[2].Style.ForeColor = Color.LimeGreen;
+                    }
+                    else
+                    {
+                        dgvInitiation.Rows[i].Cells[2].Style.ForeColor = Color.Black;
+                    }
+
+                }
+                else
+                {
+                    continue;
+                }
+
+                daysSpent = (daysSpent + (daysAhead + daysBehind));
+                // Behind Schedule
+                if (daysSpent > 0)
+                {
+                    totalDaysInitlbl.Text = daysSpent.ToString() + " day(s) behind schedule";
+                    totalDaysInitlbl.ForeColor = Color.Red;
+                }
+                else if (daysSpent < 0)
+                {
+                    daysSpent *= -1;
+                    totalDaysInitlbl.Text = daysSpent.ToString() + " day(s) ahead of schedule";
+                    totalDaysInitlbl.ForeColor = Color.LimeGreen;
+                    daysSpent *= -1;
+                }
+                else
+                {
+                    totalDaysInitlbl.Text = "On schedule";
+                    totalDaysInitlbl.ForeColor = Color.Black;
+                }
+
+                budgetSpent = (budgetSpent + (budgetAhead + budgetBehind));
+
+                if (budgetSpent > 0.0)
+                {
+                    lblTotalInitialBudget.Text = "R" + budgetSpent.ToString() + " under budget";
+                    lblTotalInitialBudget.ForeColor = Color.LimeGreen;
+                }
+                else if (budgetSpent < 0.0)
+                {
+                    budgetSpent *= -1;
+                    lblTotalInitialBudget.Text = "R" + budgetSpent.ToString() + " over budget";
+                    lblTotalInitialBudget.ForeColor = Color.Red;
+                    budgetSpent *= -1;
+                }
+                else
+                {
+                    lblTotalInitialBudget.Text = "On Budget, jy het rooi worsies";
+                    lblTotalInitialBudget.ForeColor = Color.Black;
+                }
+
+
+            }
+        }
     }
+
+    // Methods
+
+    
 }
 
 
