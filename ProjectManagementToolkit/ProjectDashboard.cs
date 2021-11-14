@@ -76,8 +76,8 @@ namespace ProjectManagementToolkit
         // Create Lists for the dates and budgets
 
         List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> initDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
-        List<(string dueDate, string budget)> planningDocsListDueDate = new List<(string dueDate, string budget)>();
-        List<(string dueDate, string budget)> executeDocsListDueDate = new List<(string dueDate, string budget)>();
+        List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> planningDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
+        List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> executeDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
         List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> closingListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
 
         private void ProjectDashboard_Load(object sender, EventArgs e)
@@ -120,19 +120,19 @@ namespace ProjectManagementToolkit
 
             if(tPlanning != null)
             {
-                planningDocsListDueDate.Add((tPlanning.ProjectPlanDD, tPlanning.ProjectPlanBudget));
-                planningDocsListDueDate.Add((tPlanning.ResourcePlanDD, tPlanning.ResourcePlanBudget));
-                planningDocsListDueDate.Add((tPlanning.FinancialPlanDD, tPlanning.FinancialPlanBudget));
-                planningDocsListDueDate.Add((tPlanning.QualityPlanDD, tPlanning.QualityPlanBudget));
-                planningDocsListDueDate.Add((tPlanning.RiskPlanDD, tPlanning.RiskPlanBudget));
-                planningDocsListDueDate.Add((tPlanning.AcceptancePlanDD, tPlanning.AcceptancePlanBudget));
-                planningDocsListDueDate.Add((tPlanning.CommunicationPlanDD, tPlanning.CommunicationPlanBudget));
-                planningDocsListDueDate.Add((tPlanning.ProcurementPlanDD, tPlanning.ProcurementPlanBudget));
-                planningDocsListDueDate.Add((tPlanning.StatementOfWorkDD, tPlanning.StatementOfWorkBudget));
-                planningDocsListDueDate.Add((tPlanning.RequestForInformationDD, tPlanning.RequestForInformationBudget));
-                planningDocsListDueDate.Add((tPlanning.SupplierContractDD, tPlanning.SupplierContractBudget));
-                planningDocsListDueDate.Add((tPlanning.RequestForProposalDD, tPlanning.RequestForProposalBudget));
-                planningDocsListDueDate.Add((tPlanning.PhaseReviewPlanningDD, tPlanning.PhaseReviewPlanningBudget));
+                planningDocsListDueDate.Add((tPlanning.ProjectPlanDD, tPlanning.ProjectPlanBudget, tPlanning.ProjectPlanSD, tPlanning.ProjectPlanPlannedBudget, tPlanning.ProjectPlanCD));
+                planningDocsListDueDate.Add((tPlanning.ResourcePlanDD, tPlanning.ResourcePlanBudget, tPlanning.ResourcePlanSD, tPlanning.ResourcePlanPlannedBudget, tPlanning.ResourcePlanCD));
+                planningDocsListDueDate.Add((tPlanning.FinancialPlanDD, tPlanning.FinancialPlanBudget, tPlanning.FinancialPlanSD, tPlanning.FinancialPlanPlannedBudget, tPlanning.FinancialPlanCD));
+                planningDocsListDueDate.Add((tPlanning.QualityPlanDD, tPlanning.QualityPlanBudget, tPlanning.QualityPlanSD, tPlanning.QualityPlanPlannedBudget, tPlanning.QualityPlanCD));
+                planningDocsListDueDate.Add((tPlanning.RiskPlanDD, tPlanning.RiskPlanBudget, tPlanning.RiskPlanSD, tPlanning.RiskPlanPlannedBudget, tPlanning.RiskPlanCD));
+                planningDocsListDueDate.Add((tPlanning.AcceptancePlanDD, tPlanning.AcceptancePlanBudget, tPlanning.AcceptancePlanSD, tPlanning.AcceptancePlanPlannedBudget, tPlanning.AcceptancePlanCD));
+                planningDocsListDueDate.Add((tPlanning.CommunicationPlanDD, tPlanning.CommunicationPlanBudget, tPlanning.CommunicationPlanSD, tPlanning.CommunicationPlanPlannedBudget, tPlanning.CommunicationPlanCD));
+                planningDocsListDueDate.Add((tPlanning.ProcurementPlanDD, tPlanning.ProcurementPlanBudget, tPlanning.ProcurementPlanSD, tPlanning.ProcurementPlanPlannedBudget, tPlanning.ProcurementPlanCD));
+                planningDocsListDueDate.Add((tPlanning.StatementOfWorkDD, tPlanning.StatementOfWorkBudget, tPlanning.StatementOfWorkSD, tPlanning.StatementOfWorkPlannedBudget, tPlanning.StatementOfWorkCD));
+                planningDocsListDueDate.Add((tPlanning.RequestForInformationDD, tPlanning.RequestForInformationBudget, tPlanning.RequestForInformationSD, tPlanning.RequestForInformationPlannedBudget, tPlanning.RequestForInformationCD));
+                planningDocsListDueDate.Add((tPlanning.SupplierContractDD, tPlanning.SupplierContractBudget, tPlanning.SupplierContractSD, tPlanning.SupplierContractPlannedBudget, tPlanning.SupplierContractCD));
+                planningDocsListDueDate.Add((tPlanning.RequestForProposalDD, tPlanning.RequestForProposalBudget, tPlanning.RequestForProposalSD, tPlanning.RequestForProposalPlannedBudget, tPlanning.RequestForProposalCD));
+                planningDocsListDueDate.Add((tPlanning.PhaseReviewPlanningDD, tPlanning.PhaseReviewPlanningBudget, tPlanning.PhaseReviewPlanningSD, tPlanning.PhaseReviewPlanningPlannedBudget, tPlanning.PhaseReviewPlanningCD));
             }
             
 
@@ -141,33 +141,33 @@ namespace ProjectManagementToolkit
 
             if(tExecute != null)
             {
-                executeDocsListDueDate.Add((tExecute.TimeMangementDD, tExecute.TimeMangementBudget));
-                executeDocsListDueDate.Add((tExecute.TimeSheetDD, tExecute.TimeSheetBudget));
-                executeDocsListDueDate.Add((tExecute.TimeSheetRegisterDD, tExecute.TimeSheetRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.CostManagementProcessDD, tExecute.CostManagementProcessBudget));
-                executeDocsListDueDate.Add((tExecute.ExpenseFormDD, tExecute.ExpenseFormBudget));
-                executeDocsListDueDate.Add((tExecute.ExpenseRegisterDD, tExecute.ExpenseRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.QualityManagementDD, tExecute.QualityManagementBudget));
-                executeDocsListDueDate.Add((tExecute.QualityReviewPlanDD, tExecute.QualityReviewPlanBudget));
-                executeDocsListDueDate.Add((tExecute.QualityReviewFormDD, tExecute.QualityReviewFormBudget));
-                executeDocsListDueDate.Add((tExecute.ChangeManagementProcessDD, tExecute.ChangeManagementProcessBudget));
-                executeDocsListDueDate.Add((tExecute.ChangeRequestFormDD, tExecute.ChangeRequestFormBudget));
-                executeDocsListDueDate.Add((tExecute.ChangeRequestRegisterDD, tExecute.ChangeRequestRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.RiskManagamentProcessDD, tExecute.RiskManagamentProcessBudget));
-                executeDocsListDueDate.Add((tExecute.RiskFormDD, tExecute.RiskFormBudget));
-                executeDocsListDueDate.Add((tExecute.RiskRegisterDD, tExecute.RiskRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.IssueManagementProcessDD, tExecute.IssueManagementProcessBudget));
-                executeDocsListDueDate.Add((tExecute.IssueFormDD, tExecute.IssueFormBudget));
-                executeDocsListDueDate.Add((tExecute.IssueRegisterDD, tExecute.IssueRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.PurchaseOrderDD, tExecute.PurchaseOrderBudget));
-                executeDocsListDueDate.Add((tExecute.ProcurementRegisterDD, tExecute.ProcurementRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.AcceptanceManagementProcessDD, tExecute.AcceptanceManagementProcessBudget));
-                executeDocsListDueDate.Add((tExecute.AcceptanceFormDD, tExecute.AcceptanceFormBudget));
-                executeDocsListDueDate.Add((tExecute.AcceptanceRegisterDD, tExecute.AcceptanceRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.CommunicationsManagementProcessDD, tExecute.CommunicationsManagementProcessBudget));
-                executeDocsListDueDate.Add((tExecute.ProjectStatusReportDD, tExecute.ProjectStatusReportBudget));
-                executeDocsListDueDate.Add((tExecute.CommunicationsRegisterDD, tExecute.CommunicationsRegisterBudget));
-                executeDocsListDueDate.Add((tExecute.PhaseReviewExeDD, tExecute.PhaseReviewExeBudget));
+                executeDocsListDueDate.Add((tExecute.TimeMangementDD, tExecute.TimeMangementBudget, tExecute.TimeMangementSD, tExecute.TimeMangementPlannedBudget, tExecute.TimeMangementCD));
+                executeDocsListDueDate.Add((tExecute.TimeSheetDD, tExecute.TimeSheetBudget, tExecute.TimeSheetSD, tExecute.TimeSheetPlannedBudget, tExecute.TimeSheetCD));
+                executeDocsListDueDate.Add((tExecute.TimeSheetRegisterDD, tExecute.TimeSheetRegisterBudget, tExecute.TimeSheetRegisterSD, tExecute.TimeSheetRegisterPlannedBudget, tExecute.TimeSheetRegisterCD));
+                executeDocsListDueDate.Add((tExecute.CostManagementProcessDD, tExecute.CostManagementProcessBudget, tExecute.CostManagementProcessSD, tExecute.CostManagementProcessPlannedBudget, tExecute.CostManagementProcessCD));
+                executeDocsListDueDate.Add((tExecute.ExpenseFormDD, tExecute.ExpenseFormBudget, tExecute.ExpenseFormSD, tExecute.ExpenseFormPlannedBudget, tExecute.ExpenseFormCD));
+                executeDocsListDueDate.Add((tExecute.ExpenseRegisterDD, tExecute.ExpenseRegisterBudget, tExecute.ExpenseRegisterSD, tExecute.ExpenseRegisterPlannedBudget, tExecute.ExpenseRegisterCD));
+                executeDocsListDueDate.Add((tExecute.QualityManagementDD, tExecute.QualityManagementBudget, tExecute.QualityManagementSD, tExecute.QualityManagementPlannedBudget, tExecute.QualityManagementCD));
+                executeDocsListDueDate.Add((tExecute.QualityReviewPlanDD, tExecute.QualityReviewPlanBudget, tExecute.QualityReviewPlanSD, tExecute.QualityReviewPlanPlannedBudget, tExecute.QualityReviewPlanCD));
+                executeDocsListDueDate.Add((tExecute.QualityReviewFormDD, tExecute.QualityReviewFormBudget, tExecute.QualityReviewFormSD, tExecute.QualityReviewFormPlannedBudget, tExecute.QualityReviewFormCD));
+                executeDocsListDueDate.Add((tExecute.ChangeManagementProcessDD, tExecute.ChangeManagementProcessBudget, tExecute.ChangeManagementProcessSD, tExecute.ChangeManagementProcessPlannedBudget, tExecute.ChangeManagementProcessCD));
+                executeDocsListDueDate.Add((tExecute.ChangeRequestFormDD, tExecute.ChangeRequestFormBudget, tExecute.ChangeRequestFormSD, tExecute.ChangeRequestFormPlannedBudget, tExecute.ChangeRequestFormCD));
+                executeDocsListDueDate.Add((tExecute.ChangeRequestRegisterDD, tExecute.ChangeRequestRegisterBudget, tExecute.ChangeRequestRegisterSD, tExecute.ChangeRequestRegisterPlannedBudget, tExecute.ChangeRequestRegisterCD));
+                executeDocsListDueDate.Add((tExecute.RiskManagamentProcessDD, tExecute.RiskManagamentProcessBudget, tExecute.RiskManagamentProcessSD, tExecute.RiskManagamentProcessPlannedBudget, tExecute.RiskManagamentProcessCD));
+                executeDocsListDueDate.Add((tExecute.RiskFormDD, tExecute.RiskFormBudget, tExecute.RiskFormSD, tExecute.RiskFormPlannedBudget, tExecute.RiskFormCD));
+                executeDocsListDueDate.Add((tExecute.RiskRegisterDD, tExecute.RiskRegisterBudget, tExecute.RiskRegisterSD, tExecute.RiskRegisterPlannedBudget, tExecute.RiskRegisterCD));
+                executeDocsListDueDate.Add((tExecute.IssueManagementProcessDD, tExecute.IssueManagementProcessBudget, tExecute.IssueManagementProcessSD, tExecute.IssueManagementProcessPlannedBudget, tExecute.IssueManagementProcessCD));
+                executeDocsListDueDate.Add((tExecute.IssueFormDD, tExecute.IssueFormBudget, tExecute.IssueFormSD, tExecute.IssueFormPlannedBudget, tExecute.IssueFormCD));
+                executeDocsListDueDate.Add((tExecute.IssueRegisterDD, tExecute.IssueRegisterBudget, tExecute.IssueRegisterSD, tExecute.IssueRegisterPlannedBudget, tExecute.IssueRegisterCD));
+                executeDocsListDueDate.Add((tExecute.PurchaseOrderDD, tExecute.PurchaseOrderBudget, tExecute.PurchaseOrderSD, tExecute.PurchaseOrderPlannedBudget, tExecute.PurchaseOrderCD));
+                executeDocsListDueDate.Add((tExecute.ProcurementRegisterDD, tExecute.ProcurementRegisterBudget, tExecute.ProcurementRegisterSD, tExecute.ProcurementRegisterPlannedBudget, tExecute.ProcurementRegisterCD));
+                executeDocsListDueDate.Add((tExecute.AcceptanceManagementProcessDD, tExecute.AcceptanceManagementProcessBudget, tExecute.AcceptanceManagementProcessSD, tExecute.AcceptanceManagementProcessPlannedBudget, tExecute.AcceptanceManagementProcessCD));
+                executeDocsListDueDate.Add((tExecute.AcceptanceFormDD, tExecute.AcceptanceFormBudget, tExecute.AcceptanceFormSD, tExecute.AcceptanceFormPlannedBudget, tExecute.AcceptanceFormCD));
+                executeDocsListDueDate.Add((tExecute.AcceptanceRegisterDD, tExecute.AcceptanceRegisterBudget, tExecute.AcceptanceRegisterSD, tExecute.AcceptanceRegisterPlannedBudget, tExecute.AcceptanceRegisterCD));
+                executeDocsListDueDate.Add((tExecute.CommunicationsManagementProcessDD, tExecute.CommunicationsManagementProcessBudget, tExecute.CommunicationsManagementProcessSD, tExecute.CommunicationsManagementProcessPlannedBudget, tExecute.CommunicationsManagementProcessCD));
+                executeDocsListDueDate.Add((tExecute.ProjectStatusReportDD, tExecute.ProjectStatusReportBudget, tExecute.ProjectStatusReportSD, tExecute.ProjectStatusReportPlannedBudget, tExecute.ProjectStatusReportCD));
+                executeDocsListDueDate.Add((tExecute.CommunicationsRegisterDD, tExecute.CommunicationsRegisterBudget, tExecute.CommunicationsRegisterSD, tExecute.CommunicationsRegisterPlannedBudget, tExecute.CommunicationsRegisterCD));
+                executeDocsListDueDate.Add((tExecute.PhaseReviewExeDD, tExecute.PhaseReviewExeBudget, tExecute.PhaseReviewExeSD, tExecute.PhaseReviewExePlannedBudget, tExecute.PhaseReviewExeCD));
             }
 
            
@@ -1129,25 +1129,43 @@ namespace ProjectManagementToolkit
                     if (planningDocsListDueDate.Count > 0)
                     {
                         if (planningDocsListDueDate[i].dueDate != null)
-                            dgvPlanning.Rows[i].Cells[1].Value = planningDocsListDueDate[i].dueDate;
+                            dgvPlanning.Rows[i].Cells[3].Value = planningDocsListDueDate[i].dueDate;
+                        else
+                            dgvPlanning.Rows[i].Cells[3].Value = "";
+
+                        if (planningDocsListDueDate[i].budget != null)
+                            dgvPlanning.Rows[i].Cells[5].Value = planningDocsListDueDate[i].budget;
+                        else
+                            dgvPlanning.Rows[i].Cells[5].Value = "";
+
+                        if (planningDocsListDueDate[i].startDate != null)
+                            dgvPlanning.Rows[i].Cells[1].Value = planningDocsListDueDate[i].startDate;
                         else
                             dgvPlanning.Rows[i].Cells[1].Value = "";
 
-                        if (planningDocsListDueDate[i].budget != null)
-                            dgvPlanning.Rows[i].Cells[2].Value = planningDocsListDueDate[i].budget;
+                        if (planningDocsListDueDate[i].completedDate != null)
+                            dgvPlanning.Rows[i].Cells[2].Value = planningDocsListDueDate[i].completedDate;
                         else
                             dgvPlanning.Rows[i].Cells[2].Value = "";
+
+                        if (planningDocsListDueDate[i].plannedBudget != null)
+                            dgvPlanning.Rows[i].Cells[4].Value = planningDocsListDueDate[i].plannedBudget;
+                        else
+                            dgvPlanning.Rows[i].Cells[4].Value = "";
                     }
                     else
                     {
                         dgvPlanning.Rows[i].Cells[1].Value = "";
                         dgvPlanning.Rows[i].Cells[2].Value = "";
+                        dgvPlanning.Rows[i].Cells[3].Value = "";
+                        dgvPlanning.Rows[i].Cells[4].Value = "";
+                        dgvPlanning.Rows[i].Cells[5].Value = "";
                     }
 
 
                     if (planningDocsListStatus[i] == "UNDONE")
                     {
-                        dgvPlanning.Rows[i].Cells[3].Style.BackColor = Color.Orange;
+                        dgvPlanning.Rows[i].Cells[6].Style.BackColor = Color.Orange;
                         inprogPlanning++;
                     }
                     else if (planningDocsListStatus[i] == "DONE")
@@ -1157,7 +1175,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compPlanning++;
-                        dgvPlanning.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
+                        dgvPlanning.Rows[i].Cells[6].Style.BackColor = Color.LimeGreen;
                         planningPercentage = ((planningProgressVal) / planningDocuments.Count) * 100;
 
                         xValues1[1] = "Planning";
@@ -1179,7 +1197,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompPlanning++;
-                        dgvPlanning.Rows[i].Cells[3].Style.BackColor = Color.Gray;
+                        dgvPlanning.Rows[i].Cells[6].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1190,7 +1208,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindPlanning++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvPlanning.Rows[j].Cells[3].Style.BackColor = Color.Red;
+                        dgvPlanning.Rows[j].Cells[6].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1280,25 +1298,43 @@ namespace ProjectManagementToolkit
                     if (executeDocsListDueDate.Count > 0)
                     {
                         if (executeDocsListDueDate[i].dueDate != null)
-                            dgvExecution.Rows[i].Cells[1].Value = executeDocsListDueDate[i].dueDate;
+                            dgvExecution.Rows[i].Cells[3].Value = executeDocsListDueDate[i].dueDate;
+                        else
+                            dgvExecution.Rows[i].Cells[3].Value = "";
+
+                        if (executeDocsListDueDate[i].budget != null)
+                            dgvExecution.Rows[i].Cells[5].Value = executeDocsListDueDate[i].budget;
+                        else
+                            dgvExecution.Rows[i].Cells[5].Value = "";
+
+                        if (executeDocsListDueDate[i].startDate != null)
+                            dgvExecution.Rows[i].Cells[1].Value = executeDocsListDueDate[i].startDate;
                         else
                             dgvExecution.Rows[i].Cells[1].Value = "";
 
-                        if (executeDocsListDueDate[i].budget != null)
-                            dgvExecution.Rows[i].Cells[2].Value = executeDocsListDueDate[i].budget;
+                        if (executeDocsListDueDate[i].completedDate != null)
+                            dgvExecution.Rows[i].Cells[2].Value = executeDocsListDueDate[i].completedDate;
                         else
                             dgvExecution.Rows[i].Cells[2].Value = "";
+
+                        if (executeDocsListDueDate[i].plannedBudget != null)
+                            dgvExecution.Rows[i].Cells[4].Value = executeDocsListDueDate[i].plannedBudget;
+                        else
+                            dgvExecution.Rows[i].Cells[4].Value = "";
                     }
                     else
                     {
                         dgvExecution.Rows[i].Cells[1].Value = "";
                         dgvExecution.Rows[i].Cells[2].Value = "";
+                        dgvExecution.Rows[i].Cells[3].Value = "";
+                        dgvExecution.Rows[i].Cells[4].Value = "";
+                        dgvExecution.Rows[i].Cells[5].Value = "";
                     }
 
 
                     if (executionDocsListStatus[i] == "UNDONE")
                     {
-                        dgvExecution.Rows[i].Cells[3].Style.BackColor = Color.Orange;
+                        dgvExecution.Rows[i].Cells[6].Style.BackColor = Color.Orange;
                         inprogExecution++;
                     }
                     else if (executionDocsListStatus[i] == "DONE")
@@ -1308,7 +1344,7 @@ namespace ProjectManagementToolkit
                         k = i;
 
                         compExecution++;
-                        dgvExecution.Rows[i].Cells[3].Style.BackColor = Color.LimeGreen;
+                        dgvExecution.Rows[i].Cells[6].Style.BackColor = Color.LimeGreen;
                         executionPercentage = ((executionProgressVal) / executionDocuments.Count) * 100;
 
                         xValues1[2] = "Execution";
@@ -1331,7 +1367,7 @@ namespace ProjectManagementToolkit
                         chart2.Series["Not Started"].Points.DataBindXY(xValues1, yValues2);
 
                         uncompExecution++;
-                        dgvExecution.Rows[i].Cells[3].Style.BackColor = Color.Gray;
+                        dgvExecution.Rows[i].Cells[6].Style.BackColor = Color.Gray;
                     }
                 }
 
@@ -1342,7 +1378,7 @@ namespace ProjectManagementToolkit
                         //Increment the behind schedule tasks
                         behindExecution++;
                         //Set all the tasks that are behind schedule to display red
-                        dgvExecution.Rows[j].Cells[3].Style.BackColor = Color.Red;
+                        dgvExecution.Rows[j].Cells[6].Style.BackColor = Color.Red;
                     }
                 }
 
@@ -1396,7 +1432,7 @@ namespace ProjectManagementToolkit
                     if (closingListDueDate.Count > 0)
                     {
                         if (closingListDueDate[i].dueDate != null)
-                            dgvClosing.Rows[i].Cells[1].Value = closingListDueDate[i].dueDate;
+                            dgvClosing.Rows[i].Cells[1].Value = closingListDueDate[i].startDate;
                         else
                             dgvClosing.Rows[i].Cells[1].Value = "";
 
@@ -1542,9 +1578,12 @@ namespace ProjectManagementToolkit
 
             canChange = true;
 
+            //Calling earnedValueAnalysis method to update the data grid view
+
             earnedValueAnalysis(dgvInitiation, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, totalDaysInitlbl, lblTotalInitialBudget);
             earnedValueAnalysis(dgvClosing, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblClosingDays, lblClosingBudget);
-
+            earnedValueAnalysis(dgvPlanning, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblPlanningSchedule, lblPlanningBudget);
+            earnedValueAnalysis(dgvExecution, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblExecutionSchedule, lblExecutionBudget);
         }
 
         private List<string> getLocalDocuments()
@@ -1653,94 +1692,234 @@ namespace ProjectManagementToolkit
             }
             else if (phase == 2)
             {
-                currentPlan.ProjectPlanDD = dgvPlanning.Rows[0].Cells[1].Value.ToString();
-                currentPlan.ResourcePlanDD = dgvPlanning.Rows[1].Cells[1].Value.ToString();
-                currentPlan.FinancialPlanDD = dgvPlanning.Rows[2].Cells[1].Value.ToString();
-                currentPlan.QualityPlanDD = dgvPlanning.Rows[3].Cells[1].Value.ToString();
-                currentPlan.RiskPlanDD = dgvPlanning.Rows[4].Cells[1].Value.ToString();
-                currentPlan.AcceptancePlanDD = dgvPlanning.Rows[5].Cells[1].Value.ToString();
-                currentPlan.CommunicationPlanDD = dgvPlanning.Rows[6].Cells[1].Value.ToString();
-                currentPlan.ProcurementPlanDD = dgvPlanning.Rows[7].Cells[1].Value.ToString();
-                currentPlan.StatementOfWorkDD = dgvPlanning.Rows[8].Cells[1].Value.ToString();
-                currentPlan.RequestForInformationDD = dgvPlanning.Rows[9].Cells[1].Value.ToString();
-                currentPlan.SupplierContractDD = dgvPlanning.Rows[10].Cells[1].Value.ToString();
-                currentPlan.RequestForProposalDD = dgvPlanning.Rows[11].Cells[1].Value.ToString();
-                currentPlan.PhaseReviewPlanningDD = dgvPlanning.Rows[12].Cells[1].Value.ToString();
+                //Start Date
+                currentPlan.ProjectPlanSD = dgvPlanning.Rows[0].Cells[1].Value.ToString();
+                currentPlan.ResourcePlanSD = dgvPlanning.Rows[1].Cells[1].Value.ToString();
+                currentPlan.FinancialPlanSD = dgvPlanning.Rows[2].Cells[1].Value.ToString();
+                currentPlan.QualityPlanSD = dgvPlanning.Rows[3].Cells[1].Value.ToString();
+                currentPlan.RiskPlanSD = dgvPlanning.Rows[4].Cells[1].Value.ToString();
+                currentPlan.AcceptancePlanSD = dgvPlanning.Rows[5].Cells[1].Value.ToString();
+                currentPlan.CommunicationPlanSD = dgvPlanning.Rows[6].Cells[1].Value.ToString();
+                currentPlan.ProcurementPlanSD = dgvPlanning.Rows[7].Cells[1].Value.ToString();
+                currentPlan.StatementOfWorkSD = dgvPlanning.Rows[8].Cells[1].Value.ToString();
+                currentPlan.RequestForInformationSD = dgvPlanning.Rows[9].Cells[1].Value.ToString();
+                currentPlan.SupplierContractSD = dgvPlanning.Rows[10].Cells[1].Value.ToString();
+                currentPlan.RequestForProposalSD = dgvPlanning.Rows[11].Cells[1].Value.ToString();
+                currentPlan.PhaseReviewPlanningSD = dgvPlanning.Rows[12].Cells[1].Value.ToString();
 
-                currentPlan.ProjectPlanBudget = dgvPlanning.Rows[0].Cells[2].Value.ToString();
-                currentPlan.ResourcePlanBudget = dgvPlanning.Rows[1].Cells[2].Value.ToString();
-                currentPlan.FinancialPlanBudget = dgvPlanning.Rows[2].Cells[2].Value.ToString();
-                currentPlan.QualityPlanBudget = dgvPlanning.Rows[3].Cells[2].Value.ToString();
-                currentPlan.RiskPlanBudget = dgvPlanning.Rows[4].Cells[2].Value.ToString();
-                currentPlan.AcceptancePlanBudget = dgvPlanning.Rows[5].Cells[2].Value.ToString();
-                currentPlan.CommunicationPlanBudget = dgvPlanning.Rows[6].Cells[2].Value.ToString();
-                currentPlan.ProcurementPlanBudget = dgvPlanning.Rows[7].Cells[2].Value.ToString();
-                currentPlan.StatementOfWorkBudget = dgvPlanning.Rows[8].Cells[2].Value.ToString();
-                currentPlan.RequestForInformationBudget = dgvPlanning.Rows[9].Cells[2].Value.ToString();
-                currentPlan.SupplierContractBudget = dgvPlanning.Rows[10].Cells[2].Value.ToString();
-                currentPlan.RequestForProposalBudget = dgvPlanning.Rows[11].Cells[2].Value.ToString();
-                currentPlan.PhaseReviewPlanningBudget = dgvPlanning.Rows[12].Cells[2].Value.ToString();
+                //Completed Date
+                currentPlan.ProjectPlanCD = dgvPlanning.Rows[0].Cells[2].Value.ToString();
+                currentPlan.ResourcePlanCD = dgvPlanning.Rows[1].Cells[2].Value.ToString();
+                currentPlan.FinancialPlanCD = dgvPlanning.Rows[2].Cells[2].Value.ToString();
+                currentPlan.QualityPlanCD = dgvPlanning.Rows[3].Cells[2].Value.ToString();
+                currentPlan.RiskPlanCD = dgvPlanning.Rows[4].Cells[2].Value.ToString();
+                currentPlan.AcceptancePlanCD = dgvPlanning.Rows[5].Cells[2].Value.ToString();
+                currentPlan.CommunicationPlanCD = dgvPlanning.Rows[6].Cells[2].Value.ToString();
+                currentPlan.ProcurementPlanCD = dgvPlanning.Rows[7].Cells[2].Value.ToString();
+                currentPlan.StatementOfWorkCD = dgvPlanning.Rows[8].Cells[2].Value.ToString();
+                currentPlan.RequestForInformationCD = dgvPlanning.Rows[9].Cells[2].Value.ToString();
+                currentPlan.SupplierContractCD = dgvPlanning.Rows[10].Cells[2].Value.ToString();
+                currentPlan.RequestForProposalCD = dgvPlanning.Rows[11].Cells[2].Value.ToString();
+                currentPlan.PhaseReviewPlanningCD = dgvPlanning.Rows[12].Cells[2].Value.ToString();
+
+                //Due Date
+                currentPlan.ProjectPlanDD = dgvPlanning.Rows[0].Cells[3].Value.ToString();
+                currentPlan.ResourcePlanDD = dgvPlanning.Rows[1].Cells[3].Value.ToString();
+                currentPlan.FinancialPlanDD = dgvPlanning.Rows[2].Cells[3].Value.ToString();
+                currentPlan.QualityPlanDD = dgvPlanning.Rows[3].Cells[3].Value.ToString();
+                currentPlan.RiskPlanDD = dgvPlanning.Rows[4].Cells[3].Value.ToString();
+                currentPlan.AcceptancePlanDD = dgvPlanning.Rows[5].Cells[3].Value.ToString();
+                currentPlan.CommunicationPlanDD = dgvPlanning.Rows[6].Cells[3].Value.ToString();
+                currentPlan.ProcurementPlanDD = dgvPlanning.Rows[7].Cells[3].Value.ToString();
+                currentPlan.StatementOfWorkDD = dgvPlanning.Rows[8].Cells[3].Value.ToString();
+                currentPlan.RequestForInformationDD = dgvPlanning.Rows[9].Cells[3].Value.ToString();
+                currentPlan.SupplierContractDD = dgvPlanning.Rows[10].Cells[3].Value.ToString();
+                currentPlan.RequestForProposalDD = dgvPlanning.Rows[11].Cells[3].Value.ToString();
+                currentPlan.PhaseReviewPlanningDD = dgvPlanning.Rows[12].Cells[3].Value.ToString();
+
+                //Planned Budget
+                currentPlan.ProjectPlanPlannedBudget = dgvPlanning.Rows[0].Cells[4].Value.ToString();
+                currentPlan.ResourcePlanPlannedBudget = dgvPlanning.Rows[1].Cells[4].Value.ToString();
+                currentPlan.FinancialPlanPlannedBudget = dgvPlanning.Rows[2].Cells[4].Value.ToString();
+                currentPlan.QualityPlanPlannedBudget = dgvPlanning.Rows[3].Cells[4].Value.ToString();
+                currentPlan.RiskPlanPlannedBudget = dgvPlanning.Rows[4].Cells[4].Value.ToString();
+                currentPlan.AcceptancePlanPlannedBudget = dgvPlanning.Rows[5].Cells[4].Value.ToString();
+                currentPlan.CommunicationPlanPlannedBudget = dgvPlanning.Rows[6].Cells[4].Value.ToString();
+                currentPlan.ProcurementPlanPlannedBudget = dgvPlanning.Rows[7].Cells[4].Value.ToString();
+                currentPlan.StatementOfWorkPlannedBudget = dgvPlanning.Rows[8].Cells[4].Value.ToString();
+                currentPlan.RequestForInformationPlannedBudget = dgvPlanning.Rows[9].Cells[4].Value.ToString();
+                currentPlan.SupplierContractPlannedBudget = dgvPlanning.Rows[10].Cells[4].Value.ToString();
+                currentPlan.RequestForProposalPlannedBudget = dgvPlanning.Rows[11].Cells[4].Value.ToString();
+                currentPlan.PhaseReviewPlanningPlannedBudget = dgvPlanning.Rows[12].Cells[4].Value.ToString();
+
+                //Actual Budget Used
+                currentPlan.ProjectPlanBudget = dgvPlanning.Rows[0].Cells[5].Value.ToString();
+                currentPlan.ResourcePlanBudget = dgvPlanning.Rows[1].Cells[5].Value.ToString();
+                currentPlan.FinancialPlanBudget = dgvPlanning.Rows[2].Cells[5].Value.ToString();
+                currentPlan.QualityPlanBudget = dgvPlanning.Rows[3].Cells[5].Value.ToString();
+                currentPlan.RiskPlanBudget = dgvPlanning.Rows[4].Cells[5].Value.ToString();
+                currentPlan.AcceptancePlanBudget = dgvPlanning.Rows[5].Cells[5].Value.ToString();
+                currentPlan.CommunicationPlanBudget = dgvPlanning.Rows[6].Cells[5].Value.ToString();
+                currentPlan.ProcurementPlanBudget = dgvPlanning.Rows[7].Cells[5].Value.ToString();
+                currentPlan.StatementOfWorkBudget = dgvPlanning.Rows[8].Cells[5].Value.ToString();
+                currentPlan.RequestForInformationBudget = dgvPlanning.Rows[9].Cells[5].Value.ToString();
+                currentPlan.SupplierContractBudget = dgvPlanning.Rows[10].Cells[5].Value.ToString();
+                currentPlan.RequestForProposalBudget = dgvPlanning.Rows[11].Cells[5].Value.ToString();
+                currentPlan.PhaseReviewPlanningBudget = dgvPlanning.Rows[12].Cells[5].Value.ToString();
+
+                earnedValueAnalysis(dgvPlanning, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblPlanningSchedule, lblPlanningBudget);
 
                 string jsong = JsonConvert.SerializeObject(currentPlan);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "PlanningDueDateModel");
             }
             else if (phase == 3)
             {
-                currentExecute.TimeMangementDD = dgvExecution.Rows[0].Cells[1].Value.ToString();
-                currentExecute.TimeSheetDD = dgvExecution.Rows[1].Cells[1].Value.ToString();
-                currentExecute.TimeSheetRegisterDD = dgvExecution.Rows[2].Cells[1].Value.ToString();
-                currentExecute.CostManagementProcessDD = dgvExecution.Rows[3].Cells[1].Value.ToString();
-                currentExecute.ExpenseFormDD = dgvExecution.Rows[4].Cells[1].Value.ToString();
-                currentExecute.ExpenseRegisterDD = dgvExecution.Rows[5].Cells[1].Value.ToString();
-                currentExecute.QualityManagementDD = dgvExecution.Rows[6].Cells[1].Value.ToString();
-                currentExecute.QualityReviewPlanDD = dgvExecution.Rows[7].Cells[1].Value.ToString();
-                currentExecute.QualityReviewFormDD = dgvExecution.Rows[8].Cells[1].Value.ToString();
-                currentExecute.ChangeManagementProcessDD = dgvExecution.Rows[9].Cells[1].Value.ToString();
-                currentExecute.ChangeRequestFormDD = dgvExecution.Rows[10].Cells[1].Value.ToString();
-                currentExecute.ChangeRequestRegisterDD = dgvExecution.Rows[11].Cells[1].Value.ToString();
-                currentExecute.RiskManagamentProcessDD = dgvExecution.Rows[12].Cells[1].Value.ToString();
-                currentExecute.RiskFormDD = dgvExecution.Rows[13].Cells[1].Value.ToString();
-                currentExecute.RiskRegisterDD = dgvExecution.Rows[14].Cells[1].Value.ToString();
-                currentExecute.IssueManagementProcessDD = dgvExecution.Rows[15].Cells[1].Value.ToString();
-                currentExecute.IssueFormDD = dgvExecution.Rows[16].Cells[1].Value.ToString();
-                currentExecute.IssueRegisterDD = dgvExecution.Rows[17].Cells[1].Value.ToString();
-                currentExecute.PurchaseOrderDD = dgvExecution.Rows[18].Cells[1].Value.ToString();
-                currentExecute.ProcurementRegisterDD = dgvExecution.Rows[19].Cells[1].Value.ToString();
-                currentExecute.AcceptanceManagementProcessDD = dgvExecution.Rows[20].Cells[1].Value.ToString();
-                currentExecute.AcceptanceFormDD = dgvExecution.Rows[21].Cells[1].Value.ToString();
-                currentExecute.AcceptanceRegisterDD = dgvExecution.Rows[22].Cells[1].Value.ToString();
-                currentExecute.CommunicationsManagementProcessDD = dgvExecution.Rows[23].Cells[1].Value.ToString();
-                currentExecute.ProjectStatusReportDD = dgvExecution.Rows[24].Cells[1].Value.ToString();
-                currentExecute.CommunicationsRegisterDD = dgvExecution.Rows[25].Cells[1].Value.ToString();
-                currentExecute.PhaseReviewExeDD = dgvExecution.Rows[26].Cells[1].Value.ToString();
+                //Start Date
+                currentExecute.TimeMangementSD = dgvExecution.Rows[0].Cells[1].Value.ToString();
+                currentExecute.TimeSheetSD = dgvExecution.Rows[1].Cells[1].Value.ToString();
+                currentExecute.TimeSheetRegisterSD = dgvExecution.Rows[2].Cells[1].Value.ToString();
+                currentExecute.CostManagementProcessSD = dgvExecution.Rows[3].Cells[1].Value.ToString();
+                currentExecute.ExpenseFormSD = dgvExecution.Rows[4].Cells[1].Value.ToString();
+                currentExecute.ExpenseRegisterSD = dgvExecution.Rows[5].Cells[1].Value.ToString();
+                currentExecute.QualityManagementSD = dgvExecution.Rows[6].Cells[1].Value.ToString();
+                currentExecute.QualityReviewPlanSD = dgvExecution.Rows[7].Cells[1].Value.ToString();
+                currentExecute.QualityReviewFormSD = dgvExecution.Rows[8].Cells[1].Value.ToString();
+                currentExecute.ChangeManagementProcessSD = dgvExecution.Rows[9].Cells[1].Value.ToString();
+                currentExecute.ChangeRequestFormSD = dgvExecution.Rows[10].Cells[1].Value.ToString();
+                currentExecute.ChangeRequestRegisterSD = dgvExecution.Rows[11].Cells[1].Value.ToString();
+                currentExecute.RiskManagamentProcessSD = dgvExecution.Rows[12].Cells[1].Value.ToString();
+                currentExecute.RiskFormSD = dgvExecution.Rows[13].Cells[1].Value.ToString();
+                currentExecute.RiskRegisterSD = dgvExecution.Rows[14].Cells[1].Value.ToString();
+                currentExecute.IssueManagementProcessSD = dgvExecution.Rows[15].Cells[1].Value.ToString();
+                currentExecute.IssueFormSD = dgvExecution.Rows[16].Cells[1].Value.ToString();
+                currentExecute.IssueRegisterSD = dgvExecution.Rows[17].Cells[1].Value.ToString();
+                currentExecute.PurchaseOrderSD = dgvExecution.Rows[18].Cells[1].Value.ToString();
+                currentExecute.ProcurementRegisterSD = dgvExecution.Rows[19].Cells[1].Value.ToString();
+                currentExecute.AcceptanceManagementProcessSD = dgvExecution.Rows[20].Cells[1].Value.ToString();
+                currentExecute.AcceptanceFormSD = dgvExecution.Rows[21].Cells[1].Value.ToString();
+                currentExecute.AcceptanceRegisterSD = dgvExecution.Rows[22].Cells[1].Value.ToString();
+                currentExecute.CommunicationsManagementProcessSD = dgvExecution.Rows[23].Cells[1].Value.ToString();
+                currentExecute.ProjectStatusReportSD = dgvExecution.Rows[24].Cells[1].Value.ToString();
+                currentExecute.CommunicationsRegisterSD = dgvExecution.Rows[25].Cells[1].Value.ToString();
+                currentExecute.PhaseReviewExeSD = dgvExecution.Rows[26].Cells[1].Value.ToString();
 
-                currentExecute.TimeMangementBudget = dgvExecution.Rows[0].Cells[2].Value.ToString();
-                currentExecute.TimeSheetBudget = dgvExecution.Rows[1].Cells[2].Value.ToString();
-                currentExecute.TimeSheetRegisterBudget = dgvExecution.Rows[2].Cells[2].Value.ToString();
-                currentExecute.CostManagementProcessBudget = dgvExecution.Rows[3].Cells[2].Value.ToString();
-                currentExecute.ExpenseFormBudget = dgvExecution.Rows[4].Cells[2].Value.ToString();
-                currentExecute.ExpenseRegisterBudget = dgvExecution.Rows[5].Cells[2].Value.ToString();
-                currentExecute.QualityManagementBudget = dgvExecution.Rows[6].Cells[2].Value.ToString();
-                currentExecute.QualityReviewPlanBudget = dgvExecution.Rows[7].Cells[2].Value.ToString();
-                currentExecute.QualityReviewFormBudget = dgvExecution.Rows[8].Cells[2].Value.ToString();
-                currentExecute.ChangeManagementProcessBudget = dgvExecution.Rows[9].Cells[2].Value.ToString();
-                currentExecute.ChangeRequestFormBudget = dgvExecution.Rows[10].Cells[2].Value.ToString();
-                currentExecute.ChangeRequestRegisterBudget = dgvExecution.Rows[11].Cells[2].Value.ToString();
-                currentExecute.RiskManagamentProcessBudget = dgvExecution.Rows[12].Cells[2].Value.ToString();
-                currentExecute.RiskFormBudget = dgvExecution.Rows[13].Cells[2].Value.ToString();
-                currentExecute.RiskRegisterBudget = dgvExecution.Rows[14].Cells[2].Value.ToString();
-                currentExecute.IssueManagementProcessBudget = dgvExecution.Rows[15].Cells[2].Value.ToString();
-                currentExecute.IssueFormBudget = dgvExecution.Rows[16].Cells[2].Value.ToString();
-                currentExecute.IssueRegisterBudget = dgvExecution.Rows[17].Cells[2].Value.ToString();
-                currentExecute.PurchaseOrderBudget = dgvExecution.Rows[18].Cells[2].Value.ToString();
-                currentExecute.ProcurementRegisterBudget = dgvExecution.Rows[19].Cells[2].Value.ToString();
-                currentExecute.AcceptanceManagementProcessBudget = dgvExecution.Rows[20].Cells[2].Value.ToString();
-                currentExecute.AcceptanceFormBudget = dgvExecution.Rows[21].Cells[2].Value.ToString();
-                currentExecute.AcceptanceRegisterBudget = dgvExecution.Rows[22].Cells[2].Value.ToString();
-                currentExecute.CommunicationsManagementProcessBudget = dgvExecution.Rows[23].Cells[2].Value.ToString();
-                currentExecute.ProjectStatusReportBudget = dgvExecution.Rows[24].Cells[2].Value.ToString();
-                currentExecute.CommunicationsRegisterBudget = dgvExecution.Rows[25].Cells[2].Value.ToString();
-                currentExecute.PhaseReviewExeBudget = dgvExecution.Rows[26].Cells[2].Value.ToString();
+                //Completed Date
+                currentExecute.TimeMangementCD = dgvExecution.Rows[0].Cells[2].Value.ToString();
+                currentExecute.TimeSheetCD = dgvExecution.Rows[1].Cells[2].Value.ToString();
+                currentExecute.TimeSheetRegisterCD = dgvExecution.Rows[2].Cells[2].Value.ToString();
+                currentExecute.CostManagementProcessCD = dgvExecution.Rows[3].Cells[2].Value.ToString();
+                currentExecute.ExpenseFormCD = dgvExecution.Rows[4].Cells[2].Value.ToString();
+                currentExecute.ExpenseRegisterCD = dgvExecution.Rows[5].Cells[2].Value.ToString();
+                currentExecute.QualityManagementCD = dgvExecution.Rows[6].Cells[2].Value.ToString();
+                currentExecute.QualityReviewPlanCD = dgvExecution.Rows[7].Cells[2].Value.ToString();
+                currentExecute.QualityReviewFormCD = dgvExecution.Rows[8].Cells[2].Value.ToString();
+                currentExecute.ChangeManagementProcessCD = dgvExecution.Rows[9].Cells[2].Value.ToString();
+                currentExecute.ChangeRequestFormCD = dgvExecution.Rows[10].Cells[2].Value.ToString();
+                currentExecute.ChangeRequestRegisterCD = dgvExecution.Rows[11].Cells[2].Value.ToString();
+                currentExecute.RiskManagamentProcessCD = dgvExecution.Rows[12].Cells[2].Value.ToString();
+                currentExecute.RiskFormCD = dgvExecution.Rows[13].Cells[2].Value.ToString();
+                currentExecute.RiskRegisterCD = dgvExecution.Rows[14].Cells[2].Value.ToString();
+                currentExecute.IssueManagementProcessCD = dgvExecution.Rows[15].Cells[2].Value.ToString();
+                currentExecute.IssueFormCD = dgvExecution.Rows[16].Cells[2].Value.ToString();
+                currentExecute.IssueRegisterCD = dgvExecution.Rows[17].Cells[2].Value.ToString();
+                currentExecute.PurchaseOrderCD = dgvExecution.Rows[18].Cells[2].Value.ToString();
+                currentExecute.ProcurementRegisterCD = dgvExecution.Rows[19].Cells[2].Value.ToString();
+                currentExecute.AcceptanceManagementProcessCD = dgvExecution.Rows[20].Cells[2].Value.ToString();
+                currentExecute.AcceptanceFormCD = dgvExecution.Rows[21].Cells[2].Value.ToString();
+                currentExecute.AcceptanceRegisterCD = dgvExecution.Rows[22].Cells[2].Value.ToString();
+                currentExecute.CommunicationsManagementProcessCD = dgvExecution.Rows[23].Cells[2].Value.ToString();
+                currentExecute.ProjectStatusReportCD = dgvExecution.Rows[24].Cells[2].Value.ToString();
+                currentExecute.CommunicationsRegisterCD = dgvExecution.Rows[25].Cells[2].Value.ToString();
+                currentExecute.PhaseReviewExeCD = dgvExecution.Rows[26].Cells[2].Value.ToString();
+
+                //Due Date
+                currentExecute.TimeMangementDD = dgvExecution.Rows[0].Cells[3].Value.ToString();
+                currentExecute.TimeSheetDD = dgvExecution.Rows[1].Cells[3].Value.ToString();
+                currentExecute.TimeSheetRegisterDD = dgvExecution.Rows[2].Cells[3].Value.ToString();
+                currentExecute.CostManagementProcessDD = dgvExecution.Rows[3].Cells[3].Value.ToString();
+                currentExecute.ExpenseFormDD = dgvExecution.Rows[4].Cells[3].Value.ToString();
+                currentExecute.ExpenseRegisterDD = dgvExecution.Rows[5].Cells[3].Value.ToString();
+                currentExecute.QualityManagementDD = dgvExecution.Rows[6].Cells[3].Value.ToString();
+                currentExecute.QualityReviewPlanDD = dgvExecution.Rows[7].Cells[3].Value.ToString();
+                currentExecute.QualityReviewFormDD = dgvExecution.Rows[8].Cells[3].Value.ToString();
+                currentExecute.ChangeManagementProcessDD = dgvExecution.Rows[9].Cells[3].Value.ToString();
+                currentExecute.ChangeRequestFormDD = dgvExecution.Rows[10].Cells[3].Value.ToString();
+                currentExecute.ChangeRequestRegisterDD = dgvExecution.Rows[11].Cells[3].Value.ToString();
+                currentExecute.RiskManagamentProcessDD = dgvExecution.Rows[12].Cells[3].Value.ToString();
+                currentExecute.RiskFormDD = dgvExecution.Rows[13].Cells[3].Value.ToString();
+                currentExecute.RiskRegisterDD = dgvExecution.Rows[14].Cells[3].Value.ToString();
+                currentExecute.IssueManagementProcessDD = dgvExecution.Rows[15].Cells[3].Value.ToString();
+                currentExecute.IssueFormDD = dgvExecution.Rows[16].Cells[3].Value.ToString();
+                currentExecute.IssueRegisterDD = dgvExecution.Rows[17].Cells[3].Value.ToString();
+                currentExecute.PurchaseOrderDD = dgvExecution.Rows[18].Cells[3].Value.ToString();
+                currentExecute.ProcurementRegisterDD = dgvExecution.Rows[19].Cells[3].Value.ToString();
+                currentExecute.AcceptanceManagementProcessDD = dgvExecution.Rows[20].Cells[3].Value.ToString();
+                currentExecute.AcceptanceFormDD = dgvExecution.Rows[21].Cells[3].Value.ToString();
+                currentExecute.AcceptanceRegisterDD = dgvExecution.Rows[22].Cells[3].Value.ToString();
+                currentExecute.CommunicationsManagementProcessDD = dgvExecution.Rows[23].Cells[3].Value.ToString();
+                currentExecute.ProjectStatusReportDD = dgvExecution.Rows[24].Cells[3].Value.ToString();
+                currentExecute.CommunicationsRegisterDD = dgvExecution.Rows[25].Cells[3].Value.ToString();
+                currentExecute.PhaseReviewExeDD = dgvExecution.Rows[26].Cells[3].Value.ToString();
+
+                //Planned Budget
+                currentExecute.TimeMangementPlannedBudget = dgvExecution.Rows[0].Cells[4].Value.ToString();
+                currentExecute.TimeSheetPlannedBudget = dgvExecution.Rows[1].Cells[4].Value.ToString();
+                currentExecute.TimeSheetRegisterPlannedBudget = dgvExecution.Rows[2].Cells[4].Value.ToString();
+                currentExecute.CostManagementProcessPlannedBudget = dgvExecution.Rows[3].Cells[4].Value.ToString();
+                currentExecute.ExpenseFormPlannedBudget = dgvExecution.Rows[4].Cells[4].Value.ToString();
+                currentExecute.ExpenseRegisterPlannedBudget = dgvExecution.Rows[5].Cells[4].Value.ToString();
+                currentExecute.QualityManagementPlannedBudget = dgvExecution.Rows[6].Cells[4].Value.ToString();
+                currentExecute.QualityReviewPlanPlannedBudget = dgvExecution.Rows[7].Cells[4].Value.ToString();
+                currentExecute.QualityReviewFormPlannedBudget = dgvExecution.Rows[8].Cells[4].Value.ToString();
+                currentExecute.ChangeManagementProcessPlannedBudget = dgvExecution.Rows[9].Cells[4].Value.ToString();
+                currentExecute.ChangeRequestFormPlannedBudget = dgvExecution.Rows[10].Cells[4].Value.ToString();
+                currentExecute.ChangeRequestRegisterPlannedBudget = dgvExecution.Rows[11].Cells[4].Value.ToString();
+                currentExecute.RiskManagamentProcessPlannedBudget = dgvExecution.Rows[12].Cells[4].Value.ToString();
+                currentExecute.RiskFormPlannedBudget = dgvExecution.Rows[13].Cells[4].Value.ToString();
+                currentExecute.RiskRegisterPlannedBudget = dgvExecution.Rows[14].Cells[4].Value.ToString();
+                currentExecute.IssueManagementProcessPlannedBudget = dgvExecution.Rows[15].Cells[4].Value.ToString();
+                currentExecute.IssueFormPlannedBudget = dgvExecution.Rows[16].Cells[4].Value.ToString();
+                currentExecute.IssueRegisterPlannedBudget = dgvExecution.Rows[17].Cells[4].Value.ToString();
+                currentExecute.PurchaseOrderPlannedBudget = dgvExecution.Rows[18].Cells[4].Value.ToString();
+                currentExecute.ProcurementRegisterPlannedBudget = dgvExecution.Rows[19].Cells[4].Value.ToString();
+                currentExecute.AcceptanceManagementProcessPlannedBudget = dgvExecution.Rows[20].Cells[4].Value.ToString();
+                currentExecute.AcceptanceFormPlannedBudget = dgvExecution.Rows[21].Cells[4].Value.ToString();
+                currentExecute.AcceptanceRegisterPlannedBudget = dgvExecution.Rows[22].Cells[4].Value.ToString();
+                currentExecute.CommunicationsManagementProcessPlannedBudget = dgvExecution.Rows[23].Cells[4].Value.ToString();
+                currentExecute.ProjectStatusReportPlannedBudget = dgvExecution.Rows[24].Cells[4].Value.ToString();
+                currentExecute.CommunicationsRegisterPlannedBudget = dgvExecution.Rows[25].Cells[4].Value.ToString();
+                currentExecute.PhaseReviewExePlannedBudget = dgvExecution.Rows[26].Cells[4].Value.ToString();
+
+                //Actual Budget Used
+                currentExecute.TimeMangementBudget = dgvExecution.Rows[0].Cells[5].Value.ToString();
+                currentExecute.TimeSheetBudget = dgvExecution.Rows[1].Cells[5].Value.ToString();
+                currentExecute.TimeSheetRegisterBudget = dgvExecution.Rows[2].Cells[5].Value.ToString();
+                currentExecute.CostManagementProcessBudget = dgvExecution.Rows[3].Cells[5].Value.ToString();
+                currentExecute.ExpenseFormBudget = dgvExecution.Rows[4].Cells[5].Value.ToString();
+                currentExecute.ExpenseRegisterBudget = dgvExecution.Rows[5].Cells[5].Value.ToString();
+                currentExecute.QualityManagementBudget = dgvExecution.Rows[6].Cells[5].Value.ToString();
+                currentExecute.QualityReviewPlanBudget = dgvExecution.Rows[7].Cells[5].Value.ToString();
+                currentExecute.QualityReviewFormBudget = dgvExecution.Rows[8].Cells[5].Value.ToString();
+                currentExecute.ChangeManagementProcessBudget = dgvExecution.Rows[9].Cells[5].Value.ToString();
+                currentExecute.ChangeRequestFormBudget = dgvExecution.Rows[10].Cells[5].Value.ToString();
+                currentExecute.ChangeRequestRegisterBudget = dgvExecution.Rows[11].Cells[5].Value.ToString();
+                currentExecute.RiskManagamentProcessBudget = dgvExecution.Rows[12].Cells[5].Value.ToString();
+                currentExecute.RiskFormBudget = dgvExecution.Rows[13].Cells[5].Value.ToString();
+                currentExecute.RiskRegisterBudget = dgvExecution.Rows[14].Cells[5].Value.ToString();
+                currentExecute.IssueManagementProcessBudget = dgvExecution.Rows[15].Cells[5].Value.ToString();
+                currentExecute.IssueFormBudget = dgvExecution.Rows[16].Cells[5].Value.ToString();
+                currentExecute.IssueRegisterBudget = dgvExecution.Rows[17].Cells[5].Value.ToString();
+                currentExecute.PurchaseOrderBudget = dgvExecution.Rows[18].Cells[5].Value.ToString();
+                currentExecute.ProcurementRegisterBudget = dgvExecution.Rows[19].Cells[5].Value.ToString();
+                currentExecute.AcceptanceManagementProcessBudget = dgvExecution.Rows[20].Cells[5].Value.ToString();
+                currentExecute.AcceptanceFormBudget = dgvExecution.Rows[21].Cells[5].Value.ToString();
+                currentExecute.AcceptanceRegisterBudget = dgvExecution.Rows[22].Cells[5].Value.ToString();
+                currentExecute.CommunicationsManagementProcessBudget = dgvExecution.Rows[23].Cells[5].Value.ToString();
+                currentExecute.ProjectStatusReportBudget = dgvExecution.Rows[24].Cells[5].Value.ToString();
+                currentExecute.CommunicationsRegisterBudget = dgvExecution.Rows[25].Cells[5].Value.ToString();
+                currentExecute.PhaseReviewExeBudget = dgvExecution.Rows[26].Cells[5].Value.ToString();
+
+                earnedValueAnalysis(dgvExecution, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblExecutionSchedule, lblExecutionBudget);
 
                 string jsong = JsonConvert.SerializeObject(currentExecute);
                 JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "ExecutionDueDateModel");
@@ -1779,96 +1958,38 @@ namespace ProjectManagementToolkit
 
         private void dgvInitiation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // If any cell is clicked on the Second column which is our date Column  
-            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            for(int i = 1; i < 4; i++)
             {
-                //Initialized a new DateTimePicker Control  
-                InitDateTimePicker = new DateTimePicker();
+                // If any cell is clicked on the Second column which is our date Column  
+                if (e.ColumnIndex == i && e.RowIndex != -1)
+                {
+                    //Initialized a new DateTimePicker Control  
+                    InitDateTimePicker = new DateTimePicker();
 
-                //Adding DateTimePicker control into DataGridView   
-                dgvInitiation.Controls.Add(InitDateTimePicker);
+                    //Adding DateTimePicker control into DataGridView   
+                    dgvInitiation.Controls.Add(InitDateTimePicker);
 
-                // Setting the format (i.e. 2014-10-10)  
-                InitDateTimePicker.Format = DateTimePickerFormat.Short;
+                    // Setting the format (i.e. 2014-10-10)  
+                    InitDateTimePicker.Format = DateTimePickerFormat.Short;
 
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                    // It returns the retangular area that represents the Display area for a cell  
+                    Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                //Setting area for DateTimePicker Control  
-                InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+                    //Setting area for DateTimePicker Control  
+                    InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
 
-                // Setting Location  
-                InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+                    // Setting Location  
+                    InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
 
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
+                    // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                    InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
 
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
+                    // An event attached to dateTimePicker Control which is fired when any date is selected  
+                    InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
 
-                // Now make it visible  
-                InitDateTimePicker.Visible = true;
-            }
-
-            // If any cell is clicked on the Third column which is our date Column
-            if (e.ColumnIndex == 2 && e.RowIndex != -1)
-            {
-                //Initialized a new DateTimePicker Control  
-                InitDateTimePicker = new DateTimePicker();
-
-                //Adding DateTimePicker control into DataGridView   
-                dgvInitiation.Controls.Add(InitDateTimePicker);
-
-                // Setting the format (i.e. 2014-10-10)  
-                InitDateTimePicker.Format = DateTimePickerFormat.Short;
-
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-
-                //Setting area for DateTimePicker Control  
-                InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
-
-                // Setting Location  
-                InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
-
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
-
-                // Now make it visible  
-                InitDateTimePicker.Visible = true;
-            }
-
-            if (e.ColumnIndex == 3 && e.RowIndex != -1)
-            {
-                //Initialized a new DateTimePicker Control  
-                InitDateTimePicker = new DateTimePicker();
-
-                //Adding DateTimePicker control into DataGridView   
-                dgvInitiation.Controls.Add(InitDateTimePicker);
-
-                // Setting the format (i.e. 2014-10-10)  
-                InitDateTimePicker.Format = DateTimePickerFormat.Short;
-
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvInitiation.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-
-                //Setting area for DateTimePicker Control  
-                InitDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
-
-                // Setting Location  
-                InitDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                InitDateTimePicker.CloseUp += new EventHandler(InitDateTimePicker_CloseUp);
-
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                InitDateTimePicker.TextChanged += new EventHandler(InitDateTimePicker_OnTextChange);
-
-                // Now make it visible  
-                InitDateTimePicker.Visible = true;
+                    // Now make it visible  
+                    InitDateTimePicker.Visible = true;
+                }
             }
         }
 
@@ -1886,34 +2007,37 @@ namespace ProjectManagementToolkit
 
         private void dgvPlanning_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            for(int i = 1; i < 4; i++)
             {
-                //Initialized a new DateTimePicker Control  
-                PlanDateTimePicker = new DateTimePicker();
+                if (e.ColumnIndex == i && e.RowIndex != -1)
+                {
+                    //Initialized a new DateTimePicker Control  
+                    PlanDateTimePicker = new DateTimePicker();
 
-                //Adding DateTimePicker control into DataGridView   
-                dgvPlanning.Controls.Add(PlanDateTimePicker);
+                    //Adding DateTimePicker control into DataGridView   
+                    dgvPlanning.Controls.Add(PlanDateTimePicker);
 
-                // Setting the format (i.e. 2014-10-10)  
-                PlanDateTimePicker.Format = DateTimePickerFormat.Short;
+                    // Setting the format (i.e. 2014-10-10)  
+                    PlanDateTimePicker.Format = DateTimePickerFormat.Short;
 
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvPlanning.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                    // It returns the retangular area that represents the Display area for a cell  
+                    Rectangle oRectangle = dgvPlanning.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                //Setting area for DateTimePicker Control  
-                PlanDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+                    //Setting area for DateTimePicker Control  
+                    PlanDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
 
-                // Setting Location  
-                PlanDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+                    // Setting Location  
+                    PlanDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
 
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                PlanDateTimePicker.CloseUp += new EventHandler(PlanDateTimePicker_CloseUp);
+                    // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                    PlanDateTimePicker.CloseUp += new EventHandler(PlanDateTimePicker_CloseUp);
 
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                PlanDateTimePicker.TextChanged += new EventHandler(PlanDateTimePicker_OnTextChange);
+                    // An event attached to dateTimePicker Control which is fired when any date is selected  
+                    PlanDateTimePicker.TextChanged += new EventHandler(PlanDateTimePicker_OnTextChange);
 
-                // Now make it visible  
-                PlanDateTimePicker.Visible = true;
+                    // Now make it visible  
+                    PlanDateTimePicker.Visible = true;
+                }
             }
         }
 
@@ -1932,34 +2056,37 @@ namespace ProjectManagementToolkit
 
         private void dgvExecution_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            for(int i = 1; i < 4; i++)
             {
-                //Initialized a new DateTimePicker Control  
-                ExecuteDateTimePicker = new DateTimePicker();
+                if (e.ColumnIndex == i && e.RowIndex != -1)
+                {
+                    //Initialized a new DateTimePicker Control  
+                    ExecuteDateTimePicker = new DateTimePicker();
 
-                //Adding DateTimePicker control into DataGridView   
-                dgvExecution.Controls.Add(ExecuteDateTimePicker);
+                    //Adding DateTimePicker control into DataGridView   
+                    dgvExecution.Controls.Add(ExecuteDateTimePicker);
 
-                // Setting the format (i.e. 2014-10-10)  
-                ExecuteDateTimePicker.Format = DateTimePickerFormat.Short;
+                    // Setting the format (i.e. 2014-10-10)  
+                    ExecuteDateTimePicker.Format = DateTimePickerFormat.Short;
 
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvExecution.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                    // It returns the retangular area that represents the Display area for a cell  
+                    Rectangle oRectangle = dgvExecution.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                //Setting area for DateTimePicker Control  
-                ExecuteDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+                    //Setting area for DateTimePicker Control  
+                    ExecuteDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
 
-                // Setting Location  
-                ExecuteDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+                    // Setting Location  
+                    ExecuteDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
 
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                ExecuteDateTimePicker.CloseUp += new EventHandler(ExecuteDateTimePicker_CloseUp);
+                    // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                    ExecuteDateTimePicker.CloseUp += new EventHandler(ExecuteDateTimePicker_CloseUp);
 
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                ExecuteDateTimePicker.TextChanged += new EventHandler(ExecuteDateTimePicker_OnTextChange);
+                    // An event attached to dateTimePicker Control which is fired when any date is selected  
+                    ExecuteDateTimePicker.TextChanged += new EventHandler(ExecuteDateTimePicker_OnTextChange);
 
-                // Now make it visible  
-                ExecuteDateTimePicker.Visible = true;
+                    // Now make it visible  
+                    ExecuteDateTimePicker.Visible = true;
+                }
             }
         }
 
@@ -1994,94 +2121,37 @@ namespace ProjectManagementToolkit
 
         private void dgvClosing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            for(int i = 1; i < 4; i++)
             {
-                //Initialized a new DateTimePicker Control  
-                CloseDateTimePicker = new DateTimePicker();
+                if (e.ColumnIndex == i && e.RowIndex != -1)
+                {
+                    //Initialized a new DateTimePicker Control  
+                    CloseDateTimePicker = new DateTimePicker();
 
-                //Adding DateTimePicker control into DataGridView   
-                dgvClosing.Controls.Add(CloseDateTimePicker);
+                    //Adding DateTimePicker control into DataGridView   
+                    dgvClosing.Controls.Add(CloseDateTimePicker);
 
-                // Setting the format (i.e. 2014-10-10)  
-                CloseDateTimePicker.Format = DateTimePickerFormat.Short;
+                    // Setting the format (i.e. 2014-10-10)  
+                    CloseDateTimePicker.Format = DateTimePickerFormat.Short;
 
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                    // It returns the retangular area that represents the Display area for a cell  
+                    Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                //Setting area for DateTimePicker Control  
-                CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
+                    //Setting area for DateTimePicker Control  
+                    CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
 
-                // Setting Location  
-                CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+                    // Setting Location  
+                    CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
 
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
+                    // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
+                    CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
 
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
+                    // An event attached to dateTimePicker Control which is fired when any date is selected  
+                    CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
 
-                // Now make it visible  
-                CloseDateTimePicker.Visible = true;
-            }
-
-            if (e.ColumnIndex == 2 && e.RowIndex != -1)
-            {
-                //Initialized a new DateTimePicker Control  
-                CloseDateTimePicker = new DateTimePicker();
-
-                //Adding DateTimePicker control into DataGridView   
-                dgvClosing.Controls.Add(CloseDateTimePicker);
-
-                // Setting the format (i.e. 2014-10-10)  
-                CloseDateTimePicker.Format = DateTimePickerFormat.Short;
-
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-
-                //Setting area for DateTimePicker Control  
-                CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
-
-                // Setting Location  
-                CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
-
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
-
-                // Now make it visible  
-                CloseDateTimePicker.Visible = true;
-            }
-
-            if (e.ColumnIndex == 3 && e.RowIndex != -1)
-            {
-                //Initialized a new DateTimePicker Control  
-                CloseDateTimePicker = new DateTimePicker();
-
-                //Adding DateTimePicker control into DataGridView   
-                dgvClosing.Controls.Add(CloseDateTimePicker);
-
-                // Setting the format (i.e. 2014-10-10)  
-                CloseDateTimePicker.Format = DateTimePickerFormat.Short;
-
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvClosing.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-
-                //Setting area for DateTimePicker Control  
-                CloseDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
-
-                // Setting Location  
-                CloseDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-
-                // An event attached to dateTimePicker Control which is fired when DateTimeControl is closed  
-                CloseDateTimePicker.CloseUp += new EventHandler(CloseDateTimePicker_CloseUp);
-
-                // An event attached to dateTimePicker Control which is fired when any date is selected  
-                CloseDateTimePicker.TextChanged += new EventHandler(CloseDateTimePicker_OnTextChange);
-
-                // Now make it visible  
-                CloseDateTimePicker.Visible = true;
+                    // Now make it visible  
+                    CloseDateTimePicker.Visible = true;
+                }
             }
         }
 
