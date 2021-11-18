@@ -46,7 +46,40 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnWorkstreamScreenOppProblems = new System.Windows.Forms.Button();
             this.btnWorkstreamDirectingAProject = new System.Windows.Forms.Button();
             this.ProgrammeManagementStreamTabPage = new System.Windows.Forms.TabPage();
+            this.btnProgrammeWorkStreamMonitorProgramme = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamMonitorControlPerformance = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamManagingStageBoundaries = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamAuditBenefit = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamCloseProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamRecordProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamAssessProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamReviewBusinessCase = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamRegiterProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamConfirmProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamPrepareSupporting = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamDefineInvestment = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamFundsAllocation = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamDefineProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamInitProject = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamEstimateFunding = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamPlanRemainingStage = new System.Windows.Forms.Button();
+            this.btnProgrammeWorkStreamAquireTask = new System.Windows.Forms.Button();
             this.ProjectManagementStreamTabPage = new System.Windows.Forms.TabPage();
+            this.btnProjectWorkStreamConductBenefitRealisation = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamProcessStageEndReport = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamMonitorControlProject = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamMonitorBenefitReal = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamPrepareStage = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamPlanNextStage = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamIntegratePlans = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamArchiveProjectOutputs = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamCreateVariousExe = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamIdentifyProject = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamStartingUp = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamCreateFinalPPlan = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamCreateInitDraft = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamAquireTask = new System.Windows.Forms.Button();
+            this.btnProjectWorkStreamPlanNextSt = new System.Windows.Forms.Button();
             this.EngineeringStreamTabPage = new System.Windows.Forms.TabPage();
             this.btnBestPractices = new System.Windows.Forms.Button();
             this.btnArchiveOutputs = new System.Windows.Forms.Button();
@@ -112,6 +145,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnDefineBenfits = new System.Windows.Forms.Button();
             this.PLSMWorkstreamsTabControl.SuspendLayout();
             this.PortfolioManagementStreamTabPage.SuspendLayout();
+            this.ProgrammeManagementStreamTabPage.SuspendLayout();
+            this.ProjectManagementStreamTabPage.SuspendLayout();
             this.EngineeringStreamTabPage.SuspendLayout();
             this.ArchitectureStreamTabPage.SuspendLayout();
             this.ProcurementStreamTabPage.SuspendLayout();
@@ -128,20 +163,18 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.PLSMWorkstreamsTabControl.Controls.Add(this.ArchitectureStreamTabPage);
             this.PLSMWorkstreamsTabControl.Controls.Add(this.ProcurementStreamTabPage);
             this.PLSMWorkstreamsTabControl.Controls.Add(this.BenefitsRealisationStreamTabPage);
-            this.PLSMWorkstreamsTabControl.Location = new System.Drawing.Point(55, 71);
-            this.PLSMWorkstreamsTabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.PLSMWorkstreamsTabControl.Location = new System.Drawing.Point(41, 58);
             this.PLSMWorkstreamsTabControl.Name = "PLSMWorkstreamsTabControl";
             this.PLSMWorkstreamsTabControl.SelectedIndex = 0;
-            this.PLSMWorkstreamsTabControl.Size = new System.Drawing.Size(1593, 626);
+            this.PLSMWorkstreamsTabControl.Size = new System.Drawing.Size(1195, 509);
             this.PLSMWorkstreamsTabControl.TabIndex = 0;
             // 
             // WorkStreamOverviewTabPage
             // 
-            this.WorkStreamOverviewTabPage.Location = new System.Drawing.Point(4, 25);
-            this.WorkStreamOverviewTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.WorkStreamOverviewTabPage.Location = new System.Drawing.Point(4, 22);
             this.WorkStreamOverviewTabPage.Name = "WorkStreamOverviewTabPage";
-            this.WorkStreamOverviewTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.WorkStreamOverviewTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.WorkStreamOverviewTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.WorkStreamOverviewTabPage.Size = new System.Drawing.Size(1187, 483);
             this.WorkStreamOverviewTabPage.TabIndex = 0;
             this.WorkStreamOverviewTabPage.Text = "Work Stream Overview";
             this.WorkStreamOverviewTabPage.UseVisualStyleBackColor = true;
@@ -161,21 +194,19 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.PortfolioManagementStreamTabPage.Controls.Add(this.btnWorkstreamFundsAcquisitionProcess);
             this.PortfolioManagementStreamTabPage.Controls.Add(this.btnWorkstreamScreenOppProblems);
             this.PortfolioManagementStreamTabPage.Controls.Add(this.btnWorkstreamDirectingAProject);
-            this.PortfolioManagementStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.PortfolioManagementStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.PortfolioManagementStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.PortfolioManagementStreamTabPage.Name = "PortfolioManagementStreamTabPage";
-            this.PortfolioManagementStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.PortfolioManagementStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.PortfolioManagementStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.PortfolioManagementStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.PortfolioManagementStreamTabPage.TabIndex = 1;
             this.PortfolioManagementStreamTabPage.Text = "Portfolio Management Stream";
             this.PortfolioManagementStreamTabPage.UseVisualStyleBackColor = true;
             // 
             // btnWorkstreamAuditBenefitRealisation
             // 
-            this.btnWorkstreamAuditBenefitRealisation.Location = new System.Drawing.Point(1397, 203);
-            this.btnWorkstreamAuditBenefitRealisation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamAuditBenefitRealisation.Location = new System.Drawing.Point(1048, 165);
             this.btnWorkstreamAuditBenefitRealisation.Name = "btnWorkstreamAuditBenefitRealisation";
-            this.btnWorkstreamAuditBenefitRealisation.Size = new System.Drawing.Size(153, 135);
+            this.btnWorkstreamAuditBenefitRealisation.Size = new System.Drawing.Size(115, 110);
             this.btnWorkstreamAuditBenefitRealisation.TabIndex = 12;
             this.btnWorkstreamAuditBenefitRealisation.Text = "Audit Benefit Realisation";
             this.btnWorkstreamAuditBenefitRealisation.UseVisualStyleBackColor = true;
@@ -183,10 +214,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamMonitorGovernanceCompliance
             // 
-            this.btnWorkstreamMonitorGovernanceCompliance.Location = new System.Drawing.Point(379, 310);
-            this.btnWorkstreamMonitorGovernanceCompliance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamMonitorGovernanceCompliance.Location = new System.Drawing.Point(284, 252);
             this.btnWorkstreamMonitorGovernanceCompliance.Name = "btnWorkstreamMonitorGovernanceCompliance";
-            this.btnWorkstreamMonitorGovernanceCompliance.Size = new System.Drawing.Size(975, 28);
+            this.btnWorkstreamMonitorGovernanceCompliance.Size = new System.Drawing.Size(731, 23);
             this.btnWorkstreamMonitorGovernanceCompliance.TabIndex = 11;
             this.btnWorkstreamMonitorGovernanceCompliance.Text = "Monitor governance compliance";
             this.btnWorkstreamMonitorGovernanceCompliance.UseVisualStyleBackColor = true;
@@ -194,10 +224,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamMonitorBenefitRealisation
             // 
-            this.btnWorkstreamMonitorBenefitRealisation.Location = new System.Drawing.Point(379, 274);
-            this.btnWorkstreamMonitorBenefitRealisation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamMonitorBenefitRealisation.Location = new System.Drawing.Point(284, 223);
             this.btnWorkstreamMonitorBenefitRealisation.Name = "btnWorkstreamMonitorBenefitRealisation";
-            this.btnWorkstreamMonitorBenefitRealisation.Size = new System.Drawing.Size(975, 28);
+            this.btnWorkstreamMonitorBenefitRealisation.Size = new System.Drawing.Size(731, 23);
             this.btnWorkstreamMonitorBenefitRealisation.TabIndex = 10;
             this.btnWorkstreamMonitorBenefitRealisation.Text = "Monitor benefit realisation";
             this.btnWorkstreamMonitorBenefitRealisation.UseVisualStyleBackColor = true;
@@ -205,10 +234,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamConductBenefitRealisation
             // 
-            this.btnWorkstreamConductBenefitRealisation.Location = new System.Drawing.Point(379, 239);
-            this.btnWorkstreamConductBenefitRealisation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamConductBenefitRealisation.Location = new System.Drawing.Point(284, 194);
             this.btnWorkstreamConductBenefitRealisation.Name = "btnWorkstreamConductBenefitRealisation";
-            this.btnWorkstreamConductBenefitRealisation.Size = new System.Drawing.Size(975, 28);
+            this.btnWorkstreamConductBenefitRealisation.Size = new System.Drawing.Size(731, 23);
             this.btnWorkstreamConductBenefitRealisation.TabIndex = 9;
             this.btnWorkstreamConductBenefitRealisation.Text = "Conduct benefit realisation reviews according to plan";
             this.btnWorkstreamConductBenefitRealisation.UseVisualStyleBackColor = true;
@@ -216,10 +244,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamConfirmBusinessBenefits
             // 
-            this.btnWorkstreamConfirmBusinessBenefits.Location = new System.Drawing.Point(379, 203);
-            this.btnWorkstreamConfirmBusinessBenefits.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamConfirmBusinessBenefits.Location = new System.Drawing.Point(284, 165);
             this.btnWorkstreamConfirmBusinessBenefits.Name = "btnWorkstreamConfirmBusinessBenefits";
-            this.btnWorkstreamConfirmBusinessBenefits.Size = new System.Drawing.Size(975, 28);
+            this.btnWorkstreamConfirmBusinessBenefits.Size = new System.Drawing.Size(731, 23);
             this.btnWorkstreamConfirmBusinessBenefits.TabIndex = 8;
             this.btnWorkstreamConfirmBusinessBenefits.Text = "Confirm business benefits";
             this.btnWorkstreamConfirmBusinessBenefits.UseVisualStyleBackColor = true;
@@ -227,10 +254,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamProcessStageReport
             // 
-            this.btnWorkstreamProcessStageReport.Location = new System.Drawing.Point(31, 385);
-            this.btnWorkstreamProcessStageReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamProcessStageReport.Location = new System.Drawing.Point(23, 313);
             this.btnWorkstreamProcessStageReport.Name = "btnWorkstreamProcessStageReport";
-            this.btnWorkstreamProcessStageReport.Size = new System.Drawing.Size(1520, 28);
+            this.btnWorkstreamProcessStageReport.Size = new System.Drawing.Size(1140, 23);
             this.btnWorkstreamProcessStageReport.TabIndex = 7;
             this.btnWorkstreamProcessStageReport.Text = "Process stage end report";
             this.btnWorkstreamProcessStageReport.UseVisualStyleBackColor = true;
@@ -238,10 +264,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamRegisterOpportunitiesProb
             // 
-            this.btnWorkstreamRegisterOpportunitiesProb.Location = new System.Drawing.Point(192, 294);
-            this.btnWorkstreamRegisterOpportunitiesProb.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamRegisterOpportunitiesProb.Location = new System.Drawing.Point(144, 239);
             this.btnWorkstreamRegisterOpportunitiesProb.Name = "btnWorkstreamRegisterOpportunitiesProb";
-            this.btnWorkstreamRegisterOpportunitiesProb.Size = new System.Drawing.Size(153, 84);
+            this.btnWorkstreamRegisterOpportunitiesProb.Size = new System.Drawing.Size(115, 68);
             this.btnWorkstreamRegisterOpportunitiesProb.TabIndex = 6;
             this.btnWorkstreamRegisterOpportunitiesProb.Text = "Register opportunities / problems";
             this.btnWorkstreamRegisterOpportunitiesProb.UseVisualStyleBackColor = true;
@@ -249,10 +274,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamDefineHighLevelBusinessBenf
             // 
-            this.btnWorkstreamDefineHighLevelBusinessBenf.Location = new System.Drawing.Point(31, 294);
-            this.btnWorkstreamDefineHighLevelBusinessBenf.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamDefineHighLevelBusinessBenf.Location = new System.Drawing.Point(23, 239);
             this.btnWorkstreamDefineHighLevelBusinessBenf.Name = "btnWorkstreamDefineHighLevelBusinessBenf";
-            this.btnWorkstreamDefineHighLevelBusinessBenf.Size = new System.Drawing.Size(153, 84);
+            this.btnWorkstreamDefineHighLevelBusinessBenf.Size = new System.Drawing.Size(115, 68);
             this.btnWorkstreamDefineHighLevelBusinessBenf.TabIndex = 5;
             this.btnWorkstreamDefineHighLevelBusinessBenf.Text = "Define high level busniess benefits";
             this.btnWorkstreamDefineHighLevelBusinessBenf.UseVisualStyleBackColor = true;
@@ -260,10 +284,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamPriorOpportunitiesProblems
             // 
-            this.btnWorkstreamPriorOpportunitiesProblems.Location = new System.Drawing.Point(192, 203);
-            this.btnWorkstreamPriorOpportunitiesProblems.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamPriorOpportunitiesProblems.Location = new System.Drawing.Point(144, 165);
             this.btnWorkstreamPriorOpportunitiesProblems.Name = "btnWorkstreamPriorOpportunitiesProblems";
-            this.btnWorkstreamPriorOpportunitiesProblems.Size = new System.Drawing.Size(153, 84);
+            this.btnWorkstreamPriorOpportunitiesProblems.Size = new System.Drawing.Size(115, 68);
             this.btnWorkstreamPriorOpportunitiesProblems.TabIndex = 4;
             this.btnWorkstreamPriorOpportunitiesProblems.Text = "Prioritise opportunities / problems";
             this.btnWorkstreamPriorOpportunitiesProblems.UseVisualStyleBackColor = true;
@@ -271,10 +294,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamIdBusinessRisks
             // 
-            this.btnWorkstreamIdBusinessRisks.Location = new System.Drawing.Point(31, 203);
-            this.btnWorkstreamIdBusinessRisks.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamIdBusinessRisks.Location = new System.Drawing.Point(23, 165);
             this.btnWorkstreamIdBusinessRisks.Name = "btnWorkstreamIdBusinessRisks";
-            this.btnWorkstreamIdBusinessRisks.Size = new System.Drawing.Size(153, 84);
+            this.btnWorkstreamIdBusinessRisks.Size = new System.Drawing.Size(115, 68);
             this.btnWorkstreamIdBusinessRisks.TabIndex = 3;
             this.btnWorkstreamIdBusinessRisks.Text = "Identify business risks";
             this.btnWorkstreamIdBusinessRisks.UseVisualStyleBackColor = true;
@@ -282,10 +304,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamFundsAcquisitionProcess
             // 
-            this.btnWorkstreamFundsAcquisitionProcess.Location = new System.Drawing.Point(192, 112);
-            this.btnWorkstreamFundsAcquisitionProcess.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamFundsAcquisitionProcess.Location = new System.Drawing.Point(144, 91);
             this.btnWorkstreamFundsAcquisitionProcess.Name = "btnWorkstreamFundsAcquisitionProcess";
-            this.btnWorkstreamFundsAcquisitionProcess.Size = new System.Drawing.Size(153, 84);
+            this.btnWorkstreamFundsAcquisitionProcess.Size = new System.Drawing.Size(115, 68);
             this.btnWorkstreamFundsAcquisitionProcess.TabIndex = 2;
             this.btnWorkstreamFundsAcquisitionProcess.Text = "Funds Acquisition Process";
             this.btnWorkstreamFundsAcquisitionProcess.UseVisualStyleBackColor = true;
@@ -293,10 +314,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamScreenOppProblems
             // 
-            this.btnWorkstreamScreenOppProblems.Location = new System.Drawing.Point(31, 112);
-            this.btnWorkstreamScreenOppProblems.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamScreenOppProblems.Location = new System.Drawing.Point(23, 91);
             this.btnWorkstreamScreenOppProblems.Name = "btnWorkstreamScreenOppProblems";
-            this.btnWorkstreamScreenOppProblems.Size = new System.Drawing.Size(153, 84);
+            this.btnWorkstreamScreenOppProblems.Size = new System.Drawing.Size(115, 68);
             this.btnWorkstreamScreenOppProblems.TabIndex = 1;
             this.btnWorkstreamScreenOppProblems.Text = "Screen opportunities / problems";
             this.btnWorkstreamScreenOppProblems.UseVisualStyleBackColor = true;
@@ -304,10 +324,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkstreamDirectingAProject
             // 
-            this.btnWorkstreamDirectingAProject.Location = new System.Drawing.Point(31, 37);
-            this.btnWorkstreamDirectingAProject.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWorkstreamDirectingAProject.Location = new System.Drawing.Point(23, 30);
             this.btnWorkstreamDirectingAProject.Name = "btnWorkstreamDirectingAProject";
-            this.btnWorkstreamDirectingAProject.Size = new System.Drawing.Size(1520, 28);
+            this.btnWorkstreamDirectingAProject.Size = new System.Drawing.Size(1140, 23);
             this.btnWorkstreamDirectingAProject.TabIndex = 0;
             this.btnWorkstreamDirectingAProject.Text = "Directing a project";
             this.btnWorkstreamDirectingAProject.UseVisualStyleBackColor = true;
@@ -315,25 +334,387 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // ProgrammeManagementStreamTabPage
             // 
-            this.ProgrammeManagementStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.ProgrammeManagementStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamMonitorProgramme);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamMonitorControlPerformance);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamManagingStageBoundaries);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamAuditBenefit);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamCloseProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamRecordProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamAssessProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamReviewBusinessCase);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamRegiterProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamConfirmProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamPrepareSupporting);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamDefineInvestment);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamFundsAllocation);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamDefineProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamInitProject);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamEstimateFunding);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamPlanRemainingStage);
+            this.ProgrammeManagementStreamTabPage.Controls.Add(this.btnProgrammeWorkStreamAquireTask);
+            this.ProgrammeManagementStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.ProgrammeManagementStreamTabPage.Name = "ProgrammeManagementStreamTabPage";
-            this.ProgrammeManagementStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.ProgrammeManagementStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.ProgrammeManagementStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ProgrammeManagementStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.ProgrammeManagementStreamTabPage.TabIndex = 2;
             this.ProgrammeManagementStreamTabPage.Text = "Programme Management Stream";
             this.ProgrammeManagementStreamTabPage.UseVisualStyleBackColor = true;
+            this.ProgrammeManagementStreamTabPage.Click += new System.EventHandler(this.ProgrammeManagementStreamTabPage_Click);
+            // 
+            // btnProgrammeWorkStreamMonitorProgramme
+            // 
+            this.btnProgrammeWorkStreamMonitorProgramme.Location = new System.Drawing.Point(56, 392);
+            this.btnProgrammeWorkStreamMonitorProgramme.Name = "btnProgrammeWorkStreamMonitorProgramme";
+            this.btnProgrammeWorkStreamMonitorProgramme.Size = new System.Drawing.Size(942, 23);
+            this.btnProgrammeWorkStreamMonitorProgramme.TabIndex = 17;
+            this.btnProgrammeWorkStreamMonitorProgramme.Text = "Monitor control Programme activities";
+            this.btnProgrammeWorkStreamMonitorProgramme.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamMonitorProgramme.Click += new System.EventHandler(this.btnProgrammeWorkStreamMonitorProgramme_Click);
+            // 
+            // btnProgrammeWorkStreamMonitorControlPerformance
+            // 
+            this.btnProgrammeWorkStreamMonitorControlPerformance.Location = new System.Drawing.Point(56, 363);
+            this.btnProgrammeWorkStreamMonitorControlPerformance.Name = "btnProgrammeWorkStreamMonitorControlPerformance";
+            this.btnProgrammeWorkStreamMonitorControlPerformance.Size = new System.Drawing.Size(942, 23);
+            this.btnProgrammeWorkStreamMonitorControlPerformance.TabIndex = 16;
+            this.btnProgrammeWorkStreamMonitorControlPerformance.Text = "Monitor and Control Project Performance";
+            this.btnProgrammeWorkStreamMonitorControlPerformance.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamMonitorControlPerformance.Click += new System.EventHandler(this.btnProgrammeWorkStreamMonitorControlPerformance_Click);
+            // 
+            // btnProgrammeWorkStreamManagingStageBoundaries
+            // 
+            this.btnProgrammeWorkStreamManagingStageBoundaries.Location = new System.Drawing.Point(56, 334);
+            this.btnProgrammeWorkStreamManagingStageBoundaries.Name = "btnProgrammeWorkStreamManagingStageBoundaries";
+            this.btnProgrammeWorkStreamManagingStageBoundaries.Size = new System.Drawing.Size(942, 23);
+            this.btnProgrammeWorkStreamManagingStageBoundaries.TabIndex = 15;
+            this.btnProgrammeWorkStreamManagingStageBoundaries.Text = "Managing Stage Boundaries";
+            this.btnProgrammeWorkStreamManagingStageBoundaries.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamManagingStageBoundaries.Click += new System.EventHandler(this.btnProgrammeWorkStreamManagingStageBoundaries_Click);
+            // 
+            // btnProgrammeWorkStreamAuditBenefit
+            // 
+            this.btnProgrammeWorkStreamAuditBenefit.Location = new System.Drawing.Point(906, 60);
+            this.btnProgrammeWorkStreamAuditBenefit.Name = "btnProgrammeWorkStreamAuditBenefit";
+            this.btnProgrammeWorkStreamAuditBenefit.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamAuditBenefit.TabIndex = 14;
+            this.btnProgrammeWorkStreamAuditBenefit.Text = "Audit benefit realisation plan";
+            this.btnProgrammeWorkStreamAuditBenefit.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamAuditBenefit.Click += new System.EventHandler(this.btnProgrammeWorkStreamAuditBenefit_Click);
+            // 
+            // btnProgrammeWorkStreamCloseProject
+            // 
+            this.btnProgrammeWorkStreamCloseProject.Location = new System.Drawing.Point(785, 117);
+            this.btnProgrammeWorkStreamCloseProject.Name = "btnProgrammeWorkStreamCloseProject";
+            this.btnProgrammeWorkStreamCloseProject.Size = new System.Drawing.Size(92, 75);
+            this.btnProgrammeWorkStreamCloseProject.TabIndex = 13;
+            this.btnProgrammeWorkStreamCloseProject.Text = "Close project on financial system (SAP PS)";
+            this.btnProgrammeWorkStreamCloseProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamCloseProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamCloseProject_Click);
+            // 
+            // btnProgrammeWorkStreamRecordProject
+            // 
+            this.btnProgrammeWorkStreamRecordProject.Location = new System.Drawing.Point(785, 60);
+            this.btnProgrammeWorkStreamRecordProject.Name = "btnProgrammeWorkStreamRecordProject";
+            this.btnProgrammeWorkStreamRecordProject.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamRecordProject.TabIndex = 12;
+            this.btnProgrammeWorkStreamRecordProject.Text = "Record project close out ";
+            this.btnProgrammeWorkStreamRecordProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamRecordProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamRecordProject_Click);
+            // 
+            // btnProgrammeWorkStreamAssessProject
+            // 
+            this.btnProgrammeWorkStreamAssessProject.Location = new System.Drawing.Point(312, 232);
+            this.btnProgrammeWorkStreamAssessProject.Name = "btnProgrammeWorkStreamAssessProject";
+            this.btnProgrammeWorkStreamAssessProject.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamAssessProject.TabIndex = 11;
+            this.btnProgrammeWorkStreamAssessProject.Text = "Assess Project Complexity";
+            this.btnProgrammeWorkStreamAssessProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamAssessProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamAssessProject_Click);
+            // 
+            // btnProgrammeWorkStreamReviewBusinessCase
+            // 
+            this.btnProgrammeWorkStreamReviewBusinessCase.Location = new System.Drawing.Point(410, 175);
+            this.btnProgrammeWorkStreamReviewBusinessCase.Name = "btnProgrammeWorkStreamReviewBusinessCase";
+            this.btnProgrammeWorkStreamReviewBusinessCase.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamReviewBusinessCase.TabIndex = 10;
+            this.btnProgrammeWorkStreamReviewBusinessCase.Text = "Review business case";
+            this.btnProgrammeWorkStreamReviewBusinessCase.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamReviewBusinessCase.Click += new System.EventHandler(this.btnProgrammeWorkStreamReviewBusinessCase_Click);
+            // 
+            // btnProgrammeWorkStreamRegiterProject
+            // 
+            this.btnProgrammeWorkStreamRegiterProject.Location = new System.Drawing.Point(410, 100);
+            this.btnProgrammeWorkStreamRegiterProject.Name = "btnProgrammeWorkStreamRegiterProject";
+            this.btnProgrammeWorkStreamRegiterProject.Size = new System.Drawing.Size(92, 69);
+            this.btnProgrammeWorkStreamRegiterProject.TabIndex = 9;
+            this.btnProgrammeWorkStreamRegiterProject.Text = "Register project on financial system(SAP PS)";
+            this.btnProgrammeWorkStreamRegiterProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamRegiterProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamRegiterProject_Click);
+            // 
+            // btnProgrammeWorkStreamConfirmProject
+            // 
+            this.btnProgrammeWorkStreamConfirmProject.Location = new System.Drawing.Point(410, 43);
+            this.btnProgrammeWorkStreamConfirmProject.Name = "btnProgrammeWorkStreamConfirmProject";
+            this.btnProgrammeWorkStreamConfirmProject.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamConfirmProject.TabIndex = 8;
+            this.btnProgrammeWorkStreamConfirmProject.Text = "Confirm project capital investment";
+            this.btnProgrammeWorkStreamConfirmProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamConfirmProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamConfirmProject_Click);
+            // 
+            // btnProgrammeWorkStreamPrepareSupporting
+            // 
+            this.btnProgrammeWorkStreamPrepareSupporting.Location = new System.Drawing.Point(312, 175);
+            this.btnProgrammeWorkStreamPrepareSupporting.Name = "btnProgrammeWorkStreamPrepareSupporting";
+            this.btnProgrammeWorkStreamPrepareSupporting.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamPrepareSupporting.TabIndex = 7;
+            this.btnProgrammeWorkStreamPrepareSupporting.Text = "Prepare supporting business plan";
+            this.btnProgrammeWorkStreamPrepareSupporting.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamPrepareSupporting.Click += new System.EventHandler(this.btnProgrammeWorkStreamPrepareSupporting_Click);
+            // 
+            // btnProgrammeWorkStreamDefineInvestment
+            // 
+            this.btnProgrammeWorkStreamDefineInvestment.Location = new System.Drawing.Point(312, 100);
+            this.btnProgrammeWorkStreamDefineInvestment.Name = "btnProgrammeWorkStreamDefineInvestment";
+            this.btnProgrammeWorkStreamDefineInvestment.Size = new System.Drawing.Size(92, 69);
+            this.btnProgrammeWorkStreamDefineInvestment.TabIndex = 6;
+            this.btnProgrammeWorkStreamDefineInvestment.Text = "Define cost investment parameters (IRR NPV)";
+            this.btnProgrammeWorkStreamDefineInvestment.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamDefineInvestment.Click += new System.EventHandler(this.btnProgrammeWorkStreamDefineInvestment_Click);
+            // 
+            // btnProgrammeWorkStreamFundsAllocation
+            // 
+            this.btnProgrammeWorkStreamFundsAllocation.Location = new System.Drawing.Point(312, 43);
+            this.btnProgrammeWorkStreamFundsAllocation.Name = "btnProgrammeWorkStreamFundsAllocation";
+            this.btnProgrammeWorkStreamFundsAllocation.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamFundsAllocation.TabIndex = 5;
+            this.btnProgrammeWorkStreamFundsAllocation.Text = "Funds Allocation";
+            this.btnProgrammeWorkStreamFundsAllocation.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamFundsAllocation.Click += new System.EventHandler(this.btnProgrammeWorkStreamFundsAllocation_Click);
+            // 
+            // btnProgrammeWorkStreamDefineProject
+            // 
+            this.btnProgrammeWorkStreamDefineProject.Location = new System.Drawing.Point(154, 175);
+            this.btnProgrammeWorkStreamDefineProject.Name = "btnProgrammeWorkStreamDefineProject";
+            this.btnProgrammeWorkStreamDefineProject.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamDefineProject.TabIndex = 4;
+            this.btnProgrammeWorkStreamDefineProject.Text = "Define project objectives";
+            this.btnProgrammeWorkStreamDefineProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamDefineProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamDefineProject_Click);
+            // 
+            // btnProgrammeWorkStreamInitProject
+            // 
+            this.btnProgrammeWorkStreamInitProject.Location = new System.Drawing.Point(154, 118);
+            this.btnProgrammeWorkStreamInitProject.Name = "btnProgrammeWorkStreamInitProject";
+            this.btnProgrammeWorkStreamInitProject.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamInitProject.TabIndex = 3;
+            this.btnProgrammeWorkStreamInitProject.Text = "Initiating a project";
+            this.btnProgrammeWorkStreamInitProject.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamInitProject.Click += new System.EventHandler(this.btnProgrammeWorkStreamInitProject_Click);
+            // 
+            // btnProgrammeWorkStreamEstimateFunding
+            // 
+            this.btnProgrammeWorkStreamEstimateFunding.Location = new System.Drawing.Point(154, 43);
+            this.btnProgrammeWorkStreamEstimateFunding.Name = "btnProgrammeWorkStreamEstimateFunding";
+            this.btnProgrammeWorkStreamEstimateFunding.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamEstimateFunding.TabIndex = 2;
+            this.btnProgrammeWorkStreamEstimateFunding.Text = "Estimate Funding Requirements";
+            this.btnProgrammeWorkStreamEstimateFunding.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamEstimateFunding.Click += new System.EventHandler(this.btnProgrammeWorkStreamEstimateFunding_Click);
+            // 
+            // btnProgrammeWorkStreamPlanRemainingStage
+            // 
+            this.btnProgrammeWorkStreamPlanRemainingStage.Location = new System.Drawing.Point(56, 118);
+            this.btnProgrammeWorkStreamPlanRemainingStage.Name = "btnProgrammeWorkStreamPlanRemainingStage";
+            this.btnProgrammeWorkStreamPlanRemainingStage.Size = new System.Drawing.Size(92, 74);
+            this.btnProgrammeWorkStreamPlanRemainingStage.TabIndex = 1;
+            this.btnProgrammeWorkStreamPlanRemainingStage.Text = "Plan next stage estimate remaining stages";
+            this.btnProgrammeWorkStreamPlanRemainingStage.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamPlanRemainingStage.Click += new System.EventHandler(this.btnProgrammeWorkStreamPlanRemainingStage_Click);
+            // 
+            // btnProgrammeWorkStreamAquireTask
+            // 
+            this.btnProgrammeWorkStreamAquireTask.Location = new System.Drawing.Point(56, 43);
+            this.btnProgrammeWorkStreamAquireTask.Name = "btnProgrammeWorkStreamAquireTask";
+            this.btnProgrammeWorkStreamAquireTask.Size = new System.Drawing.Size(92, 51);
+            this.btnProgrammeWorkStreamAquireTask.TabIndex = 0;
+            this.btnProgrammeWorkStreamAquireTask.Text = "Acquire / task resources for current stage";
+            this.btnProgrammeWorkStreamAquireTask.UseVisualStyleBackColor = true;
+            this.btnProgrammeWorkStreamAquireTask.Click += new System.EventHandler(this.btnProgrammeWorkStreamAquireTask_Click);
             // 
             // ProjectManagementStreamTabPage
             // 
-            this.ProjectManagementStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.ProjectManagementStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamConductBenefitRealisation);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamProcessStageEndReport);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamMonitorControlProject);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamMonitorBenefitReal);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamPrepareStage);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamPlanNextStage);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamIntegratePlans);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamArchiveProjectOutputs);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamCreateVariousExe);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamIdentifyProject);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamStartingUp);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamCreateFinalPPlan);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamCreateInitDraft);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamAquireTask);
+            this.ProjectManagementStreamTabPage.Controls.Add(this.btnProjectWorkStreamPlanNextSt);
+            this.ProjectManagementStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.ProjectManagementStreamTabPage.Name = "ProjectManagementStreamTabPage";
-            this.ProjectManagementStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.ProjectManagementStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.ProjectManagementStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ProjectManagementStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.ProjectManagementStreamTabPage.TabIndex = 3;
             this.ProjectManagementStreamTabPage.Text = "Project Management Stream";
             this.ProjectManagementStreamTabPage.UseVisualStyleBackColor = true;
+            // 
+            // btnProjectWorkStreamConductBenefitRealisation
+            // 
+            this.btnProjectWorkStreamConductBenefitRealisation.Location = new System.Drawing.Point(896, 42);
+            this.btnProjectWorkStreamConductBenefitRealisation.Name = "btnProjectWorkStreamConductBenefitRealisation";
+            this.btnProjectWorkStreamConductBenefitRealisation.Size = new System.Drawing.Size(164, 111);
+            this.btnProjectWorkStreamConductBenefitRealisation.TabIndex = 32;
+            this.btnProjectWorkStreamConductBenefitRealisation.Text = "Conduct benefit realisation reviews according to plan";
+            this.btnProjectWorkStreamConductBenefitRealisation.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamConductBenefitRealisation.Click += new System.EventHandler(this.btnProjectWorkStreamConductBenefitRealisation_Click);
+            // 
+            // btnProjectWorkStreamProcessStageEndReport
+            // 
+            this.btnProjectWorkStreamProcessStageEndReport.Location = new System.Drawing.Point(95, 333);
+            this.btnProjectWorkStreamProcessStageEndReport.Name = "btnProjectWorkStreamProcessStageEndReport";
+            this.btnProjectWorkStreamProcessStageEndReport.Size = new System.Drawing.Size(755, 23);
+            this.btnProjectWorkStreamProcessStageEndReport.TabIndex = 31;
+            this.btnProjectWorkStreamProcessStageEndReport.Text = "Process stage end report";
+            this.btnProjectWorkStreamProcessStageEndReport.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamProcessStageEndReport.Click += new System.EventHandler(this.btnProjectWorkStreamProcessStageEndReport_Click);
+            // 
+            // btnProjectWorkStreamMonitorControlProject
+            // 
+            this.btnProjectWorkStreamMonitorControlProject.Location = new System.Drawing.Point(95, 275);
+            this.btnProjectWorkStreamMonitorControlProject.Name = "btnProjectWorkStreamMonitorControlProject";
+            this.btnProjectWorkStreamMonitorControlProject.Size = new System.Drawing.Size(755, 23);
+            this.btnProjectWorkStreamMonitorControlProject.TabIndex = 30;
+            this.btnProjectWorkStreamMonitorControlProject.Text = "Monitor control project activities";
+            this.btnProjectWorkStreamMonitorControlProject.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamMonitorControlProject.Click += new System.EventHandler(this.btnProjectWorkStreamMonitorControlProject_Click);
+            // 
+            // btnProjectWorkStreamMonitorBenefitReal
+            // 
+            this.btnProjectWorkStreamMonitorBenefitReal.Location = new System.Drawing.Point(95, 304);
+            this.btnProjectWorkStreamMonitorBenefitReal.Name = "btnProjectWorkStreamMonitorBenefitReal";
+            this.btnProjectWorkStreamMonitorBenefitReal.Size = new System.Drawing.Size(755, 23);
+            this.btnProjectWorkStreamMonitorBenefitReal.TabIndex = 29;
+            this.btnProjectWorkStreamMonitorBenefitReal.Text = "Monitor benefit realisation";
+            this.btnProjectWorkStreamMonitorBenefitReal.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamMonitorBenefitReal.Click += new System.EventHandler(this.btnProjectWorkStreamMonitorBenefitReal_Click);
+            // 
+            // btnProjectWorkStreamPrepareStage
+            // 
+            this.btnProjectWorkStreamPrepareStage.Location = new System.Drawing.Point(95, 246);
+            this.btnProjectWorkStreamPrepareStage.Name = "btnProjectWorkStreamPrepareStage";
+            this.btnProjectWorkStreamPrepareStage.Size = new System.Drawing.Size(755, 23);
+            this.btnProjectWorkStreamPrepareStage.TabIndex = 28;
+            this.btnProjectWorkStreamPrepareStage.Text = "Prepare stage end report for ISPO";
+            this.btnProjectWorkStreamPrepareStage.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamPrepareStage.Click += new System.EventHandler(this.btnProjectWorkStreamPrepareStage_Click);
+            // 
+            // btnProjectWorkStreamPlanNextStage
+            // 
+            this.btnProjectWorkStreamPlanNextStage.Location = new System.Drawing.Point(328, 217);
+            this.btnProjectWorkStreamPlanNextStage.Name = "btnProjectWorkStreamPlanNextStage";
+            this.btnProjectWorkStreamPlanNextStage.Size = new System.Drawing.Size(522, 23);
+            this.btnProjectWorkStreamPlanNextStage.TabIndex = 27;
+            this.btnProjectWorkStreamPlanNextStage.Text = "Plan next stage estimate remaining stages";
+            this.btnProjectWorkStreamPlanNextStage.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamPlanNextStage.Click += new System.EventHandler(this.btnProjectWorkStreamPlanNextStage_Click);
+            // 
+            // btnProjectWorkStreamIntegratePlans
+            // 
+            this.btnProjectWorkStreamIntegratePlans.Location = new System.Drawing.Point(328, 188);
+            this.btnProjectWorkStreamIntegratePlans.Name = "btnProjectWorkStreamIntegratePlans";
+            this.btnProjectWorkStreamIntegratePlans.Size = new System.Drawing.Size(522, 23);
+            this.btnProjectWorkStreamIntegratePlans.TabIndex = 26;
+            this.btnProjectWorkStreamIntegratePlans.Text = "Intergrate plans from contractors";
+            this.btnProjectWorkStreamIntegratePlans.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamIntegratePlans.Click += new System.EventHandler(this.btnProjectWorkStreamIntegratePlans_Click);
+            // 
+            // btnProjectWorkStreamArchiveProjectOutputs
+            // 
+            this.btnProjectWorkStreamArchiveProjectOutputs.Location = new System.Drawing.Point(435, 130);
+            this.btnProjectWorkStreamArchiveProjectOutputs.Name = "btnProjectWorkStreamArchiveProjectOutputs";
+            this.btnProjectWorkStreamArchiveProjectOutputs.Size = new System.Drawing.Size(415, 52);
+            this.btnProjectWorkStreamArchiveProjectOutputs.TabIndex = 25;
+            this.btnProjectWorkStreamArchiveProjectOutputs.Text = "Archive project outputs, including best practices_lessons learnt";
+            this.btnProjectWorkStreamArchiveProjectOutputs.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamArchiveProjectOutputs.Click += new System.EventHandler(this.btnProjectWorkStreamArchiveProjectOutputs_Click);
+            // 
+            // btnProjectWorkStreamCreateVariousExe
+            // 
+            this.btnProjectWorkStreamCreateVariousExe.Location = new System.Drawing.Point(265, 130);
+            this.btnProjectWorkStreamCreateVariousExe.Name = "btnProjectWorkStreamCreateVariousExe";
+            this.btnProjectWorkStreamCreateVariousExe.Size = new System.Drawing.Size(164, 52);
+            this.btnProjectWorkStreamCreateVariousExe.TabIndex = 24;
+            this.btnProjectWorkStreamCreateVariousExe.Text = "Create The various Execution Plans";
+            this.btnProjectWorkStreamCreateVariousExe.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamCreateVariousExe.Click += new System.EventHandler(this.btnProjectWorkStreamCreateVariousExe_Click);
+            // 
+            // btnProjectWorkStreamIdentifyProject
+            // 
+            this.btnProjectWorkStreamIdentifyProject.Location = new System.Drawing.Point(95, 159);
+            this.btnProjectWorkStreamIdentifyProject.Name = "btnProjectWorkStreamIdentifyProject";
+            this.btnProjectWorkStreamIdentifyProject.Size = new System.Drawing.Size(164, 23);
+            this.btnProjectWorkStreamIdentifyProject.TabIndex = 23;
+            this.btnProjectWorkStreamIdentifyProject.Text = "Identify Project";
+            this.btnProjectWorkStreamIdentifyProject.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamIdentifyProject.Click += new System.EventHandler(this.btnProjectWorkStreamIdentifyProject_Click);
+            // 
+            // btnProjectWorkStreamStartingUp
+            // 
+            this.btnProjectWorkStreamStartingUp.Location = new System.Drawing.Point(95, 130);
+            this.btnProjectWorkStreamStartingUp.Name = "btnProjectWorkStreamStartingUp";
+            this.btnProjectWorkStreamStartingUp.Size = new System.Drawing.Size(164, 23);
+            this.btnProjectWorkStreamStartingUp.TabIndex = 22;
+            this.btnProjectWorkStreamStartingUp.Text = "Starting up a";
+            this.btnProjectWorkStreamStartingUp.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamStartingUp.Click += new System.EventHandler(this.btnProjectWorkStreamStartingUp_Click);
+            // 
+            // btnProjectWorkStreamCreateFinalPPlan
+            // 
+            this.btnProjectWorkStreamCreateFinalPPlan.Location = new System.Drawing.Point(328, 101);
+            this.btnProjectWorkStreamCreateFinalPPlan.Name = "btnProjectWorkStreamCreateFinalPPlan";
+            this.btnProjectWorkStreamCreateFinalPPlan.Size = new System.Drawing.Size(522, 23);
+            this.btnProjectWorkStreamCreateFinalPPlan.TabIndex = 21;
+            this.btnProjectWorkStreamCreateFinalPPlan.Text = "Create final project plan";
+            this.btnProjectWorkStreamCreateFinalPPlan.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamCreateFinalPPlan.Click += new System.EventHandler(this.btnProjectWorkStreamCreateFinalPPlan_Click);
+            // 
+            // btnProjectWorkStreamCreateInitDraft
+            // 
+            this.btnProjectWorkStreamCreateInitDraft.Location = new System.Drawing.Point(95, 101);
+            this.btnProjectWorkStreamCreateInitDraft.Name = "btnProjectWorkStreamCreateInitDraft";
+            this.btnProjectWorkStreamCreateInitDraft.Size = new System.Drawing.Size(227, 23);
+            this.btnProjectWorkStreamCreateInitDraft.TabIndex = 20;
+            this.btnProjectWorkStreamCreateInitDraft.Text = "Create initial draft project";
+            this.btnProjectWorkStreamCreateInitDraft.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamCreateInitDraft.Click += new System.EventHandler(this.btnProjectWorkStreamCreateInitDraft_Click);
+            // 
+            // btnProjectWorkStreamAquireTask
+            // 
+            this.btnProjectWorkStreamAquireTask.Location = new System.Drawing.Point(95, 71);
+            this.btnProjectWorkStreamAquireTask.Name = "btnProjectWorkStreamAquireTask";
+            this.btnProjectWorkStreamAquireTask.Size = new System.Drawing.Size(755, 23);
+            this.btnProjectWorkStreamAquireTask.TabIndex = 19;
+            this.btnProjectWorkStreamAquireTask.Text = "Acquire / task resources for current stage";
+            this.btnProjectWorkStreamAquireTask.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamAquireTask.Click += new System.EventHandler(this.btnProjectWorkStreamAquireTask_Click);
+            // 
+            // btnProjectWorkStreamPlanNextSt
+            // 
+            this.btnProjectWorkStreamPlanNextSt.Location = new System.Drawing.Point(95, 42);
+            this.btnProjectWorkStreamPlanNextSt.Name = "btnProjectWorkStreamPlanNextSt";
+            this.btnProjectWorkStreamPlanNextSt.Size = new System.Drawing.Size(755, 23);
+            this.btnProjectWorkStreamPlanNextSt.TabIndex = 18;
+            this.btnProjectWorkStreamPlanNextSt.Text = "Plan next stage estimate remaining stages";
+            this.btnProjectWorkStreamPlanNextSt.UseVisualStyleBackColor = true;
+            this.btnProjectWorkStreamPlanNextSt.Click += new System.EventHandler(this.btnProjectWorkStreamPlanNextSt_Click);
             // 
             // EngineeringStreamTabPage
             // 
@@ -365,20 +746,20 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.EngineeringStreamTabPage.Controls.Add(this.btnHighlevel);
             this.EngineeringStreamTabPage.Controls.Add(this.btnWorkReq);
             this.EngineeringStreamTabPage.Controls.Add(this.btnIdentifyOpp);
-            this.EngineeringStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.EngineeringStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.EngineeringStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.EngineeringStreamTabPage.Name = "EngineeringStreamTabPage";
-            this.EngineeringStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.EngineeringStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.EngineeringStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.EngineeringStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.EngineeringStreamTabPage.TabIndex = 4;
             this.EngineeringStreamTabPage.Text = "Engineering Stream";
             this.EngineeringStreamTabPage.UseVisualStyleBackColor = true;
             // 
             // btnBestPractices
             // 
-            this.btnBestPractices.Location = new System.Drawing.Point(1280, 300);
+            this.btnBestPractices.Location = new System.Drawing.Point(960, 244);
+            this.btnBestPractices.Margin = new System.Windows.Forms.Padding(2);
             this.btnBestPractices.Name = "btnBestPractices";
-            this.btnBestPractices.Size = new System.Drawing.Size(250, 83);
+            this.btnBestPractices.Size = new System.Drawing.Size(188, 67);
             this.btnBestPractices.TabIndex = 27;
             this.btnBestPractices.Text = "Best practices lessons learnt";
             this.btnBestPractices.UseVisualStyleBackColor = true;
@@ -386,9 +767,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnArchiveOutputs
             // 
-            this.btnArchiveOutputs.Location = new System.Drawing.Point(1280, 211);
+            this.btnArchiveOutputs.Location = new System.Drawing.Point(960, 171);
+            this.btnArchiveOutputs.Margin = new System.Windows.Forms.Padding(2);
             this.btnArchiveOutputs.Name = "btnArchiveOutputs";
-            this.btnArchiveOutputs.Size = new System.Drawing.Size(250, 83);
+            this.btnArchiveOutputs.Size = new System.Drawing.Size(188, 67);
             this.btnArchiveOutputs.TabIndex = 26;
             this.btnArchiveOutputs.Text = "Archive engineering outputs";
             this.btnArchiveOutputs.UseVisualStyleBackColor = true;
@@ -396,9 +778,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnCheckGuarantee
             // 
-            this.btnCheckGuarantee.Location = new System.Drawing.Point(1280, 122);
+            this.btnCheckGuarantee.Location = new System.Drawing.Point(960, 99);
+            this.btnCheckGuarantee.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckGuarantee.Name = "btnCheckGuarantee";
-            this.btnCheckGuarantee.Size = new System.Drawing.Size(250, 83);
+            this.btnCheckGuarantee.Size = new System.Drawing.Size(188, 67);
             this.btnCheckGuarantee.TabIndex = 25;
             this.btnCheckGuarantee.Text = "Check guarantee compliance";
             this.btnCheckGuarantee.UseVisualStyleBackColor = true;
@@ -406,9 +789,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnCommision
             // 
-            this.btnCommision.Location = new System.Drawing.Point(1101, 424);
+            this.btnCommision.Location = new System.Drawing.Point(826, 344);
+            this.btnCommision.Margin = new System.Windows.Forms.Padding(2);
             this.btnCommision.Name = "btnCommision";
-            this.btnCommision.Size = new System.Drawing.Size(127, 56);
+            this.btnCommision.Size = new System.Drawing.Size(95, 46);
             this.btnCommision.TabIndex = 24;
             this.btnCommision.Text = "Commission system";
             this.btnCommision.UseVisualStyleBackColor = true;
@@ -416,9 +800,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnOwner
             // 
-            this.btnOwner.Location = new System.Drawing.Point(1101, 362);
+            this.btnOwner.Location = new System.Drawing.Point(826, 294);
+            this.btnOwner.Margin = new System.Windows.Forms.Padding(2);
             this.btnOwner.Name = "btnOwner";
-            this.btnOwner.Size = new System.Drawing.Size(127, 56);
+            this.btnOwner.Size = new System.Drawing.Size(95, 46);
             this.btnOwner.TabIndex = 23;
             this.btnOwner.Text = "Owner acceptance";
             this.btnOwner.UseVisualStyleBackColor = true;
@@ -426,9 +811,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnDeployAsset
             // 
-            this.btnDeployAsset.Location = new System.Drawing.Point(1101, 286);
+            this.btnDeployAsset.Location = new System.Drawing.Point(826, 232);
+            this.btnDeployAsset.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeployAsset.Name = "btnDeployAsset";
-            this.btnDeployAsset.Size = new System.Drawing.Size(127, 72);
+            this.btnDeployAsset.Size = new System.Drawing.Size(95, 58);
             this.btnDeployAsset.TabIndex = 22;
             this.btnDeployAsset.Text = "Deploy asset / solution";
             this.btnDeployAsset.UseVisualStyleBackColor = true;
@@ -436,9 +822,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnDevelopManuals
             // 
-            this.btnDevelopManuals.Location = new System.Drawing.Point(968, 443);
+            this.btnDevelopManuals.Location = new System.Drawing.Point(726, 360);
+            this.btnDevelopManuals.Margin = new System.Windows.Forms.Padding(2);
             this.btnDevelopManuals.Name = "btnDevelopManuals";
-            this.btnDevelopManuals.Size = new System.Drawing.Size(127, 56);
+            this.btnDevelopManuals.Size = new System.Drawing.Size(95, 46);
             this.btnDevelopManuals.TabIndex = 21;
             this.btnDevelopManuals.Text = "Develop manuals";
             this.btnDevelopManuals.UseVisualStyleBackColor = true;
@@ -446,9 +833,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnUnitInterface
             // 
-            this.btnUnitInterface.Location = new System.Drawing.Point(968, 362);
+            this.btnUnitInterface.Location = new System.Drawing.Point(726, 294);
+            this.btnUnitInterface.Margin = new System.Windows.Forms.Padding(2);
             this.btnUnitInterface.Name = "btnUnitInterface";
-            this.btnUnitInterface.Size = new System.Drawing.Size(127, 75);
+            this.btnUnitInterface.Size = new System.Drawing.Size(95, 61);
             this.btnUnitInterface.TabIndex = 20;
             this.btnUnitInterface.Text = "Unit, interface system testing";
             this.btnUnitInterface.UseVisualStyleBackColor = true;
@@ -456,9 +844,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnConfigInterfaces
             // 
-            this.btnConfigInterfaces.Location = new System.Drawing.Point(968, 264);
+            this.btnConfigInterfaces.Location = new System.Drawing.Point(726, 214);
+            this.btnConfigInterfaces.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfigInterfaces.Name = "btnConfigInterfaces";
-            this.btnConfigInterfaces.Size = new System.Drawing.Size(127, 92);
+            this.btnConfigInterfaces.Size = new System.Drawing.Size(95, 75);
             this.btnConfigInterfaces.TabIndex = 19;
             this.btnConfigInterfaces.Text = "Develop or configure interfaces to specification";
             this.btnConfigInterfaces.UseVisualStyleBackColor = true;
@@ -466,9 +855,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnTrainOperators
             // 
-            this.btnTrainOperators.Location = new System.Drawing.Point(1101, 184);
+            this.btnTrainOperators.Location = new System.Drawing.Point(826, 150);
+            this.btnTrainOperators.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrainOperators.Name = "btnTrainOperators";
-            this.btnTrainOperators.Size = new System.Drawing.Size(127, 96);
+            this.btnTrainOperators.Size = new System.Drawing.Size(95, 78);
             this.btnTrainOperators.TabIndex = 18;
             this.btnTrainOperators.Text = "Train operators / users";
             this.btnTrainOperators.UseVisualStyleBackColor = true;
@@ -476,9 +866,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnDevelopConfig
             // 
-            this.btnDevelopConfig.Location = new System.Drawing.Point(968, 171);
+            this.btnDevelopConfig.Location = new System.Drawing.Point(726, 139);
+            this.btnDevelopConfig.Margin = new System.Windows.Forms.Padding(2);
             this.btnDevelopConfig.Name = "btnDevelopConfig";
-            this.btnDevelopConfig.Size = new System.Drawing.Size(127, 87);
+            this.btnDevelopConfig.Size = new System.Drawing.Size(95, 71);
             this.btnDevelopConfig.TabIndex = 17;
             this.btnDevelopConfig.Text = "Develop or configure components to specification";
             this.btnDevelopConfig.UseVisualStyleBackColor = true;
@@ -486,9 +877,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareProduction
             // 
-            this.btnPrepareProduction.Location = new System.Drawing.Point(1101, 95);
+            this.btnPrepareProduction.Location = new System.Drawing.Point(826, 77);
+            this.btnPrepareProduction.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareProduction.Name = "btnPrepareProduction";
-            this.btnPrepareProduction.Size = new System.Drawing.Size(127, 83);
+            this.btnPrepareProduction.Size = new System.Drawing.Size(95, 67);
             this.btnPrepareProduction.TabIndex = 16;
             this.btnPrepareProduction.Text = "Prepare production environment";
             this.btnPrepareProduction.UseVisualStyleBackColor = true;
@@ -496,9 +888,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareBuild
             // 
-            this.btnPrepareBuild.Location = new System.Drawing.Point(968, 95);
+            this.btnPrepareBuild.Location = new System.Drawing.Point(726, 77);
+            this.btnPrepareBuild.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareBuild.Name = "btnPrepareBuild";
-            this.btnPrepareBuild.Size = new System.Drawing.Size(127, 70);
+            this.btnPrepareBuild.Size = new System.Drawing.Size(95, 57);
             this.btnPrepareBuild.TabIndex = 15;
             this.btnPrepareBuild.Text = "Prepare build and test environments";
             this.btnPrepareBuild.UseVisualStyleBackColor = true;
@@ -506,9 +899,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareTest
             // 
-            this.btnPrepareTest.Location = new System.Drawing.Point(783, 386);
+            this.btnPrepareTest.Location = new System.Drawing.Point(587, 314);
+            this.btnPrepareTest.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareTest.Name = "btnPrepareTest";
-            this.btnPrepareTest.Size = new System.Drawing.Size(127, 107);
+            this.btnPrepareTest.Size = new System.Drawing.Size(95, 87);
             this.btnPrepareTest.TabIndex = 14;
             this.btnPrepareTest.Text = "Prepare test plan";
             this.btnPrepareTest.UseVisualStyleBackColor = true;
@@ -516,9 +910,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnReviewDesignSpec
             // 
-            this.btnReviewDesignSpec.Location = new System.Drawing.Point(783, 297);
+            this.btnReviewDesignSpec.Location = new System.Drawing.Point(587, 241);
+            this.btnReviewDesignSpec.Margin = new System.Windows.Forms.Padding(2);
             this.btnReviewDesignSpec.Name = "btnReviewDesignSpec";
-            this.btnReviewDesignSpec.Size = new System.Drawing.Size(127, 83);
+            this.btnReviewDesignSpec.Size = new System.Drawing.Size(95, 67);
             this.btnReviewDesignSpec.TabIndex = 13;
             this.btnReviewDesignSpec.Text = "Review System Design Specification";
             this.btnReviewDesignSpec.UseVisualStyleBackColor = true;
@@ -526,9 +921,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnDesignInterface
             // 
-            this.btnDesignInterface.Location = new System.Drawing.Point(783, 184);
+            this.btnDesignInterface.Location = new System.Drawing.Point(587, 150);
+            this.btnDesignInterface.Margin = new System.Windows.Forms.Padding(2);
             this.btnDesignInterface.Name = "btnDesignInterface";
-            this.btnDesignInterface.Size = new System.Drawing.Size(127, 107);
+            this.btnDesignInterface.Size = new System.Drawing.Size(95, 87);
             this.btnDesignInterface.TabIndex = 12;
             this.btnDesignInterface.Text = "Design interface detail";
             this.btnDesignInterface.UseVisualStyleBackColor = true;
@@ -536,9 +932,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnDesignComponent
             // 
-            this.btnDesignComponent.Location = new System.Drawing.Point(783, 95);
+            this.btnDesignComponent.Location = new System.Drawing.Point(587, 77);
+            this.btnDesignComponent.Margin = new System.Windows.Forms.Padding(2);
             this.btnDesignComponent.Name = "btnDesignComponent";
-            this.btnDesignComponent.Size = new System.Drawing.Size(127, 83);
+            this.btnDesignComponent.Size = new System.Drawing.Size(95, 67);
             this.btnDesignComponent.TabIndex = 11;
             this.btnDesignComponent.Text = "Design component detail";
             this.btnDesignComponent.UseVisualStyleBackColor = true;
@@ -546,9 +943,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnTechinicalRecom
             // 
-            this.btnTechinicalRecom.Location = new System.Drawing.Point(651, 95);
+            this.btnTechinicalRecom.Location = new System.Drawing.Point(488, 77);
+            this.btnTechinicalRecom.Margin = new System.Windows.Forms.Padding(2);
             this.btnTechinicalRecom.Name = "btnTechinicalRecom";
-            this.btnTechinicalRecom.Size = new System.Drawing.Size(126, 158);
+            this.btnTechinicalRecom.Size = new System.Drawing.Size(94, 128);
             this.btnTechinicalRecom.TabIndex = 10;
             this.btnTechinicalRecom.Text = "Technical evaluation of RFPs technical recommendation";
             this.btnTechinicalRecom.UseVisualStyleBackColor = true;
@@ -556,9 +954,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnNextLevel
             // 
-            this.btnNextLevel.Location = new System.Drawing.Point(542, 95);
+            this.btnNextLevel.Location = new System.Drawing.Point(406, 77);
+            this.btnNextLevel.Margin = new System.Windows.Forms.Padding(2);
             this.btnNextLevel.Name = "btnNextLevel";
-            this.btnNextLevel.Size = new System.Drawing.Size(103, 158);
+            this.btnNextLevel.Size = new System.Drawing.Size(77, 128);
             this.btnNextLevel.TabIndex = 9;
             this.btnNextLevel.Text = "Next level system design";
             this.btnNextLevel.UseVisualStyleBackColor = true;
@@ -566,9 +965,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnAddressLegal
             // 
-            this.btnAddressLegal.Location = new System.Drawing.Point(364, 386);
+            this.btnAddressLegal.Location = new System.Drawing.Point(273, 314);
+            this.btnAddressLegal.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddressLegal.Name = "btnAddressLegal";
-            this.btnAddressLegal.Size = new System.Drawing.Size(127, 107);
+            this.btnAddressLegal.Size = new System.Drawing.Size(95, 87);
             this.btnAddressLegal.TabIndex = 8;
             this.btnAddressLegal.Text = "Address legal regulatory requiremnts";
             this.btnAddressLegal.UseVisualStyleBackColor = true;
@@ -576,9 +976,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnEstimateCost
             // 
-            this.btnEstimateCost.Location = new System.Drawing.Point(231, 386);
+            this.btnEstimateCost.Location = new System.Drawing.Point(173, 314);
+            this.btnEstimateCost.Margin = new System.Windows.Forms.Padding(2);
             this.btnEstimateCost.Name = "btnEstimateCost";
-            this.btnEstimateCost.Size = new System.Drawing.Size(127, 107);
+            this.btnEstimateCost.Size = new System.Drawing.Size(95, 87);
             this.btnEstimateCost.TabIndex = 7;
             this.btnEstimateCost.Text = "Estimate cost";
             this.btnEstimateCost.UseVisualStyleBackColor = true;
@@ -586,9 +987,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnValidateTechnical
             // 
-            this.btnValidateTechnical.Location = new System.Drawing.Point(364, 297);
+            this.btnValidateTechnical.Location = new System.Drawing.Point(273, 241);
+            this.btnValidateTechnical.Margin = new System.Windows.Forms.Padding(2);
             this.btnValidateTechnical.Name = "btnValidateTechnical";
-            this.btnValidateTechnical.Size = new System.Drawing.Size(127, 83);
+            this.btnValidateTechnical.Size = new System.Drawing.Size(95, 67);
             this.btnValidateTechnical.TabIndex = 6;
             this.btnValidateTechnical.Text = "Validate technical feasibility";
             this.btnValidateTechnical.UseVisualStyleBackColor = true;
@@ -596,9 +998,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnAnalyseDifferent
             // 
-            this.btnAnalyseDifferent.Location = new System.Drawing.Point(231, 297);
+            this.btnAnalyseDifferent.Location = new System.Drawing.Point(173, 241);
+            this.btnAnalyseDifferent.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnalyseDifferent.Name = "btnAnalyseDifferent";
-            this.btnAnalyseDifferent.Size = new System.Drawing.Size(127, 83);
+            this.btnAnalyseDifferent.Size = new System.Drawing.Size(95, 67);
             this.btnAnalyseDifferent.TabIndex = 5;
             this.btnAnalyseDifferent.Text = "Analyse different types of solutions";
             this.btnAnalyseDifferent.UseVisualStyleBackColor = true;
@@ -606,9 +1009,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnConsiderAlt
             // 
-            this.btnConsiderAlt.Location = new System.Drawing.Point(364, 184);
+            this.btnConsiderAlt.Location = new System.Drawing.Point(273, 150);
+            this.btnConsiderAlt.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsiderAlt.Name = "btnConsiderAlt";
-            this.btnConsiderAlt.Size = new System.Drawing.Size(127, 107);
+            this.btnConsiderAlt.Size = new System.Drawing.Size(95, 87);
             this.btnConsiderAlt.TabIndex = 4;
             this.btnConsiderAlt.Text = "Consider alternate designs";
             this.btnConsiderAlt.UseVisualStyleBackColor = true;
@@ -616,9 +1020,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnStudyBusiness
             // 
-            this.btnStudyBusiness.Location = new System.Drawing.Point(231, 184);
+            this.btnStudyBusiness.Location = new System.Drawing.Point(173, 150);
+            this.btnStudyBusiness.Margin = new System.Windows.Forms.Padding(2);
             this.btnStudyBusiness.Name = "btnStudyBusiness";
-            this.btnStudyBusiness.Size = new System.Drawing.Size(127, 107);
+            this.btnStudyBusiness.Size = new System.Drawing.Size(95, 87);
             this.btnStudyBusiness.TabIndex = 3;
             this.btnStudyBusiness.Text = "Study business to determine required features of the system";
             this.btnStudyBusiness.UseVisualStyleBackColor = true;
@@ -626,9 +1031,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnHighlevel
             // 
-            this.btnHighlevel.Location = new System.Drawing.Point(364, 95);
+            this.btnHighlevel.Location = new System.Drawing.Point(273, 77);
+            this.btnHighlevel.Margin = new System.Windows.Forms.Padding(2);
             this.btnHighlevel.Name = "btnHighlevel";
-            this.btnHighlevel.Size = new System.Drawing.Size(127, 83);
+            this.btnHighlevel.Size = new System.Drawing.Size(95, 67);
             this.btnHighlevel.TabIndex = 2;
             this.btnHighlevel.Text = "High-level design of system";
             this.btnHighlevel.UseVisualStyleBackColor = true;
@@ -636,9 +1042,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnWorkReq
             // 
-            this.btnWorkReq.Location = new System.Drawing.Point(231, 95);
+            this.btnWorkReq.Location = new System.Drawing.Point(173, 77);
+            this.btnWorkReq.Margin = new System.Windows.Forms.Padding(2);
             this.btnWorkReq.Name = "btnWorkReq";
-            this.btnWorkReq.Size = new System.Drawing.Size(127, 83);
+            this.btnWorkReq.Size = new System.Drawing.Size(95, 67);
             this.btnWorkReq.TabIndex = 1;
             this.btnWorkReq.Text = "High/low estimate of work required";
             this.btnWorkReq.UseVisualStyleBackColor = true;
@@ -646,9 +1053,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnIdentifyOpp
             // 
-            this.btnIdentifyOpp.Location = new System.Drawing.Point(44, 184);
+            this.btnIdentifyOpp.Location = new System.Drawing.Point(33, 150);
+            this.btnIdentifyOpp.Margin = new System.Windows.Forms.Padding(2);
             this.btnIdentifyOpp.Name = "btnIdentifyOpp";
-            this.btnIdentifyOpp.Size = new System.Drawing.Size(134, 211);
+            this.btnIdentifyOpp.Size = new System.Drawing.Size(100, 171);
             this.btnIdentifyOpp.TabIndex = 0;
             this.btnIdentifyOpp.Text = "Identify Opportunities";
             this.btnIdentifyOpp.UseVisualStyleBackColor = true;
@@ -662,20 +1070,20 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.ArchitectureStreamTabPage.Controls.Add(this.btnPrepareDesign);
             this.ArchitectureStreamTabPage.Controls.Add(this.btnPrepareConceptual);
             this.ArchitectureStreamTabPage.Controls.Add(this.btnPreparePrefeasiblity);
-            this.ArchitectureStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.ArchitectureStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.ArchitectureStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.ArchitectureStreamTabPage.Name = "ArchitectureStreamTabPage";
-            this.ArchitectureStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.ArchitectureStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.ArchitectureStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ArchitectureStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.ArchitectureStreamTabPage.TabIndex = 5;
             this.ArchitectureStreamTabPage.Text = "Architecture Stream";
             this.ArchitectureStreamTabPage.UseVisualStyleBackColor = true;
             // 
             // btnPrepareTranferImplementation
             // 
-            this.btnPrepareTranferImplementation.Location = new System.Drawing.Point(1190, 257);
+            this.btnPrepareTranferImplementation.Location = new System.Drawing.Point(892, 209);
+            this.btnPrepareTranferImplementation.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareTranferImplementation.Name = "btnPrepareTranferImplementation";
-            this.btnPrepareTranferImplementation.Size = new System.Drawing.Size(320, 72);
+            this.btnPrepareTranferImplementation.Size = new System.Drawing.Size(240, 58);
             this.btnPrepareTranferImplementation.TabIndex = 5;
             this.btnPrepareTranferImplementation.Text = "Prepare submit pre-transfer implementation architecture submission";
             this.btnPrepareTranferImplementation.UseVisualStyleBackColor = true;
@@ -683,9 +1091,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareDetailedDesign
             // 
-            this.btnPrepareDetailedDesign.Location = new System.Drawing.Point(984, 179);
+            this.btnPrepareDetailedDesign.Location = new System.Drawing.Point(738, 145);
+            this.btnPrepareDetailedDesign.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareDetailedDesign.Name = "btnPrepareDetailedDesign";
-            this.btnPrepareDetailedDesign.Size = new System.Drawing.Size(320, 72);
+            this.btnPrepareDetailedDesign.Size = new System.Drawing.Size(240, 58);
             this.btnPrepareDetailedDesign.TabIndex = 4;
             this.btnPrepareDetailedDesign.Text = "Prepare submit detailed design architecture submission";
             this.btnPrepareDetailedDesign.UseVisualStyleBackColor = true;
@@ -693,9 +1102,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPreparePreContract
             // 
-            this.btnPreparePreContract.Location = new System.Drawing.Point(780, 101);
+            this.btnPreparePreContract.Location = new System.Drawing.Point(585, 82);
+            this.btnPreparePreContract.Margin = new System.Windows.Forms.Padding(2);
             this.btnPreparePreContract.Name = "btnPreparePreContract";
-            this.btnPreparePreContract.Size = new System.Drawing.Size(320, 72);
+            this.btnPreparePreContract.Size = new System.Drawing.Size(240, 58);
             this.btnPreparePreContract.TabIndex = 3;
             this.btnPreparePreContract.Text = "Prepare submit pre-contract architecture submission";
             this.btnPreparePreContract.UseVisualStyleBackColor = true;
@@ -703,9 +1113,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareDesign
             // 
-            this.btnPrepareDesign.Location = new System.Drawing.Point(467, 101);
+            this.btnPrepareDesign.Location = new System.Drawing.Point(350, 82);
+            this.btnPrepareDesign.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareDesign.Name = "btnPrepareDesign";
-            this.btnPrepareDesign.Size = new System.Drawing.Size(145, 183);
+            this.btnPrepareDesign.Size = new System.Drawing.Size(109, 149);
             this.btnPrepareDesign.TabIndex = 2;
             this.btnPrepareDesign.Text = "Prepare system design architecture submission";
             this.btnPrepareDesign.UseVisualStyleBackColor = true;
@@ -713,9 +1124,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareConceptual
             // 
-            this.btnPrepareConceptual.Location = new System.Drawing.Point(304, 101);
+            this.btnPrepareConceptual.Location = new System.Drawing.Point(228, 82);
+            this.btnPrepareConceptual.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareConceptual.Name = "btnPrepareConceptual";
-            this.btnPrepareConceptual.Size = new System.Drawing.Size(145, 183);
+            this.btnPrepareConceptual.Size = new System.Drawing.Size(109, 149);
             this.btnPrepareConceptual.TabIndex = 1;
             this.btnPrepareConceptual.Text = "Prepare submit conceptual architecture submission";
             this.btnPrepareConceptual.UseVisualStyleBackColor = true;
@@ -723,9 +1135,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPreparePrefeasiblity
             // 
-            this.btnPreparePrefeasiblity.Location = new System.Drawing.Point(141, 101);
+            this.btnPreparePrefeasiblity.Location = new System.Drawing.Point(106, 82);
+            this.btnPreparePrefeasiblity.Margin = new System.Windows.Forms.Padding(2);
             this.btnPreparePrefeasiblity.Name = "btnPreparePrefeasiblity";
-            this.btnPreparePrefeasiblity.Size = new System.Drawing.Size(145, 183);
+            this.btnPreparePrefeasiblity.Size = new System.Drawing.Size(109, 149);
             this.btnPreparePrefeasiblity.TabIndex = 0;
             this.btnPreparePrefeasiblity.Text = "Prepare submit pre-feasibility architecture submission";
             this.btnPreparePrefeasiblity.UseVisualStyleBackColor = true;
@@ -748,20 +1161,20 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.ProcurementStreamTabPage.Controls.Add(this.btnEvaluateRFP);
             this.ProcurementStreamTabPage.Controls.Add(this.btnRFPPrototypes);
             this.ProcurementStreamTabPage.Controls.Add(this.btnRFPResources);
-            this.ProcurementStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.ProcurementStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.ProcurementStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.ProcurementStreamTabPage.Name = "ProcurementStreamTabPage";
-            this.ProcurementStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.ProcurementStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.ProcurementStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ProcurementStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.ProcurementStreamTabPage.TabIndex = 6;
             this.ProcurementStreamTabPage.Text = "Procurement Stream";
             this.ProcurementStreamTabPage.UseVisualStyleBackColor = true;
             // 
             // btnCloseContracts
             // 
-            this.btnCloseContracts.Location = new System.Drawing.Point(1300, 381);
+            this.btnCloseContracts.Location = new System.Drawing.Point(975, 310);
+            this.btnCloseContracts.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseContracts.Name = "btnCloseContracts";
-            this.btnCloseContracts.Size = new System.Drawing.Size(247, 90);
+            this.btnCloseContracts.Size = new System.Drawing.Size(185, 73);
             this.btnCloseContracts.TabIndex = 14;
             this.btnCloseContracts.Text = "Close project contracts";
             this.btnCloseContracts.UseVisualStyleBackColor = true;
@@ -769,9 +1182,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnProcessStage
             // 
-            this.btnProcessStage.Location = new System.Drawing.Point(171, 477);
+            this.btnProcessStage.Location = new System.Drawing.Point(128, 388);
+            this.btnProcessStage.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcessStage.Name = "btnProcessStage";
-            this.btnProcessStage.Size = new System.Drawing.Size(1376, 42);
+            this.btnProcessStage.Size = new System.Drawing.Size(1032, 34);
             this.btnProcessStage.TabIndex = 13;
             this.btnProcessStage.Text = "Process stage end report";
             this.btnProcessStage.UseVisualStyleBackColor = true;
@@ -779,9 +1193,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnMonitorCompliance
             // 
-            this.btnMonitorCompliance.Location = new System.Drawing.Point(368, 429);
+            this.btnMonitorCompliance.Location = new System.Drawing.Point(276, 349);
+            this.btnMonitorCompliance.Margin = new System.Windows.Forms.Padding(2);
             this.btnMonitorCompliance.Name = "btnMonitorCompliance";
-            this.btnMonitorCompliance.Size = new System.Drawing.Size(926, 42);
+            this.btnMonitorCompliance.Size = new System.Drawing.Size(694, 34);
             this.btnMonitorCompliance.TabIndex = 12;
             this.btnMonitorCompliance.Text = "Monitor Contractual Compliance";
             this.btnMonitorCompliance.UseVisualStyleBackColor = true;
@@ -789,9 +1204,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnEvaluatePerformance
             // 
-            this.btnEvaluatePerformance.Location = new System.Drawing.Point(677, 381);
+            this.btnEvaluatePerformance.Location = new System.Drawing.Point(508, 310);
+            this.btnEvaluatePerformance.Margin = new System.Windows.Forms.Padding(2);
             this.btnEvaluatePerformance.Name = "btnEvaluatePerformance";
-            this.btnEvaluatePerformance.Size = new System.Drawing.Size(617, 42);
+            this.btnEvaluatePerformance.Size = new System.Drawing.Size(463, 34);
             this.btnEvaluatePerformance.TabIndex = 11;
             this.btnEvaluatePerformance.Text = "Evaluate contractor performance";
             this.btnEvaluatePerformance.UseVisualStyleBackColor = true;
@@ -799,9 +1215,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnIdentifyContracts
             // 
-            this.btnIdentifyContracts.Location = new System.Drawing.Point(677, 333);
+            this.btnIdentifyContracts.Location = new System.Drawing.Point(508, 271);
+            this.btnIdentifyContracts.Margin = new System.Windows.Forms.Padding(2);
             this.btnIdentifyContracts.Name = "btnIdentifyContracts";
-            this.btnIdentifyContracts.Size = new System.Drawing.Size(870, 42);
+            this.btnIdentifyContracts.Size = new System.Drawing.Size(652, 34);
             this.btnIdentifyContracts.TabIndex = 10;
             this.btnIdentifyContracts.Text = "Identify needs for ongoing contracts";
             this.btnIdentifyContracts.UseVisualStyleBackColor = true;
@@ -809,9 +1226,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnFeedbackTender
             // 
-            this.btnFeedbackTender.Location = new System.Drawing.Point(677, 268);
+            this.btnFeedbackTender.Location = new System.Drawing.Point(508, 218);
+            this.btnFeedbackTender.Margin = new System.Windows.Forms.Padding(2);
             this.btnFeedbackTender.Name = "btnFeedbackTender";
-            this.btnFeedbackTender.Size = new System.Drawing.Size(870, 59);
+            this.btnFeedbackTender.Size = new System.Drawing.Size(652, 48);
             this.btnFeedbackTender.TabIndex = 9;
             this.btnFeedbackTender.Text = "Feedback to Tender Committee";
             this.btnFeedbackTender.UseVisualStyleBackColor = true;
@@ -819,9 +1237,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnAwardContracts
             // 
-            this.btnAwardContracts.Location = new System.Drawing.Point(996, 58);
+            this.btnAwardContracts.Location = new System.Drawing.Point(747, 47);
+            this.btnAwardContracts.Margin = new System.Windows.Forms.Padding(2);
             this.btnAwardContracts.Name = "btnAwardContracts";
-            this.btnAwardContracts.Size = new System.Drawing.Size(158, 62);
+            this.btnAwardContracts.Size = new System.Drawing.Size(118, 50);
             this.btnAwardContracts.TabIndex = 8;
             this.btnAwardContracts.Text = "Award Contracts";
             this.btnAwardContracts.UseVisualStyleBackColor = true;
@@ -829,9 +1248,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnEvaluate
             // 
-            this.btnEvaluate.Location = new System.Drawing.Point(798, 58);
+            this.btnEvaluate.Location = new System.Drawing.Point(598, 47);
+            this.btnEvaluate.Margin = new System.Windows.Forms.Padding(2);
             this.btnEvaluate.Name = "btnEvaluate";
-            this.btnEvaluate.Size = new System.Drawing.Size(158, 62);
+            this.btnEvaluate.Size = new System.Drawing.Size(118, 50);
             this.btnEvaluate.TabIndex = 7;
             this.btnEvaluate.Text = "Evaluate RFPs";
             this.btnEvaluate.UseVisualStyleBackColor = true;
@@ -839,9 +1259,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnConclude
             // 
-            this.btnConclude.Location = new System.Drawing.Point(177, 328);
+            this.btnConclude.Location = new System.Drawing.Point(133, 266);
+            this.btnConclude.Margin = new System.Windows.Forms.Padding(2);
             this.btnConclude.Name = "btnConclude";
-            this.btnConclude.Size = new System.Drawing.Size(449, 64);
+            this.btnConclude.Size = new System.Drawing.Size(337, 52);
             this.btnConclude.TabIndex = 6;
             this.btnConclude.Text = "Conclude contracts for resources";
             this.btnConclude.UseVisualStyleBackColor = true;
@@ -849,9 +1270,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnIssueRFPs
             // 
-            this.btnIssueRFPs.Location = new System.Drawing.Point(597, 58);
+            this.btnIssueRFPs.Location = new System.Drawing.Point(448, 47);
+            this.btnIssueRFPs.Margin = new System.Windows.Forms.Padding(2);
             this.btnIssueRFPs.Name = "btnIssueRFPs";
-            this.btnIssueRFPs.Size = new System.Drawing.Size(158, 62);
+            this.btnIssueRFPs.Size = new System.Drawing.Size(118, 50);
             this.btnIssueRFPs.TabIndex = 5;
             this.btnIssueRFPs.Text = "Issue RFPs";
             this.btnIssueRFPs.UseVisualStyleBackColor = true;
@@ -859,9 +1281,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnGetTender
             // 
-            this.btnGetTender.Location = new System.Drawing.Point(449, 181);
+            this.btnGetTender.Location = new System.Drawing.Point(337, 147);
+            this.btnGetTender.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetTender.Name = "btnGetTender";
-            this.btnGetTender.Size = new System.Drawing.Size(125, 117);
+            this.btnGetTender.Size = new System.Drawing.Size(94, 95);
             this.btnGetTender.TabIndex = 4;
             this.btnGetTender.Text = "Get Tender Committee approval mandate";
             this.btnGetTender.UseVisualStyleBackColor = true;
@@ -869,9 +1292,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareRFP
             // 
-            this.btnPrepareRFP.Location = new System.Drawing.Point(449, 58);
+            this.btnPrepareRFP.Location = new System.Drawing.Point(337, 47);
+            this.btnPrepareRFP.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareRFP.Name = "btnPrepareRFP";
-            this.btnPrepareRFP.Size = new System.Drawing.Size(125, 117);
+            this.btnPrepareRFP.Size = new System.Drawing.Size(94, 95);
             this.btnPrepareRFP.TabIndex = 3;
             this.btnPrepareRFP.Text = "Prepare RFP (include System Design Specifications)";
             this.btnPrepareRFP.UseVisualStyleBackColor = true;
@@ -879,9 +1303,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnEvaluateRFP
             // 
-            this.btnEvaluateRFP.Location = new System.Drawing.Point(102, 181);
+            this.btnEvaluateRFP.Location = new System.Drawing.Point(76, 147);
+            this.btnEvaluateRFP.Margin = new System.Windows.Forms.Padding(2);
             this.btnEvaluateRFP.Name = "btnEvaluateRFP";
-            this.btnEvaluateRFP.Size = new System.Drawing.Size(125, 117);
+            this.btnEvaluateRFP.Size = new System.Drawing.Size(94, 95);
             this.btnEvaluateRFP.TabIndex = 2;
             this.btnEvaluateRFP.Text = "Evaluate RFPs for resources";
             this.btnEvaluateRFP.UseVisualStyleBackColor = true;
@@ -889,9 +1314,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnRFPPrototypes
             // 
-            this.btnRFPPrototypes.Location = new System.Drawing.Point(233, 58);
+            this.btnRFPPrototypes.Location = new System.Drawing.Point(175, 47);
+            this.btnRFPPrototypes.Margin = new System.Windows.Forms.Padding(2);
             this.btnRFPPrototypes.Name = "btnRFPPrototypes";
-            this.btnRFPPrototypes.Size = new System.Drawing.Size(125, 117);
+            this.btnRFPPrototypes.Size = new System.Drawing.Size(94, 95);
             this.btnRFPPrototypes.TabIndex = 1;
             this.btnRFPPrototypes.Text = "Prepare publish RFP for prototypes";
             this.btnRFPPrototypes.UseVisualStyleBackColor = true;
@@ -899,9 +1325,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnRFPResources
             // 
-            this.btnRFPResources.Location = new System.Drawing.Point(102, 58);
+            this.btnRFPResources.Location = new System.Drawing.Point(76, 47);
+            this.btnRFPResources.Margin = new System.Windows.Forms.Padding(2);
             this.btnRFPResources.Name = "btnRFPResources";
-            this.btnRFPResources.Size = new System.Drawing.Size(125, 117);
+            this.btnRFPResources.Size = new System.Drawing.Size(94, 95);
             this.btnRFPResources.TabIndex = 0;
             this.btnRFPResources.Text = "Prepare publish RFP for resources for Definition phase";
             this.btnRFPResources.UseVisualStyleBackColor = true;
@@ -919,20 +1346,20 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnIdentifyEarlyBenefits);
             this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnPrepareBenefits);
             this.BenefitsRealisationStreamTabPage.Controls.Add(this.btnDefineBenfits);
-            this.BenefitsRealisationStreamTabPage.Location = new System.Drawing.Point(4, 25);
-            this.BenefitsRealisationStreamTabPage.Margin = new System.Windows.Forms.Padding(4);
+            this.BenefitsRealisationStreamTabPage.Location = new System.Drawing.Point(4, 22);
             this.BenefitsRealisationStreamTabPage.Name = "BenefitsRealisationStreamTabPage";
-            this.BenefitsRealisationStreamTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.BenefitsRealisationStreamTabPage.Size = new System.Drawing.Size(1585, 597);
+            this.BenefitsRealisationStreamTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.BenefitsRealisationStreamTabPage.Size = new System.Drawing.Size(1187, 483);
             this.BenefitsRealisationStreamTabPage.TabIndex = 7;
             this.BenefitsRealisationStreamTabPage.Text = "Benefits Realisation Stream";
             this.BenefitsRealisationStreamTabPage.UseVisualStyleBackColor = true;
             // 
             // btnProcessStageReport
             // 
-            this.btnProcessStageReport.Location = new System.Drawing.Point(368, 506);
+            this.btnProcessStageReport.Location = new System.Drawing.Point(276, 411);
+            this.btnProcessStageReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcessStageReport.Name = "btnProcessStageReport";
-            this.btnProcessStageReport.Size = new System.Drawing.Size(1069, 39);
+            this.btnProcessStageReport.Size = new System.Drawing.Size(802, 32);
             this.btnProcessStageReport.TabIndex = 9;
             this.btnProcessStageReport.Text = "Process stage end report";
             this.btnProcessStageReport.UseVisualStyleBackColor = true;
@@ -940,9 +1367,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnConductPlan
             // 
-            this.btnConductPlan.Location = new System.Drawing.Point(368, 461);
+            this.btnConductPlan.Location = new System.Drawing.Point(276, 375);
+            this.btnConductPlan.Margin = new System.Windows.Forms.Padding(2);
             this.btnConductPlan.Name = "btnConductPlan";
-            this.btnConductPlan.Size = new System.Drawing.Size(1069, 39);
+            this.btnConductPlan.Size = new System.Drawing.Size(802, 32);
             this.btnConductPlan.TabIndex = 8;
             this.btnConductPlan.Text = "Conduct benefit realisation reviews according to plan";
             this.btnConductPlan.UseVisualStyleBackColor = true;
@@ -950,9 +1378,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnMonitorBenefit
             // 
-            this.btnMonitorBenefit.Location = new System.Drawing.Point(368, 416);
+            this.btnMonitorBenefit.Location = new System.Drawing.Point(276, 338);
+            this.btnMonitorBenefit.Margin = new System.Windows.Forms.Padding(2);
             this.btnMonitorBenefit.Name = "btnMonitorBenefit";
-            this.btnMonitorBenefit.Size = new System.Drawing.Size(1029, 39);
+            this.btnMonitorBenefit.Size = new System.Drawing.Size(772, 32);
             this.btnMonitorBenefit.TabIndex = 7;
             this.btnMonitorBenefit.Text = "Monitor benefit realisation";
             this.btnMonitorBenefit.UseVisualStyleBackColor = true;
@@ -960,9 +1389,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnUpdatePlan
             // 
-            this.btnUpdatePlan.Location = new System.Drawing.Point(368, 371);
+            this.btnUpdatePlan.Location = new System.Drawing.Point(276, 301);
+            this.btnUpdatePlan.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatePlan.Name = "btnUpdatePlan";
-            this.btnUpdatePlan.Size = new System.Drawing.Size(1029, 39);
+            this.btnUpdatePlan.Size = new System.Drawing.Size(772, 32);
             this.btnUpdatePlan.TabIndex = 6;
             this.btnUpdatePlan.Text = "Update Benefit Realisation Plan";
             this.btnUpdatePlan.UseVisualStyleBackColor = true;
@@ -970,9 +1400,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnReviewPlan
             // 
-            this.btnReviewPlan.Location = new System.Drawing.Point(1156, 213);
+            this.btnReviewPlan.Location = new System.Drawing.Point(867, 173);
+            this.btnReviewPlan.Margin = new System.Windows.Forms.Padding(2);
             this.btnReviewPlan.Name = "btnReviewPlan";
-            this.btnReviewPlan.Size = new System.Drawing.Size(281, 96);
+            this.btnReviewPlan.Size = new System.Drawing.Size(211, 78);
             this.btnReviewPlan.TabIndex = 5;
             this.btnReviewPlan.Text = "Review benefit realisation plan";
             this.btnReviewPlan.UseVisualStyleBackColor = true;
@@ -980,9 +1411,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnConfirmBenefits
             // 
-            this.btnConfirmBenefits.Location = new System.Drawing.Point(1156, 85);
+            this.btnConfirmBenefits.Location = new System.Drawing.Point(867, 69);
+            this.btnConfirmBenefits.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmBenefits.Name = "btnConfirmBenefits";
-            this.btnConfirmBenefits.Size = new System.Drawing.Size(281, 96);
+            this.btnConfirmBenefits.Size = new System.Drawing.Size(211, 78);
             this.btnConfirmBenefits.TabIndex = 4;
             this.btnConfirmBenefits.Text = "Confirm realisation of early benefits";
             this.btnConfirmBenefits.UseVisualStyleBackColor = true;
@@ -990,9 +1422,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnIdentifyBenefits
             // 
-            this.btnIdentifyBenefits.Location = new System.Drawing.Point(329, 213);
+            this.btnIdentifyBenefits.Location = new System.Drawing.Point(247, 173);
+            this.btnIdentifyBenefits.Margin = new System.Windows.Forms.Padding(2);
             this.btnIdentifyBenefits.Name = "btnIdentifyBenefits";
-            this.btnIdentifyBenefits.Size = new System.Drawing.Size(140, 96);
+            this.btnIdentifyBenefits.Size = new System.Drawing.Size(105, 78);
             this.btnIdentifyBenefits.TabIndex = 3;
             this.btnIdentifyBenefits.Text = "Identify additional benefits";
             this.btnIdentifyBenefits.UseVisualStyleBackColor = true;
@@ -1000,9 +1433,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnIdentifyEarlyBenefits
             // 
-            this.btnIdentifyEarlyBenefits.Location = new System.Drawing.Point(150, 213);
+            this.btnIdentifyEarlyBenefits.Location = new System.Drawing.Point(112, 173);
+            this.btnIdentifyEarlyBenefits.Margin = new System.Windows.Forms.Padding(2);
             this.btnIdentifyEarlyBenefits.Name = "btnIdentifyEarlyBenefits";
-            this.btnIdentifyEarlyBenefits.Size = new System.Drawing.Size(140, 96);
+            this.btnIdentifyEarlyBenefits.Size = new System.Drawing.Size(105, 78);
             this.btnIdentifyEarlyBenefits.TabIndex = 2;
             this.btnIdentifyEarlyBenefits.Text = "Identify potential early benefits";
             this.btnIdentifyEarlyBenefits.UseVisualStyleBackColor = true;
@@ -1010,9 +1444,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnPrepareBenefits
             // 
-            this.btnPrepareBenefits.Location = new System.Drawing.Point(329, 85);
+            this.btnPrepareBenefits.Location = new System.Drawing.Point(247, 69);
+            this.btnPrepareBenefits.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrepareBenefits.Name = "btnPrepareBenefits";
-            this.btnPrepareBenefits.Size = new System.Drawing.Size(140, 96);
+            this.btnPrepareBenefits.Size = new System.Drawing.Size(105, 78);
             this.btnPrepareBenefits.TabIndex = 1;
             this.btnPrepareBenefits.Text = "Prepare benefits realisation plan";
             this.btnPrepareBenefits.UseVisualStyleBackColor = true;
@@ -1020,9 +1455,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // btnDefineBenfits
             // 
-            this.btnDefineBenfits.Location = new System.Drawing.Point(150, 85);
+            this.btnDefineBenfits.Location = new System.Drawing.Point(112, 69);
+            this.btnDefineBenfits.Margin = new System.Windows.Forms.Padding(2);
             this.btnDefineBenfits.Name = "btnDefineBenfits";
-            this.btnDefineBenfits.Size = new System.Drawing.Size(140, 96);
+            this.btnDefineBenfits.Size = new System.Drawing.Size(105, 78);
             this.btnDefineBenfits.TabIndex = 0;
             this.btnDefineBenfits.Text = "Define business benefits";
             this.btnDefineBenfits.UseVisualStyleBackColor = true;
@@ -1030,15 +1466,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // frmPLSM_Workstreams
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1679, 737);
+            this.ClientSize = new System.Drawing.Size(1259, 599);
             this.Controls.Add(this.PLSMWorkstreamsTabControl);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPLSM_Workstreams";
             this.Text = "frmPLSM_Workstreams";
             this.PLSMWorkstreamsTabControl.ResumeLayout(false);
             this.PortfolioManagementStreamTabPage.ResumeLayout(false);
+            this.ProgrammeManagementStreamTabPage.ResumeLayout(false);
+            this.ProjectManagementStreamTabPage.ResumeLayout(false);
             this.EngineeringStreamTabPage.ResumeLayout(false);
             this.ArchitectureStreamTabPage.ResumeLayout(false);
             this.ProcurementStreamTabPage.ResumeLayout(false);
@@ -1129,5 +1566,38 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private System.Windows.Forms.Button btnUpdatePlan;
         private System.Windows.Forms.Button btnConductPlan;
         private System.Windows.Forms.Button btnProcessStageReport;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamMonitorProgramme;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamMonitorControlPerformance;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamManagingStageBoundaries;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamAuditBenefit;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamCloseProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamRecordProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamAssessProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamReviewBusinessCase;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamRegiterProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamConfirmProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamPrepareSupporting;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamDefineInvestment;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamFundsAllocation;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamDefineProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamInitProject;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamEstimateFunding;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamPlanRemainingStage;
+        private System.Windows.Forms.Button btnProgrammeWorkStreamAquireTask;
+        private System.Windows.Forms.Button btnProjectWorkStreamConductBenefitRealisation;
+        private System.Windows.Forms.Button btnProjectWorkStreamProcessStageEndReport;
+        private System.Windows.Forms.Button btnProjectWorkStreamMonitorControlProject;
+        private System.Windows.Forms.Button btnProjectWorkStreamMonitorBenefitReal;
+        private System.Windows.Forms.Button btnProjectWorkStreamPrepareStage;
+        private System.Windows.Forms.Button btnProjectWorkStreamPlanNextStage;
+        private System.Windows.Forms.Button btnProjectWorkStreamIntegratePlans;
+        private System.Windows.Forms.Button btnProjectWorkStreamArchiveProjectOutputs;
+        private System.Windows.Forms.Button btnProjectWorkStreamCreateVariousExe;
+        private System.Windows.Forms.Button btnProjectWorkStreamIdentifyProject;
+        private System.Windows.Forms.Button btnProjectWorkStreamStartingUp;
+        private System.Windows.Forms.Button btnProjectWorkStreamCreateFinalPPlan;
+        private System.Windows.Forms.Button btnProjectWorkStreamCreateInitDraft;
+        private System.Windows.Forms.Button btnProjectWorkStreamAquireTask;
+        private System.Windows.Forms.Button btnProjectWorkStreamPlanNextSt;
     }
 }

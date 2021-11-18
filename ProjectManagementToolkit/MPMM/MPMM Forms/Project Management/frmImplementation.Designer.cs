@@ -56,6 +56,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWConcludeStage.TabIndex = 27;
             this.btnImpWConcludeStage.Text = "Conclude Stage";
             this.btnImpWConcludeStage.UseVisualStyleBackColor = true;
+            this.btnImpWConcludeStage.Click += new System.EventHandler(this.btnImpWConcludeStage_Click);
             // 
             // btnImpWStartUpAndCommissioning
             // 
@@ -66,6 +67,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWStartUpAndCommissioning.TabIndex = 26;
             this.btnImpWStartUpAndCommissioning.Text = "Start-Up and commissioning";
             this.btnImpWStartUpAndCommissioning.UseVisualStyleBackColor = true;
+            this.btnImpWStartUpAndCommissioning.Click += new System.EventHandler(this.btnImpWStartUpAndCommissioning_Click);
             // 
             // btnImpWDeploySystem
             // 
@@ -76,6 +78,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWDeploySystem.TabIndex = 25;
             this.btnImpWDeploySystem.Text = "Deploy system";
             this.btnImpWDeploySystem.UseVisualStyleBackColor = true;
+            this.btnImpWDeploySystem.Click += new System.EventHandler(this.btnImpWDeploySystem_Click);
             // 
             // btnImpWTransferSollution
             // 
@@ -86,6 +89,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWTransferSollution.TabIndex = 24;
             this.btnImpWTransferSollution.Text = "Transfer sollution";
             this.btnImpWTransferSollution.UseVisualStyleBackColor = true;
+            this.btnImpWTransferSollution.Click += new System.EventHandler(this.btnImpWTransferSollution_Click);
             // 
             // btnImpWHandOver
             // 
@@ -95,6 +99,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWHandOver.TabIndex = 23;
             this.btnImpWHandOver.Text = "Hand Over / Partial Hand Over";
             this.btnImpWHandOver.UseVisualStyleBackColor = true;
+            this.btnImpWHandOver.Click += new System.EventHandler(this.btnImpWHandOver_Click);
             // 
             // btnImpWDeploymentPlanning
             // 
@@ -105,6 +110,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWDeploymentPlanning.TabIndex = 22;
             this.btnImpWDeploymentPlanning.Text = "Deployment Planning";
             this.btnImpWDeploymentPlanning.UseVisualStyleBackColor = true;
+            this.btnImpWDeploymentPlanning.Click += new System.EventHandler(this.btnImpWDeploymentPlanning_Click);
             // 
             // btnImpWEstOperationalReadiness
             // 
@@ -114,6 +120,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWEstOperationalReadiness.TabIndex = 21;
             this.btnImpWEstOperationalReadiness.Text = "Establish Operational Readiness";
             this.btnImpWEstOperationalReadiness.UseVisualStyleBackColor = true;
+            this.btnImpWEstOperationalReadiness.Click += new System.EventHandler(this.btnImpWEstOperationalReadiness_Click);
             // 
             // btnImpWAcceptingDeliverables
             // 
@@ -123,6 +130,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWAcceptingDeliverables.TabIndex = 20;
             this.btnImpWAcceptingDeliverables.Text = "Accepting Deliverables";
             this.btnImpWAcceptingDeliverables.UseVisualStyleBackColor = true;
+            this.btnImpWAcceptingDeliverables.Click += new System.EventHandler(this.btnImpWAcceptingDeliverables_Click);
             // 
             // btnImpWConductTests
             // 
@@ -133,6 +141,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWConductTests.TabIndex = 19;
             this.btnImpWConductTests.Text = "Conduct tests";
             this.btnImpWConductTests.UseVisualStyleBackColor = true;
+            this.btnImpWConductTests.Click += new System.EventHandler(this.btnImpWConductTests_Click);
             // 
             // btnImpWProductDeliveryManagement
             // 
@@ -142,6 +151,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWProductDeliveryManagement.TabIndex = 18;
             this.btnImpWProductDeliveryManagement.Text = "Product dellivery management";
             this.btnImpWProductDeliveryManagement.UseVisualStyleBackColor = true;
+            this.btnImpWProductDeliveryManagement.Click += new System.EventHandler(this.btnImpWProductDeliveryManagement_Click);
             // 
             // btnImpWManageDetailDesign
             // 
@@ -151,6 +161,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWManageDetailDesign.TabIndex = 17;
             this.btnImpWManageDetailDesign.Text = "Manage Detail Design";
             this.btnImpWManageDetailDesign.UseVisualStyleBackColor = true;
+            this.btnImpWManageDetailDesign.Click += new System.EventHandler(this.btnImpWManageDetailDesign_Click);
             // 
             // btnImpWBuildConstructDeliverable
             // 
@@ -160,6 +171,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWBuildConstructDeliverable.TabIndex = 16;
             this.btnImpWBuildConstructDeliverable.Text = "Build / Construct Deliverable";
             this.btnImpWBuildConstructDeliverable.UseVisualStyleBackColor = true;
+            this.btnImpWBuildConstructDeliverable.Click += new System.EventHandler(this.btnImpWBuildConstructDeliverable_Click);
             // 
             // btnImpWEstSiteSuppInfra
             // 
@@ -178,6 +190,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnImpWSitePrepAndAccess.TabIndex = 14;
             this.btnImpWSitePrepAndAccess.Text = "Site Preperation and access";
             this.btnImpWSitePrepAndAccess.UseVisualStyleBackColor = true;
+            this.btnImpWSitePrepAndAccess.Click += new System.EventHandler(this.btnImpWSitePrepAndAccess_Click);
             // 
             // ImplementationDGV
             // 

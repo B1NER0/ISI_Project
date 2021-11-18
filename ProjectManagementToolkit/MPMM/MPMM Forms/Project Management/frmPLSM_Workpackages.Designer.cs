@@ -1626,6 +1626,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferConsolidateDoc.TabIndex = 6;
             this.btnTransferConsolidateDoc.Text = "Consolidate Documentation";
             this.btnTransferConsolidateDoc.UseVisualStyleBackColor = true;
+            this.btnTransferConsolidateDoc.Click += new System.EventHandler(this.btnTransferConsolidateDoc_Click);
             // 
             // btnTransferConductTests
             // 
@@ -1636,6 +1637,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferConductTests.TabIndex = 5;
             this.btnTransferConductTests.Text = "Conduct test";
             this.btnTransferConductTests.UseVisualStyleBackColor = true;
+            this.btnTransferConductTests.Click += new System.EventHandler(this.btnTransferConductTests_Click);
             // 
             // btnTransferDeploymentPlanning
             // 
@@ -1646,6 +1648,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferDeploymentPlanning.TabIndex = 4;
             this.btnTransferDeploymentPlanning.Text = "Deployment Planning";
             this.btnTransferDeploymentPlanning.UseVisualStyleBackColor = true;
+            this.btnTransferDeploymentPlanning.Click += new System.EventHandler(this.btnTransferDeploymentPlanning_Click);
             // 
             // btnTransferTransferSollution
             // 
@@ -1656,6 +1659,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferTransferSollution.TabIndex = 3;
             this.btnTransferTransferSollution.Text = "Transfer sollution";
             this.btnTransferTransferSollution.UseVisualStyleBackColor = true;
+            this.btnTransferTransferSollution.Click += new System.EventHandler(this.btnTransferTransferSollution_Click);
             // 
             // btnTransferDeploySystem
             // 
@@ -1666,6 +1670,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferDeploySystem.TabIndex = 2;
             this.btnTransferDeploySystem.Text = "Deploy system";
             this.btnTransferDeploySystem.UseVisualStyleBackColor = true;
+            this.btnTransferDeploySystem.Click += new System.EventHandler(this.btnTransferDeploySystem_Click);
             // 
             // btnTransferStartUpCommissioning
             // 
@@ -1676,6 +1681,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferStartUpCommissioning.TabIndex = 1;
             this.btnTransferStartUpCommissioning.Text = "Start-Up and commissioning";
             this.btnTransferStartUpCommissioning.UseVisualStyleBackColor = true;
+            this.btnTransferStartUpCommissioning.Click += new System.EventHandler(this.btnTransferStartUpCommissioning_Click);
             // 
             // btnTransferHandOver
             // 
@@ -1686,6 +1692,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnTransferHandOver.TabIndex = 0;
             this.btnTransferHandOver.Text = "Hand Over / Partial Hand Over";
             this.btnTransferHandOver.UseVisualStyleBackColor = true;
+            this.btnTransferHandOver.Click += new System.EventHandler(this.btnTransferHandOver_Click);
             // 
             // WorkPackagesCloseOutTabPage
             // 
@@ -1714,6 +1721,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutConcludeConfigManagement.TabIndex = 8;
             this.btnCloseOutConcludeConfigManagement.Text = "Conclude configuration management";
             this.btnCloseOutConcludeConfigManagement.UseVisualStyleBackColor = true;
+            this.btnCloseOutConcludeConfigManagement.Click += new System.EventHandler(this.btnCloseOutConcludeConfigManagement_Click);
             // 
             // btnCloseOutConcludeInfoSecurityAndDataProtection
             // 
@@ -1723,6 +1731,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutConcludeInfoSecurityAndDataProtection.TabIndex = 7;
             this.btnCloseOutConcludeInfoSecurityAndDataProtection.Text = "Conclude Information security and data protection";
             this.btnCloseOutConcludeInfoSecurityAndDataProtection.UseVisualStyleBackColor = true;
+            this.btnCloseOutConcludeInfoSecurityAndDataProtection.Click += new System.EventHandler(this.btnCloseOutConcludeInfoSecurityAndDataProtection_Click);
             // 
             // btnCloseOutConcludeRiskManagement
             // 
@@ -1732,6 +1741,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutConcludeRiskManagement.TabIndex = 6;
             this.btnCloseOutConcludeRiskManagement.Text = "Conclude risk management";
             this.btnCloseOutConcludeRiskManagement.UseVisualStyleBackColor = true;
+            this.btnCloseOutConcludeRiskManagement.Click += new System.EventHandler(this.btnCloseOutConcludeRiskManagement_Click);
             // 
             // btnCloseOutConcludeBusinessProcessModeling
             // 
@@ -1741,6 +1751,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutConcludeBusinessProcessModeling.TabIndex = 5;
             this.btnCloseOutConcludeBusinessProcessModeling.Text = "Conclude business process modeling";
             this.btnCloseOutConcludeBusinessProcessModeling.UseVisualStyleBackColor = true;
+            this.btnCloseOutConcludeBusinessProcessModeling.Click += new System.EventHandler(this.btnCloseOutConcludeBusinessProcessModeling_Click);
             // 
             // btnCloseOutConcludeProjectMarketing
             // 
@@ -1750,6 +1761,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutConcludeProjectMarketing.TabIndex = 4;
             this.btnCloseOutConcludeProjectMarketing.Text = "Conclude project marketing";
             this.btnCloseOutConcludeProjectMarketing.UseVisualStyleBackColor = true;
+            this.btnCloseOutConcludeProjectMarketing.Click += new System.EventHandler(this.btnCloseOutConcludeProjectMarketing_Click);
             // 
             // btnCloseOutConcludeQualityAssurance
             // 
@@ -1759,6 +1771,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutConcludeQualityAssurance.TabIndex = 3;
             this.btnCloseOutConcludeQualityAssurance.Text = "Conclude quality assurance";
             this.btnCloseOutConcludeQualityAssurance.UseVisualStyleBackColor = true;
+            this.btnCloseOutConcludeQualityAssurance.Click += new System.EventHandler(this.btnCloseOutConcludeQualityAssurance_Click);
             // 
             // btnCloseOutInitiatePlantLifecycle
             // 
@@ -1768,6 +1781,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutInitiatePlantLifecycle.TabIndex = 2;
             this.btnCloseOutInitiatePlantLifecycle.Text = "Initiate Plant Lifecycle Plan - OM";
             this.btnCloseOutInitiatePlantLifecycle.UseVisualStyleBackColor = true;
+            this.btnCloseOutInitiatePlantLifecycle.Click += new System.EventHandler(this.btnCloseOutInitiatePlantLifecycle_Click);
             // 
             // btnCloseOutDeCommissioningProject
             // 
@@ -1777,6 +1791,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutDeCommissioningProject.TabIndex = 1;
             this.btnCloseOutDeCommissioningProject.Text = "De-Commissioning A Project";
             this.btnCloseOutDeCommissioningProject.UseVisualStyleBackColor = true;
+            this.btnCloseOutDeCommissioningProject.Click += new System.EventHandler(this.btnCloseOutDeCommissioningProject_Click);
             // 
             // btnCloseOutCloseOutProject
             // 
@@ -1786,6 +1801,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnCloseOutCloseOutProject.TabIndex = 0;
             this.btnCloseOutCloseOutProject.Text = "Close-Out Project";
             this.btnCloseOutCloseOutProject.UseVisualStyleBackColor = true;
+            this.btnCloseOutCloseOutProject.Click += new System.EventHandler(this.btnCloseOutCloseOutProject_Click);
             // 
             // WorkPackagesEvaluateTabPage
             // 
@@ -1813,6 +1829,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalIdFollowOnActions.TabIndex = 7;
             this.btnEvalIdFollowOnActions.Text = "Identifying Follow-On Actions";
             this.btnEvalIdFollowOnActions.UseVisualStyleBackColor = true;
+            this.btnEvalIdFollowOnActions.Click += new System.EventHandler(this.btnEvalIdFollowOnActions_Click);
             // 
             // btnEvalAuditBusinessPlan
             // 
@@ -1822,6 +1839,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalAuditBusinessPlan.TabIndex = 6;
             this.btnEvalAuditBusinessPlan.Text = "Audit Business Plan Benefits";
             this.btnEvalAuditBusinessPlan.UseVisualStyleBackColor = true;
+            this.btnEvalAuditBusinessPlan.Click += new System.EventHandler(this.btnEvalAuditBusinessPlan_Click);
             // 
             // btnEvalUndertakeClosureActions
             // 
@@ -1831,6 +1849,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalUndertakeClosureActions.TabIndex = 5;
             this.btnEvalUndertakeClosureActions.Text = "Undertake Closure Actions";
             this.btnEvalUndertakeClosureActions.UseVisualStyleBackColor = true;
+            this.btnEvalUndertakeClosureActions.Click += new System.EventHandler(this.btnEvalUndertakeClosureActions_Click);
             // 
             // btnEvalIdClosureAction
             // 
@@ -1840,6 +1859,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalIdClosureAction.TabIndex = 4;
             this.btnEvalIdClosureAction.Text = "Identify Closure Actions";
             this.btnEvalIdClosureAction.UseVisualStyleBackColor = true;
+            this.btnEvalIdClosureAction.Click += new System.EventHandler(this.btnEvalIdClosureAction_Click);
             // 
             // btnEvalEvalTechDel
             // 
@@ -1849,6 +1869,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalEvalTechDel.TabIndex = 3;
             this.btnEvalEvalTechDel.Text = "Evaluate Technical Delivery";
             this.btnEvalEvalTechDel.UseVisualStyleBackColor = true;
+            this.btnEvalEvalTechDel.Click += new System.EventHandler(this.btnEvalEvalTechDel_Click);
             // 
             // btnEvalEvalProjectGov
             // 
@@ -1858,6 +1879,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalEvalProjectGov.TabIndex = 2;
             this.btnEvalEvalProjectGov.Text = "Evaluate Project Governance and Operational Delivery";
             this.btnEvalEvalProjectGov.UseVisualStyleBackColor = true;
+            this.btnEvalEvalProjectGov.Click += new System.EventHandler(this.btnEvalEvalProjectGov_Click);
             // 
             // btnEvalDeCommissionProject
             // 
@@ -1868,6 +1890,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalDeCommissionProject.TabIndex = 1;
             this.btnEvalDeCommissionProject.Text = "De-Commissioning A Project";
             this.btnEvalDeCommissionProject.UseVisualStyleBackColor = true;
+            this.btnEvalDeCommissionProject.Click += new System.EventHandler(this.btnEvalDeCommissionProject_Click);
             // 
             // btnEvalConfirmProjectComp
             // 
@@ -1877,6 +1900,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnEvalConfirmProjectComp.TabIndex = 0;
             this.btnEvalConfirmProjectComp.Text = "Confirm Project Completion";
             this.btnEvalConfirmProjectComp.UseVisualStyleBackColor = true;
+            this.btnEvalConfirmProjectComp.Click += new System.EventHandler(this.btnEvalConfirmProjectComp_Click);
             // 
             // pictureBox_66
             // 

@@ -1313,7 +1313,14 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnImpSitePrepAndAccess_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Site Preparation and access'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
@@ -1327,77 +1334,154 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnImpBuildConstructDeliverable_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Build Construct%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpManageDetailDesign_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Product delivery management%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpProductDeliveryManagement_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Product delivery management%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpConductTests_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Conduct tests%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpAcceptingDeliverables_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Accepting Deliverables%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpEstOperationalReadiness_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Establish Operational Readiness'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpDeploymentPlanning_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Deployment Planning'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpHandOver_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Hand Over / Partial Hand Over'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpDeploySystem_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Deploy system%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpStartUpAndCommissioning_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Start-Up and Commissioning'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
         private void btnImpTransferSollution_Click(object sender, EventArgs e)
         {
             frmImplementation frmImp = new frmImplementation();
-
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Transfer sollution%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmImp.ImplementationDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
             frmImp.Show();
         }
 
@@ -1406,6 +1490,342 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             frmImplementation frmImp = new frmImplementation();
 
             frmImp.Show();
+        }
+
+        private void btnTransferHandOver_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Hand Over / Partial Hand Over'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnTransferDeploymentPlanning_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Deployment Planning'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnTransferStartUpCommissioning_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Start-Up and Commissioning'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnTransferDeploySystem_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Deploy system%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnTransferTransferSollution_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Transfer sollution%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnTransferConductTests_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Conduct tests%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnTransferConsolidateDoc_Click(object sender, EventArgs e)
+        {
+            frmTransferWorkpackage frmTFW = new frmTransferWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Consolidate Documentation'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmTFW.TransferDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmTFW.Show();
+        }
+
+        private void btnCloseOutCloseOutProject_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Close-Out Project'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutInitiatePlantLifecycle_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Initiate Plant Lifecycle Plan - O&M'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutConcludeQualityAssurance_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Conclude quality assurance'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutConcludeProjectMarketing_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Conclude project marketing'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutConcludeBusinessProcessModeling_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Conclude business process modeling'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutConcludeRiskManagement_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Conclude risk management'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutConcludeInfoSecurityAndDataProtection_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Conclude information security and data protection'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutConcludeConfigManagement_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Conclude configuration management'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnCloseOutDeCommissioningProject_Click(object sender, EventArgs e)
+        {
+            frmCloseOutWorkpackage frmCO = new frmCloseOutWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%De-Commissioning A Project%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmCO.CloseOutDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmCO.Show();
+        }
+
+        private void btnEvalConfirmProjectComp_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Confirm Project Completion'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalDeCommissionProject_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%De-Commissioning A Project%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalEvalProjectGov_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Evaluate Project Governance and Operational Delivery.'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalIdClosureAction_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Identify Closure Actions%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalEvalTechDel_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Evaluate Technical Delivery.'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalUndertakeClosureActions_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Underatke Closure Actions%'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalAuditBusinessPlan_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Audit Business Plan Benefits'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
+        }
+
+        private void btnEvalIdFollowOnActions_Click(object sender, EventArgs e)
+        {
+            frmEvaluateWorkpackage frmE = new frmEvaluateWorkpackage();
+            string fileName = "PLMSWorkPackages.xlsx";
+            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
+            OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Identifying Follow-On Actions'", myconnection);
+            DataSet ds = new DataSet();
+            oda.Fill(ds);
+            frmE.EvaluateDGV.DataSource = ds.Tables[0];
+            myconnection.Close();
+            frmE.Show();
         }
     }
 }
