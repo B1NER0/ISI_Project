@@ -10,6 +10,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     {
         public List<CommunicationEntry> CommunicationEntries { get; set; }
         public string CommunicationsRegisterProgress { get; set; }
+        public string completedDate { get; set; }
         public class CommunicationEntry
         {
             public int ID { get; set; }

@@ -13,6 +13,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         {
             public string ActivityID { get; set; }
             public string ExpenseRegisterProgress { get; set; }
+            public string completedDate { get; set; }
             public string ActivityDescription { get; set; } = "";
             public string TaskId { get; set; }
             public string TaskDescription { get; set; } = "";

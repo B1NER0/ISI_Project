@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public string ProjectName { get; set; }
 
         public string ChangeRequestProgress { get; set; }
+        public string completedDate { get; set; }
 
         public string ProjectManager { get; set; }
 

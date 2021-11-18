@@ -184,6 +184,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
             newProjectStatusReportModel.ProSchedule = ProjSchedules;
             newProjectStatusReportModel.ProjectStatusReportProgress = "DONE";
+            newProjectStatusReportModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
 
             List<ProjectStatusReportModel.ProjectExpenses> ProjExp = new List<ProjectStatusReportModel.ProjectExpenses>();

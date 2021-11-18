@@ -38,6 +38,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectOfficeChecklistModel.ProjectManager = txtProjectManager.Text;
             newProjectOfficeChecklistModel.ProjectOfficeManager = txtProjectOfficeManager.Text;
             newProjectOfficeChecklistModel.ProjectOfficeCheckListProgress = "DONE";
+            newProjectOfficeChecklistModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             newProjectOfficeChecklistModel.Premises = new List<ProjectOfficeChecklistModel.Questionare>();
             int premisesCount = dataGridViewPremises.Rows.Count-1;

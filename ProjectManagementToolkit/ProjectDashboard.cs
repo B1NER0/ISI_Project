@@ -1637,7 +1637,6 @@ namespace ProjectManagementToolkit
 
         private void saveAllDueDate(int phase)
         {
-
             if (phase == 1)
             {
                 //Start date
@@ -2178,6 +2177,14 @@ namespace ProjectManagementToolkit
         {
             if (canChange)
                 saveAllDueDate(4);
+        }
+
+        private bool validateDate(DateTime date1, DateTime date2)
+        {
+            if (date1 > date2)
+                return false;
+            else
+                return true;
         }
 
         // METHOD

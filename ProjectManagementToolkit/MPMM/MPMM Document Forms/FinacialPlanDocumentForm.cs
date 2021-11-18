@@ -66,6 +66,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newFinancialPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newFinancialPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newFinancialPlanModel.FinancialPlanProgress = "DONE";
+            newFinancialPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<FinancialPlanModel.DocumentHistory> documentHistories = new List<FinancialPlanModel.DocumentHistory>();
 

@@ -115,6 +115,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPhaseReviewExeModel.ReportPreparationDate = txtReportPreperationDate.Text;
             newPhaseReviewExeModel.eportingPeriod = txtReportingPeriod.Text;
             newPhaseReviewExeModel.PhaseReviewExeProgress = "DONE";
+            newPhaseReviewExeModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             newPhaseReviewExeModel.Summary = txtSummary.Text;
             newPhaseReviewExeModel.ProjectSchedule = txtProjectSchedule.Text;

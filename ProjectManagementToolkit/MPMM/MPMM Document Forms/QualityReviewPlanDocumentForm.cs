@@ -73,6 +73,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
             newQualityReviewPlanModel.QualityOfProcesses = processes;
             newQualityReviewPlanModel.QualityReviewPlanProgress = "DONE";
+            newQualityReviewPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             newQualityReviewPlanModel.QualityOfDeliverablesDescription = txtQualityOfDeliverables.Text;
 

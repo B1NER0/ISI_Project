@@ -50,6 +50,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newChangeRequestModel.Signature = txtSignature.Text;
 
             newChangeRequestModel.ChangeRequestProgress = "DONE";
+            newChangeRequestModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<VersionControl<ChangeRequestModel>.DocumentModel> documentModels = versionControl.DocumentModels; //Error here
 

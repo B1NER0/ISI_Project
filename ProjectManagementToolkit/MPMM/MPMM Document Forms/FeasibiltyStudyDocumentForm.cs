@@ -71,6 +71,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newFeasibilityStudyModel.Information = information;
             //ADD to check if done
             newFeasibilityStudyModel.FeasibilityStudyProgress = "DONE";
+            newFeasibilityStudyModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<History> histories = new List<History>();
             int Document_HistoryRowCount = Document_History_dgv.RowCount;

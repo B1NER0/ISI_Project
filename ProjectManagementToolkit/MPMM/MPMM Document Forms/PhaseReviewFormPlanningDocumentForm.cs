@@ -41,6 +41,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPhaseReviewPlanningModel.ReportPrepDate = txtReportPreparationDate.Text;
             newPhaseReviewPlanningModel.RepportPreparedBy = txtReportPreparedBy.Text;
             newPhaseReviewPlanningModel.PhaseReviewPlanningProgress = "DONE";
+            newPhaseReviewPlanningModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             /*newPhaseReviewPlanningModel.RepportPreparedBy = txtPreparedBy.Text;
             newPhaseReviewPlanningModel.ReportPrepDate = txtPrepDate.Text;

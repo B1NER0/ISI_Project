@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public string ProjectName { get; set; }
 
         public string RiskFormProgress { get; set; }
+        public string completedDate { get; set; }
         public string ProjectManager { get; set; }
         public string RiskID { get; set; }
         public string RaisedBy { get; set; }

@@ -190,6 +190,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newProcurementRegisterModel.procurementEntries = procurementEntries;
             newProcurementRegisterModel.ProcurementRegisterProgress = "DONE";
+            newProcurementRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
             newProcurementRegisterModel.ProcurementManagerName = txtProcurementManager.Text;
             newProcurementRegisterModel.ProjectName = txtProcurementRegisterProjectName.Text;
             newProcurementRegisterModel.ProjectManagerName = txtProjectManagerName.Text;

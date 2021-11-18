@@ -108,6 +108,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newAcceptancePlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newAcceptancePlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newAcceptancePlanModel.AcceptancePlanProgress = "DONE";
+            newAcceptancePlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<AcceptancePlanModel.DocumentHistory> documentHistories = new List<AcceptancePlanModel.DocumentHistory>();
 

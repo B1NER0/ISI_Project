@@ -52,6 +52,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newCommunicationsManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newCommunicationsManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
             newCommunicationsManagementProcessModel.CommunicationsManagementProcessProgress = "DONE";
+            newCommunicationsManagementProcessModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             newCommunicationsManagementProcessModel.DocumentHistories = new List<CommunicationsManagementProcessModel.DocumentHistory>();
             int historyCount = documentHistory.Rows.Count;

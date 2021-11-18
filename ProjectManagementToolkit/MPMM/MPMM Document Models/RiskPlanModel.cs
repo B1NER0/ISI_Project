@@ -10,6 +10,7 @@ namespace ProjectManagementToolkit.Classes
     {
         public string ProjectName { get; set; }
         public string RiskPlanProgress { get; set; }
+        public string completedDate { get; set; }
         public string Categories { get; set; }
         public string Assumptions { get; set; }
         public string Constraints { get; set; }

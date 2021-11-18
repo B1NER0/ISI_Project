@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.Classes
         public string PlanningPhase { get; set; }
         public string ProjectName { get; set; }
         public string PhaseReviewPlanningProgress { get; set; }
+        public string completedDate { get; set; }
         public string ProjectManager { get; set; }
         public string RepportPreparedBy { get; set; }
         public string ReportPrepDate { get; set; }

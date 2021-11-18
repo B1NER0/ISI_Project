@@ -103,6 +103,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 expenseEntry.Payee = payee;
                 expenseEntry.Method = method;
                 expenseEntry.ExpenseRegisterProgress = "DONE";
+                expenseEntry.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
                 expenseEntries.Add(expenseEntry);
             }
 

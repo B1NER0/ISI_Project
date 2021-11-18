@@ -113,6 +113,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newAcceptanceRegisterModel.AcceptanceEntries = acceptanceEntries;
             newAcceptanceRegisterModel.AcceptanceRegisterProgress = "DONE";
+            newAcceptanceRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
             List<VersionControl<AcceptanceRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentAcceptanceRegisterModel, newAcceptanceRegisterModel))

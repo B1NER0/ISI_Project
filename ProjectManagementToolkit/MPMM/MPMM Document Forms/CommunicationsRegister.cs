@@ -73,6 +73,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newCommunicationRegisterModel.CommunicationEntries = CommunicationEntries;
             newCommunicationRegisterModel.CommunicationsRegisterProgress = "DONE";
+            newCommunicationRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
             List<VersionControl<CommunicationRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentCommunicationRegisterModel, newCommunicationRegisterModel))

@@ -47,6 +47,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newIssueManagementProcessModel.LastSavedDate = DocumentInfoGrid.Rows[3].Cells[1].Value.ToString();
             newIssueManagementProcessModel.FileName = DocumentInfoGrid.Rows[4].Cells[1].Value.ToString();
             newIssueManagementProcessModel.IssueManagementProcessProgress = "DONE";
+            newIssueManagementProcessModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<IssueManagementProcessModel.DocumentHistory> documentHistories = new List<IssueManagementProcessModel.DocumentHistory>();
 

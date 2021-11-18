@@ -106,6 +106,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newQualityPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newQualityPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newQualityPlanModel.QualityPlanProgress = "DONE";
+            newQualityPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<QualityPlanModel.DocumentHistory> documentHistories = new List<QualityPlanModel.DocumentHistory>();
 

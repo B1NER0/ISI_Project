@@ -43,7 +43,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         {
             newRequestForProposalModel.projectName = projectModel.ProjectName;
             newRequestForProposalModel.RequestForProposalProgress = "DONE";
-            
+            newRequestForProposalModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
             newRequestForProposalModel.documentInformations = new List<RequestForProposalModel.DocumentInformation>();
             foreach (DataGridViewRow row in dataGridViewDocumentInformation.Rows)
             {

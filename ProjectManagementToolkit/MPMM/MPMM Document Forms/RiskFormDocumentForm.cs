@@ -63,6 +63,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newRiskFormModel.SupportingDocumentation = supportingDocumentation.Text;
             newRiskFormModel.SignatureDate = signatureDate.Value.ToString();
             newRiskFormModel.RiskFormProgress = "DONE";
+            newRiskFormModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<VersionControl<RiskFormModel>.DocumentModel> documentModels = versionControl.DocumentModels;
             if (!versionControl.isEqual(currentRiskFormModel, newRiskFormModel))

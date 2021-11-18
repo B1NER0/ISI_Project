@@ -59,6 +59,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newAcceptanceFormModel.Criteria = Criteria_tbx.Text;
             newAcceptanceFormModel.Standards = Standards_tbx.Text;
             newAcceptanceFormModel.AcceptanceFormProgress = "DONE";
+            newAcceptanceFormModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<Acceptance> acceptances = new List<Acceptance>();
             int ResultsrowCount = ACCEPTANCE_RESULTS_dgv.RowCount;

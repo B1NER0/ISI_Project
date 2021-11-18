@@ -64,7 +64,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newIssueRegisterModel.IssueEntries = issueEntries;
             newIssueRegisterModel.IssueRegisterProgress = "DONE";
-            
+            newIssueRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
             List<VersionControl<IssueRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentIssueRegisterModel, newIssueRegisterModel))

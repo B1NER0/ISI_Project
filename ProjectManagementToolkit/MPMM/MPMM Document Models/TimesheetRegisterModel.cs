@@ -13,6 +13,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public class TimesheetEntry
         {
             public string TimeSheetRegisterProgress { get; set; }
+            public string completedDate { get; set; }
             public int ActivityID { get; set; }
             public string ActivityDescription { get; set; } = "";
             public string TaskID { get; set; } = "";

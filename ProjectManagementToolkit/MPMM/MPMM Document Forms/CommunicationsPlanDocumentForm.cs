@@ -153,7 +153,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newCommunicationsPlanModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newCommunicationsPlanModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newCommunicationsPlanModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
-            newCommunicationsPlanModel.CommunicationPlanProgress = "DONE";
+            newCommunicationsPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<CommunicationsPlanModel.DocumentHistory> documentHistories = new List<CommunicationsPlanModel.DocumentHistory>();
 

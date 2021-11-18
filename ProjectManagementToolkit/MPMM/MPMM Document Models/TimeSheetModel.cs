@@ -11,6 +11,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public string projectName { get; set; }
 
         public string TimeSheetProgress { get; set; }
+        public string completedDate { get; set; }
 
         public class TimeSheetForm
         {

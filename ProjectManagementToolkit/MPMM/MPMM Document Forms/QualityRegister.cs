@@ -64,6 +64,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 conformanceOfProcess.Date = dgvConformanceOfProcesses.Rows[i].Cells[7].Value?.ToString() ?? "";
                 conformanceOfProcess.Outcome = dgvConformanceOfProcesses.Rows[i].Cells[8].Value?.ToString() ?? "";
                 conformanceOfProcess.QualityRegisterProgress = "DONE";
+                conformanceOfProcess.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
                 conformanceOfProcesses.Add(conformanceOfProcess);
             }

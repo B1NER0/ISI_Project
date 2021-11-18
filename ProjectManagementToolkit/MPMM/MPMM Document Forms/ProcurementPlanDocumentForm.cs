@@ -158,6 +158,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProcurementPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newProcurementPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newProcurementPlanModel.ProcurementPlanProgress = "DONE";
+            newProcurementPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<ProcurementPlanModel.DocumentHistory> documentHistories = new List<ProcurementPlanModel.DocumentHistory>();
 

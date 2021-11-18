@@ -19,6 +19,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
         public string ApprovalDetails { get; set; }
 
         public string ExpenseFormProgress { get; set; }
+        public string completedDate { get; set; }
 
 
 

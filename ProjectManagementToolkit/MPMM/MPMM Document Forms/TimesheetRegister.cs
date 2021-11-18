@@ -62,6 +62,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 TimesheetEntry.ApprovalDate = ApprovalDate;
                 TimesheetEntry.Approver = Approver;
                 TimesheetEntry.TimeSheetRegisterProgress = "DONE";
+                TimesheetEntry.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
                 TimeSheetEntries.Add(TimesheetEntry);
             }

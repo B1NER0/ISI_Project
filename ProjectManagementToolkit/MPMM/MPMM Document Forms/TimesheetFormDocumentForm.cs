@@ -91,6 +91,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newTimeSheetModel.timeSheetForm.approvedDate = dateTimePickerApprovedBy.Text;
 
             newTimeSheetModel.TimeSheetProgress = "DONE";
+            newTimeSheetModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<TimeSheetModel.TimeSheetForm.TimeSpent> timeSpents = new List<TimeSheetModel.TimeSheetForm.TimeSpent>();
             List<TimeSheetModel.TimeSheetForm.TasksCompleted> tasksCompleteds = new List<TimeSheetModel.TimeSheetForm.TasksCompleted>();

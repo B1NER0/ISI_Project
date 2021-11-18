@@ -70,6 +70,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPhaseReviewFormInitiationModel.ProjectChanges = projectChanges.Text;
 
             newPhaseReviewFormInitiationModel.PhaseReviewFormInitiationProgress = "DONE";
+            newPhaseReviewFormInitiationModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             int reviewDetailCount = dgvReviewDetails.Rows.Count;
             newPhaseReviewFormInitiationModel.ReviewDetials = new List<PhaseReviewFormInitiationModel.ReviewDetial>();

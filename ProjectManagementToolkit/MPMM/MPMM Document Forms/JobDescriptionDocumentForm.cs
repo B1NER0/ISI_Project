@@ -62,6 +62,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newJobDescriptionDocumentModel.JobDescriptionProgress = "DONE";
 
+            newJobDescriptionDocumentModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
 
 
             List<VersionControl<JobDescriptionModel>.DocumentModel> documentModels = versionControl.DocumentModels;

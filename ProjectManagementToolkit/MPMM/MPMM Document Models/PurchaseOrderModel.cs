@@ -10,6 +10,7 @@ namespace ProjectManagementToolkit.Classes
     {
         public string PurchaseOrderFor { get; set; }
         public string PurchaseOrderProgress { get; set; }
+        public string completedDate { get; set; }
         public string PurchaseOrderNumber { get; set; }
         public string PurchaseOrderDate { get; set; }
         public string DateRequired { get; set; }
