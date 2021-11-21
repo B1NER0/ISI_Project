@@ -1120,6 +1120,7 @@
             this.txtCostAndExpenseManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCostAndExpenseManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtCostAndExpenseManagementRole.TabIndex = 43;
+            this.txtCostAndExpenseManagementRole.Text = resources.GetString("txtCostAndExpenseManagementRole.Text");
             // 
             // txtCostAndExpenseManagementActivities
             // 
@@ -1130,6 +1131,7 @@
             this.txtCostAndExpenseManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCostAndExpenseManagementActivities.Size = new System.Drawing.Size(373, 488);
             this.txtCostAndExpenseManagementActivities.TabIndex = 42;
+            this.txtCostAndExpenseManagementActivities.Text = resources.GetString("txtCostAndExpenseManagementActivities.Text");
             // 
             // txtCostAndExpenseManagementAim
             // 
@@ -1140,6 +1142,7 @@
             this.txtCostAndExpenseManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCostAndExpenseManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtCostAndExpenseManagementAim.TabIndex = 41;
+            this.txtCostAndExpenseManagementAim.Text = resources.GetString("txtCostAndExpenseManagementAim.Text");
             // 
             // tbp_ChangeManagement
             // 
@@ -1249,6 +1252,7 @@
             this.txtChangeManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtChangeManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtChangeManagementRole.TabIndex = 43;
+            this.txtChangeManagementRole.Text = resources.GetString("txtChangeManagementRole.Text");
             // 
             // txtChangeManagementActivities
             // 
@@ -1259,6 +1263,7 @@
             this.txtChangeManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtChangeManagementActivities.Size = new System.Drawing.Size(376, 488);
             this.txtChangeManagementActivities.TabIndex = 42;
+            this.txtChangeManagementActivities.Text = resources.GetString("txtChangeManagementActivities.Text");
             // 
             // txtChangeManagementAim
             // 
@@ -1269,6 +1274,7 @@
             this.txtChangeManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtChangeManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtChangeManagementAim.TabIndex = 41;
+            this.txtChangeManagementAim.Text = resources.GetString("txtChangeManagementAim.Text");
             // 
             // tbp_CommunicationAndStakeholderManagement
             // 
@@ -1378,6 +1384,7 @@
             this.txtCaSManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCaSManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtCaSManagementRole.TabIndex = 43;
+            this.txtCaSManagementRole.Text = resources.GetString("txtCaSManagementRole.Text");
             // 
             // txtCaSManagementActivities
             // 
@@ -1388,6 +1395,7 @@
             this.txtCaSManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCaSManagementActivities.Size = new System.Drawing.Size(375, 488);
             this.txtCaSManagementActivities.TabIndex = 42;
+            this.txtCaSManagementActivities.Text = resources.GetString("txtCaSManagementActivities.Text");
             // 
             // txtCaSManagementAim
             // 
@@ -1398,6 +1406,7 @@
             this.txtCaSManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCaSManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtCaSManagementAim.TabIndex = 41;
+            this.txtCaSManagementAim.Text = resources.GetString("txtCaSManagementAim.Text");
             // 
             // tbp_IssueManangement
             // 
@@ -1507,6 +1516,7 @@
             this.txtIssueManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtIssueManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtIssueManagementRole.TabIndex = 43;
+            this.txtIssueManagementRole.Text = resources.GetString("txtIssueManagementRole.Text");
             // 
             // txtIssueManagementActivities
             // 
@@ -1517,6 +1527,7 @@
             this.txtIssueManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtIssueManagementActivities.Size = new System.Drawing.Size(374, 488);
             this.txtIssueManagementActivities.TabIndex = 42;
+            this.txtIssueManagementActivities.Text = resources.GetString("txtIssueManagementActivities.Text");
             // 
             // txtIssueManagementAim
             // 
@@ -1527,6 +1538,7 @@
             this.txtIssueManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtIssueManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtIssueManagementAim.TabIndex = 41;
+            this.txtIssueManagementAim.Text = resources.GetString("txtIssueManagementAim.Text");
             // 
             // tbp_AcceptanceManagement
             // 
@@ -1636,6 +1648,7 @@
             this.txtAcceptanceManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcceptanceManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtAcceptanceManagementRole.TabIndex = 43;
+            this.txtAcceptanceManagementRole.Text = resources.GetString("txtAcceptanceManagementRole.Text");
             // 
             // txtAcceptanceManagementAvtivities
             // 
@@ -1646,6 +1659,7 @@
             this.txtAcceptanceManagementAvtivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcceptanceManagementAvtivities.Size = new System.Drawing.Size(374, 488);
             this.txtAcceptanceManagementAvtivities.TabIndex = 42;
+            this.txtAcceptanceManagementAvtivities.Text = resources.GetString("txtAcceptanceManagementAvtivities.Text");
             // 
             // txtAcceptanceManagementAim
             // 
@@ -1656,6 +1670,7 @@
             this.txtAcceptanceManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcceptanceManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtAcceptanceManagementAim.TabIndex = 41;
+            this.txtAcceptanceManagementAim.Text = resources.GetString("txtAcceptanceManagementAim.Text");
             // 
             // tbp_ProcurementManagement
             // 
@@ -1765,6 +1780,7 @@
             this.txtProcurementManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtProcurementManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtProcurementManagementRole.TabIndex = 43;
+            this.txtProcurementManagementRole.Text = resources.GetString("txtProcurementManagementRole.Text");
             // 
             // txtProcurementManagementActivities
             // 
@@ -1775,6 +1791,7 @@
             this.txtProcurementManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtProcurementManagementActivities.Size = new System.Drawing.Size(374, 488);
             this.txtProcurementManagementActivities.TabIndex = 42;
+            this.txtProcurementManagementActivities.Text = resources.GetString("txtProcurementManagementActivities.Text");
             // 
             // txtProcurementManagementAim
             // 
@@ -1785,6 +1802,7 @@
             this.txtProcurementManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtProcurementManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtProcurementManagementAim.TabIndex = 41;
+            this.txtProcurementManagementAim.Text = resources.GetString("txtProcurementManagementAim.Text");
             // 
             // tbp_TimeAllocation
             // 
@@ -1820,6 +1838,7 @@
             this.txtTimeManagementProjectPlan.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementProjectPlan.Size = new System.Drawing.Size(374, 146);
             this.txtTimeManagementProjectPlan.TabIndex = 47;
+            this.txtTimeManagementProjectPlan.Text = resources.GetString("txtTimeManagementProjectPlan.Text");
             // 
             // panel21
             // 
@@ -1905,6 +1924,7 @@
             this.txtTimeManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtTimeManagementRole.TabIndex = 43;
+            this.txtTimeManagementRole.Text = resources.GetString("txtTimeManagementRole.Text");
             // 
             // txtTimeManagementActivities
             // 
@@ -1915,6 +1935,7 @@
             this.txtTimeManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementActivities.Size = new System.Drawing.Size(374, 333);
             this.txtTimeManagementActivities.TabIndex = 42;
+            this.txtTimeManagementActivities.Text = resources.GetString("txtTimeManagementActivities.Text");
             // 
             // txtTimeManagementAim
             // 
@@ -1925,6 +1946,7 @@
             this.txtTimeManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtTimeManagementAim.TabIndex = 41;
+            this.txtTimeManagementAim.Text = resources.GetString("txtTimeManagementAim.Text");
             // 
             // tbp_ExceptionManagement
             // 
@@ -2033,6 +2055,7 @@
             this.txtRiskManagementUpdateProjectPlan.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRiskManagementUpdateProjectPlan.Size = new System.Drawing.Size(374, 146);
             this.txtRiskManagementUpdateProjectPlan.TabIndex = 45;
+            this.txtRiskManagementUpdateProjectPlan.Text = resources.GetString("txtRiskManagementUpdateProjectPlan.Text");
             // 
             // pictureBox1
             // 
@@ -2057,6 +2080,7 @@
             this.btnRiskManagementRoles.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.btnRiskManagementRoles.Size = new System.Drawing.Size(360, 298);
             this.btnRiskManagementRoles.TabIndex = 43;
+            this.btnRiskManagementRoles.Text = resources.GetString("btnRiskManagementRoles.Text");
             // 
             // txtRiskManangementActivities
             // 
@@ -2067,6 +2091,7 @@
             this.txtRiskManangementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRiskManangementActivities.Size = new System.Drawing.Size(374, 333);
             this.txtRiskManangementActivities.TabIndex = 42;
+            this.txtRiskManangementActivities.Text = resources.GetString("txtRiskManangementActivities.Text");
             // 
             // txtRiskManangementAim
             // 
@@ -2077,6 +2102,7 @@
             this.txtRiskManangementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRiskManangementAim.Size = new System.Drawing.Size(359, 182);
             this.txtRiskManangementAim.TabIndex = 41;
+            this.txtRiskManangementAim.Text = resources.GetString("txtRiskManangementAim.Text");
             // 
             // tbp_QualityManagement
             // 
@@ -2186,6 +2212,7 @@
             this.txtQualityManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtQualityManagementRole.Size = new System.Drawing.Size(360, 298);
             this.txtQualityManagementRole.TabIndex = 43;
+            this.txtQualityManagementRole.Text = resources.GetString("txtQualityManagementRole.Text");
             // 
             // txtQualityManagementActivities
             // 
@@ -2196,6 +2223,7 @@
             this.txtQualityManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtQualityManagementActivities.Size = new System.Drawing.Size(374, 488);
             this.txtQualityManagementActivities.TabIndex = 42;
+            this.txtQualityManagementActivities.Text = resources.GetString("txtQualityManagementActivities.Text");
             // 
             // txtQualityManagementAim
             // 
@@ -2206,6 +2234,7 @@
             this.txtQualityManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtQualityManagementAim.Size = new System.Drawing.Size(360, 182);
             this.txtQualityManagementAim.TabIndex = 41;
+            this.txtQualityManagementAim.Text = resources.GetString("txtQualityManagementAim.Text");
             // 
             // btnRiskManagement
             // 
@@ -4106,7 +4135,8 @@
             this.btnRoleDescription.Size = new System.Drawing.Size(191, 29);
             this.btnRoleDescription.TabIndex = 6;
             this.btnRoleDescription.Text = "Role Description";
-            this.btnRoleDescription.UseVisualStyleBackColor = true;
+            this.btnRoleDescription.UseVisualStyleBackColor = true;//////////////////
+           // this.btnRoleDescription.Click += new System.EventHandler(this.BtnRoleDescription_Click);
             // 
             // btnProcessFlowOverview
             // 
@@ -4614,7 +4644,8 @@
             this.btnPortfolioManagementAndExecution.Size = new System.Drawing.Size(374, 26);
             this.btnPortfolioManagementAndExecution.TabIndex = 46;
             this.btnPortfolioManagementAndExecution.Text = "Portfolio Management and Execution";
-            this.btnPortfolioManagementAndExecution.UseVisualStyleBackColor = true;
+            this.btnPortfolioManagementAndExecution.UseVisualStyleBackColor = true;/////////////
+            //this.btnPortfolioManagementAndExecution.Click += new System.EventHandler(this.BtnPortfolioManagementAndExecution_Click);
             // 
             // pictureBox64
             // 
@@ -4637,7 +4668,8 @@
             this.btnCorporateProgramManagement.Size = new System.Drawing.Size(370, 26);
             this.btnCorporateProgramManagement.TabIndex = 44;
             this.btnCorporateProgramManagement.Text = "Corporate Program Management";
-            this.btnCorporateProgramManagement.UseVisualStyleBackColor = true;
+            this.btnCorporateProgramManagement.UseVisualStyleBackColor = true;///////////////////////////////
+           // this.btnCorporateProgramManagement.Click += new System.EventHandler(this.BtnCorporateProgramManagement_Click);
             // 
             // pictureBox65
             // 
