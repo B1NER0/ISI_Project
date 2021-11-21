@@ -66,9 +66,9 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.pnlProcessRolesDescription = new System.Windows.Forms.Panel();
+            this.txtProcessRolesDescription = new System.Windows.Forms.TextBox();
             this.pnlStageRolesDescriptions = new System.Windows.Forms.Panel();
             this.pnlStreamRolesDescriptions = new System.Windows.Forms.Panel();
-            this.txtProcessRolesDescription = new System.Windows.Forms.TextBox();
             this.pnlRoleDescription.SuspendLayout();
             this.pnlProcessRoles.SuspendLayout();
             this.pnlStageRoles.SuspendLayout();
@@ -190,6 +190,7 @@
             this.btnChangeManagement.TabIndex = 6;
             this.btnChangeManagement.Text = "Change Management";
             this.btnChangeManagement.UseVisualStyleBackColor = true;
+            this.btnChangeManagement.Click += new System.EventHandler(this.BtnChangeManagement_Click);
             // 
             // btnCommunicationsManagement
             // 
@@ -199,6 +200,7 @@
             this.btnCommunicationsManagement.TabIndex = 7;
             this.btnCommunicationsManagement.Text = "Communication and Stakeholder Management";
             this.btnCommunicationsManagement.UseVisualStyleBackColor = true;
+            this.btnCommunicationsManagement.Click += new System.EventHandler(this.BtnCommunicationsManagement_Click);
             // 
             // btnIssueManagement
             // 
@@ -208,6 +210,7 @@
             this.btnIssueManagement.TabIndex = 8;
             this.btnIssueManagement.Text = "Issue Management";
             this.btnIssueManagement.UseVisualStyleBackColor = true;
+            this.btnIssueManagement.Click += new System.EventHandler(this.BtnIssueManagement_Click);
             // 
             // btnQualityManagement
             // 
@@ -217,6 +220,7 @@
             this.btnQualityManagement.TabIndex = 9;
             this.btnQualityManagement.Text = "Quality Management";
             this.btnQualityManagement.UseVisualStyleBackColor = true;
+            this.btnQualityManagement.Click += new System.EventHandler(this.BtnQualityManagement_Click);
             // 
             // btnAcceptanceManagement
             // 
@@ -226,6 +230,7 @@
             this.btnAcceptanceManagement.TabIndex = 10;
             this.btnAcceptanceManagement.Text = "Acceptance Management";
             this.btnAcceptanceManagement.UseVisualStyleBackColor = true;
+            this.btnAcceptanceManagement.Click += new System.EventHandler(this.BtnAcceptanceManagement_Click);
             // 
             // btnProcurementManagement
             // 
@@ -235,6 +240,7 @@
             this.btnProcurementManagement.TabIndex = 11;
             this.btnProcurementManagement.Text = "Procurement Management";
             this.btnProcurementManagement.UseVisualStyleBackColor = true;
+            this.btnProcurementManagement.Click += new System.EventHandler(this.BtnProcurementManagement_Click);
             // 
             // btnTimeAllocation
             // 
@@ -244,6 +250,7 @@
             this.btnTimeAllocation.TabIndex = 12;
             this.btnTimeAllocation.Text = "Time Allocation";
             this.btnTimeAllocation.UseVisualStyleBackColor = true;
+            this.btnTimeAllocation.Click += new System.EventHandler(this.BtnTimeAllocation_Click);
             // 
             // btnExceptionManagement
             // 
@@ -253,6 +260,7 @@
             this.btnExceptionManagement.TabIndex = 13;
             this.btnExceptionManagement.Text = "Exception Management";
             this.btnExceptionManagement.UseVisualStyleBackColor = true;
+            this.btnExceptionManagement.Click += new System.EventHandler(this.BtnExceptionManagement_Click);
             // 
             // button1
             // 
@@ -424,6 +432,14 @@
             this.pnlProcessRolesDescription.Size = new System.Drawing.Size(392, 377);
             this.pnlProcessRolesDescription.TabIndex = 32;
             // 
+            // txtProcessRolesDescription
+            // 
+            this.txtProcessRolesDescription.Location = new System.Drawing.Point(7, 3);
+            this.txtProcessRolesDescription.Multiline = true;
+            this.txtProcessRolesDescription.Name = "txtProcessRolesDescription";
+            this.txtProcessRolesDescription.Size = new System.Drawing.Size(382, 353);
+            this.txtProcessRolesDescription.TabIndex = 44;
+            // 
             // pnlStageRolesDescriptions
             // 
             this.pnlStageRolesDescriptions.Location = new System.Drawing.Point(405, 224);
@@ -437,14 +453,6 @@
             this.pnlStreamRolesDescriptions.Name = "pnlStreamRolesDescriptions";
             this.pnlStreamRolesDescriptions.Size = new System.Drawing.Size(395, 377);
             this.pnlStreamRolesDescriptions.TabIndex = 34;
-            // 
-            // txtProcessRolesDescription
-            // 
-            this.txtProcessRolesDescription.Location = new System.Drawing.Point(7, 3);
-            this.txtProcessRolesDescription.Multiline = true;
-            this.txtProcessRolesDescription.Name = "txtProcessRolesDescription";
-            this.txtProcessRolesDescription.Size = new System.Drawing.Size(382, 353);
-            this.txtProcessRolesDescription.TabIndex = 44;
             // 
             // PLSM_RoleDescription
             // 
