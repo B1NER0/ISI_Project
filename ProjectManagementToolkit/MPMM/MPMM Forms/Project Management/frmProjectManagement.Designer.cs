@@ -318,7 +318,6 @@
             this.btnOpportunityScreening = new System.Windows.Forms.Button();
             this.panel51 = new System.Windows.Forms.Panel();
             this.btnKnowledgeAndResources = new System.Windows.Forms.Button();
-            this.btnToolsAndTechniques = new System.Windows.Forms.Button();
             this.btnRoleDescription = new System.Windows.Forms.Button();
             this.btnProcessFlowOverview = new System.Windows.Forms.Button();
             this.btnStageGateRequirements = new System.Windows.Forms.Button();
@@ -365,10 +364,6 @@
             this.pictureBox65 = new System.Windows.Forms.PictureBox();
             this.btnDirectingAProject = new System.Windows.Forms.Button();
             this.pictureBox66 = new System.Windows.Forms.PictureBox();
-            this.tbpOwnerPLSM = new System.Windows.Forms.TabPage();
-            this.tbpConstructorPLSM = new System.Windows.Forms.TabPage();
-            this.tbpCommunityProject = new System.Windows.Forms.TabPage();
-            this.tbpProcessGroupingGovernance = new System.Windows.Forms.TabPage();
             this.tbp_Documentation = new System.Windows.Forms.TabPage();
             this.btnDocumentBack = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -495,6 +490,8 @@
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbp_Policies_and_Procedures = new System.Windows.Forms.TabPage();
+            this.pictureBox69 = new System.Windows.Forms.PictureBox();
+            this.pictureBox70 = new System.Windows.Forms.PictureBox();
             this.timerReportCenter = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.lblType = new System.Windows.Forms.Label();
@@ -673,6 +670,8 @@
             this.tabControl1.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -701,7 +700,7 @@
             this.tbp_Report_Center.Controls.Add(this.panel1);
             this.tbp_Report_Center.Location = new System.Drawing.Point(4, 21);
             this.tbp_Report_Center.Name = "tbp_Report_Center";
-            this.tbp_Report_Center.Padding = new System.Windows.Forms.Padding(3);
+            this.tbp_Report_Center.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbp_Report_Center.Size = new System.Drawing.Size(1075, 625);
             this.tbp_Report_Center.TabIndex = 0;
             this.tbp_Report_Center.Text = "Report Center";
@@ -728,6 +727,7 @@
             this.dataGridReportCenter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReportCenter.Location = new System.Drawing.Point(19, 94);
             this.dataGridReportCenter.Name = "dataGridReportCenter";
+            this.dataGridReportCenter.RowHeadersWidth = 51;
             this.dataGridReportCenter.Size = new System.Drawing.Size(627, 290);
             this.dataGridReportCenter.TabIndex = 13;
             // 
@@ -847,7 +847,7 @@
             this.tbp_Processes.Controls.Add(this.pictureBox3);
             this.tbp_Processes.Location = new System.Drawing.Point(4, 21);
             this.tbp_Processes.Name = "tbp_Processes";
-            this.tbp_Processes.Padding = new System.Windows.Forms.Padding(3);
+            this.tbp_Processes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbp_Processes.Size = new System.Drawing.Size(1075, 625);
             this.tbp_Processes.TabIndex = 1;
             this.tbp_Processes.Text = "Processes";
@@ -953,7 +953,7 @@
             this.tbp_GovernanceProcess.Controls.Add(this.flowLayoutPanel1);
             this.tbp_GovernanceProcess.Location = new System.Drawing.Point(4, 21);
             this.tbp_GovernanceProcess.Name = "tbp_GovernanceProcess";
-            this.tbp_GovernanceProcess.Padding = new System.Windows.Forms.Padding(3);
+            this.tbp_GovernanceProcess.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbp_GovernanceProcess.Size = new System.Drawing.Size(916, 455);
             this.tbp_GovernanceProcess.TabIndex = 0;
             this.tbp_GovernanceProcess.Text = "GovernanceProcess";
@@ -1036,6 +1036,7 @@
             this.btnCostAndExpenseManagementRegister.TabIndex = 41;
             this.btnCostAndExpenseManagementRegister.Text = "Register";
             this.btnCostAndExpenseManagementRegister.UseVisualStyleBackColor = false;
+            this.btnCostAndExpenseManagementRegister.Click += new System.EventHandler(this.btnCostAndExpenseManagementRegister_Click);
             // 
             // btnCostAndExpenseManagementManagementTemplate
             // 
@@ -1046,6 +1047,7 @@
             this.btnCostAndExpenseManagementManagementTemplate.TabIndex = 39;
             this.btnCostAndExpenseManagementManagementTemplate.Text = "Template";
             this.btnCostAndExpenseManagementManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnCostAndExpenseManagementManagementTemplate.Click += new System.EventHandler(this.btnCostAndExpenseManagementManagementTemplate_Click);
             // 
             // pictureBox11
             // 
@@ -1079,6 +1081,7 @@
             this.txtCostAndExpenseManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCostAndExpenseManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtCostAndExpenseManagementRole.TabIndex = 43;
+            this.txtCostAndExpenseManagementRole.Text = resources.GetString("txtCostAndExpenseManagementRole.Text");
             // 
             // txtCostAndExpenseManagementActivities
             // 
@@ -1088,6 +1091,7 @@
             this.txtCostAndExpenseManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCostAndExpenseManagementActivities.Size = new System.Drawing.Size(299, 391);
             this.txtCostAndExpenseManagementActivities.TabIndex = 42;
+            this.txtCostAndExpenseManagementActivities.Text = resources.GetString("txtCostAndExpenseManagementActivities.Text");
             // 
             // txtCostAndExpenseManagementAim
             // 
@@ -1097,6 +1101,7 @@
             this.txtCostAndExpenseManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCostAndExpenseManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtCostAndExpenseManagementAim.TabIndex = 41;
+            this.txtCostAndExpenseManagementAim.Text = resources.GetString("txtCostAndExpenseManagementAim.Text");
             // 
             // tbp_ChangeManagement
             // 
@@ -1152,6 +1157,7 @@
             this.btnChangeManagementRegister.TabIndex = 41;
             this.btnChangeManagementRegister.Text = "Register";
             this.btnChangeManagementRegister.UseVisualStyleBackColor = false;
+            this.btnChangeManagementRegister.Click += new System.EventHandler(this.btnChangeManagementRegister_Click);
             // 
             // btnChangeManagementTemplate
             // 
@@ -1162,6 +1168,7 @@
             this.btnChangeManagementTemplate.TabIndex = 39;
             this.btnChangeManagementTemplate.Text = "Template";
             this.btnChangeManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnChangeManagementTemplate.Click += new System.EventHandler(this.btnChangeManagementTemplate_Click);
             // 
             // pictureBox14
             // 
@@ -1195,6 +1202,7 @@
             this.txtChangeManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtChangeManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtChangeManagementRole.TabIndex = 43;
+            this.txtChangeManagementRole.Text = resources.GetString("txtChangeManagementRole.Text");
             // 
             // txtChangeManagementActivities
             // 
@@ -1204,6 +1212,7 @@
             this.txtChangeManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtChangeManagementActivities.Size = new System.Drawing.Size(302, 391);
             this.txtChangeManagementActivities.TabIndex = 42;
+            this.txtChangeManagementActivities.Text = resources.GetString("txtChangeManagementActivities.Text");
             // 
             // txtChangeManagementAim
             // 
@@ -1213,6 +1222,7 @@
             this.txtChangeManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtChangeManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtChangeManagementAim.TabIndex = 41;
+            this.txtChangeManagementAim.Text = resources.GetString("txtChangeManagementAim.Text");
             // 
             // tbp_CommunicationAndStakeholderManagement
             // 
@@ -1268,6 +1278,7 @@
             this.btnCaSManagementRegister.TabIndex = 41;
             this.btnCaSManagementRegister.Text = "Register";
             this.btnCaSManagementRegister.UseVisualStyleBackColor = false;
+            this.btnCaSManagementRegister.Click += new System.EventHandler(this.btnCaSManagementRegister_Click);
             // 
             // btnCaSManagementTemplate
             // 
@@ -1278,6 +1289,7 @@
             this.btnCaSManagementTemplate.TabIndex = 39;
             this.btnCaSManagementTemplate.Text = "Template";
             this.btnCaSManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnCaSManagementTemplate.Click += new System.EventHandler(this.btnCaSManagementTemplate_Click);
             // 
             // pictureBox17
             // 
@@ -1311,6 +1323,7 @@
             this.txtCaSManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCaSManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtCaSManagementRole.TabIndex = 43;
+            this.txtCaSManagementRole.Text = resources.GetString("txtCaSManagementRole.Text");
             // 
             // txtCaSManagementActivities
             // 
@@ -1320,6 +1333,7 @@
             this.txtCaSManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCaSManagementActivities.Size = new System.Drawing.Size(301, 391);
             this.txtCaSManagementActivities.TabIndex = 42;
+            this.txtCaSManagementActivities.Text = resources.GetString("txtCaSManagementActivities.Text");
             // 
             // txtCaSManagementAim
             // 
@@ -1329,6 +1343,7 @@
             this.txtCaSManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCaSManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtCaSManagementAim.TabIndex = 41;
+            this.txtCaSManagementAim.Text = resources.GetString("txtCaSManagementAim.Text");
             // 
             // tbp_IssueManangement
             // 
@@ -1384,6 +1399,7 @@
             this.btnIssueManagementRegister.TabIndex = 41;
             this.btnIssueManagementRegister.Text = "Register";
             this.btnIssueManagementRegister.UseVisualStyleBackColor = false;
+            this.btnIssueManagementRegister.Click += new System.EventHandler(this.btnIssueManagementRegister_Click);
             // 
             // btnIssueManagementTemplate
             // 
@@ -1394,6 +1410,7 @@
             this.btnIssueManagementTemplate.TabIndex = 39;
             this.btnIssueManagementTemplate.Text = "Template";
             this.btnIssueManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnIssueManagementTemplate.Click += new System.EventHandler(this.btnIssueManagementTemplate_Click);
             // 
             // pictureBox20
             // 
@@ -1427,6 +1444,7 @@
             this.txtIssueManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtIssueManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtIssueManagementRole.TabIndex = 43;
+            this.txtIssueManagementRole.Text = resources.GetString("txtIssueManagementRole.Text");
             // 
             // txtIssueManagementActivities
             // 
@@ -1436,6 +1454,7 @@
             this.txtIssueManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtIssueManagementActivities.Size = new System.Drawing.Size(300, 391);
             this.txtIssueManagementActivities.TabIndex = 42;
+            this.txtIssueManagementActivities.Text = resources.GetString("txtIssueManagementActivities.Text");
             // 
             // txtIssueManagementAim
             // 
@@ -1445,6 +1464,7 @@
             this.txtIssueManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtIssueManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtIssueManagementAim.TabIndex = 41;
+            this.txtIssueManagementAim.Text = resources.GetString("txtIssueManagementAim.Text");
             // 
             // tbp_AcceptanceManagement
             // 
@@ -1500,6 +1520,7 @@
             this.btnAcceptanceManagementRegister.TabIndex = 41;
             this.btnAcceptanceManagementRegister.Text = "Register";
             this.btnAcceptanceManagementRegister.UseVisualStyleBackColor = false;
+            this.btnAcceptanceManagementRegister.Click += new System.EventHandler(this.btnAcceptanceManagementRegister_Click);
             // 
             // btnAcceptanceManagementTemplate
             // 
@@ -1510,6 +1531,7 @@
             this.btnAcceptanceManagementTemplate.TabIndex = 39;
             this.btnAcceptanceManagementTemplate.Text = "Template";
             this.btnAcceptanceManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnAcceptanceManagementTemplate.Click += new System.EventHandler(this.btnAcceptanceManagementTemplate_Click);
             // 
             // pictureBox29
             // 
@@ -1543,6 +1565,7 @@
             this.txtAcceptanceManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcceptanceManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtAcceptanceManagementRole.TabIndex = 43;
+            this.txtAcceptanceManagementRole.Text = resources.GetString("txtAcceptanceManagementRole.Text");
             // 
             // txtAcceptanceManagementAvtivities
             // 
@@ -1552,6 +1575,7 @@
             this.txtAcceptanceManagementAvtivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcceptanceManagementAvtivities.Size = new System.Drawing.Size(300, 391);
             this.txtAcceptanceManagementAvtivities.TabIndex = 42;
+            this.txtAcceptanceManagementAvtivities.Text = resources.GetString("txtAcceptanceManagementAvtivities.Text");
             // 
             // txtAcceptanceManagementAim
             // 
@@ -1561,6 +1585,7 @@
             this.txtAcceptanceManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcceptanceManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtAcceptanceManagementAim.TabIndex = 41;
+            this.txtAcceptanceManagementAim.Text = resources.GetString("txtAcceptanceManagementAim.Text");
             // 
             // tbp_ProcurementManagement
             // 
@@ -1616,6 +1641,7 @@
             this.btnProcurementManagementRegister.TabIndex = 41;
             this.btnProcurementManagementRegister.Text = "Register";
             this.btnProcurementManagementRegister.UseVisualStyleBackColor = false;
+            this.btnProcurementManagementRegister.Click += new System.EventHandler(this.btnProcurementManagementRegister_Click);
             // 
             // btnProcurementManagementTemplate
             // 
@@ -1626,6 +1652,7 @@
             this.btnProcurementManagementTemplate.TabIndex = 39;
             this.btnProcurementManagementTemplate.Text = "Template";
             this.btnProcurementManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnProcurementManagementTemplate.Click += new System.EventHandler(this.btnProcurementManagementTemplate_Click);
             // 
             // pictureBox26
             // 
@@ -1659,6 +1686,7 @@
             this.txtProcurementManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtProcurementManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtProcurementManagementRole.TabIndex = 43;
+            this.txtProcurementManagementRole.Text = resources.GetString("txtProcurementManagementRole.Text");
             // 
             // txtProcurementManagementActivities
             // 
@@ -1668,6 +1696,7 @@
             this.txtProcurementManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtProcurementManagementActivities.Size = new System.Drawing.Size(300, 391);
             this.txtProcurementManagementActivities.TabIndex = 42;
+            this.txtProcurementManagementActivities.Text = resources.GetString("txtProcurementManagementActivities.Text");
             // 
             // txtProcurementManagementAim
             // 
@@ -1677,6 +1706,7 @@
             this.txtProcurementManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtProcurementManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtProcurementManagementAim.TabIndex = 41;
+            this.txtProcurementManagementAim.Text = resources.GetString("txtProcurementManagementAim.Text");
             // 
             // tbp_TimeAllocation
             // 
@@ -1709,6 +1739,7 @@
             this.txtTimeManagementProjectPlan.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementProjectPlan.Size = new System.Drawing.Size(300, 118);
             this.txtTimeManagementProjectPlan.TabIndex = 47;
+            this.txtTimeManagementProjectPlan.Text = resources.GetString("txtTimeManagementProjectPlan.Text");
             // 
             // panel21
             // 
@@ -1742,6 +1773,7 @@
             this.btnTimeManagementRegister.TabIndex = 41;
             this.btnTimeManagementRegister.Text = "Register";
             this.btnTimeManagementRegister.UseVisualStyleBackColor = false;
+            this.btnTimeManagementRegister.Click += new System.EventHandler(this.btnTimeManagementRegister_Click);
             // 
             // btnTimeManagementTemplate
             // 
@@ -1752,6 +1784,7 @@
             this.btnTimeManagementTemplate.TabIndex = 39;
             this.btnTimeManagementTemplate.Text = "Template";
             this.btnTimeManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnTimeManagementTemplate.Click += new System.EventHandler(this.btnTimeManagementTemplate_Click);
             // 
             // pictureBox32
             // 
@@ -1785,6 +1818,7 @@
             this.txtTimeManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtTimeManagementRole.TabIndex = 43;
+            this.txtTimeManagementRole.Text = resources.GetString("txtTimeManagementRole.Text");
             // 
             // txtTimeManagementActivities
             // 
@@ -1794,6 +1828,7 @@
             this.txtTimeManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementActivities.Size = new System.Drawing.Size(300, 267);
             this.txtTimeManagementActivities.TabIndex = 42;
+            this.txtTimeManagementActivities.Text = resources.GetString("txtTimeManagementActivities.Text");
             // 
             // txtTimeManagementAim
             // 
@@ -1803,6 +1838,7 @@
             this.txtTimeManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTimeManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtTimeManagementAim.TabIndex = 41;
+            this.txtTimeManagementAim.Text = resources.GetString("txtTimeManagementAim.Text");
             // 
             // tbp_ExceptionManagement
             // 
@@ -1820,7 +1856,7 @@
             this.tbp_RiskManangement.Controls.Add(this.panel5);
             this.tbp_RiskManangement.Location = new System.Drawing.Point(4, 21);
             this.tbp_RiskManangement.Name = "tbp_RiskManangement";
-            this.tbp_RiskManangement.Padding = new System.Windows.Forms.Padding(3);
+            this.tbp_RiskManangement.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbp_RiskManangement.Size = new System.Drawing.Size(916, 455);
             this.tbp_RiskManangement.TabIndex = 1;
             this.tbp_RiskManangement.Text = "RiskManangement";
@@ -1870,6 +1906,7 @@
             this.btnRiskManagementRegister.TabIndex = 41;
             this.btnRiskManagementRegister.Text = "Register";
             this.btnRiskManagementRegister.UseVisualStyleBackColor = false;
+            this.btnRiskManagementRegister.Click += new System.EventHandler(this.btnRiskManagementRegister_Click);
             // 
             // btnRiskManagementTemplate
             // 
@@ -1880,6 +1917,7 @@
             this.btnRiskManagementTemplate.TabIndex = 39;
             this.btnRiskManagementTemplate.Text = "Template";
             this.btnRiskManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnRiskManagementTemplate.Click += new System.EventHandler(this.btnRiskManagementTemplate_Click);
             // 
             // pictureBox2
             // 
@@ -1900,6 +1938,7 @@
             this.txtRiskManagementUpdateProjectPlan.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRiskManagementUpdateProjectPlan.Size = new System.Drawing.Size(300, 118);
             this.txtRiskManagementUpdateProjectPlan.TabIndex = 45;
+            this.txtRiskManagementUpdateProjectPlan.Text = resources.GetString("txtRiskManagementUpdateProjectPlan.Text");
             // 
             // pictureBox1
             // 
@@ -1922,6 +1961,7 @@
             this.btnRiskManagementRoles.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.btnRiskManagementRoles.Size = new System.Drawing.Size(289, 239);
             this.btnRiskManagementRoles.TabIndex = 43;
+            this.btnRiskManagementRoles.Text = resources.GetString("btnRiskManagementRoles.Text");
             // 
             // txtRiskManangementActivities
             // 
@@ -1931,6 +1971,7 @@
             this.txtRiskManangementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRiskManangementActivities.Size = new System.Drawing.Size(300, 267);
             this.txtRiskManangementActivities.TabIndex = 42;
+            this.txtRiskManangementActivities.Text = resources.GetString("txtRiskManangementActivities.Text");
             // 
             // txtRiskManangementAim
             // 
@@ -1940,6 +1981,7 @@
             this.txtRiskManangementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRiskManangementAim.Size = new System.Drawing.Size(288, 146);
             this.txtRiskManangementAim.TabIndex = 41;
+            this.txtRiskManangementAim.Text = resources.GetString("txtRiskManangementAim.Text");
             // 
             // tbp_QualityManagement
             // 
@@ -1995,6 +2037,7 @@
             this.btnQualityManagementRegister.TabIndex = 41;
             this.btnQualityManagementRegister.Text = "Register";
             this.btnQualityManagementRegister.UseVisualStyleBackColor = false;
+            this.btnQualityManagementRegister.Click += new System.EventHandler(this.btnQualityManagementRegister_Click);
             // 
             // btnQualityManagementTemplate
             // 
@@ -2005,6 +2048,7 @@
             this.btnQualityManagementTemplate.TabIndex = 39;
             this.btnQualityManagementTemplate.Text = "Template";
             this.btnQualityManagementTemplate.UseVisualStyleBackColor = false;
+            this.btnQualityManagementTemplate.Click += new System.EventHandler(this.btnQualityManagementTemplate_Click);
             // 
             // pictureBox23
             // 
@@ -2038,6 +2082,7 @@
             this.txtQualityManagementRole.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtQualityManagementRole.Size = new System.Drawing.Size(289, 239);
             this.txtQualityManagementRole.TabIndex = 43;
+            this.txtQualityManagementRole.Text = resources.GetString("txtQualityManagementRole.Text");
             // 
             // txtQualityManagementActivities
             // 
@@ -2047,6 +2092,7 @@
             this.txtQualityManagementActivities.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtQualityManagementActivities.Size = new System.Drawing.Size(300, 391);
             this.txtQualityManagementActivities.TabIndex = 42;
+            this.txtQualityManagementActivities.Text = resources.GetString("txtQualityManagementActivities.Text");
             // 
             // txtQualityManagementAim
             // 
@@ -2056,6 +2102,7 @@
             this.txtQualityManagementAim.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtQualityManagementAim.Size = new System.Drawing.Size(289, 146);
             this.txtQualityManagementAim.TabIndex = 41;
+            this.txtQualityManagementAim.Text = resources.GetString("txtQualityManagementAim.Text");
             // 
             // btnRiskManagement
             // 
@@ -2235,6 +2282,7 @@
             this.dataGridProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProjects.Location = new System.Drawing.Point(3, 3);
             this.dataGridProjects.Name = "dataGridProjects";
+            this.dataGridProjects.RowHeadersWidth = 51;
             this.dataGridProjects.Size = new System.Drawing.Size(907, 446);
             this.dataGridProjects.TabIndex = 1;
             // 
@@ -2322,10 +2370,6 @@
             // tbcPLSMsSubProcesses
             // 
             this.tbcPLSMsSubProcesses.Controls.Add(this.tbpReferencePLSM);
-            this.tbcPLSMsSubProcesses.Controls.Add(this.tbpOwnerPLSM);
-            this.tbcPLSMsSubProcesses.Controls.Add(this.tbpConstructorPLSM);
-            this.tbcPLSMsSubProcesses.Controls.Add(this.tbpCommunityProject);
-            this.tbcPLSMsSubProcesses.Controls.Add(this.tbpProcessGroupingGovernance);
             this.tbcPLSMsSubProcesses.Location = new System.Drawing.Point(3, 3);
             this.tbcPLSMsSubProcesses.Name = "tbcPLSMsSubProcesses";
             this.tbcPLSMsSubProcesses.SelectedIndex = 0;
@@ -2362,7 +2406,7 @@
             this.tbpReferencePLSM.Controls.Add(this.panel63);
             this.tbpReferencePLSM.Location = new System.Drawing.Point(4, 21);
             this.tbpReferencePLSM.Name = "tbpReferencePLSM";
-            this.tbpReferencePLSM.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpReferencePLSM.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpReferencePLSM.Size = new System.Drawing.Size(1050, 565);
             this.tbpReferencePLSM.TabIndex = 0;
             this.tbpReferencePLSM.Text = "Reference PLSM";
@@ -2390,6 +2434,7 @@
             this.btnWorkStreamsEvaluate.TabIndex = 4;
             this.btnWorkStreamsEvaluate.Text = "Work Streams";
             this.btnWorkStreamsEvaluate.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsEvaluate.Click += new System.EventHandler(this.btnWorkStreamsEvaluate_Click);
             // 
             // btnWorkPakagesEvaluate
             // 
@@ -2399,6 +2444,7 @@
             this.btnWorkPakagesEvaluate.TabIndex = 3;
             this.btnWorkPakagesEvaluate.Text = "Work Packages";
             this.btnWorkPakagesEvaluate.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesEvaluate.Click += new System.EventHandler(this.btnWorkPakagesEvaluate_Click);
             // 
             // pnlEvaluate
             // 
@@ -2416,6 +2462,7 @@
             this.btnWorkStreamsCloseOut.TabIndex = 2;
             this.btnWorkStreamsCloseOut.Text = "Work Streams";
             this.btnWorkStreamsCloseOut.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsCloseOut.Click += new System.EventHandler(this.btnWorkStreamsCloseOut_Click);
             // 
             // pnlCloseOut
             // 
@@ -2433,6 +2480,7 @@
             this.btnWorkPakagesCloseOut.TabIndex = 0;
             this.btnWorkPakagesCloseOut.Text = "Work Packages";
             this.btnWorkPakagesCloseOut.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesCloseOut.Click += new System.EventHandler(this.btnWorkPakagesCloseOut_Click);
             // 
             // panel26
             // 
@@ -2457,6 +2505,7 @@
             this.btnWorkStreamsTransfer.TabIndex = 4;
             this.btnWorkStreamsTransfer.Text = "Work Streams";
             this.btnWorkStreamsTransfer.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsTransfer.Click += new System.EventHandler(this.btnWorkStreamsTransfer_Click);
             // 
             // btnWorkPakagesTransfer
             // 
@@ -2466,6 +2515,7 @@
             this.btnWorkPakagesTransfer.TabIndex = 3;
             this.btnWorkPakagesTransfer.Text = "Work Packages";
             this.btnWorkPakagesTransfer.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesTransfer.Click += new System.EventHandler(this.btnWorkPakagesTransfer_Click);
             // 
             // pnlTransfer
             // 
@@ -2483,6 +2533,7 @@
             this.btnWorkStreamsImplementation.TabIndex = 2;
             this.btnWorkStreamsImplementation.Text = "Work Streams";
             this.btnWorkStreamsImplementation.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsImplementation.Click += new System.EventHandler(this.btnWorkStreamsImplementation_Click);
             // 
             // pnlImplementation
             // 
@@ -2500,6 +2551,7 @@
             this.btnWorkPakagesImplementation.TabIndex = 0;
             this.btnWorkPakagesImplementation.Text = "Work Packages";
             this.btnWorkPakagesImplementation.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesImplementation.Click += new System.EventHandler(this.btnWorkPakagesImplementation_Click);
             // 
             // panel27
             // 
@@ -2524,6 +2576,7 @@
             this.btnWorkStreamsBusinessPlan.TabIndex = 4;
             this.btnWorkStreamsBusinessPlan.Text = "Work Streams";
             this.btnWorkStreamsBusinessPlan.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsBusinessPlan.Click += new System.EventHandler(this.btnWorkStreamsBusinessPlan_Click);
             // 
             // btnWorkPakagesBusinessPlan
             // 
@@ -2533,6 +2586,7 @@
             this.btnWorkPakagesBusinessPlan.TabIndex = 3;
             this.btnWorkPakagesBusinessPlan.Text = "Work Packages";
             this.btnWorkPakagesBusinessPlan.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesBusinessPlan.Click += new System.EventHandler(this.btnWorkPakagesBusinessPlan_Click);
             // 
             // pnlBusinessPlan
             // 
@@ -2550,6 +2604,7 @@
             this.btnWorkStreamsFeasibility.TabIndex = 2;
             this.btnWorkStreamsFeasibility.Text = "Work Streams";
             this.btnWorkStreamsFeasibility.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsFeasibility.Click += new System.EventHandler(this.btnWorkStreamsFeasibility_Click);
             // 
             // pnlFeasibility
             // 
@@ -2567,6 +2622,7 @@
             this.btnWorkPakagesFeasibility.TabIndex = 0;
             this.btnWorkPakagesFeasibility.Text = "Work Packages";
             this.btnWorkPakagesFeasibility.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesFeasibility.Click += new System.EventHandler(this.btnWorkPakagesFeasibility_Click);
             // 
             // panel58
             // 
@@ -2837,6 +2893,8 @@
             // 
             // btnPARICSOverview
             // 
+            this.btnPARICSOverview.Enabled = false;
+            this.btnPARICSOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPARICSOverview.Location = new System.Drawing.Point(7, 56);
             this.btnPARICSOverview.Name = "btnPARICSOverview";
             this.btnPARICSOverview.Size = new System.Drawing.Size(153, 23);
@@ -2856,6 +2914,8 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(85, 20);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 34);
@@ -2865,6 +2925,8 @@
             // 
             // btnCloseOut2
             // 
+            this.btnCloseOut2.Enabled = false;
+            this.btnCloseOut2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseOut2.Location = new System.Drawing.Point(7, 20);
             this.btnCloseOut2.Name = "btnCloseOut2";
             this.btnCloseOut2.Size = new System.Drawing.Size(75, 34);
@@ -2915,6 +2977,8 @@
             // 
             // btnTransfer2
             // 
+            this.btnTransfer2.Enabled = false;
+            this.btnTransfer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransfer2.Location = new System.Drawing.Point(85, 20);
             this.btnTransfer2.Name = "btnTransfer2";
             this.btnTransfer2.Size = new System.Drawing.Size(75, 59);
@@ -2924,6 +2988,8 @@
             // 
             // btnImplementation2
             // 
+            this.btnImplementation2.Enabled = false;
+            this.btnImplementation2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImplementation2.Font = new System.Drawing.Font("Cambria", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImplementation2.Location = new System.Drawing.Point(7, 20);
             this.btnImplementation2.Name = "btnImplementation2";
@@ -2975,6 +3041,8 @@
             // 
             // btnBusinessPlan2
             // 
+            this.btnBusinessPlan2.Enabled = false;
+            this.btnBusinessPlan2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBusinessPlan2.Location = new System.Drawing.Point(85, 20);
             this.btnBusinessPlan2.Name = "btnBusinessPlan2";
             this.btnBusinessPlan2.Size = new System.Drawing.Size(75, 59);
@@ -2984,6 +3052,8 @@
             // 
             // btnFeasibility2
             // 
+            this.btnFeasibility2.Enabled = false;
+            this.btnFeasibility2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeasibility2.Location = new System.Drawing.Point(7, 20);
             this.btnFeasibility2.Name = "btnFeasibility2";
             this.btnFeasibility2.Size = new System.Drawing.Size(75, 59);
@@ -3010,6 +3080,7 @@
             this.btnFRA.TabIndex = 65;
             this.btnFRA.Text = "FRA";
             this.btnFRA.UseVisualStyleBackColor = true;
+            this.btnFRA.Click += new System.EventHandler(this.btnFRA_Click);
             // 
             // pictureBox36
             // 
@@ -3044,6 +3115,7 @@
             this.btnClosureContracts.TabIndex = 67;
             this.btnClosureContracts.Text = "Closure Contracts";
             this.btnClosureContracts.UseVisualStyleBackColor = true;
+            this.btnClosureContracts.Click += new System.EventHandler(this.btnClosureContracts_Click);
             // 
             // pictureBox37
             // 
@@ -3066,6 +3138,7 @@
             this.btnHandOverDocument2.TabIndex = 65;
             this.btnHandOverDocument2.Text = "Hand Over Document";
             this.btnHandOverDocument2.UseVisualStyleBackColor = true;
+            this.btnHandOverDocument2.Click += new System.EventHandler(this.btnHandOverDocument2_Click);
             // 
             // pictureBox38
             // 
@@ -3101,6 +3174,7 @@
             this.btnHandOverDocument1.TabIndex = 67;
             this.btnHandOverDocument1.Text = "Hand Over Document";
             this.btnHandOverDocument1.UseVisualStyleBackColor = true;
+            this.btnHandOverDocument1.Click += new System.EventHandler(this.btnHandOverDocument1_Click);
             // 
             // pictureBox39
             // 
@@ -3123,6 +3197,7 @@
             this.btnExecutionAgreement.TabIndex = 65;
             this.btnExecutionAgreement.Text = "Execution Agreement";
             this.btnExecutionAgreement.UseVisualStyleBackColor = true;
+            this.btnExecutionAgreement.Click += new System.EventHandler(this.btnExecutionAgreement_Click);
             // 
             // pictureBox40
             // 
@@ -3157,6 +3232,7 @@
             this.btnFinancialClosure.TabIndex = 67;
             this.btnFinancialClosure.Text = "Financial Closure";
             this.btnFinancialClosure.UseVisualStyleBackColor = true;
+            this.btnFinancialClosure.Click += new System.EventHandler(this.btnFinancialClosure_Click);
             // 
             // pictureBox41
             // 
@@ -3178,6 +3254,7 @@
             this.btnAuthorizedProject.TabIndex = 65;
             this.btnAuthorizedProject.Text = "Authorized Project";
             this.btnAuthorizedProject.UseVisualStyleBackColor = true;
+            this.btnAuthorizedProject.Click += new System.EventHandler(this.btnAuthorizedProject_Click);
             // 
             // pictureBox42
             // 
@@ -3212,6 +3289,7 @@
             this.btnERA.TabIndex = 67;
             this.btnERA.Text = "ERA";
             this.btnERA.UseVisualStyleBackColor = true;
+            this.btnERA.Click += new System.EventHandler(this.btnERA_Click);
             // 
             // pictureBox43
             // 
@@ -3233,6 +3311,7 @@
             this.btnBackableProject.TabIndex = 65;
             this.btnBackableProject.Text = "Backable Project";
             this.btnBackableProject.UseVisualStyleBackColor = true;
+            this.btnBackableProject.Click += new System.EventHandler(this.btnBackableProject_Click);
             // 
             // pictureBox44
             // 
@@ -3267,6 +3346,7 @@
             this.btnDRA.TabIndex = 67;
             this.btnDRA.Text = "DRA";
             this.btnDRA.UseVisualStyleBackColor = true;
+            this.btnDRA.Click += new System.EventHandler(this.btnDRA_Click);
             // 
             // pictureBox45
             // 
@@ -3288,6 +3368,7 @@
             this.btnCRA.TabIndex = 65;
             this.btnCRA.Text = "CRA";
             this.btnCRA.UseVisualStyleBackColor = true;
+            this.btnCRA.Click += new System.EventHandler(this.btnCRA_Click);
             // 
             // pictureBox46
             // 
@@ -3318,6 +3399,7 @@
             this.panel41.Name = "panel41";
             this.panel41.Size = new System.Drawing.Size(260, 109);
             this.panel41.TabIndex = 8;
+            this.panel41.Paint += new System.Windows.Forms.PaintEventHandler(this.panel41_Paint);
             // 
             // btnWorkStreamsContractConcluding
             // 
@@ -3327,6 +3409,7 @@
             this.btnWorkStreamsContractConcluding.TabIndex = 10;
             this.btnWorkStreamsContractConcluding.Text = "Work Streams";
             this.btnWorkStreamsContractConcluding.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsContractConcluding.Click += new System.EventHandler(this.btnWorkStreamsContractConcluding_Click);
             // 
             // btnWorkPakagesContractConcluding
             // 
@@ -3336,6 +3419,7 @@
             this.btnWorkPakagesContractConcluding.TabIndex = 9;
             this.btnWorkPakagesContractConcluding.Text = "Work Packages";
             this.btnWorkPakagesContractConcluding.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesContractConcluding.Click += new System.EventHandler(this.btnWorkPakagesContractConcluding_Click);
             // 
             // btnWorkStreamsProjectExecutionPlanning
             // 
@@ -3345,6 +3429,7 @@
             this.btnWorkStreamsProjectExecutionPlanning.TabIndex = 8;
             this.btnWorkStreamsProjectExecutionPlanning.Text = "Work Streams";
             this.btnWorkStreamsProjectExecutionPlanning.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsProjectExecutionPlanning.Click += new System.EventHandler(this.btnWorkStreamsProjectExecutionPlanning_Click);
             // 
             // btnWorkPakagesProjectExecutionPlanning
             // 
@@ -3354,6 +3439,7 @@
             this.btnWorkPakagesProjectExecutionPlanning.TabIndex = 7;
             this.btnWorkPakagesProjectExecutionPlanning.Text = "Work Packages";
             this.btnWorkPakagesProjectExecutionPlanning.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesProjectExecutionPlanning.Click += new System.EventHandler(this.btnWorkPakagesProjectExecutionPlanning_Click);
             // 
             // btnWorkStreamsDetailedDesign
             // 
@@ -3363,6 +3449,7 @@
             this.btnWorkStreamsDetailedDesign.TabIndex = 6;
             this.btnWorkStreamsDetailedDesign.Text = "Work Streams";
             this.btnWorkStreamsDetailedDesign.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsDetailedDesign.Click += new System.EventHandler(this.btnWorkStreamsDetailedDesign_Click);
             // 
             // btnWorkPakagesDetailedDesign
             // 
@@ -3372,6 +3459,7 @@
             this.btnWorkPakagesDetailedDesign.TabIndex = 5;
             this.btnWorkPakagesDetailedDesign.Text = "Work Packages";
             this.btnWorkPakagesDetailedDesign.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesDetailedDesign.Click += new System.EventHandler(this.btnWorkPakagesDetailedDesign_Click);
             // 
             // pnlDetailedDesign
             // 
@@ -3420,6 +3508,7 @@
             this.btnWorkStreamsPrefeasibility.TabIndex = 4;
             this.btnWorkStreamsPrefeasibility.Text = "Work Streams";
             this.btnWorkStreamsPrefeasibility.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsPrefeasibility.Click += new System.EventHandler(this.btnWorkStreamsPrefeasibility_Click);
             // 
             // btnWorkPakagesPrefeasibility
             // 
@@ -3429,6 +3518,7 @@
             this.btnWorkPakagesPrefeasibility.TabIndex = 3;
             this.btnWorkPakagesPrefeasibility.Text = "Work Packages";
             this.btnWorkPakagesPrefeasibility.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesPrefeasibility.Click += new System.EventHandler(this.btnWorkPakagesPrefeasibility_Click);
             // 
             // pnlPrefeasibility
             // 
@@ -3446,6 +3536,7 @@
             this.btnWorkStreamsOpportunityScreening.TabIndex = 2;
             this.btnWorkStreamsOpportunityScreening.Text = "Work Streams";
             this.btnWorkStreamsOpportunityScreening.UseVisualStyleBackColor = true;
+            this.btnWorkStreamsOpportunityScreening.Click += new System.EventHandler(this.btnWorkStreamsOpportunityScreening_Click);
             // 
             // pnlOpportunityScreening
             // 
@@ -3463,6 +3554,7 @@
             this.btnWorkPakagesOpportunityScreening.TabIndex = 0;
             this.btnWorkPakagesOpportunityScreening.Text = "Work Packages";
             this.btnWorkPakagesOpportunityScreening.UseVisualStyleBackColor = true;
+            this.btnWorkPakagesOpportunityScreening.Click += new System.EventHandler(this.btnWorkPakagesOpportunityScreening_Click);
             // 
             // panel44
             // 
@@ -3585,6 +3677,8 @@
             // 
             // btnPARICSWorkPackages
             // 
+            this.btnPARICSWorkPackages.Enabled = false;
+            this.btnPARICSWorkPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPARICSWorkPackages.Location = new System.Drawing.Point(6, 56);
             this.btnPARICSWorkPackages.Name = "btnPARICSWorkPackages";
             this.btnPARICSWorkPackages.Size = new System.Drawing.Size(245, 23);
@@ -3604,6 +3698,8 @@
             // 
             // btnDetailedDesign2
             // 
+            this.btnDetailedDesign2.Enabled = false;
+            this.btnDetailedDesign2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetailedDesign2.Location = new System.Drawing.Point(172, 20);
             this.btnDetailedDesign2.Name = "btnDetailedDesign2";
             this.btnDetailedDesign2.Size = new System.Drawing.Size(79, 34);
@@ -3613,6 +3709,8 @@
             // 
             // btnContractConcluding
             // 
+            this.btnContractConcluding.Enabled = false;
+            this.btnContractConcluding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContractConcluding.Location = new System.Drawing.Point(90, 20);
             this.btnContractConcluding.Name = "btnContractConcluding";
             this.btnContractConcluding.Size = new System.Drawing.Size(78, 34);
@@ -3622,6 +3720,8 @@
             // 
             // btnProjectExecutiomPlanning2
             // 
+            this.btnProjectExecutiomPlanning2.Enabled = false;
+            this.btnProjectExecutiomPlanning2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProjectExecutiomPlanning2.Font = new System.Drawing.Font("Cambria", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProjectExecutiomPlanning2.Location = new System.Drawing.Point(6, 20);
             this.btnProjectExecutiomPlanning2.Name = "btnProjectExecutiomPlanning2";
@@ -3665,6 +3765,8 @@
             // 
             // btnPARICSStream
             // 
+            this.btnPARICSStream.Enabled = false;
+            this.btnPARICSStream.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPARICSStream.Location = new System.Drawing.Point(7, 56);
             this.btnPARICSStream.Name = "btnPARICSStream";
             this.btnPARICSStream.Size = new System.Drawing.Size(153, 23);
@@ -3684,7 +3786,10 @@
             // 
             // btnPrefeasibility2
             // 
-            this.btnPrefeasibility2.Location = new System.Drawing.Point(87, 21);
+            this.btnPrefeasibility2.Enabled = false;
+            this.btnPrefeasibility2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrefeasibility2.Font = new System.Drawing.Font("Cambria", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrefeasibility2.Location = new System.Drawing.Point(85, 20);
             this.btnPrefeasibility2.Name = "btnPrefeasibility2";
             this.btnPrefeasibility2.Size = new System.Drawing.Size(75, 34);
             this.btnPrefeasibility2.TabIndex = 1;
@@ -3693,6 +3798,8 @@
             // 
             // btnOpportunityScreening
             // 
+            this.btnOpportunityScreening.Enabled = false;
+            this.btnOpportunityScreening.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpportunityScreening.Location = new System.Drawing.Point(7, 20);
             this.btnOpportunityScreening.Name = "btnOpportunityScreening";
             this.btnOpportunityScreening.Size = new System.Drawing.Size(75, 34);
@@ -3705,7 +3812,6 @@
             this.panel51.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel51.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel51.Controls.Add(this.btnKnowledgeAndResources);
-            this.panel51.Controls.Add(this.btnToolsAndTechniques);
             this.panel51.Controls.Add(this.btnRoleDescription);
             this.panel51.Controls.Add(this.btnProcessFlowOverview);
             this.panel51.Controls.Add(this.btnStageGateRequirements);
@@ -3717,21 +3823,13 @@
             // 
             // btnKnowledgeAndResources
             // 
-            this.btnKnowledgeAndResources.Location = new System.Drawing.Point(796, 3);
+            this.btnKnowledgeAndResources.Location = new System.Drawing.Point(638, 4);
             this.btnKnowledgeAndResources.Name = "btnKnowledgeAndResources";
             this.btnKnowledgeAndResources.Size = new System.Drawing.Size(153, 23);
             this.btnKnowledgeAndResources.TabIndex = 8;
             this.btnKnowledgeAndResources.Text = "Knowledge and Resources";
             this.btnKnowledgeAndResources.UseVisualStyleBackColor = true;
-            // 
-            // btnToolsAndTechniques
-            // 
-            this.btnToolsAndTechniques.Location = new System.Drawing.Point(638, 4);
-            this.btnToolsAndTechniques.Name = "btnToolsAndTechniques";
-            this.btnToolsAndTechniques.Size = new System.Drawing.Size(153, 23);
-            this.btnToolsAndTechniques.TabIndex = 7;
-            this.btnToolsAndTechniques.Text = "Tools and Techniques";
-            this.btnToolsAndTechniques.UseVisualStyleBackColor = true;
+            this.btnKnowledgeAndResources.Click += new System.EventHandler(this.btnKnowledgeAndResources_Click);
             // 
             // btnRoleDescription
             // 
@@ -3741,6 +3839,7 @@
             this.btnRoleDescription.TabIndex = 6;
             this.btnRoleDescription.Text = "Role Description";
             this.btnRoleDescription.UseVisualStyleBackColor = true;
+            this.btnRoleDescription.Click += new System.EventHandler(this.btnRoleDescription_Click);
             // 
             // btnProcessFlowOverview
             // 
@@ -3750,6 +3849,7 @@
             this.btnProcessFlowOverview.TabIndex = 5;
             this.btnProcessFlowOverview.Text = "Process Flow Overview";
             this.btnProcessFlowOverview.UseVisualStyleBackColor = true;
+            this.btnProcessFlowOverview.Click += new System.EventHandler(this.btnProcessFlowOverview_Click);
             // 
             // btnStageGateRequirements
             // 
@@ -3759,6 +3859,7 @@
             this.btnStageGateRequirements.TabIndex = 4;
             this.btnStageGateRequirements.Text = "Stage Gate Requirements";
             this.btnStageGateRequirements.UseVisualStyleBackColor = true;
+            this.btnStageGateRequirements.Click += new System.EventHandler(this.btnStageGateRequirements_Click);
             // 
             // btnTemplates
             // 
@@ -3768,6 +3869,7 @@
             this.btnTemplates.TabIndex = 3;
             this.btnTemplates.Text = "Templates";
             this.btnTemplates.UseVisualStyleBackColor = true;
+            this.btnTemplates.Click += new System.EventHandler(this.btnTemplates_Click);
             // 
             // panel62
             // 
@@ -4263,44 +4365,6 @@
             this.pictureBox66.TabIndex = 39;
             this.pictureBox66.TabStop = false;
             // 
-            // tbpOwnerPLSM
-            // 
-            this.tbpOwnerPLSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tbpOwnerPLSM.Location = new System.Drawing.Point(4, 21);
-            this.tbpOwnerPLSM.Name = "tbpOwnerPLSM";
-            this.tbpOwnerPLSM.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOwnerPLSM.Size = new System.Drawing.Size(1050, 565);
-            this.tbpOwnerPLSM.TabIndex = 1;
-            this.tbpOwnerPLSM.Text = "Owner PLSM";
-            // 
-            // tbpConstructorPLSM
-            // 
-            this.tbpConstructorPLSM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tbpConstructorPLSM.Location = new System.Drawing.Point(4, 21);
-            this.tbpConstructorPLSM.Name = "tbpConstructorPLSM";
-            this.tbpConstructorPLSM.Size = new System.Drawing.Size(1050, 565);
-            this.tbpConstructorPLSM.TabIndex = 2;
-            this.tbpConstructorPLSM.Text = "Constructor PLSM";
-            // 
-            // tbpCommunityProject
-            // 
-            this.tbpCommunityProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tbpCommunityProject.Location = new System.Drawing.Point(4, 21);
-            this.tbpCommunityProject.Name = "tbpCommunityProject";
-            this.tbpCommunityProject.Size = new System.Drawing.Size(1050, 565);
-            this.tbpCommunityProject.TabIndex = 3;
-            this.tbpCommunityProject.Text = "Community Project";
-            // 
-            // tbpProcessGroupingGovernance
-            // 
-            this.tbpProcessGroupingGovernance.Location = new System.Drawing.Point(4, 21);
-            this.tbpProcessGroupingGovernance.Name = "tbpProcessGroupingGovernance";
-            this.tbpProcessGroupingGovernance.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpProcessGroupingGovernance.Size = new System.Drawing.Size(1050, 565);
-            this.tbpProcessGroupingGovernance.TabIndex = 4;
-            this.tbpProcessGroupingGovernance.Text = "(ReferencePLSM-Interfaces)";
-            this.tbpProcessGroupingGovernance.UseVisualStyleBackColor = true;
-            // 
             // tbp_Documentation
             // 
             this.tbp_Documentation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -4364,7 +4428,7 @@
             this.tbpGovernanceTemplates.Controls.Add(this.cbbGovernanceTemplates);
             this.tbpGovernanceTemplates.Location = new System.Drawing.Point(4, 70);
             this.tbpGovernanceTemplates.Name = "tbpGovernanceTemplates";
-            this.tbpGovernanceTemplates.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpGovernanceTemplates.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpGovernanceTemplates.Size = new System.Drawing.Size(435, 381);
             this.tbpGovernanceTemplates.TabIndex = 0;
             this.tbpGovernanceTemplates.Text = "Governance Templates:";
@@ -4490,7 +4554,7 @@
             this.tbpDirectingAProject.Controls.Add(this.label26);
             this.tbpDirectingAProject.Location = new System.Drawing.Point(4, 70);
             this.tbpDirectingAProject.Name = "tbpDirectingAProject";
-            this.tbpDirectingAProject.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpDirectingAProject.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpDirectingAProject.Size = new System.Drawing.Size(435, 381);
             this.tbpDirectingAProject.TabIndex = 1;
             this.tbpDirectingAProject.Text = "Directing a Project";
@@ -4890,7 +4954,7 @@
             this.tbpListOfDocuments.Controls.Add(this.cbbListOfDocuments);
             this.tbpListOfDocuments.Location = new System.Drawing.Point(4, 70);
             this.tbpListOfDocuments.Name = "tbpListOfDocuments";
-            this.tbpListOfDocuments.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpListOfDocuments.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpListOfDocuments.Size = new System.Drawing.Size(436, 381);
             this.tbpListOfDocuments.TabIndex = 6;
             this.tbpListOfDocuments.Text = "List of Documents";
@@ -5003,7 +5067,7 @@
             this.tbpOpportunityScreening.Controls.Add(this.comboBox2);
             this.tbpOpportunityScreening.Location = new System.Drawing.Point(4, 70);
             this.tbpOpportunityScreening.Name = "tbpOpportunityScreening";
-            this.tbpOpportunityScreening.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpOpportunityScreening.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpOpportunityScreening.Size = new System.Drawing.Size(436, 381);
             this.tbpOpportunityScreening.TabIndex = 7;
             this.tbpOpportunityScreening.Text = "Opportunity Screening";
@@ -5971,6 +6035,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(19, 67);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(831, 290);
             this.dataGridView1.TabIndex = 15;
             // 
@@ -6035,7 +6100,7 @@
             // 
             this.tbpEnOfProcedures.Location = new System.Drawing.Point(4, 21);
             this.tbpEnOfProcedures.Name = "tbpEnOfProcedures";
-            this.tbpEnOfProcedures.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpEnOfProcedures.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpEnOfProcedures.Size = new System.Drawing.Size(827, 324);
             this.tbpEnOfProcedures.TabIndex = 0;
             this.tbpEnOfProcedures.Text = "End Of Procedures";
@@ -6045,7 +6110,7 @@
             // 
             this.tbpEOPWeek.Location = new System.Drawing.Point(4, 21);
             this.tbpEOPWeek.Name = "tbpEOPWeek";
-            this.tbpEOPWeek.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpEOPWeek.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tbpEOPWeek.Size = new System.Drawing.Size(827, 324);
             this.tbpEOPWeek.TabIndex = 1;
             this.tbpEOPWeek.Text = "EOP Week";
@@ -6128,6 +6193,24 @@
             this.tbp_Policies_and_Procedures.Text = "Policies and Procedures";
             this.tbp_Policies_and_Procedures.UseVisualStyleBackColor = true;
             // 
+            // pictureBox69
+            // 
+            this.pictureBox69.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox69.Image")));
+            this.pictureBox69.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox69.Name = "pictureBox69";
+            this.pictureBox69.Size = new System.Drawing.Size(1029, 940);
+            this.pictureBox69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox69.TabIndex = 0;
+            this.pictureBox69.TabStop = false;
+            // 
+            // pictureBox70
+            // 
+            this.pictureBox70.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox70.Name = "pictureBox70";
+            this.pictureBox70.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox70.TabIndex = 0;
+            this.pictureBox70.TabStop = false;
+            // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
@@ -6151,7 +6234,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(2, 2);
             this.AutoScrollMinSize = new System.Drawing.Size(2, 2);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1124, 606);
+            this.ClientSize = new System.Drawing.Size(1158, 606);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.tbp_Project_Management);
             this.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6379,6 +6462,8 @@
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox69)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -6386,8 +6471,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tbp_Project_Management;
         private System.Windows.Forms.TabPage tbp_Report_Center;
         private System.Windows.Forms.TabPage tbp_Processes;
         private System.Windows.Forms.TabPage tbp_Projects;
@@ -6798,7 +6881,6 @@
         private System.Windows.Forms.Button btnOpportunityScreening;
         private System.Windows.Forms.Panel panel51;
         private System.Windows.Forms.Button btnKnowledgeAndResources;
-        private System.Windows.Forms.Button btnToolsAndTechniques;
         private System.Windows.Forms.Button btnRoleDescription;
         private System.Windows.Forms.Button btnProcessFlowOverview;
         private System.Windows.Forms.Button btnStageGateRequirements;
@@ -6845,16 +6927,15 @@
         private System.Windows.Forms.PictureBox pictureBox65;
         private System.Windows.Forms.Button btnDirectingAProject;
         private System.Windows.Forms.PictureBox pictureBox66;
-        private System.Windows.Forms.TabPage tbpOwnerPLSM;
-        private System.Windows.Forms.TabPage tbpConstructorPLSM;
-        private System.Windows.Forms.TabPage tbpCommunityProject;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox67;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureBox68;
-        private System.Windows.Forms.TabPage tbpProcessGroupingGovernance;
         private System.Windows.Forms.Panel pnlHideTabControl;
         private System.Windows.Forms.Label lblType;
+        public System.Windows.Forms.TabControl tbp_Project_Management;
+        private System.Windows.Forms.PictureBox pictureBox69;
+        private System.Windows.Forms.PictureBox pictureBox70;
     }
 }
 

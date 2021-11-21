@@ -60,6 +60,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNewForm = new System.Windows.Forms.Button();
             this.cmbIssueForms = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbpIssueDescription.SuspendLayout();
             this.tbcQualityReviewForm.SuspendLayout();
             this.tbpInformation.SuspendLayout();
@@ -131,87 +132,87 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(17, 170);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(396, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(396, 23);
             this.dateTimePicker1.TabIndex = 28;
             // 
             // txtRaisedBy
             // 
             this.txtRaisedBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.txtRaisedBy.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRaisedBy.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRaisedBy.ForeColor = System.Drawing.Color.Black;
             this.txtRaisedBy.Location = new System.Drawing.Point(17, 124);
             this.txtRaisedBy.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtRaisedBy.Name = "txtRaisedBy";
-            this.txtRaisedBy.Size = new System.Drawing.Size(396, 24);
+            this.txtRaisedBy.Size = new System.Drawing.Size(396, 23);
             this.txtRaisedBy.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(14, 153);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
+            this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 26;
             this.label4.Text = "Date Raised:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(14, 59);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 16);
+            this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 22;
             this.label3.Text = "Issue ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(14, 106);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
+            this.label2.Size = new System.Drawing.Size(81, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Raised By:";
             // 
             // txtIssueID
             // 
             this.txtIssueID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.txtIssueID.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIssueID.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIssueID.ForeColor = System.Drawing.Color.Black;
             this.txtIssueID.Location = new System.Drawing.Point(17, 77);
             this.txtIssueID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtIssueID.Name = "txtIssueID";
-            this.txtIssueID.Size = new System.Drawing.Size(396, 24);
+            this.txtIssueID.Size = new System.Drawing.Size(396, 23);
             this.txtIssueID.TabIndex = 21;
             // 
             // txtProjectManagerName
             // 
             this.txtProjectManagerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.txtProjectManagerName.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProjectManagerName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProjectManagerName.ForeColor = System.Drawing.Color.Black;
             this.txtProjectManagerName.Location = new System.Drawing.Point(17, 30);
             this.txtProjectManagerName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtProjectManagerName.Name = "txtProjectManagerName";
-            this.txtProjectManagerName.Size = new System.Drawing.Size(396, 24);
+            this.txtProjectManagerName.Size = new System.Drawing.Size(396, 23);
             this.txtProjectManagerName.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 16);
+            this.label1.Size = new System.Drawing.Size(264, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "Please Enter Project Manager Name:";
             // 
@@ -280,11 +281,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(16, 151);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 16);
+            this.label8.Size = new System.Drawing.Size(200, 16);
             this.label8.TabIndex = 31;
             this.label8.Text = "Supporting Documentation:";
             // 
@@ -350,56 +351,56 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(16, 16);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 16);
+            this.label6.Size = new System.Drawing.Size(80, 16);
             this.label6.TabIndex = 26;
             this.label6.Text = "Signature:";
             // 
             // txtSignature
             // 
             this.txtSignature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.txtSignature.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSignature.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSignature.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSignature.Location = new System.Drawing.Point(19, 34);
             this.txtSignature.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtSignature.Name = "txtSignature";
-            this.txtSignature.Size = new System.Drawing.Size(227, 24);
+            this.txtSignature.Size = new System.Drawing.Size(227, 23);
             this.txtSignature.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(282, 16);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 24;
             this.label5.Text = "Date:";
             // 
             // txtDate
             // 
             this.txtDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.txtDate.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDate.Location = new System.Drawing.Point(285, 34);
             this.txtDate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(227, 24);
+            this.txtDate.Size = new System.Drawing.Size(227, 23);
             this.txtDate.TabIndex = 23;
             // 
             // btnExport
             // 
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExport.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.Black;
-            this.btnExport.Location = new System.Drawing.Point(778, 12);
+            this.btnExport.Location = new System.Drawing.Point(956, 12);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(130, 44);
@@ -412,14 +413,14 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSave.Location = new System.Drawing.Point(20, 12);
+            this.btnSave.Location = new System.Drawing.Point(198, 12);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(130, 44);
             this.btnSave.TabIndex = 28;
-            this.btnSave.Text = "Save Current Form";
+            this.btnSave.Text = "Complete Current Form";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -427,9 +428,9 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDelete.Location = new System.Drawing.Point(173, 12);
+            this.btnDelete.Location = new System.Drawing.Point(351, 12);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(130, 44);
@@ -442,9 +443,9 @@
             // 
             this.btnNewForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnNewForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNewForm.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewForm.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewForm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNewForm.Location = new System.Drawing.Point(324, 12);
+            this.btnNewForm.Location = new System.Drawing.Point(502, 12);
             this.btnNewForm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNewForm.Name = "btnNewForm";
             this.btnNewForm.Size = new System.Drawing.Size(130, 44);
@@ -457,11 +458,26 @@
             // 
             this.cmbIssueForms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIssueForms.FormattingEnabled = true;
-            this.cmbIssueForms.Location = new System.Drawing.Point(461, 12);
+            this.cmbIssueForms.Location = new System.Drawing.Point(639, 12);
             this.cmbIssueForms.Name = "cmbIssueForms";
             this.cmbIssueForms.Size = new System.Drawing.Size(310, 24);
             this.cmbIssueForms.TabIndex = 32;
             this.cmbIssueForms.SelectedIndexChanged += new System.EventHandler(this.cmbIssueForms_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(51, 12);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 44);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Save Current Form Progress";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IssueFormDocumentForm
             // 
@@ -473,9 +489,10 @@
             this.Controls.Add(this.btnNewForm);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbcQualityReviewForm);
-            this.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "IssueFormDocumentForm";
@@ -533,5 +550,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNewForm;
         private System.Windows.Forms.ComboBox cmbIssueForms;
+        private System.Windows.Forms.Button button1;
     }
 }

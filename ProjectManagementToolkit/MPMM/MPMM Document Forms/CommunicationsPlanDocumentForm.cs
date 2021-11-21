@@ -153,6 +153,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newCommunicationsPlanModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newCommunicationsPlanModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newCommunicationsPlanModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newCommunicationsPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<CommunicationsPlanModel.DocumentHistory> documentHistories = new List<CommunicationsPlanModel.DocumentHistory>();
 
@@ -669,6 +670,126 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void tabDocumentInformation_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newCommunicationsPlanModel.DocumentID = dgvDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newCommunicationsPlanModel.DocumentOwner = dgvDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newCommunicationsPlanModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newCommunicationsPlanModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newCommunicationsPlanModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newCommunicationsPlanModel.CommunicationPlanProgress = "UNDONE";
+
+            List<CommunicationsPlanModel.DocumentHistory> documentHistories = new List<CommunicationsPlanModel.DocumentHistory>();
+
+            int versionRowsCount = dgvDocumentHistory.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                CommunicationsPlanModel.DocumentHistory documentHistoryModel = new CommunicationsPlanModel.DocumentHistory();
+                var version = dgvDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dgvDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dgvDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newCommunicationsPlanModel.DocumentHistories = documentHistories;
+
+            List<CommunicationsPlanModel.DocumentApproval> documentApprovalsModel = new List<CommunicationsPlanModel.DocumentApproval>();
+
+            int approvalRowsCount = dgvDocumentApprovals.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                CommunicationsPlanModel.DocumentApproval documentApproval = new CommunicationsPlanModel.DocumentApproval();
+                var role = dgvDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dgvDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dgvDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dgvDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newCommunicationsPlanModel.DocumentApprovals = documentApprovalsModel;
+
+            List<CommunicationsPlanModel.Stakeholder> Stake = new List<CommunicationsPlanModel.Stakeholder>();
+
+            int stakeRowsCount = dgvStakeholderRequirements.Rows.Count;
+
+            for (int i = 0; i < stakeRowsCount - 1; i++)
+            {
+                CommunicationsPlanModel.Stakeholder Stakereq = new CommunicationsPlanModel.Stakeholder();
+                var StakeName = dgvStakeholderRequirements.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var StakeRole = dgvStakeholderRequirements.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Organization = dgvStakeholderRequirements.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Requirement = dgvStakeholderRequirements.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                Stakereq.StakeholderName = StakeName;
+                Stakereq.StakeholderRole = StakeRole;
+                Stakereq.StakeholderOrganization = Organization;
+                Stakereq.InformationRequirement = Requirement;
+
+                Stake.Add(Stakereq);
+            }
+            newCommunicationsPlanModel.StakeholderReq = Stake;
+
+            List<CommunicationsPlanModel.ProjectSchedule> ProjSchedules = new List<CommunicationsPlanModel.ProjectSchedule>();
+
+            int scheduleRowsCount = dgvCommunicationsPlan.Rows.Count;
+
+            for (int i = 0; i < scheduleRowsCount - 1; i++)
+            {
+                CommunicationsPlanModel.ProjectSchedule ProjectScheduleMod = new CommunicationsPlanModel.ProjectSchedule();
+                var Deliverable = dgvCommunicationsPlan.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ScheduledCompletionDate = dgvCommunicationsPlan.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var ActualCompletionDate = dgvCommunicationsPlan.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var ActualVariance = dgvCommunicationsPlan.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var ForecastCompletionDate = dgvCommunicationsPlan.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var ForecastVariance = dgvCommunicationsPlan.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var Summary = dgvCommunicationsPlan.Rows[i].Cells[6].Value?.ToString() ?? "";
+
+                ProjectScheduleMod.Deliverable = Deliverable;
+                ProjectScheduleMod.ScheduledCompletionDate = ScheduledCompletionDate;
+                ProjectScheduleMod.ActualCompletionDate = ActualCompletionDate;
+                ProjectScheduleMod.ActualVariance = ActualVariance;
+                ProjectScheduleMod.ForecastCompletionDate = ForecastCompletionDate;
+                ProjectScheduleMod.ForecastVariance = ForecastVariance;
+                ProjectScheduleMod.Summary = Summary;
+
+                ProjSchedules.Add(ProjectScheduleMod);
+            }
+            newCommunicationsPlanModel.ProSchedule = ProjSchedules;
+
+
+            newCommunicationsPlanModel.Activities = txtActivities.Text;
+            newCommunicationsPlanModel.Assumptions = txtCommunicationsPlan.Text;
+            newCommunicationsPlanModel.ComProcess = txtCommunicationsProcess.Text;
+            newCommunicationsPlanModel.Roles = txtRoles.Text;
+            newCommunicationsPlanModel.Documents = txtDocuments.Text;
+            newCommunicationsPlanModel.StakeholderList = txtStakeholderList.Text;
+
+            List<VersionControl<CommunicationsPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentCommunicationsPlanModel, newCommunicationsPlanModel))
+            {
+                VersionControl<CommunicationsPlanModel>.DocumentModel documentModel = new VersionControl<CommunicationsPlanModel>.DocumentModel(newCommunicationsPlanModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentCommunicationsPlanModel = JsonConvert.DeserializeObject<CommunicationsPlanModel>(JsonConvert.SerializeObject(newCommunicationsPlanModel));
+
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "CommunicationPlan");
+                MessageBox.Show("Communication plan saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

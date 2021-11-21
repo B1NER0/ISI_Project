@@ -46,6 +46,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPurchaseOrderModel.SupplierContactName = Supplier_Contact_Name_tbx.Text;
             newPurchaseOrderModel.SupplierContactPhone = Supplier_Contact_Phone_tbx.Text;
             newPurchaseOrderModel.SupplierAddress = Supplier_Address_tbx.Text;
+            newPurchaseOrderModel.PurchaseOrderProgress = "DONE";
+            newPurchaseOrderModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             newPurchaseOrderModel.ContactName = Contact_Name1_tbx.Text;
             newPurchaseOrderModel.ContactAddress = Contact_Address1_tbx.Text;
@@ -325,6 +327,74 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             LoadDocument();
             cmbxPaymentMethod.SelectedIndex = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            newPurchaseOrderModel.PurchaseOrderFor = Purchase_Order_Form_tbx.Text;
+            newPurchaseOrderModel.PurchaseOrderNumber = Purchase_Order_Number_tbx.Text;
+            newPurchaseOrderModel.PurchaseOrderDate = Purchase_Order_Date_tbx.Text;
+            newPurchaseOrderModel.DateRequired = Date_Required_tbx.Text;
+            newPurchaseOrderModel.ProjectName = Project_Name_tbx.Text;
+            newPurchaseOrderModel.ProjectAddress = Project_Address_tbx.Text;
+            newPurchaseOrderModel.ProjectContactName = Project_Contact_Name_tbx.Text;
+            newPurchaseOrderModel.ProjectContactPhone = Project_Contact_Phone_tbx.Text;
+            newPurchaseOrderModel.SupplierName = Supplier_Name_tbx.Text;
+            newPurchaseOrderModel.SupplierAddress = Supplier_Address_tbx.Text;
+            newPurchaseOrderModel.SupplierContactName = Supplier_Contact_Name_tbx.Text;
+            newPurchaseOrderModel.SupplierContactPhone = Supplier_Contact_Phone_tbx.Text;
+            newPurchaseOrderModel.SupplierAddress = Supplier_Address_tbx.Text;
+            newPurchaseOrderModel.PurchaseOrderProgress = "UNDONE";
+
+            newPurchaseOrderModel.ContactName = Contact_Name1_tbx.Text;
+            newPurchaseOrderModel.ContactAddress = Contact_Address1_tbx.Text;
+            newPurchaseOrderModel.BillToContactName = Contact_Name2_tbx.Text;
+            newPurchaseOrderModel.BillToContactAddress = Contact_Address2_tbx.Text;
+
+            List<OrderDetails> orderDetails = new List<OrderDetails>();
+            int RowCount = ORDER_DETAILS_dgv.RowCount;
+            for (int i = 0; i < RowCount - 1; i++)
+            {
+                OrderDetails details = new OrderDetails();
+                var Item = ORDER_DETAILS_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Description = ORDER_DETAILS_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Quanlity = ORDER_DETAILS_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var UnitPrice = ORDER_DETAILS_dgv.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var TotalPrice = ORDER_DETAILS_dgv.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+                details.Item = Item;
+                details.Description = Description;
+                details.Quanlity = Quanlity;
+                details.UnitPrice = UnitPrice;
+                details.TotalPrice = TotalPrice;
+                orderDetails.Add(details);
+            }
+            newPurchaseOrderModel.Orders = orderDetails;
+
+            newPurchaseOrderModel.PaymentMethod = cmbxPaymentMethod.SelectedItem.ToString();
+            newPurchaseOrderModel.CardType = Card_Type_tbx.Text;
+            newPurchaseOrderModel.CardNumber = Card_Number_tbx.Text;
+            newPurchaseOrderModel.ExpiryDate = Expiration_Date_tbx.Text;
+            newPurchaseOrderModel.CardName = Name_on_Card_tbx.Text;
+            newPurchaseOrderModel.TermsAndConditions = Terms_and_Conditions_tbx.Text;
+
+            List<VersionControl<PurchaseOrderModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            //MessageBox.Show(JsonConvert.SerializeObject(newPurchaseOrderModel), "save", MessageBoxButtons.OK);
+
+            if (!versionControl.isEqual(currentPurchaseOrderModel, newPurchaseOrderModel))
+            {
+                VersionControl<PurchaseOrderModel>.DocumentModel documentModel = new VersionControl<PurchaseOrderModel>.DocumentModel(newPurchaseOrderModel, DateTime.Now, VersionControl<PurchaseOrderModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentPurchaseOrderModel = JsonConvert.DeserializeObject<PurchaseOrderModel>(JsonConvert.SerializeObject(newPurchaseOrderModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "PurchaseOrder");
+                MessageBox.Show("Purchase Order Form saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

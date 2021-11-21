@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
+using ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management;
 
 namespace ProjectManagementToolkit
 {
@@ -217,5 +219,408 @@ namespace ProjectManagementToolkit
             tbp_Project_Management.SelectTab("tbp_Processes");
             btnCommunicationAndStakeholderManagement_Click(sender, e);
         }
+
+        private void btnRiskManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RiskManagementProcessDocumentForm RiskForm = new RiskManagementProcessDocumentForm();
+            RiskForm.Show();
+        }
+
+        private void btnRiskManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RiskRegisterForm RiskRegister = new RiskRegisterForm();
+            RiskRegister.Show();
+        }
+
+        private void btnChangeManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ChangeManagementProcessDocumentForm ChangeForm = new ChangeManagementProcessDocumentForm();
+            ChangeForm.Show();
+        }
+
+        private void btnChangeManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ChangeRegister ChangeRegister = new ChangeRegister();
+            ChangeRegister.Show();
+        }
+
+        private void btnCostAndExpenseManagementManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CostManagementProcessDocumentForm CostForm = new CostManagementProcessDocumentForm();
+            CostForm.Show();
+        }
+
+        private void btnCostAndExpenseManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ExpenseRegister ExpenseRegister = new ExpenseRegister();
+            ExpenseRegister.Show();
+        }
+
+        private void btnCaSManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CommunicationsManagementProcessDocumentForm CommunicationForm = new CommunicationsManagementProcessDocumentForm();
+            CommunicationForm.Show();
+        }
+
+        private void btnCaSManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CommunicationsRegister ChangeRegister = new CommunicationsRegister();
+            ChangeRegister.Show();
+        }
+
+        private void btnIssueManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IssueManagementProcessDocumentForm IssueForm = new IssueManagementProcessDocumentForm(); 
+            IssueForm.Show();
+        }
+
+        private void btnIssueManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IssueRegisterForm IssueRegister = new IssueRegisterForm();
+            IssueRegister.Show();
+        }
+
+        private void btnAcceptanceManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AcceptanceRegister AcceptanceForm = new AcceptanceRegister();
+            AcceptanceForm.Show();
+        }
+
+        private void btnAcceptanceManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AcceptanceManagementProcessDocumentForm AcceptanceForm = new AcceptanceManagementProcessDocumentForm();
+            AcceptanceForm.Show();
+        }
+
+        private void btnProcurementManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProcurementManagementProcess ProcureForm = new ProcurementManagementProcess();
+            ProcureForm.Show();
+        }
+
+        private void btnProcurementManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProcurementRegister ProcureRegister = new ProcurementRegister();
+            ProcureRegister.Show();
+        }
+
+        private void btnTimeManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TimeMangementProcessDocumentForm TimeForm = new TimeMangementProcessDocumentForm();
+            TimeForm.Show();
+        }
+
+        private void btnTimeManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TimesheetRegister TimeRegister = new TimesheetRegister();
+            TimeRegister.Show();
+        }
+
+        private void btnQualityManagementTemplate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QualityManagementProcessDocumentForm QualityForm = new QualityManagementProcessDocumentForm();
+            QualityForm.Show();
+        }
+
+        private void btnQualityManagementRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QualityRegister QualRegister = new QualityRegister();
+            QualRegister.Show();
+        }
+
+        private void btnTemplates_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmTemplates Templates = new MPMM.MPMM_Forms.Project_Management.frmTemplates();
+            Templates.Show();
+        }
+
+        private void btnProcessFlowOverview_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview ProcessFlowOverview = new MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview();
+            ProcessFlowOverview.Show();
+        }
+
+        private void btnRoleDescription_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnToolsAndTechniques_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmToolsAndTechniques ToolsResource = new MPMM.MPMM_Forms.Project_Management.frmToolsAndTechniques();
+            ToolsResource.Show();
+        }
+
+        private void btnKnowledgeAndResources_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources KnowResource = new MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources();
+            KnowResource.Show();
+        }
+               
+
+        private void btnCRA_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpCRA");
+            Warn.Show();
+        }
+
+        private void btnDRA_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpDRA");
+            Warn.Show();
+        }
+
+        private void btnBackableProject_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpBackable");
+            Warn.Show();
+        }
+
+        private void btnERA_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpERA");
+            Warn.Show();
+        }
+
+        private void btnAuthorizedProject_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpAuthorized");
+            Warn.Show();
+        }
+
+        private void btnFinancialClosure_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpFinacial");
+            Warn.Show();
+        }
+
+        private void btnExecutionAgreement_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpExecution");
+            Warn.Show();
+        }
+
+        private void btnHandOverDocument1_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpHandOver");
+            Warn.Show();
+        }
+
+        private void btnClosureContracts_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpClosure");
+            Warn.Show();
+        }
+
+        private void btnFRA_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpFRA");
+            Warn.Show();
+        }
+
+        private void btnHandOverDocument2_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpHandOver2");
+            Warn.Show();
+        }
+
+        private void btnStageGateRequirements_Click(object sender, EventArgs e)
+        {
+            frmWarnings Warn = new frmWarnings();
+            Warn.tbcWarning.SelectTab("tbpCRA");
+            Warn.Show();
+        }
+
+        private void btnWorkPakagesOpportunityScreening_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 1;
+
+        }
+
+        private void btnWorkPakagesPrefeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 2;
+
+        }
+
+        private void btnWorkPakagesFeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 3;
+
+        }
+
+        private void btnWorkPakagesBusinessPlan_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 4;
+        }
+
+        private void btnWorkPakagesProjectExecutionPlanning_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 5;
+        }
+
+        private void btnWorkPakagesContractConcluding_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 6;
+        }
+
+        private void btnWorkPakagesDetailedDesign_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 7;
+        }
+
+        private void btnWorkPakagesImplementation_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 9;
+        }
+
+        private void btnWorkPakagesTransfer_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 10;
+        }
+
+        private void btnWorkPakagesCloseOut_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 11;
+        }
+
+        private void btnWorkPakagesEvaluate_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 12;
+        }
+
+        private void btnWorkStreamsOpportunityScreening_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsPrefeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsImplementation_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsFeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsBusinessPlan_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsProjectExecutionPlanning_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsContractConcluding_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void panel41_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnWorkStreamsDetailedDesign_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsTransfer_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsCloseOut_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsEvaluate_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
     }
 }

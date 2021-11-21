@@ -58,6 +58,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newAcceptanceFormModel.Criteria = Criteria_tbx.Text;
             newAcceptanceFormModel.Standards = Standards_tbx.Text;
+            newAcceptanceFormModel.AcceptanceFormProgress = "DONE";
+            newAcceptanceFormModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<Acceptance> acceptances = new List<Acceptance>();
             int ResultsrowCount = ACCEPTANCE_RESULTS_dgv.RowCount;
@@ -300,6 +302,64 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void ACCEPTANCE_RESULTS_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newAcceptanceFormModel.AcceptanceFormFor = Acceptance_Form_Name_tbx.Text;
+
+            newAcceptanceFormModel.ProjectName = Project_Name_tbx.Text;
+            newAcceptanceFormModel.ProjectManager = Project_Manager_tbx.Text;
+
+            newAcceptanceFormModel.AcceptanceId = Acceptance_ID_tbx.Text;
+            newAcceptanceFormModel.RequestedBy = Requested_By_tbx.Text;
+            newAcceptanceFormModel.DateRequired = Date_Requested_tbx.Text;
+            newAcceptanceFormModel.Description = Description_tbx.Text;
+
+            newAcceptanceFormModel.Criteria = Criteria_tbx.Text;
+            newAcceptanceFormModel.Standards = Standards_tbx.Text;
+            newAcceptanceFormModel.AcceptanceFormProgress = "UNDONE";
+
+            List<Acceptance> acceptances = new List<Acceptance>();
+            int ResultsrowCount = ACCEPTANCE_RESULTS_dgv.RowCount;
+            for (int i = 0; i < ResultsrowCount - 1; i++)
+            {
+                Acceptance acceptanceFormModel = new Acceptance();
+                var Acceptance = ACCEPTANCE_RESULTS_dgv.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Method = ACCEPTANCE_RESULTS_dgv.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Reviewer = ACCEPTANCE_RESULTS_dgv.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Date = ACCEPTANCE_RESULTS_dgv.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var Result = ACCEPTANCE_RESULTS_dgv.Rows[i].Cells[4].Value?.ToString() ?? "";
+
+                acceptanceFormModel.AcceptanceResults = Acceptance;
+                acceptanceFormModel.Method = Method;
+                acceptanceFormModel.Reviewer = Reviewer;
+                acceptanceFormModel.Date = Date;
+                acceptanceFormModel.Result = Result;
+                acceptances.Add(acceptanceFormModel);
+            }
+            newAcceptanceFormModel.acceptances = acceptances;
+
+            newAcceptanceFormModel.SupportingDocumentation = Supporting_Documentation_tbx.Text;
+
+
+            List<VersionControl<AcceptanceFormModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            //MessageBox.Show(JsonConvert.SerializeObject(newAcceptanceFormModel), "save", MessageBoxButtons.OK);
+
+            if (!versionControl.isEqual(currentAcceptanceFormModel, newAcceptanceFormModel))
+            {
+                VersionControl<AcceptanceFormModel>.DocumentModel documentModel = new VersionControl<AcceptanceFormModel>.DocumentModel(newAcceptanceFormModel, DateTime.Now, VersionControl<AcceptanceFormModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "AcceptanceForm");
+                currentAcceptanceFormModel = JsonConvert.DeserializeObject<AcceptanceFormModel>(JsonConvert.SerializeObject(newAcceptanceFormModel));
+                MessageBox.Show("Acceptance form saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

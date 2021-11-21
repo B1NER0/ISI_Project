@@ -9,6 +9,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class RiskManagmentProcessModel
     {
         public string ProjectName { get; set; }
+        public string RiskManagementProcessProgress { get; set; }
+        public string completedDate { get; set; }
         public string DocumentID { get; set; }
         public string DocumentOwner { get; set; }
         public string IssueDate { get; set; }

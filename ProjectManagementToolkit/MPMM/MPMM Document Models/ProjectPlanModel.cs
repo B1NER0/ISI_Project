@@ -11,6 +11,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     {
         public string ProjectName { get; set; }
         public string DocumentID { get; set; }
+        public string projectPlanProgress { get; set; }
+        public string completedDate { get; set; }
         public string DocumentOwner { get; set; }
         public string IssueDate { get; set; }
         public string LastSavedDate { get; set; }

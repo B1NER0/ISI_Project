@@ -36,6 +36,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newTimeMangementProcessModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newTimeMangementProcessModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newTimeMangementProcessModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newTimeMangementProcessModel.TimeManagementProcessProgress = "DONE";
+            newTimeMangementProcessModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<TimeMangementProcessModel.DocumentHistory> documentHistories = new List<TimeMangementProcessModel.DocumentHistory>();
 
@@ -730,6 +732,96 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void dgvDocumentInformation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            newTimeMangementProcessModel.DocumentID = dgvDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newTimeMangementProcessModel.DocumentOwner = dgvDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newTimeMangementProcessModel.IssueDate = dgvDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newTimeMangementProcessModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newTimeMangementProcessModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newTimeMangementProcessModel.TimeManagementProcessProgress = "UNDONE";
+
+            List<TimeMangementProcessModel.DocumentHistory> documentHistories = new List<TimeMangementProcessModel.DocumentHistory>();
+
+            int versionRowsCount = dgvDocumentHistory.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                TimeMangementProcessModel.DocumentHistory documentHistoryModel = new TimeMangementProcessModel.DocumentHistory();
+                var version = dgvDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dgvDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dgvDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newTimeMangementProcessModel.DocumentHistories = documentHistories;
+
+            List<TimeMangementProcessModel.DocumentApproval> documentApprovalsModel = new List<TimeMangementProcessModel.DocumentApproval>();
+
+            int approvalRowsCount = dgvDocumentApproval.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                TimeMangementProcessModel.DocumentApproval documentApproval = new TimeMangementProcessModel.DocumentApproval();
+                var role = dgvDocumentApproval.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dgvDocumentApproval.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dgvDocumentApproval.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dgvDocumentApproval.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newTimeMangementProcessModel.DocumentApprovals = documentApprovalsModel;
+
+
+
+            newTimeMangementProcessModel.TimemanagementprocessDescription = txttimemanagementprocessDescription.Text;
+
+            newTimeMangementProcessModel.TimemanagementprocessOverview = txttimemanagementprocessOverview.Text;
+
+            newTimeMangementProcessModel.TimemanagementprocessDocumentTimesheet = txttimemanagementprocessDocumentTimesheet.Text;
+
+            newTimeMangementProcessModel.TimemanagementprocessApprovedTimesheet = txttimemanagementprocessApprovedTimesheet.Text;
+
+            newTimeMangementProcessModel.TimemanagementprocessUpdateProcessPlan = txttimemanagementprocessUpdateProcessPlan.Text;
+
+            newTimeMangementProcessModel.TimemanagementrolesDescription = txttimemanagementrolesDescription.Text;
+
+            newTimeMangementProcessModel.TimemanagementrolesTeamMember = txttimemanagementrolesTeamMember.Text;
+
+            newTimeMangementProcessModel.TimemanagementrolesProjectManager = txttimemanagementrolesProjectManager.Text;
+
+            newTimeMangementProcessModel.TimemanagementrolesProjectAdminstratror = txttimemanagementrolesProjectAdminstratror.Text;
+
+            newTimeMangementProcessModel.TimemanagementdocumentsDescription = txttimemanagementdocumentsDescription.Text;
+
+            newTimeMangementProcessModel.TimemanagementdocumentsTimeSheet = txttimemanagementdocumentsTimeSheet.Text;
+
+            newTimeMangementProcessModel.TimemanagementdocumentsTimeSheetRegister = txttimemanagementdocumentsTimeSheetRegister.Text;
+
+
+
+            List<VersionControl<TimeMangementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentTimeMangementProcessModel, newTimeMangementProcessModel))
+            {
+                VersionControl<TimeMangementProcessModel>.DocumentModel documentModel = new VersionControl<TimeMangementProcessModel>.DocumentModel(newTimeMangementProcessModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+                currentTimeMangementProcessModel = JsonConvert.DeserializeObject<TimeMangementProcessModel>(JsonConvert.SerializeObject(newTimeMangementProcessModel));
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "TimeMangement");
+                MessageBox.Show("Time Management Process saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -10,6 +10,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class TimeMangementProcessModel
     {
         public string ProjectName { get; set; }
+        public string TimeManagementProcessProgress { get; set; }
+        public string completedDate { get; set; }
 
         public string DocumentID { get; set; }
 

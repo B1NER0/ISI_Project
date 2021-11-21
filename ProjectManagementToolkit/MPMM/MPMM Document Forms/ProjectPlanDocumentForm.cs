@@ -71,6 +71,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectPlanModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
             newProjectPlanModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newProjectPlanModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newProjectPlanModel.projectPlanProgress = "DONE";
+            newProjectPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<ProjectPlanModel.DocumentHistory> documentHistories = new List<ProjectPlanModel.DocumentHistory>();
 
@@ -894,6 +896,188 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 ProjectPlanVC projectPlanVC = new ProjectPlanVC();
                 projectPlanVC.MdiParent = this.MdiParent;
                 projectPlanVC.Show();
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newProjectPlanModel.DocumentID = documentInformation.Rows[0].Cells[1].Value.ToString();
+            newProjectPlanModel.DocumentOwner = documentInformation.Rows[1].Cells[1].Value.ToString();
+            newProjectPlanModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
+            newProjectPlanModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
+            newProjectPlanModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newProjectPlanModel.projectPlanProgress = "UNDONE";
+
+            List<ProjectPlanModel.DocumentHistory> documentHistories = new List<ProjectPlanModel.DocumentHistory>();
+
+            int versionRowsCount = documentHistoryDataGridView.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                ProjectPlanModel.DocumentHistory documentHistoryModel = new ProjectPlanModel.DocumentHistory();
+                var version = documentHistoryDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = documentHistoryDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = documentHistoryDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newProjectPlanModel.DocumentHistories = documentHistories;
+
+            List<ProjectPlanModel.DocumentApproval> documentApprovalsModel = new List<ProjectPlanModel.DocumentApproval>();
+
+            int approvalRowsCount = documentApprovalsDataGridView.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                ProjectPlanModel.DocumentApproval documentApproval = new ProjectPlanModel.DocumentApproval();
+                var role = documentApprovalsDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = documentApprovalsDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = documentApprovalsDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = documentApprovalsDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newProjectPlanModel.DocumentApprovals = documentApprovalsModel;
+
+            List<ProjectPlanModel.Phase> phases = new List<ProjectPlanModel.Phase>();
+
+            int phaseRowsCount = phasesDataGridView.Rows.Count;
+
+            for (int i = 0; i < phaseRowsCount - 1; i++)
+            {
+                ProjectPlanModel.Phase phase = new ProjectPlanModel.Phase();
+                var phaseTitle = phasesDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var phaseDescription = phasesDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var phaseSequence = phasesDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                phase.PhaseTitle = phaseTitle;
+                phase.PhaseDescription = phaseDescription;
+                phase.PhaseSequence = phaseSequence;
+
+                phases.Add(phase);
+            }
+            newProjectPlanModel.Phases = phases;
+
+            List<ProjectPlanModel.Activity> activities = new List<ProjectPlanModel.Activity>();
+            int activityRowsCount = activitiesDataGridView.Rows.Count;
+
+            for (int i = 0; i < activityRowsCount - 1; i++)
+            {
+                ProjectPlanModel.Activity activity = new ProjectPlanModel.Activity();
+                var phaseTitle = activitiesDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var activityTitle = activitiesDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var activityDescription = activitiesDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var activitySequence = activitiesDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                activity.PhaseTitle = phaseTitle;
+                activity.ActivityTitle = activityTitle;
+                activity.ActivityDescription = activityDescription;
+                activity.ActivitySequence = activitySequence;
+
+                activities.Add(activity);
+            }
+            newProjectPlanModel.Activities = activities;
+
+            List<ProjectPlanModel.Task> tasks = new List<ProjectPlanModel.Task>();
+            int tasksRowsCount = tasksDataGridView.Rows.Count;
+            for (int i = 0; i < tasksRowsCount - 1; i++)
+            {
+                ProjectPlanModel.Task task = new ProjectPlanModel.Task();
+                var activityTitle = tasksDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var taskTitle = tasksDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var taskDescription = tasksDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var taskSequence = tasksDataGridView.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                task.ActivityTitle = activityTitle;
+                task.TaskTitle = taskTitle;
+                task.TaskDescription = taskDescription;
+                task.TaskSequence = taskSequence;
+
+                tasks.Add(task);
+            }
+            newProjectPlanModel.Tasks = tasks;
+
+            List<ProjectPlanModel.Milestone> milestones = new List<ProjectPlanModel.Milestone>();
+            int milestoneRowsCount = milestonesDataGridView.Rows.Count;
+            for (int i = 0; i < milestoneRowsCount - 1; i++)
+            {
+                ProjectPlanModel.Milestone milestone = new ProjectPlanModel.Milestone();
+                var milestoneTitle = milestonesDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var milestoneDescription = milestonesDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var milestoneDate = milestonesDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                milestone.MilestoneTitle = milestoneTitle;
+                milestone.MilestoneDescription = milestoneDescription;
+                milestone.MilestoneDate = milestoneDate;
+
+                milestones.Add(milestone);
+            }
+            newProjectPlanModel.Milestones = milestones;
+
+            List<ProjectPlanModel.Effort> efforts = new List<ProjectPlanModel.Effort>();
+            int effortRowsCount = effortDataGridView.Rows.Count;
+            for (int i = 0; i < effortRowsCount - 1; i++)
+            {
+                ProjectPlanModel.Effort effort = new ProjectPlanModel.Effort();
+                var taskTitle = effortDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var resource = effortDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var effortMade = effortDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                effort.TaskTitle = taskTitle;
+                effort.Resource = resource;
+                effort.EffortMade = effortMade;
+
+                efforts.Add(effort);
+            }
+            newProjectPlanModel.Efforts = efforts;
+
+            List<ProjectPlanModel.Dependency> dependencies = new List<ProjectPlanModel.Dependency>();
+            int dependenciesRowsCount = dependenciesDataGridView.Rows.Count;
+            for (int i = 0; i < dependenciesRowsCount - 1; i++)
+            {
+                ProjectPlanModel.Dependency dependency = new ProjectPlanModel.Dependency();
+                var activityTitle = dependenciesDataGridView.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var dependsOn = dependenciesDataGridView.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var dependencyType = dependenciesDataGridView.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                dependency.ActivityTitle = activityTitle;
+                dependency.DependsOn = dependsOn;
+                dependency.DependencyType = dependencyType;
+
+                dependencies.Add(dependency);
+            }
+
+
+            newProjectPlanModel.Dependencies = dependencies;
+
+            newProjectPlanModel.Asssumptions = assumptionsTxt.Text;
+            newProjectPlanModel.Constraints = constrainsTxt.Text;
+
+            List<VersionControl<ProjectPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+
+            if (!versionControl.isEqual(currentProjectPlanModel, newProjectPlanModel))
+            {
+                VersionControl<ProjectPlanModel>.DocumentModel documentModel = new VersionControl<ProjectPlanModel>.DocumentModel(newProjectPlanModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentProjectPlanModel = JsonConvert.DeserializeObject<ProjectPlanModel>(JsonConvert.SerializeObject(newProjectPlanModel));
+                newProjectPlanModel = new ProjectPlanModel();
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ProjectPlan");
+                MessageBox.Show("Project plan saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
             }
         }
     }

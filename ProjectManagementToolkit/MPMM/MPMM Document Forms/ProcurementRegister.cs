@@ -189,6 +189,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
 
             newProcurementRegisterModel.procurementEntries = procurementEntries;
+            newProcurementRegisterModel.ProcurementRegisterProgress = "DONE";
+            newProcurementRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
             newProcurementRegisterModel.ProcurementManagerName = txtProcurementManager.Text;
             newProcurementRegisterModel.ProjectName = txtProcurementRegisterProjectName.Text;
             newProcurementRegisterModel.ProjectManagerName = txtProjectManagerName.Text;
@@ -214,6 +216,114 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void button1_Click(object sender, EventArgs e)
         {
             ExcelAppend.ExportNotQualityRegister((int)ExcelAppend.DocumentType.ProcurementRegister, dgvProcurementRegister);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<ProcurementRegisterModel.ProcurementEntry> procurementEntries = new List<ProcurementRegisterModel.ProcurementEntry>();
+            int procurementEntryCount = dgvProcurementRegister.Rows.Count;
+
+            for (int i = 0; i < procurementEntryCount - 1; i++)
+            {
+                ProcurementRegisterModel.ProcurementEntry procurementEntry = new ProcurementRegisterModel.ProcurementEntry();
+                string poNum = dgvProcurementRegister.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var itemTitle = dgvProcurementRegister.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var itemDesc = dgvProcurementRegister.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var quantity = dgvProcurementRegister.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var unitPrice = dgvProcurementRegister.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var totalPrice = dgvProcurementRegister.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var reqByDate = dgvProcurementRegister.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var company = dgvProcurementRegister.Rows[i].Cells[7].Value?.ToString() ?? "";
+                var contactName = dgvProcurementRegister.Rows[i].Cells[8].Value?.ToString() ?? "";
+                var contactPhNum = dgvProcurementRegister.Rows[i].Cells[9].Value?.ToString() ?? "";
+                var poStatus = dgvProcurementRegister.Rows[i].Cells[10].Value?.ToString() ?? "";
+                var poDate = dgvProcurementRegister.Rows[i].Cells[11].Value?.ToString() ?? "";
+                var deliveryStatus = dgvProcurementRegister.Rows[i].Cells[12].Value?.ToString() ?? "";
+                var deliveryDate = dgvProcurementRegister.Rows[i].Cells[13].Value?.ToString() ?? "";
+                var payMethod = dgvProcurementRegister.Rows[i].Cells[14].Value?.ToString() ?? "";
+                var payStatus = dgvProcurementRegister.Rows[i].Cells[15].Value?.ToString() ?? "";
+                var payDate = dgvProcurementRegister.Rows[i].Cells[16].Value?.ToString() ?? "";
+
+                try
+                {
+                    procurementEntry.PO_Number = int.Parse(poNum);
+                }
+                catch
+                {
+                    MessageBox.Show("The PO # field must contain only numbers.");
+                    return;
+                }
+
+                procurementEntry.ItemTitle = itemTitle;
+                procurementEntry.ItemDescription = itemDesc;
+
+                try
+                {
+                    procurementEntry.Quantity = int.Parse(quantity);
+                }
+                catch
+                {
+                    MessageBox.Show("The Quantity field must contain only numbers.");
+                    return;
+                }
+
+                try
+                {
+                    procurementEntry.UnitPrice = int.Parse(unitPrice);
+                }
+                catch
+                {
+                    MessageBox.Show("The Unit Price field must contain only numbers.");
+                    return;
+                }
+
+                try
+                {
+                    procurementEntry.TotalPrice = int.Parse(totalPrice);
+                }
+                catch
+                {
+                    MessageBox.Show("The Total Price field must contain only numbers.");
+                    return;
+                }
+
+                procurementEntry.RequiredByDate = reqByDate;
+                procurementEntry.Company = company;
+                procurementEntry.ContactName = contactName;
+                procurementEntry.ContactPhoneNumber = contactPhNum;
+                procurementEntry.PO_Status = poStatus;
+                procurementEntry.PO_Date = poDate;
+                procurementEntry.DeliveryStatus = deliveryStatus;
+                procurementEntry.DeliveryDate = deliveryDate;
+                procurementEntry.PaymentMethod = payMethod;
+                procurementEntry.PaymentStatus = payStatus;
+                procurementEntry.PaymentDate = payDate;
+
+                procurementEntries.Add(procurementEntry);
+            }
+
+            newProcurementRegisterModel.procurementEntries = procurementEntries;
+            newProcurementRegisterModel.ProcurementRegisterProgress = "UNDONE";
+            newProcurementRegisterModel.ProcurementManagerName = txtProcurementManager.Text;
+            newProcurementRegisterModel.ProjectName = txtProcurementRegisterProjectName.Text;
+            newProcurementRegisterModel.ProjectManagerName = txtProjectManagerName.Text;
+
+            List<VersionControl<ProcurementRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentProcurementRegisterModel, newProcurementRegisterModel))
+            {
+                VersionControl<ProcurementRegisterModel>.DocumentModel documentModel = new VersionControl<ProcurementRegisterModel>.DocumentModel(newProcurementRegisterModel, DateTime.Now, VersionControl<ProcurementRegisterModel>.generateID());
+
+                documentModels.Add(documentModel);
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentProcurementRegisterModel = JsonConvert.DeserializeObject<ProcurementRegisterModel>(JsonConvert.SerializeObject(newProcurementRegisterModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ProcurementRegister");
+                MessageBox.Show("Procurement register saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made.", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

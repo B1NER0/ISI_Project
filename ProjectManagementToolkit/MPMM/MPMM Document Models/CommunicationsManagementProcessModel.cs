@@ -9,6 +9,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class CommunicationsManagementProcessModel
     {
         public string ProjectName { get; set; }
+        public string CommunicationsManagementProcessProgress { get; set; }
+        public string completedDate { get; set; }
         public string DocumentID { get; set; }
         public string DocumentOwner { get; set; }
         public string IssueDate { get; set; }

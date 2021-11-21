@@ -119,6 +119,7 @@
             this.txtDeliverySchedule = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExportWord = new System.Windows.Forms.Button();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.documentControl.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -173,22 +174,22 @@
             this.tabControl1.Controls.Add(this.reviewSchedule);
             this.tabControl1.Controls.Add(this.deliverySchedule);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(2, 9);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(11, 81);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(947, 466);
+            this.tabControl1.Size = new System.Drawing.Size(1080, 572);
             this.tabControl1.TabIndex = 0;
             // 
             // documentControl
             // 
             this.documentControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.documentControl.Controls.Add(this.tabControl2);
-            this.documentControl.Location = new System.Drawing.Point(4, 23);
-            this.documentControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.documentControl.Location = new System.Drawing.Point(4, 25);
+            this.documentControl.Margin = new System.Windows.Forms.Padding(2);
             this.documentControl.Name = "documentControl";
-            this.documentControl.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.documentControl.Size = new System.Drawing.Size(939, 439);
+            this.documentControl.Padding = new System.Windows.Forms.Padding(2);
+            this.documentControl.Size = new System.Drawing.Size(1072, 543);
             this.documentControl.TabIndex = 0;
             this.documentControl.Text = "Document Control";
             // 
@@ -199,21 +200,21 @@
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(2, 2);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(935, 435);
+            this.tabControl2.Size = new System.Drawing.Size(1068, 539);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage1.Controls.Add(this.dgvDocumentInformation);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(927, 408);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(1060, 510);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Document Information";
             // 
@@ -235,7 +236,7 @@
             this.dgvDocumentInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocumentInformation.EnableHeadersVisualStyles = false;
             this.dgvDocumentInformation.Location = new System.Drawing.Point(2, 2);
-            this.dgvDocumentInformation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDocumentInformation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDocumentInformation.Name = "dgvDocumentInformation";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -248,7 +249,7 @@
             this.dgvDocumentInformation.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentInformation.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDocumentInformation.Size = new System.Drawing.Size(923, 404);
+            this.dgvDocumentInformation.Size = new System.Drawing.Size(1056, 506);
             this.dgvDocumentInformation.TabIndex = 16;
             // 
             // Type
@@ -269,11 +270,11 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage2.Controls.Add(this.dgvDocumentHistory);
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(839, 339);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(927, 406);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Document History";
             // 
@@ -296,7 +297,7 @@
             this.dgvDocumentHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocumentHistory.EnableHeadersVisualStyles = false;
             this.dgvDocumentHistory.Location = new System.Drawing.Point(2, 2);
-            this.dgvDocumentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDocumentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDocumentHistory.Name = "dgvDocumentHistory";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -309,7 +310,7 @@
             this.dgvDocumentHistory.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentHistory.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDocumentHistory.Size = new System.Drawing.Size(835, 335);
+            this.dgvDocumentHistory.Size = new System.Drawing.Size(923, 402);
             this.dgvDocumentHistory.TabIndex = 13;
             // 
             // Version
@@ -337,11 +338,11 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage3.Controls.Add(this.dgvDocumentApprovals);
-            this.tabPage3.Location = new System.Drawing.Point(4, 23);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Size = new System.Drawing.Size(839, 339);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(927, 406);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Document Approval";
             // 
@@ -365,7 +366,7 @@
             this.dgvDocumentApprovals.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocumentApprovals.EnableHeadersVisualStyles = false;
             this.dgvDocumentApprovals.Location = new System.Drawing.Point(2, 2);
-            this.dgvDocumentApprovals.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDocumentApprovals.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDocumentApprovals.Name = "dgvDocumentApprovals";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -378,7 +379,7 @@
             this.dgvDocumentApprovals.RowHeadersWidth = 51;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentApprovals.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDocumentApprovals.Size = new System.Drawing.Size(835, 335);
+            this.dgvDocumentApprovals.Size = new System.Drawing.Size(923, 402);
             this.dgvDocumentApprovals.TabIndex = 18;
             // 
             // approvalRole
@@ -415,11 +416,11 @@
             // 
             this.introduction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.introduction.Controls.Add(this.tabControl3);
-            this.introduction.Location = new System.Drawing.Point(4, 23);
-            this.introduction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.introduction.Location = new System.Drawing.Point(4, 25);
+            this.introduction.Margin = new System.Windows.Forms.Padding(2);
             this.introduction.Name = "introduction";
-            this.introduction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.introduction.Size = new System.Drawing.Size(939, 439);
+            this.introduction.Padding = new System.Windows.Forms.Padding(2);
+            this.introduction.Size = new System.Drawing.Size(939, 437);
             this.introduction.TabIndex = 1;
             this.introduction.Text = "Introduction";
             // 
@@ -430,21 +431,21 @@
             this.tabControl3.Controls.Add(this.tabPage7);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl3.Location = new System.Drawing.Point(2, 2);
-            this.tabControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(935, 435);
+            this.tabControl3.Size = new System.Drawing.Size(935, 433);
             this.tabControl3.TabIndex = 0;
             // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage5.Controls.Add(this.purpose);
-            this.tabPage5.Location = new System.Drawing.Point(4, 23);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage5.Size = new System.Drawing.Size(927, 408);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Size = new System.Drawing.Size(927, 404);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Purpose";
             // 
@@ -455,10 +456,10 @@
             this.purpose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.purpose.ForeColor = System.Drawing.Color.Black;
             this.purpose.Location = new System.Drawing.Point(2, 2);
-            this.purpose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.purpose.Margin = new System.Windows.Forms.Padding(2);
             this.purpose.Multiline = true;
             this.purpose.Name = "purpose";
-            this.purpose.Size = new System.Drawing.Size(923, 404);
+            this.purpose.Size = new System.Drawing.Size(923, 400);
             this.purpose.TabIndex = 24;
             this.purpose.Text = "Purpose";
             // 
@@ -466,11 +467,11 @@
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage6.Controls.Add(this.recipients);
-            this.tabPage6.Location = new System.Drawing.Point(4, 23);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage6.Size = new System.Drawing.Size(839, 339);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage6.Size = new System.Drawing.Size(927, 406);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Recipients";
             // 
@@ -481,10 +482,10 @@
             this.recipients.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recipients.ForeColor = System.Drawing.Color.Black;
             this.recipients.Location = new System.Drawing.Point(2, 2);
-            this.recipients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recipients.Margin = new System.Windows.Forms.Padding(2);
             this.recipients.Multiline = true;
             this.recipients.Name = "recipients";
-            this.recipients.Size = new System.Drawing.Size(835, 335);
+            this.recipients.Size = new System.Drawing.Size(923, 402);
             this.recipients.TabIndex = 23;
             this.recipients.Text = "Recipients";
             // 
@@ -492,11 +493,11 @@
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage7.Controls.Add(this.dgvDefinitions);
-            this.tabPage7.Location = new System.Drawing.Point(4, 23);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage7.Size = new System.Drawing.Size(839, 339);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage7.Size = new System.Drawing.Size(927, 406);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Definitions";
             // 
@@ -518,7 +519,7 @@
             this.dgvDefinitions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDefinitions.EnableHeadersVisualStyles = false;
             this.dgvDefinitions.Location = new System.Drawing.Point(2, 2);
-            this.dgvDefinitions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDefinitions.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDefinitions.Name = "dgvDefinitions";
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -531,7 +532,7 @@
             this.dgvDefinitions.RowHeadersWidth = 51;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDefinitions.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvDefinitions.Size = new System.Drawing.Size(835, 335);
+            this.dgvDefinitions.Size = new System.Drawing.Size(923, 402);
             this.dgvDefinitions.TabIndex = 26;
             // 
             // term
@@ -553,11 +554,11 @@
             this.scopeOfWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.scopeOfWork.Controls.Add(this.label5);
             this.scopeOfWork.Controls.Add(this.dgvProcurementItems);
-            this.scopeOfWork.Location = new System.Drawing.Point(4, 23);
-            this.scopeOfWork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.scopeOfWork.Location = new System.Drawing.Point(4, 25);
+            this.scopeOfWork.Margin = new System.Windows.Forms.Padding(2);
             this.scopeOfWork.Name = "scopeOfWork";
-            this.scopeOfWork.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.scopeOfWork.Size = new System.Drawing.Size(939, 439);
+            this.scopeOfWork.Padding = new System.Windows.Forms.Padding(2);
+            this.scopeOfWork.Size = new System.Drawing.Size(939, 437);
             this.scopeOfWork.TabIndex = 2;
             this.scopeOfWork.Text = "Scope Of Work";
             // 
@@ -572,7 +573,7 @@
             this.label5.Location = new System.Drawing.Point(4, 13);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 18);
+            this.label5.Size = new System.Drawing.Size(186, 22);
             this.label5.TabIndex = 11;
             this.label5.Text = "Procurement Items";
             // 
@@ -598,7 +599,7 @@
             this.itemPrice});
             this.dgvProcurementItems.EnableHeadersVisualStyles = false;
             this.dgvProcurementItems.Location = new System.Drawing.Point(4, 39);
-            this.dgvProcurementItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProcurementItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProcurementItems.Name = "dgvProcurementItems";
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -646,11 +647,11 @@
             // 
             this.responsibilities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.responsibilities.Controls.Add(this.tabControl4);
-            this.responsibilities.Location = new System.Drawing.Point(4, 23);
-            this.responsibilities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.responsibilities.Location = new System.Drawing.Point(4, 25);
+            this.responsibilities.Margin = new System.Windows.Forms.Padding(2);
             this.responsibilities.Name = "responsibilities";
-            this.responsibilities.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.responsibilities.Size = new System.Drawing.Size(939, 439);
+            this.responsibilities.Padding = new System.Windows.Forms.Padding(2);
+            this.responsibilities.Size = new System.Drawing.Size(939, 437);
             this.responsibilities.TabIndex = 3;
             this.responsibilities.Text = "Responsibilities";
             // 
@@ -659,7 +660,7 @@
             this.tabControl4.Controls.Add(this.tabPage4);
             this.tabControl4.Controls.Add(this.tabPage8);
             this.tabControl4.Location = new System.Drawing.Point(5, 6);
-            this.tabControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl4.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
             this.tabControl4.Size = new System.Drawing.Size(678, 360);
@@ -669,11 +670,11 @@
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage4.Controls.Add(this.supplier);
-            this.tabPage4.Location = new System.Drawing.Point(4, 23);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage4.Size = new System.Drawing.Size(670, 333);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Size = new System.Drawing.Size(670, 331);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Supplier";
             // 
@@ -684,10 +685,10 @@
             this.supplier.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplier.ForeColor = System.Drawing.Color.Black;
             this.supplier.Location = new System.Drawing.Point(2, 2);
-            this.supplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supplier.Margin = new System.Windows.Forms.Padding(2);
             this.supplier.Multiline = true;
             this.supplier.Name = "supplier";
-            this.supplier.Size = new System.Drawing.Size(666, 329);
+            this.supplier.Size = new System.Drawing.Size(666, 327);
             this.supplier.TabIndex = 20;
             this.supplier.Text = "Supplier";
             // 
@@ -695,11 +696,11 @@
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage8.Controls.Add(this.project);
-            this.tabPage8.Location = new System.Drawing.Point(4, 23);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage8.Size = new System.Drawing.Size(670, 333);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Size = new System.Drawing.Size(670, 331);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Project";
             // 
@@ -710,10 +711,10 @@
             this.project.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.project.ForeColor = System.Drawing.Color.Black;
             this.project.Location = new System.Drawing.Point(2, 2);
-            this.project.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.project.Margin = new System.Windows.Forms.Padding(2);
             this.project.Multiline = true;
             this.project.Name = "project";
-            this.project.Size = new System.Drawing.Size(666, 329);
+            this.project.Size = new System.Drawing.Size(666, 327);
             this.project.TabIndex = 22;
             this.project.Text = "Project";
             // 
@@ -721,11 +722,11 @@
             // 
             this.performance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.performance.Controls.Add(this.tabControl5);
-            this.performance.Location = new System.Drawing.Point(4, 23);
-            this.performance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.performance.Location = new System.Drawing.Point(4, 25);
+            this.performance.Margin = new System.Windows.Forms.Padding(2);
             this.performance.Name = "performance";
-            this.performance.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.performance.Size = new System.Drawing.Size(939, 439);
+            this.performance.Padding = new System.Windows.Forms.Padding(2);
+            this.performance.Size = new System.Drawing.Size(939, 437);
             this.performance.TabIndex = 4;
             this.performance.Text = "Performance";
             // 
@@ -734,7 +735,7 @@
             this.tabControl5.Controls.Add(this.tabPage9);
             this.tabControl5.Controls.Add(this.tabPage10);
             this.tabControl5.Location = new System.Drawing.Point(5, 6);
-            this.tabControl5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl5.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
             this.tabControl5.Size = new System.Drawing.Size(676, 360);
@@ -744,11 +745,11 @@
             // 
             this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage9.Controls.Add(this.dgvReviewCriteriaIntro);
-            this.tabPage9.Location = new System.Drawing.Point(4, 23);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage9.Size = new System.Drawing.Size(668, 333);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Size = new System.Drawing.Size(668, 331);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Review Criteria";
             // 
@@ -770,7 +771,7 @@
             this.dgvReviewCriteriaIntro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReviewCriteriaIntro.EnableHeadersVisualStyles = false;
             this.dgvReviewCriteriaIntro.Location = new System.Drawing.Point(2, 2);
-            this.dgvReviewCriteriaIntro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvReviewCriteriaIntro.Margin = new System.Windows.Forms.Padding(2);
             this.dgvReviewCriteriaIntro.Name = "dgvReviewCriteriaIntro";
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -783,7 +784,7 @@
             this.dgvReviewCriteriaIntro.RowHeadersWidth = 51;
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvReviewCriteriaIntro.RowsDefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvReviewCriteriaIntro.Size = new System.Drawing.Size(664, 329);
+            this.dgvReviewCriteriaIntro.Size = new System.Drawing.Size(664, 327);
             this.dgvReviewCriteriaIntro.TabIndex = 19;
             // 
             // reviewCriteria
@@ -804,11 +805,11 @@
             // 
             this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage10.Controls.Add(this.reviewProcess);
-            this.tabPage10.Location = new System.Drawing.Point(4, 23);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage10.Size = new System.Drawing.Size(668, 333);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage10.Size = new System.Drawing.Size(668, 331);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Review Process";
             // 
@@ -819,10 +820,10 @@
             this.reviewProcess.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reviewProcess.ForeColor = System.Drawing.Color.Black;
             this.reviewProcess.Location = new System.Drawing.Point(2, 2);
-            this.reviewProcess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reviewProcess.Margin = new System.Windows.Forms.Padding(2);
             this.reviewProcess.Multiline = true;
             this.reviewProcess.Name = "reviewProcess";
-            this.reviewProcess.Size = new System.Drawing.Size(664, 329);
+            this.reviewProcess.Size = new System.Drawing.Size(664, 327);
             this.reviewProcess.TabIndex = 22;
             this.reviewProcess.Text = "Review Process";
             // 
@@ -830,11 +831,11 @@
             // 
             this.termsAndConditions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.termsAndConditions.Controls.Add(this.tabControl6);
-            this.termsAndConditions.Location = new System.Drawing.Point(4, 23);
-            this.termsAndConditions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.termsAndConditions.Location = new System.Drawing.Point(4, 25);
+            this.termsAndConditions.Margin = new System.Windows.Forms.Padding(2);
             this.termsAndConditions.Name = "termsAndConditions";
-            this.termsAndConditions.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.termsAndConditions.Size = new System.Drawing.Size(939, 439);
+            this.termsAndConditions.Padding = new System.Windows.Forms.Padding(2);
+            this.termsAndConditions.Size = new System.Drawing.Size(939, 437);
             this.termsAndConditions.TabIndex = 5;
             this.termsAndConditions.Text = "Terms and Conditions";
             // 
@@ -850,21 +851,21 @@
             this.tabControl6.Controls.Add(this.tabPage18);
             this.tabControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl6.Location = new System.Drawing.Point(2, 2);
-            this.tabControl6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl6.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl6.Name = "tabControl6";
             this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(935, 435);
+            this.tabControl6.Size = new System.Drawing.Size(935, 433);
             this.tabControl6.TabIndex = 0;
             // 
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage11.Controls.Add(this.payment);
-            this.tabPage11.Location = new System.Drawing.Point(4, 23);
-            this.tabPage11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage11.Size = new System.Drawing.Size(927, 408);
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage11.Size = new System.Drawing.Size(927, 404);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Payment";
             // 
@@ -875,10 +876,10 @@
             this.payment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payment.ForeColor = System.Drawing.Color.Black;
             this.payment.Location = new System.Drawing.Point(2, 2);
-            this.payment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.payment.Margin = new System.Windows.Forms.Padding(2);
             this.payment.Multiline = true;
             this.payment.Name = "payment";
-            this.payment.Size = new System.Drawing.Size(923, 404);
+            this.payment.Size = new System.Drawing.Size(923, 400);
             this.payment.TabIndex = 25;
             this.payment.Text = "Payment";
             // 
@@ -886,11 +887,11 @@
             // 
             this.tabPage12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage12.Controls.Add(this.invoicing);
-            this.tabPage12.Location = new System.Drawing.Point(4, 23);
-            this.tabPage12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage12.Size = new System.Drawing.Size(839, 339);
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage12.Size = new System.Drawing.Size(927, 406);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Invoicing";
             // 
@@ -901,10 +902,10 @@
             this.invoicing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invoicing.ForeColor = System.Drawing.Color.Black;
             this.invoicing.Location = new System.Drawing.Point(2, 2);
-            this.invoicing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.invoicing.Margin = new System.Windows.Forms.Padding(2);
             this.invoicing.Multiline = true;
             this.invoicing.Name = "invoicing";
-            this.invoicing.Size = new System.Drawing.Size(835, 335);
+            this.invoicing.Size = new System.Drawing.Size(923, 402);
             this.invoicing.TabIndex = 29;
             this.invoicing.Text = "Invoicing";
             // 
@@ -912,11 +913,11 @@
             // 
             this.tabPage13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage13.Controls.Add(this.confidentiality);
-            this.tabPage13.Location = new System.Drawing.Point(4, 23);
-            this.tabPage13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage13.Location = new System.Drawing.Point(4, 25);
+            this.tabPage13.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage13.Size = new System.Drawing.Size(839, 339);
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage13.Size = new System.Drawing.Size(927, 406);
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Confidentiality";
             // 
@@ -927,10 +928,10 @@
             this.confidentiality.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confidentiality.ForeColor = System.Drawing.Color.Black;
             this.confidentiality.Location = new System.Drawing.Point(2, 2);
-            this.confidentiality.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confidentiality.Margin = new System.Windows.Forms.Padding(2);
             this.confidentiality.Multiline = true;
             this.confidentiality.Name = "confidentiality";
-            this.confidentiality.Size = new System.Drawing.Size(835, 335);
+            this.confidentiality.Size = new System.Drawing.Size(923, 402);
             this.confidentiality.TabIndex = 32;
             this.confidentiality.Text = "Confidentiality";
             // 
@@ -938,11 +939,11 @@
             // 
             this.tabPage14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage14.Controls.Add(this.termination);
-            this.tabPage14.Location = new System.Drawing.Point(4, 23);
-            this.tabPage14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage14.Location = new System.Drawing.Point(4, 25);
+            this.tabPage14.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage14.Size = new System.Drawing.Size(839, 339);
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage14.Size = new System.Drawing.Size(927, 406);
             this.tabPage14.TabIndex = 3;
             this.tabPage14.Text = "Termination";
             // 
@@ -953,10 +954,10 @@
             this.termination.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.termination.ForeColor = System.Drawing.Color.Black;
             this.termination.Location = new System.Drawing.Point(2, 2);
-            this.termination.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.termination.Margin = new System.Windows.Forms.Padding(2);
             this.termination.Multiline = true;
             this.termination.Name = "termination";
-            this.termination.Size = new System.Drawing.Size(835, 335);
+            this.termination.Size = new System.Drawing.Size(923, 402);
             this.termination.TabIndex = 28;
             this.termination.Text = "Termination";
             // 
@@ -964,11 +965,11 @@
             // 
             this.tabPage15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage15.Controls.Add(this.disputes);
-            this.tabPage15.Location = new System.Drawing.Point(4, 23);
-            this.tabPage15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage15.Location = new System.Drawing.Point(4, 25);
+            this.tabPage15.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage15.Size = new System.Drawing.Size(839, 339);
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage15.Size = new System.Drawing.Size(927, 406);
             this.tabPage15.TabIndex = 4;
             this.tabPage15.Text = "Disputes";
             // 
@@ -979,10 +980,10 @@
             this.disputes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.disputes.ForeColor = System.Drawing.Color.Black;
             this.disputes.Location = new System.Drawing.Point(2, 2);
-            this.disputes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.disputes.Margin = new System.Windows.Forms.Padding(2);
             this.disputes.Multiline = true;
             this.disputes.Name = "disputes";
-            this.disputes.Size = new System.Drawing.Size(835, 335);
+            this.disputes.Size = new System.Drawing.Size(923, 402);
             this.disputes.TabIndex = 27;
             this.disputes.Text = "Disputes";
             // 
@@ -990,11 +991,11 @@
             // 
             this.tabPage16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage16.Controls.Add(this.indemnity);
-            this.tabPage16.Location = new System.Drawing.Point(4, 23);
-            this.tabPage16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage16.Location = new System.Drawing.Point(4, 25);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage16.Size = new System.Drawing.Size(839, 339);
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Size = new System.Drawing.Size(927, 406);
             this.tabPage16.TabIndex = 5;
             this.tabPage16.Text = "Indemnity";
             // 
@@ -1005,10 +1006,10 @@
             this.indemnity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.indemnity.ForeColor = System.Drawing.Color.Black;
             this.indemnity.Location = new System.Drawing.Point(2, 2);
-            this.indemnity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.indemnity.Margin = new System.Windows.Forms.Padding(2);
             this.indemnity.Multiline = true;
             this.indemnity.Name = "indemnity";
-            this.indemnity.Size = new System.Drawing.Size(835, 335);
+            this.indemnity.Size = new System.Drawing.Size(923, 402);
             this.indemnity.TabIndex = 33;
             this.indemnity.Text = "Indemnity";
             // 
@@ -1016,11 +1017,11 @@
             // 
             this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage17.Controls.Add(this.law);
-            this.tabPage17.Location = new System.Drawing.Point(4, 23);
-            this.tabPage17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage17.Location = new System.Drawing.Point(4, 25);
+            this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage17.Size = new System.Drawing.Size(839, 339);
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage17.Size = new System.Drawing.Size(927, 406);
             this.tabPage17.TabIndex = 6;
             this.tabPage17.Text = "Law";
             // 
@@ -1031,10 +1032,10 @@
             this.law.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.law.ForeColor = System.Drawing.Color.Black;
             this.law.Location = new System.Drawing.Point(2, 2);
-            this.law.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.law.Margin = new System.Windows.Forms.Padding(2);
             this.law.Multiline = true;
             this.law.Name = "law";
-            this.law.Size = new System.Drawing.Size(835, 335);
+            this.law.Size = new System.Drawing.Size(923, 402);
             this.law.TabIndex = 31;
             this.law.Text = "Law";
             // 
@@ -1042,11 +1043,11 @@
             // 
             this.tabPage18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage18.Controls.Add(this.agreement);
-            this.tabPage18.Location = new System.Drawing.Point(4, 23);
-            this.tabPage18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage18.Location = new System.Drawing.Point(4, 25);
+            this.tabPage18.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage18.Size = new System.Drawing.Size(839, 339);
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage18.Size = new System.Drawing.Size(927, 406);
             this.tabPage18.TabIndex = 7;
             this.tabPage18.Text = "Agreement";
             // 
@@ -1057,10 +1058,10 @@
             this.agreement.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agreement.ForeColor = System.Drawing.Color.Black;
             this.agreement.Location = new System.Drawing.Point(2, 2);
-            this.agreement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.agreement.Margin = new System.Windows.Forms.Padding(2);
             this.agreement.Multiline = true;
             this.agreement.Name = "agreement";
-            this.agreement.Size = new System.Drawing.Size(835, 335);
+            this.agreement.Size = new System.Drawing.Size(923, 402);
             this.agreement.TabIndex = 30;
             this.agreement.Text = "Agreement";
             // 
@@ -1068,11 +1069,11 @@
             // 
             this.reviewSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.reviewSchedule.Controls.Add(this.txtReviewSchedule);
-            this.reviewSchedule.Location = new System.Drawing.Point(4, 23);
-            this.reviewSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reviewSchedule.Location = new System.Drawing.Point(4, 25);
+            this.reviewSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.reviewSchedule.Name = "reviewSchedule";
-            this.reviewSchedule.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.reviewSchedule.Size = new System.Drawing.Size(939, 439);
+            this.reviewSchedule.Padding = new System.Windows.Forms.Padding(2);
+            this.reviewSchedule.Size = new System.Drawing.Size(939, 437);
             this.reviewSchedule.TabIndex = 6;
             this.reviewSchedule.Text = "Review Schedule";
             // 
@@ -1083,10 +1084,10 @@
             this.txtReviewSchedule.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReviewSchedule.ForeColor = System.Drawing.Color.Black;
             this.txtReviewSchedule.Location = new System.Drawing.Point(2, 2);
-            this.txtReviewSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReviewSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.txtReviewSchedule.Multiline = true;
             this.txtReviewSchedule.Name = "txtReviewSchedule";
-            this.txtReviewSchedule.Size = new System.Drawing.Size(935, 435);
+            this.txtReviewSchedule.Size = new System.Drawing.Size(935, 433);
             this.txtReviewSchedule.TabIndex = 26;
             this.txtReviewSchedule.Text = "Review Schedule";
             // 
@@ -1094,11 +1095,11 @@
             // 
             this.deliverySchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.deliverySchedule.Controls.Add(this.txtDeliverySchedule);
-            this.deliverySchedule.Location = new System.Drawing.Point(4, 23);
-            this.deliverySchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deliverySchedule.Location = new System.Drawing.Point(4, 25);
+            this.deliverySchedule.Margin = new System.Windows.Forms.Padding(2);
             this.deliverySchedule.Name = "deliverySchedule";
-            this.deliverySchedule.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.deliverySchedule.Size = new System.Drawing.Size(939, 439);
+            this.deliverySchedule.Padding = new System.Windows.Forms.Padding(2);
+            this.deliverySchedule.Size = new System.Drawing.Size(939, 437);
             this.deliverySchedule.TabIndex = 7;
             this.deliverySchedule.Text = "Delivery Schedule";
             // 
@@ -1109,10 +1110,10 @@
             this.txtDeliverySchedule.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeliverySchedule.ForeColor = System.Drawing.Color.Black;
             this.txtDeliverySchedule.Location = new System.Drawing.Point(2, 2);
-            this.txtDeliverySchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDeliverySchedule.Margin = new System.Windows.Forms.Padding(2);
             this.txtDeliverySchedule.Multiline = true;
             this.txtDeliverySchedule.Name = "txtDeliverySchedule";
-            this.txtDeliverySchedule.Size = new System.Drawing.Size(935, 435);
+            this.txtDeliverySchedule.Size = new System.Drawing.Size(935, 433);
             this.txtDeliverySchedule.TabIndex = 26;
             this.txtDeliverySchedule.Text = "Delivery Schedule";
             // 
@@ -1120,12 +1121,12 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(787, 3);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(875, 29);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(71, 25);
+            this.btnSave.Size = new System.Drawing.Size(89, 25);
             this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -1133,8 +1134,8 @@
             // 
             this.btnExportWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExportWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportWord.Location = new System.Drawing.Point(870, 3);
-            this.btnExportWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportWord.Location = new System.Drawing.Point(990, 29);
+            this.btnExportWord.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportWord.Name = "btnExportWord";
             this.btnExportWord.Size = new System.Drawing.Size(71, 25);
             this.btnExportWord.TabIndex = 17;
@@ -1142,17 +1143,31 @@
             this.btnExportWord.UseVisualStyleBackColor = false;
             this.btnExportWord.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProgress.Location = new System.Drawing.Point(766, 15);
+            this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(87, 50);
+            this.btnSaveProgress.TabIndex = 17;
+            this.btnSaveProgress.Text = "Save Progress";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
+            // 
             // SupplierContractDocumentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(965, 511);
+            this.ClientSize = new System.Drawing.Size(1098, 617);
             this.Controls.Add(this.btnExportWord);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SupplierContractDocumentForm";
             this.Text = "SupplierContractDocumentForm";
             this.Load += new System.EventHandler(this.SupplierContractDocumentForm_Load);
@@ -1289,5 +1304,6 @@
         private System.Windows.Forms.TextBox txtDeliverySchedule;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExportWord;
+        private System.Windows.Forms.Button btnSaveProgress;
     }
 }

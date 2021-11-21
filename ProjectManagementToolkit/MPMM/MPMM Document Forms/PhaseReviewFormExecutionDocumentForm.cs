@@ -114,6 +114,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPhaseReviewExeModel.ReportPreparedBy = txtReportPreparedBy.Text;
             newPhaseReviewExeModel.ReportPreparationDate = txtReportPreperationDate.Text;
             newPhaseReviewExeModel.eportingPeriod = txtReportingPeriod.Text;
+            newPhaseReviewExeModel.PhaseReviewExeProgress = "DONE";
+            newPhaseReviewExeModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             newPhaseReviewExeModel.Summary = txtSummary.Text;
             newPhaseReviewExeModel.ProjectSchedule = txtProjectSchedule.Text;
@@ -592,6 +594,68 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
             txtProjectName.Text = projectModel.ProjectName;
             loadDocument();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newPhaseReviewExeModel.ProjectName = txtProjectName2.Text;
+            newPhaseReviewExeModel.ProjectManager = txtProjectManager.Text;
+            newPhaseReviewExeModel.ProjectSponsor = txtProjectSponsor.Text;
+            newPhaseReviewExeModel.ReportPreparedBy = txtReportPreparedBy.Text;
+            newPhaseReviewExeModel.ReportPreparationDate = txtReportPreperationDate.Text;
+            newPhaseReviewExeModel.eportingPeriod = txtReportingPeriod.Text;
+            newPhaseReviewExeModel.PhaseReviewExeProgress = "UNDONE";
+
+            newPhaseReviewExeModel.Summary = txtSummary.Text;
+            newPhaseReviewExeModel.ProjectSchedule = txtProjectSchedule.Text;
+            newPhaseReviewExeModel.ProjectExpenses = txtProjectExpenses.Text;
+            newPhaseReviewExeModel.ProjectDeliverables = txtProjectDeliverables.Text;
+            newPhaseReviewExeModel.ProjectRisks = txtProjectRisks.Text;
+            newPhaseReviewExeModel.ProjectIssues = txtProjectIssues.Text;
+            newPhaseReviewExeModel.ProjectChanges = txtProjectChanges.Text;
+
+            newPhaseReviewExeModel.SupportingDocumentation = txtSupportingDocumentation.Text;
+            newPhaseReviewExeModel.Signature = txtSignature.Text;
+            newPhaseReviewExeModel.SignatureDate = txtDate.Text;
+
+            List<PhaseReviewFormExecutionModel.ReviewDetial> review = new List<PhaseReviewFormExecutionModel.ReviewDetial>();
+
+            int reviewRowsCount = dgvReviewDetails.Rows.Count;
+
+            for (int i = 0; i < reviewRowsCount - 1; i++)
+            {
+                PhaseReviewFormExecutionModel.ReviewDetial rev = new PhaseReviewFormExecutionModel.ReviewDetial();
+                var ReviewCategory = dgvReviewDetails.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var ReviewQuestion = dgvReviewDetails.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var Answer = dgvReviewDetails.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var Varaince = dgvReviewDetails.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                rev.ReviewCategory = ReviewCategory;
+                rev.ReviewQuestion = ReviewQuestion;
+                rev.Answer = Answer;
+                rev.Varaince = Varaince;
+
+                review.Add(rev);
+            }
+            newPhaseReviewExeModel.ReviewDetials = review;
+
+
+            List<VersionControl<PhaseReviewFormExecutionModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentPhaseReviewExeModel, newPhaseReviewExeModel))
+            {
+                VersionControl<PhaseReviewFormExecutionModel>.DocumentModel documentModel = new VersionControl<PhaseReviewFormExecutionModel>.DocumentModel(newPhaseReviewExeModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentPhaseReviewExeModel = JsonConvert.DeserializeObject<PhaseReviewFormExecutionModel>(JsonConvert.SerializeObject(newPhaseReviewExeModel));
+
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "PhaseReviewExe");
+                MessageBox.Show("Phase review execution saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

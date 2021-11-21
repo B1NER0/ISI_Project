@@ -49,6 +49,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newChangeRequestModel.SupportingDocuments = txtSupportingDocumentation.Text;
             newChangeRequestModel.Signature = txtSignature.Text;
 
+            newChangeRequestModel.ChangeRequestProgress = "DONE";
+            newChangeRequestModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
             List<VersionControl<ChangeRequestModel>.DocumentModel> documentModels = versionControl.DocumentModels; //Error here
 
 
@@ -225,6 +228,45 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newChangeRequestModel.ProjectName = txtProjectName.Text;
+            newChangeRequestModel.ProjectManager = txtProjectManager.Text;
+
+            newChangeRequestModel.ChangeNumber = txtChangeNumber.Text;
+            newChangeRequestModel.ChangeRequester = txtChangeRequester.Text;
+            newChangeRequestModel.ChangeRequestDate = txtChangeRequestDate.Text;
+            newChangeRequestModel.ChangeUrgancy = txtChangeUrgency.Text;
+
+            newChangeRequestModel.ChangeDescription = txtChangeDescription.Text;
+            newChangeRequestModel.ChangeDrivers = txtChangeDrivers.Text;
+            newChangeRequestModel.ChangeBenefits = txtChangeBenefits.Text;
+            newChangeRequestModel.ChangeCost = txtChangeCosts.Text;
+            newChangeRequestModel.ProjectImpact = txtImpactDetails.Text;
+
+            newChangeRequestModel.SupportingDocuments = txtSupportingDocumentation.Text;
+            newChangeRequestModel.Signature = txtSignature.Text;
+
+            newChangeRequestModel.ChangeRequestProgress = "UNDONE";
+
+            List<VersionControl<ChangeRequestModel>.DocumentModel> documentModels = versionControl.DocumentModels; //Error here
+
+
+            if (!versionControl.isEqual(currentChangeRequestModel, newChangeRequestModel))
+            {
+                VersionControl<ChangeRequestModel>.DocumentModel documentModel = new VersionControl<ChangeRequestModel>.DocumentModel(newChangeRequestModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentChangeRequestModel = JsonConvert.DeserializeObject<ChangeRequestModel>(JsonConvert.SerializeObject(newChangeRequestModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ChangeRequestForm");
+                MessageBox.Show("Change Request saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

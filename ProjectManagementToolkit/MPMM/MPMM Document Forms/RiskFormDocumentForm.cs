@@ -62,6 +62,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newRiskFormModel.RiskRecommendedActions = riskRecommendedContingentActions.Text;
             newRiskFormModel.SupportingDocumentation = supportingDocumentation.Text;
             newRiskFormModel.SignatureDate = signatureDate.Value.ToString();
+            newRiskFormModel.RiskFormProgress = "DONE";
+            newRiskFormModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<VersionControl<RiskFormModel>.DocumentModel> documentModels = versionControl.DocumentModels;
             if (!versionControl.isEqual(currentRiskFormModel, newRiskFormModel))
@@ -288,6 +290,43 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
                     }
                 }
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newRiskFormModel.ProjectName = txtprojectName.Text;
+            newRiskFormModel.ProjectManager = projectManager.Text;
+            newRiskFormModel.RiskID = riskID.Text;
+            newRiskFormModel.DateRaised = dateRaised.Text;
+            newRiskFormModel.RaisedBy = raisedBy.Text;
+            newRiskFormModel.RiskDescription = riskDescription.Text;
+            newRiskFormModel.RiskLikelihood = riskLikelihood.Text;
+            newRiskFormModel.RiskImpact = riskImpact.Text;
+            newRiskFormModel.RiskMitigationList = riskMigigationList.Text;
+            newRiskFormModel.RiskRecommendedActions = riskRecommendedContingentActions.Text;
+            newRiskFormModel.SupportingDocumentation = supportingDocumentation.Text;
+            newRiskFormModel.SignatureDate = signatureDate.Value.ToString();
+            newRiskFormModel.RiskFormProgress = "UNDONE";
+
+            List<VersionControl<RiskFormModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+            if (!versionControl.isEqual(currentRiskFormModel, newRiskFormModel))
+            {
+                VersionControl<RiskFormModel>.DocumentModel documentModel = new VersionControl<RiskFormModel>
+                    .DocumentModel(newRiskFormModel, DateTime.Now, VersionControl<RiskFormModel>
+                    .generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentRiskFormModel = JsonConvert
+                    .DeserializeObject<RiskFormModel>(JsonConvert.SerializeObject(newRiskFormModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "RiskForm");
+                MessageBox.Show("Risk Form saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
             }
         }
     }
