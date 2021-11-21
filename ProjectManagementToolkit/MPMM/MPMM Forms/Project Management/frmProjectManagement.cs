@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjectManagementToolkit.MPMM.MPMM_Document_Forms;
+using ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management;
 
 namespace ProjectManagementToolkit
 {
@@ -325,6 +326,168 @@ namespace ProjectManagementToolkit
         {
             QualityRegister QualRegister = new QualityRegister();
             QualRegister.Show();
+        }
+
+        private void btnWorkPakagesOpportunityScreening_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 1;
+
+        }
+
+        private void btnWorkPakagesPrefeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 2;
+
+        }
+
+        private void btnWorkPakagesFeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 3;
+
+        }
+
+        private void btnWorkPakagesBusinessPlan_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 4;
+        }
+
+        private void btnWorkPakagesProjectExecutionPlanning_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 5;
+        }
+
+        private void btnWorkPakagesContractConcluding_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 6;
+        }
+
+        private void btnWorkPakagesDetailedDesign_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 7;
+        }
+
+        private void btnWorkPakagesImplementation_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 9;
+        }
+
+        private void btnWorkPakagesTransfer_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 10;
+        }
+
+        private void btnWorkPakagesCloseOut_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 11;
+        }
+
+        private void btnWorkPakagesEvaluate_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workpackages frmWorkpackages = new frmPLSM_Workpackages();
+            frmWorkpackages.Show();
+            frmWorkpackages.WorkPackagesTabControl.SelectedIndex = 12;
+        }
+
+        private void btnWorkStreamsOpportunityScreening_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsPrefeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsImplementation_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsFeasibility_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsBusinessPlan_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsProjectExecutionPlanning_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsContractConcluding_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void panel41_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnWorkStreamsDetailedDesign_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsTransfer_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsCloseOut_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
+        }
+
+        private void btnWorkStreamsEvaluate_Click(object sender, EventArgs e)
+        {
+            frmPLSM_Workstreams frmWorkStreams = new frmPLSM_Workstreams();
+            frmWorkStreams.Show();
+            frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
         }
     }
 }
