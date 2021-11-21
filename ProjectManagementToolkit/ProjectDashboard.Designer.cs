@@ -67,13 +67,6 @@
             this.totalDaysInitlbl = new System.Windows.Forms.Label();
             this.lblInitNumTasks = new System.Windows.Forms.Label();
             this.dgvInitiation = new System.Windows.Forms.DataGridView();
-            this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.completeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlannedBudgetInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BudgetInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chartInit = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbpPlanning = new System.Windows.Forms.TabPage();
             this.lblPlanningBudget = new System.Windows.Forms.Label();
@@ -81,14 +74,9 @@
             this.lblPlanNumTasks = new System.Windows.Forms.Label();
             this.chartPlanning = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvPlanning = new System.Windows.Forms.DataGridView();
-            this.PlanningDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlanningInitiationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlanningCompletedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlanningPlannedBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BudgetPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonePlanning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpExecution = new System.Windows.Forms.TabPage();
+            this.lblExecutionBudget = new System.Windows.Forms.Label();
+            this.lblExecutionSchedule = new System.Windows.Forms.Label();
             this.lblExecNumTasks = new System.Windows.Forms.Label();
             this.chartExecution = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvExecution = new System.Windows.Forms.DataGridView();
@@ -98,17 +86,24 @@
             this.lblClosingNumTasks = new System.Windows.Forms.Label();
             this.chartClosing = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvClosing = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.closingInitiationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClosingCompletedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClosingPlannedBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BudgetClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbarOverall = new System.Windows.Forms.ProgressBar();
             this.lblOverallProgress = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.InitiationDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.completeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlannedBudgetInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetInit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoneInitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanningDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanningInitiationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanningCompletedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDatePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanningPlannedBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonePlanning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExecutionInitiationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExecutionCompletedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,8 +111,13 @@
             this.ExecutionPlannedBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BudgetEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblExecutionSchedule = new System.Windows.Forms.Label();
-            this.lblExecutionBudget = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closingInitiationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClosingCompletedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClosingPlannedBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetClose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInitiation.SuspendLayout();
             this.tbpInitiation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInitiation)).BeginInit();
@@ -265,59 +265,6 @@
             this.dgvInitiation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellClick);
             this.dgvInitiation.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellValueChanged);
             // 
-            // InitiationDocument
-            // 
-            this.InitiationDocument.HeaderText = "Initation Document";
-            this.InitiationDocument.MinimumWidth = 6;
-            this.InitiationDocument.Name = "InitiationDocument";
-            this.InitiationDocument.ReadOnly = true;
-            this.InitiationDocument.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // startDate
-            // 
-            this.startDate.HeaderText = "Initiation Date";
-            this.startDate.MinimumWidth = 6;
-            this.startDate.Name = "startDate";
-            this.startDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // completeDate
-            // 
-            this.completeDate.HeaderText = "Completed Date";
-            this.completeDate.MinimumWidth = 6;
-            this.completeDate.Name = "completeDate";
-            // 
-            // dueDate
-            // 
-            this.dueDate.HeaderText = "Due Date";
-            this.dueDate.MinimumWidth = 6;
-            this.dueDate.Name = "dueDate";
-            this.dueDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // PlannedBudgetInit
-            // 
-            this.PlannedBudgetInit.HeaderText = "Planned Budget";
-            this.PlannedBudgetInit.MinimumWidth = 6;
-            this.PlannedBudgetInit.Name = "PlannedBudgetInit";
-            this.PlannedBudgetInit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // BudgetInit
-            // 
-            this.BudgetInit.HeaderText = "Budget Used";
-            this.BudgetInit.MinimumWidth = 6;
-            this.BudgetInit.Name = "BudgetInit";
-            this.BudgetInit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DoneInitation
-            // 
-            this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DoneInitation.HeaderText = "Status";
-            this.DoneInitation.MinimumWidth = 6;
-            this.DoneInitation.Name = "DoneInitation";
-            this.DoneInitation.ReadOnly = true;
-            this.DoneInitation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoneInitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DoneInitation.Width = 58;
-            // 
             // chartInit
             // 
             this.chartInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
@@ -457,60 +404,6 @@
             this.dgvPlanning.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellClick);
             this.dgvPlanning.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellValueChanged);
             // 
-            // PlanningDocument
-            // 
-            this.PlanningDocument.HeaderText = "Planning Document";
-            this.PlanningDocument.MinimumWidth = 6;
-            this.PlanningDocument.Name = "PlanningDocument";
-            this.PlanningDocument.ReadOnly = true;
-            this.PlanningDocument.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // PlanningInitiationDate
-            // 
-            this.PlanningInitiationDate.HeaderText = "Initiation Date";
-            this.PlanningInitiationDate.MinimumWidth = 6;
-            this.PlanningInitiationDate.Name = "PlanningInitiationDate";
-            this.PlanningInitiationDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // PlanningCompletedDate
-            // 
-            this.PlanningCompletedDate.HeaderText = "Completed Date";
-            this.PlanningCompletedDate.MinimumWidth = 6;
-            this.PlanningCompletedDate.Name = "PlanningCompletedDate";
-            this.PlanningCompletedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dueDatePlan
-            // 
-            this.dueDatePlan.HeaderText = "Due Date";
-            this.dueDatePlan.MinimumWidth = 6;
-            this.dueDatePlan.Name = "dueDatePlan";
-            this.dueDatePlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // PlanningPlannedBudget
-            // 
-            this.PlanningPlannedBudget.HeaderText = "Planned Budget";
-            this.PlanningPlannedBudget.MinimumWidth = 6;
-            this.PlanningPlannedBudget.Name = "PlanningPlannedBudget";
-            this.PlanningPlannedBudget.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // BudgetPlan
-            // 
-            this.BudgetPlan.HeaderText = "Budget Used";
-            this.BudgetPlan.MinimumWidth = 6;
-            this.BudgetPlan.Name = "BudgetPlan";
-            this.BudgetPlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DonePlanning
-            // 
-            this.DonePlanning.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DonePlanning.HeaderText = "Status";
-            this.DonePlanning.MinimumWidth = 6;
-            this.DonePlanning.Name = "DonePlanning";
-            this.DonePlanning.ReadOnly = true;
-            this.DonePlanning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DonePlanning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DonePlanning.Width = 58;
-            // 
             // tbpExecution
             // 
             this.tbpExecution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
@@ -525,6 +418,26 @@
             this.tbpExecution.Size = new System.Drawing.Size(1451, 713);
             this.tbpExecution.TabIndex = 2;
             this.tbpExecution.Text = "Execution Phase";
+            // 
+            // lblExecutionBudget
+            // 
+            this.lblExecutionBudget.AutoSize = true;
+            this.lblExecutionBudget.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExecutionBudget.Location = new System.Drawing.Point(21, 419);
+            this.lblExecutionBudget.Name = "lblExecutionBudget";
+            this.lblExecutionBudget.Size = new System.Drawing.Size(139, 30);
+            this.lblExecutionBudget.TabIndex = 29;
+            this.lblExecutionBudget.Text = "On Budget";
+            // 
+            // lblExecutionSchedule
+            // 
+            this.lblExecutionSchedule.AutoSize = true;
+            this.lblExecutionSchedule.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExecutionSchedule.Location = new System.Drawing.Point(24, 374);
+            this.lblExecutionSchedule.Name = "lblExecutionSchedule";
+            this.lblExecutionSchedule.Size = new System.Drawing.Size(165, 30);
+            this.lblExecutionSchedule.TabIndex = 28;
+            this.lblExecutionSchedule.Text = "On Schedule";
             // 
             // lblExecNumTasks
             // 
@@ -718,60 +631,6 @@
             this.dgvClosing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellClick);
             this.dgvClosing.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellValueChanged);
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Closing Document";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // closingInitiationDate
-            // 
-            this.closingInitiationDate.HeaderText = "Initiation Date";
-            this.closingInitiationDate.MinimumWidth = 6;
-            this.closingInitiationDate.Name = "closingInitiationDate";
-            this.closingInitiationDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClosingCompletedDate
-            // 
-            this.ClosingCompletedDate.HeaderText = "Completed Date";
-            this.ClosingCompletedDate.MinimumWidth = 6;
-            this.ClosingCompletedDate.Name = "ClosingCompletedDate";
-            this.ClosingCompletedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dueDateClose
-            // 
-            this.dueDateClose.HeaderText = "Due Date";
-            this.dueDateClose.MinimumWidth = 6;
-            this.dueDateClose.Name = "dueDateClose";
-            this.dueDateClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClosingPlannedBudget
-            // 
-            this.ClosingPlannedBudget.HeaderText = "Planned Budget";
-            this.ClosingPlannedBudget.MinimumWidth = 6;
-            this.ClosingPlannedBudget.Name = "ClosingPlannedBudget";
-            this.ClosingPlannedBudget.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // BudgetClose
-            // 
-            this.BudgetClose.HeaderText = "Budget Used";
-            this.BudgetClose.MinimumWidth = 6;
-            this.BudgetClose.Name = "BudgetClose";
-            this.BudgetClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Status";
-            this.dataGridViewCheckBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewCheckBoxColumn3.Width = 58;
-            // 
             // pbarOverall
             // 
             this.pbarOverall.Location = new System.Drawing.Point(20, 49);
@@ -847,6 +706,114 @@
             this.chart2.TabIndex = 23;
             this.chart2.Text = "Phases Progress";
             // 
+            // InitiationDocument
+            // 
+            this.InitiationDocument.HeaderText = "Initation Document";
+            this.InitiationDocument.MinimumWidth = 6;
+            this.InitiationDocument.Name = "InitiationDocument";
+            this.InitiationDocument.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // startDate
+            // 
+            this.startDate.HeaderText = "Initiation Date";
+            this.startDate.MinimumWidth = 6;
+            this.startDate.Name = "startDate";
+            this.startDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // completeDate
+            // 
+            this.completeDate.HeaderText = "Completed Date";
+            this.completeDate.MinimumWidth = 6;
+            this.completeDate.Name = "completeDate";
+            this.completeDate.ReadOnly = true;
+            // 
+            // dueDate
+            // 
+            this.dueDate.HeaderText = "Due Date";
+            this.dueDate.MinimumWidth = 6;
+            this.dueDate.Name = "dueDate";
+            this.dueDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PlannedBudgetInit
+            // 
+            this.PlannedBudgetInit.HeaderText = "Planned Budget";
+            this.PlannedBudgetInit.MinimumWidth = 6;
+            this.PlannedBudgetInit.Name = "PlannedBudgetInit";
+            this.PlannedBudgetInit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetInit
+            // 
+            this.BudgetInit.HeaderText = "Budget Used";
+            this.BudgetInit.MinimumWidth = 6;
+            this.BudgetInit.Name = "BudgetInit";
+            this.BudgetInit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DoneInitation
+            // 
+            this.DoneInitation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DoneInitation.HeaderText = "Status";
+            this.DoneInitation.MinimumWidth = 6;
+            this.DoneInitation.Name = "DoneInitation";
+            this.DoneInitation.ReadOnly = true;
+            this.DoneInitation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoneInitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DoneInitation.Width = 58;
+            // 
+            // PlanningDocument
+            // 
+            this.PlanningDocument.HeaderText = "Planning Document";
+            this.PlanningDocument.MinimumWidth = 6;
+            this.PlanningDocument.Name = "PlanningDocument";
+            this.PlanningDocument.ReadOnly = true;
+            this.PlanningDocument.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PlanningInitiationDate
+            // 
+            this.PlanningInitiationDate.HeaderText = "Initiation Date";
+            this.PlanningInitiationDate.MinimumWidth = 6;
+            this.PlanningInitiationDate.Name = "PlanningInitiationDate";
+            this.PlanningInitiationDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PlanningCompletedDate
+            // 
+            this.PlanningCompletedDate.HeaderText = "Completed Date";
+            this.PlanningCompletedDate.MinimumWidth = 6;
+            this.PlanningCompletedDate.Name = "PlanningCompletedDate";
+            this.PlanningCompletedDate.ReadOnly = true;
+            this.PlanningCompletedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dueDatePlan
+            // 
+            this.dueDatePlan.HeaderText = "Due Date";
+            this.dueDatePlan.MinimumWidth = 6;
+            this.dueDatePlan.Name = "dueDatePlan";
+            this.dueDatePlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PlanningPlannedBudget
+            // 
+            this.PlanningPlannedBudget.HeaderText = "Planned Budget";
+            this.PlanningPlannedBudget.MinimumWidth = 6;
+            this.PlanningPlannedBudget.Name = "PlanningPlannedBudget";
+            this.PlanningPlannedBudget.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetPlan
+            // 
+            this.BudgetPlan.HeaderText = "Budget Used";
+            this.BudgetPlan.MinimumWidth = 6;
+            this.BudgetPlan.Name = "BudgetPlan";
+            this.BudgetPlan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DonePlanning
+            // 
+            this.DonePlanning.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DonePlanning.HeaderText = "Status";
+            this.DonePlanning.MinimumWidth = 6;
+            this.DonePlanning.Name = "DonePlanning";
+            this.DonePlanning.ReadOnly = true;
+            this.DonePlanning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DonePlanning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DonePlanning.Width = 58;
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Execution Document";
@@ -867,6 +834,7 @@
             this.ExecutionCompletedDate.HeaderText = "Completed Date";
             this.ExecutionCompletedDate.MinimumWidth = 6;
             this.ExecutionCompletedDate.Name = "ExecutionCompletedDate";
+            this.ExecutionCompletedDate.ReadOnly = true;
             this.ExecutionCompletedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dueDateExe
@@ -901,25 +869,60 @@
             this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewCheckBoxColumn2.Width = 58;
             // 
-            // lblExecutionSchedule
+            // dataGridViewTextBoxColumn3
             // 
-            this.lblExecutionSchedule.AutoSize = true;
-            this.lblExecutionSchedule.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExecutionSchedule.Location = new System.Drawing.Point(24, 374);
-            this.lblExecutionSchedule.Name = "lblExecutionSchedule";
-            this.lblExecutionSchedule.Size = new System.Drawing.Size(165, 30);
-            this.lblExecutionSchedule.TabIndex = 28;
-            this.lblExecutionSchedule.Text = "On Schedule";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Closing Document";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // lblExecutionBudget
+            // closingInitiationDate
             // 
-            this.lblExecutionBudget.AutoSize = true;
-            this.lblExecutionBudget.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExecutionBudget.Location = new System.Drawing.Point(21, 419);
-            this.lblExecutionBudget.Name = "lblExecutionBudget";
-            this.lblExecutionBudget.Size = new System.Drawing.Size(139, 30);
-            this.lblExecutionBudget.TabIndex = 29;
-            this.lblExecutionBudget.Text = "On Budget";
+            this.closingInitiationDate.HeaderText = "Initiation Date";
+            this.closingInitiationDate.MinimumWidth = 6;
+            this.closingInitiationDate.Name = "closingInitiationDate";
+            this.closingInitiationDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ClosingCompletedDate
+            // 
+            this.ClosingCompletedDate.HeaderText = "Completed Date";
+            this.ClosingCompletedDate.MinimumWidth = 6;
+            this.ClosingCompletedDate.Name = "ClosingCompletedDate";
+            this.ClosingCompletedDate.ReadOnly = true;
+            this.ClosingCompletedDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dueDateClose
+            // 
+            this.dueDateClose.HeaderText = "Due Date";
+            this.dueDateClose.MinimumWidth = 6;
+            this.dueDateClose.Name = "dueDateClose";
+            this.dueDateClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ClosingPlannedBudget
+            // 
+            this.ClosingPlannedBudget.HeaderText = "Planned Budget";
+            this.ClosingPlannedBudget.MinimumWidth = 6;
+            this.ClosingPlannedBudget.Name = "ClosingPlannedBudget";
+            this.ClosingPlannedBudget.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BudgetClose
+            // 
+            this.BudgetClose.HeaderText = "Budget Used";
+            this.BudgetClose.MinimumWidth = 6;
+            this.BudgetClose.Name = "BudgetClose";
+            this.BudgetClose.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Status";
+            this.dataGridViewCheckBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewCheckBoxColumn3.Width = 58;
             // 
             // ProjectDashboard
             // 
@@ -988,6 +991,14 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartExecution;
         private System.Windows.Forms.Label lblClosingNumTasks;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartClosing;
+        private System.Windows.Forms.Label totalDaysInitlbl;
+        private System.Windows.Forms.Label lblTotalInitialBudget;
+        private System.Windows.Forms.Label lblClosingBudget;
+        private System.Windows.Forms.Label lblClosingDays;
+        private System.Windows.Forms.Label lblPlanningBudget;
+        private System.Windows.Forms.Label lblPlanningSchedule;
+        private System.Windows.Forms.Label lblExecutionBudget;
+        private System.Windows.Forms.Label lblExecutionSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn InitiationDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn completeDate;
@@ -995,19 +1006,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PlannedBudgetInit;
         private System.Windows.Forms.DataGridViewTextBoxColumn BudgetInit;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoneInitation;
-        private System.Windows.Forms.Label totalDaysInitlbl;
-        private System.Windows.Forms.Label lblTotalInitialBudget;
-        private System.Windows.Forms.Label lblClosingBudget;
-        private System.Windows.Forms.Label lblClosingDays;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn closingInitiationDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClosingCompletedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClosingPlannedBudget;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn3;
-        private System.Windows.Forms.Label lblPlanningBudget;
-        private System.Windows.Forms.Label lblPlanningSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanningDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanningInitiationDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanningCompletedDate;
@@ -1015,8 +1013,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PlanningPlannedBudget;
         private System.Windows.Forms.DataGridViewTextBoxColumn BudgetPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonePlanning;
-        private System.Windows.Forms.Label lblExecutionBudget;
-        private System.Windows.Forms.Label lblExecutionSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExecutionInitiationDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExecutionCompletedDate;
@@ -1024,5 +1020,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExecutionPlannedBudget;
         private System.Windows.Forms.DataGridViewTextBoxColumn BudgetEx;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closingInitiationDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClosingCompletedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClosingPlannedBudget;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewCheckBoxColumn3;
     }
 }

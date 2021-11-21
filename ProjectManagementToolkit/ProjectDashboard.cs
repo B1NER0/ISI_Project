@@ -90,6 +90,13 @@ namespace ProjectManagementToolkit
             List<string> executionDocsListStatus = new List<string>();
             List<string> closingDocsListStatus = new List<string>();
 
+            // Lists for keeping track of the completion dates of the forms
+
+            List<string> initDocsCompleteDate = new List<string>();
+            List<string> planningDocsCompleteDate = new List<string>();
+            List<string> executionDocsCompleteDate = new List<string>();
+            List<string> closingDocsCompleteDate = new List<string>();
+
             string json = JsonHelper.loadProjectInfo(Settings.Default.Username);
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
@@ -195,10 +202,12 @@ namespace ProjectManagementToolkit
             {
                 currentBusinessCaseModel = JsonConvert.DeserializeObject<BusinessCaseModel>(versionControl.getLatest(versionControl.DocumentModels));
                 initDocsListStatus.Add(currentBusinessCaseModel.Progress);
+                initDocsCompleteDate.Add(currentBusinessCaseModel.completeDate);
             }
             else
                 //IsBusinessCaseModelDone = "";
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
 
 
@@ -210,9 +219,11 @@ namespace ProjectManagementToolkit
             {
                 currentFeasibilityStudyModel = JsonConvert.DeserializeObject<FeasibilityStudyModel>(versionControl1.getLatest(versionControl1.DocumentModels));
                 initDocsListStatus.Add(currentFeasibilityStudyModel.FeasibilityStudyProgress);
+                initDocsCompleteDate.Add(currentFeasibilityStudyModel.completedDate);
             }
             else
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
 
 
@@ -226,10 +237,12 @@ namespace ProjectManagementToolkit
             {
                 currentProjectCharter = JsonConvert.DeserializeObject<ProjectCharterModel>(versionControl2.getLatest(versionControl2.DocumentModels));
                 initDocsListStatus.Add(currentProjectCharter.ProjectCharterProgress);
+                initDocsCompleteDate.Add(currentProjectCharter.completedDate);
             }
             else
 
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
 
 
@@ -242,11 +255,13 @@ namespace ProjectManagementToolkit
             {
                 currentJobDescription = JsonConvert.DeserializeObject<JobDescriptionModel>(versionControl3.getLatest(versionControl3.DocumentModels));
                 initDocsListStatus.Add(currentJobDescription.JobDescriptionProgress);
+                initDocsCompleteDate.Add(currentJobDescription.completedDate);
 
             }
             else
 
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
 
             //////PROJECT OFFICE CHECKLIST/////////
@@ -258,10 +273,11 @@ namespace ProjectManagementToolkit
             {
                 currentProjectOfficeChecklist = JsonConvert.DeserializeObject<ProjectOfficeChecklistModel>(versionControl4.getLatest(versionControl4.DocumentModels));
                 initDocsListStatus.Add(currentProjectOfficeChecklist.ProjectOfficeCheckListProgress);
-
+                initDocsCompleteDate.Add(currentProjectOfficeChecklist.completedDate);
             }
             else
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
 
             //////PHASE REVIEW FORM INITIATION/////////
@@ -273,10 +289,12 @@ namespace ProjectManagementToolkit
             {
                 currentPhaseReviewFormInitiation = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(versionControl5.getLatest(versionControl5.DocumentModels));
                 initDocsListStatus.Add(currentPhaseReviewFormInitiation.PhaseReviewFormInitiationProgress);
+                initDocsCompleteDate.Add(currentPhaseReviewFormInitiation.completedDate);
 
             }
             else
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
 
             //////TERMS OF REFERENCE/////////
@@ -288,10 +306,11 @@ namespace ProjectManagementToolkit
             {
                 currentTermOfReference = JsonConvert.DeserializeObject<TermsOfReferenceModel>(versionControl6.getLatest(versionControl6.DocumentModels));
                 initDocsListStatus.Add(currentTermOfReference.TermOfReferenceProgress);
-
+                initDocsCompleteDate.Add(currentTermOfReference.completedDate);
             }
             else
                 initDocsListStatus.Add("");
+                initDocsCompleteDate.Add("");
 
             /////////////////////////////////////////////////////////////////PLANNING PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -304,11 +323,13 @@ namespace ProjectManagementToolkit
             {
                 currentProjectPlan = JsonConvert.DeserializeObject<ProjectPlanModel>(versionControl7.getLatest(versionControl7.DocumentModels));
                 planningDocsListStatus.Add(currentProjectPlan.projectPlanProgress);
-
+                planningDocsCompleteDate.Add(currentProjectPlan.completedDate);
             }
             else
                 //  IsProjectPlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
+            
 
             //////ResourcePlan/////////
             string json9 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ResourcePlan");
@@ -319,11 +340,12 @@ namespace ProjectManagementToolkit
             {
                 currentResourcePlan = JsonConvert.DeserializeObject<ResourcePlanModel>(versionControl8.getLatest(versionControl8.DocumentModels));
                 planningDocsListStatus.Add(currentResourcePlan.ResourcePlanProgress);
-
+                planningDocsCompleteDate.Add(currentResourcePlan.completedDate);
             }
             else
                 //  IsResourcePlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////FinancialPlan/////////
             string json10 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FinancialPlan");
@@ -334,11 +356,12 @@ namespace ProjectManagementToolkit
             {
                 currentFinancialPlan = JsonConvert.DeserializeObject<FinancialPlanModel>(versionControl9.getLatest(versionControl9.DocumentModels));
                 planningDocsListStatus.Add(currentFinancialPlan.FinancialPlanProgress);
-
+                planningDocsCompleteDate.Add(currentFinancialPlan.completedDate);
             }
             else
                 //  IsFinancialPlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////QualityPlan/////////
             string json11 = JsonHelper.loadDocument(Settings.Default.ProjectID, "QualityPlan");
@@ -349,11 +372,12 @@ namespace ProjectManagementToolkit
             {
                 currentQualityPlan = JsonConvert.DeserializeObject<QualityPlanModel>(versionControl10.getLatest(versionControl10.DocumentModels));
                 planningDocsListStatus.Add(currentQualityPlan.QualityPlanProgress);
-
+                planningDocsCompleteDate.Add(currentQualityPlan.completedDate);
             }
             else
                 //  IsQualityPlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////RiskPlan/////////
             string json12 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RiskPlan");
@@ -364,10 +388,12 @@ namespace ProjectManagementToolkit
             {
                 currentRiskPlan = JsonConvert.DeserializeObject<RiskPlanModel>(versionControl11.getLatest(versionControl11.DocumentModels));
                 planningDocsListStatus.Add(currentRiskPlan.RiskPlanProgress);
+                planningDocsCompleteDate.Add(currentRiskPlan.completedDate);
             }
             else
                 //  IsRiskPlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////AcceptancePlan/////////
             string json13 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptancePlan");
@@ -378,11 +404,12 @@ namespace ProjectManagementToolkit
             {
                 currentAcceptancePlan = JsonConvert.DeserializeObject<AcceptancePlanModel>(versionControl12.getLatest(versionControl12.DocumentModels));
                 planningDocsListStatus.Add(currentAcceptancePlan.AcceptancePlanProgress);
-
+                planningDocsCompleteDate.Add(currentAcceptancePlan.completedDate);
             }
             else
                 //  IsAcceptancePlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////CommunicationPlan/////////
             string json14 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationPlan");
@@ -393,10 +420,12 @@ namespace ProjectManagementToolkit
             {
                 currentCommunicationPlan = JsonConvert.DeserializeObject<CommunicationsPlanModel>(versionControl13.getLatest(versionControl13.DocumentModels));
                 planningDocsListStatus.Add(currentCommunicationPlan.CommunicationPlanProgress);
+                planningDocsCompleteDate.Add(currentCommunicationPlan.completedDate);
             }
             else
                 //  IsCommunicationPlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////ProcurementPlan/////////
             string json15 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementPlan");
@@ -407,11 +436,12 @@ namespace ProjectManagementToolkit
             {
                 currentProcurementPlan = JsonConvert.DeserializeObject<ProcurementPlanModel>(versionControl14.getLatest(versionControl14.DocumentModels));
                 planningDocsListStatus.Add(currentProcurementPlan.ProcurementPlanProgress);
-
+                planningDocsCompleteDate.Add(currentProcurementPlan.completedDate);
             }
             else
                 //  IsProcurementPlanDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////StatementOfWork/////////
             string json16 = JsonHelper.loadDocument(Settings.Default.ProjectID, "StatementOfWork");
@@ -422,11 +452,12 @@ namespace ProjectManagementToolkit
             {
                 currentStatementOfWork = JsonConvert.DeserializeObject<StatementOfWorkModel>(versionControl15.getLatest(versionControl15.DocumentModels));
                 planningDocsListStatus.Add(currentStatementOfWork.StatementOfWorkProgress);
-
+                planningDocsCompleteDate.Add(currentStatementOfWork.completedDate);
             }
             else
                 //  IsStatementOfWorkDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////RequestForInformation/////////
             string json17 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForInformation");
@@ -437,11 +468,12 @@ namespace ProjectManagementToolkit
             {
                 currentRequestForInformation = JsonConvert.DeserializeObject<RequestForInformationModel>(versionControl16.getLatest(versionControl16.DocumentModels));
                 planningDocsListStatus.Add(currentRequestForInformation.RequestForInformationProgress);
-
+                planningDocsCompleteDate.Add(currentRequestForInformation.completedDate);
             }
             else
                 //  IsRequestForInformationDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////SupplierContract/////////
             string json18 = JsonHelper.loadDocument(Settings.Default.ProjectID, "SupplierContract");
@@ -452,10 +484,12 @@ namespace ProjectManagementToolkit
             {
                 currentSupplierContract = JsonConvert.DeserializeObject<SupplierContractModel>(versionControl17.getLatest(versionControl17.DocumentModels));
                 planningDocsListStatus.Add(currentSupplierContract.SupplierContractProgress);
+                planningDocsCompleteDate.Add(currentSupplierContract.completedDate);
             }
             else
                 //  IsSupplierContractDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////RequestForProposal/////////
             string json19 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForProposal");
@@ -466,11 +500,12 @@ namespace ProjectManagementToolkit
             {
                 currentRequestForProposal = JsonConvert.DeserializeObject<RequestForProposalModel>(versionControl18.getLatest(versionControl18.DocumentModels));
                 planningDocsListStatus.Add(currentRequestForProposal.RequestForProposalProgress);
-
+                planningDocsCompleteDate.Add(currentRequestForProposal.completedDate);
             }
             else
                 //  IsRequestForProposalDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
             //////PhaseReviewPlanning/////////
             string json20 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewPlanning");
@@ -481,11 +516,12 @@ namespace ProjectManagementToolkit
             {
                 currentPhaseReviewPlanning = JsonConvert.DeserializeObject<PhaseReviewPlanningModel>(versionControl19.getLatest(versionControl19.DocumentModels));
                 planningDocsListStatus.Add(currentPhaseReviewPlanning.PhaseReviewPlanningProgress);
-
+                planningDocsCompleteDate.Add(currentPhaseReviewPlanning.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 planningDocsListStatus.Add("");
+                planningDocsCompleteDate.Add("");
 
 
             /////////////////////////////////////////////////////////////////EXECUTION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -499,10 +535,12 @@ namespace ProjectManagementToolkit
             {
                 currentTimeManagementProcess = JsonConvert.DeserializeObject<TimeMangementProcessModel>(versionControl20.getLatest(versionControl20.DocumentModels));
                 executionDocsListStatus.Add(currentTimeManagementProcess.TimeManagementProcessProgress);
+                executionDocsCompleteDate.Add(currentTimeManagementProcess.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////TimeSheet Process/////////
@@ -514,10 +552,12 @@ namespace ProjectManagementToolkit
             {
                 currentTimeSheet = JsonConvert.DeserializeObject<TimeSheetModel>(versionControl21.getLatest(versionControl21.DocumentModels));
                 executionDocsListStatus.Add(currentTimeSheet.TimeSheetProgress);
+                executionDocsCompleteDate.Add(currentTimeSheet.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////TimeSheet Register/////////
@@ -529,10 +569,12 @@ namespace ProjectManagementToolkit
             {
                 currentTimeSheetRegister = JsonConvert.DeserializeObject<TimesheetRegisterModel.TimesheetEntry>(versionControl22.getLatest(versionControl22.DocumentModels));
                 executionDocsListStatus.Add(currentTimeSheetRegister.TimeSheetRegisterProgress);
+                executionDocsCompleteDate.Add(currentTimeSheetRegister.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////CostManagement Process/////////
@@ -544,10 +586,12 @@ namespace ProjectManagementToolkit
             {
                 currentCostManagementProcess = JsonConvert.DeserializeObject<CostManagementProcessModel>(versionControl23.getLatest(versionControl23.DocumentModels));
                 executionDocsListStatus.Add(currentCostManagementProcess.CostManagementProcessProgress);
+                executionDocsCompleteDate.Add(currentCostManagementProcess.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////ExpenseForm Process/////////
@@ -559,11 +603,12 @@ namespace ProjectManagementToolkit
             {
                 currentExpenseFormProcess = JsonConvert.DeserializeObject<ExpenseFormModel>(versionControl24.getLatest(versionControl24.DocumentModels));
                 executionDocsListStatus.Add(currentExpenseFormProcess.ExpenseFormProgress);
-
+                executionDocsCompleteDate.Add(currentExpenseFormProcess.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////ExpenseRegister Process/////////
@@ -575,11 +620,12 @@ namespace ProjectManagementToolkit
             {
                 currentExpenseRegister = JsonConvert.DeserializeObject<ProjectManagementToolkit.MPMM.MPMM_Document_Models.ExpenseRegister.ExpenseEntry>(versionControl25.getLatest(versionControl25.DocumentModels));
                 executionDocsListStatus.Add(currentExpenseRegister.ExpenseRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentExpenseRegister.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////QualityManagement Process/////////
@@ -591,11 +637,12 @@ namespace ProjectManagementToolkit
             {
                 currentQualityMnagementProcess = JsonConvert.DeserializeObject<QualityManagementProcessModel>(versionControl26.getLatest(versionControl26.DocumentModels));
                 executionDocsListStatus.Add(currentQualityMnagementProcess.QualityManagementProcessProgress);
-
+                executionDocsCompleteDate.Add(currentQualityMnagementProcess.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
 
@@ -608,11 +655,12 @@ namespace ProjectManagementToolkit
             {
                 currentQualityReviewPlan = JsonConvert.DeserializeObject<QualityReviewPlanModel>(versionControl27.getLatest(versionControl27.DocumentModels));
                 executionDocsListStatus.Add(currentQualityReviewPlan.QualityReviewPlanProgress);
-
+                executionDocsCompleteDate.Add(currentQualityReviewPlan.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////QualityReviewForm Process/////////
@@ -624,11 +672,12 @@ namespace ProjectManagementToolkit
             {
                 currentQualityReviewForm = JsonConvert.DeserializeObject<QualityRegisterModel.ConformanceOfProcess>(versionControl28.getLatest(versionControl28.DocumentModels));
                 executionDocsListStatus.Add(currentQualityReviewForm.QualityRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentQualityReviewForm.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////ChangeManagementProcess Process/////////
@@ -640,11 +689,12 @@ namespace ProjectManagementToolkit
             {
                 currentChangeManagementProcess = JsonConvert.DeserializeObject<ChangeManagementProcessModel>(versionControl29.getLatest(versionControl29.DocumentModels));
                 executionDocsListStatus.Add(currentChangeManagementProcess.ChangeManagementProcessProgress);
-
+                executionDocsCompleteDate.Add(currentChangeManagementProcess.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////ChangeRequestForm Process/////////
@@ -656,11 +706,12 @@ namespace ProjectManagementToolkit
             {
                 currentChangeRequestForm = JsonConvert.DeserializeObject<ChangeRequestModel>(versionControl30.getLatest(versionControl30.DocumentModels));
                 executionDocsListStatus.Add(currentChangeRequestForm.ChangeRequestProgress);
-
+                executionDocsCompleteDate.Add(currentChangeRequestForm.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////ChangeRequestRegister Process/////////
@@ -672,11 +723,12 @@ namespace ProjectManagementToolkit
             {
                 currentChangeRegister = JsonConvert.DeserializeObject<ChangeRegisterModel>(versionControl31.getLatest(versionControl31.DocumentModels));
                 executionDocsListStatus.Add(currentChangeRegister.ChangeRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentChangeRegister.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////RiskManagamentProcess Process/////////
@@ -688,11 +740,12 @@ namespace ProjectManagementToolkit
             {
                 currentRiskManagementProcess = JsonConvert.DeserializeObject<RiskManagmentProcessModel>(versionControl32.getLatest(versionControl32.DocumentModels));
                 executionDocsListStatus.Add(currentRiskManagementProcess.RiskManagementProcessProgress);
-
+                executionDocsCompleteDate.Add(currentRiskManagementProcess.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
 
             //////RiskForm/////////
@@ -704,11 +757,12 @@ namespace ProjectManagementToolkit
             {
                 currentRiskForm = JsonConvert.DeserializeObject<RiskFormModel>(versionControl33.getLatest(versionControl33.DocumentModels));
                 executionDocsListStatus.Add(currentRiskForm.RiskFormProgress);
-
+                executionDocsCompleteDate.Add(currentRiskForm.completedDate);
             }
             else
                 //  IsPhaseReviewPlanningDone = "";
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////RiskRegister/////////
             string json35 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RiskRegister");
@@ -719,10 +773,11 @@ namespace ProjectManagementToolkit
             {
                 currentRiskRegister = JsonConvert.DeserializeObject<RiskRegisterModel>(versionControl34.getLatest(versionControl34.DocumentModels));
                 executionDocsListStatus.Add(currentRiskRegister.RiskRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentRiskRegister.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////IssueManagementProcess/////////
             string json36 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueManagementProcess");
@@ -733,10 +788,11 @@ namespace ProjectManagementToolkit
             {
                 currentIssueManagementProcess = JsonConvert.DeserializeObject<IssueManagementProcessModel>(versionControl35.getLatest(versionControl35.DocumentModels));
                 executionDocsListStatus.Add(currentIssueManagementProcess.IssueManagementProcessProgress);
-
+                executionDocsCompleteDate.Add(currentIssueManagementProcess.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////IssueForm/////////
             string json37 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueForm");
@@ -747,10 +803,11 @@ namespace ProjectManagementToolkit
             {
                 currentIssueForm = JsonConvert.DeserializeObject<IssueFormModel>(versionControl36.getLatest(versionControl36.DocumentModels));
                 executionDocsListStatus.Add(currentIssueForm.IssueFormProgress);
-
+                executionDocsCompleteDate.Add(currentIssueForm.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////IssueRegister/////////
             string json38 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueRegister");
@@ -761,10 +818,11 @@ namespace ProjectManagementToolkit
             {
                 currentIssueRegister = JsonConvert.DeserializeObject<IssueRegisterModel>(versionControl37.getLatest(versionControl37.DocumentModels));
                 executionDocsListStatus.Add(currentIssueRegister.IssueRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentIssueRegister.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////PurchaseOrder/////////
             string json39 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PurchaseOrder");
@@ -775,10 +833,11 @@ namespace ProjectManagementToolkit
             {
                 currentPurchaseOrder = JsonConvert.DeserializeObject<PurchaseOrderModel>(versionControl38.getLatest(versionControl38.DocumentModels));
                 executionDocsListStatus.Add(currentPurchaseOrder.PurchaseOrderProgress);
-
+                executionDocsCompleteDate.Add(currentPurchaseOrder.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////ProcurementRegister/////////
             string json40 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementRegister");
@@ -789,10 +848,11 @@ namespace ProjectManagementToolkit
             {
                 currentProcurementRegister = JsonConvert.DeserializeObject<ProcurementRegisterModel>(versionControl39.getLatest(versionControl39.DocumentModels));
                 executionDocsListStatus.Add(currentProcurementRegister.ProcurementRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentProcurementRegister.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////AcceptanceManagementProcess/////////
             string json41 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceManagementProcess");
@@ -803,10 +863,11 @@ namespace ProjectManagementToolkit
             {
                 currentAcceptanceManagementProcess = JsonConvert.DeserializeObject<AcceptanceManagementProcessModel>(versionControl40.getLatest(versionControl40.DocumentModels));
                 executionDocsListStatus.Add(currentAcceptanceManagementProcess.AcceptanceManagementProcessProgress);
-
+                executionDocsCompleteDate.Add(currentAcceptanceManagementProcess.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////AcceptanceForm/////////
             string json42 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceForm");
@@ -817,10 +878,11 @@ namespace ProjectManagementToolkit
             {
                 currentAcceptanceForm = JsonConvert.DeserializeObject<AcceptanceFormModel>(versionControl41.getLatest(versionControl41.DocumentModels));
                 executionDocsListStatus.Add(currentAcceptanceForm.AcceptanceFormProgress);
-
+                executionDocsCompleteDate.Add(currentAcceptanceForm.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////AcceptanceRegister/////////
             string json43 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceRegister");
@@ -831,10 +893,11 @@ namespace ProjectManagementToolkit
             {
                 currentAcceptanceRegister = JsonConvert.DeserializeObject<AcceptanceRegisterModel>(versionControl42.getLatest(versionControl42.DocumentModels));
                 executionDocsListStatus.Add(currentAcceptanceRegister.AcceptanceRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentAcceptanceRegister.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////CommunicationsManagementProcess/////////
             string json44 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationsManagementProcess");
@@ -845,11 +908,11 @@ namespace ProjectManagementToolkit
             {
                 currentCommunicationsManagementProcess = JsonConvert.DeserializeObject<CommunicationsManagementProcessModel>(versionControl43.getLatest(versionControl43.DocumentModels));
                 executionDocsListStatus.Add(currentCommunicationsManagementProcess.CommunicationsManagementProcessProgress);
-
+                executionDocsCompleteDate.Add(currentCommunicationsManagementProcess.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
-
+                executionDocsCompleteDate.Add("");
             //////ProjectStatusReport/////////
             string json45 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectStatusReport");
             VersionControl<ProjectStatusReportModel> versionControl44 = JsonConvert.DeserializeObject<VersionControl<ProjectStatusReportModel>>(json45);
@@ -859,10 +922,11 @@ namespace ProjectManagementToolkit
             {
                 currentProjectStatusReport = JsonConvert.DeserializeObject<ProjectStatusReportModel>(versionControl44.getLatest(versionControl44.DocumentModels));
                 executionDocsListStatus.Add(currentProjectStatusReport.ProjectStatusReportProgress);
-
+                executionDocsCompleteDate.Add(currentProjectStatusReport.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////CommunicationsRegister/////////
             string json46 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationsRegister");
@@ -873,10 +937,11 @@ namespace ProjectManagementToolkit
             {
                 currentCommunicationsRegister = JsonConvert.DeserializeObject<CommunicationRegisterModel>(versionControl45.getLatest(versionControl45.DocumentModels));
                 executionDocsListStatus.Add(currentCommunicationsRegister.CommunicationsRegisterProgress);
-
+                executionDocsCompleteDate.Add(currentCommunicationsRegister.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////PhaseReviewExe/////////
             string json47 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewExe");
@@ -887,10 +952,11 @@ namespace ProjectManagementToolkit
             {
                 currentPhaseReviewExe = JsonConvert.DeserializeObject<PhaseReviewFormExecutionModel>(versionControl46.getLatest(versionControl46.DocumentModels));
                 executionDocsListStatus.Add(currentPhaseReviewExe.PhaseReviewExeProgress);
-
+                executionDocsCompleteDate.Add(currentPhaseReviewExe.completedDate);
             }
             else
                 executionDocsListStatus.Add("");
+                executionDocsCompleteDate.Add("");
 
             //////////////////////////////////////////////////////CLOSING PHASE///////////////////////////////////////////////////////////////////////////////////
             //////ProjectClosureReport/////////
@@ -902,10 +968,11 @@ namespace ProjectManagementToolkit
             {
                 currentProjectClosureReport = JsonConvert.DeserializeObject<ProjectClosureReportModel>(versionControl47.getLatest(versionControl47.DocumentModels));
                 closingDocsListStatus.Add(currentProjectClosureReport.ProjectClosureReportProgress);
-
+                closingDocsCompleteDate.Add(currentProjectClosureReport.completedDate);
             }
             else
                 closingDocsListStatus.Add("");
+                closingDocsCompleteDate.Add("");
 
             //////PostImplementationReview/////////
             string json49 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PostImplementationReview");
@@ -916,10 +983,11 @@ namespace ProjectManagementToolkit
             {
                 currentPostImplementationReview = JsonConvert.DeserializeObject<PostImplementationReviewModel>(versionControl48.getLatest(versionControl48.DocumentModels));
                 closingDocsListStatus.Add(currentPostImplementationReview.PostImplementationReviewProgress);
-
+                closingDocsCompleteDate.Add(currentPostImplementationReview.completedDate);
             }
             else
                 closingDocsListStatus.Add("");
+                closingDocsCompleteDate.Add("");
 
             //Get localdocs
             List<string> localDocuments = getLocalDocuments();
@@ -1012,7 +1080,15 @@ namespace ProjectManagementToolkit
                         dgvInitiation.Rows[i].Cells[4].Value = "";
                         dgvInitiation.Rows[i].Cells[5].Value = "";
                     }
-
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    if (initDocsCompleteDate[i] != "")
+                    {
+                        dgvInitiation.Rows[i].Cells[2].Value = initDocsCompleteDate[i];
+                    }
+                    else
+                    {
+                        dgvInitiation.Rows[i].Cells[2].Value = "";
+                    }
                     
 
                     if (initDocsListStatus[i] == "UNDONE")
@@ -1160,6 +1236,15 @@ namespace ProjectManagementToolkit
                         dgvPlanning.Rows[i].Cells[3].Value = "";
                         dgvPlanning.Rows[i].Cells[4].Value = "";
                         dgvPlanning.Rows[i].Cells[5].Value = "";
+                    }
+
+                    if (planningDocsCompleteDate[i] != "")
+                    {
+                        dgvPlanning.Rows[i].Cells[2].Value = planningDocsCompleteDate[i];
+                    }
+                    else
+                    {
+                        dgvPlanning.Rows[i].Cells[2].Value = "";
                     }
 
 
@@ -1331,6 +1416,15 @@ namespace ProjectManagementToolkit
                         dgvExecution.Rows[i].Cells[5].Value = "";
                     }
 
+                    if (executionDocsCompleteDate[i] != "")
+                    {
+                        dgvExecution.Rows[i].Cells[2].Value = executionDocsCompleteDate[i];
+                    }
+                    else
+                    {
+                        dgvExecution.Rows[i].Cells[2].Value = "";
+                    }
+
 
                     if (executionDocsListStatus[i] == "UNDONE")
                     {
@@ -1463,6 +1557,15 @@ namespace ProjectManagementToolkit
                         dgvClosing.Rows[i].Cells[3].Value = "";
                         dgvClosing.Rows[i].Cells[4].Value = "";
                         dgvClosing.Rows[i].Cells[5].Value = "";
+                    }
+
+                    if (closingDocsCompleteDate[i] != "")
+                    {
+                        dgvClosing.Rows[i].Cells[2].Value = closingDocsCompleteDate[i];
+                    }
+                    else
+                    {
+                        dgvClosing.Rows[i].Cells[2].Value = "";
                     }
 
                     if (closingDocsListStatus[i] == "UNDONE")
@@ -1957,7 +2060,7 @@ namespace ProjectManagementToolkit
 
         private void dgvInitiation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for(int i = 1; i < 4; i++)
+            for(int i = 1; i < 4; i += 2)
             {
                 // If any cell is clicked on the Second column which is our date Column  
                 if (e.ColumnIndex == i && e.RowIndex != -1)
@@ -1994,7 +2097,69 @@ namespace ProjectManagementToolkit
 
         private void InitDateTimePicker_OnTextChange(object sender, EventArgs e)
         {
+            // Initially set the date so that we can do the comparison
             dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+            // This indicator will be used to determing whether the initiate date comes before or after the due date.
+            // If indicator is < 0, then we know that the initiate date is before the due date, if it is > 0 then the initiate date is after the due date.
+            int indicator = 0;
+            // Getting the same row as the Initiate date cell we clicked on.
+            int row = dgvInitiation.CurrentCell.RowIndex;
+            if (dgvInitiation.CurrentCell.ColumnIndex == 1)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvInitiation.Rows[row].Cells[3].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvInitiation.CurrentCell.Value) - Convert.ToDateTime(dgvInitiation.Rows[row].Cells[3].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator < 0)
+                    {
+                        dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator > 0)
+                    {
+                        MessageBox.Show("Please select a date before the specified due date.");
+                        dgvInitiation.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+                }
+            }
+            else if (dgvInitiation.CurrentCell.ColumnIndex == 3)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvInitiation.Rows[row].Cells[1].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvInitiation.CurrentCell.Value) - Convert.ToDateTime(dgvInitiation.Rows[row].Cells[1].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator > 0)
+                    {
+                        dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator < 0)
+                    {
+                        MessageBox.Show("Please select a date after the specified initiation date.");
+                        dgvInitiation.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvInitiation.CurrentCell.Value = InitDateTimePicker.Text.ToString();
+                }
+            }
             saveAllDueDate(1);
         }
 
@@ -2006,7 +2171,7 @@ namespace ProjectManagementToolkit
 
         private void dgvPlanning_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for(int i = 1; i < 4; i++)
+            for(int i = 1; i < 4; i += 2)
             {
                 if (e.ColumnIndex == i && e.RowIndex != -1)
                 {
@@ -2042,7 +2207,70 @@ namespace ProjectManagementToolkit
 
         private void PlanDateTimePicker_OnTextChange(object sender, EventArgs e)
         {
+            // Initially set the date so that we can do the comparison
             dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+            // This indicator will be used to determing whether the initiate date comes before or after the due date.
+            // If indicator is < 0, then we know that the initiate date is before the due date, if it is > 0 then the initiate date is after the due date.
+            int indicator = 0;
+            // Getting the same row as the Initiate date cell we clicked on.
+            int row = dgvPlanning.CurrentCell.RowIndex;
+            if (dgvPlanning.CurrentCell.ColumnIndex == 1)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvPlanning.Rows[row].Cells[3].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvPlanning.CurrentCell.Value) - Convert.ToDateTime(dgvPlanning.Rows[row].Cells[3].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator < 0)
+                    {
+                        dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator > 0)
+                    {
+                        MessageBox.Show("Please select a date before the specified due date.");
+                        dgvPlanning.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+                }
+            }
+            else if (dgvPlanning.CurrentCell.ColumnIndex == 3)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvPlanning.Rows[row].Cells[1].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvPlanning.CurrentCell.Value) - Convert.ToDateTime(dgvPlanning.Rows[row].Cells[1].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator > 0)
+                    {
+                        dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator < 0)
+                    {
+                        MessageBox.Show("Please select a date after the specified initiation date.");
+                        dgvPlanning.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvPlanning.CurrentCell.Value = PlanDateTimePicker.Text.ToString();
+                }
+            }
+
             saveAllDueDate(2);
         }
 
@@ -2055,7 +2283,7 @@ namespace ProjectManagementToolkit
 
         private void dgvExecution_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for(int i = 1; i < 4; i++)
+            for(int i = 1; i < 4; i += 2)
             {
                 if (e.ColumnIndex == i && e.RowIndex != -1)
                 {
@@ -2092,7 +2320,70 @@ namespace ProjectManagementToolkit
 
         private void ExecuteDateTimePicker_OnTextChange(object sender, EventArgs e)
         {
+            // Initially set the date so that we can do the comparison
             dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+            // This indicator will be used to determing whether the initiate date comes before or after the due date.
+            // If indicator is < 0, then we know that the initiate date is before the due date, if it is > 0 then the initiate date is after the due date.
+            int indicator = 0;
+            // Getting the same row as the Initiate date cell we clicked on.
+            int row = dgvExecution.CurrentCell.RowIndex;
+            if (dgvExecution.CurrentCell.ColumnIndex == 1)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvExecution.Rows[row].Cells[3].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvExecution.CurrentCell.Value) - Convert.ToDateTime(dgvExecution.Rows[row].Cells[3].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator < 0)
+                    {
+                        dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator > 0)
+                    {
+                        MessageBox.Show("Please select a date before the specified due date.");
+                        dgvExecution.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+                }
+            }
+            else if (dgvExecution.CurrentCell.ColumnIndex == 3)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvExecution.Rows[row].Cells[1].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvExecution.CurrentCell.Value) - Convert.ToDateTime(dgvExecution.Rows[row].Cells[1].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator > 0)
+                    {
+                        dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator < 0)
+                    {
+                        MessageBox.Show("Please select a date after the specified initiation date.");
+                        dgvExecution.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvExecution.CurrentCell.Value = ExecuteDateTimePicker.Text.ToString();
+                }
+            }
+
             saveAllDueDate(3);
         }
 
@@ -2107,7 +2398,70 @@ namespace ProjectManagementToolkit
 
         private void CloseDateTimePicker_OnTextChange(object sender, EventArgs e)
         {
+            // Initially set the date so that we can do the comparison
             dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+            // This indicator will be used to determing whether the initiate date comes before or after the due date.
+            // If indicator is < 0, then we know that the initiate date is before the due date, if it is > 0 then the initiate date is after the due date.
+            int indicator = 0;
+            // Getting the same row as the Initiate date cell we clicked on.
+            int row = dgvClosing.CurrentCell.RowIndex;
+            if (dgvClosing.CurrentCell.ColumnIndex == 1)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvClosing.Rows[row].Cells[3].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvClosing.CurrentCell.Value) - Convert.ToDateTime(dgvClosing.Rows[row].Cells[3].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator < 0)
+                    {
+                        dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator > 0)
+                    {
+                        MessageBox.Show("Please select a date before the specified due date.");
+                        dgvClosing.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+                }
+            }
+            else if (dgvClosing.CurrentCell.ColumnIndex == 3)
+            {
+                // Checking if there is a due date selected within the specific initiate date's row
+                if (dgvClosing.Rows[row].Cells[1].Value.ToString() != "")
+                {
+                    // Doing the indicator calculation
+                    indicator = (Convert.ToDateTime(dgvClosing.CurrentCell.Value) - Convert.ToDateTime(dgvClosing.Rows[row].Cells[1].Value)).Days;
+                    // If the initiate date is before the due date
+                    if (indicator > 0)
+                    {
+                        dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+                    }
+                    // If the initiate date is after the due date we throw a message box prompting the user to select a date that comes before the due date
+                    else if (indicator < 0)
+                    {
+                        MessageBox.Show("Please select a date after the specified initiation date.");
+                        dgvClosing.CurrentCell.Value = "";
+                    }
+                    else
+                    {
+                        dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+                    }
+                }
+                else
+                {
+                    dgvClosing.CurrentCell.Value = CloseDateTimePicker.Text.ToString();
+                }
+            }
+
             saveAllDueDate(4);
         }
 
@@ -2120,7 +2474,7 @@ namespace ProjectManagementToolkit
 
         private void dgvClosing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for(int i = 1; i < 4; i++)
+            for(int i = 1; i < 4; i += 2)
             {
                 if (e.ColumnIndex == i && e.RowIndex != -1)
                 {
