@@ -1827,5 +1827,61 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             myconnection.Close();
             frmE.Show();
         }
+
+        private void btnDirectingAProject_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpDirectingAProject");
+            plsm.Show();
+        }
+
+        private void btnProjectStartUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpStartingUpAProject");
+            plsm.Show();
+        }
+
+        private void btnInitiation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpInitiatingAProject");
+            plsm.Show();
+        }
+
+        private void btnBoundaryManagement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpManagingAStageBoundary");
+            plsm.Show();
+        }
+
+        private void btnStageControl_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpControllingAStage");
+            plsm.Show();
+        }
+
+        private void btnProductDelivery_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpManagingProductDelivery");
+            plsm.Show();
+        }
+
+        private void btnClosure_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpClosingAProject");
+            plsm.Show();
+        }
+
+        private void btnProjectMandate_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpStartingUpAProject");
+            plsm.Show();
+        }
     }
 }

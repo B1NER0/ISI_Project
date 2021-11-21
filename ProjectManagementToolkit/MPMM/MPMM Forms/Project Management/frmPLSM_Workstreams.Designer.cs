@@ -29,6 +29,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPLSM_Workstreams));
             this.PLSMWorkstreamsTabControl = new System.Windows.Forms.TabControl();
             this.WorkStreamOverviewTabPage = new System.Windows.Forms.TabPage();
             this.PortfolioManagementStreamTabPage = new System.Windows.Forms.TabPage();
@@ -143,7 +144,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnIdentifyEarlyBenefits = new System.Windows.Forms.Button();
             this.btnPrepareBenefits = new System.Windows.Forms.Button();
             this.btnDefineBenfits = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PLSMWorkstreamsTabControl.SuspendLayout();
+            this.WorkStreamOverviewTabPage.SuspendLayout();
             this.PortfolioManagementStreamTabPage.SuspendLayout();
             this.ProgrammeManagementStreamTabPage.SuspendLayout();
             this.ProjectManagementStreamTabPage.SuspendLayout();
@@ -151,6 +154,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.ArchitectureStreamTabPage.SuspendLayout();
             this.ProcurementStreamTabPage.SuspendLayout();
             this.BenefitsRealisationStreamTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PLSMWorkstreamsTabControl
@@ -171,6 +175,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // WorkStreamOverviewTabPage
             // 
+            this.WorkStreamOverviewTabPage.Controls.Add(this.pictureBox1);
             this.WorkStreamOverviewTabPage.Location = new System.Drawing.Point(4, 22);
             this.WorkStreamOverviewTabPage.Name = "WorkStreamOverviewTabPage";
             this.WorkStreamOverviewTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1464,6 +1469,15 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnDefineBenfits.UseVisualStyleBackColor = true;
             this.btnDefineBenfits.Click += new System.EventHandler(this.btnDefineBenfits_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1177, 479);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPLSM_Workstreams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1473,6 +1487,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.Name = "frmPLSM_Workstreams";
             this.Text = "frmPLSM_Workstreams";
             this.PLSMWorkstreamsTabControl.ResumeLayout(false);
+            this.WorkStreamOverviewTabPage.ResumeLayout(false);
             this.PortfolioManagementStreamTabPage.ResumeLayout(false);
             this.ProgrammeManagementStreamTabPage.ResumeLayout(false);
             this.ProjectManagementStreamTabPage.ResumeLayout(false);
@@ -1480,6 +1495,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.ArchitectureStreamTabPage.ResumeLayout(false);
             this.ProcurementStreamTabPage.ResumeLayout(false);
             this.BenefitsRealisationStreamTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1599,5 +1615,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private System.Windows.Forms.Button btnProjectWorkStreamCreateInitDraft;
         private System.Windows.Forms.Button btnProjectWorkStreamAquireTask;
         private System.Windows.Forms.Button btnProjectWorkStreamPlanNextSt;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

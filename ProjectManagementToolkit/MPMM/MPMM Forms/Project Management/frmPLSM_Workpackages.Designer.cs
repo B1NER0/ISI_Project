@@ -217,7 +217,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnWorkpackageCommunication = new System.Windows.Forms.Button();
             this.btnWorkpackageProcurement = new System.Windows.Forms.Button();
             this.btnBackToPLMSFrontEnd = new System.Windows.Forms.Button();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.WorkPackagesTabControl.SuspendLayout();
+            this.WorkPackagesOverviewTabPage.SuspendLayout();
             this.WorkPackagesOppertunityScreeningTabPage.SuspendLayout();
             this.WorkPackagesPreFeasabilityTabPage.SuspendLayout();
             this.WorkPackagesFeasabilityTabPage.SuspendLayout();
@@ -247,6 +249,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.SuspendLayout();
             // 
             // WorkPackagesTabControl
@@ -272,6 +275,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             // 
             // WorkPackagesOverviewTabPage
             // 
+            this.WorkPackagesOverviewTabPage.Controls.Add(this.pictureBox17);
             this.WorkPackagesOverviewTabPage.Location = new System.Drawing.Point(4, 22);
             this.WorkPackagesOverviewTabPage.Name = "WorkPackagesOverviewTabPage";
             this.WorkPackagesOverviewTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -2141,6 +2145,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnProjectMandate.TabIndex = 61;
             this.btnProjectMandate.Text = "Project Mandate";
             this.btnProjectMandate.UseVisualStyleBackColor = true;
+            this.btnProjectMandate.Click += new System.EventHandler(this.btnProjectMandate_Click);
             // 
             // btnDirectingAProject
             // 
@@ -2150,6 +2155,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnDirectingAProject.TabIndex = 62;
             this.btnDirectingAProject.Text = "Directing a Project";
             this.btnDirectingAProject.UseVisualStyleBackColor = true;
+            this.btnDirectingAProject.Click += new System.EventHandler(this.btnDirectingAProject_Click);
             // 
             // btnInitiation
             // 
@@ -2159,6 +2165,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnInitiation.TabIndex = 63;
             this.btnInitiation.Text = "Initiation";
             this.btnInitiation.UseVisualStyleBackColor = true;
+            this.btnInitiation.Click += new System.EventHandler(this.btnInitiation_Click);
             // 
             // btnProjectStartUp
             // 
@@ -2168,6 +2175,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnProjectStartUp.TabIndex = 64;
             this.btnProjectStartUp.Text = "Project Start Up";
             this.btnProjectStartUp.UseVisualStyleBackColor = true;
+            this.btnProjectStartUp.Click += new System.EventHandler(this.btnProjectStartUp_Click);
             // 
             // btnBoundaryManagement
             // 
@@ -2177,6 +2185,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnBoundaryManagement.TabIndex = 65;
             this.btnBoundaryManagement.Text = "Boundary Management";
             this.btnBoundaryManagement.UseVisualStyleBackColor = true;
+            this.btnBoundaryManagement.Click += new System.EventHandler(this.btnBoundaryManagement_Click);
             // 
             // btnStageControl
             // 
@@ -2186,6 +2195,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnStageControl.TabIndex = 66;
             this.btnStageControl.Text = "Stage Control";
             this.btnStageControl.UseVisualStyleBackColor = true;
+            this.btnStageControl.Click += new System.EventHandler(this.btnStageControl_Click);
             // 
             // btnProductDelivery
             // 
@@ -2195,6 +2205,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnProductDelivery.TabIndex = 67;
             this.btnProductDelivery.Text = "Product Delivery";
             this.btnProductDelivery.UseVisualStyleBackColor = true;
+            this.btnProductDelivery.Click += new System.EventHandler(this.btnProductDelivery_Click);
             // 
             // btnClosure
             // 
@@ -2204,6 +2215,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnClosure.TabIndex = 68;
             this.btnClosure.Text = "Closure";
             this.btnClosure.UseVisualStyleBackColor = true;
+            this.btnClosure.Click += new System.EventHandler(this.btnClosure_Click);
             // 
             // btnWorkpackageRisk
             // 
@@ -2297,6 +2309,15 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.btnBackToPLMSFrontEnd.UseVisualStyleBackColor = true;
             this.btnBackToPLMSFrontEnd.Click += new System.EventHandler(this.btnBackToPLMSFrontEnd_Click);
             // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(6, 4);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(1049, 391);
+            this.pictureBox17.TabIndex = 0;
+            this.pictureBox17.TabStop = false;
+            // 
             // frmPLSM_Workpackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2346,6 +2367,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             this.Text = "frmPLSM_Workpackages";
             this.Load += new System.EventHandler(this.frmPLSM_Workpackages_Load);
             this.WorkPackagesTabControl.ResumeLayout(false);
+            this.WorkPackagesOverviewTabPage.ResumeLayout(false);
             this.WorkPackagesOppertunityScreeningTabPage.ResumeLayout(false);
             this.WorkPackagesPreFeasabilityTabPage.ResumeLayout(false);
             this.WorkPackagesFeasabilityTabPage.ResumeLayout(false);
@@ -2375,6 +2397,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2568,5 +2591,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private System.Windows.Forms.Button btnEvalEvalProjectGov;
         private System.Windows.Forms.Button btnEvalDeCommissionProject;
         private System.Windows.Forms.Button btnEvalConfirmProjectComp;
+        private System.Windows.Forms.PictureBox pictureBox17;
     }
 }
