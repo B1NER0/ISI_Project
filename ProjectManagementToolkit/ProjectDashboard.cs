@@ -205,11 +205,11 @@ namespace ProjectManagementToolkit
                 initDocsCompleteDate.Add(currentBusinessCaseModel.completeDate);
             }
             else
+            {
                 //IsBusinessCaseModelDone = "";
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
-
-
+            }
 
             //////FEASIBILITY STUDY/////////
             string json2 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FeasibilityStudy");
@@ -222,11 +222,10 @@ namespace ProjectManagementToolkit
                 initDocsCompleteDate.Add(currentFeasibilityStudyModel.completedDate);
             }
             else
+            {
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
-
-
-
+            }
 
             //////PROJECT CHARTER/////////
             string json3 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectCharter");
@@ -240,12 +239,10 @@ namespace ProjectManagementToolkit
                 initDocsCompleteDate.Add(currentProjectCharter.completedDate);
             }
             else
-
+            {
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
-
-
-
+            }
 
             //////JOB DESCRIPTION/////////
             string json4 = JsonHelper.loadDocument(Settings.Default.ProjectID, "JobDescription");
@@ -259,10 +256,10 @@ namespace ProjectManagementToolkit
 
             }
             else
-
+            {
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
-
+            }
 
             //////PROJECT OFFICE CHECKLIST/////////
             string json5 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectOfficeCheckList");
@@ -276,8 +273,11 @@ namespace ProjectManagementToolkit
                 initDocsCompleteDate.Add(currentProjectOfficeChecklist.completedDate);
             }
             else
+            {
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
+            }
+                
 
 
             //////PHASE REVIEW FORM INITIATION/////////
@@ -293,8 +293,10 @@ namespace ProjectManagementToolkit
 
             }
             else
+            {
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
+            }
 
 
             //////TERMS OF REFERENCE/////////
@@ -309,8 +311,10 @@ namespace ProjectManagementToolkit
                 initDocsCompleteDate.Add(currentTermOfReference.completedDate);
             }
             else
+            {
                 initDocsListStatus.Add("");
                 initDocsCompleteDate.Add("");
+            }
 
             /////////////////////////////////////////////////////////////////PLANNING PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -326,9 +330,11 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentProjectPlan.completedDate);
             }
             else
-                //  IsProjectPlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
+                
             
 
             //////ResourcePlan/////////
@@ -343,12 +349,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentResourcePlan.completedDate);
             }
             else
-                //  IsResourcePlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////FinancialPlan/////////
-            string json10 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FinancialPlan");
+                //////FinancialPlan/////////
+                string json10 = JsonHelper.loadDocument(Settings.Default.ProjectID, "FinancialPlan");
             VersionControl<FinancialPlanModel> versionControl9 = JsonConvert.DeserializeObject<VersionControl<FinancialPlanModel>>(json10);
             FinancialPlanModel currentFinancialPlan;
 
@@ -359,9 +366,10 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentFinancialPlan.completedDate);
             }
             else
-                //  IsFinancialPlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
             //////QualityPlan/////////
             string json11 = JsonHelper.loadDocument(Settings.Default.ProjectID, "QualityPlan");
@@ -375,9 +383,10 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentQualityPlan.completedDate);
             }
             else
-                //  IsQualityPlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
             //////RiskPlan/////////
             string json12 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RiskPlan");
@@ -391,12 +400,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentRiskPlan.completedDate);
             }
             else
-                //  IsRiskPlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////AcceptancePlan/////////
-            string json13 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptancePlan");
+                //////AcceptancePlan/////////
+                string json13 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptancePlan");
             VersionControl<AcceptancePlanModel> versionControl12 = JsonConvert.DeserializeObject<VersionControl<AcceptancePlanModel>>(json13);
             AcceptancePlanModel currentAcceptancePlan;
 
@@ -407,12 +417,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentAcceptancePlan.completedDate);
             }
             else
-                //  IsAcceptancePlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////CommunicationPlan/////////
-            string json14 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationPlan");
+                //////CommunicationPlan/////////
+                string json14 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationPlan");
             VersionControl<CommunicationsPlanModel> versionControl13 = JsonConvert.DeserializeObject<VersionControl<CommunicationsPlanModel>>(json14);
             CommunicationsPlanModel currentCommunicationPlan;
 
@@ -423,12 +434,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentCommunicationPlan.completedDate);
             }
             else
-                //  IsCommunicationPlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////ProcurementPlan/////////
-            string json15 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementPlan");
+                //////ProcurementPlan/////////
+                string json15 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementPlan");
             VersionControl<ProcurementPlanModel> versionControl14 = JsonConvert.DeserializeObject<VersionControl<ProcurementPlanModel>>(json15);
             ProcurementPlanModel currentProcurementPlan;
 
@@ -439,12 +451,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentProcurementPlan.completedDate);
             }
             else
-                //  IsProcurementPlanDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////StatementOfWork/////////
-            string json16 = JsonHelper.loadDocument(Settings.Default.ProjectID, "StatementOfWork");
+                //////StatementOfWork/////////
+                string json16 = JsonHelper.loadDocument(Settings.Default.ProjectID, "StatementOfWork");
             VersionControl<StatementOfWorkModel> versionControl15 = JsonConvert.DeserializeObject<VersionControl<StatementOfWorkModel>>(json16);
             StatementOfWorkModel currentStatementOfWork;
 
@@ -455,12 +468,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentStatementOfWork.completedDate);
             }
             else
-                //  IsStatementOfWorkDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////RequestForInformation/////////
-            string json17 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForInformation");
+                //////RequestForInformation/////////
+                string json17 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForInformation");
             VersionControl<RequestForInformationModel> versionControl16 = JsonConvert.DeserializeObject<VersionControl<RequestForInformationModel>>(json17);
             RequestForInformationModel currentRequestForInformation;
 
@@ -471,12 +485,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentRequestForInformation.completedDate);
             }
             else
-                //  IsRequestForInformationDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////SupplierContract/////////
-            string json18 = JsonHelper.loadDocument(Settings.Default.ProjectID, "SupplierContract");
+                //////SupplierContract/////////
+                string json18 = JsonHelper.loadDocument(Settings.Default.ProjectID, "SupplierContract");
             VersionControl<SupplierContractModel> versionControl17 = JsonConvert.DeserializeObject<VersionControl<SupplierContractModel>>(json18);
             SupplierContractModel currentSupplierContract;
 
@@ -487,12 +502,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentSupplierContract.completedDate);
             }
             else
-                //  IsSupplierContractDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////RequestForProposal/////////
-            string json19 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForProposal");
+                //////RequestForProposal/////////
+                string json19 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RequestForProposal");
             VersionControl<RequestForProposalModel> versionControl18 = JsonConvert.DeserializeObject<VersionControl<RequestForProposalModel>>(json19);
             RequestForProposalModel currentRequestForProposal;
 
@@ -503,12 +519,13 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentRequestForProposal.completedDate);
             }
             else
-                //  IsRequestForProposalDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
-            //////PhaseReviewPlanning/////////
-            string json20 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewPlanning");
+                //////PhaseReviewPlanning/////////
+                string json20 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewPlanning");
             VersionControl<PhaseReviewPlanningModel> versionControl19 = JsonConvert.DeserializeObject<VersionControl<PhaseReviewPlanningModel>>(json20);
             PhaseReviewPlanningModel currentPhaseReviewPlanning;
 
@@ -519,15 +536,16 @@ namespace ProjectManagementToolkit
                 planningDocsCompleteDate.Add(currentPhaseReviewPlanning.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 planningDocsListStatus.Add("");
                 planningDocsCompleteDate.Add("");
+            }
 
 
-            /////////////////////////////////////////////////////////////////EXECUTION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////EXECUTION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            //////TimeManagement Process/////////
-            string json21 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TimeMangement");
+                //////TimeManagement Process/////////
+                string json21 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TimeMangement");
             VersionControl<TimeMangementProcessModel> versionControl20 = JsonConvert.DeserializeObject<VersionControl<TimeMangementProcessModel>>(json21);
             TimeMangementProcessModel currentTimeManagementProcess;
 
@@ -538,12 +556,13 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentTimeManagementProcess.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
-            //////TimeSheet Process/////////
+                //////TimeSheet Process/////////
             string json22 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TimeSheet");
             VersionControl<TimeSheetModel> versionControl21 = JsonConvert.DeserializeObject<VersionControl<TimeSheetModel>>(json22);
             TimeSheetModel currentTimeSheet;
@@ -555,13 +574,14 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentTimeSheet.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
-            //////TimeSheet Register/////////
-            string json23 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TimeSheetRegister");
+                //////TimeSheet Register/////////
+                string json23 = JsonHelper.loadDocument(Settings.Default.ProjectID, "TimeSheetRegister");
             VersionControl<TimesheetRegisterModel.TimesheetEntry> versionControl22 = JsonConvert.DeserializeObject<VersionControl<TimesheetRegisterModel.TimesheetEntry>>(json23);
             TimesheetRegisterModel.TimesheetEntry currentTimeSheetRegister;
 
@@ -572,13 +592,14 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentTimeSheetRegister.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
-            //////CostManagement Process/////////
-            string json24 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CostManagementProcess");
+                //////CostManagement Process/////////
+                string json24 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CostManagementProcess");
             VersionControl<CostManagementProcessModel> versionControl23 = JsonConvert.DeserializeObject<VersionControl<CostManagementProcessModel>>(json24);
             CostManagementProcessModel currentCostManagementProcess;
 
@@ -589,13 +610,14 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentCostManagementProcess.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
-            //////ExpenseForm Process/////////
-            string json25 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ExpenseForm");
+                //////ExpenseForm Process/////////
+                string json25 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ExpenseForm");
             VersionControl<ExpenseFormModel> versionControl24 = JsonConvert.DeserializeObject<VersionControl<ExpenseFormModel>>(json25);
             ExpenseFormModel currentExpenseFormProcess;
 
@@ -606,13 +628,14 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentExpenseFormProcess.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
-            //////ExpenseRegister Process/////////
-            string json26 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ExpenseRegister");
+                //////ExpenseRegister Process/////////
+                string json26 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ExpenseRegister");
             VersionControl<ProjectManagementToolkit.MPMM.MPMM_Document_Models.ExpenseRegister.ExpenseEntry> versionControl25 = JsonConvert.DeserializeObject<VersionControl<ProjectManagementToolkit.MPMM.MPMM_Document_Models.ExpenseRegister.ExpenseEntry>>(json26);
             ProjectManagementToolkit.MPMM.MPMM_Document_Models.ExpenseRegister.ExpenseEntry currentExpenseRegister;
 
@@ -623,13 +646,14 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentExpenseRegister.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
-            //////QualityManagement Process/////////
-            string json27 = JsonHelper.loadDocument(Settings.Default.ProjectID, "QualityManagement");
+                //////QualityManagement Process/////////
+                string json27 = JsonHelper.loadDocument(Settings.Default.ProjectID, "QualityManagement");
             VersionControl<QualityManagementProcessModel> versionControl26 = JsonConvert.DeserializeObject<VersionControl<QualityManagementProcessModel>>(json27);
             QualityManagementProcessModel currentQualityMnagementProcess;
 
@@ -640,9 +664,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentQualityMnagementProcess.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
 
@@ -658,9 +683,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentQualityReviewPlan.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
             //////QualityReviewForm Process/////////
@@ -675,9 +701,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentQualityReviewForm.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
             //////ChangeManagementProcess Process/////////
@@ -692,9 +719,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentChangeManagementProcess.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
             //////ChangeRequestForm Process/////////
@@ -709,9 +737,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentChangeRequestForm.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
             //////ChangeRequestRegister Process/////////
@@ -726,9 +755,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentChangeRegister.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
             //////RiskManagamentProcess Process/////////
@@ -743,9 +773,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentRiskManagementProcess.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
 
             //////RiskForm/////////
@@ -760,9 +791,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentRiskForm.completedDate);
             }
             else
-                //  IsPhaseReviewPlanningDone = "";
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////RiskRegister/////////
             string json35 = JsonHelper.loadDocument(Settings.Default.ProjectID, "RiskRegister");
@@ -776,8 +808,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentRiskRegister.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////IssueManagementProcess/////////
             string json36 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueManagementProcess");
@@ -791,8 +825,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentIssueManagementProcess.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////IssueForm/////////
             string json37 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueForm");
@@ -806,8 +842,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentIssueForm.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////IssueRegister/////////
             string json38 = JsonHelper.loadDocument(Settings.Default.ProjectID, "IssueRegister");
@@ -821,8 +859,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentIssueRegister.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////PurchaseOrder/////////
             string json39 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PurchaseOrder");
@@ -836,8 +876,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentPurchaseOrder.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////ProcurementRegister/////////
             string json40 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProcurementRegister");
@@ -851,8 +893,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentProcurementRegister.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////AcceptanceManagementProcess/////////
             string json41 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceManagementProcess");
@@ -866,8 +910,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentAcceptanceManagementProcess.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////AcceptanceForm/////////
             string json42 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceForm");
@@ -881,8 +927,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentAcceptanceForm.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////AcceptanceRegister/////////
             string json43 = JsonHelper.loadDocument(Settings.Default.ProjectID, "AcceptanceRegister");
@@ -896,8 +944,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentAcceptanceRegister.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////CommunicationsManagementProcess/////////
             string json44 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationsManagementProcess");
@@ -911,8 +961,11 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentCommunicationsManagementProcess.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
+
             //////ProjectStatusReport/////////
             string json45 = JsonHelper.loadDocument(Settings.Default.ProjectID, "ProjectStatusReport");
             VersionControl<ProjectStatusReportModel> versionControl44 = JsonConvert.DeserializeObject<VersionControl<ProjectStatusReportModel>>(json45);
@@ -925,8 +978,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentProjectStatusReport.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////CommunicationsRegister/////////
             string json46 = JsonHelper.loadDocument(Settings.Default.ProjectID, "CommunicationsRegister");
@@ -940,8 +995,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentCommunicationsRegister.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////PhaseReviewExe/////////
             string json47 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PhaseReviewExe");
@@ -955,8 +1012,10 @@ namespace ProjectManagementToolkit
                 executionDocsCompleteDate.Add(currentPhaseReviewExe.completedDate);
             }
             else
+            {
                 executionDocsListStatus.Add("");
                 executionDocsCompleteDate.Add("");
+            }
 
             //////////////////////////////////////////////////////CLOSING PHASE///////////////////////////////////////////////////////////////////////////////////
             //////ProjectClosureReport/////////
@@ -971,8 +1030,10 @@ namespace ProjectManagementToolkit
                 closingDocsCompleteDate.Add(currentProjectClosureReport.completedDate);
             }
             else
+            {
                 closingDocsListStatus.Add("");
                 closingDocsCompleteDate.Add("");
+            }
 
             //////PostImplementationReview/////////
             string json49 = JsonHelper.loadDocument(Settings.Default.ProjectID, "PostImplementationReview");
@@ -986,8 +1047,10 @@ namespace ProjectManagementToolkit
                 closingDocsCompleteDate.Add(currentPostImplementationReview.completedDate);
             }
             else
+            {
                 closingDocsListStatus.Add("");
                 closingDocsCompleteDate.Add("");
+            }
 
             //Get localdocs
             List<string> localDocuments = getLocalDocuments();
