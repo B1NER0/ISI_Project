@@ -346,6 +346,36 @@ namespace ProjectManagementToolkit
             QualRegister.Show();
         }
 
+        private void btnTemplates_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmTemplates Templates = new MPMM.MPMM_Forms.Project_Management.frmTemplates();
+            Templates.Show();
+        }
+
+        private void btnProcessFlowOverview_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview ProcessFlowOverview = new MPMM.MPMM_Forms.Project_Management.frmProcessFlowOverview();
+            ProcessFlowOverview.Show();
+        }
+
+        private void btnRoleDescription_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnToolsAndTechniques_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmToolsAndTechniques ToolsResource = new MPMM.MPMM_Forms.Project_Management.frmToolsAndTechniques();
+            ToolsResource.Show();
+        }
+
+        private void btnKnowledgeAndResources_Click(object sender, EventArgs e)
+        {
+            MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources KnowResource = new MPMM.MPMM_Forms.Project_Management.frmKnowledgeAndResources();
+            KnowResource.Show();
+        }
+               
+
         private void btnCRA_Click(object sender, EventArgs e)
         {
             frmWarnings Warn = new frmWarnings();

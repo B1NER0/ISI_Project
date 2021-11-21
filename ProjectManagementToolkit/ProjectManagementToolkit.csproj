@@ -1165,6 +1165,18 @@
     <Compile Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.Designer.cs">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.Designer.cs">
+      <DependentUpon>frmKnowledgeAndResources.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.Designer.cs">
+      <DependentUpon>frmProcessFlowOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmArchitectureStream.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1296,6 +1308,18 @@
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Governance\Governance.Designer.cs">
       <DependentUpon>Governance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplates.Designer.cs">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmToolsAndTechniques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmToolsAndTechniques.Designer.cs">
+      <DependentUpon>frmToolsAndTechniques.cs</DependentUpon>
     </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmProjectManagementStream.cs">
       <SubType>Form</SubType>
@@ -1901,6 +1925,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Governance\UnderpinningConcepts.resx">
       <DependentUpon>UnderpinningConcepts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmKnowledgeAndResources.resx">
+      <DependentUpon>frmKnowledgeAndResources.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmArchitectureStream.resx">
       <DependentUpon>frmArchitectureStream.cs</DependentUpon>
     </EmbeddedResource>
@@ -1994,6 +2021,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Processes\Processes.resx">
       <DependentUpon>Processes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmTemplates.resx">
+      <DependentUpon>frmTemplates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProjectManagementStream.resx">
       <DependentUpon>frmProjectManagementStream.cs</DependentUpon>
     </EmbeddedResource>
@@ -2030,6 +2060,47 @@
     <None Include="ISI_DB.xss">
       <DependentUpon>ISI_DB.xsd</DependentUpon>
     </None>
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Acceptance Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Acceptance Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Acceptance Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Business Case.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Change Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Change Request Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Communications Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Communications Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Cost Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Expense Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Feasibility Study.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Financial Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Issue Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Issue Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Job Description.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Phase Review Form - Execution.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Phase Review Form - Initiation.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Phase Review Form - Planning.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Post Implementation Review.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Procurement Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Procurement Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Project Closure Report.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Project Office Checklist.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Project Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Project Status Report.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Purchase Order Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Quality Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Quality Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Quality Review Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Request for Information.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Request for Proposal.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Resource Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Risk Form.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Risk Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Risk Plan.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Statement of Work.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Supplier Contract.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Tender Register.xls" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Terms of Reference.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Time Management Process.doc" />
+    <None Include="MPMM\MPMM Forms\Project Management\Documents\Timesheet Form.doc" />
     <None Include="MPMM\Template Excel Sheets\Acceptance Register.xls" />
     <None Include="MPMM\Template Excel Sheets\Change Register.xls" />
     <None Include="MPMM\Template Excel Sheets\Communications Register.xls" />
