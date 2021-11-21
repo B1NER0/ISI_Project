@@ -114,6 +114,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newRequestForInformationModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newRequestForInformationModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newRequestForInformationModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newRequestForInformationModel.RequestForInformationProgress = "DONE";
+            newRequestForInformationModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<RequestForInformationModel.DocumentHistory> documentHistories = new List<RequestForInformationModel.DocumentHistory>();
 
@@ -699,6 +701,86 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                         }
                     }
                 }
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newRequestForInformationModel.documentID = dataGridViewDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newRequestForInformationModel.documentOwner = dataGridViewDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newRequestForInformationModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newRequestForInformationModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newRequestForInformationModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newRequestForInformationModel.RequestForInformationProgress = "UNDONE";
+
+            List<RequestForInformationModel.DocumentHistory> documentHistories = new List<RequestForInformationModel.DocumentHistory>();
+
+            int versionRowCount = dataGridViewDocumentHistory.Rows.Count - 1;
+
+            for (int i = 0; i < versionRowCount; i++)
+            {
+                RequestForInformationModel.DocumentHistory documentHistory = new RequestForInformationModel.DocumentHistory();
+                var tempVersion = dataGridViewDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempIssueDate = dataGridViewDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistory.version = tempVersion;
+                documentHistory.issueDate = tempIssueDate;
+                documentHistory.changes = tempChanges;
+                documentHistories.Add(documentHistory);
+            }
+            newRequestForInformationModel.documentHistories = documentHistories;
+
+            List<RequestForInformationModel.DocumentApprovals> documentApprovals = new List<RequestForInformationModel.DocumentApprovals>();
+
+            int approvalRowsCount = dataGridViewDocumentApprovals.Rows.Count - 1;
+
+            for (int i = 0; i < approvalRowsCount; i++)
+            {
+                RequestForInformationModel.DocumentApprovals documentApproval = new RequestForInformationModel.DocumentApprovals();
+                var tempRole = dataGridViewDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempName = dataGridViewDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempDate = dataGridViewDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.role = tempRole;
+                documentApproval.name = tempName;
+                documentApproval.changes = tempChanges;
+                documentApproval.date = tempDate;
+
+                documentApprovals.Add(documentApproval);
+            }
+            newRequestForInformationModel.documentApprovals = documentApprovals;
+
+            newRequestForInformationModel.introOverview = txtOverview.Text;
+            newRequestForInformationModel.introPurpose = txtPurpose.Text;
+            newRequestForInformationModel.introAcknowledgement = txtAcknowledgement.Text;
+            newRequestForInformationModel.introRecipients = txtRecipiants.Text;
+            newRequestForInformationModel.introProcess = txtProcess.Text;
+            newRequestForInformationModel.introRules = txtRules.Text;
+            newRequestForInformationModel.introQuestions = txtQuestions.Text;
+
+            newRequestForInformationModel.companyOverview = ReadAllFromList(listBoxCompanyOverview);
+            newRequestForInformationModel.companyOffering = ReadAllFromList(listBoxCompanyOffering);
+
+            newRequestForInformationModel.approachMethod = ReadAllFromList(listBoxMethods);
+            newRequestForInformationModel.approachTimeframes = ReadAllFromList(listBoxTimeframes);
+            newRequestForInformationModel.approachPricing = ReadAllFromList(listBoxPricing);
+
+            newRequestForInformationModel.otherConfidentiality = ReadAllFromList(listBoxConfidentiality);
+            newRequestForInformationModel.otherDocumentation = ReadAllFromList(listBoxDocumentation);
+
+            List<VersionControl<RequestForInformationModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentRequestForInformationModel, newRequestForInformationModel))
+            {
+                VersionControl<RequestForInformationModel>.DocumentModel documentModel = new VersionControl<RequestForInformationModel>.DocumentModel(newRequestForInformationModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentRequestForInformationModel = JsonConvert.DeserializeObject<RequestForInformationModel>(JsonConvert.SerializeObject(newRequestForInformationModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "RequestForInformation");
+                MessageBox.Show("Request for information saved successfully", "save", MessageBoxButtons.OK);
             }
         }
     }

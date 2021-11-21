@@ -23,6 +23,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
                 public string Methods { get; set; }
                 public string Date { get; set; }
                 public string Outcome { get; set; }
+                public string QualityRegisterProgress { get; set; }
+                public string completedDate { get; set; }
 
             }
 

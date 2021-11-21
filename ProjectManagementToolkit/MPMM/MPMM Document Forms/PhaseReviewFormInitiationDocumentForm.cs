@@ -69,6 +69,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPhaseReviewFormInitiationModel.ProjectIssues = projectIssues.Text;
             newPhaseReviewFormInitiationModel.ProjectChanges = projectChanges.Text;
 
+            newPhaseReviewFormInitiationModel.PhaseReviewFormInitiationProgress = "DONE";
+            newPhaseReviewFormInitiationModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
             int reviewDetailCount = dgvReviewDetails.Rows.Count;
             newPhaseReviewFormInitiationModel.ReviewDetials = new List<PhaseReviewFormInitiationModel.ReviewDetial>();
             for (int i = 0; i < reviewDetailCount - 1; i++)
@@ -338,6 +341,57 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                         }
                     }
                 }
+            }
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newPhaseReviewFormInitiationModel.ProjectName = projectName.Text;
+            newPhaseReviewFormInitiationModel.ProjectManager = projectManager.Text;
+            newPhaseReviewFormInitiationModel.ProjectSponsor = projectSponsor.Text;
+            newPhaseReviewFormInitiationModel.ReportPreparedBy = reportPreparedBy.Text;
+            newPhaseReviewFormInitiationModel.ReportPreparationDate = reportPreparationDate.Text;
+            newPhaseReviewFormInitiationModel.ReportingPeriod = reportingPeriod.Text;
+
+            newPhaseReviewFormInitiationModel.Summary = summary.Text;
+            newPhaseReviewFormInitiationModel.ProjectSchedule = projectSchedule.Text;
+            newPhaseReviewFormInitiationModel.ProjectExpenses = projectExpenses.Text;
+            newPhaseReviewFormInitiationModel.ProjectDeliverables = projectDeliverables.Text;
+            newPhaseReviewFormInitiationModel.ProjectRisks = projectRisks.Text;
+            newPhaseReviewFormInitiationModel.ProjectIssues = projectIssues.Text;
+            newPhaseReviewFormInitiationModel.ProjectChanges = projectChanges.Text;
+
+            newPhaseReviewFormInitiationModel.PhaseReviewFormInitiationProgress = "UNDONE";
+
+            int reviewDetailCount = dgvReviewDetails.Rows.Count;
+            newPhaseReviewFormInitiationModel.ReviewDetials = new List<PhaseReviewFormInitiationModel.ReviewDetial>();
+            for (int i = 0; i < reviewDetailCount - 1; i++)
+            {
+                var category = dgvReviewDetails.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var question = dgvReviewDetails.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var answer = dgvReviewDetails.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var varaince = dgvReviewDetails.Rows[i].Cells[3].Value?.ToString() ?? "";
+                newPhaseReviewFormInitiationModel.ReviewDetials
+                    .Add(new PhaseReviewFormInitiationModel.ReviewDetial(category, question, answer, varaince));
+            }
+
+            newPhaseReviewFormInitiationModel.SupportingDocumentation = supportingDetails.Text;
+            newPhaseReviewFormInitiationModel.SignatureDate = signatureDate.Value.ToString();
+
+            List<VersionControl<PhaseReviewFormInitiationModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+            if (!versionControl.isEqual(currentPhaseReviewFormInitiationModel, newPhaseReviewFormInitiationModel))
+            {
+                VersionControl<PhaseReviewFormInitiationModel>.DocumentModel documentModel = new VersionControl<PhaseReviewFormInitiationModel>.DocumentModel(newPhaseReviewFormInitiationModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentPhaseReviewFormInitiationModel = JsonConvert.DeserializeObject<PhaseReviewFormInitiationModel>(JsonConvert.SerializeObject(newPhaseReviewFormInitiationModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "PhaseReviewFormInitiation");
+                MessageBox.Show("Phase Review Initiation Form saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
             }
         }
     }

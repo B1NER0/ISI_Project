@@ -71,7 +71,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             this.projectCharterlabel = new System.Windows.Forms.Label();
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.ProjChartertabControl1 = new System.Windows.Forms.TabControl();
@@ -227,6 +226,7 @@
             this.appendixLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             this.ProjChartertabControl1.SuspendLayout();
             this.DocuControltabPage.SuspendLayout();
             this.documentControl_TabContrl.SuspendLayout();
@@ -292,7 +292,7 @@
             this.projectCharterlabel.Location = new System.Drawing.Point(4, 13);
             this.projectCharterlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectCharterlabel.Name = "projectCharterlabel";
-            this.projectCharterlabel.Size = new System.Drawing.Size(154, 19);
+            this.projectCharterlabel.Size = new System.Drawing.Size(192, 24);
             this.projectCharterlabel.TabIndex = 0;
             this.projectCharterlabel.Text = "Project Charter For";
             // 
@@ -303,7 +303,7 @@
             this.txtProjectName.Margin = new System.Windows.Forms.Padding(4);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.ReadOnly = true;
-            this.txtProjectName.Size = new System.Drawing.Size(202, 26);
+            this.txtProjectName.Size = new System.Drawing.Size(202, 30);
             this.txtProjectName.TabIndex = 1;
             this.txtProjectName.Text = "Project Name";
             // 
@@ -331,11 +331,11 @@
             this.DocuControltabPage.Controls.Add(this.documentControl_TabContrl);
             this.DocuControltabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DocuControltabPage.ForeColor = System.Drawing.Color.Black;
-            this.DocuControltabPage.Location = new System.Drawing.Point(4, 28);
+            this.DocuControltabPage.Location = new System.Drawing.Point(4, 33);
             this.DocuControltabPage.Margin = new System.Windows.Forms.Padding(4);
             this.DocuControltabPage.Name = "DocuControltabPage";
             this.DocuControltabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.DocuControltabPage.Size = new System.Drawing.Size(878, 352);
+            this.DocuControltabPage.Size = new System.Drawing.Size(878, 347);
             this.DocuControltabPage.TabIndex = 0;
             this.DocuControltabPage.Text = "Document Control";
             // 
@@ -350,7 +350,7 @@
             this.documentControl_TabContrl.Margin = new System.Windows.Forms.Padding(4);
             this.documentControl_TabContrl.Name = "documentControl_TabContrl";
             this.documentControl_TabContrl.SelectedIndex = 0;
-            this.documentControl_TabContrl.Size = new System.Drawing.Size(866, 340);
+            this.documentControl_TabContrl.Size = new System.Drawing.Size(866, 335);
             this.documentControl_TabContrl.TabIndex = 6;
             // 
             // documentInfotabPage
@@ -360,11 +360,11 @@
             this.documentInfotabPage.Controls.Add(this.dgvDocumentInformation);
             this.documentInfotabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentInfotabPage.ForeColor = System.Drawing.Color.Black;
-            this.documentInfotabPage.Location = new System.Drawing.Point(4, 28);
+            this.documentInfotabPage.Location = new System.Drawing.Point(4, 33);
             this.documentInfotabPage.Margin = new System.Windows.Forms.Padding(4);
             this.documentInfotabPage.Name = "documentInfotabPage";
             this.documentInfotabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.documentInfotabPage.Size = new System.Drawing.Size(858, 308);
+            this.documentInfotabPage.Size = new System.Drawing.Size(858, 298);
             this.documentInfotabPage.TabIndex = 0;
             this.documentInfotabPage.Text = "Document Information";
             // 
@@ -399,20 +399,23 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDocumentInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDocumentInformation.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentInformation.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDocumentInformation.Size = new System.Drawing.Size(848, 298);
+            this.dgvDocumentInformation.Size = new System.Drawing.Size(848, 288);
             this.dgvDocumentInformation.TabIndex = 0;
             // 
             // typeColumn
             // 
             this.typeColumn.HeaderText = "Type";
+            this.typeColumn.MinimumWidth = 6;
             this.typeColumn.Name = "typeColumn";
             this.typeColumn.ReadOnly = true;
             // 
             // informationColumn
             // 
             this.informationColumn.HeaderText = "Information";
+            this.informationColumn.MinimumWidth = 6;
             this.informationColumn.Name = "informationColumn";
             // 
             // dcmntChngsTabPage
@@ -421,11 +424,11 @@
             this.dcmntChngsTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dcmntChngsTabPage.Controls.Add(this.dgvDocumentHistories);
             this.dcmntChngsTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dcmntChngsTabPage.Location = new System.Drawing.Point(4, 28);
+            this.dcmntChngsTabPage.Location = new System.Drawing.Point(4, 33);
             this.dcmntChngsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.dcmntChngsTabPage.Name = "dcmntChngsTabPage";
             this.dcmntChngsTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.dcmntChngsTabPage.Size = new System.Drawing.Size(858, 308);
+            this.dcmntChngsTabPage.Size = new System.Drawing.Size(858, 298);
             this.dcmntChngsTabPage.TabIndex = 1;
             this.dcmntChngsTabPage.Text = "Document Changes";
             // 
@@ -461,24 +464,28 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDocumentHistories.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDocumentHistories.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentHistories.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDocumentHistories.Size = new System.Drawing.Size(848, 298);
+            this.dgvDocumentHistories.Size = new System.Drawing.Size(848, 288);
             this.dgvDocumentHistories.TabIndex = 2;
             // 
             // versionColumn
             // 
             this.versionColumn.HeaderText = "Version";
+            this.versionColumn.MinimumWidth = 6;
             this.versionColumn.Name = "versionColumn";
             // 
             // issueDateColumn
             // 
             this.issueDateColumn.HeaderText = "Issue Date";
+            this.issueDateColumn.MinimumWidth = 6;
             this.issueDateColumn.Name = "issueDateColumn";
             // 
             // changesColumn
             // 
             this.changesColumn.HeaderText = "Changes";
+            this.changesColumn.MinimumWidth = 6;
             this.changesColumn.Name = "changesColumn";
             // 
             // docApprovaltabPage
@@ -487,10 +494,10 @@
             this.docApprovaltabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.docApprovaltabPage.Controls.Add(this.dgvDocumentApprovals);
             this.docApprovaltabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.docApprovaltabPage.Location = new System.Drawing.Point(4, 28);
+            this.docApprovaltabPage.Location = new System.Drawing.Point(4, 33);
             this.docApprovaltabPage.Name = "docApprovaltabPage";
             this.docApprovaltabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.docApprovaltabPage.Size = new System.Drawing.Size(858, 308);
+            this.docApprovaltabPage.Size = new System.Drawing.Size(858, 298);
             this.docApprovaltabPage.TabIndex = 2;
             this.docApprovaltabPage.Text = "Document Approvals";
             // 
@@ -527,30 +534,35 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDocumentApprovals.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDocumentApprovals.RowHeadersWidth = 51;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvDocumentApprovals.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDocumentApprovals.Size = new System.Drawing.Size(850, 300);
+            this.dgvDocumentApprovals.Size = new System.Drawing.Size(850, 290);
             this.dgvDocumentApprovals.TabIndex = 3;
             // 
             // roleColumn
             // 
             this.roleColumn.HeaderText = "Role";
+            this.roleColumn.MinimumWidth = 6;
             this.roleColumn.Name = "roleColumn";
             // 
             // nameColumn
             // 
             this.nameColumn.HeaderText = "Name";
+            this.nameColumn.MinimumWidth = 6;
             this.nameColumn.Name = "nameColumn";
             // 
             // signatureColumn
             // 
             this.signatureColumn.HeaderText = "Signature";
+            this.signatureColumn.MinimumWidth = 6;
             this.signatureColumn.Name = "signatureColumn";
             this.signatureColumn.ReadOnly = true;
             // 
             // dateColumn
             // 
             this.dateColumn.HeaderText = "Date";
+            this.dateColumn.MinimumWidth = 6;
             this.dateColumn.Name = "dateColumn";
             // 
             // execSummaryTabPage
@@ -561,11 +573,11 @@
             this.execSummaryTabPage.Controls.Add(this.execSumLabel);
             this.execSummaryTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.execSummaryTabPage.ForeColor = System.Drawing.Color.Black;
-            this.execSummaryTabPage.Location = new System.Drawing.Point(4, 28);
+            this.execSummaryTabPage.Location = new System.Drawing.Point(4, 33);
             this.execSummaryTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.execSummaryTabPage.Name = "execSummaryTabPage";
             this.execSummaryTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.execSummaryTabPage.Size = new System.Drawing.Size(878, 352);
+            this.execSummaryTabPage.Size = new System.Drawing.Size(878, 347);
             this.execSummaryTabPage.TabIndex = 1;
             this.execSummaryTabPage.Text = "Executive Summary";
             // 
@@ -588,7 +600,7 @@
             this.execSumLabel.Location = new System.Drawing.Point(9, 4);
             this.execSumLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.execSumLabel.Name = "execSumLabel";
-            this.execSumLabel.Size = new System.Drawing.Size(161, 19);
+            this.execSumLabel.Size = new System.Drawing.Size(197, 24);
             this.execSumLabel.TabIndex = 0;
             this.execSumLabel.Text = "Executive Summary";
             // 
@@ -604,11 +616,11 @@
             this.ProjectDeftabPage3.Controls.Add(this.deliverablesLabel);
             this.ProjectDeftabPage3.Controls.Add(this.visionLabel);
             this.ProjectDeftabPage3.ForeColor = System.Drawing.Color.Black;
-            this.ProjectDeftabPage3.Location = new System.Drawing.Point(4, 28);
+            this.ProjectDeftabPage3.Location = new System.Drawing.Point(4, 33);
             this.ProjectDeftabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectDeftabPage3.Name = "ProjectDeftabPage3";
             this.ProjectDeftabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.ProjectDeftabPage3.Size = new System.Drawing.Size(878, 352);
+            this.ProjectDeftabPage3.Size = new System.Drawing.Size(878, 347);
             this.ProjectDeftabPage3.TabIndex = 2;
             this.ProjectDeftabPage3.Text = "Project Definition";
             // 
@@ -622,7 +634,7 @@
             this.ProjectDeftabControl.Location = new System.Drawing.Point(4, 4);
             this.ProjectDeftabControl.Name = "ProjectDeftabControl";
             this.ProjectDeftabControl.SelectedIndex = 0;
-            this.ProjectDeftabControl.Size = new System.Drawing.Size(866, 340);
+            this.ProjectDeftabControl.Size = new System.Drawing.Size(866, 335);
             this.ProjectDeftabControl.TabIndex = 13;
             // 
             // projectDeftabPage
@@ -630,10 +642,10 @@
             this.projectDeftabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.projectDeftabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.projectDeftabPage.Controls.Add(this.txtProjectDefinition);
-            this.projectDeftabPage.Location = new System.Drawing.Point(4, 28);
+            this.projectDeftabPage.Location = new System.Drawing.Point(4, 33);
             this.projectDeftabPage.Name = "projectDeftabPage";
             this.projectDeftabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.projectDeftabPage.Size = new System.Drawing.Size(858, 308);
+            this.projectDeftabPage.Size = new System.Drawing.Size(858, 298);
             this.projectDeftabPage.TabIndex = 0;
             this.projectDeftabPage.Text = "Project Definition";
             // 
@@ -656,10 +668,10 @@
             this.visionTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.visionTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.visionTabPage.Controls.Add(this.txtVision);
-            this.visionTabPage.Location = new System.Drawing.Point(4, 28);
+            this.visionTabPage.Location = new System.Drawing.Point(4, 33);
             this.visionTabPage.Name = "visionTabPage";
             this.visionTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.visionTabPage.Size = new System.Drawing.Size(858, 308);
+            this.visionTabPage.Size = new System.Drawing.Size(858, 298);
             this.visionTabPage.TabIndex = 1;
             this.visionTabPage.Text = "Vision";
             // 
@@ -672,7 +684,7 @@
             this.txtVision.Margin = new System.Windows.Forms.Padding(4);
             this.txtVision.Multiline = true;
             this.txtVision.Name = "txtVision";
-            this.txtVision.Size = new System.Drawing.Size(850, 300);
+            this.txtVision.Size = new System.Drawing.Size(850, 290);
             this.txtVision.TabIndex = 2;
             this.txtVision.Text = resources.GetString("txtVision.Text");
             // 
@@ -682,10 +694,10 @@
             this.objectivesTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.objectivesTabPage.Controls.Add(this.txtObjectives);
             this.objectivesTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.objectivesTabPage.Location = new System.Drawing.Point(4, 28);
+            this.objectivesTabPage.Location = new System.Drawing.Point(4, 33);
             this.objectivesTabPage.Name = "objectivesTabPage";
             this.objectivesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.objectivesTabPage.Size = new System.Drawing.Size(858, 308);
+            this.objectivesTabPage.Size = new System.Drawing.Size(858, 298);
             this.objectivesTabPage.TabIndex = 2;
             this.objectivesTabPage.Text = "Objectives";
             // 
@@ -698,7 +710,7 @@
             this.txtObjectives.Margin = new System.Windows.Forms.Padding(4);
             this.txtObjectives.Multiline = true;
             this.txtObjectives.Name = "txtObjectives";
-            this.txtObjectives.Size = new System.Drawing.Size(850, 300);
+            this.txtObjectives.Size = new System.Drawing.Size(850, 290);
             this.txtObjectives.TabIndex = 5;
             this.txtObjectives.Text = resources.GetString("txtObjectives.Text");
             // 
@@ -707,10 +719,10 @@
             this.scopeTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.scopeTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.scopeTabPage.Controls.Add(this.txtScope);
-            this.scopeTabPage.Location = new System.Drawing.Point(4, 28);
+            this.scopeTabPage.Location = new System.Drawing.Point(4, 33);
             this.scopeTabPage.Name = "scopeTabPage";
             this.scopeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.scopeTabPage.Size = new System.Drawing.Size(858, 308);
+            this.scopeTabPage.Size = new System.Drawing.Size(858, 298);
             this.scopeTabPage.TabIndex = 3;
             this.scopeTabPage.Text = "Scope";
             // 
@@ -723,7 +735,7 @@
             this.txtScope.Margin = new System.Windows.Forms.Padding(4);
             this.txtScope.Multiline = true;
             this.txtScope.Name = "txtScope";
-            this.txtScope.Size = new System.Drawing.Size(850, 300);
+            this.txtScope.Size = new System.Drawing.Size(850, 290);
             this.txtScope.TabIndex = 7;
             this.txtScope.Text = "Provide a comprehensive description of the scope of the project outcome. To creat" +
     "e the scope statement, consider the areas within the business that will be affec" +
@@ -736,7 +748,7 @@
             this.DeliverableslinkLabel1.Location = new System.Drawing.Point(4, 756);
             this.DeliverableslinkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeliverableslinkLabel1.Name = "DeliverableslinkLabel1";
-            this.DeliverableslinkLabel1.Size = new System.Drawing.Size(216, 13);
+            this.DeliverableslinkLabel1.Size = new System.Drawing.Size(284, 17);
             this.DeliverableslinkLabel1.TabIndex = 12;
             this.DeliverableslinkLabel1.TabStop = true;
             this.DeliverableslinkLabel1.Text = "[See MPMM™ for a description of this table.]";
@@ -748,7 +760,7 @@
             this.deliverablesTxtLabel.Location = new System.Drawing.Point(0, 525);
             this.deliverablesTxtLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.deliverablesTxtLabel.Name = "deliverablesTxtLabel";
-            this.deliverablesTxtLabel.Size = new System.Drawing.Size(293, 13);
+            this.deliverablesTxtLabel.Size = new System.Drawing.Size(390, 17);
             this.deliverablesTxtLabel.TabIndex = 11;
             this.deliverablesTxtLabel.Text = "List each of the key project deliverables in the following table";
             // 
@@ -758,7 +770,7 @@
             this.label1.Location = new System.Drawing.Point(14, 582);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 19);
+            this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 10;
             // 
             // DeliverablesdataGridView
@@ -771,24 +783,28 @@
             this.DeliverablesdataGridView.Location = new System.Drawing.Point(4, 548);
             this.DeliverablesdataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.DeliverablesdataGridView.Name = "DeliverablesdataGridView";
+            this.DeliverablesdataGridView.RowHeadersWidth = 51;
             this.DeliverablesdataGridView.Size = new System.Drawing.Size(1266, 203);
             this.DeliverablesdataGridView.TabIndex = 9;
             // 
             // deliverable
             // 
             this.deliverable.HeaderText = "Deliverable";
+            this.deliverable.MinimumWidth = 6;
             this.deliverable.Name = "deliverable";
             this.deliverable.Width = 150;
             // 
             // componemetsColumn
             // 
             this.componemetsColumn.HeaderText = "Components";
+            this.componemetsColumn.MinimumWidth = 6;
             this.componemetsColumn.Name = "componemetsColumn";
             this.componemetsColumn.Width = 250;
             // 
             // descriptionColumn
             // 
             this.descriptionColumn.HeaderText = "Description";
+            this.descriptionColumn.MinimumWidth = 6;
             this.descriptionColumn.Name = "descriptionColumn";
             this.descriptionColumn.Width = 400;
             // 
@@ -799,7 +815,7 @@
             this.deliverablesLabel.Location = new System.Drawing.Point(4, 501);
             this.deliverablesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.deliverablesLabel.Name = "deliverablesLabel";
-            this.deliverablesLabel.Size = new System.Drawing.Size(103, 19);
+            this.deliverablesLabel.Size = new System.Drawing.Size(125, 24);
             this.deliverablesLabel.TabIndex = 8;
             this.deliverablesLabel.Text = "Deliverables";
             // 
@@ -810,7 +826,7 @@
             this.visionLabel.Location = new System.Drawing.Point(0, 210);
             this.visionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.visionLabel.Name = "visionLabel";
-            this.visionLabel.Size = new System.Drawing.Size(57, 19);
+            this.visionLabel.Size = new System.Drawing.Size(68, 24);
             this.visionLabel.TabIndex = 3;
             this.visionLabel.Text = "Vision";
             // 
@@ -823,11 +839,11 @@
             this.projectOrganiationTabPage.Controls.Add(this.RolesdataGridView);
             this.projectOrganiationTabPage.Controls.Add(this.customerTableLabel);
             this.projectOrganiationTabPage.Controls.Add(this.projOrganizationLabel);
-            this.projectOrganiationTabPage.Location = new System.Drawing.Point(4, 28);
+            this.projectOrganiationTabPage.Location = new System.Drawing.Point(4, 33);
             this.projectOrganiationTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.projectOrganiationTabPage.Name = "projectOrganiationTabPage";
             this.projectOrganiationTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.projectOrganiationTabPage.Size = new System.Drawing.Size(878, 352);
+            this.projectOrganiationTabPage.Size = new System.Drawing.Size(878, 347);
             this.projectOrganiationTabPage.TabIndex = 3;
             this.projectOrganiationTabPage.Text = "Project Organization";
             // 
@@ -851,10 +867,10 @@
             this.customerTab.Controls.Add(this.dgvCustomers);
             this.customerTab.Controls.Add(this.customerTextBox);
             this.customerTab.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerTab.Location = new System.Drawing.Point(4, 28);
+            this.customerTab.Location = new System.Drawing.Point(4, 33);
             this.customerTab.Name = "customerTab";
             this.customerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.customerTab.Size = new System.Drawing.Size(862, 291);
+            this.customerTab.Size = new System.Drawing.Size(862, 286);
             this.customerTab.TabIndex = 0;
             this.customerTab.Text = "Customers";
             // 
@@ -888,6 +904,7 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCustomers.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvCustomers.RowHeadersWidth = 51;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvCustomers.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCustomers.Size = new System.Drawing.Size(850, 262);
@@ -896,11 +913,13 @@
             // CustomerColumn
             // 
             this.CustomerColumn.HeaderText = "Customer Group";
+            this.CustomerColumn.MinimumWidth = 6;
             this.CustomerColumn.Name = "CustomerColumn";
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Customer Representative";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
             // customerTextBox
@@ -912,7 +931,7 @@
             this.customerTextBox.Location = new System.Drawing.Point(3, 3);
             this.customerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.customerTextBox.Name = "customerTextBox";
-            this.customerTextBox.Size = new System.Drawing.Size(813, 13);
+            this.customerTextBox.Size = new System.Drawing.Size(813, 16);
             this.customerTextBox.TabIndex = 18;
             this.customerTextBox.Text = "List each of the customers who will use the deliverables produced by the project." +
     " Customers may be individuals or groups inside or outside the company.";
@@ -924,10 +943,10 @@
             this.StakeholdersTabPage.Controls.Add(this.dgvStakeholders);
             this.StakeholdersTabPage.Controls.Add(this.stakeholderTableLabel);
             this.StakeholdersTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StakeholdersTabPage.Location = new System.Drawing.Point(4, 28);
+            this.StakeholdersTabPage.Location = new System.Drawing.Point(4, 33);
             this.StakeholdersTabPage.Name = "StakeholdersTabPage";
             this.StakeholdersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.StakeholdersTabPage.Size = new System.Drawing.Size(862, 291);
+            this.StakeholdersTabPage.Size = new System.Drawing.Size(862, 286);
             this.StakeholdersTabPage.TabIndex = 1;
             this.StakeholdersTabPage.Text = "Stakeholders";
             // 
@@ -961,6 +980,7 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvStakeholders.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvStakeholders.RowHeadersWidth = 51;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dgvStakeholders.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvStakeholders.Size = new System.Drawing.Size(854, 255);
@@ -969,11 +989,13 @@
             // stakeholerColumn
             // 
             this.stakeholerColumn.HeaderText = "Stakeholder/ Group";
+            this.stakeholerColumn.MinimumWidth = 6;
             this.stakeholerColumn.Name = "stakeholerColumn";
             // 
             // stakeholderInterestColumn
             // 
             this.stakeholderInterestColumn.HeaderText = "Stakeholder Interest";
+            this.stakeholderInterestColumn.MinimumWidth = 6;
             this.stakeholderInterestColumn.Name = "stakeholderInterestColumn";
             // 
             // stakeholderTableLabel
@@ -984,7 +1006,7 @@
             this.stakeholderTableLabel.Location = new System.Drawing.Point(2, 4);
             this.stakeholderTableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stakeholderTableLabel.Name = "stakeholderTableLabel";
-            this.stakeholderTableLabel.Size = new System.Drawing.Size(468, 14);
+            this.stakeholderTableLabel.Size = new System.Drawing.Size(606, 16);
             this.stakeholderTableLabel.TabIndex = 15;
             this.stakeholderTableLabel.Text = "List the key project stakeholders who have a key interest in the project using th" +
     "e following table";
@@ -994,10 +1016,10 @@
             this.rolesTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.rolesTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rolesTabPage.Controls.Add(this.txtRoles);
-            this.rolesTabPage.Location = new System.Drawing.Point(4, 28);
+            this.rolesTabPage.Location = new System.Drawing.Point(4, 33);
             this.rolesTabPage.Name = "rolesTabPage";
             this.rolesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.rolesTabPage.Size = new System.Drawing.Size(862, 291);
+            this.rolesTabPage.Size = new System.Drawing.Size(862, 286);
             this.rolesTabPage.TabIndex = 2;
             this.rolesTabPage.Text = "Roles";
             // 
@@ -1012,7 +1034,7 @@
             this.txtRoles.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoles.Multiline = true;
             this.txtRoles.Name = "txtRoles";
-            this.txtRoles.Size = new System.Drawing.Size(854, 283);
+            this.txtRoles.Size = new System.Drawing.Size(854, 278);
             this.txtRoles.TabIndex = 20;
             this.txtRoles.Text = resources.GetString("txtRoles.Text");
             // 
@@ -1022,10 +1044,10 @@
             this.responsibilitiesTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.responsibilitiesTabPage.Controls.Add(this.txtResponsibilities);
             this.responsibilitiesTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.responsibilitiesTabPage.Location = new System.Drawing.Point(4, 28);
+            this.responsibilitiesTabPage.Location = new System.Drawing.Point(4, 33);
             this.responsibilitiesTabPage.Name = "responsibilitiesTabPage";
             this.responsibilitiesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.responsibilitiesTabPage.Size = new System.Drawing.Size(862, 291);
+            this.responsibilitiesTabPage.Size = new System.Drawing.Size(862, 286);
             this.responsibilitiesTabPage.TabIndex = 3;
             this.responsibilitiesTabPage.Text = "Responsibilities";
             // 
@@ -1039,7 +1061,7 @@
             this.txtResponsibilities.Margin = new System.Windows.Forms.Padding(4);
             this.txtResponsibilities.Multiline = true;
             this.txtResponsibilities.Name = "txtResponsibilities";
-            this.txtResponsibilities.Size = new System.Drawing.Size(854, 283);
+            this.txtResponsibilities.Size = new System.Drawing.Size(854, 278);
             this.txtResponsibilities.TabIndex = 24;
             this.txtResponsibilities.Text = "Summarize the primary responsibilities for each key role listed above. (You will " +
     "create a detailed list of responsibilities later when you create detailed Job De" +
@@ -1050,10 +1072,10 @@
             this.structuretTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.structuretTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.structuretTabPage.Controls.Add(this.txtStructure);
-            this.structuretTabPage.Location = new System.Drawing.Point(4, 28);
+            this.structuretTabPage.Location = new System.Drawing.Point(4, 33);
             this.structuretTabPage.Name = "structuretTabPage";
             this.structuretTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.structuretTabPage.Size = new System.Drawing.Size(862, 291);
+            this.structuretTabPage.Size = new System.Drawing.Size(862, 286);
             this.structuretTabPage.TabIndex = 4;
             this.structuretTabPage.Text = "Structure";
             // 
@@ -1067,7 +1089,7 @@
             this.txtStructure.Margin = new System.Windows.Forms.Padding(4);
             this.txtStructure.Multiline = true;
             this.txtStructure.Name = "txtStructure";
-            this.txtStructure.Size = new System.Drawing.Size(854, 283);
+            this.txtStructure.Size = new System.Drawing.Size(854, 278);
             this.txtStructure.TabIndex = 26;
             this.txtStructure.Text = "Depict the reporting lines between each of the roles listed above with a Project " +
     "Organization Chart. See MPMM for a detailed example";
@@ -1079,7 +1101,7 @@
             this.RoleslinkLabel.Location = new System.Drawing.Point(9, 821);
             this.RoleslinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RoleslinkLabel.Name = "RoleslinkLabel";
-            this.RoleslinkLabel.Size = new System.Drawing.Size(216, 13);
+            this.RoleslinkLabel.Size = new System.Drawing.Size(284, 17);
             this.RoleslinkLabel.TabIndex = 22;
             this.RoleslinkLabel.TabStop = true;
             this.RoleslinkLabel.Text = "[See MPMM™ for a description of this table.]";
@@ -1096,33 +1118,44 @@
             this.RolesdataGridView.Location = new System.Drawing.Point(14, 645);
             this.RolesdataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.RolesdataGridView.Name = "RolesdataGridView";
+            this.RolesdataGridView.RowHeadersWidth = 51;
             this.RolesdataGridView.Size = new System.Drawing.Size(818, 172);
             this.RolesdataGridView.TabIndex = 21;
             // 
             // roleColum
             // 
             this.roleColum.HeaderText = "Role";
+            this.roleColum.MinimumWidth = 6;
             this.roleColum.Name = "roleColum";
+            this.roleColum.Width = 125;
             // 
             // ResourceNameColumn
             // 
             this.ResourceNameColumn.HeaderText = "Resource Name";
+            this.ResourceNameColumn.MinimumWidth = 6;
             this.ResourceNameColumn.Name = "ResourceNameColumn";
+            this.ResourceNameColumn.Width = 125;
             // 
             // OrganizationColumn
             // 
             this.OrganizationColumn.HeaderText = "Organization";
+            this.OrganizationColumn.MinimumWidth = 6;
             this.OrganizationColumn.Name = "OrganizationColumn";
+            this.OrganizationColumn.Width = 125;
             // 
             // assignmentStatusColumn
             // 
             this.assignmentStatusColumn.HeaderText = "Assignment Status";
+            this.assignmentStatusColumn.MinimumWidth = 6;
             this.assignmentStatusColumn.Name = "assignmentStatusColumn";
+            this.assignmentStatusColumn.Width = 125;
             // 
             // assignmentdateColumn
             // 
             this.assignmentdateColumn.HeaderText = "Assignment Date";
+            this.assignmentdateColumn.MinimumWidth = 6;
             this.assignmentdateColumn.Name = "assignmentdateColumn";
+            this.assignmentdateColumn.Width = 125;
             // 
             // customerTableLabel
             // 
@@ -1132,7 +1165,7 @@
             this.customerTableLabel.Location = new System.Drawing.Point(9, 47);
             this.customerTableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.customerTableLabel.Name = "customerTableLabel";
-            this.customerTableLabel.Size = new System.Drawing.Size(0, 13);
+            this.customerTableLabel.Size = new System.Drawing.Size(0, 17);
             this.customerTableLabel.TabIndex = 2;
             // 
             // projOrganizationLabel
@@ -1143,7 +1176,7 @@
             this.projOrganizationLabel.Location = new System.Drawing.Point(9, 4);
             this.projOrganizationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projOrganizationLabel.Name = "projOrganizationLabel";
-            this.projOrganizationLabel.Size = new System.Drawing.Size(658, 14);
+            this.projOrganizationLabel.Size = new System.Drawing.Size(852, 16);
             this.projOrganizationLabel.TabIndex = 0;
             this.projOrganizationLabel.Text = "This section will allow you to define the customers, stakeholders, key roles, gen" +
     "eral responsibilities, and overall structure of the project";
@@ -1161,11 +1194,11 @@
             this.implementPlanTabPage.Controls.Add(this.dependenciesDataGridView);
             this.implementPlanTabPage.Controls.Add(this.implementationPlanLabel);
             this.implementPlanTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.implementPlanTabPage.Location = new System.Drawing.Point(4, 28);
+            this.implementPlanTabPage.Location = new System.Drawing.Point(4, 33);
             this.implementPlanTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.implementPlanTabPage.Name = "implementPlanTabPage";
             this.implementPlanTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.implementPlanTabPage.Size = new System.Drawing.Size(878, 352);
+            this.implementPlanTabPage.Size = new System.Drawing.Size(878, 347);
             this.implementPlanTabPage.TabIndex = 4;
             this.implementPlanTabPage.Text = "Implementation Plan";
             // 
@@ -1192,10 +1225,10 @@
             this.ApproachtabPage.Controls.Add(this.dgvApproach);
             this.ApproachtabPage.Controls.Add(this.ApproachTextBox);
             this.ApproachtabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApproachtabPage.Location = new System.Drawing.Point(4, 28);
+            this.ApproachtabPage.Location = new System.Drawing.Point(4, 33);
             this.ApproachtabPage.Name = "ApproachtabPage";
             this.ApproachtabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ApproachtabPage.Size = new System.Drawing.Size(862, 297);
+            this.ApproachtabPage.Size = new System.Drawing.Size(862, 292);
             this.ApproachtabPage.TabIndex = 0;
             this.ApproachtabPage.Text = "Approach";
             // 
@@ -1206,7 +1239,7 @@
             this.dgvApproach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -1216,40 +1249,35 @@
             this.dgvApproach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.phaseColumn,
             this.OverallApproachColumn});
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 8F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvApproach.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgvApproach.EnableHeadersVisualStyles = false;
             this.dgvApproach.Location = new System.Drawing.Point(4, 21);
             this.dgvApproach.Margin = new System.Windows.Forms.Padding(4);
             this.dgvApproach.Name = "dgvApproach";
             this.dgvApproach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvApproach.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvApproach.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvApproach.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvApproach.RowHeadersWidth = 51;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvApproach.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvApproach.Size = new System.Drawing.Size(854, 267);
             this.dgvApproach.TabIndex = 3;
             // 
             // phaseColumn
             // 
             this.phaseColumn.HeaderText = "Phase";
+            this.phaseColumn.MinimumWidth = 6;
             this.phaseColumn.Name = "phaseColumn";
             // 
             // OverallApproachColumn
             // 
             this.OverallApproachColumn.HeaderText = "Overall Approach";
+            this.OverallApproachColumn.MinimumWidth = 6;
             this.OverallApproachColumn.Name = "OverallApproachColumn";
             // 
             // ApproachTextBox
@@ -1261,7 +1289,7 @@
             this.ApproachTextBox.Location = new System.Drawing.Point(5, 7);
             this.ApproachTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ApproachTextBox.Name = "ApproachTextBox";
-            this.ApproachTextBox.Size = new System.Drawing.Size(524, 13);
+            this.ApproachTextBox.Size = new System.Drawing.Size(524, 16);
             this.ApproachTextBox.TabIndex = 2;
             this.ApproachTextBox.Text = "In the following table, describe in brief how the project will be initiated, plan" +
     "ned, executed, and closed";
@@ -1272,10 +1300,10 @@
             this.scheduleTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.scheduleTabPage.Controls.Add(this.txtSchedule);
             this.scheduleTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scheduleTabPage.Location = new System.Drawing.Point(4, 28);
+            this.scheduleTabPage.Location = new System.Drawing.Point(4, 33);
             this.scheduleTabPage.Name = "scheduleTabPage";
             this.scheduleTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.scheduleTabPage.Size = new System.Drawing.Size(862, 297);
+            this.scheduleTabPage.Size = new System.Drawing.Size(862, 292);
             this.scheduleTabPage.TabIndex = 1;
             this.scheduleTabPage.Text = "Schedule";
             // 
@@ -1288,7 +1316,7 @@
             this.txtSchedule.Margin = new System.Windows.Forms.Padding(4);
             this.txtSchedule.Multiline = true;
             this.txtSchedule.Name = "txtSchedule";
-            this.txtSchedule.Size = new System.Drawing.Size(854, 289);
+            this.txtSchedule.Size = new System.Drawing.Size(854, 284);
             this.txtSchedule.TabIndex = 16;
             this.txtSchedule.Text = resources.GetString("txtSchedule.Text");
             // 
@@ -1299,10 +1327,10 @@
             this.milestonesTabPage.Controls.Add(this.milestoneTextBox);
             this.milestonesTabPage.Controls.Add(this.dgvMilestones);
             this.milestonesTabPage.Font = new System.Drawing.Font("Arial", 12F);
-            this.milestonesTabPage.Location = new System.Drawing.Point(4, 28);
+            this.milestonesTabPage.Location = new System.Drawing.Point(4, 33);
             this.milestonesTabPage.Name = "milestonesTabPage";
             this.milestonesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.milestonesTabPage.Size = new System.Drawing.Size(862, 297);
+            this.milestonesTabPage.Size = new System.Drawing.Size(862, 292);
             this.milestonesTabPage.TabIndex = 2;
             this.milestonesTabPage.Text = "Milestones";
             // 
@@ -1325,14 +1353,14 @@
             this.dgvMilestones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMilestones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvMilestones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMilestones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMilestones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvMilestones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMilestones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.milestoneColumn,
@@ -1343,32 +1371,36 @@
             this.dgvMilestones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMilestones.Name = "dgvMilestones";
             this.dgvMilestones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMilestones.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvMilestones.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMilestones.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvMilestones.RowHeadersWidth = 51;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvMilestones.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvMilestones.Size = new System.Drawing.Size(851, 258);
             this.dgvMilestones.TabIndex = 19;
             // 
             // milestoneColumn
             // 
             this.milestoneColumn.HeaderText = "Milestone";
+            this.milestoneColumn.MinimumWidth = 6;
             this.milestoneColumn.Name = "milestoneColumn";
             // 
             // dateColum
             // 
             this.dateColum.HeaderText = "Date";
+            this.dateColum.MinimumWidth = 6;
             this.dateColum.Name = "dateColum";
             // 
             // descriptionColum
             // 
             this.descriptionColum.HeaderText = "Description";
+            this.descriptionColum.MinimumWidth = 6;
             this.descriptionColum.Name = "descriptionColum";
             // 
             // DependenciesabPage
@@ -1378,10 +1410,10 @@
             this.DependenciesabPage.Controls.Add(this.dgvDependencies);
             this.DependenciesabPage.Controls.Add(this.dependenciesTextBox);
             this.DependenciesabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DependenciesabPage.Location = new System.Drawing.Point(4, 28);
+            this.DependenciesabPage.Location = new System.Drawing.Point(4, 33);
             this.DependenciesabPage.Name = "DependenciesabPage";
             this.DependenciesabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.DependenciesabPage.Size = new System.Drawing.Size(862, 297);
+            this.DependenciesabPage.Size = new System.Drawing.Size(862, 292);
             this.DependenciesabPage.TabIndex = 3;
             this.DependenciesabPage.Text = "Dependencies";
             // 
@@ -1390,14 +1422,14 @@
             this.dgvDependencies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDependencies.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvDependencies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDependencies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDependencies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvDependencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDependencies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.projectActivityColumn1,
@@ -1409,42 +1441,48 @@
             this.dgvDependencies.Location = new System.Drawing.Point(1, 21);
             this.dgvDependencies.Name = "dgvDependencies";
             this.dgvDependencies.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDependencies.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvDependencies.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDependencies.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvDependencies.RowHeadersWidth = 51;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvDependencies.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvDependencies.Size = new System.Drawing.Size(853, 268);
             this.dgvDependencies.TabIndex = 1;
             // 
             // projectActivityColumn1
             // 
             this.projectActivityColumn1.HeaderText = "Project Activity";
+            this.projectActivityColumn1.MinimumWidth = 6;
             this.projectActivityColumn1.Name = "projectActivityColumn1";
             // 
             // impactsColumn1
             // 
             this.impactsColumn1.HeaderText = "Impacts";
+            this.impactsColumn1.MinimumWidth = 6;
             this.impactsColumn1.Name = "impactsColumn1";
             // 
             // impactedByColumn
             // 
             this.impactedByColumn.HeaderText = "Is Impacted By";
+            this.impactedByColumn.MinimumWidth = 6;
             this.impactedByColumn.Name = "impactedByColumn";
             // 
             // criticalityColumn1
             // 
             this.criticalityColumn1.HeaderText = "Criticality";
+            this.criticalityColumn1.MinimumWidth = 6;
             this.criticalityColumn1.Name = "criticalityColumn1";
             // 
             // dateColumn1
             // 
             this.dateColumn1.HeaderText = "Date";
+            this.dateColumn1.MinimumWidth = 6;
             this.dateColumn1.Name = "dateColumn1";
             // 
             // dependenciesTextBox
@@ -1454,7 +1492,7 @@
             this.dependenciesTextBox.Font = new System.Drawing.Font("Arial", 8F);
             this.dependenciesTextBox.Location = new System.Drawing.Point(2, 2);
             this.dependenciesTextBox.Name = "dependenciesTextBox";
-            this.dependenciesTextBox.Size = new System.Drawing.Size(640, 13);
+            this.dependenciesTextBox.Size = new System.Drawing.Size(640, 16);
             this.dependenciesTextBox.TabIndex = 0;
             this.dependenciesTextBox.Text = "List any external dependencies that are likely to impact or be impacted by the pr" +
     "oject";
@@ -1466,10 +1504,10 @@
             this.resourcePlantabPage.Controls.Add(this.dgvResourcePlan);
             this.resourcePlantabPage.Controls.Add(this.rePlanTextBox);
             this.resourcePlantabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resourcePlantabPage.Location = new System.Drawing.Point(4, 28);
+            this.resourcePlantabPage.Location = new System.Drawing.Point(4, 33);
             this.resourcePlantabPage.Name = "resourcePlantabPage";
             this.resourcePlantabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.resourcePlantabPage.Size = new System.Drawing.Size(862, 297);
+            this.resourcePlantabPage.Size = new System.Drawing.Size(862, 292);
             this.resourcePlantabPage.TabIndex = 4;
             this.resourcePlantabPage.Text = "Resource Plan";
             // 
@@ -1478,14 +1516,14 @@
             this.dgvResourcePlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResourcePlan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvResourcePlan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResourcePlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResourcePlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvResourcePlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResourcePlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roleCol,
@@ -1497,37 +1535,42 @@
             this.dgvResourcePlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvResourcePlan.Name = "dgvResourcePlan";
             this.dgvResourcePlan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResourcePlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvResourcePlan.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResourcePlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvResourcePlan.RowHeadersWidth = 51;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvResourcePlan.RowsDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvResourcePlan.Size = new System.Drawing.Size(846, 266);
             this.dgvResourcePlan.TabIndex = 25;
             // 
             // roleCol
             // 
             this.roleCol.HeaderText = "Role";
+            this.roleCol.MinimumWidth = 6;
             this.roleCol.Name = "roleCol";
             // 
             // startDateCol
             // 
             this.startDateCol.HeaderText = "Start Date";
+            this.startDateCol.MinimumWidth = 6;
             this.startDateCol.Name = "startDateCol";
             // 
             // endDateCol
             // 
             this.endDateCol.HeaderText = "End Date";
+            this.endDateCol.MinimumWidth = 6;
             this.endDateCol.Name = "endDateCol";
             // 
             // effortCol
             // 
             this.effortCol.HeaderText = "% Effort";
+            this.effortCol.MinimumWidth = 6;
             this.effortCol.Name = "effortCol";
             // 
             // rePlanTextBox
@@ -1552,10 +1595,10 @@
             this.financialPlantabPage.Controls.Add(this.dgvFinancialPlan);
             this.financialPlantabPage.Controls.Add(this.finanPlanTextBox);
             this.financialPlantabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.financialPlantabPage.Location = new System.Drawing.Point(4, 28);
+            this.financialPlantabPage.Location = new System.Drawing.Point(4, 33);
             this.financialPlantabPage.Name = "financialPlantabPage";
             this.financialPlantabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.financialPlantabPage.Size = new System.Drawing.Size(862, 297);
+            this.financialPlantabPage.Size = new System.Drawing.Size(862, 292);
             this.financialPlantabPage.TabIndex = 5;
             this.financialPlantabPage.Text = "Financial Plan";
             // 
@@ -1564,14 +1607,14 @@
             this.dgvFinancialPlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFinancialPlan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvFinancialPlan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFinancialPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFinancialPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvFinancialPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFinancialPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.expenditurecatColumn,
@@ -1582,32 +1625,36 @@
             this.dgvFinancialPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFinancialPlan.Name = "dgvFinancialPlan";
             this.dgvFinancialPlan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFinancialPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvFinancialPlan.RowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFinancialPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            this.dgvFinancialPlan.RowHeadersWidth = 51;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvFinancialPlan.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvFinancialPlan.Size = new System.Drawing.Size(858, 271);
             this.dgvFinancialPlan.TabIndex = 31;
             // 
             // expenditurecatColumn
             // 
             this.expenditurecatColumn.HeaderText = "Expenditure Category";
+            this.expenditurecatColumn.MinimumWidth = 6;
             this.expenditurecatColumn.Name = "expenditurecatColumn";
             // 
             // expenItemColumn
             // 
             this.expenItemColumn.HeaderText = "Expenditure Item";
+            this.expenItemColumn.MinimumWidth = 6;
             this.expenItemColumn.Name = "expenItemColumn";
             // 
             // expenValueColumn
             // 
             this.expenValueColumn.HeaderText = "Expenditure Value";
+            this.expenValueColumn.MinimumWidth = 6;
             this.expenValueColumn.Name = "expenValueColumn";
             // 
             // finanPlanTextBox
@@ -1632,10 +1679,10 @@
             this.qualityPlanTabPage.Controls.Add(this.qualityPlantextBox);
             this.qualityPlanTabPage.Controls.Add(this.dgvQualityPlan);
             this.qualityPlanTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qualityPlanTabPage.Location = new System.Drawing.Point(4, 28);
+            this.qualityPlanTabPage.Location = new System.Drawing.Point(4, 33);
             this.qualityPlanTabPage.Name = "qualityPlanTabPage";
             this.qualityPlanTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.qualityPlanTabPage.Size = new System.Drawing.Size(862, 297);
+            this.qualityPlanTabPage.Size = new System.Drawing.Size(862, 292);
             this.qualityPlanTabPage.TabIndex = 6;
             this.qualityPlanTabPage.Text = "Quality Plan";
             // 
@@ -1659,14 +1706,14 @@
             this.dgvQualityPlan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQualityPlan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvQualityPlan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQualityPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQualityPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvQualityPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQualityPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.processColumn,
@@ -1676,27 +1723,30 @@
             this.dgvQualityPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvQualityPlan.Name = "dgvQualityPlan";
             this.dgvQualityPlan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQualityPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvQualityPlan.RowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQualityPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            this.dgvQualityPlan.RowHeadersWidth = 51;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvQualityPlan.RowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvQualityPlan.Size = new System.Drawing.Size(850, 264);
             this.dgvQualityPlan.TabIndex = 35;
             // 
             // processColumn
             // 
             this.processColumn.HeaderText = "Process";
+            this.processColumn.MinimumWidth = 6;
             this.processColumn.Name = "processColumn";
             // 
             // descrColumn
             // 
             this.descrColumn.HeaderText = "Description";
+            this.descrColumn.MinimumWidth = 6;
             this.descrColumn.Name = "descrColumn";
             // 
             // completionCriteTabPage
@@ -1706,10 +1756,10 @@
             this.completionCriteTabPage.Controls.Add(this.dgvCompletionCriteria);
             this.completionCriteTabPage.Controls.Add(this.completioncritBox);
             this.completionCriteTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completionCriteTabPage.Location = new System.Drawing.Point(4, 28);
+            this.completionCriteTabPage.Location = new System.Drawing.Point(4, 33);
             this.completionCriteTabPage.Name = "completionCriteTabPage";
             this.completionCriteTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.completionCriteTabPage.Size = new System.Drawing.Size(862, 297);
+            this.completionCriteTabPage.Size = new System.Drawing.Size(862, 292);
             this.completionCriteTabPage.TabIndex = 7;
             this.completionCriteTabPage.Text = "Completion Criteria";
             // 
@@ -1718,14 +1768,14 @@
             this.dgvCompletionCriteria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompletionCriteria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvCompletionCriteria.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompletionCriteria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompletionCriteria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dgvCompletionCriteria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompletionCriteria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.processColumn1,
@@ -1734,27 +1784,30 @@
             this.dgvCompletionCriteria.Location = new System.Drawing.Point(2, 26);
             this.dgvCompletionCriteria.Name = "dgvCompletionCriteria";
             this.dgvCompletionCriteria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompletionCriteria.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvCompletionCriteria.RowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompletionCriteria.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.dgvCompletionCriteria.RowHeadersWidth = 51;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvCompletionCriteria.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dgvCompletionCriteria.Size = new System.Drawing.Size(847, 263);
             this.dgvCompletionCriteria.TabIndex = 1;
             // 
             // processColumn1
             // 
             this.processColumn1.HeaderText = "Process";
+            this.processColumn1.MinimumWidth = 6;
             this.processColumn1.Name = "processColumn1";
             // 
             // descriptionColumn1
             // 
             this.descriptionColumn1.HeaderText = "Description";
+            this.descriptionColumn1.MinimumWidth = 6;
             this.descriptionColumn1.Name = "descriptionColumn1";
             // 
             // completioncritBox
@@ -1764,7 +1817,7 @@
             this.completioncritBox.Font = new System.Drawing.Font("Arial", 8F);
             this.completioncritBox.Location = new System.Drawing.Point(7, 7);
             this.completioncritBox.Name = "completioncritBox";
-            this.completioncritBox.Size = new System.Drawing.Size(810, 13);
+            this.completioncritBox.Size = new System.Drawing.Size(810, 16);
             this.completioncritBox.TabIndex = 0;
             this.completioncritBox.Text = "The final step in defining the approach to project implementation is to define th" +
     "e criteria for project completion.";
@@ -1789,7 +1842,7 @@
             this.CompletionCritlLinkLabel.Location = new System.Drawing.Point(549, 927);
             this.CompletionCritlLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CompletionCritlLinkLabel.Name = "CompletionCritlLinkLabel";
-            this.CompletionCritlLinkLabel.Size = new System.Drawing.Size(216, 13);
+            this.CompletionCritlLinkLabel.Size = new System.Drawing.Size(284, 17);
             this.CompletionCritlLinkLabel.TabIndex = 39;
             this.CompletionCritlLinkLabel.TabStop = true;
             this.CompletionCritlLinkLabel.Text = "[See MPMM™ for a description of this table.]";
@@ -1803,18 +1856,21 @@
             this.completionCriteriDataGridView1.Location = new System.Drawing.Point(554, 772);
             this.completionCriteriDataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.completionCriteriDataGridView1.Name = "completionCriteriDataGridView1";
+            this.completionCriteriDataGridView1.RowHeadersWidth = 51;
             this.completionCriteriDataGridView1.Size = new System.Drawing.Size(772, 151);
             this.completionCriteriDataGridView1.TabIndex = 37;
             // 
             // processCol
             // 
             this.processCol.HeaderText = "Process";
+            this.processCol.MinimumWidth = 6;
             this.processCol.Name = "processCol";
             this.processCol.Width = 200;
             // 
             // descripCol
             // 
             this.descripCol.HeaderText = "Description";
+            this.descripCol.MinimumWidth = 6;
             this.descripCol.Name = "descripCol";
             this.descripCol.Width = 300;
             // 
@@ -1838,7 +1894,7 @@
             this.DependenciesTableinkLabel.Location = new System.Drawing.Point(2, 927);
             this.DependenciesTableinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DependenciesTableinkLabel.Name = "DependenciesTableinkLabel";
-            this.DependenciesTableinkLabel.Size = new System.Drawing.Size(216, 13);
+            this.DependenciesTableinkLabel.Size = new System.Drawing.Size(284, 17);
             this.DependenciesTableinkLabel.TabIndex = 23;
             this.DependenciesTableinkLabel.TabStop = true;
             this.DependenciesTableinkLabel.Text = "[See MPMM™ for a description of this table.]";
@@ -1855,33 +1911,44 @@
             this.dependenciesDataGridView.Location = new System.Drawing.Point(6, 772);
             this.dependenciesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dependenciesDataGridView.Name = "dependenciesDataGridView";
+            this.dependenciesDataGridView.RowHeadersWidth = 51;
             this.dependenciesDataGridView.Size = new System.Drawing.Size(525, 151);
             this.dependenciesDataGridView.TabIndex = 22;
             // 
             // projectactivityColumn
             // 
             this.projectactivityColumn.HeaderText = "Project Activity";
+            this.projectactivityColumn.MinimumWidth = 6;
             this.projectactivityColumn.Name = "projectactivityColumn";
+            this.projectactivityColumn.Width = 125;
             // 
             // impactsColumn
             // 
             this.impactsColumn.HeaderText = "Impacts";
+            this.impactsColumn.MinimumWidth = 6;
             this.impactsColumn.Name = "impactsColumn";
+            this.impactsColumn.Width = 125;
             // 
             // isImpactedByColumn
             // 
             this.isImpactedByColumn.HeaderText = "is Impacted by";
+            this.isImpactedByColumn.MinimumWidth = 6;
             this.isImpactedByColumn.Name = "isImpactedByColumn";
+            this.isImpactedByColumn.Width = 125;
             // 
             // criticallyColumn
             // 
             this.criticallyColumn.HeaderText = "Critically";
+            this.criticallyColumn.MinimumWidth = 6;
             this.criticallyColumn.Name = "criticallyColumn";
+            this.criticallyColumn.Width = 125;
             // 
             // daTECol
             // 
             this.daTECol.HeaderText = "Date";
+            this.daTECol.MinimumWidth = 6;
             this.daTECol.Name = "daTECol";
+            this.daTECol.Width = 125;
             // 
             // implementationPlanLabel
             // 
@@ -1891,7 +1958,7 @@
             this.implementationPlanLabel.Location = new System.Drawing.Point(3, 0);
             this.implementationPlanLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.implementationPlanLabel.Name = "implementationPlanLabel";
-            this.implementationPlanLabel.Size = new System.Drawing.Size(530, 13);
+            this.implementationPlanLabel.Size = new System.Drawing.Size(713, 17);
             this.implementationPlanLabel.TabIndex = 0;
             this.implementationPlanLabel.Text = "In this section, you will summarize your approach to project implementation by de" +
     "scribing the overall project plan";
@@ -1903,11 +1970,11 @@
             this.projConsiderationsTabPage.Controls.Add(this.issuesLinkLabel);
             this.projConsiderationsTabPage.Controls.Add(this.projConsderationsLabel);
             this.projConsiderationsTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projConsiderationsTabPage.Location = new System.Drawing.Point(4, 28);
+            this.projConsiderationsTabPage.Location = new System.Drawing.Point(4, 33);
             this.projConsiderationsTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.projConsiderationsTabPage.Name = "projConsiderationsTabPage";
             this.projConsiderationsTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.projConsiderationsTabPage.Size = new System.Drawing.Size(878, 352);
+            this.projConsiderationsTabPage.Size = new System.Drawing.Size(878, 347);
             this.projConsiderationsTabPage.TabIndex = 5;
             this.projConsiderationsTabPage.Text = "Project Considerations";
             // 
@@ -1931,10 +1998,10 @@
             this.risksTabPage.Controls.Add(this.risksTextBox);
             this.risksTabPage.Controls.Add(this.dgvRisks);
             this.risksTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.risksTabPage.Location = new System.Drawing.Point(4, 28);
+            this.risksTabPage.Location = new System.Drawing.Point(4, 33);
             this.risksTabPage.Name = "risksTabPage";
             this.risksTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.risksTabPage.Size = new System.Drawing.Size(856, 293);
+            this.risksTabPage.Size = new System.Drawing.Size(856, 288);
             this.risksTabPage.TabIndex = 0;
             this.risksTabPage.Text = "Risks";
             // 
@@ -1947,7 +2014,7 @@
             this.risksTextBox.Location = new System.Drawing.Point(3, 3);
             this.risksTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.risksTextBox.Name = "risksTextBox";
-            this.risksTextBox.Size = new System.Drawing.Size(545, 13);
+            this.risksTextBox.Size = new System.Drawing.Size(545, 16);
             this.risksTextBox.TabIndex = 14;
             this.risksTextBox.Text = "List any apparent risks associated with the project by completing the following t" +
     "able";
@@ -1957,14 +2024,14 @@
             this.dgvRisks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRisks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvRisks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRisks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRisks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.dgvRisks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRisks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.riskDescriColumn,
@@ -1976,37 +2043,42 @@
             this.dgvRisks.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRisks.Name = "dgvRisks";
             this.dgvRisks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRisks.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvRisks.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRisks.RowHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            this.dgvRisks.RowHeadersWidth = 51;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvRisks.RowsDefaultCellStyle = dataGridViewCellStyle39;
             this.dgvRisks.Size = new System.Drawing.Size(842, 270);
             this.dgvRisks.TabIndex = 1;
             // 
             // riskDescriColumn
             // 
             this.riskDescriColumn.HeaderText = "Risk Description";
+            this.riskDescriColumn.MinimumWidth = 6;
             this.riskDescriColumn.Name = "riskDescriColumn";
             // 
             // riskLikeliColumn
             // 
             this.riskLikeliColumn.HeaderText = "Risk Likelihood";
+            this.riskLikeliColumn.MinimumWidth = 6;
             this.riskLikeliColumn.Name = "riskLikeliColumn";
             // 
             // riskImpactColumn
             // 
             this.riskImpactColumn.HeaderText = "Risk Impact";
+            this.riskImpactColumn.MinimumWidth = 6;
             this.riskImpactColumn.Name = "riskImpactColumn";
             // 
             // actionColumn
             // 
             this.actionColumn.HeaderText = "Action to be Taken to Mitigate Risk";
+            this.actionColumn.MinimumWidth = 6;
             this.actionColumn.Name = "actionColumn";
             // 
             // issuestabPage
@@ -2016,10 +2088,10 @@
             this.issuestabPage.Controls.Add(this.IssuesTextBox);
             this.issuestabPage.Controls.Add(this.dgvIssue);
             this.issuestabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuestabPage.Location = new System.Drawing.Point(4, 28);
+            this.issuestabPage.Location = new System.Drawing.Point(4, 33);
             this.issuestabPage.Name = "issuestabPage";
             this.issuestabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.issuestabPage.Size = new System.Drawing.Size(856, 293);
+            this.issuestabPage.Size = new System.Drawing.Size(856, 288);
             this.issuestabPage.TabIndex = 1;
             this.issuestabPage.Text = "Issues";
             // 
@@ -2042,14 +2114,14 @@
             this.dgvIssue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIssue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.dgvIssue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIssue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIssue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.issueDescripColumn,
@@ -2060,32 +2132,36 @@
             this.dgvIssue.Margin = new System.Windows.Forms.Padding(4);
             this.dgvIssue.Name = "dgvIssue";
             this.dgvIssue.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIssue.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvIssue.RowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIssue.RowHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            this.dgvIssue.RowHeadersWidth = 51;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvIssue.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.dgvIssue.Size = new System.Drawing.Size(839, 270);
             this.dgvIssue.TabIndex = 17;
             // 
             // issueDescripColumn
             // 
             this.issueDescripColumn.HeaderText = "Issue Description";
+            this.issueDescripColumn.MinimumWidth = 6;
             this.issueDescripColumn.Name = "issueDescripColumn";
             // 
             // issueprioColumn
             // 
             this.issueprioColumn.HeaderText = "Issue Priority";
+            this.issueprioColumn.MinimumWidth = 6;
             this.issueprioColumn.Name = "issueprioColumn";
             // 
             // actionResolColumn
             // 
             this.actionResolColumn.HeaderText = "Action to be Taken to Resolve Issue";
+            this.actionResolColumn.MinimumWidth = 6;
             this.actionResolColumn.Name = "actionResolColumn";
             // 
             // AssumptionsTabPage
@@ -2093,10 +2169,10 @@
             this.AssumptionsTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.AssumptionsTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AssumptionsTabPage.Controls.Add(this.txtAssumptions);
-            this.AssumptionsTabPage.Location = new System.Drawing.Point(4, 28);
+            this.AssumptionsTabPage.Location = new System.Drawing.Point(4, 33);
             this.AssumptionsTabPage.Name = "AssumptionsTabPage";
             this.AssumptionsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AssumptionsTabPage.Size = new System.Drawing.Size(856, 293);
+            this.AssumptionsTabPage.Size = new System.Drawing.Size(856, 288);
             this.AssumptionsTabPage.TabIndex = 2;
             this.AssumptionsTabPage.Text = "Assumptions";
             // 
@@ -2109,7 +2185,7 @@
             this.txtAssumptions.Margin = new System.Windows.Forms.Padding(4);
             this.txtAssumptions.Multiline = true;
             this.txtAssumptions.Name = "txtAssumptions";
-            this.txtAssumptions.Size = new System.Drawing.Size(848, 285);
+            this.txtAssumptions.Size = new System.Drawing.Size(848, 280);
             this.txtAssumptions.TabIndex = 20;
             this.txtAssumptions.Text = "Identify any key assumptions made about the project up to this point. ";
             // 
@@ -2119,10 +2195,10 @@
             this.constrainsTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.constrainsTabPage.Controls.Add(this.txtConstraints);
             this.constrainsTabPage.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.constrainsTabPage.Location = new System.Drawing.Point(4, 28);
+            this.constrainsTabPage.Location = new System.Drawing.Point(4, 33);
             this.constrainsTabPage.Name = "constrainsTabPage";
             this.constrainsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.constrainsTabPage.Size = new System.Drawing.Size(856, 293);
+            this.constrainsTabPage.Size = new System.Drawing.Size(856, 288);
             this.constrainsTabPage.TabIndex = 3;
             this.constrainsTabPage.Text = "Constraints";
             // 
@@ -2134,7 +2210,7 @@
             this.txtConstraints.Margin = new System.Windows.Forms.Padding(4);
             this.txtConstraints.Multiline = true;
             this.txtConstraints.Name = "txtConstraints";
-            this.txtConstraints.Size = new System.Drawing.Size(848, 285);
+            this.txtConstraints.Size = new System.Drawing.Size(848, 280);
             this.txtConstraints.TabIndex = 22;
             this.txtConstraints.Text = "Note any major project constraints that have been identified to date.";
             // 
@@ -2145,7 +2221,7 @@
             this.issuesLinkLabel.Location = new System.Drawing.Point(9, 681);
             this.issuesLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.issuesLinkLabel.Name = "issuesLinkLabel";
-            this.issuesLinkLabel.Size = new System.Drawing.Size(216, 13);
+            this.issuesLinkLabel.Size = new System.Drawing.Size(284, 17);
             this.issuesLinkLabel.TabIndex = 18;
             this.issuesLinkLabel.TabStop = true;
             this.issuesLinkLabel.Text = "[See MPMM™ for a description of this table.]";
@@ -2158,7 +2234,7 @@
             this.projConsderationsLabel.Location = new System.Drawing.Point(9, 4);
             this.projConsderationsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projConsderationsLabel.Name = "projConsderationsLabel";
-            this.projConsderationsLabel.Size = new System.Drawing.Size(532, 14);
+            this.projConsderationsLabel.Size = new System.Drawing.Size(701, 16);
             this.projConsderationsLabel.TabIndex = 0;
             this.projConsderationsLabel.Text = "The final step in defining the approach to project implementation is to define th" +
     "e criteria for project completion.";
@@ -2169,11 +2245,11 @@
             this.appendixTabPage.Controls.Add(this.txtAppendix);
             this.appendixTabPage.Controls.Add(this.appendixLabel);
             this.appendixTabPage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appendixTabPage.Location = new System.Drawing.Point(4, 28);
+            this.appendixTabPage.Location = new System.Drawing.Point(4, 33);
             this.appendixTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.appendixTabPage.Name = "appendixTabPage";
             this.appendixTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.appendixTabPage.Size = new System.Drawing.Size(878, 352);
+            this.appendixTabPage.Size = new System.Drawing.Size(878, 347);
             this.appendixTabPage.TabIndex = 6;
             this.appendixTabPage.Text = "Appendix";
             // 
@@ -2196,7 +2272,7 @@
             this.appendixLabel.Location = new System.Drawing.Point(10, 10);
             this.appendixLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.appendixLabel.Name = "appendixLabel";
-            this.appendixLabel.Size = new System.Drawing.Size(399, 14);
+            this.appendixLabel.Size = new System.Drawing.Size(524, 16);
             this.appendixLabel.TabIndex = 0;
             this.appendixLabel.Text = "Attach any documentation you believe is relevant to the Project Charter, includin" +
     "g:";
@@ -2207,11 +2283,11 @@
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Font = new System.Drawing.Font("Arial", 12F);
             this.saveButton.ForeColor = System.Drawing.Color.Black;
-            this.saveButton.Location = new System.Drawing.Point(519, 3);
+            this.saveButton.Location = new System.Drawing.Point(620, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(167, 39);
+            this.saveButton.Size = new System.Drawing.Size(175, 39);
             this.saveButton.TabIndex = 3;
-            this.saveButton.Text = "Save";
+            this.saveButton.Text = "Complete";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -2220,7 +2296,7 @@
             this.exportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportButton.ForeColor = System.Drawing.Color.Black;
-            this.exportButton.Location = new System.Drawing.Point(702, 3);
+            this.exportButton.Location = new System.Drawing.Point(816, 3);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(166, 38);
             this.exportButton.TabIndex = 4;
@@ -2228,12 +2304,27 @@
             this.exportButton.UseVisualStyleBackColor = false;
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProgress.Font = new System.Drawing.Font("Arial", 12F);
+            this.btnSaveProgress.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveProgress.Location = new System.Drawing.Point(395, 3);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(194, 39);
+            this.btnSaveProgress.TabIndex = 5;
+            this.btnSaveProgress.Text = "Save Progress";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
+            // 
             // ProjectCharterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(882, 472);
+            this.ClientSize = new System.Drawing.Size(996, 481);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ProjChartertabControl1);
@@ -2488,5 +2579,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn signatureColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
+        private System.Windows.Forms.Button btnSaveProgress;
     }
 }

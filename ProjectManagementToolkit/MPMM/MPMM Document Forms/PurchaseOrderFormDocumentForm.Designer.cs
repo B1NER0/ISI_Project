@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSave = new System.Windows.Forms.Button();
             this.Purchase_Order_Form_tbx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -98,6 +98,7 @@
             this.TERMS_AND_CONDITIONS_btn = new System.Windows.Forms.Button();
             this.Terms_and_Conditions_tbx = new System.Windows.Forms.TextBox();
             this.btnExport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -116,13 +117,13 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnSave.Location = new System.Drawing.Point(598, 12);
+            this.btnSave.Location = new System.Drawing.Point(775, 15);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 42);
             this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
@@ -130,17 +131,17 @@
             // 
             this.Purchase_Order_Form_tbx.Location = new System.Drawing.Point(293, 22);
             this.Purchase_Order_Form_tbx.Name = "Purchase_Order_Form_tbx";
-            this.Purchase_Order_Form_tbx.Size = new System.Drawing.Size(276, 24);
+            this.Purchase_Order_Form_tbx.Size = new System.Drawing.Size(276, 23);
             this.Purchase_Order_Form_tbx.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(23, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 24);
+            this.label1.Size = new System.Drawing.Size(260, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "Purchase Order Form For:";
             // 
@@ -182,7 +183,7 @@
             // 
             this.Date_Required_tbx.Location = new System.Drawing.Point(261, 175);
             this.Date_Required_tbx.Name = "Date_Required_tbx";
-            this.Date_Required_tbx.Size = new System.Drawing.Size(276, 24);
+            this.Date_Required_tbx.Size = new System.Drawing.Size(276, 23);
             this.Date_Required_tbx.TabIndex = 24;
             // 
             // label4
@@ -199,14 +200,14 @@
             // 
             this.Purchase_Order_Date_tbx.Location = new System.Drawing.Point(261, 104);
             this.Purchase_Order_Date_tbx.Name = "Purchase_Order_Date_tbx";
-            this.Purchase_Order_Date_tbx.Size = new System.Drawing.Size(276, 24);
+            this.Purchase_Order_Date_tbx.Size = new System.Drawing.Size(276, 23);
             this.Purchase_Order_Date_tbx.TabIndex = 22;
             // 
             // Purchase_Order_Number_tbx
             // 
             this.Purchase_Order_Number_tbx.Location = new System.Drawing.Point(261, 32);
             this.Purchase_Order_Number_tbx.Name = "Purchase_Order_Number_tbx";
-            this.Purchase_Order_Number_tbx.Size = new System.Drawing.Size(276, 24);
+            this.Purchase_Order_Number_tbx.Size = new System.Drawing.Size(276, 23);
             this.Purchase_Order_Number_tbx.TabIndex = 18;
             // 
             // PROJECT_DETAILS_btn
@@ -259,7 +260,7 @@
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
             this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Font = new System.Drawing.Font("Helvetica", 8F, System.Drawing.FontStyle.Bold);
+            this.tabControl2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.tabControl2.Location = new System.Drawing.Point(6, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -279,10 +280,10 @@
             this.tabPage6.Controls.Add(this.Project_Contact_Phone_tbx);
             this.tabPage6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage6.ForeColor = System.Drawing.Color.Black;
-            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1055, 238);
+            this.tabPage6.Size = new System.Drawing.Size(1055, 237);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "From";
             // 
@@ -366,10 +367,10 @@
             this.tabPage7.Controls.Add(this.label10);
             this.tabPage7.Controls.Add(this.Supplier_Contact_Phone_tbx);
             this.tabPage7.ForeColor = System.Drawing.Color.Black;
-            this.tabPage7.Location = new System.Drawing.Point(4, 24);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1055, 238);
+            this.tabPage7.Size = new System.Drawing.Size(1055, 237);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "To";
             // 
@@ -449,10 +450,10 @@
             this.tabPage8.Controls.Add(this.label23);
             this.tabPage8.Controls.Add(this.Contact_Address1_tbx);
             this.tabPage8.ForeColor = System.Drawing.Color.Black;
-            this.tabPage8.Location = new System.Drawing.Point(4, 24);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1055, 238);
+            this.tabPage8.Size = new System.Drawing.Size(1055, 237);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Deliver To";
             // 
@@ -498,10 +499,10 @@
             this.tabPage9.Controls.Add(this.Contact_Address2_tbx);
             this.tabPage9.Controls.Add(this.label18);
             this.tabPage9.ForeColor = System.Drawing.Color.Black;
-            this.tabPage9.Location = new System.Drawing.Point(4, 24);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1055, 238);
+            this.tabPage9.Size = new System.Drawing.Size(1055, 237);
             this.tabPage9.TabIndex = 3;
             this.tabPage9.Text = "Bill To";
             // 
@@ -569,14 +570,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ORDER_DETAILS_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ORDER_DETAILS_dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ORDER_DETAILS_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ORDER_DETAILS_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ORDER_DETAILS_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ORDER_DETAILS_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Item,
@@ -587,17 +588,17 @@
             this.ORDER_DETAILS_dgv.EnableHeadersVisualStyles = false;
             this.ORDER_DETAILS_dgv.Location = new System.Drawing.Point(-1, 0);
             this.ORDER_DETAILS_dgv.Name = "ORDER_DETAILS_dgv";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ORDER_DETAILS_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ORDER_DETAILS_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ORDER_DETAILS_dgv.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ORDER_DETAILS_dgv.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ORDER_DETAILS_dgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.ORDER_DETAILS_dgv.Size = new System.Drawing.Size(1104, 394);
             this.ORDER_DETAILS_dgv.TabIndex = 0;
             // 
@@ -692,7 +693,7 @@
             // 
             this.Name_on_Card_tbx.Location = new System.Drawing.Point(186, 262);
             this.Name_on_Card_tbx.Name = "Name_on_Card_tbx";
-            this.Name_on_Card_tbx.Size = new System.Drawing.Size(453, 24);
+            this.Name_on_Card_tbx.Size = new System.Drawing.Size(453, 23);
             this.Name_on_Card_tbx.TabIndex = 42;
             // 
             // label15
@@ -719,7 +720,7 @@
             // 
             this.Expiration_Date_tbx.Location = new System.Drawing.Point(187, 220);
             this.Expiration_Date_tbx.Name = "Expiration_Date_tbx";
-            this.Expiration_Date_tbx.Size = new System.Drawing.Size(453, 24);
+            this.Expiration_Date_tbx.Size = new System.Drawing.Size(453, 23);
             this.Expiration_Date_tbx.TabIndex = 39;
             // 
             // label20
@@ -736,14 +737,14 @@
             // 
             this.Card_Number_tbx.Location = new System.Drawing.Point(187, 178);
             this.Card_Number_tbx.Name = "Card_Number_tbx";
-            this.Card_Number_tbx.Size = new System.Drawing.Size(453, 24);
+            this.Card_Number_tbx.Size = new System.Drawing.Size(453, 23);
             this.Card_Number_tbx.TabIndex = 37;
             // 
             // Card_Type_tbx
             // 
             this.Card_Type_tbx.Location = new System.Drawing.Point(187, 135);
             this.Card_Type_tbx.Name = "Card_Type_tbx";
-            this.Card_Type_tbx.Size = new System.Drawing.Size(453, 24);
+            this.Card_Type_tbx.Size = new System.Drawing.Size(453, 23);
             this.Card_Type_tbx.TabIndex = 34;
             // 
             // label22
@@ -806,15 +807,29 @@
             // 
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnExport.Location = new System.Drawing.Point(728, 12);
+            this.btnExport.Location = new System.Drawing.Point(905, 15);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(150, 42);
             this.btnExport.TabIndex = 14;
             this.btnExport.Text = "Export to Word";
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.button1.Location = new System.Drawing.Point(638, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 42);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Save Progress";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PurchaseOrderFormDocumentForm
             // 
@@ -824,10 +839,11 @@
             this.ClientSize = new System.Drawing.Size(1273, 565);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.Purchase_Order_Form_tbx);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Name = "PurchaseOrderFormDocumentForm";
             this.Text = "PurchaseOrderFormDocumentForm";
@@ -925,5 +941,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_Price;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button button1;
     }
 }

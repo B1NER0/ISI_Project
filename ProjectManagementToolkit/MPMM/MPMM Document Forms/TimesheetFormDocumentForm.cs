@@ -90,6 +90,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newTimeSheetModel.timeSheetForm.approvedSignature = txtApprovedBySignature.Text;
             newTimeSheetModel.timeSheetForm.approvedDate = dateTimePickerApprovedBy.Text;
 
+            newTimeSheetModel.TimeSheetProgress = "DONE";
+            newTimeSheetModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
             List<TimeSheetModel.TimeSheetForm.TimeSpent> timeSpents = new List<TimeSheetModel.TimeSheetForm.TimeSpent>();
             List<TimeSheetModel.TimeSheetForm.TasksCompleted> tasksCompleteds = new List<TimeSheetModel.TimeSheetForm.TasksCompleted>();
             List<TimeSheetModel.TimeSheetForm.DeliverablesProduced> deliverablesProduceds = new List<TimeSheetModel.TimeSheetForm.DeliverablesProduced>();
@@ -421,6 +424,84 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             return string.Format(format, list);
         }
 
-        
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newTimeSheetModel = new TimeSheetModel();
+            newTimeSheetModel.timeSheetForm = new TimeSheetModel.TimeSheetForm();
+            newTimeSheetModel.timeSheetForm.projectName = txtTimesheetFormProjectName.Text;
+            newTimeSheetModel.timeSheetForm.projectManager = txtTimesheetFormProjectManager.Text;
+            newTimeSheetModel.timeSheetForm.teamMember = txtTimesheetFormTeamMember.Text;
+
+            newTimeSheetModel.timeSheetForm.submittedName = txtName.Text;
+            newTimeSheetModel.timeSheetForm.submittedRole = txtProjectRole.Text;
+            newTimeSheetModel.timeSheetForm.submittedSignature = txtSignature.Text;
+            newTimeSheetModel.timeSheetForm.submittedDate = dateTimePickerSubmittedBy.Text;
+
+            newTimeSheetModel.timeSheetForm.approvedName = txtApprovedByName.Text;
+            newTimeSheetModel.timeSheetForm.approvedRole = txtApprovedByProjectRole.Text;
+            newTimeSheetModel.timeSheetForm.approvedSignature = txtApprovedBySignature.Text;
+            newTimeSheetModel.timeSheetForm.approvedDate = dateTimePickerApprovedBy.Text;
+
+            newTimeSheetModel.TimeSheetProgress = "UNDONE";
+
+            List<TimeSheetModel.TimeSheetForm.TimeSpent> timeSpents = new List<TimeSheetModel.TimeSheetForm.TimeSpent>();
+            List<TimeSheetModel.TimeSheetForm.TasksCompleted> tasksCompleteds = new List<TimeSheetModel.TimeSheetForm.TasksCompleted>();
+            List<TimeSheetModel.TimeSheetForm.DeliverablesProduced> deliverablesProduceds = new List<TimeSheetModel.TimeSheetForm.DeliverablesProduced>();
+
+            int gridViewCounter = dataGridViewTimesheetForm.Rows.Count;
+
+            for (int i = 0; i < gridViewCounter; i++)
+            {
+                TimeSheetModel.TimeSheetForm.TimeSpent timeSpent = new TimeSheetModel.TimeSheetForm.TimeSpent();
+                TimeSheetModel.TimeSheetForm.TasksCompleted tasksCompleted = new TimeSheetModel.TimeSheetForm.TasksCompleted();
+                TimeSheetModel.TimeSheetForm.DeliverablesProduced deliverablesProduced = new TimeSheetModel.TimeSheetForm.DeliverablesProduced();
+
+                var tempDate = dataGridViewTimesheetForm.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempStartTime = dataGridViewTimesheetForm.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempEndTime = dataGridViewTimesheetForm.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempDuration = dataGridViewTimesheetForm.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                var tempActivity = dataGridViewTimesheetForm.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var tempTask = dataGridViewTimesheetForm.Rows[i].Cells[5].Value?.ToString() ?? "";
+
+                var tempStartPercentage = dataGridViewTimesheetForm.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var tempEndPercentage = dataGridViewTimesheetForm.Rows[i].Cells[7].Value?.ToString() ?? "";
+                var tempResult = dataGridViewTimesheetForm.Rows[i].Cells[8].Value?.ToString() ?? "";
+
+                timeSpent.date = tempDate;
+                timeSpent.startTime = tempStartTime;
+                timeSpent.endTime = tempEndTime;
+                timeSpent.duration = tempDuration;
+
+                tasksCompleted.activity = tempActivity;
+                tasksCompleted.task = tempTask;
+
+                deliverablesProduced.startPercentComplete = tempStartPercentage;
+                deliverablesProduced.endPercentComplete = tempEndPercentage;
+                deliverablesProduced.result = tempResult;
+
+                timeSpents.Add(timeSpent);
+                tasksCompleteds.Add(tasksCompleted);
+                deliverablesProduceds.Add(deliverablesProduced);
+            }
+            newTimeSheetModel.timeSheetForm.timeSpents = timeSpents;
+            newTimeSheetModel.timeSheetForm.tasksCompleted = tasksCompleteds;
+            newTimeSheetModel.timeSheetForm.deliverablesProduced = deliverablesProduceds;
+
+            List<VersionControl<TimeSheetModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentTimeSheetModel, newTimeSheetModel))
+            {
+                VersionControl<TimeSheetModel>.DocumentModel documentModel = new VersionControl<TimeSheetModel>.DocumentModel(newTimeSheetModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentTimeSheetModel = JsonConvert.DeserializeObject<TimeSheetModel>(JsonConvert.SerializeObject(newTimeSheetModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "TimeSheet");
+                MessageBox.Show("Time sheet saved successfully", "save", MessageBoxButtons.OK);
+            }
+        }
     }
 }

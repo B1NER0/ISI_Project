@@ -124,6 +124,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExportWord = new System.Windows.Forms.Button();
             this.btnVersions = new System.Windows.Forms.Button();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.documentControl.SuspendLayout();
             this.tabControl3.SuspendLayout();
@@ -157,32 +158,28 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.documentControl);
             this.tabControl1.Controls.Add(this.workBreakStructure);
             this.tabControl1.Controls.Add(this.projectPlan);
             this.tabControl1.Controls.Add(this.appendix);
             this.tabControl1.Controls.Add(this.schedule);
-            this.tabControl1.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(16, 15);
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(13, 40);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1251, 647);
             this.tabControl1.TabIndex = 0;
-            //this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
             // documentControl
             // 
             this.documentControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.documentControl.Controls.Add(this.tabControl3);
-            this.documentControl.Location = new System.Drawing.Point(4, 24);
+            this.documentControl.Location = new System.Drawing.Point(4, 25);
             this.documentControl.Margin = new System.Windows.Forms.Padding(4);
             this.documentControl.Name = "documentControl";
             this.documentControl.Padding = new System.Windows.Forms.Padding(4);
-            this.documentControl.Size = new System.Drawing.Size(1243, 619);
+            this.documentControl.Size = new System.Drawing.Size(1243, 618);
             this.documentControl.TabIndex = 0;
             this.documentControl.Text = "Document Control";
             // 
@@ -192,36 +189,35 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.tabControl3.Controls.Add(this.tabPage7);
             this.tabControl3.Controls.Add(this.tabPage8);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl3.Location = new System.Drawing.Point(4, 4);
             this.tabControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1235, 611);
+            this.tabControl3.Size = new System.Drawing.Size(1235, 610);
             this.tabControl3.TabIndex = 12;
-            //this.tabControl3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl3_DrawItem);
             // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage6.Controls.Add(this.documentInformation);
-            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage6.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage6.Size = new System.Drawing.Size(1227, 581);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Document Information";
             // 
             // documentInformation
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Helvetica", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.documentInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.documentInformation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -240,16 +236,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.documentInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.documentInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.documentInformation.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10.8F);
             this.documentInformation.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.documentInformation.Size = new System.Drawing.Size(1221, 579);
+            this.documentInformation.Size = new System.Drawing.Size(1221, 577);
             this.documentInformation.TabIndex = 6;
             // 
             // Type
@@ -271,11 +267,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage7.Controls.Add(this.documentHistoryDataGridView);
-            this.tabPage7.Location = new System.Drawing.Point(4, 24);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage7.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage7.Size = new System.Drawing.Size(1227, 581);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Document History";
             // 
@@ -284,7 +280,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.documentHistoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -302,16 +298,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.documentHistoryDataGridView.Name = "documentHistoryDataGridView";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.documentHistoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.documentHistoryDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 10.8F);
             this.documentHistoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.documentHistoryDataGridView.Size = new System.Drawing.Size(1221, 579);
+            this.documentHistoryDataGridView.Size = new System.Drawing.Size(1221, 577);
             this.documentHistoryDataGridView.TabIndex = 7;
             // 
             // Version
@@ -339,10 +335,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage8.Controls.Add(this.documentApprovalsDataGridView);
-            this.tabPage8.Location = new System.Drawing.Point(4, 24);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage8.Size = new System.Drawing.Size(1227, 581);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Document Approvals";
             // 
@@ -351,7 +347,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.documentApprovalsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -370,16 +366,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.documentApprovalsDataGridView.Name = "documentApprovalsDataGridView";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.documentApprovalsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.documentApprovalsDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 10.8F);
             this.documentApprovalsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.documentApprovalsDataGridView.Size = new System.Drawing.Size(1227, 583);
+            this.documentApprovalsDataGridView.Size = new System.Drawing.Size(1227, 581);
             this.documentApprovalsDataGridView.TabIndex = 8;
             // 
             // approvalRole
@@ -416,11 +412,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.workBreakStructure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.workBreakStructure.Controls.Add(this.tabControl2);
-            this.workBreakStructure.Location = new System.Drawing.Point(4, 24);
+            this.workBreakStructure.Location = new System.Drawing.Point(4, 25);
             this.workBreakStructure.Margin = new System.Windows.Forms.Padding(4);
             this.workBreakStructure.Name = "workBreakStructure";
             this.workBreakStructure.Padding = new System.Windows.Forms.Padding(4);
-            this.workBreakStructure.Size = new System.Drawing.Size(1243, 619);
+            this.workBreakStructure.Size = new System.Drawing.Size(1243, 618);
             this.workBreakStructure.TabIndex = 1;
             this.workBreakStructure.Text = "Work Breakdown Structure";
             // 
@@ -436,17 +432,17 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1235, 611);
+            this.tabControl2.Size = new System.Drawing.Size(1235, 610);
             this.tabControl2.TabIndex = 14;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.phasesDataGridView);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage1.Size = new System.Drawing.Size(1227, 581);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Phases";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -456,7 +452,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.phasesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -474,16 +470,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.phasesDataGridView.Name = "phasesDataGridView";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.phasesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.phasesDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 10.8F);
             this.phasesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.phasesDataGridView.Size = new System.Drawing.Size(1221, 579);
+            this.phasesDataGridView.Size = new System.Drawing.Size(1221, 577);
             this.phasesDataGridView.TabIndex = 4;
             // 
             // phaseTitle
@@ -510,11 +506,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.activitiesDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage2.Size = new System.Drawing.Size(1227, 581);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Activities ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -524,7 +520,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.activitiesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -543,16 +539,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.activitiesDataGridView.Name = "activitiesDataGridView";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.activitiesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.activitiesDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 10.8F);
             this.activitiesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.activitiesDataGridView.Size = new System.Drawing.Size(1221, 579);
+            this.activitiesDataGridView.Size = new System.Drawing.Size(1221, 577);
             this.activitiesDataGridView.TabIndex = 9;
             // 
             // activitiesPhaseTitle
@@ -587,10 +583,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabPage3.Controls.Add(this.tasksDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage3.Size = new System.Drawing.Size(1227, 581);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tasks";
             // 
@@ -599,7 +595,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.tasksDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -618,16 +614,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.tasksDataGridView.Name = "tasksDataGridView";
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tasksDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.tasksDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 10.8F);
             this.tasksDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle19;
-            this.tasksDataGridView.Size = new System.Drawing.Size(1227, 583);
+            this.tasksDataGridView.Size = new System.Drawing.Size(1227, 581);
             this.tasksDataGridView.TabIndex = 9;
             // 
             // tasksActivityTitle
@@ -661,10 +657,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.milestonesDataGridView);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage4.Size = new System.Drawing.Size(1227, 581);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Miltsone";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -674,7 +670,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.milestonesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -692,16 +688,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.milestonesDataGridView.Name = "milestonesDataGridView";
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.milestonesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.milestonesDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Arial", 10.8F);
             this.milestonesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle22;
-            this.milestonesDataGridView.Size = new System.Drawing.Size(1227, 583);
+            this.milestonesDataGridView.Size = new System.Drawing.Size(1227, 581);
             this.milestonesDataGridView.TabIndex = 10;
             // 
             // milestoneTitle
@@ -728,10 +724,10 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.effortDataGridView);
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage5.Size = new System.Drawing.Size(1227, 581);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Effort";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -741,7 +737,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.effortDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(172)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(172)))), ((int)(((byte)(252)))));
@@ -759,16 +755,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.effortDataGridView.Name = "effortDataGridView";
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(172)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.effortDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.effortDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 10.8F);
             this.effortDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.effortDataGridView.Size = new System.Drawing.Size(1227, 583);
+            this.effortDataGridView.Size = new System.Drawing.Size(1227, 581);
             this.effortDataGridView.TabIndex = 12;
             // 
             // effortTaskTitle
@@ -797,11 +793,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.projectPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.projectPlan.Controls.Add(this.tabControl4);
             this.projectPlan.Controls.Add(this.label9);
-            this.projectPlan.Location = new System.Drawing.Point(4, 24);
+            this.projectPlan.Location = new System.Drawing.Point(4, 25);
             this.projectPlan.Margin = new System.Windows.Forms.Padding(4);
             this.projectPlan.Name = "projectPlan";
             this.projectPlan.Padding = new System.Windows.Forms.Padding(4);
-            this.projectPlan.Size = new System.Drawing.Size(1243, 619);
+            this.projectPlan.Size = new System.Drawing.Size(1243, 618);
             this.projectPlan.TabIndex = 2;
             this.projectPlan.Text = "Project Plan";
             // 
@@ -815,17 +811,17 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.tabControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1235, 611);
+            this.tabControl4.Size = new System.Drawing.Size(1235, 610);
             this.tabControl4.TabIndex = 11;
             // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.dependenciesDataGridView);
-            this.tabPage10.Location = new System.Drawing.Point(4, 24);
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage10.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage10.Size = new System.Drawing.Size(1227, 581);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Dependencies";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -835,7 +831,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.dependenciesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
@@ -853,16 +849,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.dependenciesDataGridView.Name = "dependenciesDataGridView";
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dependenciesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dependenciesDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Helvetica", 10.8F);
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial", 10.8F);
             this.dependenciesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle28;
-            this.dependenciesDataGridView.Size = new System.Drawing.Size(1221, 579);
+            this.dependenciesDataGridView.Size = new System.Drawing.Size(1221, 577);
             this.dependenciesDataGridView.TabIndex = 7;
             // 
             // dependencyActivityTitle
@@ -889,11 +885,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.assumptionsTxt);
-            this.tabPage9.Location = new System.Drawing.Point(4, 24);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage9.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage9.Size = new System.Drawing.Size(1227, 581);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Assumptions";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -902,23 +898,23 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.assumptionsTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.assumptionsTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.assumptionsTxt.Font = new System.Drawing.Font("Helvetica", 9.75F);
+            this.assumptionsTxt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.assumptionsTxt.ForeColor = System.Drawing.Color.Black;
             this.assumptionsTxt.Location = new System.Drawing.Point(3, 2);
             this.assumptionsTxt.Margin = new System.Windows.Forms.Padding(4);
             this.assumptionsTxt.Multiline = true;
             this.assumptionsTxt.Name = "assumptionsTxt";
-            this.assumptionsTxt.Size = new System.Drawing.Size(1221, 579);
+            this.assumptionsTxt.Size = new System.Drawing.Size(1221, 577);
             this.assumptionsTxt.TabIndex = 9;
             this.assumptionsTxt.Text = "Assumptions";
             // 
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.constrainsTxt);
-            this.tabPage11.Location = new System.Drawing.Point(4, 24);
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1227, 583);
+            this.tabPage11.Size = new System.Drawing.Size(1227, 581);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Constraints";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -927,13 +923,13 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.constrainsTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.constrainsTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.constrainsTxt.Font = new System.Drawing.Font("Helvetica", 9.75F);
+            this.constrainsTxt.Font = new System.Drawing.Font("Arial", 9.75F);
             this.constrainsTxt.ForeColor = System.Drawing.Color.Black;
             this.constrainsTxt.Location = new System.Drawing.Point(0, 0);
             this.constrainsTxt.Margin = new System.Windows.Forms.Padding(4);
             this.constrainsTxt.Multiline = true;
             this.constrainsTxt.Name = "constrainsTxt";
-            this.constrainsTxt.Size = new System.Drawing.Size(1227, 583);
+            this.constrainsTxt.Size = new System.Drawing.Size(1227, 581);
             this.constrainsTxt.TabIndex = 10;
             this.constrainsTxt.Text = "Constrains";
             // 
@@ -956,11 +952,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.appendix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.appendix.Controls.Add(this.txtAppendix);
-            this.appendix.Location = new System.Drawing.Point(4, 24);
+            this.appendix.Location = new System.Drawing.Point(4, 25);
             this.appendix.Margin = new System.Windows.Forms.Padding(4);
             this.appendix.Name = "appendix";
             this.appendix.Padding = new System.Windows.Forms.Padding(4);
-            this.appendix.Size = new System.Drawing.Size(1243, 619);
+            this.appendix.Size = new System.Drawing.Size(1243, 618);
             this.appendix.TabIndex = 3;
             this.appendix.Text = "Appendix";
             // 
@@ -968,13 +964,13 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.txtAppendix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.txtAppendix.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAppendix.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAppendix.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAppendix.ForeColor = System.Drawing.Color.Black;
             this.txtAppendix.Location = new System.Drawing.Point(4, 4);
             this.txtAppendix.Margin = new System.Windows.Forms.Padding(4);
             this.txtAppendix.Multiline = true;
             this.txtAppendix.Name = "txtAppendix";
-            this.txtAppendix.Size = new System.Drawing.Size(1235, 611);
+            this.txtAppendix.Size = new System.Drawing.Size(1235, 610);
             this.txtAppendix.TabIndex = 27;
             this.txtAppendix.Text = "Appendix";
             // 
@@ -982,11 +978,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.schedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.schedule.Controls.Add(this.txtSchedule);
-            this.schedule.Location = new System.Drawing.Point(4, 24);
+            this.schedule.Location = new System.Drawing.Point(4, 25);
             this.schedule.Margin = new System.Windows.Forms.Padding(4);
             this.schedule.Name = "schedule";
             this.schedule.Padding = new System.Windows.Forms.Padding(4);
-            this.schedule.Size = new System.Drawing.Size(1243, 619);
+            this.schedule.Size = new System.Drawing.Size(1243, 618);
             this.schedule.TabIndex = 4;
             this.schedule.Text = "Schedule";
             // 
@@ -994,13 +990,13 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.txtSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.txtSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSchedule.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSchedule.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSchedule.ForeColor = System.Drawing.Color.Black;
             this.txtSchedule.Location = new System.Drawing.Point(4, 4);
             this.txtSchedule.Margin = new System.Windows.Forms.Padding(4);
             this.txtSchedule.Multiline = true;
             this.txtSchedule.Name = "txtSchedule";
-            this.txtSchedule.Size = new System.Drawing.Size(1235, 611);
+            this.txtSchedule.Size = new System.Drawing.Size(1235, 610);
             this.txtSchedule.TabIndex = 27;
             this.txtSchedule.Text = "Schedule";
             // 
@@ -1008,13 +1004,13 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(711, 1);
+            this.btnSave.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(757, 2);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(147, 34);
             this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -1022,7 +1018,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.btnExportWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnExportWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportWord.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportWord.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportWord.Location = new System.Drawing.Point(921, 2);
             this.btnExportWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportWord.Name = "btnExportWord";
@@ -1036,14 +1032,29 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             // 
             this.btnVersions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
             this.btnVersions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVersions.Font = new System.Drawing.Font("Helvetica", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVersions.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVersions.Location = new System.Drawing.Point(1084, 3);
             this.btnVersions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVersions.Name = "btnVersions";
             this.btnVersions.Size = new System.Drawing.Size(147, 34);
             this.btnVersions.TabIndex = 14;
             this.btnVersions.Text = "Versions";
+            this.btnVersions.UseVisualStyleBackColor = false;
             this.btnVersions.Click += new System.EventHandler(this.btnVersions_Click);
+            // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProgress.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProgress.Location = new System.Drawing.Point(593, 2);
+            this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(147, 34);
+            this.btnSaveProgress.TabIndex = 12;
+            this.btnSaveProgress.Text = "Save Progess";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
             // 
             // ProjectPlanDocumentForm
             // 
@@ -1053,6 +1064,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             this.ClientSize = new System.Drawing.Size(1279, 676);
             this.Controls.Add(this.btnVersions);
             this.Controls.Add(this.btnExportWord);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1165,5 +1177,6 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private TextBox txtAppendix;
         private TextBox txtSchedule;
         private Button btnVersions;
+        private Button btnSaveProgress;
     }
 }

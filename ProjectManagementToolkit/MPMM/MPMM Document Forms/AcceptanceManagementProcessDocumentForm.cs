@@ -36,6 +36,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newAcceptanceManagementProcessModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
             newAcceptanceManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newAcceptanceManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newAcceptanceManagementProcessModel.AcceptanceManagementProcessProgress = "DONE";
+            newAcceptanceManagementProcessModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<AcceptanceManagementProcessModel.DocumentHistory> documentHistories = new List<AcceptanceManagementProcessModel.DocumentHistory>();
 
@@ -735,6 +737,98 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
         private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newAcceptanceManagementProcessModel.DocumentID = documentInformation.Rows[0].Cells[1].Value.ToString();
+            newAcceptanceManagementProcessModel.DocumentOwner = documentInformation.Rows[1].Cells[1].Value.ToString();
+            newAcceptanceManagementProcessModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
+            newAcceptanceManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
+            newAcceptanceManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newAcceptanceManagementProcessModel.AcceptanceManagementProcessProgress = "DONE";
+
+            List<AcceptanceManagementProcessModel.DocumentHistory> documentHistories = new List<AcceptanceManagementProcessModel.DocumentHistory>();
+
+            int versionRowsCount = dataGridView7.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                AcceptanceManagementProcessModel.DocumentHistory documentHistoryModel = new AcceptanceManagementProcessModel.DocumentHistory();
+                var version = dataGridView7.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dataGridView7.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dataGridView7.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newAcceptanceManagementProcessModel.DocumentHistories = documentHistories;
+
+            List<AcceptanceManagementProcessModel.DocumentApproval> documentApprovalsModel = new List<AcceptanceManagementProcessModel.DocumentApproval>();
+
+            int approvalRowsCount = dataGridView8.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                AcceptanceManagementProcessModel.DocumentApproval documentApproval = new AcceptanceManagementProcessModel.DocumentApproval();
+                var role = dataGridView8.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dataGridView8.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dataGridView8.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dataGridView8.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newAcceptanceManagementProcessModel.DocumentApprovals = documentApprovalsModel;
+
+
+
+            newAcceptanceManagementProcessModel.ProjectName = txtProjectName.Text;
+
+            newAcceptanceManagementProcessModel.AcceptanceprocessDescription = txtacceptanceprocessDescription.Text;
+
+            newAcceptanceManagementProcessModel.AcceptanceprocessOverview = txtacceptanceprocessOverview.Text;
+
+            newAcceptanceManagementProcessModel.AcceptanceprocessCompleteDeliverable = txtacceptanceprocessCompleteDeliverable.Text;
+
+            newAcceptanceManagementProcessModel.AcceptanceprocessCompleteAcceptanceTest = txtacceptanceprocessCompleteAcceptanceTest.Text;
+
+            newAcceptanceManagementProcessModel.AcceptanceprocessAcceptDeliverable = txtacceptanceprocessAcceptDeliverable.Text;
+
+            newAcceptanceManagementProcessModel.AcceptancerolesDescription = txtacceptancerolesDescription.Text;
+
+            newAcceptanceManagementProcessModel.AcceptancerolesProjectManager = txtacceptancerolesProjectManager.Text;
+
+            newAcceptanceManagementProcessModel.AcceptancerolesCustomer = txtacceptancerolesCustomer.Text;
+
+            newAcceptanceManagementProcessModel.AcceptancedocumentsDescription = txtacceptancedocumentsDescription.Text;
+
+            newAcceptanceManagementProcessModel.AcceptancedocumentsAcceptanceForm = txtacceptancedocumentsAcceptanceForm.Text;
+
+            newAcceptanceManagementProcessModel.AcceptancedocumentsAcceptanceRegister = txtacceptancedocumentsAcceptanceRegister.Text;
+
+
+
+            List<VersionControl<AcceptanceManagementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentAcceptanceManagementProcessModel, newAcceptanceManagementProcessModel))
+            {
+                VersionControl<AcceptanceManagementProcessModel>.DocumentModel documentModel = new VersionControl<AcceptanceManagementProcessModel>.DocumentModel(newAcceptanceManagementProcessModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentAcceptanceManagementProcessModel = JsonConvert.DeserializeObject<AcceptanceManagementProcessModel>(JsonConvert.SerializeObject(newAcceptanceManagementProcessModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "AcceptanceManagementProcess");
+                MessageBox.Show("Acceptance Management Process saved successfully", "save", MessageBoxButtons.OK);
+            }
 
         }
     }

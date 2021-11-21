@@ -56,6 +56,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectClosureReportModel.IssueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newProjectClosureReportModel.LastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newProjectClosureReportModel.FileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newProjectClosureReportModel.ProjectClosureReportProgress = "DONE";
+            newProjectClosureReportModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             int versionRowsCount = dataGridViewDocumentHistory.Rows.Count;
             newProjectClosureReportModel.DocumentHistories = new List<ProjectClosureReportModel.DocumentHistory>();
@@ -733,6 +735,151 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
         }
 
-       
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newProjectClosureReportModel.DocumentID = dataGridViewDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newProjectClosureReportModel.DocumentOwner = dataGridViewDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newProjectClosureReportModel.IssueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newProjectClosureReportModel.LastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newProjectClosureReportModel.FileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newProjectClosureReportModel.ProjectClosureReportProgress = "UNDONE";
+
+            int versionRowsCount = dataGridViewDocumentHistory.Rows.Count;
+            newProjectClosureReportModel.DocumentHistories = new List<ProjectClosureReportModel.DocumentHistory>();
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                var version = dataGridViewDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dataGridViewDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dataGridViewDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.DocumentHistories
+                    .Add(new ProjectClosureReportModel.DocumentHistory(version, issueDate, changes));
+            }
+
+            int approvalRowsCount = dataGridViewDocumentApprovals.Rows.Count;
+            newProjectClosureReportModel.DocumentApprovals = new List<ProjectClosureReportModel.DocumentApproval>();
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                var role = dataGridViewDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dataGridViewDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dataGridViewDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dataGridViewDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                newProjectClosureReportModel.DocumentApprovals
+                    .Add(new ProjectClosureReportModel.DocumentApproval(role, name, signature, date));
+            }
+
+            newProjectClosureReportModel.ProjectCompletionDescription = txtProjectCompletion.Text;
+
+
+            int completionCritCount = dataGridViewCompletionCriteria.Rows.Count;
+            newProjectClosureReportModel.CompletionCriterion = new List<ProjectClosureReportModel.CompletionCriteria>();
+            for (int i = 0; i < completionCritCount - 1; i++)
+            {
+                var category = dataGridViewCompletionCriteria.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var criteria = dataGridViewCompletionCriteria.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var satisfied = dataGridViewCompletionCriteria.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.CompletionCriterion
+                    .Add(new ProjectClosureReportModel.CompletionCriteria(category, criteria, satisfied));
+            }
+
+            int outstandingItemsCount = dataGridViewOutstandingItems.Rows.Count;
+            newProjectClosureReportModel.OutstandingItems = new List<ProjectClosureReportModel.OutstandingItem>();
+            for (int i = 0; i < outstandingItemsCount - 1; i++)
+            {
+                var item = dataGridViewOutstandingItems.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var action = dataGridViewOutstandingItems.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = dataGridViewOutstandingItems.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.OutstandingItems
+                    .Add(new ProjectClosureReportModel.OutstandingItem(item, action, date));
+            }
+
+            newProjectClosureReportModel.ProjectClosureDescription = txtProjectClosure.Text;
+
+            int deliverablesCount = dataGridViewDeliverables.Rows.Count;
+            newProjectClosureReportModel.Deliverables = new List<ProjectClosureReportModel.Deliverable>();
+            for (int i = 0; i < deliverablesCount - 1; i++)
+            {
+                var deliverable = dataGridViewDeliverables.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var action = dataGridViewDeliverables.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = dataGridViewDeliverables.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.Deliverables
+                    .Add(new ProjectClosureReportModel.Deliverable(deliverable, action, date));
+            }
+
+            int documentationCount = dataGridViewDocumentation.Rows.Count;
+            newProjectClosureReportModel.Documentations = new List<ProjectClosureReportModel.Documentation>();
+            for (int i = 0; i < documentationCount - 1; i++)
+            {
+                var documemt = dataGridViewDocumentation.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var action = dataGridViewDocumentation.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = dataGridViewDocumentation.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.Documentations
+                    .Add(new ProjectClosureReportModel.Documentation(documemt, action, date));
+            }
+
+            int supplierCount = dataGridViewSippliers.Rows.Count;
+            newProjectClosureReportModel.Suppliers = new List<ProjectClosureReportModel.Supplier>();
+            for (int i = 0; i < supplierCount - 1; i++)
+            {
+                var contract = dataGridViewSippliers.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var action = dataGridViewSippliers.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = dataGridViewSippliers.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.Suppliers
+                    .Add(new ProjectClosureReportModel.Supplier(contract, action, date));
+            }
+
+            int resourceCount = dataGridViewResources.Rows.Count;
+            newProjectClosureReportModel.Resources = new List<ProjectClosureReportModel.Resource>();
+            for (int i = 0; i < resourceCount - 1; i++)
+            {
+                var resource = dataGridViewResources.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var action = dataGridViewResources.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var date = dataGridViewResources.Rows[i].Cells[2].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.Resources
+                    .Add(new ProjectClosureReportModel.Resource(resource, action, date));
+            }
+
+            int commiCount = dataGridViewCommunications.Rows.Count;
+            newProjectClosureReportModel.Communications = new List<ProjectClosureReportModel.Communication>();
+            for (int i = 0; i < commiCount - 1; i++)
+            {
+                var communication = dataGridViewCommunications.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var action = dataGridViewCommunications.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var method = dataGridViewCommunications.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dataGridViewCommunications.Rows[i].Cells[3].Value?.ToString() ?? "";
+
+                newProjectClosureReportModel.Communications
+                    .Add(new ProjectClosureReportModel.Communication(communication, action, method, date));
+            }
+
+            newProjectClosureReportModel.ApprovalRole = "...";
+            newProjectClosureReportModel.ApprovalName = txtName.Text;
+            newProjectClosureReportModel.ApprovalDate = txtDate.Text;
+            newProjectClosureReportModel.ApprovalRole = txtSignature.Text;
+
+            List<VersionControl<ProjectClosureReportModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+            if (!versionControl.isEqual(currentProjectClosureReportModel, newProjectClosureReportModel))
+            {
+                VersionControl<ProjectClosureReportModel>.DocumentModel documentModel = new VersionControl<ProjectClosureReportModel>
+                    .DocumentModel(newProjectClosureReportModel, DateTime.Now, VersionControl<ProjectClosureReportModel>.generateID());
+                documentModels.Add(documentModel);
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentProjectClosureReportModel = JsonConvert.DeserializeObject<ProjectClosureReportModel>(JsonConvert.SerializeObject(newProjectClosureReportModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "ProjectClosureReport");
+                MessageBox.Show("Project Closure Form saved successfully", "save", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                MessageBox.Show("No changes was made!", "save", MessageBoxButtons.OK);
+            }
+        }
     }
 }

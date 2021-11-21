@@ -63,6 +63,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
 
             newIssueRegisterModel.IssueEntries = issueEntries;
+            newIssueRegisterModel.IssueRegisterProgress = "DONE";
+            newIssueRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
+
             List<VersionControl<IssueRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentIssueRegisterModel, newIssueRegisterModel))
@@ -117,6 +120,63 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 versionControl.DocumentModels = new List<VersionControl<IssueRegisterModel>.DocumentModel>();
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<IssueRegisterModel.IssueEntry> issueEntries = new List<IssueRegisterModel.IssueEntry>();
+            int issueEntryCount = dataGridViewSolutionRaiseRaised.Rows.Count;
+
+            for (int i = 0; i < issueEntryCount - 1; i++)
+            {
+                IssueRegisterModel.IssueEntry issueEntry = new IssueRegisterModel.IssueEntry();
+                var id = dataGridViewSolutionRaiseRaised.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var dateRaised = dataGridViewSolutionRaiseRaised.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var raisedBy = dataGridViewSolutionRaiseRaised.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var receivedBy = dataGridViewSolutionRaiseRaised.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var description = dataGridViewSolutionRaiseRaised.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var impact = dataGridViewSolutionRaiseRaised.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var priority = dataGridViewSolutionRaiseRaised.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var action = dataGridViewSolutionRaiseRaised.Rows[i].Cells[7].Value?.ToString() ?? "";
+                var owner = dataGridViewSolutionRaiseRaised.Rows[i].Cells[8].Value?.ToString() ?? "";
+                var outcome = dataGridViewSolutionRaiseRaised.Rows[i].Cells[9].Value?.ToString() ?? "";
+                var dateBeingResolved = dataGridViewSolutionRaiseRaised.Rows[i].Cells[10].Value?.ToString() ?? "";
+                var dateResolved = dataGridViewSolutionRaiseRaised.Rows[i].Cells[11].Value?.ToString() ?? "";
+
+                issueEntry.ID = (id);
+                issueEntry.DateRaised = dateRaised;
+                issueEntry.RaisedBy = raisedBy;
+                issueEntry.ReceivedBy = receivedBy;
+                issueEntry.Description = description;
+                issueEntry.Impact = impact;
+                issueEntry.Priority = priority;
+                issueEntry.Action = action;
+                issueEntry.Owner = owner;
+                issueEntry.Outcome = outcome;
+                issueEntry.DateForResolution = dateBeingResolved;
+                issueEntry.DateResolved = dateResolved;
+                issueEntries.Add(issueEntry);
+            }
+
+            newIssueRegisterModel.IssueEntries = issueEntries;
+            newIssueRegisterModel.IssueRegisterProgress = "UNDONE";
+
+            List<VersionControl<IssueRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentIssueRegisterModel, newIssueRegisterModel))
+            {
+                VersionControl<IssueRegisterModel>.DocumentModel documentModel = new VersionControl<IssueRegisterModel>.DocumentModel(newIssueRegisterModel, DateTime.Now, VersionControl<IssueRegisterModel>.generateID());
+
+                documentModels.Add(documentModel);
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentIssueRegisterModel = JsonConvert.DeserializeObject<IssueRegisterModel>(JsonConvert.SerializeObject(newIssueRegisterModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "IssueRegister");
+                MessageBox.Show("Issue Register saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made.", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

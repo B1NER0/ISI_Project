@@ -9,6 +9,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class AcceptanceRegisterModel
     {
         public List<AcceptanceEntry> AcceptanceEntries { get; set; }
+        public string AcceptanceRegisterProgress { get; set; }
+        public string completedDate { get; set; }
         public class AcceptanceEntry
         {
             public int ID { get; set; }

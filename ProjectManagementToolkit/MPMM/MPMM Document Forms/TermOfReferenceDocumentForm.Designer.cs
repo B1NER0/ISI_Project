@@ -144,6 +144,7 @@
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.btnExportWord = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnSaveProgress = new System.Windows.Forms.Button();
             this.tabCtrlTermOfReferenceDocumentForm.SuspendLayout();
             this.tabDocumentControl.SuspendLayout();
             this.tabCtrlDocumentControl.SuspendLayout();
@@ -219,10 +220,10 @@
             // 
             this.tabDocumentControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabDocumentControl.Controls.Add(this.tabCtrlDocumentControl);
-            this.tabDocumentControl.Location = new System.Drawing.Point(4, 23);
+            this.tabDocumentControl.Location = new System.Drawing.Point(4, 25);
             this.tabDocumentControl.Name = "tabDocumentControl";
             this.tabDocumentControl.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDocumentControl.Size = new System.Drawing.Size(1030, 708);
+            this.tabDocumentControl.Size = new System.Drawing.Size(1030, 706);
             this.tabDocumentControl.TabIndex = 0;
             this.tabDocumentControl.Text = "Document Control";
             // 
@@ -240,10 +241,10 @@
             // tabDocumentInformation
             // 
             this.tabDocumentInformation.Controls.Add(this.dgvDocumentInformation);
-            this.tabDocumentInformation.Location = new System.Drawing.Point(4, 23);
+            this.tabDocumentInformation.Location = new System.Drawing.Point(4, 25);
             this.tabDocumentInformation.Name = "tabDocumentInformation";
             this.tabDocumentInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDocumentInformation.Size = new System.Drawing.Size(1016, 659);
+            this.tabDocumentInformation.Size = new System.Drawing.Size(1016, 657);
             this.tabDocumentInformation.TabIndex = 0;
             this.tabDocumentInformation.Text = "Document Information";
             this.tabDocumentInformation.UseVisualStyleBackColor = true;
@@ -277,16 +278,16 @@
             this.dgvDocumentInformation.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDocumentInformation.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDocumentInformation.Size = new System.Drawing.Size(1016, 659);
+            this.dgvDocumentInformation.Size = new System.Drawing.Size(1016, 657);
             this.dgvDocumentInformation.TabIndex = 0;
             // 
             // tabDocumentHistory
             // 
             this.tabDocumentHistory.Controls.Add(this.dgvDocumentHistory);
-            this.tabDocumentHistory.Location = new System.Drawing.Point(4, 23);
+            this.tabDocumentHistory.Location = new System.Drawing.Point(4, 25);
             this.tabDocumentHistory.Name = "tabDocumentHistory";
             this.tabDocumentHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDocumentHistory.Size = new System.Drawing.Size(1016, 659);
+            this.tabDocumentHistory.Size = new System.Drawing.Size(1016, 657);
             this.tabDocumentHistory.TabIndex = 1;
             this.tabDocumentHistory.Text = "Document History";
             this.tabDocumentHistory.UseVisualStyleBackColor = true;
@@ -320,15 +321,15 @@
             this.dgvDocumentHistory.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDocumentHistory.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvDocumentHistory.Size = new System.Drawing.Size(1013, 654);
+            this.dgvDocumentHistory.Size = new System.Drawing.Size(1013, 652);
             this.dgvDocumentHistory.TabIndex = 1;
             // 
             // tabDocumentApprovals
             // 
             this.tabDocumentApprovals.Controls.Add(this.dgvDocumentApprovals);
-            this.tabDocumentApprovals.Location = new System.Drawing.Point(4, 23);
+            this.tabDocumentApprovals.Location = new System.Drawing.Point(4, 25);
             this.tabDocumentApprovals.Name = "tabDocumentApprovals";
-            this.tabDocumentApprovals.Size = new System.Drawing.Size(1016, 659);
+            this.tabDocumentApprovals.Size = new System.Drawing.Size(1016, 657);
             this.tabDocumentApprovals.TabIndex = 2;
             this.tabDocumentApprovals.Text = "Document Aprovals";
             this.tabDocumentApprovals.UseVisualStyleBackColor = true;
@@ -362,17 +363,17 @@
             this.dgvDocumentApprovals.RowHeadersWidth = 51;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDocumentApprovals.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDocumentApprovals.Size = new System.Drawing.Size(1013, 657);
+            this.dgvDocumentApprovals.Size = new System.Drawing.Size(1013, 655);
             this.dgvDocumentApprovals.TabIndex = 2;
             // 
             // tabExecutiveSummary
             // 
             this.tabExecutiveSummary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabExecutiveSummary.Controls.Add(this.txtExecutiveSummary);
-            this.tabExecutiveSummary.Location = new System.Drawing.Point(4, 23);
+            this.tabExecutiveSummary.Location = new System.Drawing.Point(4, 25);
             this.tabExecutiveSummary.Name = "tabExecutiveSummary";
             this.tabExecutiveSummary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExecutiveSummary.Size = new System.Drawing.Size(1030, 708);
+            this.tabExecutiveSummary.Size = new System.Drawing.Size(1030, 706);
             this.tabExecutiveSummary.TabIndex = 1;
             this.tabExecutiveSummary.Text = "Executive Summary";
             // 
@@ -388,10 +389,10 @@
             // 
             this.tabProjectDefinition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabProjectDefinition.Controls.Add(this.tabControl3);
-            this.tabProjectDefinition.Location = new System.Drawing.Point(4, 23);
+            this.tabProjectDefinition.Location = new System.Drawing.Point(4, 25);
             this.tabProjectDefinition.Name = "tabProjectDefinition";
             this.tabProjectDefinition.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProjectDefinition.Size = new System.Drawing.Size(1030, 708);
+            this.tabProjectDefinition.Size = new System.Drawing.Size(1030, 706);
             this.tabProjectDefinition.TabIndex = 2;
             this.tabProjectDefinition.Text = "Project Definition";
             // 
@@ -411,9 +412,9 @@
             // tabProjectDefinition2
             // 
             this.tabProjectDefinition2.Controls.Add(this.txtProjectDefinition);
-            this.tabProjectDefinition2.Location = new System.Drawing.Point(4, 23);
+            this.tabProjectDefinition2.Location = new System.Drawing.Point(4, 25);
             this.tabProjectDefinition2.Name = "tabProjectDefinition2";
-            this.tabProjectDefinition2.Size = new System.Drawing.Size(1019, 673);
+            this.tabProjectDefinition2.Size = new System.Drawing.Size(1019, 671);
             this.tabProjectDefinition2.TabIndex = 2;
             this.tabProjectDefinition2.Text = "Project Definition";
             this.tabProjectDefinition2.UseVisualStyleBackColor = true;
@@ -430,10 +431,10 @@
             // tabVision
             // 
             this.tabVision.Controls.Add(this.txtVision);
-            this.tabVision.Location = new System.Drawing.Point(4, 23);
+            this.tabVision.Location = new System.Drawing.Point(4, 25);
             this.tabVision.Name = "tabVision";
             this.tabVision.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVision.Size = new System.Drawing.Size(1019, 673);
+            this.tabVision.Size = new System.Drawing.Size(1019, 671);
             this.tabVision.TabIndex = 0;
             this.tabVision.Text = "Vision";
             this.tabVision.UseVisualStyleBackColor = true;
@@ -449,10 +450,10 @@
             // tabObjectives
             // 
             this.tabObjectives.Controls.Add(this.txtObjectives);
-            this.tabObjectives.Location = new System.Drawing.Point(4, 23);
+            this.tabObjectives.Location = new System.Drawing.Point(4, 25);
             this.tabObjectives.Name = "tabObjectives";
             this.tabObjectives.Padding = new System.Windows.Forms.Padding(3);
-            this.tabObjectives.Size = new System.Drawing.Size(1019, 673);
+            this.tabObjectives.Size = new System.Drawing.Size(1019, 671);
             this.tabObjectives.TabIndex = 1;
             this.tabObjectives.Text = "Objectives";
             this.tabObjectives.UseVisualStyleBackColor = true;
@@ -468,9 +469,9 @@
             // tabScope
             // 
             this.tabScope.Controls.Add(this.txtScope);
-            this.tabScope.Location = new System.Drawing.Point(4, 23);
+            this.tabScope.Location = new System.Drawing.Point(4, 25);
             this.tabScope.Name = "tabScope";
-            this.tabScope.Size = new System.Drawing.Size(1019, 673);
+            this.tabScope.Size = new System.Drawing.Size(1019, 671);
             this.tabScope.TabIndex = 3;
             this.tabScope.Text = "Scope";
             this.tabScope.UseVisualStyleBackColor = true;
@@ -486,9 +487,9 @@
             // tabDeliverables
             // 
             this.tabDeliverables.Controls.Add(this.dgvDeliverables);
-            this.tabDeliverables.Location = new System.Drawing.Point(4, 23);
+            this.tabDeliverables.Location = new System.Drawing.Point(4, 25);
             this.tabDeliverables.Name = "tabDeliverables";
-            this.tabDeliverables.Size = new System.Drawing.Size(1019, 673);
+            this.tabDeliverables.Size = new System.Drawing.Size(1019, 671);
             this.tabDeliverables.TabIndex = 4;
             this.tabDeliverables.Text = "Deliverables";
             this.tabDeliverables.UseVisualStyleBackColor = true;
@@ -522,7 +523,7 @@
             this.dgvDeliverables.RowHeadersWidth = 51;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDeliverables.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvDeliverables.Size = new System.Drawing.Size(1016, 671);
+            this.dgvDeliverables.Size = new System.Drawing.Size(1016, 669);
             this.dgvDeliverables.TabIndex = 45;
             this.dgvDeliverables.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -532,10 +533,10 @@
             this.tabProjectOrganization.AutoScroll = true;
             this.tabProjectOrganization.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabProjectOrganization.Controls.Add(this.tabControl4);
-            this.tabProjectOrganization.Location = new System.Drawing.Point(4, 23);
+            this.tabProjectOrganization.Location = new System.Drawing.Point(4, 25);
             this.tabProjectOrganization.Name = "tabProjectOrganization";
             this.tabProjectOrganization.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProjectOrganization.Size = new System.Drawing.Size(1030, 708);
+            this.tabProjectOrganization.Size = new System.Drawing.Size(1030, 706);
             this.tabProjectOrganization.TabIndex = 3;
             this.tabProjectOrganization.Text = "Project Organization";
             // 
@@ -555,10 +556,10 @@
             // tabCustomers
             // 
             this.tabCustomers.Controls.Add(this.dgvCustomers);
-            this.tabCustomers.Location = new System.Drawing.Point(4, 23);
+            this.tabCustomers.Location = new System.Drawing.Point(4, 25);
             this.tabCustomers.Name = "tabCustomers";
             this.tabCustomers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomers.Size = new System.Drawing.Size(1019, 653);
+            this.tabCustomers.Size = new System.Drawing.Size(1019, 651);
             this.tabCustomers.TabIndex = 0;
             this.tabCustomers.Text = "Customers";
             this.tabCustomers.UseVisualStyleBackColor = true;
@@ -592,16 +593,16 @@
             this.dgvCustomers.RowHeadersWidth = 51;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvCustomers.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvCustomers.Size = new System.Drawing.Size(1018, 651);
+            this.dgvCustomers.Size = new System.Drawing.Size(1018, 649);
             this.dgvCustomers.TabIndex = 48;
             // 
             // tabStakeholders
             // 
             this.tabStakeholders.Controls.Add(this.dgvStakeholders);
-            this.tabStakeholders.Location = new System.Drawing.Point(4, 23);
+            this.tabStakeholders.Location = new System.Drawing.Point(4, 25);
             this.tabStakeholders.Name = "tabStakeholders";
             this.tabStakeholders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStakeholders.Size = new System.Drawing.Size(1019, 653);
+            this.tabStakeholders.Size = new System.Drawing.Size(1019, 651);
             this.tabStakeholders.TabIndex = 1;
             this.tabStakeholders.Text = "Stakeholders";
             this.tabStakeholders.UseVisualStyleBackColor = true;
@@ -635,15 +636,15 @@
             this.dgvStakeholders.RowHeadersWidth = 51;
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvStakeholders.RowsDefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvStakeholders.Size = new System.Drawing.Size(1016, 652);
+            this.dgvStakeholders.Size = new System.Drawing.Size(1016, 650);
             this.dgvStakeholders.TabIndex = 46;
             // 
             // tabRoles
             // 
             this.tabRoles.Controls.Add(this.dgvRoles);
-            this.tabRoles.Location = new System.Drawing.Point(4, 23);
+            this.tabRoles.Location = new System.Drawing.Point(4, 25);
             this.tabRoles.Name = "tabRoles";
-            this.tabRoles.Size = new System.Drawing.Size(1019, 653);
+            this.tabRoles.Size = new System.Drawing.Size(1019, 651);
             this.tabRoles.TabIndex = 2;
             this.tabRoles.Text = "Roles";
             this.tabRoles.UseVisualStyleBackColor = true;
@@ -677,15 +678,15 @@
             this.dgvRoles.RowHeadersWidth = 51;
             dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRoles.RowsDefaultCellStyle = dataGridViewCellStyle21;
-            this.dgvRoles.Size = new System.Drawing.Size(1016, 651);
+            this.dgvRoles.Size = new System.Drawing.Size(1016, 649);
             this.dgvRoles.TabIndex = 47;
             // 
             // tabResponsibilities
             // 
             this.tabResponsibilities.Controls.Add(this.txtResponsibilities);
-            this.tabResponsibilities.Location = new System.Drawing.Point(4, 23);
+            this.tabResponsibilities.Location = new System.Drawing.Point(4, 25);
             this.tabResponsibilities.Name = "tabResponsibilities";
-            this.tabResponsibilities.Size = new System.Drawing.Size(1019, 653);
+            this.tabResponsibilities.Size = new System.Drawing.Size(1019, 651);
             this.tabResponsibilities.TabIndex = 3;
             this.tabResponsibilities.Text = "Responsibilities";
             this.tabResponsibilities.UseVisualStyleBackColor = true;
@@ -701,9 +702,9 @@
             // tabStructure
             // 
             this.tabStructure.Controls.Add(this.txtStructure);
-            this.tabStructure.Location = new System.Drawing.Point(4, 23);
+            this.tabStructure.Location = new System.Drawing.Point(4, 25);
             this.tabStructure.Name = "tabStructure";
-            this.tabStructure.Size = new System.Drawing.Size(1019, 653);
+            this.tabStructure.Size = new System.Drawing.Size(1019, 651);
             this.tabStructure.TabIndex = 4;
             this.tabStructure.Text = "Structure";
             this.tabStructure.UseVisualStyleBackColor = true;
@@ -721,10 +722,10 @@
             this.tabImplementationPlan.AutoScroll = true;
             this.tabImplementationPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabImplementationPlan.Controls.Add(this.tabCtrlImplementationPlan);
-            this.tabImplementationPlan.Location = new System.Drawing.Point(4, 23);
+            this.tabImplementationPlan.Location = new System.Drawing.Point(4, 25);
             this.tabImplementationPlan.Name = "tabImplementationPlan";
             this.tabImplementationPlan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabImplementationPlan.Size = new System.Drawing.Size(1030, 708);
+            this.tabImplementationPlan.Size = new System.Drawing.Size(1030, 706);
             this.tabImplementationPlan.TabIndex = 5;
             this.tabImplementationPlan.Text = "Implementation Plan";
             // 
@@ -747,10 +748,10 @@
             // tabApproach
             // 
             this.tabApproach.Controls.Add(this.dgvApproach);
-            this.tabApproach.Location = new System.Drawing.Point(4, 23);
+            this.tabApproach.Location = new System.Drawing.Point(4, 25);
             this.tabApproach.Name = "tabApproach";
             this.tabApproach.Padding = new System.Windows.Forms.Padding(3);
-            this.tabApproach.Size = new System.Drawing.Size(1019, 652);
+            this.tabApproach.Size = new System.Drawing.Size(1019, 650);
             this.tabApproach.TabIndex = 0;
             this.tabApproach.Text = "Approach";
             this.tabApproach.UseVisualStyleBackColor = true;
@@ -784,16 +785,16 @@
             this.dgvApproach.RowHeadersWidth = 51;
             dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvApproach.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.dgvApproach.Size = new System.Drawing.Size(1017, 652);
+            this.dgvApproach.Size = new System.Drawing.Size(1017, 650);
             this.dgvApproach.TabIndex = 47;
             // 
             // tabSchedule
             // 
             this.tabSchedule.Controls.Add(this.txtSchedule);
-            this.tabSchedule.Location = new System.Drawing.Point(4, 23);
+            this.tabSchedule.Location = new System.Drawing.Point(4, 25);
             this.tabSchedule.Name = "tabSchedule";
             this.tabSchedule.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSchedule.Size = new System.Drawing.Size(1019, 652);
+            this.tabSchedule.Size = new System.Drawing.Size(1019, 650);
             this.tabSchedule.TabIndex = 1;
             this.tabSchedule.Text = "Schedule";
             this.tabSchedule.UseVisualStyleBackColor = true;
@@ -809,9 +810,9 @@
             // tabMilestones
             // 
             this.tabMilestones.Controls.Add(this.dgvMilestones);
-            this.tabMilestones.Location = new System.Drawing.Point(4, 23);
+            this.tabMilestones.Location = new System.Drawing.Point(4, 25);
             this.tabMilestones.Name = "tabMilestones";
-            this.tabMilestones.Size = new System.Drawing.Size(1019, 652);
+            this.tabMilestones.Size = new System.Drawing.Size(1019, 650);
             this.tabMilestones.TabIndex = 2;
             this.tabMilestones.Text = "Milestones";
             this.tabMilestones.UseVisualStyleBackColor = true;
@@ -845,15 +846,15 @@
             this.dgvMilestones.RowHeadersWidth = 51;
             dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvMilestones.RowsDefaultCellStyle = dataGridViewCellStyle27;
-            this.dgvMilestones.Size = new System.Drawing.Size(1016, 650);
+            this.dgvMilestones.Size = new System.Drawing.Size(1016, 648);
             this.dgvMilestones.TabIndex = 49;
             // 
             // tabDependencies
             // 
             this.tabDependencies.Controls.Add(this.dgvDependencies);
-            this.tabDependencies.Location = new System.Drawing.Point(4, 23);
+            this.tabDependencies.Location = new System.Drawing.Point(4, 25);
             this.tabDependencies.Name = "tabDependencies";
-            this.tabDependencies.Size = new System.Drawing.Size(1019, 652);
+            this.tabDependencies.Size = new System.Drawing.Size(1019, 650);
             this.tabDependencies.TabIndex = 3;
             this.tabDependencies.Text = "Dependencies";
             this.tabDependencies.UseVisualStyleBackColor = true;
@@ -887,15 +888,15 @@
             this.dgvDependencies.RowHeadersWidth = 51;
             dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDependencies.RowsDefaultCellStyle = dataGridViewCellStyle30;
-            this.dgvDependencies.Size = new System.Drawing.Size(1016, 650);
+            this.dgvDependencies.Size = new System.Drawing.Size(1016, 648);
             this.dgvDependencies.TabIndex = 50;
             // 
             // tabResourcePlan
             // 
             this.tabResourcePlan.Controls.Add(this.dgvResourcePlan);
-            this.tabResourcePlan.Location = new System.Drawing.Point(4, 23);
+            this.tabResourcePlan.Location = new System.Drawing.Point(4, 25);
             this.tabResourcePlan.Name = "tabResourcePlan";
-            this.tabResourcePlan.Size = new System.Drawing.Size(1019, 652);
+            this.tabResourcePlan.Size = new System.Drawing.Size(1019, 650);
             this.tabResourcePlan.TabIndex = 4;
             this.tabResourcePlan.Text = "Resource Plan";
             this.tabResourcePlan.UseVisualStyleBackColor = true;
@@ -929,15 +930,15 @@
             this.dgvResourcePlan.RowHeadersWidth = 51;
             dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvResourcePlan.RowsDefaultCellStyle = dataGridViewCellStyle33;
-            this.dgvResourcePlan.Size = new System.Drawing.Size(1016, 650);
+            this.dgvResourcePlan.Size = new System.Drawing.Size(1016, 648);
             this.dgvResourcePlan.TabIndex = 51;
             // 
             // tabFinancialPlan
             // 
             this.tabFinancialPlan.Controls.Add(this.dgvFinancialPlan);
-            this.tabFinancialPlan.Location = new System.Drawing.Point(4, 23);
+            this.tabFinancialPlan.Location = new System.Drawing.Point(4, 25);
             this.tabFinancialPlan.Name = "tabFinancialPlan";
-            this.tabFinancialPlan.Size = new System.Drawing.Size(1019, 652);
+            this.tabFinancialPlan.Size = new System.Drawing.Size(1019, 650);
             this.tabFinancialPlan.TabIndex = 5;
             this.tabFinancialPlan.Text = "Financial Plan";
             this.tabFinancialPlan.UseVisualStyleBackColor = true;
@@ -971,15 +972,15 @@
             this.dgvFinancialPlan.RowHeadersWidth = 51;
             dataGridViewCellStyle36.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvFinancialPlan.RowsDefaultCellStyle = dataGridViewCellStyle36;
-            this.dgvFinancialPlan.Size = new System.Drawing.Size(1016, 650);
+            this.dgvFinancialPlan.Size = new System.Drawing.Size(1016, 648);
             this.dgvFinancialPlan.TabIndex = 52;
             // 
             // tabQualityPlan
             // 
             this.tabQualityPlan.Controls.Add(this.dgvQualityPlan);
-            this.tabQualityPlan.Location = new System.Drawing.Point(4, 23);
+            this.tabQualityPlan.Location = new System.Drawing.Point(4, 25);
             this.tabQualityPlan.Name = "tabQualityPlan";
-            this.tabQualityPlan.Size = new System.Drawing.Size(1019, 652);
+            this.tabQualityPlan.Size = new System.Drawing.Size(1019, 650);
             this.tabQualityPlan.TabIndex = 6;
             this.tabQualityPlan.Text = "Quality Plan";
             this.tabQualityPlan.UseVisualStyleBackColor = true;
@@ -1013,15 +1014,15 @@
             this.dgvQualityPlan.RowHeadersWidth = 51;
             dataGridViewCellStyle39.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvQualityPlan.RowsDefaultCellStyle = dataGridViewCellStyle39;
-            this.dgvQualityPlan.Size = new System.Drawing.Size(1016, 650);
+            this.dgvQualityPlan.Size = new System.Drawing.Size(1016, 648);
             this.dgvQualityPlan.TabIndex = 53;
             // 
             // tabCompletionCriteria
             // 
             this.tabCompletionCriteria.Controls.Add(this.dgvCompletionCriteria);
-            this.tabCompletionCriteria.Location = new System.Drawing.Point(4, 23);
+            this.tabCompletionCriteria.Location = new System.Drawing.Point(4, 25);
             this.tabCompletionCriteria.Name = "tabCompletionCriteria";
-            this.tabCompletionCriteria.Size = new System.Drawing.Size(1019, 652);
+            this.tabCompletionCriteria.Size = new System.Drawing.Size(1019, 650);
             this.tabCompletionCriteria.TabIndex = 7;
             this.tabCompletionCriteria.Text = "Completion Criteria";
             this.tabCompletionCriteria.UseVisualStyleBackColor = true;
@@ -1055,7 +1056,7 @@
             this.dgvCompletionCriteria.RowHeadersWidth = 51;
             dataGridViewCellStyle42.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvCompletionCriteria.RowsDefaultCellStyle = dataGridViewCellStyle42;
-            this.dgvCompletionCriteria.Size = new System.Drawing.Size(1016, 650);
+            this.dgvCompletionCriteria.Size = new System.Drawing.Size(1016, 648);
             this.dgvCompletionCriteria.TabIndex = 48;
             // 
             // tabProjectConsiderations
@@ -1063,9 +1064,9 @@
             this.tabProjectConsiderations.AutoScroll = true;
             this.tabProjectConsiderations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.tabProjectConsiderations.Controls.Add(this.tabCtrlProjectConsiderations);
-            this.tabProjectConsiderations.Location = new System.Drawing.Point(4, 23);
+            this.tabProjectConsiderations.Location = new System.Drawing.Point(4, 25);
             this.tabProjectConsiderations.Name = "tabProjectConsiderations";
-            this.tabProjectConsiderations.Size = new System.Drawing.Size(1030, 708);
+            this.tabProjectConsiderations.Size = new System.Drawing.Size(1030, 706);
             this.tabProjectConsiderations.TabIndex = 6;
             this.tabProjectConsiderations.Text = "Project Considerations";
             // 
@@ -1084,10 +1085,10 @@
             // tabRisks
             // 
             this.tabRisks.Controls.Add(this.dgvRisks);
-            this.tabRisks.Location = new System.Drawing.Point(4, 23);
+            this.tabRisks.Location = new System.Drawing.Point(4, 25);
             this.tabRisks.Name = "tabRisks";
             this.tabRisks.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRisks.Size = new System.Drawing.Size(1016, 673);
+            this.tabRisks.Size = new System.Drawing.Size(1016, 671);
             this.tabRisks.TabIndex = 0;
             this.tabRisks.Text = "Risks";
             this.tabRisks.UseVisualStyleBackColor = true;
@@ -1121,16 +1122,16 @@
             this.dgvRisks.RowHeadersWidth = 51;
             dataGridViewCellStyle45.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRisks.RowsDefaultCellStyle = dataGridViewCellStyle45;
-            this.dgvRisks.Size = new System.Drawing.Size(1010, 667);
+            this.dgvRisks.Size = new System.Drawing.Size(1010, 665);
             this.dgvRisks.TabIndex = 48;
             // 
             // tabIssues
             // 
             this.tabIssues.Controls.Add(this.dgvIssues);
-            this.tabIssues.Location = new System.Drawing.Point(4, 23);
+            this.tabIssues.Location = new System.Drawing.Point(4, 25);
             this.tabIssues.Name = "tabIssues";
             this.tabIssues.Padding = new System.Windows.Forms.Padding(3);
-            this.tabIssues.Size = new System.Drawing.Size(1016, 673);
+            this.tabIssues.Size = new System.Drawing.Size(1016, 671);
             this.tabIssues.TabIndex = 1;
             this.tabIssues.Text = "Issues";
             this.tabIssues.UseVisualStyleBackColor = true;
@@ -1164,15 +1165,15 @@
             this.dgvIssues.RowHeadersWidth = 51;
             dataGridViewCellStyle48.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvIssues.RowsDefaultCellStyle = dataGridViewCellStyle48;
-            this.dgvIssues.Size = new System.Drawing.Size(1016, 674);
+            this.dgvIssues.Size = new System.Drawing.Size(1016, 672);
             this.dgvIssues.TabIndex = 49;
             // 
             // tabAssumptions
             // 
             this.tabAssumptions.Controls.Add(this.txtAssumptions);
-            this.tabAssumptions.Location = new System.Drawing.Point(4, 23);
+            this.tabAssumptions.Location = new System.Drawing.Point(4, 25);
             this.tabAssumptions.Name = "tabAssumptions";
-            this.tabAssumptions.Size = new System.Drawing.Size(1016, 673);
+            this.tabAssumptions.Size = new System.Drawing.Size(1016, 671);
             this.tabAssumptions.TabIndex = 2;
             this.tabAssumptions.Text = "Assumptions";
             this.tabAssumptions.UseVisualStyleBackColor = true;
@@ -1188,9 +1189,9 @@
             // tabConstraints
             // 
             this.tabConstraints.Controls.Add(this.txtConstraints);
-            this.tabConstraints.Location = new System.Drawing.Point(4, 23);
+            this.tabConstraints.Location = new System.Drawing.Point(4, 25);
             this.tabConstraints.Name = "tabConstraints";
-            this.tabConstraints.Size = new System.Drawing.Size(1016, 673);
+            this.tabConstraints.Size = new System.Drawing.Size(1016, 671);
             this.tabConstraints.TabIndex = 3;
             this.tabConstraints.Text = "Constraints";
             this.tabConstraints.UseVisualStyleBackColor = true;
@@ -1206,9 +1207,9 @@
             // tabAppendix
             // 
             this.tabAppendix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.tabAppendix.Location = new System.Drawing.Point(4, 23);
+            this.tabAppendix.Location = new System.Drawing.Point(4, 25);
             this.tabAppendix.Name = "tabAppendix";
-            this.tabAppendix.Size = new System.Drawing.Size(1030, 708);
+            this.tabAppendix.Size = new System.Drawing.Size(1030, 706);
             this.tabAppendix.TabIndex = 7;
             this.tabAppendix.Text = "Appendix";
             this.tabAppendix.Click += new System.EventHandler(this.tabAppendix_Click);
@@ -1220,7 +1221,7 @@
             this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(24, 9);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(125, 13);
+            this.label27.Size = new System.Drawing.Size(167, 17);
             this.label27.TabIndex = 13;
             this.label27.Text = "Terms of Reference For: ";
             // 
@@ -1231,7 +1232,7 @@
             this.txtProjectName.ForeColor = System.Drawing.Color.Black;
             this.txtProjectName.Location = new System.Drawing.Point(196, 6);
             this.txtProjectName.Name = "txtProjectName";
-            this.txtProjectName.Size = new System.Drawing.Size(100, 20);
+            this.txtProjectName.Size = new System.Drawing.Size(100, 23);
             this.txtProjectName.TabIndex = 14;
             this.txtProjectName.Text = "Project Name";
             // 
@@ -1259,16 +1260,31 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 25);
             this.btnSave.TabIndex = 15;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Complete";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnSaveProgress
+            // 
+            this.btnSaveProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            this.btnSaveProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProgress.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProgress.Location = new System.Drawing.Point(625, 11);
+            this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveProgress.Name = "btnSaveProgress";
+            this.btnSaveProgress.Size = new System.Drawing.Size(185, 25);
+            this.btnSaveProgress.TabIndex = 17;
+            this.btnSaveProgress.Text = "Save Progress";
+            this.btnSaveProgress.UseVisualStyleBackColor = false;
+            this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
+            // 
             // TermOfReferenceDocumentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1062, 749);
+            this.Controls.Add(this.btnSaveProgress);
             this.Controls.Add(this.btnExportWord);
             this.Controls.Add(this.txtProjectName);
             this.Controls.Add(this.btnSave);
@@ -1416,5 +1432,6 @@
         private System.Windows.Forms.TabPage tabConstraints;
         private System.Windows.Forms.Button btnExportWord;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSaveProgress;
     }
 }

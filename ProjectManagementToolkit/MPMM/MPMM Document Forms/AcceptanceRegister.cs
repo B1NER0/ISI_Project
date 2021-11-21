@@ -112,6 +112,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
 
             newAcceptanceRegisterModel.AcceptanceEntries = acceptanceEntries;
+            newAcceptanceRegisterModel.AcceptanceRegisterProgress = "DONE";
+            newAcceptanceRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
             List<VersionControl<AcceptanceRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentAcceptanceRegisterModel, newAcceptanceRegisterModel))
@@ -133,6 +135,62 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             ExcelAppend.ExportNotQualityRegister((int)ExcelAppend.DocumentType.AcceptanceRegister, dgvAcceptanceRegister);
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            List<AcceptanceRegisterModel.AcceptanceEntry> acceptanceEntries = new List<AcceptanceRegisterModel.AcceptanceEntry>();
+            int AcceptanceEntryCount = dgvAcceptanceRegister.Rows.Count;
+
+            for (int i = 0; i < AcceptanceEntryCount - 1; i++)
+            {
+                AcceptanceRegisterModel.AcceptanceEntry acceptanceEntry = new AcceptanceRegisterModel.AcceptanceEntry();
+                var id = dgvAcceptanceRegister.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var deliverableName = dgvAcceptanceRegister.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var deliverableDescription = dgvAcceptanceRegister.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var deliverableStatus = dgvAcceptanceRegister.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var acceptanceCriteria = dgvAcceptanceRegister.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var acceptanceStandards = dgvAcceptanceRegister.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var acceptanceTestMethod = dgvAcceptanceRegister.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var acceptanceTestReviewer = dgvAcceptanceRegister.Rows[i].Cells[7].Value?.ToString() ?? "";
+                var acceptanceTestDate = dgvAcceptanceRegister.Rows[i].Cells[8].Value?.ToString() ?? "";
+                var acceptanceResults = dgvAcceptanceRegister.Rows[i].Cells[9].Value?.ToString() ?? "";
+                var acceptanceResultsStatus = dgvAcceptanceRegister.Rows[i].Cells[10].Value?.ToString() ?? "";
+
+
+                acceptanceEntry.ID = int.Parse(id);
+                acceptanceEntry.DeliverableName = deliverableName;
+                acceptanceEntry.DeliverableDescription = deliverableDescription;
+                acceptanceEntry.DeliverableStatus = deliverableStatus;
+                acceptanceEntry.AcceptanceCriteria = acceptanceCriteria;
+                acceptanceEntry.AcceptanceStandards = acceptanceStandards;
+                acceptanceEntry.AcceptanceTestMethod = acceptanceTestMethod;
+                acceptanceEntry.AcceptanceTestReviewer = acceptanceTestReviewer;
+                acceptanceEntry.AcceptanceTestDate = acceptanceTestDate;
+                acceptanceEntry.AcceptanceResults = acceptanceResults;
+                acceptanceEntry.AcceptanceResultsStatus = acceptanceResultsStatus;
+                acceptanceEntries.Add(acceptanceEntry);
+
+            }
+
+            newAcceptanceRegisterModel.AcceptanceEntries = acceptanceEntries;
+            newAcceptanceRegisterModel.AcceptanceRegisterProgress = "UNDONE";
+            List<VersionControl<AcceptanceRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentAcceptanceRegisterModel, newAcceptanceRegisterModel))
+            {
+                VersionControl<AcceptanceRegisterModel>.DocumentModel documentModel = new VersionControl<AcceptanceRegisterModel>.DocumentModel(newAcceptanceRegisterModel, DateTime.Now, VersionControl<AcceptanceRegisterModel>.generateID());
+
+                documentModels.Add(documentModel);
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentAcceptanceRegisterModel = JsonConvert.DeserializeObject<AcceptanceRegisterModel>(JsonConvert.SerializeObject(newAcceptanceRegisterModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "AcceptanceRegister");
+                MessageBox.Show("Acceptance Register saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made.", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

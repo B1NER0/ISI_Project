@@ -65,6 +65,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newFinancialPlanModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
             newFinancialPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newFinancialPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newFinancialPlanModel.FinancialPlanProgress = "DONE";
+            newFinancialPlanModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<FinancialPlanModel.DocumentHistory> documentHistories = new List<FinancialPlanModel.DocumentHistory>();
 
@@ -981,6 +983,193 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void tabPageFinancialExpenses_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newFinancialPlanModel.schedule = new FinancialPlanModel.DocumentSchedule();
+            newFinancialPlanModel.schedule.expenses = new List<FinancialPlanModel.DocumentSchedule.Expense>();
+
+            newFinancialPlanModel.documentID = dataGridViewDocumentInformation.Rows[0].Cells[1].Value.ToString();
+            newFinancialPlanModel.documentOwner = dataGridViewDocumentInformation.Rows[1].Cells[1].Value.ToString();
+            newFinancialPlanModel.issueDate = dataGridViewDocumentInformation.Rows[2].Cells[1].Value.ToString();
+            newFinancialPlanModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
+            newFinancialPlanModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
+            newFinancialPlanModel.FinancialPlanProgress = "UNDONE";
+
+            List<FinancialPlanModel.DocumentHistory> documentHistories = new List<FinancialPlanModel.DocumentHistory>();
+
+            int versionRowCount = dataGridViewDocumentHistory.Rows.Count - 1;
+
+            for (int i = 0; i < versionRowCount; i++)
+            {
+                FinancialPlanModel.DocumentHistory documentHistory = new FinancialPlanModel.DocumentHistory();
+                var tempVersion = dataGridViewDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempIssueDate = dataGridViewDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistory.version = tempVersion;
+                documentHistory.issueDate = tempIssueDate;
+                documentHistory.changes = tempChanges;
+                documentHistories.Add(documentHistory);
+            }
+
+            newFinancialPlanModel.documentHistories = documentHistories;
+
+            List<FinancialPlanModel.DocumentApprovals> documentApprovals = new List<FinancialPlanModel.DocumentApprovals>();
+
+            int approvalRowsCount = dataGridViewDocumentApprovals.Rows.Count - 1;
+
+            for (int i = 0; i < approvalRowsCount; i++)
+            {
+                FinancialPlanModel.DocumentApprovals documentApproval = new FinancialPlanModel.DocumentApprovals();
+                var tempRole = dataGridViewDocumentApprovals.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempName = dataGridViewDocumentApprovals.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var tempChanges = dataGridViewDocumentApprovals.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var tempDate = dataGridViewDocumentApprovals.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.role = tempRole;
+                documentApproval.name = tempName;
+                documentApproval.changes = tempChanges;
+                documentApproval.date = tempDate;
+
+                documentApprovals.Add(documentApproval);
+            }
+            newFinancialPlanModel.documentApprovals = documentApprovals;
+
+            List<FinancialPlanModel.DocumentLabor> documentLabors = new List<FinancialPlanModel.DocumentLabor>();
+
+            int labourCount = dataGridViewLabour.Rows.Count - 1;
+
+            for (int i = 0; i < labourCount; i++)
+            {
+                FinancialPlanModel.DocumentLabor documentLabor = new FinancialPlanModel.DocumentLabor();
+                var tempRole = dataGridViewLabour.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempUnitCost = dataGridViewLabour.Rows[i].Cells[1].Value?.ToString() ?? "";
+                documentLabor.role = tempRole;
+                documentLabor.unitCost = tempUnitCost;
+
+                documentLabors.Add(documentLabor);
+            }
+            newFinancialPlanModel.documentLabors = documentLabors;
+
+            List<FinancialPlanModel.DocumentEquipment> documentEquipments = new List<FinancialPlanModel.DocumentEquipment>();
+
+            int equipmentCount = dataGridViewEquipment.Rows.Count - 1;
+
+            for (int i = 0; i < equipmentCount; i++)
+            {
+                FinancialPlanModel.DocumentEquipment documentEquipment = new FinancialPlanModel.DocumentEquipment();
+                var tempEquipment = dataGridViewEquipment.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempUnitCost = dataGridViewEquipment.Rows[i].Cells[1].Value?.ToString() ?? "";
+                documentEquipment.equipment = tempEquipment;
+                documentEquipment.unitCost = tempUnitCost;
+
+                documentEquipments.Add(documentEquipment);
+            }
+            newFinancialPlanModel.documentEquipments = documentEquipments;
+
+            List<FinancialPlanModel.DocumentMaterial> documentMaterials = new List<FinancialPlanModel.DocumentMaterial>();
+
+            int materialCount = dataGridViewMaterials.Rows.Count - 1;
+
+            for (int i = 0; i < materialCount; i++)
+            {
+                FinancialPlanModel.DocumentMaterial documentMaterial = new FinancialPlanModel.DocumentMaterial();
+                var tempMat = dataGridViewMaterials.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempUnitCost = dataGridViewMaterials.Rows[i].Cells[1].Value?.ToString() ?? "";
+                documentMaterial.material = tempMat;
+                documentMaterial.unitCost = tempUnitCost;
+
+                documentMaterials.Add(documentMaterial);
+            }
+            newFinancialPlanModel.documentMaterials = documentMaterials;
+
+            List<FinancialPlanModel.DocumentSupplier> documentSuppliers = new List<FinancialPlanModel.DocumentSupplier>();
+
+            int supplierCount = dataGridViewSuppliers.Rows.Count - 1;
+
+            for (int i = 0; i < supplierCount; i++)
+            {
+                FinancialPlanModel.DocumentSupplier documentSupplier = new FinancialPlanModel.DocumentSupplier();
+                var tempDeliverable = dataGridViewSuppliers.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempUnitCost = dataGridViewSuppliers.Rows[i].Cells[1].Value?.ToString() ?? "";
+                documentSupplier.deliverableItem = tempDeliverable;
+                documentSupplier.unitCost = tempUnitCost;
+
+                documentSuppliers.Add(documentSupplier);
+            }
+            newFinancialPlanModel.documentSuppliers = documentSuppliers;
+
+            List<FinancialPlanModel.DocumentAdministration> documentAdministrations = new List<FinancialPlanModel.DocumentAdministration>();
+
+            int adminCount = dataGridViewAdmin.Rows.Count - 1;
+
+            for (int i = 0; i < adminCount; i++)
+            {
+                FinancialPlanModel.DocumentAdministration documentAdministration = new FinancialPlanModel.DocumentAdministration();
+                var tempAdminItem = dataGridViewAdmin.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempUnitCost = dataGridViewAdmin.Rows[i].Cells[1].Value?.ToString() ?? "";
+                documentAdministration.administrativeItem = tempAdminItem;
+                documentAdministration.unitCost = tempUnitCost;
+
+                documentAdministrations.Add(documentAdministration);
+            }
+            newFinancialPlanModel.documentAdministrations = documentAdministrations;
+
+            List<FinancialPlanModel.DocumentOther> documentOthers = new List<FinancialPlanModel.DocumentOther>();
+
+            int otherCount = dataGridViewOther.Rows.Count - 1;
+
+            for (int i = 0; i < otherCount; i++)
+            {
+                FinancialPlanModel.DocumentOther documentOther = new FinancialPlanModel.DocumentOther();
+                var tempOther = dataGridViewOther.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var tempUnitCost = dataGridViewOther.Rows[i].Cells[1].Value?.ToString() ?? "";
+                documentOther.otherExpenseItem = tempOther;
+                documentOther.unitCost = tempUnitCost;
+
+                documentOthers.Add(documentOther);
+            }
+            newFinancialPlanModel.documentOthers = documentOthers;
+
+            List<FinancialPlanModel.DocumentSchedule.Expense> expenses = new List<FinancialPlanModel.DocumentSchedule.Expense>();
+
+            int scheduleCount = dataGridView1.Rows.Count - 1;
+
+            for (int i = 0; i < scheduleCount; i++)
+            {
+                FinancialPlanModel.DocumentSchedule.Expense expense = new FinancialPlanModel.DocumentSchedule.Expense();
+                expense.expenseType = dataGridView1.Rows[i].Cells[0].Value?.ToString() ?? "";
+
+                for (int j = 0; j < 12; j++)
+                {
+                    expense.expensePerMonth[j] = dataGridView1.Rows[i].Cells[j + 1].Value?.ToString() ?? "";
+                }
+
+                expenses.Add(expense);
+            }
+            newFinancialPlanModel.schedule.expenses = expenses;
+
+            newFinancialPlanModel.assumptions = txtAssumptions.Text;
+            newFinancialPlanModel.constraints = txtConstraints.Text;
+
+            newFinancialPlanModel.financialActivities = txtActivities.Text;
+            newFinancialPlanModel.financialDocuments = txtDocuments.Text;
+            newFinancialPlanModel.financialRoles = txtRoles.Text;
+
+            List<VersionControl<FinancialPlanModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentFinancialPlanModel, newFinancialPlanModel))
+            {
+                VersionControl<FinancialPlanModel>.DocumentModel documentModel = new VersionControl<FinancialPlanModel>.DocumentModel(newFinancialPlanModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+                versionControl.DocumentModels = documentModels;
+                currentFinancialPlanModel = JsonConvert.DeserializeObject<FinancialPlanModel>(JsonConvert.SerializeObject(newFinancialPlanModel));
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "FinancialPlan");
+                MessageBox.Show("Financial plan saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

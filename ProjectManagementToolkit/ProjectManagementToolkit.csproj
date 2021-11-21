@@ -67,6 +67,7 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -428,14 +429,17 @@
     <Compile Include="MPMM\MPMM Document Models\ChangeManagementProcessModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ChangeRegisterModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ChangeRequestModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\ClosingDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CommunicationRegisterModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CommunicationsManagementProcessModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CommunicationsPlanModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\CostManagementProcessModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\ExecutionDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ExpenseFormModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ExpenseRegister.cs" />
     <Compile Include="MPMM\MPMM Document Models\FeasibilityStudyModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\FinancialPlanModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\InitDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\IssueFormModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\IssueManagementProcessModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\IssueRegisterModel.cs" />
@@ -443,6 +447,7 @@
     <Compile Include="MPMM\MPMM Document Models\PhaseReviewFormExecutionModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\PhaseReviewFormInitiationModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\PhaseReviewPlanningModel.cs" />
+    <Compile Include="MPMM\MPMM Document Models\PlanningDueDateModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\PostImplementationReviewModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ProcurementPlanModel.cs" />
     <Compile Include="MPMM\MPMM Document Models\ProcurementRegisterModel.cs" />
@@ -2150,6 +2155,8 @@
     <None Include="Resources\word.png" />
     <None Include="Resources\image-file-xxl.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MPMM\Images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

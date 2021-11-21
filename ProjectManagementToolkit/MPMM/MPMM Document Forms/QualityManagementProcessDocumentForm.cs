@@ -36,6 +36,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newQualityManagementProcessModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
             newQualityManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newQualityManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newQualityManagementProcessModel.QualityManagementProcessProgress = "DONE";
+            newQualityManagementProcessModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
 
             List<QualityManagementProcessModel.DocumentHistory> documentHistories = new List<QualityManagementProcessModel.DocumentHistory>();
 
@@ -718,6 +720,93 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExportWord_Click_1(object sender, EventArgs e)
         {
             exportToWord();
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            newQualityManagementProcessModel.DocumentID = documentInformation.Rows[0].Cells[1].Value.ToString();
+            newQualityManagementProcessModel.DocumentOwner = documentInformation.Rows[1].Cells[1].Value.ToString();
+            newQualityManagementProcessModel.IssueDate = documentInformation.Rows[2].Cells[1].Value.ToString();
+            newQualityManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
+            newQualityManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
+            newQualityManagementProcessModel.QualityManagementProcessProgress = "UNDONE";
+
+            List<QualityManagementProcessModel.DocumentHistory> documentHistories = new List<QualityManagementProcessModel.DocumentHistory>();
+
+            int versionRowsCount = dgvDocumentHistory.Rows.Count;
+
+            for (int i = 0; i < versionRowsCount - 1; i++)
+            {
+                QualityManagementProcessModel.DocumentHistory documentHistoryModel = new QualityManagementProcessModel.DocumentHistory();
+                var version = dgvDocumentHistory.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var issueDate = dgvDocumentHistory.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var changes = dgvDocumentHistory.Rows[i].Cells[2].Value?.ToString() ?? "";
+                documentHistoryModel.Version = version;
+                documentHistoryModel.IssueDate = issueDate;
+                documentHistoryModel.Changes = changes;
+                documentHistories.Add(documentHistoryModel);
+            }
+            newQualityManagementProcessModel.DocumentHistories = documentHistories;
+
+            List<QualityManagementProcessModel.DocumentApproval> documentApprovalsModel = new List<QualityManagementProcessModel.DocumentApproval>();
+
+            int approvalRowsCount = dgvApproval.Rows.Count;
+
+            for (int i = 0; i < approvalRowsCount - 1; i++)
+            {
+                QualityManagementProcessModel.DocumentApproval documentApproval = new QualityManagementProcessModel.DocumentApproval();
+                var role = dgvApproval.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var name = dgvApproval.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var signature = dgvApproval.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var date = dgvApproval.Rows[i].Cells[3].Value?.ToString() ?? "";
+                documentApproval.Role = role;
+                documentApproval.Name = name;
+                documentApproval.Signature = signature;
+                documentApproval.DateApproved = date;
+
+                documentApprovalsModel.Add(documentApproval);
+            }
+            newQualityManagementProcessModel.DocumentApprovals = documentApprovalsModel;
+
+
+
+            newQualityManagementProcessModel.QualityprocessDescription = txtqualityprocessDescription.Text;
+
+            newQualityManagementProcessModel.QualityprocessOverview = txtqualityprocessOverview.Text;
+
+            newQualityManagementProcessModel.QualityprocessMeasureQualityAchieved = txtqualityprocessMeasureQualityAchieved.Text;
+
+            newQualityManagementProcessModel.QualityprocessEnhanceQualityAchieved = txtqualityprocessEnhanceQualityAchieved.Text;
+
+            newQualityManagementProcessModel.QualitymanagementrolesDescription = txtqualitymanagementrolesDescription.Text;
+
+            newQualityManagementProcessModel.QualitymanagementrolesQualityManager = txtqualitymanagementrolesQualityManager.Text;
+
+            newQualityManagementProcessModel.QualitymanagementrolesProjectManager = txtqualitymanagementrolesProjectManager.Text;
+
+            newQualityManagementProcessModel.QualitymanagementdocumentsDescription = txtqualitymanagementdocumentsDescription.Text;
+
+            newQualityManagementProcessModel.QualitymanagementdocumentsQualityRegister = txtqualitymanagementdocumentsQualityRegister.Text;
+
+            newQualityManagementProcessModel.QualitymanagementdocumentsQualityReviewForm = txtqualitymanagementdocumentsQualityReviewForm.Text;
+
+
+
+            List<VersionControl<QualityManagementProcessModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentQualityManagementProcessModel, newQualityManagementProcessModel))
+            {
+                VersionControl<QualityManagementProcessModel>.DocumentModel documentModel = new VersionControl<QualityManagementProcessModel>.DocumentModel(newQualityManagementProcessModel, DateTime.Now, VersionControl<ProjectModel>.generateID());
+
+                documentModels.Add(documentModel);
+
+                versionControl.DocumentModels = documentModels;
+
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentQualityManagementProcessModel = JsonConvert.DeserializeObject<QualityManagementProcessModel>(JsonConvert.SerializeObject(newQualityManagementProcessModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "QualityManagement");
+                MessageBox.Show("Quality Management Process saved successfully", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }

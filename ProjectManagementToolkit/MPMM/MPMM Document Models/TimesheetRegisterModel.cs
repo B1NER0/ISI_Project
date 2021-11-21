@@ -9,8 +9,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Models
     class TimesheetRegisterModel
     {
         public List<TimesheetEntry> TimeSheetEntries { get; set; }
+        
         public class TimesheetEntry
         {
+            public string TimeSheetRegisterProgress { get; set; }
+            public string completedDate { get; set; }
             public int ActivityID { get; set; }
             public string ActivityDescription { get; set; } = "";
             public string TaskID { get; set; } = "";

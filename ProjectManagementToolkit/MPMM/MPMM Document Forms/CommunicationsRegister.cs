@@ -72,6 +72,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
 
             newCommunicationRegisterModel.CommunicationEntries = CommunicationEntries;
+            newCommunicationRegisterModel.CommunicationsRegisterProgress = "DONE";
+            newCommunicationRegisterModel.completedDate = DateTime.Now.ToString("yyyy/MM/dd");
             List<VersionControl<CommunicationRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentCommunicationRegisterModel, newCommunicationRegisterModel))
@@ -130,6 +132,61 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             ExcelAppend.ExportNotQualityRegister((int)ExcelAppend.DocumentType.CommunicationsRegister, dgvCommunicationsRegister);
+        }
+
+        private void btnSaveProgress_Click(object sender, EventArgs e)
+        {
+            List<CommunicationRegisterModel.CommunicationEntry> CommunicationEntries = new List<CommunicationRegisterModel.CommunicationEntry>();
+            int issueEntryCount = dgvCommunicationsRegister.Rows.Count;
+
+            for (int i = 0; i < issueEntryCount - 1; i++)
+            {
+                CommunicationRegisterModel.CommunicationEntry communicationEntry = new CommunicationRegisterModel.CommunicationEntry();
+                var ID = dgvCommunicationsRegister.Rows[i].Cells[0].Value?.ToString() ?? "";
+                var Status = dgvCommunicationsRegister.Rows[i].Cells[1].Value?.ToString() ?? "";
+                var DateApproved = dgvCommunicationsRegister.Rows[i].Cells[2].Value?.ToString() ?? "";
+                var ApprovedBy = dgvCommunicationsRegister.Rows[i].Cells[3].Value?.ToString() ?? "";
+                var DateSent = dgvCommunicationsRegister.Rows[i].Cells[4].Value?.ToString() ?? "";
+                var SendBy = dgvCommunicationsRegister.Rows[i].Cells[5].Value?.ToString() ?? "";
+                var SendTo = dgvCommunicationsRegister.Rows[i].Cells[6].Value?.ToString() ?? "";
+                var Type = dgvCommunicationsRegister.Rows[i].Cells[7].Value?.ToString() ?? "";
+                var Message = dgvCommunicationsRegister.Rows[i].Cells[8].Value?.ToString() ?? "";
+                var FileLocation = dgvCommunicationsRegister.Rows[i].Cells[9].Value?.ToString() ?? "";
+                var FeedBack = dgvCommunicationsRegister.Rows[i].Cells[10].Value?.ToString() ?? "";
+
+                communicationEntry.ID = int.Parse(ID);
+                communicationEntry.Status = Status;
+                communicationEntry.DateApproved = DateApproved;
+                communicationEntry.ApprovedBy = ApprovedBy;
+                communicationEntry.DateSent = DateSent;
+                communicationEntry.SendBy = SendBy;
+                communicationEntry.SendTo = SendTo;
+                communicationEntry.Type = Type;
+                communicationEntry.Message = Message;
+                communicationEntry.FileLocation = FileLocation;
+                communicationEntry.FeedBack = FeedBack;
+
+                CommunicationEntries.Add(communicationEntry);
+            }
+
+            newCommunicationRegisterModel.CommunicationEntries = CommunicationEntries;
+            newCommunicationRegisterModel.CommunicationsRegisterProgress = "UNDONE";
+            List<VersionControl<CommunicationRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
+
+            if (!versionControl.isEqual(currentCommunicationRegisterModel, newCommunicationRegisterModel))
+            {
+                VersionControl<CommunicationRegisterModel>.DocumentModel documentModel = new VersionControl<CommunicationRegisterModel>.DocumentModel(newCommunicationRegisterModel, DateTime.Now, VersionControl<CommunicationRegisterModel>.generateID());
+
+                documentModels.Add(documentModel);
+                string json = JsonConvert.SerializeObject(versionControl);
+                currentCommunicationRegisterModel = JsonConvert.DeserializeObject<CommunicationRegisterModel>(JsonConvert.SerializeObject(newCommunicationRegisterModel));
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "CommunicationRegister");
+                MessageBox.Show("Communication Register saved successfully", "save", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("No changes were made.", "save", MessageBoxButtons.OK);
+            }
         }
     }
 }
