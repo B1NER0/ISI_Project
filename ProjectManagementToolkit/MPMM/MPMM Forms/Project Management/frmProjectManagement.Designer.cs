@@ -700,7 +700,7 @@
             this.tbp_Report_Center.Controls.Add(this.panel1);
             this.tbp_Report_Center.Location = new System.Drawing.Point(4, 21);
             this.tbp_Report_Center.Name = "tbp_Report_Center";
-            this.tbp_Report_Center.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbp_Report_Center.Padding = new System.Windows.Forms.Padding(3);
             this.tbp_Report_Center.Size = new System.Drawing.Size(1075, 625);
             this.tbp_Report_Center.TabIndex = 0;
             this.tbp_Report_Center.Text = "Report Center";
@@ -847,7 +847,7 @@
             this.tbp_Processes.Controls.Add(this.pictureBox3);
             this.tbp_Processes.Location = new System.Drawing.Point(4, 21);
             this.tbp_Processes.Name = "tbp_Processes";
-            this.tbp_Processes.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbp_Processes.Padding = new System.Windows.Forms.Padding(3);
             this.tbp_Processes.Size = new System.Drawing.Size(1075, 625);
             this.tbp_Processes.TabIndex = 1;
             this.tbp_Processes.Text = "Processes";
@@ -953,7 +953,7 @@
             this.tbp_GovernanceProcess.Controls.Add(this.flowLayoutPanel1);
             this.tbp_GovernanceProcess.Location = new System.Drawing.Point(4, 21);
             this.tbp_GovernanceProcess.Name = "tbp_GovernanceProcess";
-            this.tbp_GovernanceProcess.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbp_GovernanceProcess.Padding = new System.Windows.Forms.Padding(3);
             this.tbp_GovernanceProcess.Size = new System.Drawing.Size(916, 455);
             this.tbp_GovernanceProcess.TabIndex = 0;
             this.tbp_GovernanceProcess.Text = "GovernanceProcess";
@@ -1856,7 +1856,7 @@
             this.tbp_RiskManangement.Controls.Add(this.panel5);
             this.tbp_RiskManangement.Location = new System.Drawing.Point(4, 21);
             this.tbp_RiskManangement.Name = "tbp_RiskManangement";
-            this.tbp_RiskManangement.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbp_RiskManangement.Padding = new System.Windows.Forms.Padding(3);
             this.tbp_RiskManangement.Size = new System.Drawing.Size(916, 455);
             this.tbp_RiskManangement.TabIndex = 1;
             this.tbp_RiskManangement.Text = "RiskManangement";
@@ -2406,7 +2406,7 @@
             this.tbpReferencePLSM.Controls.Add(this.panel63);
             this.tbpReferencePLSM.Location = new System.Drawing.Point(4, 21);
             this.tbpReferencePLSM.Name = "tbpReferencePLSM";
-            this.tbpReferencePLSM.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpReferencePLSM.Padding = new System.Windows.Forms.Padding(3);
             this.tbpReferencePLSM.Size = new System.Drawing.Size(1050, 565);
             this.tbpReferencePLSM.TabIndex = 0;
             this.tbpReferencePLSM.Text = "Reference PLSM";
@@ -4311,6 +4311,7 @@
             this.btnPortfolioManagementAndExecution.TabIndex = 46;
             this.btnPortfolioManagementAndExecution.Text = "Portfolio Management and Execution";
             this.btnPortfolioManagementAndExecution.UseVisualStyleBackColor = true;
+            this.btnPortfolioManagementAndExecution.Click += new System.EventHandler(this.BtnPortfolioManagementAndExecution_Click);
             // 
             // pictureBox64
             // 
@@ -4332,6 +4333,7 @@
             this.btnCorporateProgramManagement.TabIndex = 44;
             this.btnCorporateProgramManagement.Text = "Corporate Program Management";
             this.btnCorporateProgramManagement.UseVisualStyleBackColor = true;
+            this.btnCorporateProgramManagement.Click += new System.EventHandler(this.BtnCorporateProgramManagement_Click);
             // 
             // pictureBox65
             // 
@@ -4428,7 +4430,7 @@
             this.tbpGovernanceTemplates.Controls.Add(this.cbbGovernanceTemplates);
             this.tbpGovernanceTemplates.Location = new System.Drawing.Point(4, 70);
             this.tbpGovernanceTemplates.Name = "tbpGovernanceTemplates";
-            this.tbpGovernanceTemplates.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpGovernanceTemplates.Padding = new System.Windows.Forms.Padding(3);
             this.tbpGovernanceTemplates.Size = new System.Drawing.Size(435, 381);
             this.tbpGovernanceTemplates.TabIndex = 0;
             this.tbpGovernanceTemplates.Text = "Governance Templates:";
@@ -4554,7 +4556,7 @@
             this.tbpDirectingAProject.Controls.Add(this.label26);
             this.tbpDirectingAProject.Location = new System.Drawing.Point(4, 70);
             this.tbpDirectingAProject.Name = "tbpDirectingAProject";
-            this.tbpDirectingAProject.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpDirectingAProject.Padding = new System.Windows.Forms.Padding(3);
             this.tbpDirectingAProject.Size = new System.Drawing.Size(435, 381);
             this.tbpDirectingAProject.TabIndex = 1;
             this.tbpDirectingAProject.Text = "Directing a Project";
@@ -4954,7 +4956,7 @@
             this.tbpListOfDocuments.Controls.Add(this.cbbListOfDocuments);
             this.tbpListOfDocuments.Location = new System.Drawing.Point(4, 70);
             this.tbpListOfDocuments.Name = "tbpListOfDocuments";
-            this.tbpListOfDocuments.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpListOfDocuments.Padding = new System.Windows.Forms.Padding(3);
             this.tbpListOfDocuments.Size = new System.Drawing.Size(436, 381);
             this.tbpListOfDocuments.TabIndex = 6;
             this.tbpListOfDocuments.Text = "List of Documents";
@@ -5067,7 +5069,7 @@
             this.tbpOpportunityScreening.Controls.Add(this.comboBox2);
             this.tbpOpportunityScreening.Location = new System.Drawing.Point(4, 70);
             this.tbpOpportunityScreening.Name = "tbpOpportunityScreening";
-            this.tbpOpportunityScreening.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpOpportunityScreening.Padding = new System.Windows.Forms.Padding(3);
             this.tbpOpportunityScreening.Size = new System.Drawing.Size(436, 381);
             this.tbpOpportunityScreening.TabIndex = 7;
             this.tbpOpportunityScreening.Text = "Opportunity Screening";
@@ -6100,7 +6102,7 @@
             // 
             this.tbpEnOfProcedures.Location = new System.Drawing.Point(4, 21);
             this.tbpEnOfProcedures.Name = "tbpEnOfProcedures";
-            this.tbpEnOfProcedures.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpEnOfProcedures.Padding = new System.Windows.Forms.Padding(3);
             this.tbpEnOfProcedures.Size = new System.Drawing.Size(827, 324);
             this.tbpEnOfProcedures.TabIndex = 0;
             this.tbpEnOfProcedures.Text = "End Of Procedures";
@@ -6110,7 +6112,7 @@
             // 
             this.tbpEOPWeek.Location = new System.Drawing.Point(4, 21);
             this.tbpEOPWeek.Name = "tbpEOPWeek";
-            this.tbpEOPWeek.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpEOPWeek.Padding = new System.Windows.Forms.Padding(3);
             this.tbpEOPWeek.Size = new System.Drawing.Size(827, 324);
             this.tbpEOPWeek.TabIndex = 1;
             this.tbpEOPWeek.Text = "EOP Week";

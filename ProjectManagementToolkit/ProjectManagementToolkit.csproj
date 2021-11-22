@@ -1981,6 +1981,9 @@
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmPreFeasabilityWorkpackages.resx">
       <DependentUpon>frmPreFeasabilityWorkpackages.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProcessFlowOverview.resx">
+      <DependentUpon>frmProcessFlowOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmProcurementStream.resx">
       <DependentUpon>frmProcurementStream.cs</DependentUpon>
     </EmbeddedResource>

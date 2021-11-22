@@ -622,5 +622,18 @@ namespace ProjectManagementToolkit
             frmWorkStreams.PLSMWorkstreamsTabControl.SelectedIndex = 1;
         }
 
+        private void BtnCorporateProgramManagement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpControllingAStage");
+            plsm.Show();
+        }
+
+        private void BtnPortfolioManagementAndExecution_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpControllingAStage");
+            plsm.Show();
+        }
     }
 }
