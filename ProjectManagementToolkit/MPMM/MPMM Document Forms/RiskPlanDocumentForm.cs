@@ -844,6 +844,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             information.FileName = FileName;
             newRiskPlanModel.Information = information;
             newRiskPlanModel.RiskPlanProgress = "UNDONE";
+            newRiskPlanModel.completedDate = "";
 
             List<History> histories = new List<History>();
             int Document_HistoryRowCount = Document_History_dgv.RowCount;

@@ -189,6 +189,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newChangeRegisterModel.ProjectManager = Project_Manager_tbx.Text;
             newChangeRegisterModel.ProjectName = Project_Name_tbx.Text;
             newChangeRegisterModel.ChangeRegisterProgress = "UNDONE";
+            newChangeRegisterModel.completedDate = "";
 
             List<VersionControl<ChangeRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 

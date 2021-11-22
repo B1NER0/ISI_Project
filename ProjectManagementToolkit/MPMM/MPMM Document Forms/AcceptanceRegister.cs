@@ -175,6 +175,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newAcceptanceRegisterModel.AcceptanceEntries = acceptanceEntries;
             newAcceptanceRegisterModel.AcceptanceRegisterProgress = "UNDONE";
+            newAcceptanceRegisterModel.completedDate = "";
             List<VersionControl<AcceptanceRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentAcceptanceRegisterModel, newAcceptanceRegisterModel))

@@ -1144,6 +1144,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectCharterModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newProjectCharterModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newProjectCharterModel.ProjectCharterProgress = "UNDONE";
+            newProjectCharterModel.completedDate = "";
 
             List<ProjectCharterModel.DocumentHistory> documentHistories = new List<ProjectCharterModel.DocumentHistory>();
             for (int i = 0; i < dgvDocumentHistories.Rows.Count - 1; i++)

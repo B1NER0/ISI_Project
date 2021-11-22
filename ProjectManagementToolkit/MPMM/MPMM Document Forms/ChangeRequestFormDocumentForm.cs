@@ -250,6 +250,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newChangeRequestModel.Signature = txtSignature.Text;
 
             newChangeRequestModel.ChangeRequestProgress = "UNDONE";
+            newChangeRequestModel.completedDate = "";
 
             List<VersionControl<ChangeRequestModel>.DocumentModel> documentModels = versionControl.DocumentModels; //Error here
 

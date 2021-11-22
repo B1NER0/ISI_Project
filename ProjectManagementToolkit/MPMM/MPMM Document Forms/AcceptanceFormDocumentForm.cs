@@ -319,6 +319,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newAcceptanceFormModel.Criteria = Criteria_tbx.Text;
             newAcceptanceFormModel.Standards = Standards_tbx.Text;
             newAcceptanceFormModel.AcceptanceFormProgress = "UNDONE";
+            newAcceptanceFormModel.completedDate = "";
 
             List<Acceptance> acceptances = new List<Acceptance>();
             int ResultsrowCount = ACCEPTANCE_RESULTS_dgv.RowCount;

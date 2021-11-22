@@ -159,6 +159,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 TimesheetEntry.ApprovalDate = ApprovalDate;
                 TimesheetEntry.Approver = Approver;
                 TimesheetEntry.TimeSheetRegisterProgress = "UNDONE";
+                TimesheetEntry.completedDate = "";
 
                 TimeSheetEntries.Add(TimesheetEntry);
             }

@@ -755,6 +755,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectOfficeChecklistModel.ProjectManager = txtProjectManager.Text;
             newProjectOfficeChecklistModel.ProjectOfficeManager = txtProjectOfficeManager.Text;
             newProjectOfficeChecklistModel.ProjectOfficeCheckListProgress = "UNDONE";
+            newProjectOfficeChecklistModel.completedDate = "";
 
             newProjectOfficeChecklistModel.Premises = new List<ProjectOfficeChecklistModel.Questionare>();
             int premisesCount = dataGridViewPremises.Rows.Count - 1;

@@ -345,6 +345,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPurchaseOrderModel.SupplierContactPhone = Supplier_Contact_Phone_tbx.Text;
             newPurchaseOrderModel.SupplierAddress = Supplier_Address_tbx.Text;
             newPurchaseOrderModel.PurchaseOrderProgress = "UNDONE";
+            newPurchaseOrderModel.completedDate = "";
 
             newPurchaseOrderModel.ContactName = Contact_Name1_tbx.Text;
             newPurchaseOrderModel.ContactAddress = Contact_Address1_tbx.Text;

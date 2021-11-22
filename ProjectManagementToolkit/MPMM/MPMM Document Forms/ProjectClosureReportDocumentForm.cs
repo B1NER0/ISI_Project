@@ -743,6 +743,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectClosureReportModel.LastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newProjectClosureReportModel.FileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newProjectClosureReportModel.ProjectClosureReportProgress = "UNDONE";
+            newProjectClosureReportModel.completedDate = "";
 
             int versionRowsCount = dataGridViewDocumentHistory.Rows.Count;
             newProjectClosureReportModel.DocumentHistories = new List<ProjectClosureReportModel.DocumentHistory>();

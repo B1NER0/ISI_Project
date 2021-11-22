@@ -730,6 +730,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newSupplierContractModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newSupplierContractModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newSupplierContractModel.SupplierContractProgress = "UNDONE";
+            newSupplierContractModel.completedDate = "";
 
             List<SupplierContractModel.DocumentHistory> documentHistories = new List<SupplierContractModel.DocumentHistory>();
 

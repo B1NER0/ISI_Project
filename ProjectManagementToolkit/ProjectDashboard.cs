@@ -1164,7 +1164,6 @@ namespace ProjectManagementToolkit
                         initationProgressVal++;
                         ///////////////////////////AL DIE CODE OM TE CHECK OF IETS VOOR IETS ANDERS GEDOEN IS/////////////////////
                         k = i;
-
                         comp++;
                         dgvInitiation.Rows[i].Cells[6].Style.BackColor = Color.LimeGreen;
                         // pbarInitiation.Value = (int)initationProgressVal;

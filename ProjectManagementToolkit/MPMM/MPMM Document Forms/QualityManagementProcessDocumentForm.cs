@@ -730,6 +730,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newQualityManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newQualityManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
             newQualityManagementProcessModel.QualityManagementProcessProgress = "UNDONE";
+            newQualityManagementProcessModel.completedDate = "";
 
             List<QualityManagementProcessModel.DocumentHistory> documentHistories = new List<QualityManagementProcessModel.DocumentHistory>();
 

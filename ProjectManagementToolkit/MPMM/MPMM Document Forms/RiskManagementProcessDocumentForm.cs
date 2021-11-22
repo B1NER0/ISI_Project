@@ -546,6 +546,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newRiskManagmentProcessModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
 
             newRiskManagmentProcessModel.RiskManagementProcessProgress = "UNDONE";
+            newRiskManagmentProcessModel.completedDate = "";
 
 
             List<RiskManagmentProcessModel.DocumentHistory> documentHistories = new List<RiskManagmentProcessModel.DocumentHistory>();

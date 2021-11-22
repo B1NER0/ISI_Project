@@ -171,6 +171,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newCommunicationRegisterModel.CommunicationEntries = CommunicationEntries;
             newCommunicationRegisterModel.CommunicationsRegisterProgress = "UNDONE";
+            newCommunicationRegisterModel.completedDate = "";
             List<VersionControl<CommunicationRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentCommunicationRegisterModel, newCommunicationRegisterModel))

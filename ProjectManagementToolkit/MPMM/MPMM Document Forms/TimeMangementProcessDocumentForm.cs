@@ -742,6 +742,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newTimeMangementProcessModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newTimeMangementProcessModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newTimeMangementProcessModel.TimeManagementProcessProgress = "UNDONE";
+            newTimeMangementProcessModel.completedDate = "";
 
             List<TimeMangementProcessModel.DocumentHistory> documentHistories = new List<TimeMangementProcessModel.DocumentHistory>();
 

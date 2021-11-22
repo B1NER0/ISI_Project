@@ -680,6 +680,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newCommunicationsPlanModel.LastSavedDate = dgvDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newCommunicationsPlanModel.FileName = dgvDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newCommunicationsPlanModel.CommunicationPlanProgress = "UNDONE";
+            newCommunicationsPlanModel.completedDate = "";
 
             List<CommunicationsPlanModel.DocumentHistory> documentHistories = new List<CommunicationsPlanModel.DocumentHistory>();
 

@@ -712,6 +712,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newRequestForInformationModel.lastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newRequestForInformationModel.fileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newRequestForInformationModel.RequestForInformationProgress = "UNDONE";
+            newRequestForInformationModel.completedDate = "";
 
             List<RequestForInformationModel.DocumentHistory> documentHistories = new List<RequestForInformationModel.DocumentHistory>();
 

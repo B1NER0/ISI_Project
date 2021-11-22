@@ -1967,6 +1967,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newBusinessCaseModel.LastSavedDate = dgvDocInfo.Rows[3].Cells[1].Value.ToString();
             newBusinessCaseModel.FileName = dgvDocInfo.Rows[4].Cells[1].Value.ToString();
             newBusinessCaseModel.Progress = "UNDONE";
+            newBusinessCaseModel.completeDate = "";
 
 
             //Document History

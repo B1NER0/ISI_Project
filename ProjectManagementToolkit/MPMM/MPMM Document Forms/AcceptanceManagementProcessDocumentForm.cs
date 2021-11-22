@@ -748,6 +748,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newAcceptanceManagementProcessModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newAcceptanceManagementProcessModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
             newAcceptanceManagementProcessModel.AcceptanceManagementProcessProgress = "DONE";
+            newAcceptanceManagementProcessModel.completedDate = "";
 
             List<AcceptanceManagementProcessModel.DocumentHistory> documentHistories = new List<AcceptanceManagementProcessModel.DocumentHistory>();
 

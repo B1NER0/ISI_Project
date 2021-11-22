@@ -172,6 +172,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 expenseEntry.Payee = payee;
                 expenseEntry.Method = method;
                 expenseEntry.ExpenseRegisterProgress = "UNDONE";
+                expenseEntry.completedDate = "";
                 expenseEntries.Add(expenseEntry);
             }
 

@@ -201,6 +201,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newRiskRegisterModel.RiskEntries = RiskEntries;
             newRiskRegisterModel.RiskRegisterProgress = "UNDONE";
+            newRiskRegisterModel.completedDate = "";
             List<VersionControl<RiskRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 
             if (!versionControl.isEqual(currentRiskRegisterModel, newRiskRegisterModel))

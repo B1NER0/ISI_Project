@@ -304,6 +304,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newProcurementRegisterModel.procurementEntries = procurementEntries;
             newProcurementRegisterModel.ProcurementRegisterProgress = "UNDONE";
+            newProcurementRegisterModel.completedDate = "";
             newProcurementRegisterModel.ProcurementManagerName = txtProcurementManager.Text;
             newProcurementRegisterModel.ProjectName = txtProcurementRegisterProjectName.Text;
             newProcurementRegisterModel.ProjectManagerName = txtProjectManagerName.Text;

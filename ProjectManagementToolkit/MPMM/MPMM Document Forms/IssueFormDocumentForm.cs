@@ -393,6 +393,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             tempIssueFormModel.IssueResolution = txtIssueResolution.Text;
             tempIssueFormModel.SupportingDocumentation = txtSupportingDocumentation.Text;
             tempIssueFormModel.IssueFormProgress = "UNDONE";
+            tempIssueFormModel.completedDate = "";
 
             IssueRegisterModel.IssueEntry issueEntry = new IssueRegisterModel.IssueEntry();
             issueEntry.ID = (cmbIssueForms.SelectedIndex + 1).ToString();

@@ -788,6 +788,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newResourcePlanModel.LastSavedDate = docInfodataGridView.Rows[3].Cells[1].Value.ToString();
             newResourcePlanModel.FileName = docInfodataGridView.Rows[4].Cells[1].Value.ToString();
             newResourcePlanModel.ResourcePlanProgress = "UNDONE";
+            newResourcePlanModel.completedDate = "";
 
             List<ResourcePlanModel.DocumentHistory> documentHistories = new List<ResourcePlanModel.DocumentHistory>();
 

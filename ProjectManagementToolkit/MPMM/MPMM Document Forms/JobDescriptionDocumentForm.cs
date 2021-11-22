@@ -517,6 +517,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newJobDescriptionDocumentModel.JobDescriptionProgress = "UNDONE";
 
+            newJobDescriptionDocumentModel.completedDate = "";
+
 
 
             List<VersionControl<JobDescriptionModel>.DocumentModel> documentModels = versionControl.DocumentModels;

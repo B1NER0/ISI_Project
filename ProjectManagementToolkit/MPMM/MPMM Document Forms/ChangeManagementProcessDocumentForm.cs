@@ -540,6 +540,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newChangeManagementProcessModel.LastSavedDate = dataGridViewDocumentInformation.Rows[3].Cells[1].Value.ToString();
             newChangeManagementProcessModel.FileName = dataGridViewDocumentInformation.Rows[4].Cells[1].Value.ToString();
             newChangeManagementProcessModel.ChangeManagementProcessProgress = "UNDONE";
+            newChangeManagementProcessModel.completedDate = "";
 
             newChangeManagementProcessModel.DocumentHistories = new List<ChangeManagementProcessModel.DocumentHistory>();
             int historyCount = dataGridViewDocumentHistory.Rows.Count;

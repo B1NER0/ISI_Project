@@ -362,6 +362,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPhaseReviewFormInitiationModel.ProjectChanges = projectChanges.Text;
 
             newPhaseReviewFormInitiationModel.PhaseReviewFormInitiationProgress = "UNDONE";
+            newPhaseReviewFormInitiationModel.completedDate = "";
 
             int reviewDetailCount = dgvReviewDetails.Rows.Count;
             newPhaseReviewFormInitiationModel.ReviewDetials = new List<PhaseReviewFormInitiationModel.ReviewDetial>();

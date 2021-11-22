@@ -568,6 +568,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newStatementOfWorkModel.LastSavedDate = dgvInfo.Rows[3].Cells[1].Value.ToString();
             newStatementOfWorkModel.FileName = dgvInfo.Rows[4].Cells[1].Value.ToString();
             newStatementOfWorkModel.StatementOfWorkProgress = "UNDONE";
+            newStatementOfWorkModel.completedDate = "";
 
             List<StatementOfWorkModel.DocumentHistory> documentHistories = new List<StatementOfWorkModel.DocumentHistory>();
 

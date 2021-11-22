@@ -160,6 +160,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
             newIssueRegisterModel.IssueEntries = issueEntries;
             newIssueRegisterModel.IssueRegisterProgress = "UNDONE";
+            newIssueRegisterModel.completedDate = "";
 
             List<VersionControl<IssueRegisterModel>.DocumentModel> documentModels = versionControl.DocumentModels;
 

@@ -680,6 +680,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         {
             newRequestForProposalModel.projectName = projectModel.ProjectName;
             newRequestForProposalModel.RequestForProposalProgress = "UNDONE";
+            newRequestForProposalModel.completedDate = "";
 
             newRequestForProposalModel.documentInformations = new List<RequestForProposalModel.DocumentInformation>();
             foreach (DataGridViewRow row in dataGridViewDocumentInformation.Rows)

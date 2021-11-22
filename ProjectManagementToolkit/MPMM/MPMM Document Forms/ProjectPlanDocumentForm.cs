@@ -907,6 +907,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newProjectPlanModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newProjectPlanModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
             newProjectPlanModel.projectPlanProgress = "UNDONE";
+            newProjectPlanModel.completedDate = "";
 
             List<ProjectPlanModel.DocumentHistory> documentHistories = new List<ProjectPlanModel.DocumentHistory>();
 

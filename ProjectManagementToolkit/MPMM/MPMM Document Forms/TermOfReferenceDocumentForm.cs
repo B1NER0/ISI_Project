@@ -1431,6 +1431,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
             newTermsOfReferenceModel.DocumentApprovals = documentApprovalsModel;
             newTermsOfReferenceModel.TermOfReferenceProgress = "UNDONE";
+            newTermsOfReferenceModel.completedDate = "";
 
             List<TermsOfReferenceModel.DocumentHistory> documentHistories = new List<TermsOfReferenceModel.DocumentHistory>();
 

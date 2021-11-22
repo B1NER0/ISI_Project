@@ -534,6 +534,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             information.FileName = FileName;
             newCostManagementProcessModel.Information = information;
             newCostManagementProcessModel.CostManagementProcessProgress = "UNDONE";
+            newCostManagementProcessModel.completedDate = "";
 
             List<History> histories = new List<History>();
             int Document_HistoryRowCount = Document_History_dgv.RowCount;

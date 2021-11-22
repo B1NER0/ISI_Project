@@ -1549,6 +1549,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             newPostImplementationReviewModel.LastSavedDate = documentInformation.Rows[3].Cells[1].Value.ToString();
             newPostImplementationReviewModel.FileName = documentInformation.Rows[4].Cells[1].Value.ToString();
             newPostImplementationReviewModel.PostImplementationReviewProgress = "UNDONE";
+            newPostImplementationReviewModel.completedDate = "";
 
             List<PostImplementationReviewModel.DocumentHistory> documentHistories = new List<PostImplementationReviewModel.DocumentHistory>();
 

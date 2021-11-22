@@ -438,6 +438,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
             newQualityReviewPlanModel.QualityOfProcesses = processes;
             newQualityReviewPlanModel.QualityReviewPlanProgress = "UNDONE";
+            newQualityReviewPlanModel.completedDate = "";
 
             newQualityReviewPlanModel.QualityOfDeliverablesDescription = txtQualityOfDeliverables.Text;
 

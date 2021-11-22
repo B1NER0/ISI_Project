@@ -1012,6 +1012,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
             newProjectStatusReportModel.ProSchedule = ProjSchedules;
             newProjectStatusReportModel.ProjectStatusReportProgress = "UNDONE";
+            newProjectStatusReportModel.completedDate = "";
 
 
             List<ProjectStatusReportModel.ProjectExpenses> ProjExp = new List<ProjectStatusReportModel.ProjectExpenses>();
