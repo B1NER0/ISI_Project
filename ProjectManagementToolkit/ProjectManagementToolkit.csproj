@@ -1314,6 +1314,12 @@
     <Compile Include="MPMM\MPMM Forms\Governance\Governance.Designer.cs">
       <DependentUpon>Governance.cs</DependentUpon>
     </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmRoleDescriptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPMM\MPMM Forms\Project Management\frmRoleDescriptions.Designer.cs">
+      <DependentUpon>frmRoleDescriptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="MPMM\MPMM Forms\Project Management\frmTemplates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2028,6 +2034,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Processes\Processes.resx">
       <DependentUpon>Processes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmRoleDescriptions.resx">
+      <DependentUpon>frmRoleDescriptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPMM\MPMM Forms\Project Management\frmTemplates.resx">
       <DependentUpon>frmTemplates.cs</DependentUpon>

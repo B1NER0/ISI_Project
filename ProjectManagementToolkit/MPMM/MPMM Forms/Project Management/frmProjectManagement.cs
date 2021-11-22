@@ -360,7 +360,8 @@ namespace ProjectManagementToolkit
 
         private void btnRoleDescription_Click(object sender, EventArgs e)
         {
-           
+            MPMM.MPMM_Forms.Project_Management.frmRoleDescriptions RoleDescriptions = new MPMM.MPMM_Forms.Project_Management.frmRoleDescriptions();
+            RoleDescriptions.Show();
         }
 
         private void btnToolsAndTechniques_Click(object sender, EventArgs e)
