@@ -2693,19 +2693,19 @@ namespace ProjectManagementToolkit
 
                 if (budgetSpent > 0.0)
                 {
-                    lblTotalInitialBudget.Text = "R" + budgetSpent.ToString() + " under budget";
+                    lblTotalInitialBudget.Text = budgetSpent.ToString("C") + " under budget";
                     lblTotalInitialBudget.ForeColor = Color.LimeGreen;
                 }
                 else if (budgetSpent < 0.0)
                 {
                     budgetSpent *= -1;
-                    lblTotalInitialBudget.Text = "R" + budgetSpent.ToString() + " over budget";
+                    lblTotalInitialBudget.Text = budgetSpent.ToString("C") + " over budget";
                     lblTotalInitialBudget.ForeColor = Color.Red;
                     budgetSpent *= -1;
                 }
                 else
                 {
-                    lblTotalInitialBudget.Text = "On Budget, jy het rooi worsies";
+                    lblTotalInitialBudget.Text = "On Budget";
                     lblTotalInitialBudget.ForeColor = Color.Black;
                 }
 
