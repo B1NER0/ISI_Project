@@ -229,21 +229,15 @@
             this.label39 = new System.Windows.Forms.Label();
             this.panel60 = new System.Windows.Forms.Panel();
             this.panel42 = new System.Windows.Forms.Panel();
-            this.pnlObjectiveEvaluate = new System.Windows.Forms.Panel();
-            this.pnlObjectiveCloseOut = new System.Windows.Forms.Panel();
             this.btnPARICSOverview = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.btnCloseOut2 = new System.Windows.Forms.Button();
             this.panel28 = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
-            this.pnlObjectiveTransfer = new System.Windows.Forms.Panel();
-            this.pnlObjectiveImplementatio0n = new System.Windows.Forms.Panel();
             this.btnTransfer2 = new System.Windows.Forms.Button();
             this.btnImplementation2 = new System.Windows.Forms.Button();
             this.panel29 = new System.Windows.Forms.Panel();
-            this.pnlObjectivesBusinessPlan = new System.Windows.Forms.Panel();
-            this.pnlObjectivesFeasibility = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.btnBusinessPlan2 = new System.Windows.Forms.Button();
             this.btnFeasibility2 = new System.Windows.Forms.Button();
@@ -301,17 +295,12 @@
             this.panel48 = new System.Windows.Forms.Panel();
             this.label44 = new System.Windows.Forms.Label();
             this.panel49 = new System.Windows.Forms.Panel();
-            this.pnlObjectiveDetailedDesign = new System.Windows.Forms.Panel();
-            this.pnlObjectiveContractConcluding = new System.Windows.Forms.Panel();
-            this.ProjectExecutionPlanning = new System.Windows.Forms.Panel();
             this.btnPARICSWorkPackages = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
             this.btnDetailedDesign2 = new System.Windows.Forms.Button();
             this.btnContractConcluding = new System.Windows.Forms.Button();
             this.btnProjectExecutiomPlanning2 = new System.Windows.Forms.Button();
             this.panel50 = new System.Windows.Forms.Panel();
-            this.pnlObjectivePrefeasibility = new System.Windows.Forms.Panel();
-            this.pnlObjectiveOpportunityScreening = new System.Windows.Forms.Panel();
             this.btnPARICSStream = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.btnPrefeasibility2 = new System.Windows.Forms.Button();
@@ -495,6 +484,17 @@
             this.timerReportCenter = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.lblType = new System.Windows.Forms.Label();
+            this.btnOppScreenObj = new System.Windows.Forms.Button();
+            this.btnPreFeasObj = new System.Windows.Forms.Button();
+            this.btnTransferObj = new System.Windows.Forms.Button();
+            this.btnImpObj = new System.Windows.Forms.Button();
+            this.btnContractConcludingObj = new System.Windows.Forms.Button();
+            this.btnProjectExeObj = new System.Windows.Forms.Button();
+            this.btnDeteailedDesgin = new System.Windows.Forms.Button();
+            this.btnEvalObj = new System.Windows.Forms.Button();
+            this.btnCloseObj = new System.Windows.Forms.Button();
+            this.btnBusinessPlanObjective = new System.Windows.Forms.Button();
+            this.btnFeasabilityObjective = new System.Windows.Forms.Button();
             this.tbp_Project_Management.SuspendLayout();
             this.tbp_Report_Center.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2864,9 +2864,9 @@
             this.panel42.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel42.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel42.Controls.Add(this.pnlObjectiveEvaluate);
-            this.panel42.Controls.Add(this.pnlObjectiveCloseOut);
+            this.panel42.Controls.Add(this.btnEvalObj);
             this.panel42.Controls.Add(this.btnPARICSOverview);
+            this.panel42.Controls.Add(this.btnCloseObj);
             this.panel42.Controls.Add(this.label40);
             this.panel42.Controls.Add(this.button5);
             this.panel42.Controls.Add(this.btnCloseOut2);
@@ -2874,22 +2874,6 @@
             this.panel42.Name = "panel42";
             this.panel42.Size = new System.Drawing.Size(168, 109);
             this.panel42.TabIndex = 71;
-            // 
-            // pnlObjectiveEvaluate
-            // 
-            this.pnlObjectiveEvaluate.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveEvaluate.Location = new System.Drawing.Point(86, 82);
-            this.pnlObjectiveEvaluate.Name = "pnlObjectiveEvaluate";
-            this.pnlObjectiveEvaluate.Size = new System.Drawing.Size(72, 19);
-            this.pnlObjectiveEvaluate.TabIndex = 4;
-            // 
-            // pnlObjectiveCloseOut
-            // 
-            this.pnlObjectiveCloseOut.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveCloseOut.Location = new System.Drawing.Point(7, 82);
-            this.pnlObjectiveCloseOut.Name = "pnlObjectiveCloseOut";
-            this.pnlObjectiveCloseOut.Size = new System.Drawing.Size(74, 19);
-            this.pnlObjectiveCloseOut.TabIndex = 3;
             // 
             // btnPARICSOverview
             // 
@@ -2939,9 +2923,9 @@
             this.panel28.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel28.Controls.Add(this.btnTransferObj);
+            this.panel28.Controls.Add(this.btnImpObj);
             this.panel28.Controls.Add(this.label41);
-            this.panel28.Controls.Add(this.pnlObjectiveTransfer);
-            this.panel28.Controls.Add(this.pnlObjectiveImplementatio0n);
             this.panel28.Controls.Add(this.btnTransfer2);
             this.panel28.Controls.Add(this.btnImplementation2);
             this.panel28.Location = new System.Drawing.Point(713, 5);
@@ -2958,22 +2942,6 @@
             this.label41.Size = new System.Drawing.Size(86, 15);
             this.label41.TabIndex = 5;
             this.label41.Text = "Build and Test";
-            // 
-            // pnlObjectiveTransfer
-            // 
-            this.pnlObjectiveTransfer.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveTransfer.Location = new System.Drawing.Point(87, 82);
-            this.pnlObjectiveTransfer.Name = "pnlObjectiveTransfer";
-            this.pnlObjectiveTransfer.Size = new System.Drawing.Size(72, 19);
-            this.pnlObjectiveTransfer.TabIndex = 4;
-            // 
-            // pnlObjectiveImplementatio0n
-            // 
-            this.pnlObjectiveImplementatio0n.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveImplementatio0n.Location = new System.Drawing.Point(8, 82);
-            this.pnlObjectiveImplementatio0n.Name = "pnlObjectiveImplementatio0n";
-            this.pnlObjectiveImplementatio0n.Size = new System.Drawing.Size(74, 19);
-            this.pnlObjectiveImplementatio0n.TabIndex = 3;
             // 
             // btnTransfer2
             // 
@@ -3003,8 +2971,8 @@
             this.panel29.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel29.Controls.Add(this.pnlObjectivesBusinessPlan);
-            this.panel29.Controls.Add(this.pnlObjectivesFeasibility);
+            this.panel29.Controls.Add(this.btnBusinessPlanObjective);
+            this.panel29.Controls.Add(this.btnFeasabilityObjective);
             this.panel29.Controls.Add(this.label42);
             this.panel29.Controls.Add(this.btnBusinessPlan2);
             this.panel29.Controls.Add(this.btnFeasibility2);
@@ -3012,22 +2980,6 @@
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(168, 109);
             this.panel29.TabIndex = 69;
-            // 
-            // pnlObjectivesBusinessPlan
-            // 
-            this.pnlObjectivesBusinessPlan.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectivesBusinessPlan.Location = new System.Drawing.Point(87, 82);
-            this.pnlObjectivesBusinessPlan.Name = "pnlObjectivesBusinessPlan";
-            this.pnlObjectivesBusinessPlan.Size = new System.Drawing.Size(72, 19);
-            this.pnlObjectivesBusinessPlan.TabIndex = 4;
-            // 
-            // pnlObjectivesFeasibility
-            // 
-            this.pnlObjectivesFeasibility.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectivesFeasibility.Location = new System.Drawing.Point(8, 82);
-            this.pnlObjectivesFeasibility.Name = "pnlObjectivesFeasibility";
-            this.pnlObjectivesFeasibility.Size = new System.Drawing.Size(74, 19);
-            this.pnlObjectivesFeasibility.TabIndex = 3;
             // 
             // label42
             // 
@@ -3638,9 +3590,9 @@
             // 
             this.panel49.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel49.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel49.Controls.Add(this.pnlObjectiveDetailedDesign);
-            this.panel49.Controls.Add(this.pnlObjectiveContractConcluding);
-            this.panel49.Controls.Add(this.ProjectExecutionPlanning);
+            this.panel49.Controls.Add(this.btnDeteailedDesgin);
+            this.panel49.Controls.Add(this.btnContractConcludingObj);
+            this.panel49.Controls.Add(this.btnProjectExeObj);
             this.panel49.Controls.Add(this.btnPARICSWorkPackages);
             this.panel49.Controls.Add(this.label45);
             this.panel49.Controls.Add(this.btnDetailedDesign2);
@@ -3650,30 +3602,6 @@
             this.panel49.Name = "panel49";
             this.panel49.Size = new System.Drawing.Size(259, 108);
             this.panel49.TabIndex = 6;
-            // 
-            // pnlObjectiveDetailedDesign
-            // 
-            this.pnlObjectiveDetailedDesign.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveDetailedDesign.Location = new System.Drawing.Point(171, 82);
-            this.pnlObjectiveDetailedDesign.Name = "pnlObjectiveDetailedDesign";
-            this.pnlObjectiveDetailedDesign.Size = new System.Drawing.Size(79, 19);
-            this.pnlObjectiveDetailedDesign.TabIndex = 10;
-            // 
-            // pnlObjectiveContractConcluding
-            // 
-            this.pnlObjectiveContractConcluding.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveContractConcluding.Location = new System.Drawing.Point(89, 82);
-            this.pnlObjectiveContractConcluding.Name = "pnlObjectiveContractConcluding";
-            this.pnlObjectiveContractConcluding.Size = new System.Drawing.Size(78, 19);
-            this.pnlObjectiveContractConcluding.TabIndex = 9;
-            // 
-            // ProjectExecutionPlanning
-            // 
-            this.ProjectExecutionPlanning.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ProjectExecutionPlanning.Location = new System.Drawing.Point(7, 82);
-            this.ProjectExecutionPlanning.Name = "ProjectExecutionPlanning";
-            this.ProjectExecutionPlanning.Size = new System.Drawing.Size(78, 19);
-            this.ProjectExecutionPlanning.TabIndex = 8;
             // 
             // btnPARICSWorkPackages
             // 
@@ -3735,8 +3663,8 @@
             this.panel50.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel50.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel50.Controls.Add(this.pnlObjectivePrefeasibility);
-            this.panel50.Controls.Add(this.pnlObjectiveOpportunityScreening);
+            this.panel50.Controls.Add(this.btnPreFeasObj);
+            this.panel50.Controls.Add(this.btnOppScreenObj);
             this.panel50.Controls.Add(this.btnPARICSStream);
             this.panel50.Controls.Add(this.label46);
             this.panel50.Controls.Add(this.btnPrefeasibility2);
@@ -3745,23 +3673,6 @@
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(168, 109);
             this.panel50.TabIndex = 4;
-            // 
-            // pnlObjectivePrefeasibility
-            // 
-            this.pnlObjectivePrefeasibility.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectivePrefeasibility.Location = new System.Drawing.Point(87, 82);
-            this.pnlObjectivePrefeasibility.Name = "pnlObjectivePrefeasibility";
-            this.pnlObjectivePrefeasibility.Size = new System.Drawing.Size(72, 19);
-            this.pnlObjectivePrefeasibility.TabIndex = 1;
-            // 
-            // pnlObjectiveOpportunityScreening
-            // 
-            this.pnlObjectiveOpportunityScreening.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlObjectiveOpportunityScreening.Location = new System.Drawing.Point(8, 82);
-            this.pnlObjectiveOpportunityScreening.Name = "pnlObjectiveOpportunityScreening";
-            this.pnlObjectiveOpportunityScreening.Size = new System.Drawing.Size(74, 19);
-            this.pnlObjectiveOpportunityScreening.TabIndex = 0;
-            this.pnlObjectiveOpportunityScreening.UseWaitCursor = true;
             // 
             // btnPARICSStream
             // 
@@ -6228,6 +6139,105 @@
             this.lblType.Text = ".";
             this.lblType.Visible = false;
             // 
+            // btnOppScreenObj
+            // 
+            this.btnOppScreenObj.Location = new System.Drawing.Point(8, 82);
+            this.btnOppScreenObj.Name = "btnOppScreenObj";
+            this.btnOppScreenObj.Size = new System.Drawing.Size(75, 19);
+            this.btnOppScreenObj.TabIndex = 3;
+            this.btnOppScreenObj.UseVisualStyleBackColor = true;
+            this.btnOppScreenObj.Click += new System.EventHandler(this.btnOppScreenObj_Click);
+            // 
+            // btnPreFeasObj
+            // 
+            this.btnPreFeasObj.Location = new System.Drawing.Point(86, 82);
+            this.btnPreFeasObj.Name = "btnPreFeasObj";
+            this.btnPreFeasObj.Size = new System.Drawing.Size(75, 19);
+            this.btnPreFeasObj.TabIndex = 4;
+            this.btnPreFeasObj.UseVisualStyleBackColor = true;
+            this.btnPreFeasObj.Click += new System.EventHandler(this.btnPreFeasObj_Click);
+            // 
+            // btnTransferObj
+            // 
+            this.btnTransferObj.Location = new System.Drawing.Point(84, 85);
+            this.btnTransferObj.Name = "btnTransferObj";
+            this.btnTransferObj.Size = new System.Drawing.Size(75, 19);
+            this.btnTransferObj.TabIndex = 6;
+            this.btnTransferObj.UseVisualStyleBackColor = true;
+            this.btnTransferObj.Click += new System.EventHandler(this.btnTransferObj_Click);
+            // 
+            // btnImpObj
+            // 
+            this.btnImpObj.Location = new System.Drawing.Point(6, 85);
+            this.btnImpObj.Name = "btnImpObj";
+            this.btnImpObj.Size = new System.Drawing.Size(75, 19);
+            this.btnImpObj.TabIndex = 5;
+            this.btnImpObj.UseVisualStyleBackColor = true;
+            this.btnImpObj.Click += new System.EventHandler(this.btnImpObj_Click);
+            // 
+            // btnContractConcludingObj
+            // 
+            this.btnContractConcludingObj.Location = new System.Drawing.Point(91, 82);
+            this.btnContractConcludingObj.Name = "btnContractConcludingObj";
+            this.btnContractConcludingObj.Size = new System.Drawing.Size(75, 19);
+            this.btnContractConcludingObj.TabIndex = 8;
+            this.btnContractConcludingObj.UseVisualStyleBackColor = true;
+            this.btnContractConcludingObj.Click += new System.EventHandler(this.btnContractConcludingObj_Click);
+            // 
+            // btnProjectExeObj
+            // 
+            this.btnProjectExeObj.Location = new System.Drawing.Point(8, 82);
+            this.btnProjectExeObj.Name = "btnProjectExeObj";
+            this.btnProjectExeObj.Size = new System.Drawing.Size(75, 19);
+            this.btnProjectExeObj.TabIndex = 7;
+            this.btnProjectExeObj.UseVisualStyleBackColor = true;
+            this.btnProjectExeObj.Click += new System.EventHandler(this.btnProjectExeObj_Click);
+            // 
+            // btnDeteailedDesgin
+            // 
+            this.btnDeteailedDesgin.Location = new System.Drawing.Point(173, 82);
+            this.btnDeteailedDesgin.Name = "btnDeteailedDesgin";
+            this.btnDeteailedDesgin.Size = new System.Drawing.Size(75, 19);
+            this.btnDeteailedDesgin.TabIndex = 9;
+            this.btnDeteailedDesgin.UseVisualStyleBackColor = true;
+            this.btnDeteailedDesgin.Click += new System.EventHandler(this.btnDeteailedDesgin_Click);
+            // 
+            // btnEvalObj
+            // 
+            this.btnEvalObj.Location = new System.Drawing.Point(85, 85);
+            this.btnEvalObj.Name = "btnEvalObj";
+            this.btnEvalObj.Size = new System.Drawing.Size(75, 19);
+            this.btnEvalObj.TabIndex = 8;
+            this.btnEvalObj.UseVisualStyleBackColor = true;
+            this.btnEvalObj.Click += new System.EventHandler(this.btnEvalObj_Click);
+            // 
+            // btnCloseObj
+            // 
+            this.btnCloseObj.Location = new System.Drawing.Point(7, 85);
+            this.btnCloseObj.Name = "btnCloseObj";
+            this.btnCloseObj.Size = new System.Drawing.Size(75, 19);
+            this.btnCloseObj.TabIndex = 7;
+            this.btnCloseObj.UseVisualStyleBackColor = true;
+            this.btnCloseObj.Click += new System.EventHandler(this.btnCloseObj_Click);
+            // 
+            // btnBusinessPlanObjective
+            // 
+            this.btnBusinessPlanObjective.Location = new System.Drawing.Point(85, 85);
+            this.btnBusinessPlanObjective.Name = "btnBusinessPlanObjective";
+            this.btnBusinessPlanObjective.Size = new System.Drawing.Size(75, 19);
+            this.btnBusinessPlanObjective.TabIndex = 8;
+            this.btnBusinessPlanObjective.UseVisualStyleBackColor = true;
+            this.btnBusinessPlanObjective.Click += new System.EventHandler(this.btnBusinessPlanObjective_Click);
+            // 
+            // btnFeasabilityObjective
+            // 
+            this.btnFeasabilityObjective.Location = new System.Drawing.Point(7, 85);
+            this.btnFeasabilityObjective.Name = "btnFeasabilityObjective";
+            this.btnFeasabilityObjective.Size = new System.Drawing.Size(75, 19);
+            this.btnFeasabilityObjective.TabIndex = 7;
+            this.btnFeasabilityObjective.UseVisualStyleBackColor = true;
+            this.btnFeasabilityObjective.Click += new System.EventHandler(this.btnFeasabilityObjective_Click);
+            // 
             // frmProjectManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -6794,21 +6804,15 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel panel60;
         private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Panel pnlObjectiveEvaluate;
-        private System.Windows.Forms.Panel pnlObjectiveCloseOut;
         private System.Windows.Forms.Button btnPARICSOverview;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnCloseOut2;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Panel pnlObjectiveTransfer;
-        private System.Windows.Forms.Panel pnlObjectiveImplementatio0n;
         private System.Windows.Forms.Button btnTransfer2;
         private System.Windows.Forms.Button btnImplementation2;
         private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Panel pnlObjectivesBusinessPlan;
-        private System.Windows.Forms.Panel pnlObjectivesFeasibility;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button btnBusinessPlan2;
         private System.Windows.Forms.Button btnFeasibility2;
@@ -6866,17 +6870,12 @@
         private System.Windows.Forms.Panel panel48;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Panel panel49;
-        private System.Windows.Forms.Panel pnlObjectiveDetailedDesign;
-        private System.Windows.Forms.Panel pnlObjectiveContractConcluding;
-        private System.Windows.Forms.Panel ProjectExecutionPlanning;
         private System.Windows.Forms.Button btnPARICSWorkPackages;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Button btnDetailedDesign2;
         private System.Windows.Forms.Button btnContractConcluding;
         private System.Windows.Forms.Button btnProjectExecutiomPlanning2;
         private System.Windows.Forms.Panel panel50;
-        private System.Windows.Forms.Panel pnlObjectivePrefeasibility;
-        private System.Windows.Forms.Panel pnlObjectiveOpportunityScreening;
         private System.Windows.Forms.Button btnPARICSStream;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Button btnPrefeasibility2;
@@ -6938,6 +6937,17 @@
         public System.Windows.Forms.TabControl tbp_Project_Management;
         private System.Windows.Forms.PictureBox pictureBox69;
         private System.Windows.Forms.PictureBox pictureBox70;
+        private System.Windows.Forms.Button btnOppScreenObj;
+        private System.Windows.Forms.Button btnEvalObj;
+        private System.Windows.Forms.Button btnCloseObj;
+        private System.Windows.Forms.Button btnTransferObj;
+        private System.Windows.Forms.Button btnImpObj;
+        private System.Windows.Forms.Button btnBusinessPlanObjective;
+        private System.Windows.Forms.Button btnFeasabilityObjective;
+        private System.Windows.Forms.Button btnDeteailedDesgin;
+        private System.Windows.Forms.Button btnContractConcludingObj;
+        private System.Windows.Forms.Button btnProjectExeObj;
+        private System.Windows.Forms.Button btnPreFeasObj;
     }
 }
 

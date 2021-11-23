@@ -636,5 +636,60 @@ namespace ProjectManagementToolkit
             PLSM_ProcessGroupingGovernance_Interfaces plsm = new PLSM_ProcessGroupingGovernance_Interfaces("tbpControllingAStage");
             plsm.Show();
         }
+
+        private void btnOppScreenObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Identify business and technical deficiencies, needs and oppertunities. Develop, screen & prioritise possible investments to address these, and plan the way forward for the most promising options remaining.");
+        }
+
+        private void btnPreFeasObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Establish the value of alternatives features of the solution to the business, and specify the business requiremetns. Determine the nature of the solution and assess benefits, cost, risk and external factors, to narrow down the options.");
+        }
+
+        private void btnFeasabilityObjective_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Apply high-level systems engineering process to define the list of alternative solutions, verify technical feasibility, business viability and architectural alignment of at least one solution. Quantify technical parameters, costs and benefits.");
+        }
+
+        private void btnBusinessPlanObjective_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Complete the systems engineering design and produce a set of specific requirements for hand-over to potential suppliers or specific design disciplines.");
+        }
+
+        private void btnProjectExeObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Identify business and technical deficiencies, needs and oppertunities. Develop, screen & prioritise possible investments to address these, and plan the way forward for the most promising options remaining. ");
+        }
+
+        private void btnContractConcludingObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Establish equitable and administratable contract(s) for all aspects of the project, in accordance with predetermined contracting strategies.");
+        }
+
+        private void btnDeteailedDesgin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Design components in detail to meet their specifications.");
+        }
+
+        private void btnImpObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Close the project in terms of contracts and contractors' liabilities. Close out any transactions after the guarantee period. Evaluate and report on the execution and management of the project.");
+        }
+
+        private void btnTransferObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Put the asset or solution into service, demonstrate that contractual commitments were met, and hand over responsibility for the asset to the Client.");
+        }
+
+        private void btnCloseObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Close the project in terms of contracts and contractors' liabilities. Close out any transactions after the guarantee period. Evaluate and report on the execution and management of the project.");
+        }
+
+        private void btnEvalObj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Close the project in terms of contracts and contractors' liabilities. Close out any transactions after the guarantee period. Evaluate and report on the execution and management of the project.");
+        }
     }
 }
