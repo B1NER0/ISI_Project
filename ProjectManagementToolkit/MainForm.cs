@@ -524,7 +524,7 @@ namespace ProjectManagementToolkit
         private void projectDashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProjectDashboard form = new ProjectDashboard();
-            form.Show();
+            form.ShowDialog();
             form.MdiParent = this;
         }
 
