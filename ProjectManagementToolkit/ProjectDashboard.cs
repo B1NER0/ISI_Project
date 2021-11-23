@@ -1071,10 +1071,11 @@ namespace ProjectManagementToolkit
 
             if (localDocuments == null)
             {
-                MessageBox.Show("No documents have been added yet.", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No documents have been added yet.\nPlease save some documents before opening the dashboard", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tabInitiation.Visible = false;
                 chart1.Visible = false;
                 chart2.Visible = false;
+                this.Close();
             }
             else
             {
