@@ -53,16 +53,11 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lstboxProject = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lblIndicator = new System.Windows.Forms.Label();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.btnSetPath = new System.Windows.Forms.Button();
             this.openAgile = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProjectCode
@@ -87,7 +82,8 @@
             this.txtProjectCode.Name = "txtProjectCode";
             this.txtProjectCode.Size = new System.Drawing.Size(320, 54);
             this.txtProjectCode.TabIndex = 13;
-            this.txtProjectCode.Text = "Enter Project Code";
+            this.txtProjectCode.Enter += new System.EventHandler(this.txtProjectCode_Enter);
+            this.txtProjectCode.Leave += new System.EventHandler(this.txtProjectCode_Leave);
             // 
             // btnSelectProject
             // 
@@ -379,7 +375,6 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.groupBox2);
             this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Controls.Add(this.groupBox1);
@@ -387,59 +382,10 @@
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(757, 587);
+            this.groupBox4.Size = new System.Drawing.Size(757, 470);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Project Creation";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.groupBox5.Controls.Add(this.lblIndicator);
-            this.groupBox5.Controls.Add(this.btnRun);
-            this.groupBox5.Controls.Add(this.btnSetPath);
-            this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(17, 470);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(478, 94);
-            this.groupBox5.TabIndex = 17;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Agile Extension";
-            // 
-            // lblIndicator
-            // 
-            this.lblIndicator.AutoSize = true;
-            this.lblIndicator.Location = new System.Drawing.Point(11, 66);
-            this.lblIndicator.Name = "lblIndicator";
-            this.lblIndicator.Size = new System.Drawing.Size(0, 16);
-            this.lblIndicator.TabIndex = 17;
-            // 
-            // btnRun
-            // 
-            this.btnRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.btnRun.Enabled = false;
-            this.btnRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRun.ForeColor = System.Drawing.Color.Black;
-            this.btnRun.Location = new System.Drawing.Point(233, 31);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(201, 28);
-            this.btnRun.TabIndex = 16;
-            this.btnRun.Text = "Launch Agile Extension";
-            this.btnRun.UseVisualStyleBackColor = false;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
-            // btnSetPath
-            // 
-            this.btnSetPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            this.btnSetPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetPath.ForeColor = System.Drawing.Color.Black;
-            this.btnSetPath.Location = new System.Drawing.Point(6, 31);
-            this.btnSetPath.Name = "btnSetPath";
-            this.btnSetPath.Size = new System.Drawing.Size(201, 28);
-            this.btnSetPath.TabIndex = 15;
-            this.btnSetPath.Text = "Set Path";
-            this.btnSetPath.UseVisualStyleBackColor = false;
-            this.btnSetPath.Click += new System.EventHandler(this.btnSetPath_Click);
             // 
             // openAgile
             // 
@@ -450,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(801, 600);
+            this.ClientSize = new System.Drawing.Size(801, 501);
             this.Controls.Add(this.groupBox4);
             this.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -467,8 +413,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -499,10 +443,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lstboxProject;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.Button btnSetPath;
-        private System.Windows.Forms.Label lblIndicator;
         private System.Windows.Forms.OpenFileDialog openAgile;
     }
 }
