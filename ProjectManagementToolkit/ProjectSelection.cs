@@ -44,7 +44,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
         private void btnCreateProject_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtProjectName.Text) && !string.IsNullOrEmpty(txtProjectSponsor.Text) && !string.IsNullOrEmpty(txtProjectManager.Text))
+            if (!string.IsNullOrEmpty(txtProjectName.Text) && !string.IsNullOrEmpty(txtProjectSponsor.Text) && !string.IsNullOrEmpty(txtProjectManager.Text))
             {
                 ProjectModel newProject = new ProjectModel();
                 string projectID = newProject.generateID();
@@ -75,7 +75,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
         }
 
-        
+
 
         private void ProjectSelection_Load(object sender, EventArgs e)
         {
@@ -90,20 +90,20 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 lstboxProject.Items.Add(project.ProjectName);
             }
 
-            string appPath = readFile();
 
-            if (appPath != "empty")
-            {
-                this.appPath = appPath;
-                btnRun.Enabled = true;
-            }
+          
+            txtProjectCode.Text = placeholderText;
+            txtProjectCode.ForeColor = SystemColors.GrayText;
+           
+
+
         }
 
         private void btnProjectCode_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            if(txtProjectCode.Text.Contains(" ") || txtProjectCode.Text.Contains(".") || txtProjectCode.Text == "")
+            if (txtProjectCode.Text.Contains(" ") || txtProjectCode.Text.Contains(".") || txtProjectCode.Text == "")
             {
                 MessageBox.Show("Incorrect Project ID.", "Sync Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtProjectCode.Text = "";
@@ -111,9 +111,9 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
 
             string projectCodeToAdd = txtProjectCode.Text;
-            
+
             bool containsItem = projectListModel.Any(item => item.ProjectID == projectCodeToAdd);
-            
+
 
             if (containsItem)
             {
@@ -126,13 +126,13 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
 
             bool connectionSuccessful = attemptHttpConnection();
-            
+
             if (!connectionSuccessful)
             {
                 MessageBox.Show("Unable to connect to server.", "Server Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             string projectID = txtProjectCode.Text;
 
             //Get Project Config from server.
@@ -152,8 +152,8 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
                 ProjectModel newProject = new ProjectModel();
 
-                
-                
+
+
                 newProject.ProjectID = projectModel["ProjectID"].ToString();
                 newProject.ProjectName = projectModel["ProjectName"].ToString();
                 newProject.ProjectSponsor = projectModel["ProjectSponsor"].ToString();
@@ -166,7 +166,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 newProject.LastDateTimeSynced = projectModel["LastDateTimeSynced"].ToObject<DateTime>();
 
                 projectListModel.Add(newProject);
-                
+
                 string json = JsonConvert.SerializeObject(projectListModel);
 
                 JsonHelper.saveProjectInfo(json, Settings.Default.Username);
@@ -175,7 +175,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 foreach (var project in projectListModel)
                 {
                     lstboxProject.Items.Add(project.ProjectName);
-                    
+
                 }
                 txtProjectCode.Text = "";
                 MessageBox.Show("Successfully added Project: " + projectModel["ProjectName"].ToString());
@@ -186,12 +186,12 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 MessageBox.Show("An unexpected server error occurred.", "Server Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
         }
 
         private bool attemptHttpConnection()
         {
-            
+
             try
             {
                 Task<HttpResponseMessage> responseMessage = client.GetAsync(Settings.Default.URI + "/");
@@ -216,103 +216,29 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
         }
 
-        //Instance variables for setting path
-        private static string path = Path.GetTempPath();
-        private static string APP_FILE_PATH = "\\Agile_app.txt";
-        private string appPath = "";
-
-        private string get_app_file()
-        {
-            return APP_FILE_PATH;
-        }
-
-        private bool writeToFile(string file, string content)
-        {
-            try
-            {
-                using (StreamWriter writer = new StreamWriter(path + file))
-                {
-                    writer.WriteLine(content);
-                }
-                return true;
-            }
-            catch (IOException e)
-            {
-                lblIndicator.Text = e.ToString();
-            }
-
-            return false;
-        }
-
-        private string readFile()
-        {
-            try
-            {
-                string line;
-                using (StreamReader reader = new StreamReader(path + get_app_file()))
-                {
-                    line = reader.ReadToEnd();
-                    line = line.Trim();
-                    lblIndicator.Text = "External application path found.";
-                    return line;
-                }
-            }
-            catch (IOException e)
-            {
-                lblIndicator.Text = "No application set.";
-            }
-            return "empty";
-        }
-
-        private static Task<int> runApp(string app_path)
-        {
-            var tcs = new TaskCompletionSource<int>();
-
-            var process = new Process
-            {
-                StartInfo = { FileName = app_path },
-                EnableRaisingEvents = true
-            };
-
-            process.Exited += (sender, args) =>
-            {
-                tcs.SetResult(process.ExitCode);
-                process.Dispose();
-            };
-
-            process.Start();
-
-            return tcs.Task;
-        }       
-
-      
         private void ProjectSelection_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnSetPath_Click(object sender, EventArgs e)
-        {
-            btnRun.Enabled = false;
-            openAgile.InitialDirectory = @"C:\\";
-            openAgile.Filter = "Exe Files (.exe)|*.exe|All Files (*.*)|*.*";
-            openAgile.RestoreDirectory = true;
+        string placeholderText = "Enter Project Code";
 
-            if (openAgile.ShowDialog() == DialogResult.OK)
+        private void txtProjectCode_Enter(object sender, EventArgs e)
+        {
+            if(txtProjectCode.Text == placeholderText)
             {
-                string appPath = openAgile.FileName;
-                if (writeToFile(get_app_file(), appPath))
-                {
-                    lblIndicator.Text = "External application path saved";
-                    this.appPath = appPath;
-                    btnRun.Enabled = true;
-                }
+                txtProjectCode.Text = "";
+                txtProjectCode.ForeColor = SystemColors.WindowText;
             }
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
+        private void txtProjectCode_Leave(object sender, EventArgs e)
         {
-            runApp(this.appPath);
+            if (txtProjectCode.Text == "")
+            {
+                txtProjectCode.Text = placeholderText;
+                txtProjectCode.ForeColor = SystemColors.GrayText;
+            }
         }
     }
 }

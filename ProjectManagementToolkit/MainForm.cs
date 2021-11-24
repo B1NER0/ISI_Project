@@ -560,5 +560,12 @@ namespace ProjectManagementToolkit
             projectManagement.Show();
             projectManagement.MdiParent = this;
         }
+
+        private void agileExtensionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgileExtension frmAgile = new AgileExtension();
+            frmAgile.ShowDialog();
+
+        }
     }
 }
