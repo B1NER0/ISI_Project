@@ -102,15 +102,15 @@ namespace ProjectManagementToolkit.MPMM
                 foreach (string item in documentsToSync)
                 {
                     bool syncSuccess = false;
-                    try
-                    {
+                    //try
+                    //{
                         syncSuccess = syncDocument(item);
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("An unexpected sync error occurred.", "Sync Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    //}
+                    //catch (Exception)
+                    //{
+                        //MessageBox.Show("An unexpected sync error occurred.", "Sync Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //return;
+                    //}
                     
 
                     documentsSuccesful[documentsToSync.IndexOf(item)] = syncSuccess;
@@ -256,6 +256,7 @@ namespace ProjectManagementToolkit.MPMM
                 return false;
             }
 
+            var test = localJson["DocumentModels"];
             //Get Latest Document Object from local and server
             var localLatest = localJson["DocumentModels"].OrderByDescending(x => x["DateModified"])
                                                             .FirstOrDefault().DeepClone()

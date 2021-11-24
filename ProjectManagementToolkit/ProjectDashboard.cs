@@ -53,6 +53,8 @@ namespace ProjectManagementToolkit
         BusinessCaseModel currentBusinessCaseModel;
         VersionControl<BusinessCaseModel> versionControl;
 
+        VersionControl<InitDueDateModel> versionControl90 = new VersionControl<InitDueDateModel>();
+
         FeasibilityStudyModel currentFeasibilityStudyModel;
         VersionControl<FeasibilityStudyModel> versionControl1;
 
@@ -73,6 +75,8 @@ namespace ProjectManagementToolkit
 
         List<string> initDocsListStatus = new List<string>();
 
+        InitDueDateModel tInit;
+
         // Create Lists for the dates and budgets
 
         List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> initDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
@@ -80,6 +84,9 @@ namespace ProjectManagementToolkit
         List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> executeDocsListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
         List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)> closingListDueDate = new List<(string dueDate, string budget, string startDate, string plannedBudget, string completedDate)>();
 
+        VersionControl<InitDueDateModel> versionControlzs;
+
+        VersionControl<InitDueDateModel> versionControl9 = new VersionControl<InitDueDateModel>();
         private void ProjectDashboard_Load(object sender, EventArgs e)
         {
             pbarOverall.Hide();
@@ -101,14 +108,47 @@ namespace ProjectManagementToolkit
             List<ProjectModel> projectListModel = JsonConvert.DeserializeObject<List<ProjectModel>>(json);
             projectModel = projectModel.getProjectModel(Settings.Default.ProjectID, projectListModel);
 
-
-            /////////////////////////////////////////////////////////////////INITIATION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            // Load the budget/date model
-
-            string jsonInitDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
-            InitDueDateModel tInit = JsonConvert.DeserializeObject<InitDueDateModel>(jsonInitDue);
             
+            
+            string json90 = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
+            List<string[]> documentInfo = new List<string[]>();
+            InitDueDateModel tInit = new InitDueDateModel();
+
+
+
+            if (json90 != "")
+            {
+                versionControl90 = JsonConvert.DeserializeObject<VersionControl<InitDueDateModel>>(json90);
+                tInit = JsonConvert.DeserializeObject<InitDueDateModel>(versionControl90.getLatest(versionControl90.DocumentModels));
+
+
+            }
+            else
+            {
+                versionControl90 = new VersionControl<InitDueDateModel>();
+                versionControl90.DocumentModels = new List<VersionControl<InitDueDateModel>.DocumentModel>();
+            }
+
+
+
+
+                // versionControlzs = new VersionControl<InitDueDateModel>();
+
+                // versionControlzs = JsonConvert.DeserializeObject<VersionControl<InitDueDateModel>>(jsonInitDue);
+
+                /////////////////////////////////////////////////////////////////INITIATION PHASE/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                // Load the budget/date model
+
+                //string jsonInitDue = JsonHelper.loadDocument(Settings.Default.ProjectID, "InitDueDateModel");
+                //InitDueDateModel tInit = JsonConvert.DeserializeObject<InitDueDateModel>(jsonInitDue);
+                // versionControlzs.DocumentModels = new List<VersionControl<InitDueDateModel>.DocumentModel>();
+
+
+               
+
+          //  InitDueDateModel tInit = JsonConvert.DeserializeObject<VersionControl<InitDueDateModel>>(jsonInitDue);
+
 
             if (tInit != null)
             {
@@ -1800,7 +1840,7 @@ namespace ProjectManagementToolkit
         double budgetBehind = 0;
 
 
-
+        
         private void saveAllDueDate(int phase)
         {
             if (phase == 1)
@@ -1852,8 +1892,21 @@ namespace ProjectManagementToolkit
 
                 earnedValueAnalysis(dgvInitiation, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, totalDaysInitlbl, lblTotalInitialBudget);
 
-                string jsong = JsonConvert.SerializeObject(currentInit);
-                JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
+
+                
+               
+                List<VersionControl<InitDueDateModel>.DocumentModel> documentModels = versionControl90.DocumentModels;
+                VersionControl<InitDueDateModel>.DocumentModel documentModel = new VersionControl<InitDueDateModel>.DocumentModel(currentInit, DateTime.Now, VersionControl<ProjectModel>.generateID());
+                documentModels.Add(documentModel);
+                versionControl90.DocumentModels = documentModels;
+                //  currentInit1 = JsonConvert.DeserializeObject<PlanningDueDateModel>(JsonConvert.SerializeObject(currentInit));
+                string json = JsonConvert.SerializeObject(versionControl90);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "InitDueDateModel");
+
+
+                //string jsong = JsonConvert.SerializeObject(currentInit);
+                //JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "InitDueDateModel");
+                MessageBox.Show("OK");
             }
             else if (phase == 2)
             {
@@ -1934,8 +1987,19 @@ namespace ProjectManagementToolkit
 
                 earnedValueAnalysis(dgvPlanning, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblPlanningSchedule, lblPlanningBudget);
 
-                string jsong = JsonConvert.SerializeObject(currentPlan);
-                JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "PlanningDueDateModel");
+                VersionControl<PlanningDueDateModel> versionControlzs = new VersionControl<PlanningDueDateModel>();
+                versionControlzs.DocumentModels = new List<VersionControl<PlanningDueDateModel>.DocumentModel>();
+                List<VersionControl<PlanningDueDateModel>.DocumentModel> documentModels = versionControlzs.DocumentModels;
+                VersionControl<PlanningDueDateModel>.DocumentModel documentModel = new VersionControl<PlanningDueDateModel>.DocumentModel(currentPlan, DateTime.Now, VersionControl<ProjectModel>.generateID());
+                documentModels.Add(documentModel);
+                versionControlzs.DocumentModels = documentModels;
+               // currentBusinessCaseModel = JsonConvert.DeserializeObject<PlanningDueDateModel>(JsonConvert.SerializeObject(currentInit));
+                string json = JsonConvert.SerializeObject(versionControlzs);
+                JsonHelper.saveDocument(json, Settings.Default.ProjectID, "PlanningDueDateModel");
+
+
+                //string jsong = JsonConvert.SerializeObject(currentPlan);
+                //JsonHelper.saveDocument(jsong, Settings.Default.ProjectID, "PlanningDueDateModel");
             }
             else if (phase == 3)
             {
