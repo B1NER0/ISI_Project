@@ -39,6 +39,15 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 mainForm.WindowState = FormWindowState.Maximized;
                 mainForm.Show();
                 this.Visible = false;
+
+                string projectName = projectListModel[index].ProjectName;
+                string result = Path.GetTempPath();
+                //MessageBox.Show("@" + result + "ProjectNames.txt");
+                StreamWriter projectNamesFile;
+                string path = Path.Combine("@", result, "ProjectNames.txt");
+                projectNamesFile = File.CreateText(path);
+                projectNamesFile.WriteLine(projectName);
+                projectNamesFile.Close();
             }
         }
 
@@ -75,7 +84,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
         }
 
-
+        //List<string> projectNames = new List<string>();
 
         private void ProjectSelection_Load(object sender, EventArgs e)
         {
@@ -88,14 +97,24 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             foreach (var project in projectListModel)
             {
                 lstboxProject.Items.Add(project.ProjectName);
+                //projectNames.Add(project.ProjectName);    
             }
 
 
           
             txtProjectCode.Text = placeholderText;
             txtProjectCode.ForeColor = SystemColors.GrayText;
-           
 
+            //string result = Path.GetTempPath();
+            //MessageBox.Show("@"+result+"ProjectNames.txt");
+            //StreamWriter projectNamesFile;
+            //string path = Path.Combine("@", result, "ProjectNames.txt");
+            //projectNamesFile = File.CreateText(path);
+            //foreach (var projectName in projectNames)
+            //{
+            //    projectNamesFile.WriteLine(projectName);
+            //}
+            //projectNamesFile.Close();
 
         }
 
@@ -239,6 +258,11 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 txtProjectCode.Text = placeholderText;
                 txtProjectCode.ForeColor = SystemColors.GrayText;
             }
+        }
+
+        private void lstboxProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
