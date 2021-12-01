@@ -2175,9 +2175,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ISI_DB.mdf" />
+    <Content Include="ISI_DB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="ISI_DB_log.ldf">
       <DependentUpon>ISI_DB.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Overview.jpg" />
     <None Include="Resources\Powerpoint.jpg" />
