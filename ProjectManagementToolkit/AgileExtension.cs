@@ -121,6 +121,7 @@ namespace ProjectManagementToolkit
         private void btnRun_Click(object sender, EventArgs e)
         {
             runApp(this.appPath);
+            this.Close();
         }
 
         private void AgileExtension_Load(object sender, EventArgs e)

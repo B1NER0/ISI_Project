@@ -23,7 +23,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWDevDeployment_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Developing deployment and operational concepts'", myconnection);
             DataSet ds = new DataSet();
@@ -40,7 +40,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWDevProcessOrganizational_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Develop process and organizational concept%'", myconnection);
             DataSet ds = new DataSet();
@@ -53,7 +53,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWDeployPlanning_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Deployment Planning'", myconnection);
             DataSet ds = new DataSet();
@@ -65,7 +65,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWImplementProcessOrgConcept_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Implement process and organizational concept%'", myconnection);
             DataSet ds = new DataSet();
@@ -77,7 +77,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWActivateProcesses_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Activate processes and organization'", myconnection);
             DataSet ds = new DataSet();
@@ -89,7 +89,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWPrepareProcesses_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Prepare processes and organization'", myconnection);
             DataSet ds = new DataSet();
@@ -101,7 +101,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnDetailDesignWBackUpData_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Back up data'", myconnection);
             DataSet ds = new DataSet();

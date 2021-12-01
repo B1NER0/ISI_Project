@@ -23,7 +23,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWInitiateStructProject_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Initiate and Structure Project Set-Up'", myconnection);
             DataSet ds = new DataSet();
@@ -35,7 +35,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWFinaliseRegulatoryLegalAppr_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Finalise Regulatory and Legal Approvals'", myconnection);
             DataSet ds = new DataSet();
@@ -47,7 +47,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWDevEngineeringSpecs_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Develop Engineering Specifications'", myconnection);
             DataSet ds = new DataSet();
@@ -64,7 +64,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWScopeFreeze_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Scope Freeze'", myconnection);
             DataSet ds = new DataSet();
@@ -76,7 +76,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWLifecycleOperationPlan_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Lifecycle Operation Plan'", myconnection);
             DataSet ds = new DataSet();
@@ -88,7 +88,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWProjectFinManagement_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Project Financial management'", myconnection);
             DataSet ds = new DataSet();
@@ -100,7 +100,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWResolveCommercialFinancialIssues_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Resolve Commercial and Financial Issues'", myconnection);
             DataSet ds = new DataSet();
@@ -112,7 +112,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWDetailBusinessPlanDeveloped_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Detailed Business Plan Developed'", myconnection);
             DataSet ds = new DataSet();
@@ -125,7 +125,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWDataHandOverTExecution_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Data Hand-Over to Execution'", myconnection);
             DataSet ds = new DataSet();
@@ -137,7 +137,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWProjectProcurementManagement_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Project Procurement management'", myconnection);
             DataSet ds = new DataSet();
@@ -149,7 +149,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWPrepareDistributeRFI_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Prepare and Distribute RFI%'", myconnection);
             DataSet ds = new DataSet();
@@ -161,7 +161,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBCWProjectExecutionStrat_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Project Execution Strategy'", myconnection);
             DataSet ds = new DataSet();

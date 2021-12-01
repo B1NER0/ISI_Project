@@ -28,7 +28,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWBuildExecute_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Build  Execute'", myconnection);
             DataSet ds = new DataSet();
@@ -40,7 +40,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWConductTest_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Conduct tests%'", myconnection);
             DataSet ds = new DataSet();
@@ -52,7 +52,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWAcceptingDeliverables_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Accepting Deliverables%'", myconnection);
             DataSet ds = new DataSet();
@@ -64,7 +64,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWDeploySystem_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Deploy system%'", myconnection);
             DataSet ds = new DataSet();
@@ -76,7 +76,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWDeployPlanning_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Deployment Planning'", myconnection);
             DataSet ds = new DataSet();
@@ -88,7 +88,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWDevelopTrainingConcept_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Develop training concept'", myconnection);
             DataSet ds = new DataSet();
@@ -100,7 +100,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWDraftTrainingDoc_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Draft training documentation'", myconnection);
             DataSet ds = new DataSet();
@@ -112,7 +112,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWTrainUsers_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Train users'", myconnection);
             DataSet ds = new DataSet();
@@ -124,7 +124,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWImplementProtectionMeasures_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Implement protection measures'", myconnection);
             DataSet ds = new DataSet();
@@ -136,7 +136,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWStartUpAndCommissioning_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Start-Up and Commissioning'", myconnection);
             DataSet ds = new DataSet();
@@ -148,7 +148,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWHandOver_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Hand Over / Partial Hand Over'", myconnection);
             DataSet ds = new DataSet();
@@ -160,7 +160,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWTransferSollution_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package LIKE '%Transfer sollution%'", myconnection);
             DataSet ds = new DataSet();
@@ -172,7 +172,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Forms.Project_Management
         private void btnBuildTestWConsolidateDoc_Click(object sender, EventArgs e)
         {
             string fileName = "PLMSWorkPackages.xlsx";
-            string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            string path = Path.Combine(Environment.CurrentDirectory, fileName);
             OleDbConnection myconnection = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source='" + path + "';Extended Properties='Excel 12.0;HDR = YES';");
             OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [sheet1$] WHERE Work_Package = 'Consolidate Documentation'", myconnection);
             DataSet ds = new DataSet();
