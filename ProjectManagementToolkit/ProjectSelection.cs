@@ -65,6 +65,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 new clsRestAPIHandler().create_user(Settings.Default.Username, defaultPassword, role);
                 new clsFileHandler().writeToFile(Settings.Default.Username, new clsFileHandler().get_user_file());
                 
+
                 listMembers.Add(txtProjectSponsor.Text);
                 if (new clsRestAPIHandler().create_user(listMembers[0], defaultPassword, role)) { MessageBox.Show("Success 1 !!!"); }
                 listMembers.Add(txtProjectReviewGroup.Text);
