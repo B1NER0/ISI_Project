@@ -138,7 +138,7 @@
             this.btnCreateProject.TabIndex = 21;
             this.btnCreateProject.Text = "Create New Project";
             this.btnCreateProject.UseVisualStyleBackColor = false;
-            this.btnCreateProject.Click += new System.EventHandler(this.btnCreateProject_Click);
+            //this.btnCreateProject.Click += new System.EventHandler(this.btnCreateProject_Click);
             // 
             // txtProjectOfficeManager
             // 

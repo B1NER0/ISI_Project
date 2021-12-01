@@ -16,6 +16,8 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using ProjectManagementToolkit.Properties;
 using System.Diagnostics;
+using ProjectManagementToolkit.Classes;
+
 
 namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 {
@@ -53,8 +55,38 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 
         private void btnCreateProject_Click(object sender, EventArgs e)
         {
+            List<string> listMembers = new List<string>();
             if (!string.IsNullOrEmpty(txtProjectName.Text) && !string.IsNullOrEmpty(txtProjectSponsor.Text) && !string.IsNullOrEmpty(txtProjectManager.Text))
             {
+
+                /*listMembers[0] = txtProjectSponsor.Text;
+                listMembers[1] = txtProjectReviewGroup.Text;
+                listMembers[2] = txtProjectManager.Text;
+                listMembers[3] = txtQualityManager.Text;
+                listMembers[4] = txtProcurementManager.Text;
+                listMembers[5] = txtCommunicationsManager.Text;
+                listMembers[6] = txtProjectOfficeManager.Text;
+                string projectName = txtProjectName.Text;
+                List<string> sprints = new List<string>; 
+                sprints[0] = "Default_sprint";
+                string defaultPassword = "123";
+
+                if (validateProjAdd(projectName, sprints[0], listMembers))
+                {
+                    
+                    JObject obj_proj = new clsRestAPIHandler().create_project(projectName, listMembers, sprints);
+                    update_user_projects(listMembers);
+                    get_updated_project_file();
+                    if (obj_proj != null)
+                    {
+                        new clsRestAPIHandler().create_sprint(txtSprintName.Text, txtProjName.Text, dStart.Value, dEnd.Value);
+                        lblOutput.Text = obj_proj["message"].ToString();
+                    }
+                    lblOutput.Text = obj_proj["message"].ToString();
+                    AddTabPageResetControls();
+
+                }*/
+
                 ProjectModel newProject = new ProjectModel();
                 string projectID = newProject.generateID();
                 Settings.Default.ProjectID = projectID;
@@ -84,7 +116,47 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             }
         }
 
-        //List<string> projectNames = new List<string>();
+        /*private bool validateProjAdd(string proj_name, string sprint_name, List<string> list)
+        {
+            if (proj_name.Length <= 0 || proj_name.Contains(" "))
+            {
+                lblOutput.Text = "Please enter a valid project name eg: proj_name";
+                txtProjName.Focus();
+                return false;
+            }
+
+            if (sprint_name.Length <= 0 || sprint_name.Contains(" "))
+            {
+                lblOutput.Text = "Please enter a valid sprint name eg: sprint_1";
+                txtSprintName.Focus();
+                return false;
+            }
+
+            if (list.Items.Count <= 0)
+            {
+                lblOutput.Text = "No members added to project";
+                list.Focus();
+                return false;
+            }
+
+            if (DateTime.Compare(dEnd.Value, dStart.Value) < 0)
+            {
+                lblOutput.Text = "Sprint end date is before the start date.";
+                dStart.Focus();
+                return false;
+            }
+
+            if (DateTime.Compare(dEnd.Value, dStart.Value) == 0)
+            {
+                lblOutput.Text = "Sprint start and date are on the same day!";
+                dEnd.Focus();
+                return false;
+            }
+
+            lblOutput.Text = "";
+            return true;
+        }*/
+
 
         private void ProjectSelection_Load(object sender, EventArgs e)
         {

@@ -17,6 +17,8 @@ using ProjectManagementToolkit.MPMM.MPMM_Document_Models;
 using ProjectManagementToolkit.Classes;
 using System.Drawing.Drawing2D;
 using System.Globalization;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 
 namespace ProjectManagementToolkit
@@ -1121,6 +1123,7 @@ namespace ProjectManagementToolkit
             chart1.ChartAreas[0].BackColor = Color.Transparent;
             chart1.Legends[0].BackColor = Color.Transparent;
             chart2.Legends[0].BackColor = Color.Transparent;
+            
 
 
 
@@ -1803,6 +1806,9 @@ namespace ProjectManagementToolkit
                 }
             }
 
+            //////////////////////////////////////////////////////////////////////////New chart for Agile progress chart IDEAS:(complete:notcomplete  ,  done,todo,doing)     
+            
+
             canChange = true;
 
             //Calling earnedValueAnalysis method to update the data grid view
@@ -1811,6 +1817,73 @@ namespace ProjectManagementToolkit
             earnedValueAnalysis(dgvClosing, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblClosingDays, lblClosingBudget);
             earnedValueAnalysis(dgvPlanning, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblPlanningSchedule, lblPlanningBudget);
             earnedValueAnalysis(dgvExecution, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblExecutionSchedule, lblExecutionBudget);
+
+
+
+            //JObject allSprints = new clsRestAPIHandler().get_all_sprints();
+            double progress = getProgress("Demo");
+            MessageBox.Show(""+progress);
+        
+        }
+
+        private double getProgress(string project)
+        {
+            double progressPercent = 0;
+            int doing = 0;
+            int done = 0;
+            int todo = 0;
+
+            string tabName = project;
+
+            JObject allsprints = new clsRestAPIHandler().get_all_sprints();
+            int count = int.Parse(allsprints["count"].ToString());
+            List<string> taskList = new List<string>();
+
+            JArray TaskArray = null;
+            for (int i = 0; i <= count - 1; i++)
+            {
+                if (allsprints["sprints"][i]["sprint"]["project"].ToString() == tabName)
+                {
+
+                    if (allsprints["sprints"][i]["sprint"]["tasks"].ToString() != "[]")
+                    {
+                        TaskArray = JArray.Parse(allsprints["sprints"][i]["sprint"]["tasks"].ToString());
+
+
+                        for (int k = 0; k <= TaskArray.Count() - 1; k++)
+                        {
+                            //To-do task count
+                            if (TaskArray[k]["listNumber"].ToString() == "1")
+                            {
+                                todo += 1;
+                            }
+                            //Doing task count
+                            if (TaskArray[k]["listNumber"].ToString() == "2")
+                            {
+                                doing += 1;
+                            }
+                            //Done task count
+                            if (TaskArray[k]["listNumber"].ToString() == "3")
+                            {
+                                done += 1;
+                            }
+                        }
+                    }
+                }
+            }
+            double div = doing + todo + done;
+
+            progressPercent = done / div;
+            if (double.IsInfinity(progressPercent))
+            {
+                progressPercent = 1;
+            }
+            if (progressPercent.ToString() == "NaN")
+            {
+                progressPercent = 0;
+            }
+            return progressPercent * 100;
+
         }
 
         private List<string> getLocalDocuments()
@@ -2790,6 +2863,11 @@ namespace ProjectManagementToolkit
 
 
             }
+        }
+
+        private void chartInit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
