@@ -1821,7 +1821,7 @@ namespace ProjectManagementToolkit
 
 
             //JObject allSprints = new clsRestAPIHandler().get_all_sprints();
-            double agileProgress = getProgress("Demo");
+            double agileProgress = getProgress(projectModel.ProjectName);
            // MessageBox.Show(""+progress);
 
             //AGILE
