@@ -1839,41 +1839,47 @@ namespace ProjectManagementToolkit
 
             string tabName = project;
 
-            JObject allsprints = new clsRestAPIHandler().get_all_sprints();
-            int count = int.Parse(allsprints["count"].ToString());
-            List<string> taskList = new List<string>();
+            JObject allsprints = new clsRestAPIHandler().get_all_project_sprints(project);
 
-            JArray TaskArray = null;
-            for (int i = 0; i <= count - 1; i++)
-            {
-                if (allsprints["sprints"][i]["sprint"]["project"].ToString() == tabName)
+        
+            for (int i = 0; i < allsprints["sprint"].Count(); i++)
+            {             
+
+                for(int x = 0; x < allsprints["sprint"][i]["tasks"].Count(); x++)
                 {
+                    datagridAgile.Rows.Add();
+                    datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[0].Value = allsprints["sprint"][i]["sprName"].ToString();
+                    datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[1].Value = allsprints["sprint"][i]["tasks"][x]["taskName"].ToString();
+                    
+                    string theUsers = allsprints["sprint"][i]["tasks"][x]["taskUsers"].ToString();
+                    theUsers = theUsers.Replace("[", "").Replace("]", "").Replace("\"", "");
 
-                    if (allsprints["sprints"][i]["sprint"]["tasks"].ToString() != "[]")
+                    datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[2].Value = theUsers;
+
+                    if (allsprints["sprint"][i]["tasks"][x]["listNumber"].ToString() == "1")
                     {
-                        TaskArray = JArray.Parse(allsprints["sprints"][i]["sprint"]["tasks"].ToString());
-
-                        for (int k = 0; k <= TaskArray.Count() - 1; k++)
-                        {
-                            //To-do task count
-                            if (TaskArray[k]["listNumber"].ToString() == "1")
-                            {
-                                todo += 1;
-                            }
-                            //Doing task count
-                            if (TaskArray[k]["listNumber"].ToString() == "2")
-                            {
-                                doing += 1;
-                            }
-                            //Done task count
-                            if (TaskArray[k]["listNumber"].ToString() == "3")
-                            {
-                                done += 1;
-                            }
-                        }
+                        todo++;
+                        datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[3].Style.BackColor = Color.Gray;
                     }
+                    //Doing task count
+                    if (allsprints["sprint"][i]["tasks"][x]["listNumber"].ToString() == "2")
+                    {
+                        doing++;
+                        datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[3].Style.BackColor = Color.Orange;
+                    }
+                    //Done task count
+                    if (allsprints["sprint"][i]["tasks"][x]["listNumber"].ToString() == "3")
+                    {
+                        done++;
+                        datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[3].Style.BackColor = Color.LimeGreen;
+                    }
+
                 }
             }
+
+
+
+
             double div = doing + todo + done;
 
             progressPercent = done / div;
@@ -1886,10 +1892,48 @@ namespace ProjectManagementToolkit
                 progressPercent = 0;
             }
 
+          
+
+            //for (int i = 0; i < TaskArray.Count; i++)
+            //{
+            //    if (allsprints["sprints"][i]["sprint"]["project"].ToString() == tabName)
+            //    {
+
+            //        if (allsprints["sprints"][i]["sprint"]["tasks"].ToString() != "[]")
+            //        {
+            //            MessageBox.Show(allsprints["sprints"][i].ToString());
+            //        }
+            //    }
+
+            //    datagridAgile.Rows.Add();
+            //    datagridAgile.Rows[i].Cells[0].Value = allsprints["sprints"][i]["sprint"]["tasks"].ToString();//TaskArray[i]["taskName"].ToString();
+            //    string theUsers = TaskArray[i]["taskUsers"].ToString();
+
+            //    //theUsers = theUsers.Remove(0, 2);
+            //    theUsers = theUsers.Replace("[", "").Replace("]", "").Replace("\"", "");
+
+            //    datagridAgile.Rows[i].Cells[1].Value = theUsers;
+
+            //    if (TaskArray[i]["listNumber"].ToString() == "1")
+            //    {
+            //        datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+            //    }
+            //    //Doing task count
+            //    if (TaskArray[i]["listNumber"].ToString() == "2")
+            //    {
+            //        datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.Orange;
+            //    }
+            //    //Done task count
+            //    if (TaskArray[i]["listNumber"].ToString() == "3")
+            //    {
+            //        datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
+            //    }
+            //}
+
             agileChart.ChartAreas[0].BackColor = Color.Transparent;
             agileChart.Legends[0].BackColor = Color.Transparent;
             agileChart.Legends[0].BackColor = Color.Transparent;
-            string[] xAgile = {"Tasks To Do " + todo, "Tasks In Progress " + doing, "Completed Tasks " + done, };
+            string[] xAgile = { "Tasks To Do " + todo, "Tasks In Progress " + doing, "Completed Tasks " + done, };
 
             double[] yAgile = { todo / progressPercent * 100, doing / progressPercent * 100, done / progressPercent * 100 };
             lblAgilePer.Text = (progressPercent).ToString("p");
@@ -1903,33 +1947,6 @@ namespace ProjectManagementToolkit
             agileChart.Series["Series1"].Points[1].Color = Color.Orange;
             agileChart.Series["Series1"].Points[2].Color = Color.LimeGreen;
 
-
-            for (int i = 0; i < TaskArray.Count; i++)
-            {
-                datagridAgile.Rows.Add();
-                datagridAgile.Rows[i].Cells[0].Value = TaskArray[i]["taskName"].ToString();
-                string theUsers = TaskArray[i]["taskUsers"].ToString();
-
-                //theUsers = theUsers.Remove(0, 2);
-                theUsers = theUsers.Replace("[", "").Replace("]", "").Replace("\"", "");
-
-                datagridAgile.Rows[i].Cells[1].Value = theUsers;
-
-                if (TaskArray[i]["listNumber"].ToString() == "1")
-                {
-                    datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.Gray;
-                }
-                //Doing task count
-                if (TaskArray[i]["listNumber"].ToString() == "2")
-                {
-                    datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.Orange;
-                }
-                //Done task count
-                if (TaskArray[i]["listNumber"].ToString() == "3")
-                {
-                    datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
-                }
-            }
             return progressPercent * 100;
 
         }

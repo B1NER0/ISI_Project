@@ -112,9 +112,6 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabAgile = new System.Windows.Forms.TabPage();
             this.datagridAgile = new System.Windows.Forms.DataGridView();
-            this.agileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agileUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAgilePer = new System.Windows.Forms.Label();
             this.agileChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbpClosure = new System.Windows.Forms.TabPage();
@@ -136,6 +133,10 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
+            this.agileSprint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agileUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInitiation.SuspendLayout();
             this.tbpInitiation.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -765,6 +766,7 @@
             this.datagridAgile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.datagridAgile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridAgile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.agileSprint,
             this.agileName,
             this.agileUser,
             this.dataGridViewTextBoxColumn9});
@@ -785,31 +787,6 @@
             this.datagridAgile.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.datagridAgile.Size = new System.Drawing.Size(1054, 248);
             this.datagridAgile.TabIndex = 35;
-            // 
-            // agileName
-            // 
-            this.agileName.HeaderText = "Task Name";
-            this.agileName.Name = "agileName";
-            this.agileName.ReadOnly = true;
-            this.agileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // agileUser
-            // 
-            this.agileUser.HeaderText = "Users";
-            this.agileUser.Name = "agileUser";
-            this.agileUser.ReadOnly = true;
-            this.agileUser.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 48;
             // 
             // lblAgilePer
             // 
@@ -1104,6 +1081,37 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Overall Progress";
             // 
+            // agileSprint
+            // 
+            this.agileSprint.HeaderText = "Sprint";
+            this.agileSprint.Name = "agileSprint";
+            this.agileSprint.ReadOnly = true;
+            // 
+            // agileName
+            // 
+            this.agileName.HeaderText = "Task Name";
+            this.agileName.Name = "agileName";
+            this.agileName.ReadOnly = true;
+            this.agileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // agileUser
+            // 
+            this.agileUser.HeaderText = "Users";
+            this.agileUser.Name = "agileUser";
+            this.agileUser.ReadOnly = true;
+            this.agileUser.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn9.Width = 48;
+            // 
             // ProjectDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1226,10 +1234,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabAgile;
         private System.Windows.Forms.DataGridView datagridAgile;
+        private System.Windows.Forms.Label lblAgilePer;
+        private System.Windows.Forms.DataVisualization.Charting.Chart agileChart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agileSprint;
         private System.Windows.Forms.DataGridViewTextBoxColumn agileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn agileUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.Label lblAgilePer;
-        private System.Windows.Forms.DataVisualization.Charting.Chart agileChart;
     }
 }
