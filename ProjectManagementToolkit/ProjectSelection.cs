@@ -16,6 +16,8 @@ using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using ProjectManagementToolkit.Properties;
 using System.Diagnostics;
+using ProjectManagementToolkit.Classes;
+
 
 namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
 {
@@ -39,13 +41,70 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 mainForm.WindowState = FormWindowState.Maximized;
                 mainForm.Show();
                 this.Visible = false;
+
+                string projectName = projectListModel[index].ProjectName;
+                string result = Path.GetTempPath();
+                //MessageBox.Show("@" + result + "ProjectNames.txt");
+                StreamWriter projectNamesFile;
+                string path = Path.Combine("@", result, "ProjectNames.txt");
+                projectNamesFile = File.CreateText(path);
+                projectNamesFile.WriteLine(projectName);
+                projectNamesFile.Close();
             }
         }
 
         private void btnCreateProject_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("activated");
+            List<string> listMembers = new List<string>();
             if (!string.IsNullOrEmpty(txtProjectName.Text) && !string.IsNullOrEmpty(txtProjectSponsor.Text) && !string.IsNullOrEmpty(txtProjectManager.Text))
             {
+                string defaultPassword = "123";
+                string role = "admin";
+
+                new clsRestAPIHandler().create_user(Settings.Default.Username, defaultPassword, role);
+                new clsFileHandler().writeToFile(Settings.Default.Username, new clsFileHandler().get_user_file());
+                
+
+                listMembers.Add(txtProjectSponsor.Text);
+                if (new clsRestAPIHandler().create_user(listMembers[0], defaultPassword, role)) { MessageBox.Show("Success 1 !!!"); }
+                listMembers.Add(txtProjectReviewGroup.Text);
+                new clsRestAPIHandler().create_user(listMembers[1], defaultPassword, role);
+                listMembers.Add(txtProjectManager.Text);
+                new clsRestAPIHandler().create_user(listMembers[2], defaultPassword, role);
+                listMembers.Add(txtQualityManager.Text);
+                new clsRestAPIHandler().create_user(listMembers[3], defaultPassword, role);
+                listMembers.Add(txtProcurementManager.Text);
+                new clsRestAPIHandler().create_user(listMembers[4], defaultPassword, role);
+                listMembers.Add(txtCommunicationsManager.Text);
+                new clsRestAPIHandler().create_user(listMembers[5], defaultPassword, role);
+                listMembers.Add(txtProjectOfficeManager.Text);
+                new clsRestAPIHandler().create_user(listMembers[6], defaultPassword, role);
+                string projectName = txtProjectName.Text;
+                List<string> sprints = new List<string>(); 
+               
+                sprints.Add("Default_sprint");
+                DateTime dateStart = new DateTime();
+                dateStart = DateTime.Now;
+                DateTime dateEnd = new DateTime(9998, 12, 31);
+                string currentUser = Settings.Default.Username;
+
+                if (validateProjAdd(projectName, sprints[0], listMembers, dateStart, dateEnd))
+                {
+                    
+                    JObject obj_proj = new clsRestAPIHandler().create_project(projectName, listMembers, sprints);
+                    update_user_projects(listMembers, projectName, currentUser);
+                    get_updated_project_file();
+                    if (obj_proj != null)
+                    {
+                        new clsRestAPIHandler().create_sprint(sprints[0], projectName, dateStart, dateEnd);
+                        //lblOutput.Text = obj_proj["message"].ToString();
+                    }
+                    //lblOutput.Text = obj_proj["message"].ToString();
+                    //AddTabPageResetControls();
+
+                }
+
                 ProjectModel newProject = new ProjectModel();
                 string projectID = newProject.generateID();
                 Settings.Default.ProjectID = projectID;
@@ -76,6 +135,80 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         }
 
 
+        private bool validateProjAdd(string proj_name, string sprint_name, List<string> list, DateTime dateStart, DateTime dateEnd)
+        {
+            if (proj_name.Length <= 0 || proj_name.Contains(" "))
+            {
+                //lblOutput.Text = "Please enter a valid project name eg: proj_name";
+                //txtProjName.Focus();
+                return false;
+            }
+
+            if (sprint_name.Length <= 0 || sprint_name.Contains(" "))
+            {
+                //lblOutput.Text = "Please enter a valid sprint name eg: sprint_1";
+                //txtSprintName.Focus();
+                return false;
+            }
+
+            if (list.Count <= 0)
+            {
+                //lblOutput.Text = "No members added to project";
+                //list.Focus();
+                return false;
+            }
+
+            if (DateTime.Compare(dateEnd, dateStart) < 0)
+            {
+                //lblOutput.Text = "Sprint end date is before the start date.";
+                //dStart.Focus();
+                return false;
+            }
+
+            if (DateTime.Compare(dateEnd, dateStart) == 0)
+            {
+                //lblOutput.Text = "Sprint start and date are on the same day!";
+                //dEnd.Focus();
+                return false;
+            }
+
+            //lblOutput.Text = "";
+            return true;
+        }
+
+        public void update_user_projects(List<string> list, string project, string currentUser)
+        {
+            //Adds project to each user in the listbox to DB.
+            for (int i = 0; i < list.Count; i++)
+            {
+                JObject obj = new clsRestAPIHandler().get_user_info(list[i].ToString());
+                string projects = obj["user"][0]["projects"].ToString();
+                JArray user_projects = JArray.Parse(projects);
+                user_projects.Add(project);
+                string json_payload = new clsRestAPIHandler().prepareJsonPayload("projects", user_projects);
+                new clsRestAPIHandler().update_user(list[i].ToString(), json_payload);
+            }
+
+            //Adds project to the current user in DB.
+            //string current_user = new clsFileHandler().readFromFile(new clsFileHandler().get_user_file());
+            JObject obj_current_user = new clsRestAPIHandler().get_user_info(currentUser);
+            string projects_current_user = obj_current_user["user"][0]["projects"].ToString();
+            JArray projects_current_user_array = JArray.Parse(projects_current_user);
+            projects_current_user_array.Add(project);
+            string current_payload = new clsRestAPIHandler().prepareJsonPayload("projects", projects_current_user_array);
+            new clsRestAPIHandler().update_user(currentUser, current_payload);
+        }
+
+        private void get_updated_project_file()
+        {
+            new clsFileHandler().deleteFile(new clsFileHandler().get_project_file());
+            string current_user = new clsFileHandler().readFromFile(new clsFileHandler().get_user_file());
+            JObject obj = new clsRestAPIHandler().get_user_info(current_user);
+            string projects = obj["user"][0]["projects"].ToString();
+            JArray user_projects = JArray.Parse(projects);
+            new clsFileHandler().writeMutlipleLines(user_projects, new clsFileHandler().get_project_file());
+        }
+
 
         private void ProjectSelection_Load(object sender, EventArgs e)
         {
@@ -88,14 +221,24 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             foreach (var project in projectListModel)
             {
                 lstboxProject.Items.Add(project.ProjectName);
+                //projectNames.Add(project.ProjectName);    
             }
 
 
           
             txtProjectCode.Text = placeholderText;
             txtProjectCode.ForeColor = SystemColors.GrayText;
-           
 
+            //string result = Path.GetTempPath();
+            //MessageBox.Show("@"+result+"ProjectNames.txt");
+            //StreamWriter projectNamesFile;
+            //string path = Path.Combine("@", result, "ProjectNames.txt");
+            //projectNamesFile = File.CreateText(path);
+            //foreach (var projectName in projectNames)
+            //{
+            //    projectNamesFile.WriteLine(projectName);
+            //}
+            //projectNamesFile.Close();
 
         }
 
@@ -239,6 +382,16 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 txtProjectCode.Text = placeholderText;
                 txtProjectCode.ForeColor = SystemColors.GrayText;
             }
+        }
+
+        private void lstboxProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateProject_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,37 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea25 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend25 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend26 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend27 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend28 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend29 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend30 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label3 = new System.Windows.Forms.Label();
             this.lblProjectName = new System.Windows.Forms.Label();
             this.tabInitiation = new System.Windows.Forms.TabControl();
@@ -104,6 +110,10 @@
             this.ExecutionPlannedBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BudgetEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabAgile = new System.Windows.Forms.TabPage();
+            this.datagridAgile = new System.Windows.Forms.DataGridView();
+            this.lblAgilePer = new System.Windows.Forms.Label();
+            this.agileChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbpClosure = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblClosingBudget = new System.Windows.Forms.Label();
@@ -123,6 +133,10 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
+            this.agileSprint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agileUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInitiation.SuspendLayout();
             this.tbpInitiation.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -136,6 +150,9 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartExecution)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExecution)).BeginInit();
+            this.tabAgile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridAgile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileChart)).BeginInit();
             this.tbpClosure.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartClosing)).BeginInit();
@@ -149,10 +166,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label3.Location = new System.Drawing.Point(16, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 35);
+            this.label3.Size = new System.Drawing.Size(101, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Project:";
             // 
@@ -161,10 +177,9 @@
             this.lblProjectName.AutoSize = true;
             this.lblProjectName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProjectName.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblProjectName.Location = new System.Drawing.Point(156, 11);
-            this.lblProjectName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProjectName.Location = new System.Drawing.Point(117, 9);
             this.lblProjectName.Name = "lblProjectName";
-            this.lblProjectName.Size = new System.Drawing.Size(39, 35);
+            this.lblProjectName.Size = new System.Drawing.Size(34, 29);
             this.lblProjectName.TabIndex = 6;
             this.lblProjectName.Text = "...";
             // 
@@ -173,13 +188,14 @@
             this.tabInitiation.Controls.Add(this.tbpInitiation);
             this.tabInitiation.Controls.Add(this.tbpPlanning);
             this.tabInitiation.Controls.Add(this.tbpExecution);
+            this.tabInitiation.Controls.Add(this.tabAgile);
             this.tabInitiation.Controls.Add(this.tbpClosure);
             this.tabInitiation.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabInitiation.Location = new System.Drawing.Point(15, 299);
-            this.tabInitiation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabInitiation.Location = new System.Drawing.Point(11, 243);
+            this.tabInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tabInitiation.Name = "tabInitiation";
             this.tabInitiation.SelectedIndex = 0;
-            this.tabInitiation.Size = new System.Drawing.Size(1459, 742);
+            this.tabInitiation.Size = new System.Drawing.Size(1094, 603);
             this.tabInitiation.TabIndex = 13;
             // 
             // tbpInitiation
@@ -189,11 +205,11 @@
             this.tbpInitiation.Controls.Add(this.lblInitNumTasks);
             this.tbpInitiation.Controls.Add(this.dgvInitiation);
             this.tbpInitiation.Controls.Add(this.chartInit);
-            this.tbpInitiation.Location = new System.Drawing.Point(4, 25);
-            this.tbpInitiation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpInitiation.Location = new System.Drawing.Point(4, 21);
+            this.tbpInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.tbpInitiation.Name = "tbpInitiation";
-            this.tbpInitiation.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbpInitiation.Size = new System.Drawing.Size(1451, 713);
+            this.tbpInitiation.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpInitiation.Size = new System.Drawing.Size(1086, 578);
             this.tbpInitiation.TabIndex = 0;
             this.tbpInitiation.Text = "Initation Phase";
             // 
@@ -203,19 +219,19 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.totalDaysInitlbl);
             this.panel1.Controls.Add(this.lblTotalInitialBudget);
-            this.panel1.Location = new System.Drawing.Point(523, 28);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(392, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 102);
+            this.panel1.Size = new System.Drawing.Size(214, 83);
             this.panel1.TabIndex = 27;
             // 
             // totalDaysInitlbl
             // 
             this.totalDaysInitlbl.AutoSize = true;
             this.totalDaysInitlbl.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalDaysInitlbl.Location = new System.Drawing.Point(3, 11);
+            this.totalDaysInitlbl.Location = new System.Drawing.Point(2, 9);
+            this.totalDaysInitlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.totalDaysInitlbl.Name = "totalDaysInitlbl";
-            this.totalDaysInitlbl.Size = new System.Drawing.Size(162, 30);
+            this.totalDaysInitlbl.Size = new System.Drawing.Size(129, 24);
             this.totalDaysInitlbl.TabIndex = 25;
             this.totalDaysInitlbl.Text = "On schedule";
             // 
@@ -223,19 +239,19 @@
             // 
             this.lblTotalInitialBudget.AutoSize = true;
             this.lblTotalInitialBudget.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalInitialBudget.Location = new System.Drawing.Point(3, 60);
+            this.lblTotalInitialBudget.Location = new System.Drawing.Point(2, 49);
+            this.lblTotalInitialBudget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalInitialBudget.Name = "lblTotalInitialBudget";
-            this.lblTotalInitialBudget.Size = new System.Drawing.Size(139, 30);
+            this.lblTotalInitialBudget.Size = new System.Drawing.Size(112, 24);
             this.lblTotalInitialBudget.TabIndex = 26;
             this.lblTotalInitialBudget.Text = "On Budget";
             // 
             // lblInitNumTasks
             // 
             this.lblInitNumTasks.AutoSize = true;
-            this.lblInitNumTasks.Location = new System.Drawing.Point(124, 113);
-            this.lblInitNumTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInitNumTasks.Location = new System.Drawing.Point(93, 92);
             this.lblInitNumTasks.Name = "lblInitNumTasks";
-            this.lblInitNumTasks.Size = new System.Drawing.Size(50, 16);
+            this.lblInitNumTasks.Size = new System.Drawing.Size(39, 14);
             this.lblInitNumTasks.TabIndex = 24;
             this.lblInitNumTasks.Text = "label4";
             // 
@@ -247,14 +263,14 @@
             this.dgvInitiation.AllowUserToResizeRows = false;
             this.dgvInitiation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInitiation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInitiation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInitiation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInitiation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInitiation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InitiationDocument,
@@ -265,22 +281,22 @@
             this.BudgetInit,
             this.DoneInitation});
             this.dgvInitiation.EnableHeadersVisualStyles = false;
-            this.dgvInitiation.Location = new System.Drawing.Point(19, 238);
-            this.dgvInitiation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvInitiation.Location = new System.Drawing.Point(14, 193);
+            this.dgvInitiation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInitiation.MultiSelect = false;
             this.dgvInitiation.Name = "dgvInitiation";
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInitiation.RowHeadersDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInitiation.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInitiation.RowHeadersWidth = 51;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvInitiation.RowsDefaultCellStyle = dataGridViewCellStyle51;
-            this.dgvInitiation.Size = new System.Drawing.Size(1407, 271);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvInitiation.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvInitiation.Size = new System.Drawing.Size(1055, 220);
             this.dgvInitiation.TabIndex = 17;
             this.dgvInitiation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellClick);
             this.dgvInitiation.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInitiation_CellValueChanged);
@@ -336,32 +352,32 @@
             this.DoneInitation.ReadOnly = true;
             this.DoneInitation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DoneInitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DoneInitation.Width = 58;
+            this.DoneInitation.Width = 48;
             // 
             // chartInit
             // 
             this.chartInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.chartInit.BorderlineColor = System.Drawing.Color.Black;
             this.chartInit.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea25.Name = "ChartArea1";
-            this.chartInit.ChartAreas.Add(chartArea25);
-            legend25.Name = "Legend1";
-            this.chartInit.Legends.Add(legend25);
-            this.chartInit.Location = new System.Drawing.Point(31, 28);
-            this.chartInit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea1.Name = "ChartArea1";
+            this.chartInit.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartInit.Legends.Add(legend1);
+            this.chartInit.Location = new System.Drawing.Point(23, 23);
             this.chartInit.Name = "chartInit";
             this.chartInit.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series29.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series29.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series29.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
-            series29.Legend = "Legend1";
-            series29.Name = "Series1";
-            this.chartInit.Series.Add(series29);
-            this.chartInit.Size = new System.Drawing.Size(453, 188);
+            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series1.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartInit.Series.Add(series1);
+            this.chartInit.Size = new System.Drawing.Size(340, 153);
             this.chartInit.TabIndex = 23;
             this.chartInit.Text = "Overall Progress";
+            this.chartInit.Click += new System.EventHandler(this.chartInit_Click);
             // 
             // tbpPlanning
             // 
@@ -370,11 +386,11 @@
             this.tbpPlanning.Controls.Add(this.lblPlanNumTasks);
             this.tbpPlanning.Controls.Add(this.chartPlanning);
             this.tbpPlanning.Controls.Add(this.dgvPlanning);
-            this.tbpPlanning.Location = new System.Drawing.Point(4, 25);
-            this.tbpPlanning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpPlanning.Location = new System.Drawing.Point(4, 21);
+            this.tbpPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.tbpPlanning.Name = "tbpPlanning";
-            this.tbpPlanning.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbpPlanning.Size = new System.Drawing.Size(1451, 713);
+            this.tbpPlanning.Padding = new System.Windows.Forms.Padding(2);
+            this.tbpPlanning.Size = new System.Drawing.Size(1086, 578);
             this.tbpPlanning.TabIndex = 1;
             this.tbpPlanning.Text = "Planning Phase";
             // 
@@ -384,19 +400,19 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblPlanningSchedule);
             this.panel2.Controls.Add(this.lblPlanningBudget);
-            this.panel2.Location = new System.Drawing.Point(517, 28);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(388, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(285, 105);
+            this.panel2.Size = new System.Drawing.Size(214, 86);
             this.panel2.TabIndex = 28;
             // 
             // lblPlanningSchedule
             // 
             this.lblPlanningSchedule.AutoSize = true;
             this.lblPlanningSchedule.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanningSchedule.Location = new System.Drawing.Point(3, 11);
+            this.lblPlanningSchedule.Location = new System.Drawing.Point(2, 9);
+            this.lblPlanningSchedule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlanningSchedule.Name = "lblPlanningSchedule";
-            this.lblPlanningSchedule.Size = new System.Drawing.Size(165, 30);
+            this.lblPlanningSchedule.Size = new System.Drawing.Size(131, 24);
             this.lblPlanningSchedule.TabIndex = 26;
             this.lblPlanningSchedule.Text = "On Schedule";
             // 
@@ -404,19 +420,19 @@
             // 
             this.lblPlanningBudget.AutoSize = true;
             this.lblPlanningBudget.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanningBudget.Location = new System.Drawing.Point(3, 66);
+            this.lblPlanningBudget.Location = new System.Drawing.Point(2, 54);
+            this.lblPlanningBudget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlanningBudget.Name = "lblPlanningBudget";
-            this.lblPlanningBudget.Size = new System.Drawing.Size(139, 30);
+            this.lblPlanningBudget.Size = new System.Drawing.Size(112, 24);
             this.lblPlanningBudget.TabIndex = 27;
             this.lblPlanningBudget.Text = "On Budget";
             // 
             // lblPlanNumTasks
             // 
             this.lblPlanNumTasks.AutoSize = true;
-            this.lblPlanNumTasks.Location = new System.Drawing.Point(124, 113);
-            this.lblPlanNumTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlanNumTasks.Location = new System.Drawing.Point(93, 92);
             this.lblPlanNumTasks.Name = "lblPlanNumTasks";
-            this.lblPlanNumTasks.Size = new System.Drawing.Size(50, 16);
+            this.lblPlanNumTasks.Size = new System.Drawing.Size(39, 14);
             this.lblPlanNumTasks.TabIndex = 25;
             this.lblPlanNumTasks.Text = "label4";
             // 
@@ -425,23 +441,22 @@
             this.chartPlanning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.chartPlanning.BorderlineColor = System.Drawing.Color.Black;
             this.chartPlanning.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea26.Name = "ChartArea1";
-            this.chartPlanning.ChartAreas.Add(chartArea26);
-            legend26.Name = "Legend1";
-            this.chartPlanning.Legends.Add(legend26);
-            this.chartPlanning.Location = new System.Drawing.Point(31, 28);
-            this.chartPlanning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea2.Name = "ChartArea1";
+            this.chartPlanning.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPlanning.Legends.Add(legend2);
+            this.chartPlanning.Location = new System.Drawing.Point(23, 23);
             this.chartPlanning.Name = "chartPlanning";
             this.chartPlanning.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series30.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series30.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series30.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
-            series30.Legend = "Legend1";
-            series30.Name = "Series1";
-            this.chartPlanning.Series.Add(series30);
-            this.chartPlanning.Size = new System.Drawing.Size(453, 188);
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series2.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPlanning.Series.Add(series2);
+            this.chartPlanning.Size = new System.Drawing.Size(340, 153);
             this.chartPlanning.TabIndex = 24;
             this.chartPlanning.Text = "Overall Progress";
             // 
@@ -451,14 +466,14 @@
             this.dgvPlanning.AllowUserToDeleteRows = false;
             this.dgvPlanning.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPlanning.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanning.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanning.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPlanning.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanning.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlanningDocument,
@@ -469,21 +484,21 @@
             this.BudgetPlan,
             this.DonePlanning});
             this.dgvPlanning.EnableHeadersVisualStyles = false;
-            this.dgvPlanning.Location = new System.Drawing.Point(31, 242);
-            this.dgvPlanning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPlanning.Location = new System.Drawing.Point(23, 197);
+            this.dgvPlanning.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlanning.Name = "dgvPlanning";
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanning.RowHeadersDefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanning.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlanning.RowHeadersWidth = 51;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvPlanning.RowsDefaultCellStyle = dataGridViewCellStyle54;
-            this.dgvPlanning.Size = new System.Drawing.Size(1405, 305);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvPlanning.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPlanning.Size = new System.Drawing.Size(1054, 248);
             this.dgvPlanning.TabIndex = 21;
             this.dgvPlanning.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellClick);
             this.dgvPlanning.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanning_CellValueChanged);
@@ -541,7 +556,7 @@
             this.DonePlanning.ReadOnly = true;
             this.DonePlanning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DonePlanning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.DonePlanning.Width = 58;
+            this.DonePlanning.Width = 48;
             // 
             // tbpExecution
             // 
@@ -550,10 +565,10 @@
             this.tbpExecution.Controls.Add(this.lblExecNumTasks);
             this.tbpExecution.Controls.Add(this.chartExecution);
             this.tbpExecution.Controls.Add(this.dgvExecution);
-            this.tbpExecution.Location = new System.Drawing.Point(4, 25);
-            this.tbpExecution.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbpExecution.Location = new System.Drawing.Point(4, 21);
+            this.tbpExecution.Margin = new System.Windows.Forms.Padding(2);
             this.tbpExecution.Name = "tbpExecution";
-            this.tbpExecution.Size = new System.Drawing.Size(1451, 713);
+            this.tbpExecution.Size = new System.Drawing.Size(1086, 578);
             this.tbpExecution.TabIndex = 2;
             this.tbpExecution.Text = "Execution Phase";
             // 
@@ -563,19 +578,19 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.lblExecutionSchedule);
             this.panel3.Controls.Add(this.lblExecutionBudget);
-            this.panel3.Location = new System.Drawing.Point(515, 22);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(386, 18);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(285, 102);
+            this.panel3.Size = new System.Drawing.Size(214, 83);
             this.panel3.TabIndex = 30;
             // 
             // lblExecutionSchedule
             // 
             this.lblExecutionSchedule.AutoSize = true;
             this.lblExecutionSchedule.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExecutionSchedule.Location = new System.Drawing.Point(3, 12);
+            this.lblExecutionSchedule.Location = new System.Drawing.Point(2, 10);
+            this.lblExecutionSchedule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExecutionSchedule.Name = "lblExecutionSchedule";
-            this.lblExecutionSchedule.Size = new System.Drawing.Size(165, 30);
+            this.lblExecutionSchedule.Size = new System.Drawing.Size(131, 24);
             this.lblExecutionSchedule.TabIndex = 28;
             this.lblExecutionSchedule.Text = "On Schedule";
             // 
@@ -583,19 +598,19 @@
             // 
             this.lblExecutionBudget.AutoSize = true;
             this.lblExecutionBudget.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExecutionBudget.Location = new System.Drawing.Point(3, 57);
+            this.lblExecutionBudget.Location = new System.Drawing.Point(2, 46);
+            this.lblExecutionBudget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExecutionBudget.Name = "lblExecutionBudget";
-            this.lblExecutionBudget.Size = new System.Drawing.Size(139, 30);
+            this.lblExecutionBudget.Size = new System.Drawing.Size(112, 24);
             this.lblExecutionBudget.TabIndex = 29;
             this.lblExecutionBudget.Text = "On Budget";
             // 
             // lblExecNumTasks
             // 
             this.lblExecNumTasks.AutoSize = true;
-            this.lblExecNumTasks.Location = new System.Drawing.Point(120, 107);
-            this.lblExecNumTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExecNumTasks.Location = new System.Drawing.Point(90, 87);
             this.lblExecNumTasks.Name = "lblExecNumTasks";
-            this.lblExecNumTasks.Size = new System.Drawing.Size(50, 16);
+            this.lblExecNumTasks.Size = new System.Drawing.Size(39, 14);
             this.lblExecNumTasks.TabIndex = 27;
             this.lblExecNumTasks.Text = "label4";
             // 
@@ -604,23 +619,22 @@
             this.chartExecution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.chartExecution.BorderlineColor = System.Drawing.Color.Black;
             this.chartExecution.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea27.Name = "ChartArea1";
-            this.chartExecution.ChartAreas.Add(chartArea27);
-            legend27.Name = "Legend1";
-            this.chartExecution.Legends.Add(legend27);
-            this.chartExecution.Location = new System.Drawing.Point(27, 22);
-            this.chartExecution.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea3.Name = "ChartArea1";
+            this.chartExecution.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartExecution.Legends.Add(legend3);
+            this.chartExecution.Location = new System.Drawing.Point(20, 18);
             this.chartExecution.Name = "chartExecution";
             this.chartExecution.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series31.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series31.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series31.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
-            series31.Legend = "Legend1";
-            series31.Name = "Series1";
-            this.chartExecution.Series.Add(series31);
-            this.chartExecution.Size = new System.Drawing.Size(453, 188);
+            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series3.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartExecution.Series.Add(series3);
+            this.chartExecution.Size = new System.Drawing.Size(340, 153);
             this.chartExecution.TabIndex = 26;
             this.chartExecution.Text = "Overall Progress";
             this.chartExecution.Click += new System.EventHandler(this.chart3_Click);
@@ -631,14 +645,14 @@
             this.dgvExecution.AllowUserToDeleteRows = false;
             this.dgvExecution.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExecution.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExecution.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExecution.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvExecution.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExecution.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -649,21 +663,21 @@
             this.BudgetEx,
             this.dataGridViewCheckBoxColumn2});
             this.dgvExecution.EnableHeadersVisualStyles = false;
-            this.dgvExecution.Location = new System.Drawing.Point(15, 234);
-            this.dgvExecution.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvExecution.Location = new System.Drawing.Point(11, 190);
+            this.dgvExecution.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExecution.Name = "dgvExecution";
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExecution.RowHeadersDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExecution.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvExecution.RowHeadersWidth = 51;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvExecution.RowsDefaultCellStyle = dataGridViewCellStyle57;
-            this.dgvExecution.Size = new System.Drawing.Size(1404, 327);
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvExecution.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvExecution.Size = new System.Drawing.Size(1053, 266);
             this.dgvExecution.TabIndex = 21;
             this.dgvExecution.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExecution_CellClick);
             this.dgvExecution.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExecution_CellValueChanged);
@@ -721,7 +735,91 @@
             this.dataGridViewCheckBoxColumn2.ReadOnly = true;
             this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewCheckBoxColumn2.Width = 58;
+            this.dataGridViewCheckBoxColumn2.Width = 48;
+            // 
+            // tabAgile
+            // 
+            this.tabAgile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.tabAgile.Controls.Add(this.datagridAgile);
+            this.tabAgile.Controls.Add(this.lblAgilePer);
+            this.tabAgile.Controls.Add(this.agileChart);
+            this.tabAgile.Location = new System.Drawing.Point(4, 21);
+            this.tabAgile.Name = "tabAgile";
+            this.tabAgile.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAgile.Size = new System.Drawing.Size(1086, 578);
+            this.tabAgile.TabIndex = 4;
+            this.tabAgile.Text = "Agile Extension";
+            // 
+            // datagridAgile
+            // 
+            this.datagridAgile.AllowUserToAddRows = false;
+            this.datagridAgile.AllowUserToDeleteRows = false;
+            this.datagridAgile.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagridAgile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridAgile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.datagridAgile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridAgile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.agileSprint,
+            this.agileName,
+            this.agileUser,
+            this.dataGridViewTextBoxColumn9});
+            this.datagridAgile.EnableHeadersVisualStyles = false;
+            this.datagridAgile.Location = new System.Drawing.Point(14, 188);
+            this.datagridAgile.Margin = new System.Windows.Forms.Padding(2);
+            this.datagridAgile.Name = "datagridAgile";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridAgile.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.datagridAgile.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.datagridAgile.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.datagridAgile.Size = new System.Drawing.Size(1054, 248);
+            this.datagridAgile.TabIndex = 35;
+            // 
+            // lblAgilePer
+            // 
+            this.lblAgilePer.AutoSize = true;
+            this.lblAgilePer.Location = new System.Drawing.Point(93, 90);
+            this.lblAgilePer.Name = "lblAgilePer";
+            this.lblAgilePer.Size = new System.Drawing.Size(39, 14);
+            this.lblAgilePer.TabIndex = 34;
+            this.lblAgilePer.Text = "label4";
+            // 
+            // agileChart
+            // 
+            this.agileChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            this.agileChart.BorderlineColor = System.Drawing.Color.Black;
+            this.agileChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea4.Name = "ChartArea1";
+            this.agileChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.agileChart.Legends.Add(legend4);
+            this.agileChart.Location = new System.Drawing.Point(23, 21);
+            this.agileChart.Name = "agileChart";
+            this.agileChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series4.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series4.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.agileChart.Series.Add(series4);
+            this.agileChart.Size = new System.Drawing.Size(340, 153);
+            this.agileChart.TabIndex = 33;
+            this.agileChart.Text = "Overall Progress";
             // 
             // tbpClosure
             // 
@@ -730,10 +828,9 @@
             this.tbpClosure.Controls.Add(this.lblClosingNumTasks);
             this.tbpClosure.Controls.Add(this.chartClosing);
             this.tbpClosure.Controls.Add(this.dgvClosing);
-            this.tbpClosure.Location = new System.Drawing.Point(4, 25);
-            this.tbpClosure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpClosure.Location = new System.Drawing.Point(4, 21);
             this.tbpClosure.Name = "tbpClosure";
-            this.tbpClosure.Size = new System.Drawing.Size(1451, 713);
+            this.tbpClosure.Size = new System.Drawing.Size(1086, 578);
             this.tbpClosure.TabIndex = 3;
             this.tbpClosure.Text = "Closing Phase";
             // 
@@ -743,19 +840,19 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.lblClosingBudget);
             this.panel4.Controls.Add(this.lblClosingDays);
-            this.panel4.Location = new System.Drawing.Point(501, 17);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(376, 14);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(285, 102);
+            this.panel4.Size = new System.Drawing.Size(214, 83);
             this.panel4.TabIndex = 31;
             // 
             // lblClosingBudget
             // 
             this.lblClosingBudget.AutoSize = true;
             this.lblClosingBudget.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClosingBudget.Location = new System.Drawing.Point(3, 59);
+            this.lblClosingBudget.Location = new System.Drawing.Point(2, 48);
+            this.lblClosingBudget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClosingBudget.Name = "lblClosingBudget";
-            this.lblClosingBudget.Size = new System.Drawing.Size(139, 30);
+            this.lblClosingBudget.Size = new System.Drawing.Size(112, 24);
             this.lblClosingBudget.TabIndex = 30;
             this.lblClosingBudget.Text = "On Budget";
             // 
@@ -763,19 +860,19 @@
             // 
             this.lblClosingDays.AutoSize = true;
             this.lblClosingDays.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClosingDays.Location = new System.Drawing.Point(4, 15);
+            this.lblClosingDays.Location = new System.Drawing.Point(3, 12);
+            this.lblClosingDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClosingDays.Name = "lblClosingDays";
-            this.lblClosingDays.Size = new System.Drawing.Size(165, 30);
+            this.lblClosingDays.Size = new System.Drawing.Size(131, 24);
             this.lblClosingDays.TabIndex = 29;
             this.lblClosingDays.Text = "On Schedule";
             // 
             // lblClosingNumTasks
             // 
             this.lblClosingNumTasks.AutoSize = true;
-            this.lblClosingNumTasks.Location = new System.Drawing.Point(115, 102);
-            this.lblClosingNumTasks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClosingNumTasks.Location = new System.Drawing.Point(86, 83);
             this.lblClosingNumTasks.Name = "lblClosingNumTasks";
-            this.lblClosingNumTasks.Size = new System.Drawing.Size(50, 16);
+            this.lblClosingNumTasks.Size = new System.Drawing.Size(39, 14);
             this.lblClosingNumTasks.TabIndex = 28;
             this.lblClosingNumTasks.Text = "label4";
             // 
@@ -784,23 +881,22 @@
             this.chartClosing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.chartClosing.BorderlineColor = System.Drawing.Color.Black;
             this.chartClosing.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea28.Name = "ChartArea1";
-            this.chartClosing.ChartAreas.Add(chartArea28);
-            legend28.Name = "Legend1";
-            this.chartClosing.Legends.Add(legend28);
-            this.chartClosing.Location = new System.Drawing.Point(21, 17);
-            this.chartClosing.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea5.Name = "ChartArea1";
+            this.chartClosing.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartClosing.Legends.Add(legend5);
+            this.chartClosing.Location = new System.Drawing.Point(16, 14);
             this.chartClosing.Name = "chartClosing";
             this.chartClosing.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series32.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series32.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series32.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
-            series32.Legend = "Legend1";
-            series32.Name = "Series1";
-            this.chartClosing.Series.Add(series32);
-            this.chartClosing.Size = new System.Drawing.Size(453, 188);
+            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series5.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartClosing.Series.Add(series5);
+            this.chartClosing.Size = new System.Drawing.Size(340, 153);
             this.chartClosing.TabIndex = 27;
             this.chartClosing.Text = "Overall Progress";
             // 
@@ -810,14 +906,14 @@
             this.dgvClosing.AllowUserToDeleteRows = false;
             this.dgvClosing.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClosing.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClosing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClosing.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvClosing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClosing.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
@@ -828,21 +924,21 @@
             this.BudgetClose,
             this.dataGridViewCheckBoxColumn3});
             this.dgvClosing.EnableHeadersVisualStyles = false;
-            this.dgvClosing.Location = new System.Drawing.Point(21, 228);
-            this.dgvClosing.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClosing.Location = new System.Drawing.Point(16, 185);
+            this.dgvClosing.Margin = new System.Windows.Forms.Padding(2);
             this.dgvClosing.Name = "dgvClosing";
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClosing.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(173)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClosing.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvClosing.RowHeadersWidth = 51;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Arial", 10.8F);
-            this.dgvClosing.RowsDefaultCellStyle = dataGridViewCellStyle60;
-            this.dgvClosing.Size = new System.Drawing.Size(1403, 255);
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 10.8F);
+            this.dgvClosing.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvClosing.Size = new System.Drawing.Size(1052, 207);
             this.dgvClosing.TabIndex = 25;
             this.dgvClosing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellClick);
             this.dgvClosing.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClosing_CellValueChanged);
@@ -900,24 +996,23 @@
             this.dataGridViewCheckBoxColumn3.ReadOnly = true;
             this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewCheckBoxColumn3.Width = 58;
+            this.dataGridViewCheckBoxColumn3.Width = 48;
             // 
             // pbarOverall
             // 
-            this.pbarOverall.Location = new System.Drawing.Point(20, 49);
-            this.pbarOverall.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbarOverall.Location = new System.Drawing.Point(15, 40);
+            this.pbarOverall.Margin = new System.Windows.Forms.Padding(2);
             this.pbarOverall.Name = "pbarOverall";
-            this.pbarOverall.Size = new System.Drawing.Size(932, 49);
+            this.pbarOverall.Size = new System.Drawing.Size(699, 40);
             this.pbarOverall.TabIndex = 18;
             // 
             // lblOverallProgress
             // 
             this.lblOverallProgress.AutoSize = true;
             this.lblOverallProgress.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold);
-            this.lblOverallProgress.Location = new System.Drawing.Point(19, 101);
-            this.lblOverallProgress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOverallProgress.Location = new System.Drawing.Point(14, 82);
             this.lblOverallProgress.Name = "lblOverallProgress";
-            this.lblOverallProgress.Size = new System.Drawing.Size(135, 16);
+            this.lblOverallProgress.Size = new System.Drawing.Size(106, 14);
             this.lblOverallProgress.TabIndex = 18;
             this.lblOverallProgress.Text = "Overall Progress: ";
             // 
@@ -926,23 +1021,22 @@
             this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea29.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea29);
-            legend29.Name = "Legend1";
-            this.chart1.Legends.Add(legend29);
-            this.chart1.Location = new System.Drawing.Point(119, 50);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
+            this.chart1.Location = new System.Drawing.Point(89, 41);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series33.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series33.ChartArea = "ChartArea1";
-            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series33.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            series33.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
-            series33.Legend = "Legend1";
-            series33.Name = "Series1";
-            this.chart1.Series.Add(series33);
-            this.chart1.Size = new System.Drawing.Size(483, 229);
+            series6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
+            series6.CustomProperties = "CollectedSliceExploded=True, CollectedColor=209\\, 237\\, 242, PieStartAngle=270";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(362, 186);
             this.chart1.TabIndex = 21;
             this.chart1.Text = "Overall Progress";
             // 
@@ -951,29 +1045,28 @@
             this.chart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
             this.chart2.BorderlineColor = System.Drawing.Color.Black;
             this.chart2.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea30.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea30);
-            legend30.Name = "Legend1";
-            this.chart2.Legends.Add(legend30);
-            this.chart2.Location = new System.Drawing.Point(753, 50);
-            this.chart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart2.Legends.Add(legend7);
+            this.chart2.Location = new System.Drawing.Point(565, 41);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series34.ChartArea = "ChartArea1";
-            series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar100;
-            series34.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series34.CustomProperties = "CollectedSliceExploded=True, PieStartAngle=270";
-            series34.EmptyPointStyle.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series34.Legend = "Legend1";
-            series34.Name = "Completed";
-            series35.ChartArea = "ChartArea1";
-            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar100;
-            series35.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series35.Legend = "Legend1";
-            series35.Name = "Not Started";
-            this.chart2.Series.Add(series34);
-            this.chart2.Series.Add(series35);
-            this.chart2.Size = new System.Drawing.Size(475, 229);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar100;
+            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series7.CustomProperties = "CollectedSliceExploded=True, PieStartAngle=270";
+            series7.EmptyPointStyle.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series7.Legend = "Legend1";
+            series7.Name = "Completed";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedBar100;
+            series8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series8.Legend = "Legend1";
+            series8.Name = "Not Started";
+            this.chart2.Series.Add(series7);
+            this.chart2.Series.Add(series8);
+            this.chart2.Size = new System.Drawing.Size(356, 186);
             this.chart2.TabIndex = 23;
             this.chart2.Text = "Phases Progress";
             // 
@@ -982,19 +1075,49 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(397, 169);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(298, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 24);
+            this.label1.Size = new System.Drawing.Size(136, 19);
             this.label1.TabIndex = 24;
             this.label1.Text = "Overall Progress";
             // 
+            // agileSprint
+            // 
+            this.agileSprint.HeaderText = "Sprint";
+            this.agileSprint.Name = "agileSprint";
+            this.agileSprint.ReadOnly = true;
+            // 
+            // agileName
+            // 
+            this.agileName.HeaderText = "Task Name";
+            this.agileName.Name = "agileName";
+            this.agileName.ReadOnly = true;
+            this.agileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // agileUser
+            // 
+            this.agileUser.HeaderText = "Users";
+            this.agileUser.Name = "agileUser";
+            this.agileUser.ReadOnly = true;
+            this.agileUser.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn9.Width = 48;
+            // 
             // ProjectDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(237)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1505, 1055);
+            this.ClientSize = new System.Drawing.Size(1129, 857);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
@@ -1003,7 +1126,6 @@
             this.Controls.Add(this.tabInitiation);
             this.Controls.Add(this.lblProjectName);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProjectDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectDashboard";
@@ -1027,6 +1149,10 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartExecution)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExecution)).EndInit();
+            this.tabAgile.ResumeLayout(false);
+            this.tabAgile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridAgile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileChart)).EndInit();
             this.tbpClosure.ResumeLayout(false);
             this.tbpClosure.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1106,5 +1232,13 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabAgile;
+        private System.Windows.Forms.DataGridView datagridAgile;
+        private System.Windows.Forms.Label lblAgilePer;
+        private System.Windows.Forms.DataVisualization.Charting.Chart agileChart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agileSprint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn agileUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

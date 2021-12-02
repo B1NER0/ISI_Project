@@ -369,8 +369,9 @@
             this.lstboxProject.Location = new System.Drawing.Point(19, 20);
             this.lstboxProject.Name = "lstboxProject";
             this.lstboxProject.ScrollAlwaysVisible = true;
-            this.lstboxProject.Size = new System.Drawing.Size(319, 308);
+            this.lstboxProject.Size = new System.Drawing.Size(319, 289);
             this.lstboxProject.TabIndex = 16;
+            this.lstboxProject.SelectedIndexChanged += new System.EventHandler(this.lstboxProject_SelectedIndexChanged);
             // 
             // groupBox4
             // 

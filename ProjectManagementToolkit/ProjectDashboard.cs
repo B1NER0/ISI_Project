@@ -17,6 +17,8 @@ using ProjectManagementToolkit.MPMM.MPMM_Document_Models;
 using ProjectManagementToolkit.Classes;
 using System.Drawing.Drawing2D;
 using System.Globalization;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 
 namespace ProjectManagementToolkit
@@ -1121,6 +1123,7 @@ namespace ProjectManagementToolkit
             chart1.ChartAreas[0].BackColor = Color.Transparent;
             chart1.Legends[0].BackColor = Color.Transparent;
             chart2.Legends[0].BackColor = Color.Transparent;
+            
 
 
 
@@ -1803,6 +1806,9 @@ namespace ProjectManagementToolkit
                 }
             }
 
+            //////////////////////////////////////////////////////////////////////////New chart for Agile progress chart IDEAS:(complete:notcomplete  ,  done,todo,doing)     
+            
+
             canChange = true;
 
             //Calling earnedValueAnalysis method to update the data grid view
@@ -1811,6 +1817,138 @@ namespace ProjectManagementToolkit
             earnedValueAnalysis(dgvClosing, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblClosingDays, lblClosingBudget);
             earnedValueAnalysis(dgvPlanning, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblPlanningSchedule, lblPlanningBudget);
             earnedValueAnalysis(dgvExecution, daysSpent, daysAhead, daysBehind, budgetSpent, budgetAhead, budgetBehind, lblExecutionSchedule, lblExecutionBudget);
+
+
+
+            //JObject allSprints = new clsRestAPIHandler().get_all_sprints();
+            double agileProgress = getProgress(projectModel.ProjectName);
+           // MessageBox.Show(""+progress);
+
+            //AGILE
+
+           
+
+        }
+
+        private double getProgress(string project)
+        {
+            double progressPercent = 0;
+            int doing = 0;
+            int done = 0;
+            int todo = 0;
+
+            string tabName = project;
+
+            JObject allsprints = new clsRestAPIHandler().get_all_project_sprints(project);
+
+        
+            for (int i = 0; i < allsprints["sprint"].Count(); i++)
+            {             
+
+                for(int x = 0; x < allsprints["sprint"][i]["tasks"].Count(); x++)
+                {
+                    datagridAgile.Rows.Add();
+                    datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[0].Value = allsprints["sprint"][i]["sprName"].ToString();
+                    datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[1].Value = allsprints["sprint"][i]["tasks"][x]["taskName"].ToString();
+                    
+                    string theUsers = allsprints["sprint"][i]["tasks"][x]["taskUsers"].ToString();
+                    theUsers = theUsers.Replace("[", "").Replace("]", "").Replace("\"", "");
+
+                    datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[2].Value = theUsers;
+
+                    if (allsprints["sprint"][i]["tasks"][x]["listNumber"].ToString() == "1")
+                    {
+                        todo++;
+                        datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[3].Style.BackColor = Color.Gray;
+                    }
+                    //Doing task count
+                    if (allsprints["sprint"][i]["tasks"][x]["listNumber"].ToString() == "2")
+                    {
+                        doing++;
+                        datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[3].Style.BackColor = Color.Orange;
+                    }
+                    //Done task count
+                    if (allsprints["sprint"][i]["tasks"][x]["listNumber"].ToString() == "3")
+                    {
+                        done++;
+                        datagridAgile.Rows[datagridAgile.Rows.Count - 1].Cells[3].Style.BackColor = Color.LimeGreen;
+                    }
+
+                }
+            }
+
+
+
+
+            double div = doing + todo + done;
+
+            progressPercent = done / div;
+            if (double.IsInfinity(progressPercent))
+            {
+                progressPercent = 1;
+            }
+            if (progressPercent.ToString() == "NaN")
+            {
+                progressPercent = 0;
+            }
+
+          
+
+            //for (int i = 0; i < TaskArray.Count; i++)
+            //{
+            //    if (allsprints["sprints"][i]["sprint"]["project"].ToString() == tabName)
+            //    {
+
+            //        if (allsprints["sprints"][i]["sprint"]["tasks"].ToString() != "[]")
+            //        {
+            //            MessageBox.Show(allsprints["sprints"][i].ToString());
+            //        }
+            //    }
+
+            //    datagridAgile.Rows.Add();
+            //    datagridAgile.Rows[i].Cells[0].Value = allsprints["sprints"][i]["sprint"]["tasks"].ToString();//TaskArray[i]["taskName"].ToString();
+            //    string theUsers = TaskArray[i]["taskUsers"].ToString();
+
+            //    //theUsers = theUsers.Remove(0, 2);
+            //    theUsers = theUsers.Replace("[", "").Replace("]", "").Replace("\"", "");
+
+            //    datagridAgile.Rows[i].Cells[1].Value = theUsers;
+
+            //    if (TaskArray[i]["listNumber"].ToString() == "1")
+            //    {
+            //        datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+            //    }
+            //    //Doing task count
+            //    if (TaskArray[i]["listNumber"].ToString() == "2")
+            //    {
+            //        datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.Orange;
+            //    }
+            //    //Done task count
+            //    if (TaskArray[i]["listNumber"].ToString() == "3")
+            //    {
+            //        datagridAgile.Rows[i].Cells[2].Style.BackColor = Color.LimeGreen;
+            //    }
+            //}
+
+            agileChart.ChartAreas[0].BackColor = Color.Transparent;
+            agileChart.Legends[0].BackColor = Color.Transparent;
+            agileChart.Legends[0].BackColor = Color.Transparent;
+            string[] xAgile = { "Tasks To Do " + todo, "Tasks In Progress " + doing, "Completed Tasks " + done, };
+
+            double[] yAgile = { todo / progressPercent * 100, doing / progressPercent * 100, done / progressPercent * 100 };
+            lblAgilePer.Text = (progressPercent).ToString("p");
+
+            agileChart.Series["Series1"].Points.DataBindXY(xAgile, yAgile);
+            agileChart.Series["Series1"].ChartType = SeriesChartType.Doughnut;
+
+            agileChart.Series["Series1"]["PieLabelStyle"] = "Disabled";
+            agileChart.Legends[0].Enabled = true;
+            agileChart.Series["Series1"].Points[0].Color = Color.Gray;
+            agileChart.Series["Series1"].Points[1].Color = Color.Orange;
+            agileChart.Series["Series1"].Points[2].Color = Color.LimeGreen;
+
+            return progressPercent * 100;
+
         }
 
         private List<string> getLocalDocuments()
@@ -2790,6 +2928,11 @@ namespace ProjectManagementToolkit
 
 
             }
+        }
+
+        private void chartInit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
