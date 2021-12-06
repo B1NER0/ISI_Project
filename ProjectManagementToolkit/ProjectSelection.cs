@@ -54,8 +54,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
         }
 
         private void btnCreateProject_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("activated");
+        {           
             List<string> listMembers = new List<string>();
             if (!string.IsNullOrEmpty(txtProjectName.Text) && !string.IsNullOrEmpty(txtProjectSponsor.Text) && !string.IsNullOrEmpty(txtProjectManager.Text))
             {
@@ -67,7 +66,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
                 
 
                 listMembers.Add(txtProjectSponsor.Text);
-                if (new clsRestAPIHandler().create_user(listMembers[0], defaultPassword, role)) { MessageBox.Show("Success 1 !!!"); }
+               // if (new clsRestAPIHandler().create_user(listMembers[0], defaultPassword, role)) { MessageBox.Show("Success 1 !!!"); }
                 listMembers.Add(txtProjectReviewGroup.Text);
                 new clsRestAPIHandler().create_user(listMembers[1], defaultPassword, role);
                 listMembers.Add(txtProjectManager.Text);

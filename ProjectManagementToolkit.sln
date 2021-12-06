@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementToolkit", 
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Installer", "Installer\Installer.aiproj", "{521ACE0C-84A6-47FA-8A2C-1024295C6B80}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "AI Setup Project", "AI Setup Project\AI Setup Project.aiproj", "{FE0E068A-C026-4B94-8535-727093DCC491}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -24,6 +26,10 @@ Global
 		{521ACE0C-84A6-47FA-8A2C-1024295C6B80}.Debug|Any CPU.ActiveCfg = DefaultBuild
 		{521ACE0C-84A6-47FA-8A2C-1024295C6B80}.Debug|Any CPU.Build.0 = DefaultBuild
 		{521ACE0C-84A6-47FA-8A2C-1024295C6B80}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{FE0E068A-C026-4B94-8535-727093DCC491}.All|Any CPU.ActiveCfg = DefaultBuild
+		{FE0E068A-C026-4B94-8535-727093DCC491}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{FE0E068A-C026-4B94-8535-727093DCC491}.Debug|Any CPU.Build.0 = DefaultBuild
+		{FE0E068A-C026-4B94-8535-727093DCC491}.Release|Any CPU.ActiveCfg = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
