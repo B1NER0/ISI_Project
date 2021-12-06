@@ -58,7 +58,7 @@ namespace ProjectManagementToolkit.MPMM.MPMM_Document_Forms
             List<string> listMembers = new List<string>();
             if (!string.IsNullOrEmpty(txtProjectName.Text) && !string.IsNullOrEmpty(txtProjectSponsor.Text) && !string.IsNullOrEmpty(txtProjectManager.Text))
             {
-                string defaultPassword = "123";
+                string defaultPassword = Settings.Default.Default_Password;
                 string role = "admin";
 
                 new clsRestAPIHandler().create_user(Settings.Default.Username, defaultPassword, role);

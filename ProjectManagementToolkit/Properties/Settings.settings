@@ -19,5 +19,8 @@
     <Setting Name="URI" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://137.117.194.119:3000</Value>
     </Setting>
+    <Setting Name="Default_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
